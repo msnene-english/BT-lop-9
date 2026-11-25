@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌞 Test 2 p2 — English 9 Ôn giữa kì I | MS Chí Nên</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+ --ink:#1F3346;--dim:#567086;
+ --sky:#2FA3EE;--sky-d:#1366A8;
+ --coral:#FF7F5C;--coral-d:#C2461F;
+ --pink:#FF5FA2;--pink-d:#C42A72;
+ --sun:#FFC531;--sun-d:#9A6A00;
+ --mint:#22C29A;--mint-d:#0E8566;
+ --lilac:#9D7BFF;--lilac-d:#6440D0;
+ --leaf:#3DBE6B;--leaf-d:#17803F;
+ --card:#FFFFFF;--edge:#CDEBDD;
+ --good:#1B9C5A;--good-bg:#DDF7E6;
+ --bad:#E0503C;--bad-bg:#FFE6E0;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito',sans-serif;color:var(--ink);min-height:100vh;overflow-x:hidden;
+ background:linear-gradient(180deg,#6EC6FF 0%,#9FDBFF 24%,#CDEFFF 46%,#E6FAEF 72%,#F4FFE4 100%);background-attachment:fixed}
+/* ── smiling sun & clouds ── */
+.sun{position:fixed;top:118px;right:-16px;width:136px;height:136px;border-radius:50%;z-index:0;pointer-events:none;
+ background:radial-gradient(circle at 40% 36%,#FFFBD6,#FFE04D 55%,#FFB22E);box-shadow:0 0 70px 26px rgba(255,214,70,.5);animation:sunBob 5s ease-in-out infinite alternate}
+@keyframes sunBob{from{transform:translateY(0) rotate(-4deg)}to{transform:translateY(-8px) rotate(4deg)}}
+.sun::before{content:'';position:absolute;inset:-40px;border-radius:50%;z-index:-1;animation:spin 40s linear infinite;
+ background:repeating-conic-gradient(rgba(255,196,60,.6) 0 7deg,transparent 7deg 20deg);
+ -webkit-mask:radial-gradient(circle,transparent 72px,#000 74px,#000 106px,transparent 108px);mask:radial-gradient(circle,transparent 72px,#000 74px,#000 106px,transparent 108px)}
+.sun .eye{position:absolute;top:50px;width:12px;height:16px;border-radius:50%;background:#7A4300;animation:blink 4.6s infinite}
+.sun .eye::after{content:'';position:absolute;top:3px;left:3px;width:4px;height:4px;border-radius:50%;background:#fff}
+.sun .e1{left:40px}.sun .e2{left:76px}
+@keyframes blink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
+.sun .mouth{position:absolute;left:44px;top:70px;width:40px;height:22px;border-bottom:5px solid #9A4E00;border-radius:0 0 40px 40px}
+.sun .ck{position:absolute;top:70px;width:16px;height:10px;border-radius:50%;background:rgba(255,110,110,.55)}
+.sun .c1{left:24px}.sun .c2{left:90px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.cloud{position:fixed;left:0;z-index:0;pointer-events:none;width:130px;height:40px;background:#fff;border-radius:40px;opacity:.92;animation:cloud linear infinite}
+.cloud::before,.cloud::after{content:'';position:absolute;background:#fff;border-radius:50%}
+.cloud::before{width:58px;height:58px;top:-28px;left:20px}
+.cloud::after{width:42px;height:42px;top:-19px;left:68px}
+@keyframes cloud{0%{transform:translateX(-220px)}100%{transform:translateX(110vw)}}
+/* ── birds ── */
+.bird{position:fixed;left:0;z-index:0;pointer-events:none;animation:birdFly linear infinite}
+.bird i{display:block;position:relative;width:30px;height:12px;animation:bob .9s ease-in-out infinite}
+.bird i::before,.bird i::after{content:'';position:absolute;top:0;width:15px;height:10px;border-top:3px solid #2E4A6E;border-radius:60% 60% 0 0}
+.bird i::before{left:0;transform-origin:100% 100%;animation:wingL .42s ease-in-out infinite alternate}
+.bird i::after{right:0;transform-origin:0 100%;animation:wingR .42s ease-in-out infinite alternate}
+@keyframes wingL{from{transform:rotate(14deg)}to{transform:rotate(-16deg)}}
+@keyframes wingR{from{transform:rotate(-14deg)}to{transform:rotate(16deg)}}
+@keyframes birdFly{0%{transform:translateX(110vw)}100%{transform:translateX(-12vw)}}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-4px) rotate(3deg)}}
+/* ── floating leaves & clean-energy sparkles ── */
+.leaf{position:fixed;left:0;top:0;z-index:0;pointer-events:none;animation:leafFly linear infinite;will-change:transform}
+.leaf i{display:block;width:18px;height:18px;border-radius:0 80% 0 80%;background:linear-gradient(135deg,var(--l1),var(--l2));box-shadow:inset -2px -2px 0 rgba(0,0,0,.08);animation:leafSpin 3s linear infinite}
+.leaf i::after{content:'';position:absolute;left:8px;top:2px;width:1.5px;height:14px;background:rgba(255,255,255,.6);transform:rotate(-45deg)}
+@keyframes leafFly{0%{transform:translate(-6vw,var(--y0))}50%{transform:translate(50vw,var(--y1))}100%{transform:translate(108vw,var(--y2))}}
+@keyframes leafSpin{from{transform:rotate(0) scaleX(1)}50%{transform:rotate(180deg) scaleX(.5)}to{transform:rotate(360deg) scaleX(1)}}
+.spk{position:absolute;width:14px;height:14px;pointer-events:none;background:#FFE14D;
+ clip-path:polygon(50% 0,61% 39%,100% 50%,61% 61%,50% 100%,39% 61%,0 50%,39% 39%);animation:twk 2.4s ease-in-out infinite;filter:drop-shadow(0 0 4px #FFF3A0)}
+.spk.fx{position:fixed;z-index:0}
+@keyframes twk{0%,100%{transform:scale(.25) rotate(0);opacity:.15}50%{transform:scale(1.1) rotate(45deg);opacity:1}}
+/* ── eco city skyline ── */
+#city{position:fixed;left:0;right:0;bottom:0;height:214px;z-index:1;pointer-events:none;overflow:hidden}
+#city .sl{position:absolute;inset:0;transform-origin:50% 100%}
+#city .hill{position:absolute;bottom:40px;border-radius:50% 50% 0 0}
+.tb{position:absolute;width:6px;height:var(--h)}
+.tb .pole{position:absolute;bottom:0;left:-2px;width:10px;height:100%;background:linear-gradient(90deg,#D3DEE8,#FFFFFF 50%,#C3D0DC);clip-path:polygon(32% 0,68% 0,100% 100%,0 100%)}
+.tb .rot{position:absolute;top:0;left:3px;width:0;height:0;animation:spin linear infinite}
+.tb .rot i{position:absolute;left:-4px;bottom:0;width:8px;height:calc(var(--h) * .42);transform-origin:50% 100%;
+ background:linear-gradient(90deg,#FFFFFF,#E2EAF1);clip-path:polygon(50% 0,100% 18%,85% 100%,15% 100%,0 18%);filter:drop-shadow(0 0 1px rgba(60,90,120,.5))}
+.tb .rot i:nth-child(2){transform:rotate(120deg)}
+.tb .rot i:nth-child(3){transform:rotate(240deg)}
+.tb .rot::after{content:'';position:absolute;left:-6px;top:-6px;width:12px;height:12px;border-radius:50%;background:#fff;border:2px solid #B6C4D2}
+.bd{position:absolute;bottom:50px;border-radius:7px 7px 0 0;background:var(--c);box-shadow:inset -8px 0 0 rgba(0,0,0,.08)}
+.bd::before{content:'';position:absolute;left:8px;right:10px;top:12px;bottom:6px;
+ background:repeating-linear-gradient(180deg,var(--c) 0 7px,transparent 7px 19px),repeating-linear-gradient(90deg,var(--c) 0 6px,rgba(255,255,255,.82) 6px 15px)}
+.bd.vg::after{content:'';position:absolute;left:0;top:10px;bottom:0;width:42%;border-radius:6px 0 0 0;
+ background:radial-gradient(circle,#7FE07A 3px,transparent 3.6px) 0 0/10px 10px,radial-gradient(circle,#FF9EC4 1.8px,transparent 2.4px) 5px 5px/20px 20px,radial-gradient(circle,#43B75E 4px,transparent 4.6px) 5px 5px/10px 10px,#2E9E57}
+.roof{position:absolute;bottom:100%;left:6%;right:6%}
+.roof.solar{height:13px;transform:skewX(-24deg);border:2px solid #23406E;border-bottom-width:3px;overflow:hidden;
+ background:repeating-linear-gradient(90deg,#2B4F8E 0 11px,#9CC3F0 11px 12.5px),#2B4F8E}
+.roof.solar::after{content:'';position:absolute;inset:0;background:linear-gradient(105deg,transparent 38%,rgba(255,255,255,.95) 50%,transparent 62%);background-size:260% 100%;animation:glint 3.6s ease-in-out infinite;animation-delay:inherit}
+@keyframes glint{0%{background-position:160% 0}55%,100%{background-position:-60% 0}}
+.roof.garden{height:16px;left:2%;right:2%;
+ background:radial-gradient(circle at 50% 100%,#3DBE6B 58%,transparent 61%) 0 0/16px 16px repeat-x,radial-gradient(circle at 50% 100%,#7EDB6A 62%,transparent 65%) 8px 4px/16px 12px repeat-x}
+.roof.garden::after{content:'';position:absolute;left:0;right:0;top:3px;height:6px;background:radial-gradient(circle,#FFE14D 2px,transparent 2.5px) 0 0/13px 6px repeat-x}
+.roof.tbr{height:0}
+.roof.tbr .tb{left:46%;bottom:0}
+#city .walk{position:absolute;left:0;right:0;bottom:38px;height:12px;background:linear-gradient(180deg,#E9EEF2,#C9D3DB)}
+#city .road{position:absolute;left:0;right:0;bottom:0;height:38px;background:linear-gradient(180deg,#5E6E80,#4C5A69)}
+#city .road::after{content:'';position:absolute;left:0;right:0;top:17px;height:4px;background:repeating-linear-gradient(90deg,#FFE27A 0 26px,transparent 26px 50px)}
+.tree{position:absolute;bottom:46px;width:26px;height:40px}
+.tree::before{content:'';position:absolute;left:11px;bottom:0;width:5px;height:16px;background:#8B5A2B;border-radius:2px}
+.tree::after{content:'';position:absolute;left:0;top:0;width:26px;height:28px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#9BE36E,#2FA552 70%)}
+.bin{position:absolute;bottom:46px;width:17px;height:21px;border-radius:2px 2px 5px 5px;background:var(--bc);color:#fff;font-size:11px;font-weight:900;line-height:21px;text-align:center}
+.bin::before{content:'';position:absolute;top:-5px;left:-2px;right:-2px;height:5px;border-radius:3px;background:var(--bc);filter:brightness(.8)}
+.veh{position:absolute;left:0;bottom:4px;animation:driveR linear infinite;will-change:transform}
+.veh.back{bottom:15px}
+.veh.l{animation-name:driveL}
+@keyframes driveR{0%{transform:translateX(-24vw)}100%{transform:translateX(112vw)}}
+@keyframes driveL{0%{transform:translateX(112vw)}100%{transform:translateX(-24vw)}}
+.wh{position:absolute;bottom:0;width:14px;height:14px;border-radius:50%;background:radial-gradient(circle,#E8E8E8 0 24%,#2D2D2D 30%);animation:spin .7s linear infinite}
+.tram{width:176px;height:56px}
+.tram .tb2{position:absolute;left:0;right:0;bottom:7px;height:36px;border-radius:16px 16px 6px 6px;border:2px solid #0E8566;
+ background:linear-gradient(180deg,#FFFFFF 0 44%,#22C29A 44% 80%,#0E8566 80%)}
+.tram .tb2::before{content:'';position:absolute;left:12px;right:12px;top:4px;height:11px;border-radius:4px;background:repeating-linear-gradient(90deg,#7CC8F7 0 22px,transparent 22px 28px)}
+.tram .tb2::after{content:'ECO TRAM ⚡';position:absolute;left:0;right:0;top:17px;text-align:center;font:900 9px/1 'Nunito',sans-serif;color:#fff;letter-spacing:.12em}
+.tram .pan{position:absolute;left:74px;bottom:43px;width:26px;height:12px;border:2px solid #45576A;border-bottom:none;transform:skewX(-32deg)}
+.truck{width:124px;height:50px}
+.truck .box{position:absolute;left:0;bottom:8px;width:86px;height:40px;border-radius:6px;background:linear-gradient(180deg,#4FD07C,#1C8A47);color:#fff;font-size:24px;line-height:40px;text-align:center;font-weight:900;border:2px solid #156B37}
+.truck .cab{position:absolute;left:88px;bottom:8px;width:34px;height:30px;border-radius:4px 13px 4px 4px;background:#FFC531;border:2px solid #C28D00}
+.truck .cab::before{content:'';position:absolute;top:4px;right:3px;width:15px;height:11px;border-radius:2px 8px 2px 2px;background:#9BD8FA}
+.bus{width:146px;height:50px}
+.bus .bb{position:absolute;left:0;right:0;bottom:7px;height:38px;border-radius:13px 9px 6px 6px;background:linear-gradient(180deg,#FFA36E,#FF7F5C);border:2px solid #C2461F}
+.bus .bb::before{content:'';position:absolute;left:20px;right:10px;top:5px;height:12px;border-radius:3px;background:repeating-linear-gradient(90deg,#E3F5FF 0 18px,transparent 18px 23px)}
+.bus .bb::after{content:'⚡ E-BUS';position:absolute;left:24px;right:0;top:21px;text-align:center;font:900 9px/1 'Nunito',sans-serif;color:#fff;letter-spacing:.1em}
+.bus .ws{position:absolute;left:4px;bottom:22px;width:13px;height:17px;border-radius:9px 2px 2px 2px;background:#9BD8FA}
+.walker{position:absolute;left:0;bottom:22px;font-size:1.9rem;animation:walkL linear infinite}
+.walker i{display:inline-block;font-style:normal;animation:bob .8s ease-in-out infinite}
+@keyframes walkL{0%{transform:translateX(108vw)}100%{transform:translateX(-14vw)}}
+@media(max-width:820px){#city{height:140px}#city .sl{transform:scale(.62)}.walker{font-size:1.4rem}.veh{transform-origin:0 100%}.sun{width:84px;height:84px;top:92px}.sun::before,.sun .eye,.sun .mouth,.sun .ck{display:none}.leaf{display:none}}
+/* ── sticky note ── */
+.note{position:sticky;top:0;z-index:50;padding:8px 16px;text-align:center;
+ background:linear-gradient(90deg,#F08C00,#1FA463,#1C8ED8);box-shadow:0 4px 16px rgba(20,120,90,.3)}
+.note .in{display:flex;align-items:center;gap:10px;max-width:1400px;margin:0 auto;justify-content:center}
+.note .tg{flex:none;background:#FFF6C9;color:#8A5A00;font-weight:900;font-size:.8rem;padding:3px 13px;border-radius:999px;white-space:nowrap}
+.note .tx{color:#fff;font-weight:800;font-size:1rem;line-height:1.5;text-shadow:0 1px 4px rgba(0,0,0,.35);transition:opacity .25s}
+/* ── header ── */
+header{position:relative;z-index:10;max-width:1380px;margin:14px auto 10px;background:var(--card);
+ border:3px solid var(--leaf-d);border-radius:26px;box-shadow:6px 6px 0 var(--sun);
+ padding:16px 26px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px}
+header::before{content:'🌞';position:absolute;top:-18px;left:-10px;font-size:1.9rem;transform:rotate(-14deg)}
+header::after{content:'♻️';position:absolute;bottom:-15px;right:120px;font-size:1.6rem}
+header h1{font-family:'Baloo 2',cursive;font-size:clamp(1.15rem,2.6vw,1.6rem);font-weight:800;color:var(--leaf-d);line-height:1.3}
+header .sub{font-size:.9rem;color:var(--dim);margin-top:4px;font-weight:700}
+header .by{display:inline-block;margin-top:6px;background:linear-gradient(135deg,#FFE27A,#A8F0C6);color:#1F4A33;
+ font-weight:900;font-size:.84rem;padding:5px 14px;border-radius:999px}
+.hright{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.gauge{position:relative;background:radial-gradient(circle at 35% 30%,#fff,#E2F8EC);border:3px solid var(--leaf-d);border-radius:50%;width:84px;height:84px;
+ display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:4px 4px 0 var(--sun);flex:none}
+.gauge::before{content:'⚡';position:absolute;top:-13px;right:-6px;font-size:17px}
+.gauge .num{font-family:'Baloo 2',cursive;font-size:1.25rem;color:var(--leaf-d);font-weight:800;line-height:1}
+.gauge .lbl{font-size:.6rem;font-weight:900;color:var(--sky-d);letter-spacing:.05em;text-transform:uppercase}
+/* ── layout ── */
+.main{position:relative;z-index:5;max-width:1380px;margin:0 auto;display:flex;gap:20px;padding:6px 16px 42px;align-items:flex-start}
+.lp,.rp{max-height:calc(100vh - 150px);overflow-y:auto}
+.lp{flex:0 0 47%}
+.rp{flex:1;min-width:0}
+.lp::-webkit-scrollbar,.rp::-webkit-scrollbar{width:9px}
+.lp::-webkit-scrollbar-thumb,.rp::-webkit-scrollbar-thumb{background:var(--mint);border-radius:9px}
+.slbl{font-family:'Baloo 2',cursive;font-size:1.15rem;font-weight:800;color:var(--leaf-d);margin-bottom:12px;display:flex;align-items:center;gap:10px;
+ background:rgba(255,255,255,.85);border-radius:14px;padding:2px 12px}
+.slbl::after{content:'';flex:1;border-top:3px dashed rgba(34,194,154,.5)}
+@media(max-width:940px){.main{flex-direction:column}.lp{flex:1 1 auto;width:100%}.lp,.rp{max-height:none}}
+/* ── passage cards ── */
+.pc{position:relative;background:var(--card);border:3px solid var(--edge);border-radius:22px;padding:24px 20px 16px;margin:18px 0 22px;box-shadow:5px 6px 0 rgba(30,120,90,.15)}
+.pc .stamp{position:absolute;top:-20px;right:18px;width:54px;height:54px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,#FFF3D1);
+ border:3px solid currentColor;display:grid;place-items:center;font-size:25px;box-shadow:0 4px 10px rgba(0,0,0,.12)}
+.ptitle{font-family:'Baloo 2',cursive;font-size:1.25rem;font-weight:800;margin-bottom:4px}
+.pins{font-size:.92rem;color:var(--dim);font-style:italic;font-weight:700;margin-bottom:12px;line-height:1.6}
+.pblk{border-left:6px solid;border-radius:14px;padding:12px 14px 4px;margin:14px 0;position:relative}
+.pblk .em{position:absolute;top:-12px;right:10px;font-size:1.25rem;background:#fff;border-radius:50%;width:32px;height:32px;display:grid;place-items:center;box-shadow:0 2px 6px rgba(0,0,0,.12)}
+.paragraph{font-size:1.14rem;line-height:1.95;margin-bottom:10px;text-align:justify}
+.paragraph b{padding:1px 6px;border-radius:7px;white-space:nowrap}
+.btr{font-family:'Baloo 2',cursive;font-size:.85rem;background:linear-gradient(135deg,#FFE27A,#A8F0C6);border:2px solid #8FD3A8;color:#1F5A3A;
+ padding:5px 16px;border-radius:16px;cursor:pointer;transition:.15s;font-weight:800;display:block;margin:6px 0 12px}
+.btr:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(34,194,154,.35)}
+.translation{display:none;margin-bottom:12px;font-size:1rem;line-height:1.8;color:#2E3F5A;background:#FFFDF3;border-left:4px solid var(--sun);border-radius:0 12px 12px 0;padding:10px 14px;font-style:italic}
+.gl{margin-top:12px;background:var(--card);border:2px solid var(--edge);border-radius:16px;overflow:hidden}
+.gl h3{font-family:'Baloo 2',cursive;font-size:1rem;font-weight:800;color:#fff;margin:0;padding:8px 14px}
+table.gtb{width:100%;border-collapse:collapse;table-layout:fixed;font-size:.93rem}
+.gtb tr{border-top:1px dotted var(--edge)}
+.gtb tr:nth-child(even){background:#F2FBF6}
+.gtb td,.gtb th{padding:7px 12px;text-align:left;vertical-align:top}
+.gtb th{font-weight:800;font-size:.82rem;color:var(--dim)}
+.gtb .gw{font-weight:900;color:var(--leaf-d)}
+.gtb .gp{color:var(--lilac-d);font-weight:700;font-size:.86rem}
+/* ── quiz cards ── */
+.sec{background:rgba(255,255,255,.96);border-radius:22px;padding:16px;margin-bottom:16px;box-shadow:5px 6px 0 rgba(30,120,90,.15);border:3px solid var(--edge)}
+.sech{font-family:'Baloo 2',cursive;font-size:1.12rem;font-weight:800;margin-bottom:2px}
+.secs{font-size:.88rem;color:var(--dim);font-style:italic;font-weight:700;margin-bottom:12px;line-height:1.55}
+.q{background:#FCFDFF;border:2px solid #DCE9F5;border-left:7px solid var(--sky);border-radius:16px;padding:14px;margin-bottom:14px}
+.q .qt{font-weight:800;font-size:1.06rem;line-height:1.75}
+.q .qt b{padding:1px 6px;border-radius:7px;background:#FFF1B8;color:#8A5A00;white-space:nowrap}
+.qn{display:inline-block;background:var(--qc,var(--sky));color:#fff;min-width:32px;text-align:center;border-radius:9px;padding:2px 9px;margin-right:8px;font-weight:900;font-size:.88rem}
+.og{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:11px}
+.og.c1{grid-template-columns:1fr}
+@media(max-width:600px){.og{grid-template-columns:1fr}}
+.ob{background:#fff;color:var(--ink);border:2px solid #D5E5F3;border-radius:14px;padding:11px 13px;
+ font-family:'Nunito';font-weight:800;font-size:.98rem;cursor:pointer;text-align:left;line-height:1.5;transition:.14s;box-shadow:0 3px 0 #D5E5F3}
+.ob:hover:not(.dn){transform:translateY(-2px);border-color:var(--qc,var(--sky))}
+.ob.dn{cursor:default}
+.ob.ok{background:var(--good-bg);border-color:var(--good);color:#0b6b3c;box-shadow:0 3px 0 #9fe3bd}
+.ob.no{background:var(--bad-bg);border-color:var(--bad);color:#a31832;box-shadow:0 3px 0 #f7bac5}
+.ex{display:none;margin-top:12px;background:#fff;border:2px solid #E1ECF6;border-radius:16px;padding:14px;font-size:.98rem;line-height:1.85}
+.ex.on{display:block;animation:pop .3s}
+@keyframes pop{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+.shk{animation:shk .42s}
+@keyframes shk{0%,100%{transform:translateX(0)}25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+/* ── explanation content ── */
+.vnt{margin-bottom:10px;padding:9px 13px;border-radius:12px;background:#FFF5D6;border-left:5px solid var(--sun);font-weight:700;line-height:1.7}
+.ex ol{margin:0;padding-left:22px}
+.ex ol>li{margin:10px 0;line-height:1.75;padding-left:4px}
+.ex ol>li::marker{font-weight:900;color:var(--leaf-d)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+@media(max-width:600px){.grid2{grid-template-columns:1fr}}
+.grid2>div{border:2px solid #D6E4F0;border-radius:12px;padding:8px 11px;background:#FBFDFF;line-height:1.7;font-size:.97rem}
+.grid2>div.gk{border-color:var(--good);background:var(--good-bg);box-shadow:0 0 0 3px rgba(27,156,90,.14)}
+.p-word{color:#1E6FD9;font-weight:800}
+.hl-green{color:#11924E;font-weight:900}
+.hl-red{color:#D8334A;font-weight:900}
+.wt{display:inline-block;margin:0 3px;padding:0 7px;border-radius:6px;font-size:.78em;font-weight:700;background:rgba(110,100,160,.14);color:#5B5480}
+.p-phonetic{padding:0 6px;border-radius:6px;background:#F1E8FF;color:#7A3FC8;font-weight:700}
+.p-mean{color:#B5532E;font-weight:700}
+.p-grammar{display:inline;line-height:1.95;padding:3px 8px 3px 2px;border-radius:8px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.hx0{background:#FFF3B0}.hx1{background:#D6ECFF}.hx2{background:#FFDDEE}
+.hx3{background:#DDF7D0}.hx4{background:#EBDFFF}.hx5{background:#FFE4CC}
+.qe0{color:#1D4ED8;font-weight:800}.qe1{color:#C2185B;font-weight:800}.qe2{color:#0F8A5F;font-weight:800}.qe3{color:#7C3AED;font-weight:800}.qe4{color:#D9480F;font-weight:800}.qe5{color:#0E7490;font-weight:800}
+.frame{margin-top:10px;padding:10px 13px;border-radius:14px;background:#fff;border:2px dashed var(--edge);line-height:1.75}
+.frame i{color:var(--dim)}
+.dk{margin-top:12px;padding:11px 13px;border-radius:14px;background:#FFFBEF;border-left:5px solid var(--sun)}
+.dict{margin-top:7px;display:flex;flex-wrap:wrap;gap:8px}
+.dict a{display:inline-flex;align-items:center;gap:5px;padding:5px 14px;border-radius:999px;font-size:.9rem;font-weight:800;text-decoration:none;color:#fff;transition:transform .15s;box-shadow:0 3px 0 rgba(0,0,0,.15)}
+.dict a:hover{transform:translateY(-2px)}
+.dict a.d0{background:linear-gradient(135deg,#FF5FA2,#FF8A3D)}.dict a.d1{background:linear-gradient(135deg,#22C29A,#2FA3EE)}
+.dict a.d2{background:linear-gradient(135deg,#2FA3EE,#6A7BFF)}.dict a.d3{background:linear-gradient(135deg,#9D7BFF,#FF5FA2)}
+.say{margin-top:7px;font-size:.9rem;color:var(--dim)}
+/* ── submit / modal ── */
+.sw{text-align:center;padding:16px 0 8px}
+.sbtn{font-family:'Baloo 2',cursive;font-size:1.08rem;font-weight:800;color:#fff;background:linear-gradient(135deg,var(--leaf),var(--sky));border:3px solid var(--sky-d);
+ padding:12px 34px;border-radius:26px;cursor:pointer;transition:.15s;box-shadow:5px 5px 0 var(--sun)}
+.sbtn:hover{transform:translate(2px,2px);box-shadow:3px 3px 0 var(--sun)}
+.ov{display:none;position:fixed;inset:0;z-index:100;background:rgba(15,60,60,.55);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:16px}
+.ov.on{display:flex}
+.mb{position:relative;background:var(--card);border:3px solid var(--leaf-d);border-radius:24px;padding:26px 28px;max-width:460px;width:100%;
+ text-align:center;box-shadow:7px 7px 0 var(--sun);animation:popin .3s ease}
+@keyframes popin{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+.mb h2{font-family:'Baloo 2',cursive;font-size:1.3rem;font-weight:800;color:var(--leaf-d);margin-bottom:14px}
+.mb input{width:100%;font-family:'Nunito';font-size:1rem;font-weight:700;padding:12px 14px;background:#fff;border:2.5px solid var(--edge);border-radius:14px;color:var(--ink);text-align:center;outline:none;margin-bottom:10px}
+.mb input:focus{border-color:var(--mint)}
+.err{color:var(--bad);font-size:.85rem;font-weight:800;margin-bottom:8px;display:none}
+.err.show{display:block}
+.rname{font-size:1.05rem;font-weight:800;color:var(--sky-d);margin-bottom:6px}
+.rscore{font-family:'Baloo 2',cursive;font-size:2.6rem;font-weight:800;color:var(--leaf-d);line-height:1;margin:6px 0}
+.rs10{font-size:1rem;font-weight:800;color:var(--ink);margin-bottom:9px}
+.rgif{width:190px;margin:10px auto;display:block;border:3px solid var(--leaf-d);box-shadow:4px 4px 0 var(--sun);border-radius:12px}
+.rcmt{font-size:.96rem;line-height:1.75;background:#F1FCEB;border:2.5px dashed var(--edge);border-radius:14px;padding:12px 14px;margin:12px 0}
+.bcl{font-family:'Nunito';font-size:.88rem;font-weight:800;background:transparent;border:2.5px solid var(--edge);color:var(--ink);padding:10px 24px;border-radius:14px;cursor:pointer}
+.cn{position:fixed;top:-16px;z-index:200;pointer-events:none;animation:cf 2.4s forwards}
+@keyframes cf{0%{transform:translateY(0) rotate(0);opacity:1}100%{transform:translateY(108vh) rotate(700deg);opacity:0}}
+.foot{position:relative;z-index:5;text-align:center;margin:20px auto 226px;max-width:900px;font-size:.92rem;color:var(--ink);font-weight:800;line-height:1.7;
+ background:rgba(255,255,255,.9);border:2px solid var(--edge);border-radius:18px;padding:10px 16px}
+@media(max-width:820px){.foot{margin-bottom:150px}}
+
+/*hltool*/
+/* ── công cụ highlight ── */
+.hlbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:6px;flex-wrap:wrap;background:#111827;border-radius:14px 14px 0 0;padding:7px 8px 7px 12px;box-shadow:0 4px 10px rgba(17,24,39,.22)}
+.hlbar .ht{color:#fff;font-weight:900;font-size:.74rem;letter-spacing:.3px;text-transform:uppercase;white-space:nowrap}
+.hlgrp{display:flex;align-items:center;gap:4px;background:#1F2937;border:1px solid #374151;border-radius:999px;padding:3px 4px;flex-wrap:wrap}
+.hlb{display:inline-flex;align-items:center;gap:5px;border:none;border-radius:999px;padding:4px 8px 4px 6px;font-family:'Nunito',sans-serif;font-weight:900;font-size:.74rem;line-height:1.2;cursor:pointer;transition:transform .12s,filter .12s;white-space:nowrap}
+.hlb:hover{transform:translateY(-1px);filter:brightness(1.05)}
+.hlb:active{transform:scale(.95)}
+.hlb .dt{display:inline-block;width:10px;height:10px;border-radius:50%;border:2px solid rgba(0,0,0,.22)}
+.hlb.y{background:#FEF08A;color:#713F12}.hlb.y .dt{background:#FACC15}
+.hlb.g{background:#BBF7D0;color:#14532D}.hlb.g .dt{background:#22C55E}
+.hlb.p{background:#FBCFE8;color:#831843}.hlb.p .dt{background:#EC4899}
+.hlb.b{background:#BAE6FD;color:#0C4A6E}.hlb.b .dt{background:#0EA5E9}
+.hlb.er{background:#E5E7EB;color:#374151;padding:4px 9px}
+.hldv{display:inline-block;width:1px;height:18px;background:#4B5563;margin:0 2px}
+.hltip{display:flex;gap:9px;align-items:flex-start;background:#FEF9C3;border:2px solid #FDE68A;border-top:none;border-radius:0 0 14px 14px;padding:9px 13px;margin-bottom:12px;font-size:.92rem;line-height:1.6;color:#713F12;font-weight:700}
+.hltip .ic{font-size:1.15rem;line-height:1.4}
+.hltip b{color:#92400E}
+.hltip.ping{animation:tipPing .6s ease}
+@keyframes tipPing{0%,100%{transform:none}30%{transform:translateX(-5px)}60%{transform:translateX(5px)}}
+#hlPop{position:fixed;z-index:65;display:none;align-items:center;gap:6px;background:#111827;border-radius:999px;padding:6px 8px;box-shadow:0 6px 18px rgba(0,0,0,.3)}
+#hlPop.on{display:flex}
+#hlPop::after{content:'';position:absolute;left:50%;bottom:-6px;margin-left:-6px;border:6px solid transparent;border-bottom:none;border-top-color:#111827}
+#hlPop.below::after{bottom:auto;top:-6px;border:6px solid transparent;border-top:none;border-bottom-color:#111827}
+#hlPop button{width:24px;height:24px;border-radius:50%;border:2px solid #fff;cursor:pointer;padding:0;transition:transform .12s}
+#hlPop button:hover{transform:scale(1.15)}
+#hlPop .y{background:#FACC15}#hlPop .g{background:#22C55E}#hlPop .p{background:#EC4899}#hlPop .b{background:#0EA5E9}
+#hlPop .er{background:#E5E7EB;border-color:#9CA3AF;font-size:13px;display:grid;place-items:center}
+mark.uhl{color:inherit;border-radius:5px;padding:1px 0;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.lp mark.uhl{cursor:pointer}mark.uhl.pick{outline:2px dashed #111827;outline-offset:2px}
+mark.uhl-y{background:#FFF27A}mark.uhl-g{background:#B9F6D3}mark.uhl-p{background:#FFC7E3}mark.uhl-b{background:#C3E6FF}
+@media(max-width:940px){.hlbar{top:58px}}
+</style>
+<style>/*touchscroll*/@media (hover:none),(pointer:coarse){html,body{overflow-y:auto!important;height:auto!important;-webkit-overflow-scrolling:touch}.lp,.rp{max-height:none!important;overflow:visible!important}.main{padding-bottom:42px!important;align-items:flex-start}}</style>
+</head>
+<body>
+<div class="sun"><i class="eye e1"></i><i class="eye e2"></i><i class="ck c1"></i><i class="ck c2"></i><i class="mouth"></i></div>
+<div id="clouds"></div>
+<div id="birds"></div>
+<div id="leaves"></div>
+<div id="city">
+ <div class="sl" id="skyline">
+  <div class="hill" style="left:-8%;width:46%;height:120px;background:linear-gradient(180deg,#B8EE95,#7FD36A)"></div>
+  <div class="hill" style="left:30%;width:44%;height:96px;background:linear-gradient(180deg,#C9F3AA,#94DD7A)"></div>
+  <div class="hill" style="left:62%;width:48%;height:126px;background:linear-gradient(180deg,#AEE98A,#74CC62)"></div>
+  <div id="turbines"></div>
+  <div id="blds"></div>
+ </div>
+ <div class="walk"></div>
+ <div id="street"></div>
+ <div class="road"></div>
+ <div id="movers"></div>
+</div>
+
+<div class="note"><div class="in">
+ <span class="tg">🌞 MS NHẮN</span>
+ <span class="tx" id="msTx">🌞 Chào mừng con đến Thành phố Năng lượng Mặt trời! 12 câu đọc hiểu (21 → 32) đang chờ — sạc đầy pin quyết tâm rồi bứt tốc nào! ⚡🔥</span>
+</div></div>
+
+<header>
+ <div>
+  <h1>🌞 Solar Eco City Reading · Câu 21 → 32 ♻️</h1>
+  <div class="by">👩‍🏫 Giáo viên tạo: MS Chí Nên &nbsp;·&nbsp; ☎️ 0852639652 &nbsp;·&nbsp; Khoá tiếng Anh lớp 1 → 12</div>
+  <div class="sub">Ôn giữa kì I · English 9 · Passage 1: Recycling &amp; creativity (21 – 26) · Passage 2: Net-zero energy buildings (27 – 32)</div>
+ </div>
+ <div class="hright"><div><span id="sc" style="display:none"></span><div class="gauge"><div class="num" id="lv">0/12</div><div class="lbl">Điểm</div></div></div></div>
+</header>
+
+<div class="main">
+<div class="lp">
+ <div class="hlbar" id="hlBar">
+  <span class="ht">✏️ CÔNG CỤ HIGHLIGHT:</span>
+  <div class="hlgrp">
+   <button type="button" class="hlb y" onclick="hlApply('y')"><i class="dt"></i>Vàng</button>
+   <button type="button" class="hlb g" onclick="hlApply('g')"><i class="dt"></i>Xanh lá</button>
+   <button type="button" class="hlb p" onclick="hlApply('p')"><i class="dt"></i>Hồng</button>
+   <button type="button" class="hlb b" onclick="hlApply('b')"><i class="dt"></i>Xanh</button>
+   <span class="hldv"></span>
+   <button type="button" class="hlb er" onclick="hlErase()">🧽 Tẩy tô</button>
+  </div>
+ </div>
+ <div class="hltip" id="hlTip"><span class="ic">💡</span><div><b>Cách dùng Highlight:</b> Bôi đen (quét chuột) đoạn chữ trong bài đọc → Nhấn nút màu trên thanh công cụ màu đen ở trên (hoặc nút nổi ngay tại vị trí bôi đen) để tô màu tức thì!<br><b>Đổi màu / xoá:</b> Bấm thẳng vào chữ đã tô → chọn màu mới hoặc 🧽 để xoá, không cần bôi đen lại.</div></div>
+
+ <div class="slbl">📖 Bài đọc</div>
+
+ <div class="pc" style="border-color:var(--mint);color:var(--mint)">
+  <div class="stamp">♻️</div>
+  <div class="ptitle" style="color:var(--mint-d)">Passage 1 · Recycling &amp; Creativity</div>
+  <div class="pins">Read the passage and choose the best answer (A, B, C or D) for each numbered blank.</div>
+
+  <div class="pblk" style="border-color:var(--mint);background:#EAFBF4;color:var(--ink)">
+   <div class="em">🎨</div>
+   <div class="paragraph">Transforming everyday waste into beautiful, functional items is both satisfying and <b style="background:#CDF4E6;color:var(--mint-d)">(21) ______</b>. Using recycled materials sparks creativity <b style="background:#CDF4E6;color:var(--mint-d)">(22) ______</b> reduce landfill waste.</div>
+   <button class="btr" onclick="toggleTranslation('trans1')">Mở dịch đoạn này 🌟</button>
+   <div class="translation" id="trans1">Biến rác thải hàng ngày thành những món đồ đẹp đẽ, tiện dụng mang lại sự thỏa mãn và (21) _____. Việc sử dụng vật liệu tái chế khơi gợi sự sáng tạo (22) _____ giảm thiểu rác thải ở bãi chôn lấp.</div>
+  </div>
+
+  <div class="pblk" style="border-color:var(--sun);background:#FFF9E3;color:var(--ink)">
+   <div class="em">🏮</div>
+   <div class="paragraph">For example, glass jars can become stylish lanterns <b style="background:#FFEAA8;color:var(--sun-d)">(23) ______</b> a coat of paint and a tea light. Plastic bottles can transform into colourful planters, bird feeders, or decorative wind spinners. Old tin cans, once cleaned and decorated, make charming wind chimes that sing with every breeze. Bottle caps, often overlooked in recycling efforts, can be <b style="background:#FFEAA8;color:var(--sun-d)">(24) ______</b> and made into mosaic art, magnets, or jewellery. These simple transformations not only keep materials out of landfills but also allow for personal creative expression in ways that commercial products <b style="background:#FFEAA8;color:var(--sun-d)">(25) ______</b>.</div>
+   <button class="btr" onclick="toggleTranslation('trans2')">Mở dịch đoạn này 🌟</button>
+   <div class="translation" id="trans2">Ví dụ, những lọ thủy tinh có thể trở thành những chiếc đèn lồng phong cách (23) _____ một lớp sơn và một ngọn nến nhỏ. Chai nhựa có thể biến thành những chậu cây đầy màu sắc, khay thức ăn cho chim, hoặc chong chóng gió trang trí. Những lon thiếc cũ, sau khi được làm sạch và trang trí, sẽ tạo thành những chiếc chuông gió duyên dáng ngân vang theo từng cơn gió. Nắp chai, thứ thường bị bỏ qua trong nỗ lực tái chế, có thể được (24) _____ và tạo thành nghệ thuật khảm, nam châm, hoặc đồ trang sức. Những sự biến đổi đơn giản này không chỉ giữ cho vật liệu không bị vứt ra bãi rác mà còn cho phép sự thể hiện sáng tạo cá nhân theo những cách mà các sản phẩm thương mại (25) _____.</div>
+  </div>
+
+  <div class="pblk" style="border-color:var(--coral);background:#FFF2EC;color:var(--ink)">
+   <div class="em">🌍</div>
+   <div class="paragraph">With just a few basic supplies and items from your <b style="background:#FFDCCF;color:var(--coral-d)">(26) ______</b>, you can start your creative journey that benefits both your well-being and the planet.</div>
+   <button class="btr" onclick="toggleTranslation('trans3')">Mở dịch đoạn này 🌟</button>
+   <div class="translation" id="trans3">Chỉ với một vài vật dụng cơ bản và các món đồ từ (26) _____ của bạn, bạn có thể bắt đầu hành trình sáng tạo mang lại lợi ích cho cả sức khỏe tinh thần của bạn và hành tinh này.</div>
+  </div>
+
+  <div class="gl"><h3 style="background:linear-gradient(90deg,var(--mint-d),var(--mint))">📚 Glossary — Passage 1</h3>
+   <table class="gtb"><tr><th>Từ vựng</th><th>Loại từ</th><th>Nghĩa tiếng Việt</th></tr>
+    <tr><td class="gw">transform</td><td class="gp">Verb</td><td>biến đổi</td></tr>
+    <tr><td class="gw">functional</td><td class="gp">Adjective</td><td>hữu dụng, thiết thực</td></tr>
+    <tr><td class="gw">satisfying</td><td class="gp">Adjective</td><td>đem lại sự thỏa mãn</td></tr>
+    <tr><td class="gw">spark</td><td class="gp">Verb</td><td>khơi gợi, làm bùng lên</td></tr>
+    <tr><td class="gw">landfill</td><td class="gp">Noun</td><td>bãi rác, bãi chôn lấp</td></tr>
+    <tr><td class="gw">lantern</td><td class="gp">Noun</td><td>đèn lồng</td></tr>
+    <tr><td class="gw">planter</td><td class="gp">Noun</td><td>chậu cây</td></tr>
+    <tr><td class="gw">overlook</td><td class="gp">Verb</td><td>bỏ qua, lờ đi</td></tr>
+    <tr><td class="gw">commercial</td><td class="gp">Adjective</td><td>thuộc về thương mại (đại trà)</td></tr>
+    <tr><td class="gw">well-being</td><td class="gp">Noun</td><td>sự hạnh phúc, khỏe mạnh</td></tr>
+   </table>
+  </div>
+ </div>
+
+ <div class="pc" style="border-color:var(--sky);color:var(--sky)">
+  <div class="stamp">🏢</div>
+  <div class="ptitle" style="color:var(--sky-d)">Passage 2 · Net-zero Energy Buildings</div>
+  <div class="pins">Read the passage and choose the best answer (A, B, C or D) to each question.</div>
+
+  <div class="pblk" style="border-color:var(--sky);background:#EEF8FF;color:var(--ink)">
+   <div class="em">🏙️</div>
+   <div class="paragraph">Experts predict that 70% of the world's population will live in urban centres by 2030. Many cities are already struggling with dangerous levels of pollution and carbon emissions. Growing populations will only add to the problem unless urban planners find more sustainable solutions. Fortunately, net-zero energy buildings offer a green alternative to traditional building models.</div>
+   <button class="btr" onclick="toggleTranslation('trans4')">Mở dịch đoạn này 🌟</button>
+   <div class="translation" id="trans4">Các chuyên gia dự đoán rằng 70% dân số thế giới sẽ sống ở các trung tâm đô thị vào năm 2030. Nhiều thành phố đã và đang phải vật lộn với mức độ ô nhiễm và khí thải carbon nguy hiểm. Dân số ngày càng tăng sẽ chỉ làm trầm trọng thêm vấn đề trừ khi các nhà quy hoạch đô thị tìm ra những giải pháp bền vững hơn. May mắn thay, các tòa nhà năng lượng ròng bằng không (net-zero) cung cấp một giải pháp thay thế xanh cho các mô hình xây dựng truyền thống.</div>
+  </div>
+
+  <div class="pblk" style="border-color:var(--lilac);background:#F5F0FF;color:var(--ink)">
+   <div class="em">🌡️</div>
+   <div class="paragraph">To keep global warming below two degrees Celsius, countries that signed the Paris Agreement will need to create a net-zero building sector by 2050. Cities can achieve this by building net-zero energy commercial and residential buildings that use renewable energy sources and only use as much energy as they can create on-site.</div>
+   <button class="btr" onclick="toggleTranslation('trans5')">Mở dịch đoạn này 🌟</button>
+   <div class="translation" id="trans5">Để giữ cho sự nóng lên toàn cầu ở mức dưới hai độ C, các quốc gia ký kết Hiệp định Paris sẽ cần phải tạo ra một lĩnh vực xây dựng có mức phát thải ròng bằng không vào năm 2050. Các thành phố có thể đạt được điều này bằng cách xây dựng các tòa nhà thương mại và khu dân cư năng lượng ròng bằng không, sử dụng các nguồn năng lượng tái tạo và chỉ sử dụng lượng năng lượng bằng với lượng mà chúng có thể tạo ra tại chỗ.</div>
+  </div>
+
+  <div class="pblk" style="border-color:var(--pink);background:#FFF0F7;color:var(--ink)">
+   <div class="em">🔬</div>
+   <div class="paragraph">Net-zero energy buildings have yet to be adopted on a global scale, but state-level emissions rules in the USA have urged governments and private organisations to invest in the technology. For example, the National Renewable Energy Laboratory is currently researching new renewable energy technologies, and California's recent climate change law calls for all new construction projects to achieve net-zero emissions.</div>
+   <button class="btr" onclick="toggleTranslation('trans6')">Mở dịch đoạn này 🌟</button>
+   <div class="translation" id="trans6">Các tòa nhà năng lượng ròng bằng không vẫn chưa được áp dụng trên phạm vi toàn cầu, nhưng các quy định về khí thải cấp bang ở Hoa Kỳ đã thúc giục mạnh mẽ các chính phủ và các tổ chức tư nhân đầu tư vào công nghệ này. Ví dụ, Phòng thí nghiệm Năng lượng Tái tạo Quốc gia hiện đang nghiên cứu các công nghệ năng lượng tái tạo mới, và luật biến đổi khí hậu gần đây của California kêu gọi tất cả các dự án xây dựng mới phải đạt mức phát thải ròng bằng không.</div>
+  </div>
+
+  <div class="gl"><h3 style="background:linear-gradient(90deg,var(--sky-d),var(--sky))">📚 Glossary — Passage 2</h3>
+   <table class="gtb"><tr><th>Từ vựng</th><th>Loại từ</th><th>Nghĩa tiếng Việt</th></tr>
+    <tr><td class="gw">predict</td><td class="gp">Verb</td><td>dự đoán</td></tr>
+    <tr><td class="gw">urban centre</td><td class="gp">Noun</td><td>trung tâm đô thị</td></tr>
+    <tr><td class="gw">struggle</td><td class="gp">Verb</td><td>vật lộn, đấu tranh</td></tr>
+    <tr><td class="gw">emission</td><td class="gp">Noun</td><td>sự phát thải, khí thải</td></tr>
+    <tr><td class="gw">sustainable</td><td class="gp">Adjective</td><td>bền vững</td></tr>
+    <tr><td class="gw">alternative</td><td class="gp">Noun</td><td>sự thay thế</td></tr>
+    <tr><td class="gw">residential</td><td class="gp">Adjective</td><td>thuộc về cư trú, dân cư</td></tr>
+    <tr><td class="gw">renewable</td><td class="gp">Adjective</td><td>có thể tái tạo</td></tr>
+    <tr><td class="gw">adopt</td><td class="gp">Verb</td><td>áp dụng, thông qua</td></tr>
+    <tr><td class="gw">urge</td><td class="gp">Verb</td><td>thúc giục, khuyến cáo mạnh mẽ</td></tr>
+   </table>
+  </div>
+ </div>
+</div>
+
+<div class="rp">
+ <div class="slbl">🎯 12 câu hỏi</div>
+ <div id="app"></div>
+ <div class="sw"><button class="sbtn" onclick="openName()">🎯 NỘP BÀI TÍNH ĐIỂM &amp; XEM KẾT QUẢ</button></div>
+</div>
+</div>
+
+<div class="foot">🌞 Bài tập của <b>MS Chí Nên</b> · Đăng ký khoá tiếng Anh lớp 1 → 12: <b>☎️ 0852639652</b> để được trải nghiệm hệ thống web học tập đẹp, sinh động — chấm điểm tự động, giải chi tiết từng câu, học vui mỗi ngày!</div>
+
+<div class="ov" id="ovN"><div class="mb">
+ <h2>📮 Con ghi tên vào đây nhé!</h2>
+ <input id="nIn" placeholder="Ví dụ: Nguyễn Văn A" autocomplete="off" maxlength="50">
+ <div class="err" id="nEm">⚠️ Con chưa nhập tên kìa! Nhập tên rồi mới xem điểm được nha.</div>
+ <button class="sbtn" style="margin-top:12px;font-size:1rem;padding:11px 26px" onclick="showResult()">🚀 Xem kết quả</button>
+</div></div>
+
+<div class="ov" id="ovR"><div class="mb" style="max-width:480px">
+ <div class="rname" id="rn"></div>
+ <div class="rscore"><span id="rSc">0</span>/<span id="rTt">0</span></div>
+ <div class="rs10">🎓 Quy đổi: <span id="r10">0</span>/10 điểm</div>
+ <img class="rgif" id="rGif" src="" alt="">
+ <div class="rcmt" id="rMs"></div>
+ <button class="bcl" onclick="closeR()">Đóng &amp; xem lại bài</button>
+</div></div>
+
+<script>
+/* ══ cảnh thành phố xanh năng lượng mặt trời ══ */
+function rnd(a,b){return a+Math.random()*(b-a)}
+(function(){var h='',W=window.innerWidth;
+ for(var i=0;i<4;i++)h+='<div class="cloud" style="top:'+rnd(6,44).toFixed(0)+'vh;transform:scale('+rnd(.7,1.2).toFixed(2)+');animation-duration:'+rnd(60,95).toFixed(0)+'s;animation-delay:-'+rnd(0,60).toFixed(0)+'s"></div>';
+ document.getElementById('clouds').innerHTML=h;
+ h='';
+ for(var i=0;i<5;i++)h+='<div class="bird" style="top:'+rnd(9,36).toFixed(0)+'vh;animation-duration:'+rnd(22,36).toFixed(0)+'s;animation-delay:-'+rnd(0,30).toFixed(0)+'s"><i style="transform:scale('+rnd(.6,1).toFixed(2)+')"></i></div>';
+ /* lá bay & tia năng lượng sạch */
+ var LC=[['#B6F07A','#3DBE6B'],['#7EE0A8','#17A06A'],['#FFE27A','#7FD36A'],['#9BE15D','#2E9E57']];
+ for(var i=0;i<9;i++){var c=LC[i%LC.length],y=rnd(8,70);
+  h+='<div class="leaf" style="--y0:'+y.toFixed(0)+'vh;--y1:'+(y+rnd(-12,14)).toFixed(0)+'vh;--y2:'+(y+rnd(4,22)).toFixed(0)+'vh;animation-duration:'+rnd(24,40).toFixed(0)+'s;animation-delay:-'+rnd(0,40).toFixed(0)+'s"><i style="--l1:'+c[0]+';--l2:'+c[1]+';animation-duration:'+rnd(2.2,4).toFixed(1)+'s"></i></div>'}
+ var SP=[[2,30],[95,48],[4,58],[96,22],[1.5,44],[93.5,64],[6,16]];
+ SP.forEach(function(s,i){h+='<i class="spk fx" style="left:'+s[0]+'vw;top:'+s[1]+'vh;animation-delay:-'+(i*.7).toFixed(1)+'s"></i>'});
+ document.getElementById('birds').innerHTML=h;
+ /* tuabin gió trên đồi */
+ var TB=[[1.2,150,4.2],[5.2,124,3.4],[24,136,5],[46,118,3.8],[71,142,4.6],[91.5,128,3.6],[96.8,150,4.4]];
+ h='';TB.forEach(function(t){h+='<div class="tb" style="left:'+t[0]+'vw;bottom:44px;--h:'+t[1]+'px"><div class="pole"></div><div class="rot" style="animation-duration:'+t[2]+'s"><i></i><i></i><i></i></div></div>'});
+ document.getElementById('turbines').innerHTML=h;
+ /* toà nhà: pin mặt trời, vườn trên mái, tường cây xanh */
+ var BC=['#FF9F7A','#FFD45C','#7CC8F7','#7DDBA3','#B9A2FF','#FF92BE','#FFC98A','#5FD0C5','#A8D8FF'];
+ var RF=['solar','garden','solar','tbr','garden','solar'];
+ h='';var x=-12,i=0;
+ while(x<W+20){var w=rnd(52,96),ht=rnd(54,128),r=RF[i%RF.length],roof;
+  if(r==='tbr')roof='<div class="roof tbr"><div class="tb" style="--h:38px"><div class="pole"></div><div class="rot" style="animation-duration:'+rnd(1.8,3).toFixed(1)+'s"><i></i><i></i><i></i></div></div></div>';
+  else roof='<div class="roof '+r+'" style="animation-delay:-'+rnd(0,3.6).toFixed(1)+'s"></div>';
+  h+='<div class="bd'+(i%4===1?' vg':'')+'" style="left:'+x.toFixed(0)+'px;width:'+w.toFixed(0)+'px;height:'+ht.toFixed(0)+'px;--c:'+BC[i%BC.length]+'">'+roof+
+   (r==='solar'?'<i class="spk" style="left:'+(w*.6).toFixed(0)+'px;top:-30px;animation-delay:-'+rnd(0,2.4).toFixed(1)+'s"></i>':'')+'</div>';
+  x+=w+rnd(4,16);i++}
+ document.getElementById('blds').innerHTML=h;
+ /* vỉa hè: cây xanh & thùng rác phân loại ♻ */
+ h='';var BN=['#2FA3EE','#3DBE6B','#FFB020','#FF7F5C','#9D7BFF'];
+ for(var p=10,k=0;p<W;p+=rnd(70,130),k++){
+  if(k%3===2)h+='<i class="bin" style="left:'+p.toFixed(0)+'px;--bc:'+BN[k%BN.length]+'">♻</i><i class="bin" style="left:'+(p+21).toFixed(0)+'px;--bc:'+BN[(k+1)%BN.length]+'">♻</i>';
+  else h+='<i class="tree" style="left:'+p.toFixed(0)+'px;transform:scale('+rnd(.8,1.1).toFixed(2)+')"></i>'}
+ document.getElementById('street').innerHTML=h;
+ /* xe điện, xe rác tái chế, người đạp xe */
+ h='<div class="veh tram back" style="animation-duration:34s;animation-delay:-6s"><div class="pan"></div><div class="tb2"></div><i class="wh" style="left:18px"></i><i class="wh" style="left:44px"></i><i class="wh" style="left:118px"></i><i class="wh" style="left:144px"></i></div>'+
+  '<div class="veh truck" style="animation-duration:27s;animation-delay:-19s"><div class="box">♻</div><div class="cab"></div><i class="wh" style="left:12px"></i><i class="wh" style="left:62px"></i><i class="wh" style="left:98px"></i></div>'+
+  '<div class="veh bus l" style="animation-duration:30s;animation-delay:-12s"><div class="bb"></div><div class="ws"></div><i class="wh" style="left:16px"></i><i class="wh" style="left:112px"></i></div>';
+ var WK=[['🚴',26],['🚴‍♀️',31],['🛴',38],['🚶‍♀️',70]];
+ WK.forEach(function(w,i){h+='<div class="walker" style="animation-duration:'+w[1]+'s;animation-delay:-'+(i*w[1]/WK.length*1.7%w[1]).toFixed(1)+'s"><i>'+w[0]+'</i></div>'});
+ document.getElementById('movers').innerHTML=h;
+})();
+
+/* ══ âm thanh ══ */
+var AC=null;
+function ac(){if(!AC){try{AC=new (window.AudioContext||window.webkitAudioContext)()}catch(e){}}if(AC&&AC.state==='suspended')AC.resume();return AC}
+function ding(){var c=ac();if(!c)return;var t=c.currentTime;[880,1174.7,1567.9].forEach(function(f,i){var o=c.createOscillator(),g=c.createGain();o.type='sine';o.frequency.value=f;o.connect(g);g.connect(c.destination);var s=t+i*0.09;g.gain.setValueAtTime(0.0001,s);g.gain.exponentialRampToValueAtTime(.22,s+.02);g.gain.exponentialRampToValueAtTime(.0001,s+.34);o.start(s);o.stop(s+.36)})}
+var DUCK_URL='https://hoctienganhcungcomaianulis.github.io/homework/%E1%BA%A2nh_File%20nghe/Sound/Ti%E1%BA%BFng%20V%E1%BB%8Bt%20k%C3%AAu%20meme%20mp3.mp3';
+function buzz(){try{var a=new Audio(DUCK_URL);a.volume=.75;a.play().catch(function(){})}catch(e){}}
+function conf(){var cs=['#3DBE6B','#FFC531','#22C29A','#2FA3EE','#FF7F5C'];
+ for(var i=0;i<50;i++){var d=document.createElement('div');d.className='cn';
+  d.style.cssText='left:'+(Math.random()*100)+'vw;width:9px;height:14px;background:'+cs[i%5]+';opacity:.9;border-radius:3px';
+  document.body.appendChild(d);(function(d){setTimeout(function(){d.remove()},2500)})(d)}}
+function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}
+function toggleTranslation(id){
+ var el=document.getElementById(id);
+ if(el.style.display==='block'){el.style.display='none';}else{el.style.display='block';}
+}
+
+/* ══ lời giải ══ */
+function OPT(w,pos,ipa,vi,ok){return {w:w,pos:pos||'',ipa:ipa||'',vi:vi,ok:ok?1:0}}
+function grid2(opts){
+ return '<div class="grid2">'+opts.map(function(o){
+  var cls=o.ok?'hl-green':'p-word';
+  var pos=o.pos?' <span class="wt">'+o.pos+'</span>':'';
+  var ipa=o.ipa?' <span class="p-phonetic">/'+o.ipa+'/</span>':'';
+  return '<div'+(o.ok?' class="gk"':'')+'>'+(o.ok?'✅ ':'')+'<span class="'+cls+'">'+o.w+'</span>'+pos+ipa+'<br>= <span class="p-mean">'+o.vi+'</span></div>';
+ }).join('')+'</div>';
+}
+var hxI=0;
+function ln(txt){
+ var cls='hx'+(hxI++%6),qeI=0;
+ txt=txt.replace(/"([^"]+)"/g,function(m,p1){return '<span class="qe'+(qeI++%6)+'">"'+p1+'"</span>'});
+ return '<span class="p-grammar '+cls+'">▸ '+txt+'</span>';
+}
+function lines(a){return a.map(ln).join('<br>')}
+function DICT(w,i){
+ var slug=w.trim().toLowerCase().replace(/\s+/g,'-');
+ return '<a class="d'+(i%4)+'" href="https://dictionary.cambridge.org/vi/dictionary/english/'+slug+'" target="_blank" rel="noopener">🔊 Cambridge · '+w+'</a>';
+}
+function render(q){
+ hxI=0;
+ var shown=MAP[q.id].map(function(w){return q.opts.find(function(o){return o.w===w})});
+ var lab='Nghĩa của '+q.opts.length+' lựa chọn:';
+ var html='<div class="vnt">💬 Dịch: '+q.vnt+'</div><ol>'+
+  '<li><b>'+lab+'</b>'+grid2(shown)+'</li>'+
+  '<li><span class="hl-green">✅ TẠI SAO ĐÚNG?</span><br>'+lines(q.why)+'</li>'+
+  '<li><span class="hl-red">❌ TẠI SAO SAI?</span><br>'+lines(q.bad)+'</li></ol>'+
+  '<div class="frame">🔍 <i>'+q.ev+'</i><br>👉 <span class="p-mean">'+q.evvi+'</span></div>';
+ if(q.dict&&q.dict.length){
+  html+='<div class="dk"><b>🔊 Tra từ điển Cambridge:</b><br>Con bấm vào đây để nghe phát âm chuẩn và đọc theo cho hay nhé:'+
+   '<div class="dict">'+q.dict.map(DICT).join('')+'</div>'+
+   '<div class="say">👉 Nếu trang chưa hiện đúng từ, con gõ từ đó vào ô tìm kiếm, bấm loa 🔊 nghe và đọc theo.</div></div>';
+ }
+ return html;
+}
+
+/* ══ câu hỏi ══ */
+var QS=[
+{id:21,part:1,col:'mint',text:`Transforming everyday waste into beautiful, functional items is both satisfying and <b>(21) ______</b>.`,
+ opts:[OPT(`environmentally responsible`,`adv + adj`,`ɪnˌvaɪrənˈmentəli rɪˈspɒnsəbl`,`có trách nhiệm với môi trường (cụm tính từ)`,1),
+  OPT(`responsible environmental`,`adj + adj`,`rɪˈspɒnsəbl ɪnˌvaɪrənˈmentl`,`(sai trật tự) hai tính từ đứng cạnh nhau, không có danh từ`),
+  OPT(`responsible environment`,`adj + n`,`rɪˈspɒnsəbl ɪnˈvaɪrənmənt`,`một môi trường có trách nhiệm (cụm danh từ)`),
+  OPT(`environment responsibly`,`n + adv`,`ɪnˈvaɪrənmənt rɪˈspɒnsəbli`,`môi trường một cách có trách nhiệm (không thành cụm có nghĩa)`)],
+ vnt:`Biến rác thải hằng ngày thành những món đồ đẹp đẽ, hữu ích vừa đem lại sự thoả mãn, vừa có trách nhiệm với môi trường.`,
+ why:[`Cấu trúc "both A and B" (vừa A vừa B): A là "satisfying" (tính từ) nên B cũng phải là tính từ cho cân xứng.`,`"environmentally responsible": trạng từ "environmentally" đứng trước, bổ nghĩa cho tính từ "responsible" → cả cụm làm tính từ, nghĩa là có trách nhiệm với môi trường.`,`Nghĩa rất hợp: biến rác thành đồ dùng đẹp thì vừa vui, vừa tốt cho môi trường.`],
+ bad:[`"responsible environmental": hai tính từ đứng cạnh nhau mà không có danh từ đi kèm, lại sai trật tự → không thành cụm có nghĩa.`,`"responsible environment" là cụm danh từ (một môi trường có trách nhiệm) → không cân xứng với tính từ "satisfying", nghĩa cũng vô lí.`,`"environment responsibly": danh từ + trạng từ, không làm vế B của "both A and B" được → sai ngữ pháp.`],
+ ev:`Transforming everyday waste into beautiful, functional items is both satisfying and environmentally responsible.`,
+ evvi:`Biến rác thải hằng ngày thành những món đồ đẹp đẽ, tiện dụng vừa mang lại sự thoả mãn vừa có trách nhiệm với môi trường.`,
+ dict:[`environmentally`,`responsible`,`environmental`,`environment`,`responsibly`,`satisfying`]},
+{id:22,part:1,col:'mint',text:`Using recycled materials sparks creativity <b>(22) ______</b> reduce landfill waste.`,
+ opts:[OPT(`despite helping`,`prep + V-ing`,`dɪˈspaɪt ˈhelpɪŋ`,`mặc dù giúp (chỉ sự đối lập)`),
+  OPT(`while helping`,`conj + V-ing`,`waɪl ˈhelpɪŋ`,`đồng thời giúp, trong khi giúp`,1),
+  OPT(`if it helps`,`mệnh đề điều kiện`,`ɪf ɪt helps`,`nếu nó giúp`),
+  OPT(`so it helps`,`mệnh đề kết quả`,`səʊ ɪt helps`,`vì vậy nó giúp`)],
+ vnt:`Dùng vật liệu tái chế khơi gợi sự sáng tạo, đồng thời giúp giảm rác thải ở bãi chôn lấp.`,
+ why:[`"while + V-ing" = đồng thời làm gì: hai việc tốt diễn ra cùng một lúc.`,`Dùng đồ tái chế vừa "sparks creativity" (khơi gợi sáng tạo) vừa giúp "reduce landfill waste" (giảm rác ở bãi chôn lấp) → hai ý bổ sung cho nhau.`,`"help + động từ nguyên mẫu": "helping reduce" = giúp giảm → đúng ngữ pháp.`],
+ bad:[`"despite helping" (mặc dù giúp) chỉ sự đối lập, nhưng hai vế ở đây đều là điều tốt, không hề trái ngược nhau.`,`"if it helps" (nếu nó giúp) biến việc giảm rác thành một điều kiện "nếu", trong khi bài khẳng định đây là lợi ích chắc chắn → sai ý.`,`"so it helps" (vì vậy nó giúp) biến sự sáng tạo thành nguyên nhân làm giảm rác. Thật ra chính việc dùng vật liệu tái chế mới giúp giảm rác → sai logic.`],
+ ev:`Using recycled materials sparks creativity while helping reduce landfill waste.`,
+ evvi:`Việc sử dụng vật liệu tái chế khơi gợi sự sáng tạo, đồng thời giúp giảm thiểu rác thải ở bãi chôn lấp.`,
+ dict:[`despite`,`while`,`help`,`spark`,`landfill`]},
+{id:23,part:1,col:'sun',text:`For example, glass jars can become stylish lanterns <b>(23) ______</b> a coat of paint and a tea light.`,
+ opts:[OPT(`with`,`prep`,`wɪð`,`với, nhờ có (vật liệu, công cụ)`,1),
+  OPT(`for`,`prep`,`fɔː(r)`,`cho, dành cho, vì`),
+  OPT(`as`,`prep`,`æz`,`như là, với vai trò là`),
+  OPT(`in`,`prep`,`ɪn`,`trong, ở bên trong`)],
+ vnt:`Ví dụ, những lọ thuỷ tinh có thể trở thành những chiếc đèn lồng xinh xắn chỉ với một lớp sơn và một ngọn nến nhỏ.`,
+ why:[`"with + vật liệu/công cụ" = nhờ có, với cái gì → "with a coat of paint and a tea light" = với một lớp sơn và một ngọn nến nhỏ.`,`Lớp sơn và ngọn nến chính là "nguyên liệu" biến lọ thuỷ tinh thành đèn lồng → dùng "with" là chuẩn.`],
+ bad:[`"for" (cho, dành cho): "đèn lồng dành cho một lớp sơn" → ngược nghĩa, vô lí.`,`"as" (như là): "đèn lồng như là một lớp sơn" → không có nghĩa.`,`"in" (bên trong): "đèn lồng ở trong một lớp sơn" → không phải ý của bài.`],
+ ev:`For example, glass jars can become stylish lanterns with a coat of paint and a tea light.`,
+ evvi:`Ví dụ, những lọ thủy tinh có thể trở thành những chiếc đèn lồng phong cách với một lớp sơn và một ngọn nến nhỏ.`,
+ dict:[`with`,`for`,`as`,`in`,`lantern`,`stylish`]},
+{id:24,part:1,col:'sun',text:`Bottle caps, often overlooked in recycling efforts, can be <b>(24) ______</b> and made into mosaic art, magnets, or jewellery.`,
+ opts:[OPT(`thrown`,`v (V3)`,`θrəʊn`,`bị ném, bị vứt đi`),
+  OPT(`produced`,`v (V3)`,`prəˈdjuːst`,`được sản xuất`),
+  OPT(`carried`,`v (V3)`,`ˈkærid`,`được mang, được chở`),
+  OPT(`collected`,`v (V3)`,`kəˈlektɪd`,`được thu gom, được gom lại`,1)],
+ vnt:`Nắp chai, thứ thường bị bỏ quên khi tái chế, có thể được gom lại rồi làm thành tranh ghép, nam châm hoặc đồ trang sức.`,
+ why:[`Sau "can be" cần động từ dạng V3 (bị động): nắp chai "được" làm gì đó. Cả 4 lựa chọn đều là V3, nên con phải chọn theo nghĩa.`,`Muốn làm tranh ghép, nam châm, trang sức từ nắp chai thì trước hết phải gom chúng lại → "collected" (được thu gom).`,`Vế "often overlooked" (thường bị bỏ qua) cũng gợi ý: thay vì bỏ qua, hãy gom nắp chai lại.`],
+ bad:[`"thrown" (bị vứt đi): đã vứt đi thì không thể "made into mosaic art" (làm thành tranh ghép) được → trái với ý tái chế.`,`"produced" (được sản xuất): nắp chai ở đây là đồ cũ đã dùng rồi, không phải đang được nhà máy sản xuất ra.`,`"carried" (được mang, chở): chỉ mang đi thì chưa nói được bước chuẩn bị để làm đồ thủ công, ý rất lạc.`],
+ ev:`Bottle caps, often overlooked in recycling efforts, can be collected and made into mosaic art, magnets, or jewellery.`,
+ evvi:`Nắp chai, thứ thường bị bỏ qua trong nỗ lực tái chế, có thể được thu gom và tạo thành tranh khảm, nam châm hoặc đồ trang sức.`,
+ dict:[`thrown`,`produced`,`carried`,`collected`,`overlook`,`mosaic`]},
+{id:25,part:1,col:'sun',text:`These simple transformations not only keep materials out of landfills but also allow for personal creative expression in ways that commercial products <b>(25) ______</b>.`,
+ opts:[OPT(`always can`,`adv + modal v`,`ˈɔːlweɪz kæn`,`luôn luôn có thể`),
+  OPT(`never can`,`adv + modal v`,`ˈnevə kæn`,`không bao giờ có thể`,1),
+  OPT(`never should`,`adv + modal v`,`ˈnevə ʃʊd`,`không bao giờ nên`),
+  OPT(`always should`,`adv + modal v`,`ˈɔːlweɪz ʃʊd`,`luôn luôn nên`)],
+ vnt:`Những thay đổi đơn giản này không chỉ giữ cho vật liệu khỏi bị đổ ra bãi rác, mà còn cho con thể hiện sự sáng tạo của riêng mình theo những cách mà sản phẩm bán sẵn không bao giờ làm được.`,
+ why:[`Câu đang so sánh đồ tự làm với "commercial products" (sản phẩm thương mại, bán sẵn hàng loạt).`,`Đồ tự làm mang dấu ấn riêng của con, còn đồ bán sẵn thì cái nào cũng giống cái nào → đồ bán sẵn "never can" (không bao giờ có thể) giúp con thể hiện cá tính như vậy.`,`"can" nói về khả năng → hợp với ý "làm được hay không làm được".`],
+ bad:[`"always can" (luôn có thể): nói đồ bán sẵn cũng làm được y như vậy → mất ý so sánh, ngược với ý tác giả đang khen đồ tự làm.`,`"never should" (không bao giờ nên): "should" là lời khuyên, nhưng câu này không khuyên sản phẩm phải làm gì mà nói về khả năng của chúng.`,`"always should" (luôn nên): vừa sai sắc thái lời khuyên, vừa ngược ý so sánh.`],
+ ev:`These simple transformations not only keep materials out of landfills but also allow for personal creative expression in ways that commercial products never can.`,
+ evvi:`Những sự biến đổi đơn giản này không chỉ giữ cho vật liệu không bị vứt ra bãi rác mà còn cho phép sự thể hiện sáng tạo cá nhân theo những cách mà các sản phẩm thương mại không bao giờ làm được.`,
+ dict:[`always`,`never`,`can`,`should`,`commercial`,`expression`]},
+{id:26,part:1,col:'coral',text:`With just a few basic supplies and items from your <b>(26) ______</b>, you can start your creative journey that benefits both your well-being and the planet.`,
+ opts:[OPT(`garbage collector`,`n phr`,`ˈɡɑːbɪdʒ kəˌlektə(r)`,`người thu gom rác`),
+  OPT(`public amenity`,`n phr`,`ˈpʌblɪk əˈmiːnəti`,`tiện ích công cộng (công viên, thư viện, nhà vệ sinh công cộng)`),
+  OPT(`balanced diet`,`n phr`,`ˈbælənst ˈdaɪət`,`chế độ ăn uống cân bằng`),
+  OPT(`recycling bin`,`n phr`,`ˌriːˈsaɪklɪŋ bɪn`,`thùng rác tái chế`,1)],
+ vnt:`Chỉ với vài dụng cụ cơ bản và vài món đồ lấy từ thùng rác tái chế nhà mình, con có thể bắt đầu hành trình sáng tạo có lợi cho cả sức khoẻ tinh thần của con lẫn hành tinh.`,
+ why:[`"items from your ___" = những món đồ lấy TỪ đâu đó → chỗ trống phải là một nơi chứa đồ.`,`Cả bài nói về biến rác, đồ cũ thành đồ đẹp → đồ lấy từ "recycling bin" (thùng rác tái chế) là hợp lí nhất.`],
+ bad:[`"garbage collector" là người thu gom rác, không phải nơi chứa đồ → "lấy đồ từ người gom rác của bạn" rất vô lí.`,`"public amenity" (tiện ích công cộng) là của chung, không phải "your", cũng chẳng liên quan đến đồ tái chế.`,`"balanced diet" (chế độ ăn cân bằng) lạc đề hoàn toàn, bài không nói gì về chuyện ăn uống.`],
+ ev:`With just a few basic supplies and items from your recycling bin, you can start your creative journey that benefits both your well-being and the planet.`,
+ evvi:`Chỉ với một vài vật dụng cơ bản và các món đồ từ thùng rác tái chế của bạn, bạn có thể bắt đầu hành trình sáng tạo mang lại lợi ích cho cả sức khỏe tinh thần của bạn và hành tinh này.`,
+ dict:[`recycling`,`bin`,`garbage`,`amenity`,`diet`,`supply`]},
+
+{id:27,part:2,col:'sky',text:`What is the main focus of the passage?`,
+ opts:[OPT(`The negative impacts of pollution in cities`,`n phr`,``,`Tác động tiêu cực của ô nhiễm ở các thành phố`),
+  OPT(`The importance of urban population growth`,`n phr`,``,`Tầm quan trọng của việc dân số đô thị tăng`),
+  OPT(`Establishing net-zero energy buildings in cities`,`V-ing phr`,``,`Xây dựng các toà nhà năng lượng ròng bằng không ở các thành phố`,1),
+  OPT(`Urbanisation in the near future`,`n phr`,``,`Quá trình đô thị hoá trong tương lai gần`)],
+ vnt:`Nội dung chính của bài đọc là gì?`,
+ why:[`Đoạn 1 mở bài bằng vấn đề dân số và ô nhiễm, rồi chốt bằng câu then chốt: "Fortunately, net-zero energy buildings offer a green alternative to traditional building models."`,`Đoạn 2 nói các thành phố xây toà nhà net-zero như thế nào, đoạn 3 nói việc áp dụng chúng ở Mỹ → cả bài xoay quanh việc xây dựng toà nhà net-zero ở thành phố.`],
+ bad:[`"The negative impacts of pollution in cities": ô nhiễm chỉ được nhắc ở đoạn 1 để dẫn vào bài, không phải nội dung chính.`,`"The importance of urban population growth": bài coi dân số tăng là một vấn đề, không hề nói về "tầm quan trọng" của nó.`,`"Urbanisation in the near future": con số 70% dân số sống ở đô thị năm 2030 chỉ là chi tiết mở đầu, hai đoạn sau không nói về đô thị hoá.`],
+ ev:`Fortunately, net-zero energy buildings offer a green alternative to traditional building models.`,
+ evvi:`May mắn thay, các tòa nhà năng lượng ròng bằng không cung cấp một giải pháp thay thế xanh cho các mô hình xây dựng truyền thống.`,
+ dict:[`focus`,`establish`,`pollution`,`urbanisation`,`alternative`]},
+{id:28,part:2,col:'sky',text:`What is one of the major challenges cities are facing as populations grow?`,
+ opts:[OPT(`increased levels of pollution`,`n phr`,`ɪnˈkriːst ˈlevlz əv pəˈluːʃn`,`mức độ ô nhiễm tăng cao`,1),
+  OPT(`sustainable urban planning`,`n phr`,`səˈsteɪnəbl ˈɜːbən ˈplænɪŋ`,`quy hoạch đô thị bền vững`),
+  OPT(`traditional building models`,`n phr`,`trəˈdɪʃənl ˈbɪldɪŋ ˈmɒdlz`,`các mô hình xây dựng truyền thống`),
+  OPT(`lack of renewable energy technologies`,`n phr`,``,`sự thiếu công nghệ năng lượng tái tạo`)],
+ vnt:`Một trong những thách thức lớn mà các thành phố đang phải đối mặt khi dân số tăng lên là gì?`,
+ why:[`Đoạn 1: "Many cities are already struggling with dangerous levels of pollution and carbon emissions." → các thành phố đang vật lộn với mức ô nhiễm nguy hiểm.`,`Câu tiếp theo: "Growing populations will only add to the problem" → dân số tăng làm ô nhiễm càng nặng thêm → chính là "increased levels of pollution".`],
+ bad:[`"sustainable urban planning" (quy hoạch bền vững) là GIẢI PHÁP bài mong các nhà quy hoạch tìm ra, không phải thách thức.`,`"traditional building models" (mô hình xây dựng truyền thống) chỉ được nhắc để so sánh với toà nhà net-zero, bài không gọi nó là thách thức do dân số tăng.`,`"lack of renewable energy technologies" (thiếu công nghệ năng lượng tái tạo): bài không hề nói các thành phố đang thiếu công nghệ này.`],
+ ev:`Many cities are already struggling with dangerous levels of pollution and carbon emissions. Growing populations will only add to the problem unless urban planners find more sustainable solutions.`,
+ evvi:`Nhiều thành phố đã và đang phải vật lộn với mức độ ô nhiễm và khí thải carbon nguy hiểm. Dân số ngày càng tăng sẽ chỉ làm trầm trọng thêm vấn đề trừ khi các nhà quy hoạch đô thị tìm ra những giải pháp bền vững hơn.`,
+ dict:[`challenge`,`pollution`,`sustainable`,`traditional`,`lack`,`struggle`]},
+{id:29,part:2,col:'lilac',text:`According to the passage, countries that sign the Paris Agreement <b>_____</b>.`,
+ opts:[OPT(`need to completely eliminate carbon emissions by 2050`,`V phr`,``,`cần loại bỏ hoàn toàn khí thải carbon trước năm 2050`),
+  OPT(`should decrease global temperature by one degree Celsius`,`V phr`,``,`nên giảm nhiệt độ toàn cầu đi một độ C`),
+  OPT(`have to keep global warming below two degrees Celsius`,`V phr`,``,`phải giữ cho sự nóng lên toàn cầu ở mức dưới hai độ C`,1),
+  OPT(`can achieve net-zero emissions by 2030`,`V phr`,``,`có thể đạt mức phát thải ròng bằng không trước năm 2030`)],
+ vnt:`Theo bài đọc, các quốc gia ký Hiệp định Paris thì phải làm gì?`,
+ why:[`Câu đầu đoạn 2: "To keep global warming below two degrees Celsius, countries that signed the Paris Agreement will need to create a net-zero building sector by 2050."`,`Mục tiêu của các nước ký Hiệp định Paris là giữ cho trái đất nóng lên dưới 2 độ C → khớp với "have to keep global warming below two degrees Celsius".`],
+ bad:[`"need to completely eliminate carbon emissions by 2050": bài nói "net-zero" (phát thải ròng bằng không: dùng bao nhiêu năng lượng thì tự tạo ra bấy nhiêu), không phải xoá sạch hoàn toàn khí thải carbon.`,`"should decrease global temperature by one degree Celsius": bài nói giữ dưới HAI độ C, không hề nói giảm MỘT độ.`,`"can achieve net-zero emissions by 2030": năm 2030 là mốc 70% dân số sống ở đô thị (đoạn 1); mốc của ngành xây dựng net-zero là 2050.`],
+ ev:`To keep global warming below two degrees Celsius, countries that signed the Paris Agreement will need to create a net-zero building sector by 2050.`,
+ evvi:`Để giữ cho sự nóng lên toàn cầu ở mức dưới hai độ C, các quốc gia ký kết Hiệp định Paris sẽ cần phải tạo ra một lĩnh vực xây dựng có mức phát thải ròng bằng không vào năm 2050.`,
+ dict:[`eliminate`,`decrease`,`warming`,`achieve`,`agreement`]},
+{id:30,part:2,col:'lilac',text:`According to the passage, what is a net-zero energy building?`,
+ opts:[OPT(`a building that relies entirely on non-renewable energy sources`,`n phr`,``,`toà nhà hoàn toàn dựa vào nguồn năng lượng không tái tạo`),
+  OPT(`a building that consumes as much energy as it produces, using clean energy`,`n phr`,``,`toà nhà dùng đúng bằng lượng năng lượng nó tự tạo ra, bằng năng lượng sạch`,1),
+  OPT(`a building that creates zero emissions for commercial and residential purposes`,`n phr`,``,`toà nhà không thải ra chút khí thải nào, dùng cho mục đích thương mại và nhà ở`),
+  OPT(`a building that uses other green alternatives besides clean energy sources`,`n phr`,``,`toà nhà dùng những giải pháp xanh khác ngoài nguồn năng lượng sạch`)],
+ vnt:`Theo bài đọc, toà nhà năng lượng ròng bằng không (net-zero energy building) là gì?`,
+ why:[`Đoạn 2 mô tả các toà nhà này: "use renewable energy sources and only use as much energy as they can create on-site".`,`"renewable energy" (năng lượng tái tạo) = "clean energy" (năng lượng sạch); "use as much energy as they can create" = "consumes as much energy as it produces" (dùng bao nhiêu thì tự tạo ra bấy nhiêu) → đáp án này diễn đạt lại đúng ý bài.`],
+ bad:[`"relies entirely on non-renewable energy sources": "non-renewable" (KHÔNG tái tạo) ngược hẳn với "renewable" trong bài.`,`"creates zero emissions for commercial and residential purposes": bẫy ghép chữ, bài có cụm "commercial and residential buildings" nhưng không định nghĩa toà nhà này là "không thải ra chút khí nào".`,`"uses other green alternatives besides clean energy sources": bài không nhắc tới giải pháp xanh nào khác ngoài năng lượng tái tạo.`],
+ ev:`Cities can achieve this by building net-zero energy commercial and residential buildings that use renewable energy sources and only use as much energy as they can create on-site.`,
+ evvi:`Các thành phố có thể đạt được điều này bằng cách xây dựng các tòa nhà thương mại và khu dân cư năng lượng ròng bằng không, sử dụng các nguồn năng lượng tái tạo và chỉ sử dụng lượng năng lượng bằng với lượng mà chúng có thể tạo ra tại chỗ.`,
+ dict:[`consume`,`produce`,`renewable`,`rely`,`residential`]},
+{id:31,part:2,col:'pink',text:`The word "urged" in the last paragraph mostly means <b>_____</b>.`,
+ opts:[OPT(`rarely encouraged`,`adv + V3`,`ˈreəli ɪnˈkʌrɪdʒd`,`hiếm khi khuyến khích`),
+  OPT(`easily distracted`,`adv + adj`,`ˈiːzəli dɪˈstræktɪd`,`dễ bị xao nhãng, dễ mất tập trung`),
+  OPT(`weakly recommended`,`adv + V3`,`ˈwiːkli ˌrekəˈmendɪd`,`gợi ý một cách hờ hững, yếu ớt`),
+  OPT(`strongly advised`,`adv + V3`,`ˈstrɒŋli ədˈvaɪzd`,`khuyên mạnh mẽ, thúc giục`,1)],
+ vnt:`Từ "urged" ở đoạn cuối gần nghĩa nhất với cụm nào?`,
+ why:[`"urge" /ɜːdʒ/ = thúc giục, khuyên mạnh mẽ ai đó làm gì.`,`Trong bài: luật khí thải cấp bang ở Mỹ "have urged governments and private organisations to invest in the technology" = đã thúc giục chính phủ và các tổ chức tư nhân đầu tư → đúng nghĩa "strongly advised" (khuyên mạnh mẽ).`],
+ bad:[`"rarely encouraged" (hiếm khi khuyến khích): "rarely" làm ý yếu hẳn đi, ngược với sắc thái mạnh của "urge".`,`"easily distracted" (dễ bị xao nhãng) không liên quan gì tới việc khuyên hay thúc giục.`,`"weakly recommended" (gợi ý hờ hững): "weakly" (yếu ớt) trái ngược với mức độ mạnh của "urge".`],
+ ev:`Net-zero energy buildings have yet to be adopted on a global scale, but state-level emissions rules in the USA have urged governments and private organisations to invest in the technology.`,
+ evvi:`Các tòa nhà năng lượng ròng bằng không vẫn chưa được áp dụng trên phạm vi toàn cầu, nhưng các quy định về khí thải cấp bang ở Hoa Kỳ đã thúc giục mạnh mẽ các chính phủ và các tổ chức tư nhân đầu tư vào công nghệ này.`,
+ dict:[`urge`,`encourage`,`distracted`,`recommend`,`advise`]},
+{id:32,part:2,col:'pink',text:`Which of the following is NOT mentioned about net-zero energy buildings?`,
+ opts:[OPT(`Net-zero energy buildings haven't been widely adopted worldwide.`,`câu`,``,`Các toà nhà net-zero chưa được áp dụng rộng rãi trên toàn thế giới.`),
+  OPT(`Construction projects in California are required to achieve net-zero emissions.`,`câu`,``,`Các dự án xây dựng ở California được yêu cầu đạt mức phát thải ròng bằng không.`),
+  OPT(`Governments are encouraged to invest in net-zero energy building technology.`,`câu`,``,`Các chính phủ được khuyến khích đầu tư vào công nghệ toà nhà net-zero.`),
+  OPT(`Net-zero energy buildings have to be built globally by 2050.`,`câu`,``,`Toà nhà net-zero phải được xây trên khắp thế giới trước năm 2050.`,1)],
+ vnt:`Điều nào sau đây KHÔNG được nhắc đến về các toà nhà năng lượng ròng bằng không?`,
+ why:[`Câu hỏi "NOT mentioned" → con đi tìm câu KHÔNG có trong bài.`,`Bài chỉ nói "countries that signed the Paris Agreement" (các nước ký Hiệp định Paris) cần tạo ra ngành xây dựng net-zero trước 2050, không nói toà nhà net-zero phải được xây ở khắp thế giới.`,`Bài còn nói rõ toà nhà này "have yet to be adopted on a global scale" (chưa được áp dụng trên toàn cầu) → câu "have to be built globally by 2050" không có trong bài, nên chọn câu này.`],
+ bad:[`"haven't been widely adopted worldwide" CÓ trong bài: "have yet to be adopted on a global scale" (đoạn 3).`,`"Construction projects in California are required to achieve net-zero emissions" CÓ trong bài: luật của California "calls for all new construction projects to achieve net-zero emissions".`,`"Governments are encouraged to invest" CÓ trong bài: các quy định "have urged governments and private organisations to invest in the technology".`],
+ ev:`Net-zero energy buildings have yet to be adopted on a global scale, but state-level emissions rules in the USA have urged governments and private organisations to invest in the technology.`,
+ evvi:`Các tòa nhà năng lượng ròng bằng không vẫn chưa được áp dụng trên phạm vi toàn cầu, nhưng các quy định về khí thải cấp bang ở Hoa Kỳ đã thúc giục mạnh mẽ các chính phủ và các tổ chức tư nhân đầu tư vào công nghệ này.`,
+ dict:[`mention`,`adopt`,`require`,`invest`,`globally`]}
+];
+QS.forEach(function(q){q.options=q.opts.map(function(o){return o.w});q.correct=q.opts.find(function(o){return o.ok}).w});
+
+/* ══ dựng trang ══ */
+var TOTAL=QS.length,answered=0,score=0,done={},MAP={};
+var TINT={sky:'#F3FAFF',lilac:'#F8F4FF',coral:'#FFF6F2',pink:'#FFF4F9',sun:'#FFFBEB',mint:'#F0FCF7'};
+var SECINFO={
+ 1:{c:'mint',t:'♻️ Passage 1 · Recycling & Creativity — Câu 21 → 26',s:'Read the passage and choose the best answer (A, B, C or D) for each numbered blank.'},
+ 2:{c:'sky',t:'🏢 Passage 2 · Net-zero energy buildings — Câu 27 → 32',s:'Read the passage and choose the best answer (A, B, C or D) to each question.'}};
+var app=document.getElementById('app'),secs={};
+[1,2].forEach(function(p){var s=document.createElement('div');s.className='sec';s.dataset.part=p;s.style.borderColor='var(--'+SECINFO[p].c+')';
+ s.innerHTML='<div class="sech" style="color:var(--'+SECINFO[p].c+'-d)">'+SECINFO[p].t+'</div><div class="secs">'+SECINFO[p].s+'</div>';
+ secs[p]=s;app.appendChild(s)});
+QS.forEach(function(q){
+ var so=shuffle(q.options);
+ MAP[q.id]=so;
+ var card=document.createElement('div');
+ card.className='q';card.id='c'+q.id;
+ card.style.setProperty('--qc','var(--'+q.col+')');
+ card.style.borderLeftColor='var(--'+q.col+')';
+ card.style.background=TINT[q.col];
+ card.innerHTML='<div class="qt"><span class="qn">'+q.id+'</span>'+q.text+'</div>'+
+  '<div class="og'+(q.part===2?' c1':'')+'" id="o'+q.id+'">'+so.map(function(o,i){return '<button class="ob" onclick="pick('+q.id+','+i+')">'+String.fromCharCode(65+i)+'. '+o+'</button>'}).join('')+'</div>'+
+  '<div class="ex" id="e'+q.id+'"></div>';
+ secs[q.part].appendChild(card);
+});
+
+function pick(qid,i){
+ if(done[qid])return;done[qid]=true;answered++;
+ var q=QS.find(function(x){return x.id===qid});
+ var so=MAP[qid],bs=document.getElementById('o'+qid).children;
+ var ok=so[i]===q.correct;
+ for(var k=0;k<bs.length;k++){bs[k].classList.add('dn');
+  if(so[k]===q.correct)bs[k].classList.add('ok');else if(k===i)bs[k].classList.add('no')}
+ document.getElementById('e'+qid).innerHTML=render(q);
+ document.getElementById('e'+qid).classList.add('on');
+ if(ok){score++;ding();conf()}
+ else{buzz();var c=document.getElementById('c'+qid);c.classList.add('shk');setTimeout(function(){c.classList.remove('shk')},430)}
+ bump();
+}
+function bump(){document.getElementById('lv').textContent=score+'/'+TOTAL;document.getElementById('sc').textContent=score+'/'+TOTAL}
+
+/* ══ nộp bài ══ */
+function openName(){
+ if(answered<TOTAL){alert('Con ơi, con còn '+(TOTAL-answered)+' câu chưa làm kìa! Hoàn thành hết rồi mới nộp bài nhé!');return;}
+ document.getElementById('ovN').classList.add('on');setTimeout(function(){document.getElementById('nIn').focus()},150);
+}
+document.getElementById('nIn').addEventListener('keydown',function(e){if(e.key==='Enter')showResult()});
+function showResult(){
+ var i=document.getElementById('nIn'),n=i.value.trim();
+ if(!n){document.getElementById('nEm').classList.add('show');i.focus();return}
+ document.getElementById('nEm').classList.remove('show');
+ document.getElementById('ovN').classList.remove('on');
+ var pct=score/TOTAL,ten=(pct*10).toFixed(2),g,m,gif;
+ document.getElementById('rn').textContent='Học viên: '+n;
+ if(score===TOTAL){g='🏆 XUẤT SẮC TUYỆT ĐỐI, '+n+'!';m='Con đúng trọn vẹn cả '+TOTAL+' câu — năng lượng của con sáng rực như mặt trời giữa trưa! MS Chí Nên rất tự hào! 🌞 ☎️ 0852639652.';gif='https://media.giphy.com/media/11sBLVxNs7v6WA/giphy.gif'}
+ else if(pct>=.8){g='👏 GIỎI LẮM, '+n+'!';m='Con nắm bài rất chắc, chỉ cần để ý thêm chút xíu ở các câu dễ nhầm thôi! Giữa kì I và cả kì thi vào 10, con sẽ làm thật tốt! ☎️ 0852639652.';gif='https://media.giphy.com/media/3o7abGQa0p2EWzchcg/giphy.gif'}
+ else if(pct>=.6){g='💪 KHÁ RỒI ĐẤY, '+n+'!';m='Con đã qua ngưỡng an toàn rồi. Mở lời giải từng câu ra đọc lại, nạp thêm năng lượng là con lên điểm nhanh lắm!';gif='https://media.giphy.com/media/3o7abGQa0p2EWzchcg/giphy.gif'}
+ else{g='🌱 CỐ LÊN NHÉ, '+n+'!';m='Đừng buồn con nhé. Tấm pin nào cũng cần thời gian phơi nắng mới sạc đầy — đọc kĩ lời giải của cô rồi làm lại nha, Ms tin con sẽ làm tốt hơn! 💪';gif='https://media.giphy.com/media/l378giAZgxPw3eO52/giphy.gif'}
+ document.getElementById('rSc').textContent=score;
+ document.getElementById('rTt').textContent=TOTAL;
+ document.getElementById('r10').textContent=ten;
+ document.getElementById('rGif').src=gif;
+ document.getElementById('rMs').innerHTML='<b>'+g+'</b><br>'+m;
+ document.getElementById('ovR').classList.add('on');
+ if(pct>=.6){conf();ding()}
+}
+function closeR(){document.getElementById('ovR').classList.remove('on')}
+
+/* ══ lời nhắc — đổi theo phần đang làm ══ */
+var GEN=[
+ '🌞 Chào mừng con đến Thành phố Năng lượng Mặt trời! 12 câu đọc hiểu (21 → 32) đang chờ — sạc đầy pin quyết tâm rồi bứt tốc nào! ⚡🔥',
+ '🚨 LƯU Ý TỪ MS CHÍ NÊN: Các em cuộn câu hỏi đến đâu thì làm đến đó! TỰ GIÁC tra cứu từ mới bằng Google Dịch/Từ điển Cambridge để hiểu rõ câu hỏi, tuyệt đối KHÔNG chọn bừa. Chỉ có đọc kỹ giải thích và GHI CHÉP từ mới vào vở thì tiếng Anh mới thực sự giỏi lên. Tránh làm qua loa chống đối! 📝',
+ '🔥 Giữa kì I đang tới rất gần — mỗi câu con làm đúng hôm nay là thêm một điểm chắc chắn trong bài thi thật!',
+ '🎯 Lớp 9 rồi — kì thi vào 10 đang đếm ngược từng ngày! Mỗi bài đọc hôm nay là một tấm pin mặt trời nạp thêm năng lượng cho ngày thi đó! ☀️',
+ '⚡ Đọc hiểu là phần ăn điểm lớn của đề thi vào 10 — luyện chắc từ giữa kì, đến lúc thi con sẽ đọc nhanh như tàu điện lướt phố! 🚋',
+ '💪 Học sinh giỏi không phải là người không bao giờ sai — mà là người sai rồi sửa ngay. Con đang làm y như thế!',
+ '🦆 Chọn sai thì chú vịt kêu quạc quạc — cười một cái, đọc lời giải, rồi tăng tốc tiếp nhé!',
+ '🏆 Giữ chuỗi đúng thật dài — thử phá kỉ lục của chính con hôm nay xem nào! 🔥',
+ '☎️ Đăng ký khoá tiếng Anh lớp 1 → 12 cùng MS Chí Nên — 0852639652 — học vui, hiểu sâu, nhớ lâu, tự tin bước vào kì thi vào 10!'];
+var PMSG={
+ 1:['♻️ Chặng 1 — 6 ô trống về tái chế và sáng tạo! Đọc trọn cả câu, soi kĩ từ trước và sau ô trống — 6 điểm đang chờ con gom về như gom đồ tái chế vậy! 🔥',
+    '🎨 Mỗi ô trống là một món đồ cũ đang chờ con biến thành "báu vật" điểm số — bật chế độ tập trung tối đa nào! ✨'],
+ 2:['🏢 Chặng 2 — toà nhà năng lượng ròng bằng không! Đọc câu hỏi trước, chạy về đúng đoạn tìm bằng chứng — đây chính là kĩ năng ăn điểm thi vào 10! ⚡🔥',
+    '🌍 Chỉ còn 6 câu nữa là về đích — giữ năng lượng bền bỉ như tấm pin giữa trưa hè, điểm 10 đang vẫy gọi con! ☀️']};
+var curP=0,mk=0,msEl=document.getElementById('msTx');
+function showMsg(t){msEl.style.opacity=0;setTimeout(function(){msEl.innerHTML=t;msEl.style.opacity=1},250)}
+setInterval(function(){var list=(PMSG[curP]||[]).concat(GEN);mk=(mk+1)%list.length;showMsg(list[mk])},5200);
+if('IntersectionObserver' in window){
+ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var p=+e.target.dataset.part;if(p!==curP){curP=p;mk=0;showMsg(PMSG[p][0])}}})},{threshold:.35});
+ [1,2].forEach(function(p){io.observe(secs[p])});
+}
+</script>
+<style>/*streak*/
+#stkRow{display:flex;align-items:center;flex:0 0 auto;margin:0 4px}#stkRow.in{align-self:center;margin:0 0 0 8px}#stkRow.in .bar,#stkRow.in .nx,#stkRow.in .lbl{display:none!important}#stkRow.in #stkP{flex-direction:row!important;gap:6px;padding:4px 10px 4px 8px;position:static}#stkRow.in .fl,#stkRow.in .n{position:static;line-height:1}
+#stkRow.fixed{position:fixed;left:10px;bottom:12px;z-index:60}
+#stkP{display:flex;align-items:center;gap:6px;padding:2px 10px 2px 7px;border-radius:999px;background:#FFF7ED;border:2px solid #FDBA74;font-family:'Baloo 2','Nunito',sans-serif;
+ font-weight:700;color:#9A3412;font-size:.92rem;transition:transform .25s;white-space:nowrap}
+#stkP .fl{display:inline-block;position:static;font-size:1.1rem;transition:font-size .3s;transform-origin:50% 90%}
+#stkP.hot .fl{animation:stkFl .5s ease-in-out infinite alternate}@keyframes stkFl{from{transform:scale(1) rotate(-6deg)}to{transform:scale(1.25) rotate(6deg)}}
+#stkP.pop{transform:scale(1.15)}#stkP.cold{filter:grayscale(.6);opacity:.85}
+#stkP .n{display:inline-grid;place-items:center;min-width:22px;height:22px;padding:0 5px;border-radius:999px;background:linear-gradient(135deg,#FB923C,#EF4444);color:#fff;font-size:.9rem}
+#stkP .bar{width:54px;height:6px;border-radius:99px;background:#FED7AA;overflow:hidden}#stkP .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#F97316,#EF4444);transition:width .3s}
+#stkP .nx{font-size:.78rem;color:#C2410C}
+#stkToast{position:fixed;left:50%;top:38%;z-index:70;transform:translate(-50%,-50%) scale(.4);opacity:0;pointer-events:none;text-align:center;padding:18px 26px;border-radius:26px;
+ background:linear-gradient(135deg,#FFF7ED,#FEF3C7);border:4px solid #FDBA74;box-shadow:0 18px 40px rgba(0,0,0,.25);font-family:'Baloo 2','Nunito',sans-serif;color:#9A3412;max-width:86vw;transition:all .35s cubic-bezier(.2,1.6,.4,1)}
+#stkToast.show{opacity:1;transform:translate(-50%,-50%) scale(1)}#stkToast b{display:block;font-size:2.3rem;line-height:1.15}#stkToast span{font-weight:700;font-size:1.05rem}
+#stkToast.soft{background:linear-gradient(135deg,#EFF6FF,#F5F3FF);border-color:#93C5FD;color:#1E3A8A}#stkToast.soft b{font-size:1.6rem}
+.stkSpark{position:fixed;z-index:69;pointer-events:none;font-size:26px;animation:stkSp 1.2s ease-out forwards}
+@keyframes stkSp{0%{opacity:1;transform:translate(0,0) scale(.6)}100%{opacity:0;transform:translate(var(--x),var(--y)) scale(1.3) rotate(240deg)}}
+@media(max-width:700px){#stkP .bar,#stkP .nx,#stkP .lbl{display:none}#stkP{padding:2px 7px 2px 5px}#stkToast b{font-size:1.8rem}}
+@media (prefers-reduced-motion:reduce){#stkP.hot .fl,.stkSpark{animation:none}}
+
+/*scrollfix*/
+@media(min-width:941px){body{height:auto!important;overflow:visible!important;overflow-x:clip!important}.foot{margin-bottom:8px!important}.note{min-height:66px;display:flex;align-items:center;justify-content:center}.note .in{width:100%}}
+</style>
+<script>/*streak*/(function(){
+ const $=id=>document.getElementById(id),num=el=>{const m=(el.textContent||'').match(/(\d+)\s*\/\s*(\d+)/);return m?[+m[1],+m[2]]:[0,0]};
+ let get=null,anchor=null,mode='after';const sc=$('scoreChip'),pg=$('progChip');
+ if(sc&&pg){get=()=>{const s=num(sc),a=num(pg);return [a[0],s[0],a[1]]};anchor=sc}
+ else{try{if(typeof answered!=='undefined'&&typeof score!=='undefined'){get=()=>[answered,score,typeof TOTAL!=='undefined'?TOTAL:0];anchor=$('sc')&&$('sc').parentElement}}catch(e){}
+  if(!get)try{if(typeof done==='object'&&done&&$('lv')){get=()=>{const v=Object.values(done);return [v.length,v.filter(x=>x===true).length,typeof QS!=='undefined'?QS.length:0]};anchor=$('lv').closest('.gauge')||$('lv');mode='in'}}catch(e){}}
+ if(!get)return;
+ const row=document.createElement('div');row.id='stkRow';
+ row.innerHTML='<div id="stkP" class="cold" title="Số câu đúng liên tiếp"><span class="fl">🔥</span><span class="lbl">Chuỗi đúng</span><span class="n" id="stkN">0</span><span class="bar"><i id="stkB"></i></span><span class="nx" id="stkX">→ 3</span></div>';
+ if(!anchor){row.className='fixed';document.body.appendChild(row)}else if(mode==='in'){row.className='in';anchor.insertAdjacentElement('afterend',row)}else anchor.insertAdjacentElement('afterend',row);
+ const toast=document.createElement('div');toast.id='stkToast';document.body.appendChild(toast);
+ const P=document.getElementById('stkP'),N=document.getElementById('stkN'),B=document.getElementById('stkB'),X=document.getElementById('stkX');
+ let cur=0,best=0,[lastA,lastS]=get(),tmr=null;
+ const NEXT=n=>n<3?3:n<5?5:n<10?10:(Math.floor(n/5)+1)*5,LOW=n=>n<3?0:n<5?3:n<10?5:Math.floor(n/5)*5;
+ const PRAISE={3:['🔥 3 câu liền!','Con đang vào guồng rồi đó!'],5:['🔥🔥 5 câu liền!','Siêu đỉnh luôn — cô thấy con tập trung lắm!'],10:['🌟 10 câu liền!','Không ai cản nổi con nữa rồi!'],
+  15:['🏆 15 câu liền!','Con là ngôi sao của lớp đó!'],20:['👑 20 câu liền!','Tuyệt vời — cô tự hào về con lắm!']};
+ const OOPS=['Không sao đâu con — mình bắt đầu chuỗi mới nhé! 💪','Đọc lời giải rồi làm tiếp, chuỗi mới đang chờ con! 🌱','Sai một câu là học thêm một điều — cố lên con! 🌈','Hít một hơi thật sâu, câu sau con sẽ làm được! ⭐'];
+ function say(t,sub,soft){toast.className=soft?'soft':'';toast.innerHTML='<b>'+t+'</b><span>'+sub+'</span>';void toast.offsetWidth;toast.classList.add('show');clearTimeout(tmr);tmr=setTimeout(()=>toast.classList.remove('show'),soft?1600:2000)}
+ function burst(){const E=['🔥','⭐','✨','🎉','💛','🌟'];for(let i=0;i<16;i++){const s=document.createElement('div');s.className='stkSpark';s.textContent=E[i%E.length];
+  const a=Math.random()*Math.PI*2,r=120+Math.random()*160;s.style.cssText='left:50%;top:38%;--x:'+Math.cos(a)*r+'px;--y:'+Math.sin(a)*r+'px';document.body.appendChild(s);setTimeout(()=>s.remove(),1300)}}
+ function paint(){N.textContent=cur;const lo=LOW(cur),hi=NEXT(cur);B.style.width=Math.min(100,(cur-lo)/(hi-lo)*100)+'%';X.textContent='→ '+hi;
+  P.classList.toggle('cold',cur===0);P.classList.toggle('hot',cur>=3);P.classList.add('pop');setTimeout(()=>P.classList.remove('pop'),250);
+  P.querySelector('.fl').style.fontSize=(1.1+Math.min(cur,15)*.03)+'rem'}
+ function check(){const [a,s,tot]=get();if(a===lastA)return;const dA=a-lastA,dS=s-lastS;lastA=a;lastS=s;if(dA<=0)return;
+  if(dS>=dA){const before=cur;cur+=dA;best=Math.max(best,cur);paint();
+   const hit=Object.keys(PRAISE).map(Number).filter(m=>before<m&&cur>=m).pop()||(cur>=25&&Math.floor(cur/5)>Math.floor(before/5)?cur-cur%5:0);
+   if(hit){const p=PRAISE[hit]||['🚀 '+hit+' câu liền!','Con đang bay cao lắm rồi!'];say(p[0],p[1]);burst()}}
+  else{const had=cur;cur=0;paint();if(had>=3)say('Chuỗi '+had+' câu — giỏi lắm!',OOPS[Math.floor(Math.random()*OOPS.length)],true)}
+  if(tot&&a>=tot)setTimeout(()=>{say('🏅 Chuỗi dài nhất: '+best+' câu',best>=5?'Con làm bài thật tuyệt vời!':'Lần sau mình thử phá kỷ lục này nhé!');if(best>=5)burst()},2400)}
+ setInterval(check,250);
+})();</script>
+<script>/*devclean*/(function(){
+var ZW=/[\u00AD\u034F\u061C\u115F\u1160\u17B4\u17B5\u180E\u200B-\u200F\u202A-\u202E\u2060-\u206F\uFEFF]/g,
+    SP=/[\u00A0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\t]/g,
+    AP=/[\u2018\u2019\u201A\u201B\u2032\u2035\u02B9\u02BB\u02BC\u02BD\u02C8\u0060\u00B4\uFF07]/g,
+    DQ=/[\u201C\u201D\u201E\u201F\u2033\u2036\u00AB\u00BB\uFF02]/g,
+    DS=/[\u2010\u2011\u2012\u2212\uFE63\uFF0D]/g;
+function clean(v){if(!v)return v;var s=String(v);try{s=s.normalize('NFKC')}catch(e){}
+  return s.replace(ZW,'').replace(SP,' ').replace(AP,"'").replace(DQ,'"').replace(DS,'-').replace(/[\u0300-\u036f]/g,'').replace(/ {2,}/g,' ');}
+window.__devclean=clean;
+function fix(skip){var L=document.querySelectorAll('input:not([type]),input[type=text],input[type=search],textarea');
+  for(var i=0;i<L.length;i++){var el=L[i];if(el===skip||el.readOnly||el.disabled)continue;var v=el.value,c=clean(v);if(c!==v)el.value=c;}}
+['pointerdown','mousedown','touchstart','click','change','focusout'].forEach(function(t){document.addEventListener(t,function(e){fix(t==='focusout'||t==='change'?null:e.target)},true)});
+document.addEventListener('keydown',function(e){if(e.key==='Enter'||e.keyCode===13)fix(null)},true);
+})();</script>
+<div id="hlPop">
+ <button type="button" class="y" title="Vàng" onclick="hlApply('y')"></button>
+ <button type="button" class="g" title="Xanh lá" onclick="hlApply('g')"></button>
+ <button type="button" class="p" title="Hồng" onclick="hlApply('p')"></button>
+ <button type="button" class="b" title="Xanh" onclick="hlApply('b')"></button>
+ <button type="button" class="er" title="Tẩy tô" onclick="hlErase()">🧽</button>
+</div>
+<script>/*hltool*/
+/* ══ công cụ highlight: chỉ tô trong bài đọc (.paragraph, .translation ở khung trái) ══ */
+var HLT={saved:null,t:null,target:null,gid:0},hlPop=document.getElementById('hlPop');
+function hlGroup(g){return Array.prototype.slice.call(document.querySelectorAll('.lp mark.uhl[data-g="'+g+'"]'))}
+function hlUnpick(){document.querySelectorAll('mark.uhl.pick').forEach(function(m){m.classList.remove('pick')});HLT.target=null}
+function hlShowGroup(){
+ var ms=hlGroup(HLT.target);if(!ms.length){hlUnpick();hlHide();return}
+ var L=1e9,T=1e9,R=-1e9,B=-1e9;
+ ms.forEach(function(m){var b=m.getBoundingClientRect();if(!b.width&&!b.height)return;L=Math.min(L,b.left);T=Math.min(T,b.top);R=Math.max(R,b.right);B=Math.max(B,b.bottom)});
+ if(R<L){hlHide();return}
+ hlShow({getBoundingClientRect:function(){return {left:L,top:T,right:R,bottom:B,width:R-L,height:B-T}}});
+}
+function hlZone(n){var e=n&&(n.nodeType===1?n:n.parentNode);return e&&e.closest?e.closest('.lp .paragraph,.lp .translation'):null}
+function hlNodes(r){
+ var root=r.commonAncestorContainer;if(root.nodeType!==1)root=root.parentNode;
+ var out=[],w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,null),n;
+ while((n=w.nextNode())){
+  if(!r.intersectsNode(n))continue;
+  var z=hlZone(n);if(!z||!z.getClientRects().length)continue;
+  var s=n===r.startContainer?r.startOffset:0,e=n===r.endContainer?r.endOffset:n.length;
+  if(e>s)out.push([n,s,e]);
+ }
+ return out;
+}
+function hlRange(){
+ var sel=window.getSelection();if(!sel||!sel.rangeCount||sel.isCollapsed)return null;
+ var r=sel.getRangeAt(0),lp=document.querySelector('.lp');
+ if(!lp.contains(r.commonAncestorContainer))return null;
+ var L=hlNodes(r);if(!L.some(function(x){return x[0].nodeValue.slice(x[1],x[2]).trim()}))return null;
+ return r;
+}
+function hlIsMark(e){return e&&e.nodeName==='MARK'&&e.classList.contains('uhl')}
+function hlPaint(r,cls){
+ var L=hlNodes(r),zones=[],g=cls?String(++HLT.gid):'';
+ L.forEach(function(x){
+  var n=x[0],s=x[1],e=x[2];
+  if(e<n.length)n.splitText(e);
+  if(s>0)n=n.splitText(s);
+  var z=hlZone(n);if(zones.indexOf(z)<0)zones.push(z);
+  var p=n.parentNode;
+  if(hlIsMark(p)){
+   var host=p.parentNode,ref=p.nextSibling,aft=null,put=n;
+   if(n.nextSibling){aft=document.createElement('mark');aft.className=p.className;if(p.dataset.g)aft.dataset.g=p.dataset.g;while(n.nextSibling)aft.appendChild(n.nextSibling)}
+   if(cls){put=document.createElement('mark');put.className='uhl uhl-'+cls;put.dataset.g=g;put.appendChild(n)}
+   host.insertBefore(put,ref);
+   if(aft)host.insertBefore(aft,put.nextSibling);
+   if(!p.firstChild)host.removeChild(p);
+  }else if(cls){
+   var m=document.createElement('mark');m.className='uhl uhl-'+cls;m.dataset.g=g;p.insertBefore(m,n);m.appendChild(n);
+  }
+ });
+ zones.forEach(function(z){if(z){z.querySelectorAll('mark.uhl').forEach(function(m){if(!m.textContent)m.remove()});z.normalize()}});
+}
+function hlDone(){HLT.saved=null;hlUnpick();try{window.getSelection().removeAllRanges()}catch(e){}hlHide()}
+function hlApply(cls){
+ if(HLT.target&&!hlRange()){hlGroup(HLT.target).forEach(function(m){m.className='uhl uhl-'+cls});hlDone();return}
+ var r=HLT.saved||hlRange();
+ if(!r){HLT.saved=null;hlHide();var t=document.getElementById('hlTip');t.classList.remove('ping');void t.offsetWidth;t.classList.add('ping');return}
+ hlPaint(r,cls);hlDone();
+}
+function hlErase(){
+ if(HLT.target&&!hlRange()){hlGroup(HLT.target).forEach(function(m){var p=m.parentNode;while(m.firstChild)p.insertBefore(m.firstChild,m);p.removeChild(m);p.normalize()});hlDone();return}
+ var r=HLT.saved||hlRange();
+ if(r){hlPaint(r,null)}
+ else{document.querySelectorAll('mark.uhl').forEach(function(m){var p=m.parentNode;while(m.firstChild)p.insertBefore(m.firstChild,m);p.removeChild(m);p.normalize()})}
+ hlDone();
+}
+function hlHide(){hlPop.classList.remove('on','below')}
+function hlShow(r){
+ var b=r.getBoundingClientRect();if(!b.width&&!b.height){hlHide();return}
+ hlPop.classList.add('on');
+ var w=hlPop.offsetWidth,h=hlPop.offsetHeight,note=document.querySelector('.note'),nb=note?note.getBoundingClientRect().bottom:0;
+ var x=Math.max(6,Math.min(window.innerWidth-w-6,b.left+b.width/2-w/2)),y=b.top-h-10,below=false;
+ if(y<nb+6){y=b.bottom+10;below=true}
+ hlPop.style.left=x+'px';hlPop.style.top=y+'px';hlPop.classList.toggle('below',below);
+}
+function hlCheck(){clearTimeout(HLT.t);HLT.t=setTimeout(function(){var r=hlRange();if(r){hlUnpick();hlShow(r)}else if(HLT.target)hlShowGroup();else hlHide()},90)}
+document.addEventListener('click',function(e){
+ var t=e.target;if(t.closest&&t.closest('#hlPop,.hlbar'))return;
+ var m=t.closest?t.closest('.lp mark.uhl'):null;
+ if(m&&!hlRange()){
+  if(!m.dataset.g)m.dataset.g=String(++HLT.gid);
+  hlUnpick();HLT.target=m.dataset.g;hlGroup(HLT.target).forEach(function(x){x.classList.add('pick')});hlShowGroup();
+ }else if(HLT.target){hlUnpick();hlHide()}
+});
+function hlKeep(e){var r=hlRange();if(r)HLT.saved=r.cloneRange();if(e.type==='mousedown')e.preventDefault()}
+document.querySelectorAll('.hlbar button,#hlPop button').forEach(function(b){
+ b.addEventListener('pointerdown',function(){var r=hlRange();HLT.saved=r?r.cloneRange():null});
+ b.addEventListener('mousedown',hlKeep);
+ b.addEventListener('touchstart',hlKeep,{passive:true});
+});
+document.addEventListener('mouseup',hlCheck);
+document.addEventListener('touchend',hlCheck);
+document.addEventListener('selectionchange',hlCheck);
+window.addEventListener('scroll',function(){if(hlPop.classList.contains('on'))hlCheck()},{passive:true});
+document.querySelector('.lp').addEventListener('scroll',function(){if(hlPop.classList.contains('on'))hlCheck()},{passive:true});
+if(typeof fitPanels==='function')fitPanels();
+</script>
+<script>/*scrollfix*/
+function fitPanelsX(){var m=document.querySelector('.main'),ps=document.querySelectorAll('.lp,.rp'),i;if(!m||!ps.length)return;
+ if(window.innerWidth<=940){for(i=0;i<ps.length;i++)ps[i].style.maxHeight='';m.style.paddingBottom='';return}
+ var n=document.querySelector('.note'),nh=n?n.offsetHeight:0,h=Math.max(320,window.innerHeight-nh-104);
+ for(i=0;i<ps.length;i++)ps[i].style.maxHeight=h+'px';
+ var pb=parseFloat(getComputedStyle(m).paddingBottom)||0,top=ps[0].getBoundingClientRect().top+window.scrollY,want=Math.max(40,top-nh-8),extra=document.documentElement.scrollHeight-window.innerHeight-pb;
+ m.style.paddingBottom=Math.max(0,want-extra)+'px'}
+window.fitPanels=fitPanelsX;
+window.addEventListener('resize',fitPanelsX);window.addEventListener('load',fitPanelsX);
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitPanelsX);
+fitPanelsX();
+</script>
+<style>/*namegate*/.ngTag{display:block;margin:2px auto 8px;padding:8px 12px;border-radius:14px;background:#F5F3FF;border:2px dashed #C4B5FD;font-weight:800;color:#4C1D95;line-height:1.6;font-size:.95rem;text-align:center}
+.ngTag small{font-weight:700;color:#6D28D9}
+#ngClock{position:fixed;left:10px;bottom:10px;z-index:90;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.92);border:2px solid #C4B5FD;font:800 .9rem inherit;color:#5B21B6;box-shadow:0 4px 12px rgba(0,0,0,.12);pointer-events:none}</style>
+<div id="ngClock">⏱ 00:00</div>
+<script>/*namegate*/(function(){
+var T0=Date.now(),TEND=0,clk=document.getElementById('ngClock');
+function mmss(ms){var s=Math.floor(ms/1000),m=Math.floor(s/60);s%=60;return (m<10?'0':'')+m+':'+(s<10?'0':'')+s;}
+function dur(ms){var s=Math.floor(ms/1000),m=Math.floor(s/60);s%=60;return (m?m+' phút ':'')+s+' giây';}
+function esc(s){return String(s).replace(/[<>&]/g,'');}
+function clean(s){s=(s||'');try{s=s.normalize('NFC')}catch(e){}return s.replace(/[​-‏⁠﻿]/g,'').replace(/\s+/g,' ').trim();}
+function stamp(){var d=new Date(),p=function(n){return(n<10?'0':'')+n};return p(d.getHours())+':'+p(d.getMinutes())+' · '+p(d.getDate())+'/'+p(d.getMonth()+1)+'/'+d.getFullYear();}
+setInterval(function(){if(!TEND&&clk)clk.textContent='⏱ '+mmss(Date.now()-T0);},1000);
+var orig=window.showResult;if(typeof orig!=='function')return;
+window.showResult=function(){var i=document.getElementById('nIn'),v=clean(i&&i.value);if(i)i.value=v;
+  orig.apply(this,arguments);
+  var ov=document.getElementById('ovR'),rn=document.getElementById('rn');if(!v||!ov||!ov.classList.contains('on')||!rn)return;
+  if(!TEND)TEND=Date.now();if(clk)clk.textContent='⏱ '+mmss(TEND-T0)+' ✔';
+  rn.innerHTML='<span class="ngTag">👤 '+esc(v)+'<br>⏱ Làm bài trong <b>'+dur(TEND-T0)+'</b><br><small>⏰ Nộp lúc '+stamp()+'<br>📘 '+esc(document.title.split('|')[0].trim())+'</small></span>';};
+})();</script>
+<script>/*attempts*/(function(){
+var KEY='att:'+decodeURIComponent(location.pathname),done=false;
+function load(){try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){return []}}
+function save(a){try{localStorage.setItem(KEY,JSON.stringify(a.slice(-20)))}catch(e){}}
+function fmt(d){var p=function(n){return(n<10?'0':'')+n};return p(d.getDate())+'/'+p(d.getMonth()+1);}
+function durOf(tag){var m=(tag.textContent||'').match(/Làm bài trong\s*((?:\d+\s*phút\s*)?\d+\s*giây)/);return m?m[1].replace(/\s+/g,' '):'';}
+function score(){var a=document.getElementById('resScore');if(a)return a.textContent.replace(/\s+/g,'');
+  a=document.getElementById('rS');if(a)return a.textContent.replace(/\s+/g,'');
+  a=document.getElementById('rSc');var b=document.getElementById('rTt');if(a)return a.textContent.trim()+'/'+(b?b.textContent.trim():'?');return '?';}
+function add(tag){
+  if(tag.querySelector('.ngAtt'))return;
+  var a=load();
+  if(!done){done=true;a.push({s:score(),t:Date.now(),d:durOf(tag)});save(a);}
+  var k=a.length,prev=a.slice(Math.max(0,k-6),k-1);
+  var d=document.createElement('div');d.className='ngAtt';
+  d.style.cssText='display:block;margin-top:6px;padding-top:6px;border-top:2px dashed #DDD6FE';
+  d.innerHTML='🔁 <b>Lần nộp thứ '+k+'</b> trên máy này'+(prev.length?'<br><small>'+prev.map(function(x,i){return 'Lần '+(k-prev.length+i)+': <b>'+x.s+'</b>'+(x.d?' · ⏱ làm trong <b>'+x.d+'</b>':'')+' · '+fmt(new Date(x.t))}).join('<br>')+'</small>':'');
+  tag.appendChild(d);
+}
+function check(){var t=document.getElementById('ngTag')||document.querySelector('#rn .ngTag');if(t&&t.textContent.trim())add(t);}
+new MutationObserver(check).observe(document.body,{childList:true,subtree:true,characterData:true});
+})();</script>
+<style id="ms-chi-nen-unlock-style">
+#passwordModal, #password-modal, #pwModal, #pw-modal, #pw-overlay,
+#lockModal, #passModal, #authModal, #auth-modal, #lockOverlay,
+#start-overlay, #intro-overlay, #start-screen,
+.password-modal, .lock-modal, .lock-overlay {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    z-index: -9999 !important;
+}
+</style>
+<script>
+// Remove password lock completely - direct quiz access
+(function() {
+    var initDone = false;
+    var renderCheckDone = false;
+
+    function hideEl(el, hard) {
+        if (!el) return;
+        if (hard) {
+            el.style.setProperty('display', 'none', 'important');
+            el.style.setProperty('visibility', 'hidden', 'important');
+            el.style.setProperty('opacity', '0', 'important');
+            el.style.setProperty('pointer-events', 'none', 'important');
+            el.style.setProperty('z-index', '-9999', 'important');
+        } else {
+            el.style.display = 'none';
+        }
+        el.classList.remove('active', 'show', 'open', 'visible', 'flex');
+    }
+
+    function hasRenderedQuiz() {
+        var containers = document.querySelectorAll(
+            '#quiz-container, #quizContainer, #questions-container, #questionPane, #quiz, #questions, #quiz-body, #questions-wrapper, #quiz-list, #quizList, #exercise-container, #app-container .split-container'
+        );
+        for (var i = 0; i < containers.length; i++) {
+            if (containers[i].querySelectorAll('button, input, select, textarea, .question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .question, .option-btn, .opt-btn, .ans-btn').length > 0) {
+                return true;
+            }
+        }
+        if (document.querySelectorAll('.question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .option-btn, .opt-btn, .ans-btn, .choice-btn').length > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    function ensureQuizRendered() {
+        if (renderCheckDone) return;
+        renderCheckDone = true;
+        if (hasRenderedQuiz()) return;
+
+        if (!hasRenderedQuiz() && typeof buildQuiz === 'function') { try { buildQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof initQuiz === 'function') { try { initQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderApp === 'function') { try { renderApp(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuiz === 'function') { try { renderQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuestions === 'function') { try { renderQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAllQuestions === 'function') { try { renderAllQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAll === 'function') { try { renderAll(); } catch(e){} }
+    }
+
+    function unlockNow() {
+        var pwIds = [
+            'passwordModal', 'password-modal', 'pwModal', 'pw-modal', 'pw-overlay',
+            'lockModal', 'passModal', 'authModal', 'auth-modal', 'lockOverlay',
+            'start-overlay', 'intro-overlay', 'start-screen'
+        ];
+        pwIds.forEach(function(id) {
+            hideEl(document.getElementById(id), true);
+        });
+
+        var modalEls = document.querySelectorAll('.password-modal, .lock-modal, .lock-overlay, #lockOverlay, #auth-modal');
+        modalEls.forEach(function(el) {
+            if (el.id !== 'resultModal' && el.id !== 'result-modal' && el.id !== 'scoreModal') {
+                hideEl(el, true);
+            }
+        });
+
+        ['nameModal', 'name-modal', 'nameInputModal'].forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) hideEl(el, false);
+        });
+
+        var qo = document.getElementById('quiz-overlay');
+        if (qo && (typeof isStarted === 'undefined' || !isStarted)) {
+            qo.style.display = 'none';
+        }
+
+        var mainIds = [
+            'mainContent', 'main-content', 'mainHeader', 'main-header',
+            'app-container', 'app', 'quizApp', 'quiz-wrapper', 'quizContainer', 'quiz-container', 'reading-content'
+        ];
+        mainIds.forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) {
+                el.classList.remove('hidden', 'blur', 'blurred', 'locked');
+                if (el.style.display === 'none') {
+                    el.style.removeProperty('display');
+                }
+                if (window.getComputedStyle(el).display === 'none') {
+                    var hasPane = el.querySelector('.pane, .left-pane, .right-pane, .split-container, .left-panel, .right-panel');
+                    if (id === 'main-content' || id.toLowerCase().includes('header') || el.classList.contains('main-container') || hasPane) {
+                        el.style.setProperty('display', 'flex', 'important');
+                    } else {
+                        el.style.setProperty('display', 'block', 'important');
+                    }
+                }
+            }
+        });
+
+        var qs = document.getElementById('quiz-screen');
+        if (qs) {
+            qs.classList.remove('hidden');
+            if (qs.classList.contains('flex-col')) {
+                qs.classList.add('flex');
+                qs.style.display = 'flex';
+            } else {
+                qs.style.display = 'block';
+            }
+        }
+
+        if (!initDone) {
+            initDone = true;
+
+            if (document.getElementById('start-overlay') && typeof startGame === 'function') {
+                var sn = document.getElementById('student-name') || document.getElementById('studentName');
+                if (sn && !sn.value.trim()) sn.value = 'Học sinh';
+            }
+            if (document.getElementById('name-modal') && typeof startQuiz === 'function') {
+                var sn2 = document.getElementById('student-name');
+                if (sn2 && !sn2.value.trim()) sn2.value = 'Học sinh';
+            }
+
+            if (typeof startQuiz === 'function' && (typeof isStarted === 'undefined' || !isStarted)) { try { startQuiz(); } catch(e){} }
+            if (typeof startGame === 'function') { try { startGame(); } catch(e){} }
+            if (typeof startTest === 'function') { try { startTest(); } catch(e){} }
+            if (typeof startApp === 'function') { try { startApp(); } catch(e){} }
+            if (typeof buildStarfield === 'function') { try { buildStarfield(); } catch(e){} }
+            if (typeof spawnFloats === 'function') { try { spawnFloats(); } catch(e){} }
+            if (typeof spawnFloaters === 'function') { try { spawnFloaters(); } catch(e){} }
+            if (typeof createFloatingBubbles === 'function') { try { createFloatingBubbles(); } catch(e){} }
+            if (typeof initAudio === 'function') { try { initAudio(); } catch(e){} }
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', unlockNow);
+    } else {
+        unlockNow();
+    }
+    if (document.readyState === 'complete') {
+        setTimeout(ensureQuizRendered, 150);
+    } else {
+        window.addEventListener('load', function() {
+            setTimeout(unlockNow, 20);
+            setTimeout(ensureQuizRendered, 150);
+            setTimeout(unlockNow, 300);
+            setTimeout(unlockNow, 700);
+        });
+    }
+    setTimeout(unlockNow, 50);
+    setTimeout(unlockNow, 200);
+    setTimeout(unlockNow, 600);
+    setTimeout(unlockNow, 1100);
+})();
+</script>
+</body>
+</html>

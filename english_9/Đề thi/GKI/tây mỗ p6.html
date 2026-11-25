@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🧁 Tây Mỗ p6 — English 9 Ôn giữa kì I | MS Chí Nên</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+ --ink:#3B2A4A;--dim:#6B5B7B;
+ --pink:#F472B6;--pink-d:#BE185D;
+ --mint:#34D399;--mint-d:#047857;
+ --lilac:#A78BFA;--lilac-d:#6D28D9;
+ --blue:#60A5FA;--blue-d:#1D4ED8;
+ --butter:#EAB308;--butter-d:#854D0E;
+ --card:#FFFFFF;--edge:#F5D0FE;
+ --good:#1B9C5A;--good-bg:#DDF7E6;
+ --bad:#E0503C;--bad-bg:#FFE6E0;
+ --line:#4A3260;
+ --mg:max(0px,calc((100vw - 1240px) / 2));
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito',sans-serif;color:var(--ink);min-height:100vh;overflow-x:hidden;
+ background:radial-gradient(circle,rgba(244,114,182,.16) 2px,transparent 2.6px) 0 0/30px 30px,
+ repeating-linear-gradient(90deg,rgba(255,255,255,.38) 0 46px,transparent 46px 92px),
+ linear-gradient(180deg,#FDE7F3 0%,#F3E8FF 42%,#E0F2FE 72%,#DCFCE7 100%);background-attachment:fixed}
+/* ══ căn bếp mộng mơ: dàn dụng cụ treo, mây, cửa sổ, bảng công thức, bếp trưởng quả trứng, tháp cupcake ══ */
+#kit{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.k-rail{position:absolute;left:0;right:0;top:46px;height:130px}
+.k-rod{position:absolute;left:-10px;right:-10px;top:0;height:11px;border-radius:6px;background:linear-gradient(180deg,#FBCFE8,#F9A8D4);border:3px solid var(--line)}
+.k-ut{position:absolute;top:7px;width:30px;transform-origin:50% 0;animation:kSw 3s ease-in-out infinite alternate}
+@keyframes kSw{from{transform:rotate(-11deg)}to{transform:rotate(11deg)}}
+.k-ut .hk{display:block;margin:0 auto;width:12px;height:9px;border:3px solid #9CA3AF;border-bottom:none;border-radius:10px 10px 0 0}
+.k-ut .hd{display:block;margin:0 auto;width:8px;height:34px;border-radius:4px;border:2px solid var(--line);background:var(--c)}
+.k-ut .tp{display:block;position:relative;margin:-2px auto 0}
+.k-sp .tp{width:20px;height:26px;border-radius:50%;border:2px solid var(--line);background:radial-gradient(circle at 35% 30%,#fff,#E5E7EB 60%,#C4CAD4)}
+.k-tn .tp{width:24px;height:28px;border-radius:4px 4px 10px 10px;border:2px solid var(--line);background:repeating-linear-gradient(90deg,#EEF0F4 0 4px,#A3AAB6 4px 6px)}
+.k-wk .tp{width:22px;height:36px;border:3px solid #9AA3B2;border-radius:50% 50% 50% 50%/35% 35% 65% 65%}
+.k-wk .tp::before{content:'';position:absolute;left:3px;right:3px;top:-3px;bottom:-3px;border:2px solid #9AA3B2;border-radius:inherit}
+.k-wk .tp::after{content:'';position:absolute;left:7px;width:2px;top:-3px;bottom:-3px;background:#9AA3B2}
+.k-ld .hd{height:44px}.k-ld .tp{width:28px;height:15px;border-radius:0 0 15px 15px;border:2px solid var(--line);background:linear-gradient(#EEF0F4,#C4CAD4)}
+.k-mg .hd{width:2px;height:16px;border:none;background:#9CA3AF}
+.k-mg .tp{width:26px;height:24px;border-radius:3px 3px 9px 9px;border:3px solid var(--line);background:var(--c)}
+.k-mg .tp::before{content:'';position:absolute;left:6px;top:6px;width:9px;height:8px;background:#fff;border-radius:50% 50% 0 50%;transform:rotate(45deg);opacity:.9}
+.k-mg .tp::after{content:'';position:absolute;right:-10px;top:4px;width:9px;height:11px;border:3px solid var(--line);border-left:none;border-radius:0 8px 8px 0}
+.k-cloud{position:absolute;left:0;width:var(--w);height:calc(var(--w) * .38);border-radius:999px;background:#fff;opacity:.92;box-shadow:0 4px 0 rgba(167,139,250,.25);animation:kCl linear infinite}
+.k-cloud::before{content:'';position:absolute;left:18%;top:-45%;width:38%;height:110%;border-radius:50%;background:#fff}
+.k-cloud::after{content:'';position:absolute;left:45%;top:-70%;width:42%;height:140%;border-radius:50%;background:#fff}
+@keyframes kCl{from{transform:translateX(-24vw)}to{transform:translateX(124vw)}}
+.k-ht{position:absolute;left:0;top:0;width:var(--s,12px);height:var(--s,12px);background:var(--c,#F9A8D4);transform:rotate(-45deg)}
+.k-ht::before,.k-ht::after{content:'';position:absolute;width:100%;height:100%;border-radius:50%;background:inherit}
+.k-ht::before{top:-50%;left:0}.k-ht::after{left:50%;top:0}
+.k-rise{position:absolute;bottom:-40px;animation:kRise linear infinite}
+@keyframes kRise{0%{transform:translate(0,0);opacity:0}8%{opacity:.9}30%{transform:translate(16px,-32vh)}60%{transform:translate(-14px,-66vh)}92%{opacity:.8}100%{transform:translate(8px,-112vh);opacity:0}}
+.k-spr{position:absolute;top:-20px;width:5px;height:14px;border-radius:3px;animation:kFall linear infinite}
+@keyframes kFall{0%{transform:translate(0,0) rotate(0)}50%{transform:translate(18px,56vh) rotate(360deg)}100%{transform:translate(-10px,114vh) rotate(720deg)}}
+.k-rc{position:absolute;width:32px;height:40px;border-radius:5px;border:2.5px solid var(--line);background:linear-gradient(#fff 0 9px,transparent 9px),repeating-linear-gradient(180deg,#fff 0 6px,#E9D5FF 6px 8px);box-shadow:2px 2px 0 rgba(74,50,96,.25);animation:kBob ease-in-out infinite alternate}
+.k-rc::before{content:'';position:absolute;left:4px;right:4px;top:2px;height:4px;border-radius:2px;background:var(--c,#F472B6)}
+.k-rc::after{content:'';position:absolute;right:-6px;bottom:3px;width:8px;height:15px;border-right:4px solid #10B981;border-bottom:4px solid #10B981;transform:rotate(40deg);animation:kTick 2.6s ease-in-out infinite}
+@keyframes kBob{from{transform:translateY(-14px) rotate(-8deg)}to{transform:translateY(16px) rotate(8deg)}}
+@keyframes kTick{0%,30%{opacity:0;transform:rotate(40deg) scale(.3)}45%,90%{opacity:1;transform:rotate(40deg) scale(1)}100%{opacity:0}}
+.k-st{position:absolute;width:16px;height:16px;clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%);animation:kTw 2.4s ease-in-out infinite}
+@keyframes kTw{0%,100%{transform:scale(.4);opacity:.25}50%{transform:scale(1.15);opacity:1}}
+@keyframes kBlink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
+@keyframes kHop{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes kWave1{from{transform:rotate(130deg)}to{transform:rotate(165deg)}}
+@keyframes kWave2{from{transform:rotate(-130deg)}to{transform:rotate(-165deg)}}
+@keyframes kSway{from{transform:rotate(-6deg)}to{transform:rotate(6deg)}}
+@keyframes kRot{to{transform:rotate(360deg)}}
+/* nhân vật quả trứng */
+.k-eggc{position:relative;width:var(--w,34px);height:calc(var(--w,34px) * 1.3);border-radius:50% 50% 50% 50%/60% 60% 40% 40%;border:3px solid var(--line);background:radial-gradient(circle at 35% 28%,#fff 0 30%,#FAFAF9 55%,#E7E5E4)}
+.k-eggc .ey{position:absolute;top:42%;width:14%;height:14%;border-radius:50%;background:var(--line);animation:kBlink 4s infinite}
+.k-eggc .ey.l{left:26%}.k-eggc .ey.r{right:26%}
+.k-eggc .mo{position:absolute;left:50%;top:60%;width:28%;height:13%;margin-left:-14%;border:2.5px solid var(--line);border-top:none;border-radius:0 0 20px 20px;background:#FB7185}
+.k-eggc .bl{position:absolute;top:57%;width:16%;height:9%;border-radius:50%;background:rgba(244,114,182,.6)}
+.k-eggc .bl.l{left:9%}.k-eggc .bl.r{right:9%}
+/* cupcake */
+.k-cup{position:relative;display:block;width:var(--s,34px);height:calc(var(--s,34px) * 1.15)}
+.k-cup .ln{position:absolute;left:10%;right:10%;bottom:0;height:46%;clip-path:polygon(0 0,100% 0,86% 100%,14% 100%);background:repeating-linear-gradient(90deg,var(--lc,#F472B6) 0 4px,#FFE4F1 4px 8px)}
+.k-cup .fr{position:absolute;left:0;right:0;bottom:40%;height:48%;border-radius:50% 50% 40% 40%/70% 70% 30% 30%;border:2px solid var(--line);
+ background:radial-gradient(circle,#F472B6 0 1.4px,transparent 1.9px) 0 0/7px 6px,radial-gradient(circle,#3B82F6 0 1.4px,transparent 1.9px) 3px 3px/8px 7px,radial-gradient(circle,#10B981 0 1.4px,transparent 1.9px) 5px 1px/9px 8px,var(--fc,#E9D5FF)}
+.k-cup .ch{position:absolute;left:50%;top:-4%;width:28%;height:24%;margin-left:-14%;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff 0 15%,#F43F5E 32%,#BE123C);border:2px solid var(--line)}
+/* cửa sổ có mây bay (màn hình rộng) */
+.k-wide,.k-slim{position:absolute;display:none}
+.k-win{left:calc(var(--mg) / 2 - 100px);top:19vh;width:200px;height:170px}
+.k-win .gls{position:absolute;left:16px;right:16px;top:8px;bottom:26px;border:7px solid #fff;outline:4px solid var(--line);border-radius:14px 14px 4px 4px;background:linear-gradient(180deg,#7DD3FC,#BAE6FD 60%,#E0F2FE);overflow:hidden}
+.k-win .sun{position:absolute;right:12px;top:10px;width:24px;height:24px;border-radius:50%;background:#FEF9C3;box-shadow:0 0 0 6px rgba(254,249,195,.55),0 0 22px #FEF08A}
+.k-win .xb,.k-win .yb{position:absolute;background:#fff}
+.k-win .xb{left:0;right:0;top:50%;height:6px;margin-top:-3px}.k-win .yb{top:0;bottom:0;left:50%;width:6px;margin-left:-3px}
+.k-wc{position:absolute;left:0;width:var(--w,58px);height:calc(var(--w,58px) * .38);border-radius:999px;background:#fff;animation:kWc 9s linear infinite}
+.k-wc::before{content:'';position:absolute;left:20%;top:-50%;width:42%;height:120%;border-radius:50%;background:#fff}
+@keyframes kWc{from{transform:translateX(-70px)}to{transform:translateX(190px)}}
+.k-cur{position:absolute;top:0;width:44px;height:120px;border:3px solid var(--line);background:radial-gradient(circle at 50% 0,#fff 0 4px,transparent 5px) 0 0/14px 14px,linear-gradient(180deg,#F9A8D4,#F472B6);transform-origin:50% 0;animation:kSway 3.4s ease-in-out infinite alternate}
+.k-cur.l{left:0;border-radius:6px 6px 30px 6px}.k-cur.r{right:0;border-radius:6px 6px 6px 30px;animation-delay:-1.7s}
+.k-win .sill{position:absolute;left:4px;right:4px;bottom:12px;height:16px;border-radius:6px;background:#C4B5FD;border:3px solid var(--line)}
+.k-win .pot{position:absolute;left:84px;bottom:26px;width:32px;height:26px;border-radius:4px 4px 10px 10px;background:#93C5FD;border:3px solid var(--line)}
+.k-win .stem{position:absolute;left:12px;bottom:22px;width:4px;height:30px;background:#10B981;transform-origin:50% 100%;animation:kSway 1.6s ease-in-out infinite alternate}
+.k-win .flw{position:absolute;left:3px;bottom:46px;width:22px;height:22px;border-radius:50%;background:radial-gradient(circle,#FEF08A 0 22%,transparent 24%),conic-gradient(#F472B6 0 60deg,#FBCFE8 60deg 120deg,#F472B6 120deg 180deg,#FBCFE8 180deg 240deg,#F472B6 240deg 300deg,#FBCFE8 300deg);border:2px solid var(--line);animation:kRot 6s linear infinite}
+/* bảng công thức có dấu tích */
+.k-brd{right:calc(var(--mg) / 2 - 100px);top:19vh;width:200px;height:160px;border:5px solid #C4B5FD;border-radius:16px;box-shadow:4px 4px 0 var(--line);
+ background:radial-gradient(circle,rgba(167,139,250,.28) 1px,transparent 1.6px) 0 0/8px 8px,#F5F3FF}
+.k-brd .t{position:absolute;left:0;right:0;top:4px;text-align:center;font-family:'Baloo 2',cursive;font-weight:800;font-size:.95rem;letter-spacing:1px;color:var(--lilac-d)}
+.k-card{position:absolute;top:34px;width:52px;height:70px;border:2.5px solid var(--line);border-radius:6px;background:repeating-linear-gradient(180deg,#fff 0 9px,#FBCFE8 9px 11px);transform:rotate(var(--r));animation:kSway 3s ease-in-out infinite alternate}
+.k-card .pin{position:absolute;left:50%;top:-8px;width:13px;height:13px;margin-left:-6px;border-radius:50%;border:2px solid var(--line)}
+.k-card .tk{position:absolute;right:6px;bottom:10px;width:12px;height:22px;border-right:5px solid #10B981;border-bottom:5px solid #10B981;transform:rotate(40deg);animation:kTick 3.6s ease-in-out infinite}
+/* bếp trưởng quả trứng vẫy tay */
+.k-chef{left:calc(var(--mg) / 2 - 50px);top:52vh;width:100px;height:170px;animation:kHop 1.4s ease-in-out infinite}
+.k-chef .k-eggc{position:absolute;left:5px;top:40px;z-index:2}
+.k-hat{position:absolute;left:50%;top:6px;width:60px;height:44px;margin-left:-30px;z-index:3}
+.k-hat .pf{position:absolute;left:0;right:0;top:0;height:30px;border-radius:50% 50% 40% 40%;background:#fff;border:3px solid var(--line)}
+.k-hat .bd{position:absolute;left:9px;right:9px;bottom:0;height:18px;border-radius:4px;background:#fff;border:3px solid var(--line)}
+.k-arm{position:absolute;left:50%;top:98px;width:6px;height:46px;margin-left:-3px;background:var(--line);border-radius:4px;transform-origin:50% 0;z-index:1}
+.k-arm::after{content:'';position:absolute;bottom:-6px;left:-5px;width:16px;height:16px;border-radius:50%;background:#fff;border:2px solid var(--line)}
+.k-arm.l{animation:kWave1 .5s ease-in-out infinite alternate}.k-arm.r{animation:kWave2 .7s ease-in-out infinite alternate}
+.k-chef .ft{position:absolute;bottom:2px;width:22px;height:12px;border-radius:10px 10px 4px 4px;background:#F9A8D4;border:2px solid var(--line)}
+/* tháp cupcake */
+.k-stand{right:calc(var(--mg) / 2 - 75px);top:52vh;width:150px;height:190px}
+.k-stand .pole{position:absolute;left:72px;top:40px;width:7px;height:130px;background:#C4B5FD;border:2px solid var(--line);border-radius:4px}
+.k-stand .tr{position:absolute;height:12px;border-radius:50%;background:linear-gradient(#F5F3FF,#DDD6FE);border:3px solid var(--line)}
+.k-stand .cp{position:absolute;animation:kHop 1.6s ease-in-out infinite}
+.k-yum{position:absolute;font-family:'Baloo 2',cursive;font-weight:800;font-size:.95rem;color:var(--pink-d);background:#fff;border:3px solid var(--line);border-radius:999px;padding:0 10px;line-height:1.5;animation:kPopTxt 2.6s ease-in-out infinite}
+@keyframes kPopTxt{0%,40%{transform:scale(0);opacity:0}50%{transform:scale(1.25);opacity:1}70%,85%{transform:scale(1);opacity:1}100%{transform:scale(.6);opacity:0}}
+/* bản thu gọn cho lề hẹp (1366) */
+.k-crock{left:calc(var(--mg) / 2 - 22px);top:30vh;width:44px;height:96px}
+.k-crock .jar{position:absolute;left:0;bottom:0;width:44px;height:48px;border:3px solid var(--line);border-radius:6px 6px 16px 16px;background:linear-gradient(180deg,#DDD6FE,#C4B5FD);z-index:2}
+.k-crock .jar::after{content:'';position:absolute;left:13px;top:13px;width:12px;height:12px;background:#F472B6;transform:rotate(-45deg);box-shadow:-6px 0 0 -0px #F472B6}
+.k-crock .u{position:absolute;bottom:30px;transform-origin:50% 100%;animation:kSway 1.8s ease-in-out infinite alternate}
+.k-crock .u .hd{display:block;margin:0 auto;width:6px;height:36px;border-radius:3px;border:2px solid var(--line);background:var(--c)}
+.k-crock .u .tp{display:block;margin:0 auto -2px;width:16px;height:20px;border-radius:50%;border:2px solid var(--line);background:#E5E7EB}
+.k-crock .u.w .tp{border-radius:50% 50% 50% 50%/65% 65% 35% 35%;background:repeating-linear-gradient(90deg,#fff 0 3px,#A3AAB6 3px 5px)}
+.k-crock .u.t .tp{border-radius:8px 8px 3px 3px;background:repeating-linear-gradient(90deg,#fff 0 3px,#A3AAB6 3px 5px)}
+.k-shk{right:calc(var(--mg) / 2 - 24px);top:30vh;width:48px;height:70px}
+.k-shk .s{position:absolute;bottom:0;width:22px;height:44px;border:3px solid var(--line);border-radius:10px 10px 6px 6px;animation:kHop .9s ease-in-out infinite}
+.k-shk .s::before{content:'';position:absolute;left:2px;right:2px;top:-9px;height:9px;border-radius:8px 8px 0 0;background:radial-gradient(circle,var(--line) 0 1.4px,transparent 1.8px) 0 0/6px 5px,#E5E7EB;border:2px solid var(--line);border-bottom:none}
+.k-shk .s .ey{position:absolute;top:14px;width:4px;height:5px;border-radius:50%;background:var(--line)}
+.k-shk .s .ey.l{left:4px}.k-shk .s .ey.r{right:4px}
+.k-shk .s .mo{position:absolute;left:6px;top:22px;width:8px;height:4px;border:2px solid var(--line);border-top:none;border-radius:0 0 8px 8px}
+.k-megg{left:calc(var(--mg) / 2 - 17px);top:64vh;animation:kHop 1s ease-in-out infinite}
+.k-mcup{right:calc(var(--mg) / 2 - 20px);top:64vh;animation:kHop 1.3s ease-in-out infinite}
+@media(min-width:1480px){.k-wide{display:block}}
+@media(min-width:941px) and (max-width:1479px){.k-slim{display:block}}
+/* ══ mặt bếp: tủ lạnh vẫy cửa, trứng nhảy vào bát, chảo trứng tráng, bánh kếp lật, máy trộn bột hồng, lò nướng cupcake ══ */
+#gnd{position:fixed;left:0;right:0;bottom:0;height:300px;z-index:1;pointer-events:none;overflow:hidden}
+.k-bsp{position:absolute;left:0;right:0;bottom:34px;height:150px;opacity:.75;
+ background:conic-gradient(#FCE7F3 25%,#fff 0 50%,#FCE7F3 0 75%,#fff 0) 0 0/30px 30px;-webkit-mask-image:linear-gradient(transparent,#000 55%);mask-image:linear-gradient(transparent,#000 55%)}
+.k-floor{position:absolute;left:0;right:0;bottom:0;height:34px;border-top:5px solid var(--line);background:conic-gradient(#F9A8D4 25%,#fff 0 50%,#F9A8D4 0 75%,#fff 0) 0 0/26px 26px}
+.k-floor::before{content:'';position:absolute;left:0;right:0;top:0;height:7px;background:#A7F3D0;border-bottom:3px solid var(--line)}
+.k-sh{position:absolute;animation:kSteam 3s ease-out infinite}
+@keyframes kSteam{0%{transform:translate(0,0) scale(.4);opacity:0}20%{opacity:.95}100%{transform:translate(var(--dx,8px),-86px) scale(1.25);opacity:0}}
+/* tủ lạnh */
+.k-frg{position:absolute;left:1vw;bottom:34px;width:112px;height:216px;perspective:520px}
+.k-frg .bx{position:absolute;inset:0;border:4px solid var(--line);border-radius:20px 20px 8px 8px;background:#DBEAFE}
+.k-frg .in{position:absolute;left:6px;right:6px;top:70px;bottom:8px;border-radius:6px;background:linear-gradient(#FFFDF2,#FEF9C3);box-shadow:inset 0 0 14px rgba(253,224,71,.6)}
+.k-frg .in .sh{position:absolute;left:0;right:0;height:4px;background:#BFDBFE}
+.k-frg .milk{position:absolute;left:10px;bottom:76px;width:22px;height:36px;border:2px solid var(--line);border-radius:3px;background:linear-gradient(#fff 0 40%,#93C5FD 40% 60%,#fff 60%)}
+.k-frg .milk::before{content:'';position:absolute;left:-2px;right:-2px;top:-10px;height:10px;background:#fff;border:2px solid var(--line);clip-path:polygon(0 100%,50% 0,100% 100%)}
+.k-frg .berry{position:absolute;bottom:80px;width:14px;height:16px;border-radius:50% 50% 50% 50%/40% 40% 60% 60%;background:radial-gradient(circle,#FEF9C3 0 1px,transparent 1.5px) 0 0/5px 5px,#F43F5E;border:2px solid var(--line)}
+.k-frg .cake{position:absolute;left:12px;bottom:12px;width:60px;height:30px;border:2px solid var(--line);border-radius:6px 6px 3px 3px;background:linear-gradient(#fff 0 30%,#F9A8D4 30% 55%,#FBCFE8 55%)}
+.k-frg .hand{position:absolute;right:4px;bottom:44px;width:20px;height:24px;border-radius:10px 10px 8px 8px;background:#fff;border:2px solid var(--line);transform-origin:50% 100%;animation:kSway .3s ease-in-out infinite alternate}
+.k-frg .fz{position:absolute;left:0;right:0;top:0;height:66px;border-bottom:4px solid var(--line);border-radius:16px 16px 0 0;background:linear-gradient(135deg,#BFDBFE,#93C5FD);z-index:3}
+.k-frg .fz .ey{position:absolute;top:22px;width:9px;height:12px;border-radius:50%;background:var(--line);animation:kBlink 3.6s infinite}
+.k-frg .fz .ey.l{left:34px}.k-frg .fz .ey.r{left:62px}
+.k-frg .fz .mo{position:absolute;left:44px;top:38px;width:18px;height:9px;border:3px solid var(--line);border-top:none;border-radius:0 0 18px 18px;background:#FB7185}
+.k-frg .dr{position:absolute;left:-4px;right:-4px;top:62px;bottom:-4px;border:4px solid var(--line);border-radius:0 0 8px 8px;background:linear-gradient(135deg,#BFDBFE,#93C5FD);transform-origin:0 50%;animation:kDoor 6s ease-in-out infinite;z-index:4}
+.k-frg .dr::before{content:'';position:absolute;right:10px;top:16px;width:8px;height:44px;border-radius:4px;background:#F472B6;border:2px solid var(--line)}
+.k-frg .dr .mag{position:absolute;width:12px;height:12px;transform:rotate(-45deg)}
+.k-frg .dr .mag::before,.k-frg .dr .mag::after{content:'';position:absolute;width:12px;height:12px;border-radius:50%;background:inherit}
+.k-frg .dr .mag::before{top:-6px;left:0}.k-frg .dr .mag::after{left:6px;top:0}
+@keyframes kDoor{0%,48%,100%{transform:rotateY(0)}56%{transform:rotateY(-72deg)}62%{transform:rotateY(-38deg)}68%{transform:rotateY(-72deg)}74%{transform:rotateY(-38deg)}82%{transform:rotateY(-72deg)}92%{transform:rotateY(0)}}
+/* trứng nhảy vào bát, phới lồng đánh trứng */
+.k-egs{position:absolute;left:calc(1vw + 128px);bottom:34px;width:220px;height:180px}
+.k-egs .egg{position:absolute;left:0;bottom:0;animation:kEggHop 4.5s ease-in-out infinite;opacity:0}
+@keyframes kEggHop{0%{transform:translate(0,0) rotate(0);opacity:0}6%{opacity:1}13%{transform:translate(20px,-26px)}20%{transform:translate(40px,0)}27%{transform:translate(60px,-26px)}34%{transform:translate(80px,0)}50%{transform:translate(118px,-92px) rotate(25deg)}62%{transform:translate(146px,-34px) rotate(70deg) scale(.75);opacity:1}68%,100%{transform:translate(146px,-14px) rotate(90deg) scale(.3);opacity:0}}
+.k-bowl{position:absolute;right:0;bottom:0;width:116px;height:60px;border:4px solid var(--line);border-top:none;border-radius:0 0 62px 62px;background:linear-gradient(180deg,#93C5FD,#60A5FA);z-index:3}
+.k-bowl::before{content:'';position:absolute;left:-12px;right:-12px;top:-12px;height:22px;border-radius:50%;border:4px solid var(--line);background:radial-gradient(ellipse at center,#FEF9C3 0 52%,#DBEAFE 54%)}
+.k-bowl::after{content:'';position:absolute;left:46px;top:26px;width:14px;height:14px;background:#FBCFE8;transform:rotate(-45deg);border-radius:3px}
+.k-whk{position:absolute;right:46px;bottom:34px;width:30px;height:100px;transform-origin:50% 100%;animation:kWhk .45s ease-in-out infinite alternate;z-index:2}
+@keyframes kWhk{from{transform:rotate(-20deg)}to{transform:rotate(18deg)}}
+.k-whk .hd{position:absolute;left:11px;top:0;width:9px;height:46px;border-radius:5px;background:#F472B6;border:2px solid var(--line)}
+.k-whk .lo{position:absolute;left:3px;top:42px;width:24px;height:46px;border:3px solid #8C95A5;border-radius:50% 50% 50% 50%/30% 30% 70% 70%;animation:kSpinX .3s linear infinite}
+.k-whk .lo::before{content:'';position:absolute;left:4px;right:4px;top:-3px;bottom:-3px;border:2px solid #8C95A5;border-radius:inherit}
+@keyframes kSpinX{0%{transform:scaleX(1)}50%{transform:scaleX(.25)}100%{transform:scaleX(1)}}
+.k-plop{position:absolute;right:40px;bottom:66px;width:22px;height:22px;background:#F9A8D4;clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%);animation:kPlop 1.5s ease-out infinite;z-index:4}
+@keyframes kPlop{0%,30%{transform:scale(0);opacity:0}40%{transform:scale(1.3);opacity:1}70%,100%{transform:scale(.4) translateY(-20px);opacity:0}}
+/* chảo trứng tráng tự gập rồi trượt ra đĩa */
+.k-pan{position:absolute;left:29vw;bottom:34px;width:260px;height:170px}
+.k-stv{position:absolute;left:0;bottom:0;width:156px;height:22px;border:4px solid var(--line);border-radius:8px;background:linear-gradient(#E9D5FF,#C4B5FD)}
+.k-stv::before,.k-stv::after{content:'';position:absolute;top:3px;width:10px;height:10px;border-radius:50%;background:#F472B6;border:2px solid var(--line)}
+.k-stv::before{left:10px}.k-stv::after{right:10px}
+.k-flm{position:absolute;bottom:22px;width:12px;height:17px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;background:radial-gradient(circle at 50% 70%,#fff 0 20%,#93C5FD 42%,#A78BFA);transform-origin:50% 100%;animation:kFlm .22s ease-in-out infinite alternate}
+@keyframes kFlm{from{transform:scale(1,1)}to{transform:scale(.8,1.25)}}
+.k-pn{position:absolute;left:14px;bottom:38px;width:128px;height:24px;border:4px solid var(--line);border-top:none;border-radius:0 0 54px 54px/0 0 24px 24px;background:linear-gradient(#8B7FA8,#5B4E7A)}
+.k-pn::before{content:'';position:absolute;left:-7px;right:-7px;top:-7px;height:10px;border-radius:6px;background:#A79BC6;border:3px solid var(--line)}
+.k-pn .hdl{position:absolute;left:-84px;top:-6px;width:80px;height:13px;border-radius:7px;background:var(--pink);border:3px solid var(--line)}
+.k-omw{position:absolute;left:32px;bottom:62px;width:92px;height:18px;animation:kOmSl 7s ease-in-out infinite}
+.k-om{position:absolute;inset:0;perspective:200px}
+.k-om .a,.k-om .b{position:absolute;top:0;height:18px;width:46px;background:radial-gradient(circle,#F9A8D4 0 2.4px,transparent 3px) 4px 4px/14px 10px,radial-gradient(circle at 30% 40%,#FEFCE8,#FEF08A 75%);border:3px solid #D4B83A}
+.k-om .a{left:0;border-radius:18px 0 0 18px/9px 0 0 9px}
+.k-om .b{left:46px;border-radius:0 18px 18px 0/0 9px 9px 0;transform-origin:0 50%;animation:kOmF 7s ease-in-out infinite;z-index:2}
+@keyframes kOmF{0%,26%{transform:rotateY(0)}36%,91%{transform:rotateY(-180deg)}92%,100%{transform:rotateY(0)}}
+@keyframes kOmSl{0%,40%{transform:translate(0,0) rotate(0);opacity:1}52%{transform:translate(78px,-36px) rotate(14deg)}62%,86%{transform:translate(146px,48px) rotate(0)}90%{transform:translate(146px,48px);opacity:0}91%{transform:translate(0,0);opacity:0}100%{transform:translate(0,0);opacity:1}}
+.k-pl{position:absolute;bottom:0;height:16px;border-radius:50%;background:radial-gradient(ellipse at center,#fff 0 55%,#EDE9FE 57%);border:3px solid var(--line)}
+.k-pan .k-pl{left:166px;width:92px}
+.k-sizz{position:absolute;bottom:84px;width:8px;height:8px;border-radius:50%;border:2px solid #fff;animation:kSteam 1.4s ease-out infinite}
+/* bánh kếp lật */
+.k-pck{position:absolute;left:52vw;bottom:34px;width:130px;height:230px}
+.k-pck .k-pl{left:6px;width:118px}
+.k-stk{position:absolute;left:27px;bottom:10px;width:76px}
+.k-pc{display:block;width:76px;height:15px;margin-top:-4px;border-radius:50%;border:3px solid var(--line);background:var(--c)}
+.k-stk .cr{display:block;margin:0 auto -6px;width:34px;height:18px;border-radius:50% 50% 30% 30%;background:#fff;border:3px solid var(--line);position:relative}
+.k-stk .cr::after{content:'';position:absolute;left:9px;top:-12px;width:12px;height:13px;border-radius:50% 50% 50% 50%/40% 40% 60% 60%;background:#F43F5E;border:2px solid var(--line)}
+.k-fly{position:absolute;left:27px;bottom:94px;animation:kFlip 2.6s ease-in-out infinite}
+.k-fly .k-pc{margin:0}
+@keyframes kFlip{0%,14%{transform:translateY(0) rotateX(0)}50%{transform:translateY(-122px) rotateX(540deg)}86%,100%{transform:translateY(0) rotateX(1080deg)}}
+.k-flipw{position:absolute;left:78px;bottom:196px;font-family:'Baloo 2',cursive;font-weight:800;font-size:.85rem;color:var(--lilac-d);background:#fff;border:3px solid var(--line);border-radius:999px;padding:0 8px;line-height:1.5;animation:kFlipW 2.6s ease-in-out infinite}
+@keyframes kFlipW{0%,38%{transform:scale(0);opacity:0}48%{transform:scale(1.2);opacity:1}62%{transform:scale(1);opacity:1}72%,100%{transform:scale(.5);opacity:0}}
+/* máy trộn bột hồng */
+.k-mix{position:absolute;right:calc(1vw + 178px);bottom:34px;width:150px;height:176px}
+.k-mix .bs{position:absolute;left:0;bottom:0;width:146px;height:18px;border-radius:9px;background:#C4B5FD;border:3px solid var(--line)}
+.k-mix .cl{position:absolute;left:12px;bottom:14px;width:32px;height:122px;border-radius:16px 16px 6px 6px;background:linear-gradient(90deg,#DDD6FE,#C4B5FD);border:3px solid var(--line)}
+.k-mix .hd{position:absolute;left:4px;top:18px;width:132px;height:46px;border-radius:26px 24px 18px 24px;background:linear-gradient(180deg,#E9D5FF,#C4B5FD);border:3px solid var(--line);animation:kVib .14s linear infinite alternate;z-index:2}
+.k-mix .hd::before{content:'';position:absolute;left:10px;right:16px;top:18px;height:7px;border-radius:4px;background:#F9A8D4}
+.k-mix .hd::after{content:'';position:absolute;left:14px;top:6px;width:10px;height:10px;border-radius:50%;background:#fff;border:2px solid var(--line)}
+@keyframes kVib{from{transform:translateX(-1px) rotate(-.6deg)}to{transform:translateX(1px) rotate(.6deg)}}
+.k-mix .bt{position:absolute;left:96px;top:60px;width:12px;height:52px;border:3px solid #8C95A5;border-radius:6px 6px 50% 50%;animation:kSpinX .22s linear infinite;z-index:1}
+.k-mix .bw{position:absolute;left:62px;bottom:15px;width:82px;height:54px;border:4px solid var(--line);border-top:none;border-radius:0 0 42px 42px;background:linear-gradient(180deg,#F8FAFC,#CBD5E1);z-index:2}
+.k-mix .bat{position:absolute;left:-8px;right:-8px;top:-10px;height:20px;border-radius:50%;border:3px solid var(--line);
+ background:repeating-linear-gradient(100deg,#F472B6 0 9px,#FBCFE8 9px 18px,#fff 18px 23px);background-size:46px 100%;animation:kBat .5s linear infinite}
+@keyframes kBat{to{background-position:46px 0}}
+.k-mix .spl{position:absolute;top:96px;width:8px;height:8px;border-radius:50%;background:#F472B6;animation:kSpl 1.5s ease-out infinite;z-index:3}
+@keyframes kSpl{0%{transform:translate(0,0);opacity:0}15%{opacity:1}60%{transform:translate(var(--dx),-30px)}100%{transform:translate(calc(var(--dx) * 1.5),8px);opacity:0}}
+/* lò nướng bạc hà, cupcake bay lên, chuông "ding" */
+.k-ovn{position:absolute;right:1vw;bottom:34px;width:166px;height:240px}
+.k-ovn .bx{position:absolute;left:0;bottom:0;width:166px;height:152px;border:4px solid var(--line);border-radius:18px;background:linear-gradient(180deg,#A7F3D0,#6EE7B7);z-index:2}
+.k-ovn .pnl{position:absolute;left:8px;right:8px;top:8px;height:28px;border-radius:10px;background:#ECFDF5;border:3px solid var(--line)}
+.k-ovn .dl{position:absolute;top:3px;width:17px;height:17px;border-radius:50%;border:2px solid var(--line);animation:kRot 3s linear infinite}
+.k-ovn .dl::after{content:'';position:absolute;left:5px;top:0;width:3px;height:7px;background:var(--line)}
+.k-ovn .tm{position:absolute;right:8px;top:3px;font-family:'Baloo 2',cursive;font-weight:800;font-size:.7rem;line-height:16px;padding:0 5px;border-radius:5px;background:#4A3260;color:#A7F3D0;animation:kBlinkTm 1s steps(1) infinite}
+@keyframes kBlinkTm{50%{color:#F9A8D4}}
+.k-ovn .dr{position:absolute;left:12px;right:12px;top:46px;bottom:12px;border:4px solid var(--line);border-radius:12px;background:#F0FDFA}
+.k-ovn .dr::before{content:'';position:absolute;left:24px;right:24px;top:6px;height:8px;border-radius:4px;background:#F472B6;border:2px solid var(--line)}
+.k-ovn .gw{position:absolute;left:10px;right:10px;top:20px;bottom:8px;border:3px solid var(--line);border-radius:10px;background:radial-gradient(circle at 50% 75%,#FCE7F3,#F9A8D4 45%,#C084FC);animation:kGlow 1.5s ease-in-out infinite alternate;display:grid;place-items:center}
+@keyframes kGlow{from{filter:brightness(.92)}to{filter:brightness(1.15)}}
+.k-ovn .cr{position:absolute;bottom:126px;opacity:0;animation:kCupUp 4.5s ease-out infinite;z-index:1}
+@keyframes kCupUp{0%{transform:translateY(40px) scale(.6);opacity:0}18%{opacity:1}55%{transform:translateY(-52px) scale(1)}80%{transform:translateY(-70px) scale(1);opacity:1}100%{transform:translateY(-92px) scale(.9);opacity:0}}
+.k-bell{position:absolute;right:6px;bottom:150px;width:34px;height:26px;z-index:3;transform-origin:50% 100%;animation:kRing 1.5s ease-in-out infinite}
+.k-bell::before{content:'';position:absolute;left:3px;right:3px;bottom:5px;height:19px;border-radius:16px 16px 2px 2px;background:radial-gradient(circle at 35% 30%,#fff,#DDD6FE 60%,#A78BFA);border:3px solid var(--line)}
+.k-bell::after{content:'';position:absolute;left:0;right:0;bottom:0;height:7px;border-radius:3px;background:#F472B6;border:2px solid var(--line)}
+@keyframes kRing{0%,60%,100%{transform:rotate(0)}66%{transform:rotate(-16deg)}72%{transform:rotate(16deg)}78%{transform:rotate(-10deg)}84%{transform:rotate(8deg)}}
+.k-ding{position:absolute;right:30px;bottom:178px;font-family:'Baloo 2',cursive;font-weight:800;font-size:.9rem;color:var(--mint-d);background:#fff;border:3px solid var(--line);border-radius:999px;padding:0 9px;line-height:1.5;z-index:3;animation:kDing 1.5s ease-in-out infinite}
+@keyframes kDing{0%,58%{transform:scale(0);opacity:0}66%{transform:scale(1.25);opacity:1}86%{transform:scale(1);opacity:1}100%{transform:scale(.5);opacity:0}}
+@media(max-width:1180px){.k-mix{display:none}.k-pck{left:56vw}}
+@media(max-width:940px){#gnd{height:190px}.k-pck,.k-egs .egg:nth-child(n+3){display:none}.k-pan{left:auto;right:calc(1vw + 170px)}.k-egs{left:calc(1vw + 118px)}}
+@media(prefers-reduced-motion:reduce){#kit *,#gnd *{animation:none!important}}
+/* ── sticky note ── */
+.note{position:sticky;top:0;z-index:50;padding:6px 14px;text-align:center;
+ background:linear-gradient(90deg,#DB2777,#C026D3 22%,#7C3AED 46%,#2563EB 70%,#0D9488 94%);box-shadow:0 4px 0 var(--line)}
+.note .in{display:flex;align-items:center;gap:10px;max-width:1400px;margin:0 auto;justify-content:center;height:calc(.95rem * 1.45 * 2);overflow:hidden}
+.note .tg{flex:none;background:#FFE4F0;color:#9C1747;font-weight:900;font-size:.8rem;padding:3px 12px;border:3px solid #9C1747;border-radius:999px;white-space:nowrap;box-shadow:2px 2px 0 #9C1747}
+.note .tx{color:#fff;font-weight:800;font-size:.95rem;line-height:1.45;text-shadow:0 1px 4px rgba(0,0,0,.45);transition:opacity .25s}
+/* ── compact header ── */
+header{position:relative;z-index:10;max-width:1240px;margin:8px auto 6px;background:var(--card);
+ border:4px solid var(--line);border-radius:16px;box-shadow:5px 5px 0 var(--pink);
+ padding:5px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:64px}
+header h1{font-family:'Baloo 2',cursive;font-size:clamp(1.05rem,1.8vw,1.35rem);font-weight:800;color:var(--pink-d);line-height:1.25;white-space:nowrap}
+header h1 .p1{font-family:'Baloo 2',cursive;font-size:.72rem;vertical-align:middle;background:var(--lilac);color:#fff;padding:1px 9px;margin-left:8px;border:3px solid var(--line);border-radius:999px;box-shadow:2px 2px 0 var(--line)}
+header .by{font-size:.8rem;color:var(--dim);font-weight:800;margin-top:1px}
+header .by b{color:var(--pink-d)}
+.hright{display:flex;align-items:center;gap:10px}
+.chips{display:grid;grid-template-columns:auto auto;gap:4px 6px}
+.chip{font-family:'Baloo 2',cursive;font-weight:800;font-size:.74rem;line-height:1.1;padding:3px 9px;border:3px solid var(--line);border-radius:999px;box-shadow:2px 2px 0 var(--line);white-space:nowrap;color:#fff;text-align:center;text-shadow:0 1px 2px rgba(0,0,0,.25)}
+.chip.c1{background:var(--pink)}.chip.c2{background:var(--blue)}.chip.c3{background:var(--mint)}.chip.c4{background:var(--lilac)}
+.gauge{position:relative;background:radial-gradient(circle at 35% 30%,#FFFFFF,#FBCFE8 55%,#F472B6);border:4px solid var(--pink-d);border-radius:50%;width:58px;height:58px;
+ display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:3px 3px 0 var(--line);flex:none}
+.gauge::before{content:'🧁';position:absolute;top:-12px;right:-9px;font-size:15px}
+.gauge .num{font-family:'Baloo 2',cursive;font-size:1rem;color:#6B0F3A;font-weight:800;line-height:1}
+.gauge .lbl{font-size:.55rem;font-weight:900;color:var(--lilac-d);text-transform:uppercase}
+@media(max-width:1180px){header{flex-wrap:wrap}header h1{white-space:normal}}
+/* ── layout ── */
+.main{position:relative;z-index:5;max-width:1240px;margin:0 auto;display:flex;gap:18px;padding:4px 16px 0;align-items:flex-start}
+.lp,.rp{max-height:calc(100vh - 240px);overflow-y:auto;padding-right:4px}
+.lp{flex:0 0 48%}
+.rp{flex:1;min-width:0}
+.lp::-webkit-scrollbar,.rp::-webkit-scrollbar{width:9px}
+.lp::-webkit-scrollbar-thumb,.rp::-webkit-scrollbar-thumb{background:#F9A8D4;border-radius:6px;border:2px solid var(--lilac)}
+.slbl{font-family:'Baloo 2',cursive;font-size:1.1rem;font-weight:800;color:var(--lilac-d);margin-bottom:8px;display:flex;align-items:center;gap:10px;
+ background:rgba(255,255,255,.94);border-radius:999px;padding:1px 14px;border:3px solid var(--line)}
+.slbl::after{content:'';flex:1;height:8px;border-radius:8px;background:repeating-linear-gradient(90deg,#F472B6 0 10px,#A78BFA 10px 20px,#60A5FA 20px 30px,#34D399 30px 40px,#FDE68A 40px 50px)}
+@media(max-width:940px){.main{flex-direction:column;padding-bottom:210px}.lp{flex:1 1 auto;width:100%}.lp,.rp{max-height:none!important}}
+/* ── passage cards ── */
+.pc{position:relative;background:var(--card);border:4px solid var(--edge);border-radius:18px;padding:26px 18px 14px;margin:20px 0 22px;box-shadow:6px 6px 0 rgba(74,50,96,.2)}
+.pc .stamp{position:absolute;top:-22px;right:18px;width:52px;height:52px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,#FDF2F8);
+ border:4px solid currentColor;display:grid;place-items:center;font-size:24px;box-shadow:3px 3px 0 var(--line)}
+.lvl{position:absolute;top:-15px;left:18px;font-family:'Baloo 2',cursive;font-weight:800;font-size:.85rem;line-height:1.2;background:#FBCFE8;color:#831843;border:3px solid #831843;border-radius:999px;padding:3px 12px;box-shadow:3px 3px 0 #831843}
+.ptitle{font-family:'Baloo 2',cursive;font-size:1.3rem;font-weight:800;margin-bottom:4px}
+.pins{font-size:.92rem;color:var(--dim);font-style:italic;font-weight:700;margin-bottom:10px;line-height:1.6}
+.pblk{border-left:7px solid;border-radius:12px;padding:12px 14px 4px;margin:16px 0;position:relative}
+.pblk .em{position:absolute;top:-13px;right:10px;font-size:1.2rem;background:#fff;border:3px solid var(--line);border-radius:50%;width:36px;height:36px;display:grid;place-items:center;box-shadow:2px 2px 0 var(--line)}
+.pblk .ptag{position:absolute;top:-12px;left:12px;font-family:'Baloo 2',cursive;font-size:.74rem;font-weight:800;line-height:1.2;color:#fff;background:var(--line);border-radius:999px;padding:2px 10px}
+.paragraph{font-size:1.16rem;line-height:1.95;margin-bottom:10px;text-align:justify}
+.paragraph b{padding:1px 6px;border-radius:7px;white-space:nowrap}
+.bk-pink{background:#FFD6EA;color:#9D174D}.bk-mint{background:#C9F7E3;color:#065F46}.bk-lilac{background:#E9DDFF;color:#5B21B6}
+.bk-blue{background:#D6E8FF;color:#1E40AF}.bk-butter{background:#FFF1A8;color:#854D0E}
+.btr{font-family:'Baloo 2',cursive;font-size:.85rem;background:linear-gradient(135deg,#FFC9DE,#E6D9FF 50%,#C7F0E0);border:3px solid var(--pink);color:#3B2A4A;
+ padding:5px 16px;border-radius:999px;cursor:pointer;transition:.15s;font-weight:800;display:block;margin:6px 0 12px;box-shadow:3px 3px 0 var(--pink)}
+.btr:hover{transform:translate(1px,1px);box-shadow:2px 2px 0 var(--pink)}
+.translation{display:none;margin-bottom:12px;font-size:1rem;line-height:1.8;color:#3A2F4A;background:#FDF7FF;border-left:4px solid var(--lilac);border-radius:0 12px 12px 0;padding:10px 14px;font-style:italic}
+.wbx{margin:4px 0 6px;padding:10px 12px 12px;border-radius:14px;border:3px dashed var(--lilac);background:#FBF8FF}
+.wbt{font-family:'Baloo 2',cursive;font-weight:800;font-size:1rem;color:var(--lilac-d);text-align:center;margin-bottom:8px;letter-spacing:.5px}
+.wbt small{font-family:'Nunito',sans-serif;font-weight:700;font-size:.82rem;color:var(--dim);letter-spacing:0}
+.wbi{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.wc{padding:3px 14px;border-radius:999px;font-weight:900;font-size:1.05rem;color:#fff;border:2.5px solid var(--line);box-shadow:2px 2px 0 var(--line);text-shadow:0 1px 2px rgba(0,0,0,.25)}
+.wc:nth-child(5n+1){background:var(--pink)}.wc:nth-child(5n+2){background:var(--lilac)}.wc:nth-child(5n+3){background:var(--blue)}.wc:nth-child(5n+4){background:var(--mint)}.wc:nth-child(5n){background:#FB7185}
+.gl{margin-top:12px;background:var(--card);border:3px solid var(--edge);border-radius:12px;overflow:hidden}
+.gl h3{font-family:'Baloo 2',cursive;font-size:1rem;font-weight:800;color:#fff;margin:0;padding:8px 14px}
+table.gtb{width:100%;border-collapse:collapse;table-layout:fixed;font-size:.95rem}
+.gtb tr{border-top:1px dotted var(--edge)}
+.gtb tr:nth-child(even){background:#FDF4FF}
+.gtb td,.gtb th{padding:7px 12px;text-align:left;vertical-align:top}
+.gtb th{font-weight:800;font-size:.82rem;color:var(--dim)}
+.gtb .gw{font-weight:900;color:var(--lilac-d)}
+.gtb .gp{color:var(--pink-d);font-weight:700;font-size:.86rem}
+/* ── quiz cards ── */
+.sec{background:rgba(255,255,255,.96);border-radius:18px;padding:16px;margin-bottom:16px;box-shadow:6px 6px 0 rgba(74,50,96,.2);border:4px solid var(--edge)}
+.sech{font-family:'Baloo 2',cursive;font-size:1.15rem;font-weight:800;margin-bottom:2px}
+.secs{font-size:.88rem;color:var(--dim);font-style:italic;font-weight:700;margin-bottom:12px;line-height:1.55}
+.q{background:#FFFEFA;border:2px solid #EBDDF7;border-left:7px solid var(--lilac);border-radius:14px;padding:14px;margin-bottom:14px}
+.q .qt{font-weight:800;font-size:1.08rem;line-height:1.75}
+.q .qt b{padding:1px 6px;border-radius:7px;white-space:nowrap}
+.qn{display:inline-block;background:var(--qc,var(--lilac));color:#fff;min-width:38px;text-align:center;border:2px solid var(--line);border-radius:999px;padding:2px 9px;margin-right:9px;
+ font-family:'Baloo 2',cursive;font-weight:800;font-size:.95rem;line-height:1.3;vertical-align:1px;box-shadow:2px 2px 0 var(--line);text-shadow:0 1px 2px rgba(0,0,0,.35)}
+.og{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:11px}
+.ob{background:#fff;color:var(--ink);border:2px solid #E4D4F4;border-radius:12px;padding:11px 13px;
+ font-family:'Nunito';font-weight:800;font-size:1rem;cursor:pointer;text-align:left;line-height:1.5;transition:.14s;box-shadow:0 3px 0 #E4D4F4}
+.ob:hover:not(.dn){transform:translateY(-2px);border-color:var(--qc,var(--lilac))}
+.ob.dn{cursor:default}
+.ob.ok{background:var(--good-bg);border-color:var(--good);color:#0b6b3c;box-shadow:0 3px 0 #9fe3bd}
+.ob.no{background:var(--bad-bg);border-color:var(--bad);color:#a31832;box-shadow:0 3px 0 #f7bac5}
+.ex{display:none;margin-top:12px;background:#fff;border:2px solid #EBDDF7;border-radius:12px;padding:14px;font-size:.98rem;line-height:1.85}
+.ex.on{display:block;animation:pop .3s}
+@keyframes pop{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+.shk{animation:shk .42s}
+@keyframes shk{0%,100%{transform:translateX(0)}25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+/* ── explanation content ── */
+.vnt{margin-bottom:10px;padding:9px 13px;border-radius:12px;background:#F5EEFF;border-left:5px solid var(--lilac);font-weight:700;line-height:1.7}
+.ex ol{margin:0;padding-left:22px}
+.ex ol>li{margin:10px 0;line-height:1.75;padding-left:4px}
+.ex ol>li::marker{font-weight:900;color:var(--pink-d)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+@media(max-width:600px){.grid2{grid-template-columns:1fr}.og{grid-template-columns:1fr}}
+.grid2>div{border:2px solid #E4D4F4;border-radius:12px;padding:8px 11px;background:#FCFAFF;line-height:1.7;font-size:.97rem}
+.grid2>div.gk{border-color:var(--good);background:var(--good-bg);box-shadow:0 0 0 3px rgba(27,156,90,.14)}
+.p-word{color:#1E6FD9;font-weight:800}
+.hl-green{color:#11924E;font-weight:900}
+.hl-red{color:#D8334A;font-weight:900}
+.wt{display:inline-block;margin:0 3px;padding:0 7px;border-radius:6px;font-size:.78em;font-weight:700;background:rgba(110,100,160,.14);color:#5B5480}
+.p-phonetic{padding:0 6px;border-radius:6px;background:#F1E8FF;color:#7A3FC8;font-weight:700;font-family:'Segoe UI','Lucida Sans Unicode','Arial Unicode MS',sans-serif}
+.p-mean{color:#B5532E;font-weight:700}
+.p-grammar{display:inline;line-height:1.95;padding:3px 8px 3px 2px;border-radius:8px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.hx0{background:#FFF3B0}.hx1{background:#D6ECFF}.hx2{background:#FFDDEE}
+.hx3{background:#DDF7D0}.hx4{background:#EBDFFF}.hx5{background:#FFE4F3}
+.qe0{color:#1D4ED8;font-weight:800}.qe1{color:#C2185B;font-weight:800}.qe2{color:#0F8A5F;font-weight:800}.qe3{color:#7C3AED;font-weight:800}.qe4{color:#B4236E;font-weight:800}.qe5{color:#0E7490;font-weight:800}
+.frame{margin-top:10px;padding:10px 13px;border-radius:14px;background:#fff;border:2px dashed var(--edge);line-height:1.75}
+.frame i{color:var(--dim)}
+.dk{margin-top:12px;padding:11px 13px;border-radius:14px;background:#F5F0FF;border-left:5px solid var(--lilac)}
+.dict{margin-top:7px;display:flex;flex-wrap:wrap;gap:8px}
+.dict a{display:inline-flex;align-items:center;gap:5px;padding:5px 14px;border-radius:999px;font-size:.9rem;font-weight:800;text-decoration:none;color:#fff;transition:transform .15s;box-shadow:0 3px 0 rgba(0,0,0,.15)}
+.dict a:hover{transform:translateY(-2px)}
+.dict a.d0{background:linear-gradient(135deg,#F472B6,#A855F7)}.dict a.d1{background:linear-gradient(135deg,#10B981,#3B82F6)}
+.dict a.d2{background:linear-gradient(135deg,#3B82F6,#8B5CF6)}.dict a.d3{background:linear-gradient(135deg,#8B5CF6,#EC4899)}
+.say{margin-top:7px;font-size:.9rem;color:var(--dim)}
+/* ── submit / modal ── */
+.sw{text-align:center;padding:12px 0 8px}
+.sbtn{font-family:'Baloo 2',cursive;font-size:1.08rem;font-weight:800;color:#fff;background:linear-gradient(135deg,#F472B6,#A855F7 50%,#3B82F6);border:4px solid var(--line);
+ padding:12px 34px;border-radius:999px;cursor:pointer;transition:.15s;box-shadow:5px 5px 0 #A7F3D0}
+.sbtn:hover{transform:translate(2px,2px);box-shadow:3px 3px 0 #A7F3D0}
+.foot{text-align:center;margin:10px 0 14px;font-size:.92rem;color:var(--ink);font-weight:800;line-height:1.7;
+ background:rgba(255,255,255,.96);border:3px solid var(--line);border-radius:14px;padding:10px 16px;box-shadow:4px 4px 0 #F9A8D4}
+.foot b{color:var(--pink-d)}
+.ov{display:none;position:fixed;inset:0;z-index:100;background:rgba(74,50,96,.55);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:16px}
+.ov.on{display:flex}
+.mb{position:relative;background:var(--card);border:4px solid var(--line);border-radius:20px;padding:26px 28px;max-width:460px;width:100%;
+ text-align:center;box-shadow:7px 7px 0 #F9A8D4;animation:popin .3s ease}
+@keyframes popin{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+.mb h2{font-family:'Baloo 2',cursive;font-size:1.3rem;font-weight:800;color:var(--pink-d);margin-bottom:14px}
+.mb input{width:100%;font-family:'Nunito';font-size:1rem;font-weight:700;padding:12px 14px;background:#fff;border:2.5px solid var(--edge);border-radius:12px;color:var(--ink);text-align:center;outline:none;margin-bottom:10px}
+.mb input:focus{border-color:var(--lilac)}
+.err{color:var(--bad);font-size:.85rem;font-weight:800;margin-bottom:8px;display:none}
+.err.show{display:block}
+.rname{font-size:1.05rem;font-weight:800;color:var(--pink-d);margin-bottom:6px}
+.rscore{font-family:'Baloo 2',cursive;font-size:2.6rem;font-weight:800;color:var(--lilac-d);line-height:1;margin:6px 0}
+.rs10{font-size:1rem;font-weight:800;color:var(--ink);margin-bottom:9px}
+.rgif{width:190px;margin:10px auto;display:block;border:3px solid var(--line);box-shadow:4px 4px 0 #F9A8D4;border-radius:12px}
+.rcmt{font-size:.96rem;line-height:1.75;background:#FDF4FF;border:2.5px dashed var(--edge);border-radius:14px;padding:12px 14px;margin:12px 0}
+.bcl{font-family:'Nunito';font-size:.88rem;font-weight:800;background:transparent;border:2.5px solid var(--edge);color:var(--ink);padding:10px 24px;border-radius:12px;cursor:pointer}
+.cn{position:fixed;top:-16px;z-index:200;pointer-events:none;animation:cf 2.4s forwards}
+@keyframes cf{0%{transform:translateY(0) rotate(0);opacity:1}100%{transform:translateY(108vh) rotate(700deg);opacity:0}}
+
+/* trang luôn có thanh kéo: kéo xuống thì khung bài lên cao, lộ cảnh căn bếp động phía dưới */
+@media(min-width:941px){body{height:auto!important;overflow:visible!important;overflow-x:clip!important}}
+/* lời nhắc đổi nội dung thì không kéo lệch trang: khung bài luôn sát thanh nhắc */
+html,body{overflow-anchor:none}
+
+/*hltool*/
+/* ── công cụ highlight ── */
+.hlbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:6px;flex-wrap:wrap;background:#111827;border-radius:14px 14px 0 0;padding:7px 8px 7px 12px;box-shadow:0 4px 10px rgba(17,24,39,.22)}
+.hlbar .ht{color:#fff;font-weight:900;font-size:.74rem;letter-spacing:.3px;text-transform:uppercase;white-space:nowrap}
+.hlgrp{display:flex;align-items:center;gap:4px;background:#1F2937;border:1px solid #374151;border-radius:999px;padding:3px 4px;flex-wrap:wrap}
+.hlb{display:inline-flex;align-items:center;gap:5px;border:none;border-radius:999px;padding:4px 8px 4px 6px;font-family:'Nunito',sans-serif;font-weight:900;font-size:.74rem;line-height:1.2;cursor:pointer;transition:transform .12s,filter .12s;white-space:nowrap}
+.hlb:hover{transform:translateY(-1px);filter:brightness(1.05)}
+.hlb:active{transform:scale(.95)}
+.hlb .dt{display:inline-block;width:10px;height:10px;border-radius:50%;border:2px solid rgba(0,0,0,.22)}
+.hlb.y{background:#FEF08A;color:#713F12}.hlb.y .dt{background:#FACC15}
+.hlb.g{background:#BBF7D0;color:#14532D}.hlb.g .dt{background:#22C55E}
+.hlb.p{background:#FBCFE8;color:#831843}.hlb.p .dt{background:#EC4899}
+.hlb.b{background:#BAE6FD;color:#0C4A6E}.hlb.b .dt{background:#0EA5E9}
+.hlb.er{background:#E5E7EB;color:#374151;padding:4px 9px}
+.hldv{display:inline-block;width:1px;height:18px;background:#4B5563;margin:0 2px}
+.hltip{display:flex;gap:9px;align-items:flex-start;background:#FEF9C3;border:2px solid #FDE68A;border-top:none;border-radius:0 0 14px 14px;padding:9px 13px;margin-bottom:12px;font-size:.92rem;line-height:1.6;color:#713F12;font-weight:700}
+.hltip .ic{font-size:1.15rem;line-height:1.4}
+.hltip b{color:#92400E}
+.hltip.ping{animation:tipPing .6s ease}
+@keyframes tipPing{0%,100%{transform:none}30%{transform:translateX(-5px)}60%{transform:translateX(5px)}}
+#hlPop{position:fixed;z-index:65;display:none;align-items:center;gap:6px;background:#111827;border-radius:999px;padding:6px 8px;box-shadow:0 6px 18px rgba(0,0,0,.3)}
+#hlPop.on{display:flex}
+#hlPop::after{content:'';position:absolute;left:50%;bottom:-6px;margin-left:-6px;border:6px solid transparent;border-bottom:none;border-top-color:#111827}
+#hlPop.below::after{bottom:auto;top:-6px;border:6px solid transparent;border-top:none;border-bottom-color:#111827}
+#hlPop button{width:24px;height:24px;border-radius:50%;border:2px solid #fff;cursor:pointer;padding:0;transition:transform .12s}
+#hlPop button:hover{transform:scale(1.15)}
+#hlPop .y{background:#FACC15}#hlPop .g{background:#22C55E}#hlPop .p{background:#EC4899}#hlPop .b{background:#0EA5E9}
+#hlPop .er{background:#E5E7EB;border-color:#9CA3AF;font-size:13px;display:grid;place-items:center}
+mark.uhl{color:inherit;border-radius:5px;padding:1px 0;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.lp mark.uhl{cursor:pointer}mark.uhl.pick{outline:2px dashed #111827;outline-offset:2px}
+mark.uhl-y{background:#FFF27A}mark.uhl-g{background:#B9F6D3}mark.uhl-p{background:#FFC7E3}mark.uhl-b{background:#C3E6FF}
+@media(max-width:940px){.hlbar{top:58px}}
+</style>
+<style>/*touchscroll*/@media (hover:none),(pointer:coarse){html,body{overflow-y:auto!important;height:auto!important;-webkit-overflow-scrolling:touch}.lp,.rp{max-height:none!important;overflow:visible!important}.main{padding-bottom:42px!important;align-items:flex-start}}</style>
+</head>
+<body>
+<div id="kit">
+ <div class="k-wide k-win"><div class="gls"><i class="sun"></i><i class="k-wc" style="top:14px"></i><i class="k-wc" style="top:50px;--w:44px;animation-delay:-4.5s"></i><i class="xb"></i><i class="yb"></i></div>
+  <i class="k-cur l"></i><i class="k-cur r"></i><i class="sill"></i><div class="pot"><i class="stem"></i><i class="flw"></i></div></div>
+ <div class="k-wide k-brd"><b class="t">MY RECIPES</b>
+  <div class="k-card" style="left:10px;--r:-7deg"><i class="pin" style="background:#F472B6"></i><i class="tk"></i></div>
+  <div class="k-card" style="left:72px;--r:4deg;animation-delay:-1s"><i class="pin" style="background:#60A5FA"></i><i class="tk" style="animation-delay:-1.2s"></i></div>
+  <div class="k-card" style="left:134px;--r:-3deg;animation-delay:-2s"><i class="pin" style="background:#34D399"></i><i class="tk" style="animation-delay:-2.4s"></i></div>
+ </div>
+ <div class="k-wide k-chef" id="chef"></div>
+ <div class="k-wide k-stand" id="stand"></div>
+ <div class="k-slim k-crock"><div class="u" style="left:2px;--c:#F472B6;transform:rotate(-14deg)"><i class="tp"></i><i class="hd"></i></div>
+  <div class="u w" style="left:14px;--c:#60A5FA;animation-delay:-.6s"><i class="tp"></i><i class="hd"></i></div>
+  <div class="u t" style="left:26px;--c:#34D399;animation-delay:-1.2s"><i class="tp"></i><i class="hd"></i></div><div class="jar"></div></div>
+ <div class="k-slim k-shk"><div class="s" style="left:0;background:#FBCFE8"><i class="ey l"></i><i class="ey r"></i><i class="mo"></i></div><div class="s" style="right:0;background:#BFDBFE;animation-delay:-.45s"><i class="ey l"></i><i class="ey r"></i><i class="mo"></i></div></div>
+ <div class="k-slim k-megg" id="megg"></div>
+ <div class="k-slim k-mcup" id="mcup"></div>
+</div>
+<div id="gnd">
+ <div class="k-bsp"></div>
+ <div class="k-frg"><div class="bx"><div class="in"><i class="sh" style="top:44px"></i><i class="sh" style="top:88px"></i><i class="milk"></i><i class="berry" style="left:40px"></i><i class="berry" style="left:58px;bottom:84px"></i><i class="cake"></i><i class="hand"></i></div></div>
+  <div class="fz"><i class="ey l"></i><i class="ey r"></i><i class="mo"></i></div>
+  <div class="dr"><i class="mag" style="left:16px;top:30px;background:#F472B6"></i><i class="mag" style="left:22px;top:70px;background:#A78BFA"></i><i class="mag" style="left:14px;top:108px;background:#34D399"></i></div></div>
+ <div class="k-egs" id="egs"><div class="k-whk"><i class="hd"></i><i class="lo"></i></div><div class="k-bowl"></div><i class="k-plop"></i></div>
+ <div class="k-pan"><div class="k-stv"></div><i class="k-flm" style="left:40px"></i><i class="k-flm" style="left:62px;animation-delay:-.1s"></i><i class="k-flm" style="left:84px;animation-delay:-.05s"></i><i class="k-flm" style="left:106px;animation-delay:-.15s"></i>
+  <div class="k-pn"><i class="hdl"></i></div>
+  <div class="k-omw"><div class="k-om"><i class="a"></i><i class="b"></i></div></div>
+  <i class="k-sizz" style="left:52px"></i><i class="k-sizz" style="left:94px;animation-delay:-.7s"></i>
+  <div class="k-sh" style="left:60px;bottom:96px"><i class="k-ht" style="--s:12px;--c:#F9A8D4"></i></div><div class="k-sh" style="left:96px;bottom:96px;--dx:-10px;animation-delay:-1.5s"><i class="k-ht" style="--s:10px;--c:#C4B5FD"></i></div>
+  <div class="k-pl"></div></div>
+ <div class="k-pck"><div class="k-pl"></div><div class="k-stk" id="stk"></div><div class="k-fly"><i class="k-pc" style="--c:#BFDBFE"></i></div><span class="k-flipw">FLIP!</span></div>
+ <div class="k-mix"><i class="bs"></i><i class="cl"></i><i class="bt"></i><div class="hd"></div><div class="bw"><i class="bat"></i></div>
+  <i class="spl" style="left:80px;--dx:-14px"></i><i class="spl" style="left:110px;--dx:14px;animation-delay:-.7s;background:#FBCFE8"></i>
+  <div class="k-sh" style="left:96px;bottom:110px;animation-delay:-.8s"><i class="k-ht" style="--s:10px;--c:#F472B6"></i></div></div>
+ <div class="k-ovn" id="ovn"><div class="bx"><div class="pnl"><i class="dl" style="left:8px;background:#F9A8D4"></i><i class="dl" style="left:30px;background:#C4B5FD;animation-delay:-1s"></i><i class="dl" style="left:52px;background:#93C5FD;animation-delay:-2s"></i><b class="tm">12:00</b></div>
+  <div class="dr"><div class="gw" id="ovg"></div></div></div><i class="k-bell"></i><span class="k-ding">DING!</span>
+  <div class="k-sh" style="left:30px;bottom:150px;animation-delay:-.4s"><i class="k-ht" style="--s:12px;--c:#F9A8D4"></i></div><div class="k-sh" style="left:70px;bottom:150px;--dx:-12px;animation-delay:-2s"><i class="k-ht" style="--s:10px;--c:#A7F3D0"></i></div></div>
+ <div class="k-floor"></div>
+</div>
+
+<div class="note"><div class="in">
+ <span class="tg">🧁 MS NHẮN</span>
+ <span class="tx" id="msTx">🧁 Chào chiến binh lớp 9! Tây Mỗ p6 có 12 câu đọc hiểu (1 → 12) — hai bài đọc, mười hai bằng chứng, bắt trọn từng câu để bước vào phòng thi giữa kì I thật tự tin! 🔥</span>
+</div></div>
+
+<header>
+ <div>
+  <h1>🧁 Tây Mỗ Reading · Câu 1 → 12<span class="p1">12 câu</span></h1>
+  <div class="by">MS Chí Nên · ☎️ <b>0852639652</b> · English 9 · Đề thi GKI Tây Mỗ</div>
+ </div>
+ <div class="hright">
+  <div class="chips">
+   <span class="chip c1">🧁 TÂY MỖ · GKI</span>
+   <span class="chip c2">🏙️ PHẦN 1 · LIVABLE CITY</span>
+   <span class="chip c3">🏺 PHẦN 2 · LOCAL CULTURE</span>
+   <span class="chip c4">📖 READING · 12 CÂU</span>
+  </div>
+  <div><span id="sc" style="display:none"></span><div class="gauge"><div class="num" id="lv">0/12</div><div class="lbl">Điểm</div></div></div>
+ </div>
+</header>
+
+<div class="main">
+<div class="lp">
+ <div class="hlbar" id="hlBar">
+  <span class="ht">✏️ CÔNG CỤ HIGHLIGHT:</span>
+  <div class="hlgrp">
+   <button type="button" class="hlb y" onclick="hlApply('y')"><i class="dt"></i>Vàng</button>
+   <button type="button" class="hlb g" onclick="hlApply('g')"><i class="dt"></i>Xanh lá</button>
+   <button type="button" class="hlb p" onclick="hlApply('p')"><i class="dt"></i>Hồng</button>
+   <button type="button" class="hlb b" onclick="hlApply('b')"><i class="dt"></i>Xanh</button>
+   <span class="hldv"></span>
+   <button type="button" class="hlb er" onclick="hlErase()">🧽 Tẩy tô</button>
+  </div>
+ </div>
+ <div class="hltip" id="hlTip"><span class="ic">💡</span><div><b>Cách dùng Highlight:</b> Bôi đen (quét chuột) đoạn chữ trong bài đọc → Nhấn nút màu trên thanh công cụ màu đen ở trên (hoặc nút nổi ngay tại vị trí bôi đen) để tô màu tức thì!<br><b>Đổi màu / xoá:</b> Bấm thẳng vào chữ đã tô → chọn màu mới hoặc 🧽 để xoá, không cần bôi đen lại.</div></div>
+
+ <div class="slbl">📖 Bài đọc</div>
+
+ <div class="pc" style="border-color:var(--pink);color:var(--pink)">
+  <div class="lvl">PHẦN 1</div>
+  <div class="stamp">🏙️</div>
+  <div class="ptitle" style="color:var(--pink-d)">Phần 1 · Make Your City Livable</div>
+  <div class="pins">Read the passage and choose the correct answer A, B, C, or D. (Câu 1 → 6)</div>
+
+  <div class="pblk" style="border-color:var(--pink);background:#FFEAF4;color:var(--ink)">
+   <div class="em">🏙️</div><span class="ptag">¶1</span>
+   <div class="paragraph">There are many things you can do to improve your urban neighbourhood and make it a livable place. Here are some of them.</div>
+   <button class="btr" onclick="toggleTranslation('trans1')">Mở dịch đoạn này 🌟</button>
+   <div class="translation" id="trans1">Có nhiều việc bạn có thể làm để cải thiện khu phố đô thị của mình và biến nó thành một nơi đáng sống. Dưới đây là một vài việc trong số đó.</div>
+  </div>
+  <div class="pblk" style="border-color:var(--mint);background:#E3FBF1;color:var(--ink)">
+   <div class="em">🗑️</div><span class="ptag">¶2 · Go Litter-picking</span>
+   <div class="paragraph">Litter picking is one of the easiest ways to improve your city. All you need is a rubbish bag and a litter picker. These can be bought cheaply, and you can use them for a long time.</div>
+   <button class="btr" onclick="toggleTranslation('trans2')">Mở dịch đoạn này 🌟</button>
+   <div class="translation" id="trans2">Nhặt rác là một trong những cách dễ nhất để cải thiện thành phố của bạn. Tất cả những gì bạn cần là một chiếc túi rác và một cây kẹp gắp rác. Chúng có thể được mua với giá rẻ, và bạn có thể dùng chúng trong thời gian dài.</div>
+  </div>
+  <div class="pblk" style="border-color:var(--lilac);background:#F1EBFF;color:var(--ink)">
+   <div class="em">🌳</div><span class="ptag">¶2 · Go Litter-picking</span>
+   <div class="paragraph">Going to pick up the trash can make your local park or streets a much more pleasant place to live. It also helps to <u><b>reduce</b></u> water pollution.</div>
+   <button class="btr" onclick="toggleTranslation('trans3')">Mở dịch đoạn này 🌟</button>
+   <div class="translation" id="trans3">Đi nhặt rác có thể làm cho công viên hay đường phố nơi bạn sống trở thành một nơi sống dễ chịu hơn nhiều. Nó cũng giúp giảm ô nhiễm nguồn nước.</div>
+  </div>
+  <div class="pblk" style="border-color:var(--blue);background:#E6F1FF;color:var(--ink)">
+   <div class="em">🤝</div><span class="ptag">¶3 · Volunteer</span>
+   <div class="paragraph">You can help the community in your city through volunteering. There is a range of volunteer activities, so you could always find something that suits you.</div>
+   <button class="btr" onclick="toggleTranslation('trans4')">Mở dịch đoạn này 🌟</button>
+   <div class="translation" id="trans4">Bạn có thể giúp đỡ cộng đồng trong thành phố của mình bằng cách làm tình nguyện. Có rất nhiều loại hoạt động tình nguyện, vì vậy bạn luôn có thể tìm được việc phù hợp với mình.</div>
+  </div>
+  <div class="pblk" style="border-color:var(--butter);background:#FFF9DB;color:var(--ink)">
+   <div class="em">💗</div><span class="ptag">¶3 · Volunteer</span>
+   <div class="paragraph">The most common activities are visiting elderly people, working in a food bank or community library, taking care of homeless animals, and supporting local charities. These activities help reduce vulnerable people's suffering and bring them happiness.</div>
+   <button class="btr" onclick="toggleTranslation('trans5')">Mở dịch đoạn này 🌟</button>
+   <div class="translation" id="trans5">Những hoạt động phổ biến nhất là thăm người cao tuổi, làm việc ở ngân hàng thực phẩm hoặc thư viện cộng đồng, chăm sóc động vật vô gia cư và hỗ trợ các tổ chức từ thiện địa phương. Những hoạt động này giúp giảm bớt nỗi khổ của những người yếu thế và mang lại hạnh phúc cho họ.</div>
+  </div>
+  <div class="pblk" style="border-color:var(--pink);background:#FFEAF4;color:var(--ink)">
+   <div class="em">🌫️</div><span class="ptag">¶4 · Take Public Transport or Cycle</span>
+   <div class="paragraph">Most cities face the problem of air pollution. Thus, reducing air pollution is an effective way to improve your city. It will improve the health of its residents.</div>
+   <button class="btr" onclick="toggleTranslation('trans6')">Mở dịch đoạn này 🌟</button>
+   <div class="translation" id="trans6">Hầu hết các thành phố đều gặp vấn đề ô nhiễm không khí. Vì thế, giảm ô nhiễm không khí là một cách hiệu quả để cải thiện thành phố của bạn. Điều đó sẽ cải thiện sức khoẻ của cư dân thành phố.</div>
+  </div>
+  <div class="pblk" style="border-color:var(--mint);background:#E3FBF1;color:var(--ink)">
+   <div class="em">🚲</div><span class="ptag">¶4 · Take Public Transport or Cycle</span>
+   <div class="paragraph">One great source of pollution is vehicles. So, walk, cycle, or take public transport whenever you can. This means the streets will be less congested and there will be less air pollution.</div>
+   <button class="btr" onclick="toggleTranslation('trans7')">Mở dịch đoạn này 🌟</button>
+   <div class="translation" id="trans7">Một nguồn gây ô nhiễm lớn là xe cộ. Vì vậy, hãy đi bộ, đạp xe hoặc đi phương tiện công cộng bất cứ khi nào có thể. Điều này có nghĩa là đường phố sẽ bớt tắc nghẽn hơn và không khí sẽ bớt ô nhiễm hơn.</div>
+  </div>
+
+  <div class="gl"><h3 style="background:linear-gradient(90deg,var(--pink-d),var(--pink))">📚 Glossary — PHẦN 1</h3>
+   <table class="gtb"><tr><th>Từ vựng</th><th>Loại từ</th><th>Nghĩa tiếng Việt</th></tr>
+    <tr><td class="gw">urban</td><td class="gp">Adjective</td><td>thuộc thành phố, đô thị</td></tr>
+    <tr><td class="gw">neighbourhood</td><td class="gp">Noun</td><td>khu phố, khu dân cư</td></tr>
+    <tr><td class="gw">livable</td><td class="gp">Adjective</td><td>đáng sống</td></tr>
+    <tr><td class="gw">litter picker</td><td class="gp">Noun phrase</td><td>cây kẹp gắp rác</td></tr>
+    <tr><td class="gw">rubbish bag</td><td class="gp">Noun phrase</td><td>túi đựng rác</td></tr>
+    <tr><td class="gw">trash</td><td class="gp">Noun</td><td>rác</td></tr>
+    <tr><td class="gw">pleasant</td><td class="gp">Adjective</td><td>dễ chịu</td></tr>
+    <tr><td class="gw">volunteering</td><td class="gp">Noun</td><td>việc làm tình nguyện</td></tr>
+    <tr><td class="gw">suit</td><td class="gp">Verb</td><td>phù hợp với</td></tr>
+    <tr><td class="gw">food bank</td><td class="gp">Noun phrase</td><td>ngân hàng thực phẩm (nơi phát đồ ăn miễn phí)</td></tr>
+    <tr><td class="gw">charity</td><td class="gp">Noun</td><td>tổ chức từ thiện</td></tr>
+    <tr><td class="gw">vulnerable</td><td class="gp">Adjective</td><td>yếu thế, dễ bị tổn thương</td></tr>
+    <tr><td class="gw">suffering</td><td class="gp">Noun</td><td>nỗi khổ, sự đau khổ</td></tr>
+    <tr><td class="gw">effective</td><td class="gp">Adjective</td><td>hiệu quả</td></tr>
+    <tr><td class="gw">resident</td><td class="gp">Noun</td><td>cư dân</td></tr>
+    <tr><td class="gw">vehicle</td><td class="gp">Noun</td><td>xe cộ, phương tiện</td></tr>
+   </table>
+  </div>
+ </div>
+
+ <div class="pc" style="border-color:var(--blue);color:var(--blue)">
+  <div class="lvl" style="background:#BFDBFE;color:#1E3A8A;border-color:#1E3A8A;box-shadow:3px 3px 0 #1E3A8A">PHẦN 2</div>
+  <div class="stamp">🏺</div>
+  <div class="ptitle" style="color:var(--blue-d)">Phần 2 · Teens &amp; Local Culture</div>
+  <div class="pins">Read the passage and choose the correct answer A, B, C, or D. (Câu 7 → 12)</div>
+
+  <div class="pblk" style="border-color:var(--blue);background:#E6F1FF;color:var(--ink)">
+   <div class="em">👫</div><span class="ptag">¶1</span>
+   <div class="paragraph">There are many ways teenagers can help their local community. They can take part in activities that make their neighbourhood cleaner, friendlier and more connected.</div>
+   <button class="btr" onclick="toggleTranslation('trans8')">Mở dịch đoạn này 🌟</button>
+   <div class="translation" id="trans8">Có nhiều cách để thanh thiếu niên giúp đỡ cộng đồng địa phương. Các bạn có thể tham gia những hoạt động giúp khu phố của mình sạch hơn, thân thiện hơn và gắn kết hơn.</div>
+  </div>
+  <div class="pblk" style="border-color:var(--butter);background:#FFF9DB;color:var(--ink)">
+   <div class="em">🏮</div><span class="ptag">¶1</span>
+   <div class="paragraph">At the same time, learning about traditional crafts can help young people understand and protect their local culture.</div>
+   <button class="btr" onclick="toggleTranslation('trans9')">Mở dịch đoạn này 🌟</button>
+   <div class="translation" id="trans9">Đồng thời, việc tìm hiểu các nghề thủ công truyền thống có thể giúp các bạn trẻ hiểu và bảo vệ văn hoá địa phương của mình.</div>
+  </div>
+  <div class="pblk" style="border-color:var(--pink);background:#FFEAF4;color:var(--ink)">
+   <div class="em">🌱</div><span class="ptag">¶2 · Join Community Activities</span>
+   <div class="paragraph">Teenagers can join clean-up days, plant trees, collect old books or clothes for people in need, and visit elderly neighbours.</div>
+   <button class="btr" onclick="toggleTranslation('trans10')">Mở dịch đoạn này 🌟</button>
+   <div class="translation" id="trans10">Thanh thiếu niên có thể tham gia các ngày dọn dẹp vệ sinh, trồng cây, thu gom sách cũ hoặc quần áo cũ cho những người gặp khó khăn, và thăm những người hàng xóm cao tuổi.</div>
+  </div>
+  <div class="pblk" style="border-color:var(--mint);background:#E3FBF1;color:var(--ink)">
+   <div class="em">💪</div><span class="ptag">¶2 · Join Community Activities</span>
+   <div class="paragraph"><b>These</b> activities do not require a lot of money, but they can make a big difference. They also help teenagers become more responsible and learn how to work with other people.</div>
+   <button class="btr" onclick="toggleTranslation('trans11')">Mở dịch đoạn này 🌟</button>
+   <div class="translation" id="trans11">Những hoạt động này không đòi hỏi nhiều tiền, nhưng chúng có thể tạo nên sự khác biệt lớn. Chúng cũng giúp thanh thiếu niên trở nên có trách nhiệm hơn và học cách làm việc với người khác.</div>
+  </div>
+  <div class="pblk" style="border-color:var(--lilac);background:#F1EBFF;color:var(--ink)">
+   <div class="em">🏺</div><span class="ptag">¶3 · Learn About Traditional Crafts</span>
+   <div class="paragraph">Traditional crafts are an important part of a community's culture. In many Vietnamese villages, people still make products by hand, such as pottery, silk, bamboo products and traditional conical hats.</div>
+   <button class="btr" onclick="toggleTranslation('trans12')">Mở dịch đoạn này 🌟</button>
+   <div class="translation" id="trans12">Nghề thủ công truyền thống là một phần quan trọng trong văn hoá của một cộng đồng. Ở nhiều làng quê Việt Nam, người dân vẫn làm ra các sản phẩm bằng tay, chẳng hạn như đồ gốm, lụa, đồ tre và nón lá truyền thống.</div>
+  </div>
+  <div class="pblk" style="border-color:var(--blue);background:#E6F1FF;color:var(--ink)">
+   <div class="em">🧑‍🎨</div><span class="ptag">¶3 · Learn About Traditional Crafts</span>
+   <div class="paragraph">Young people can visit craft villages, watch skilled craftsmen at work or even try making simple products themselves. In this way, they can learn more about their local traditions and help keep them alive.</div>
+   <button class="btr" onclick="toggleTranslation('trans13')">Mở dịch đoạn này 🌟</button>
+   <div class="translation" id="trans13">Các bạn trẻ có thể đến thăm làng nghề, xem những người thợ lành nghề làm việc hoặc thậm chí tự tay thử làm những sản phẩm đơn giản. Bằng cách này, các bạn có thể hiểu thêm về truyền thống địa phương và giúp giữ gìn chúng.</div>
+  </div>
+  <div class="pblk" style="border-color:var(--butter);background:#FFF9DB;color:var(--ink)">
+   <div class="em">📱</div><span class="ptag">¶4 · Share and Protect Local Culture</span>
+   <div class="paragraph">Teenagers can also introduce traditional crafts to other people through school projects, exhibitions or social media. Buying handmade products from local craft villages is another way to support local craftsmen.</div>
+   <button class="btr" onclick="toggleTranslation('trans14')">Mở dịch đoạn này 🌟</button>
+   <div class="translation" id="trans14">Thanh thiếu niên cũng có thể giới thiệu nghề thủ công truyền thống tới mọi người qua các dự án ở trường, các buổi triển lãm hoặc mạng xã hội. Mua sản phẩm làm bằng tay từ các làng nghề địa phương là một cách khác để hỗ trợ những người thợ thủ công.</div>
+  </div>
+  <div class="pblk" style="border-color:var(--pink);background:#FFEAF4;color:var(--ink)">
+   <div class="em">🌟</div><span class="ptag">¶4 · Share and Protect Local Culture</span>
+   <div class="paragraph">When young people take an interest in both their community and its traditional culture, they can help create a stronger and more <b>sustainable</b> community.</div>
+   <button class="btr" onclick="toggleTranslation('trans15')">Mở dịch đoạn này 🌟</button>
+   <div class="translation" id="trans15">Khi các bạn trẻ quan tâm đến cả cộng đồng lẫn văn hoá truyền thống của cộng đồng đó, các bạn có thể góp phần tạo nên một cộng đồng vững mạnh và bền vững hơn.</div>
+  </div>
+
+  <div class="gl"><h3 style="background:linear-gradient(90deg,var(--blue-d),var(--blue))">📚 Glossary — PHẦN 2</h3>
+   <table class="gtb"><tr><th>Từ vựng</th><th>Loại từ</th><th>Nghĩa tiếng Việt</th></tr>
+    <tr><td class="gw">take part in</td><td class="gp">Phrasal verb</td><td>tham gia</td></tr>
+    <tr><td class="gw">connected</td><td class="gp">Adjective</td><td>gắn kết</td></tr>
+    <tr><td class="gw">craft</td><td class="gp">Noun</td><td>nghề thủ công</td></tr>
+    <tr><td class="gw">clean-up day</td><td class="gp">Noun phrase</td><td>ngày dọn dẹp vệ sinh</td></tr>
+    <tr><td class="gw">people in need</td><td class="gp">Noun phrase</td><td>người gặp khó khăn</td></tr>
+    <tr><td class="gw">make a difference</td><td class="gp">Verb phrase</td><td>tạo nên thay đổi tích cực</td></tr>
+    <tr><td class="gw">responsible</td><td class="gp">Adjective</td><td>có trách nhiệm</td></tr>
+    <tr><td class="gw">pottery</td><td class="gp">Noun</td><td>đồ gốm</td></tr>
+    <tr><td class="gw">silk</td><td class="gp">Noun</td><td>lụa</td></tr>
+    <tr><td class="gw">bamboo</td><td class="gp">Noun</td><td>tre</td></tr>
+    <tr><td class="gw">conical hat</td><td class="gp">Noun phrase</td><td>nón lá</td></tr>
+    <tr><td class="gw">craftsman</td><td class="gp">Noun</td><td>thợ thủ công</td></tr>
+    <tr><td class="gw">skilled</td><td class="gp">Adjective</td><td>lành nghề</td></tr>
+    <tr><td class="gw">exhibition</td><td class="gp">Noun</td><td>triển lãm</td></tr>
+    <tr><td class="gw">handmade</td><td class="gp">Adjective</td><td>làm bằng tay</td></tr>
+    <tr><td class="gw">take an interest in</td><td class="gp">Verb phrase</td><td>quan tâm đến</td></tr>
+   </table>
+  </div>
+ </div>
+</div>
+
+<div class="rp">
+ <div class="slbl">🎯 12 câu hỏi</div>
+ <div id="app"></div>
+ <div class="sw"><button class="sbtn" onclick="openName()">🎯 NỘP BÀI TÍNH ĐIỂM &amp; XEM KẾT QUẢ</button></div>
+ <div class="foot">🧁 Bài tập của <b>MS Chí Nên</b> · Đăng ký khoá tiếng Anh lớp 1 → 12: <b>☎️ 0852639652</b> để được trải nghiệm hệ thống web học tập đẹp, sinh động — chấm điểm tự động, giải chi tiết từng câu, luyện đề giữa kì, cuối kì và thi vào 10 thật bài bản!</div>
+</div>
+</div>
+
+<div class="ov" id="ovN"><div class="mb">
+ <h2>📮 Con ghi tên vào đây nhé!</h2>
+ <input id="nIn" placeholder="Ví dụ: Nguyễn Văn A" autocomplete="off" maxlength="50">
+ <div class="err" id="nEm">⚠️ Con chưa nhập tên kìa! Nhập tên rồi mới xem điểm được nha.</div>
+ <button class="sbtn" style="margin-top:12px;font-size:1rem;padding:11px 26px" onclick="showResult()">🚀 Xem kết quả</button>
+</div></div>
+
+<div class="ov" id="ovR"><div class="mb" style="max-width:480px">
+ <div class="rname" id="rn"></div>
+ <div class="rscore"><span id="rSc">0</span>/<span id="rTt">0</span></div>
+ <div class="rs10">🎓 Quy đổi: <span id="r10">0</span>/10 điểm</div>
+ <img class="rgif" id="rGif" src="" alt="">
+ <div class="rcmt" id="rMs"></div>
+ <button class="bcl" onclick="closeR()">Đóng &amp; xem lại bài</button>
+</div></div>
+
+<script>
+/* ══ căn bếp mộng mơ: dàn dụng cụ treo, mây trôi, trái tim hơi nóng, rắc cốm, thẻ công thức, trứng nhảy, bánh kếp, cupcake ══ */
+function rnd(a,b){return a+Math.random()*(b-a)}
+var PC=['#F9A8D4','#A7F3D0','#C4B5FD','#93C5FD','#FDE68A','#FBCFE8'];
+function EGG(w){return '<div class="k-eggc" style="--w:'+w+'px"><i class="ey l"></i><i class="ey r"></i><i class="mo"></i><i class="bl l"></i><i class="bl r"></i></div>'}
+function CUP(s,fc,lc){return '<i class="k-cup" style="--s:'+s+'px;--fc:'+fc+';--lc:'+lc+'"><i class="ln"></i><i class="fr"></i><i class="ch"></i></i>'}
+(function(){
+ var kit=document.getElementById('kit'),h='<div class="k-rail"><i class="k-rod"></i>',i;
+ var UT=['k-sp','k-wk','k-tn','k-ld','k-mg'];
+ for(i=0;i<26;i++){h+='<div class="k-ut '+UT[i%5]+'" style="left:'+(24+i*104)+'px;--c:'+PC[i%6]+';animation-delay:-'+rnd(0,3).toFixed(1)+'s"><i class="hk"></i><i class="hd"></i><i class="tp"></i></div>'}
+ h+='</div>';
+ for(i=0;i<5;i++){h+='<i class="k-cloud" style="top:'+rnd(15,30).toFixed(0)+'vh;--w:'+rnd(70,120).toFixed(0)+'px;animation-duration:'+rnd(45,75).toFixed(0)+'s;animation-delay:-'+rnd(0,70).toFixed(0)+'s"></i>'}
+ /* vị trí lề trái / lề phải (co giãn theo độ rộng màn hình) */
+ function side(i,w){var f=rnd(.08,.92).toFixed(2);return (i%2?'right':'left')+':max(3px,calc((var(--mg) - '+w+'px) * '+f+'))'}
+ for(i=0;i<16;i++){h+='<div class="k-rise" style="'+side(i,26)+';animation-duration:'+rnd(11,19).toFixed(1)+'s;animation-delay:-'+rnd(0,19).toFixed(1)+'s"><i class="k-ht" style="--s:'+rnd(10,17).toFixed(0)+'px;--c:'+PC[(i+2)%6]+'"></i></div>'}
+ for(i=0;i<8;i++){h+='<i class="k-rise" style="left:'+rnd(5,95).toFixed(1)+'vw;animation-duration:'+rnd(14,22).toFixed(1)+'s;animation-delay:-'+rnd(0,22).toFixed(1)+'s"><i class="k-ht" style="--s:10px;--c:'+PC[i%6]+';opacity:.75"></i></i>'}
+ var SPC=['#F472B6','#A78BFA','#60A5FA','#34D399','#FDE047','#FB7185'];
+ for(i=0;i<24;i++){h+='<i class="k-spr" style="'+side(i,8)+';background:'+SPC[i%6]+';animation-duration:'+rnd(9,16).toFixed(1)+'s;animation-delay:-'+rnd(0,16).toFixed(1)+'s"></i>'}
+ for(i=0;i<8;i++){h+='<i class="k-rc" style="'+side(i,34)+';top:'+rnd(18,74).toFixed(0)+'vh;--c:'+SPC[i%6]+';animation-duration:'+rnd(2.6,4.4).toFixed(1)+'s;animation-delay:-'+rnd(0,3).toFixed(1)+'s"></i>'}
+ for(i=0;i<16;i++){h+='<i class="k-st" style="'+side(i,16)+';top:'+rnd(14,82).toFixed(0)+'vh;background:'+SPC[i%6]+';animation-delay:-'+rnd(0,2.4).toFixed(1)+'s"></i>'}
+ kit.insertAdjacentHTML('afterbegin',h);
+ /* bếp trưởng quả trứng */
+ document.getElementById('chef').innerHTML='<div class="k-hat"><i class="pf"></i><i class="bd"></i></div>'+EGG(88)+'<i class="k-arm l" style="margin-left:-38px"></i><i class="k-arm r" style="margin-left:34px"></i><i class="ft" style="left:22px"></i><i class="ft" style="left:56px"></i>';
+ /* tháp cupcake */
+ var st='<i class="pole"></i><i class="tr" style="left:30px;top:66px;width:92px"></i><i class="tr" style="left:6px;top:150px;width:140px"></i><span class="k-yum" style="left:92px;top:0">YUM!</span>';
+ [[48,22,'#FBCFE8','#F472B6',0],[78,22,'#BBF7D0','#34D399',-.4],[16,106,'#DDD6FE','#A78BFA',-.8],[56,106,'#BFDBFE','#60A5FA',-1.2],[96,106,'#FEF9C3','#F472B6',-.2]].forEach(function(c){
+  st+='<div class="cp" style="left:'+c[0]+'px;top:'+c[1]+'px;animation-delay:'+c[4]+'s">'+CUP(36,c[2],c[3])+'</div>'});
+ document.getElementById('stand').innerHTML=st;
+ document.getElementById('megg').innerHTML=EGG(34);
+ document.getElementById('mcup').innerHTML=CUP(40,'#FBCFE8','#A78BFA');
+ /* trứng nhảy vào bát */
+ var eg='';for(i=0;i<3;i++)eg+='<div class="egg" style="animation-delay:-'+(i*1.5)+'s">'+EGG(30)+'</div>';
+ document.getElementById('egs').insertAdjacentHTML('afterbegin',eg);
+ /* chồng bánh kếp pastel */
+ document.getElementById('stk').innerHTML='<i class="cr"></i>'+['#FBCFE8','#A7F3D0','#DDD6FE','#BFDBFE','#FBCFE8'].map(function(c){return '<i class="k-pc" style="--c:'+c+'"></i>'}).join('');
+ /* lò nướng: cupcake bay lên từ lò, một chiếc đang nướng sau cửa kính */
+ var ov='';[[16,'#FBCFE8','#F472B6',0],[64,'#BBF7D0','#34D399',-1.5],[112,'#DDD6FE','#A78BFA',-3]].forEach(function(c){ov+='<div class="cr" style="left:'+c[0]+'px;animation-delay:'+c[3]+'s">'+CUP(36,c[1],c[2])+'</div>'});
+ document.getElementById('ovn').insertAdjacentHTML('afterbegin',ov);
+ document.getElementById('ovg').innerHTML=CUP(30,'#FEF9C3','#F472B6');
+})();
+
+/* ══ âm thanh ══ */
+var AC=null;
+function ac(){if(!AC){try{AC=new (window.AudioContext||window.webkitAudioContext)()}catch(e){}}if(AC&&AC.state==='suspended')AC.resume();return AC}
+function ding(){var c=ac();if(!c)return;var t=c.currentTime;[988,1318.5,1975.5].forEach(function(f,i){var o=c.createOscillator(),g=c.createGain();o.type='sine';o.frequency.value=f;o.connect(g);g.connect(c.destination);var s=t+i*0.08;g.gain.setValueAtTime(0.0001,s);g.gain.exponentialRampToValueAtTime(.12,s+.02);g.gain.exponentialRampToValueAtTime(.0001,s+.32);o.start(s);o.stop(s+.34)})}
+var DUCK_URL='https://hoctienganhcungcomaianulis.github.io/homework/%E1%BA%A2nh_File%20nghe/Sound/Ti%E1%BA%BFng%20V%E1%BB%8Bt%20k%C3%AAu%20meme%20mp3.mp3';
+function buzz(){try{var a=new Audio(DUCK_URL);a.volume=.75;a.play().catch(function(){})}catch(e){}}
+function conf(){var cs=['#F472B6','#A78BFA','#60A5FA','#34D399','#FBCFE8','#FDE047'];
+ for(var i=0;i<50;i++){var d=document.createElement('div');d.className='cn';
+  d.style.cssText='left:'+(Math.random()*100)+'vw;width:10px;height:10px;border-radius:'+(i%2?'50%':'2px')+';background:'+cs[i%6]+';opacity:.95';
+  document.body.appendChild(d);(function(d){setTimeout(function(){d.remove()},2500)})(d)}}
+function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}
+function toggleTranslation(id){
+ var el=document.getElementById(id);
+ if(el.style.display==='block'){el.style.display='none';}else{el.style.display='block';}
+}
+
+/* ══ lời giải ══ */
+function OPT(w,pos,ipa,vi,ok){return {w:w,pos:pos||'',ipa:ipa||'',vi:vi,ok:ok?1:0}}
+function grid2(opts){
+ return '<div class="grid2">'+opts.map(function(o){
+  var cls=o.ok?'hl-green':'p-word';
+  var pos=o.pos?' <span class="wt">'+o.pos+'</span>':'';
+  var ipa=o.ipa?' <span class="p-phonetic">/'+o.ipa+'/</span>':'';
+  return '<div'+(o.ok?' class="gk"':'')+'>'+(o.ok?'✅ ':'')+'<span class="'+cls+'">'+o.w+'</span>'+pos+ipa+'<br>= <span class="p-mean">'+o.vi+'</span></div>';
+ }).join('')+'</div>';
+}
+var hxI=0;
+function ln(txt){
+ var cls='hx'+(hxI++%6),qeI=0;
+ txt=txt.replace(/"([^"]+)"/g,function(m,p1){return '<span class="qe'+(qeI++%6)+'">"'+p1+'"</span>'});
+ return '<span class="p-grammar '+cls+'">▸ '+txt+'</span>';
+}
+function lines(a){return a.map(ln).join('<br>')}
+function DICT(w,i){
+ var slug=w.trim().toLowerCase().replace(/\s+/g,'-');
+ return '<a class="d'+(i%4)+'" href="https://dictionary.cambridge.org/vi/dictionary/english/'+slug+'" target="_blank" rel="noopener">🔊 Cambridge · '+w+'</a>';
+}
+function render(q){
+ hxI=0;
+ var shown=MAP[q.id].map(function(w){return q.opts.find(function(o){return o.w===w})});
+ var lab='Nghĩa của '+shown.length+' phương án:';
+ var html='<div class="vnt">💬 Dịch: '+q.vnt+'</div><ol>'+
+  '<li><b>'+lab+'</b>'+grid2(shown)+'</li>'+
+  '<li><span class="hl-green">✅ TẠI SAO ĐÚNG?</span><br>'+lines(q.why)+'</li>'+
+  '<li><span class="hl-red">❌ TẠI SAO SAI?</span><br>'+lines(q.bad)+'</li></ol>'+
+  '<div class="frame">🔍 <i>'+q.ev+'</i><br>👉 <span class="p-mean">'+q.evvi+'</span></div>';
+ if(q.dict&&q.dict.length){
+  html+='<div class="dk"><b>🔊 Tra từ điển Cambridge:</b><br>Con bấm vào đây để nghe phát âm chuẩn và đọc theo cho hay nhé:'+
+   '<div class="dict">'+q.dict.map(DICT).join('')+'</div>'+
+   '<div class="say">👉 Nếu trang chưa hiện đúng từ, con gõ từ đó vào ô tìm kiếm, bấm loa 🔊 nghe và đọc theo.</div></div>';
+ }
+ return html;
+}
+
+/* ══ câu hỏi ══ */
+var QS=[
+{id:1,part:1,col:'pink',text:`Litter picking requires ______.`,
+ opts:[OPT(`lots of effort`,`n phrase`,``,`rất nhiều công sức`),OPT(`big investment`,`n phrase`,``,`khoản đầu tư lớn, tốn nhiều tiền`),OPT(`small investment`,`n phrase`,``,`khoản đầu tư nhỏ, tốn ít tiền`,1),OPT(`nothing`,`pron`,`ˈnʌθɪŋ`,`không cần gì cả`)],
+ vnt:`Nhặt rác chỉ cần một khoản đầu tư nhỏ.`,
+ why:[`Bước 1: Câu hỏi hỏi nhặt rác "requires" (đòi hỏi, cần) những gì → con tìm ở đoạn 2 (¶2 · Go Litter-picking).`,
+  `Bước 2: Đoạn 2 viết: "All you need is a rubbish bag and a litter picker" (Tất cả những gì bạn cần là một chiếc túi rác và một cây kẹp gắp rác). Vậy nhặt rác vẫn cần một chút đồ dùng.`,
+  `Bước 3: Câu tiếp theo: "These can be bought cheaply, and you can use them for a long time" (Chúng có thể mua với giá rẻ và dùng được lâu) → chỉ cần bỏ ra một ít tiền.`,
+  `Bước 4: Cần một ít đồ dùng + giá rẻ = "small investment" (khoản đầu tư nhỏ) → chọn "small investment". Chốt chắc tay, điểm đầu tiên đã vào túi!`],
+ bad:[`"lots of effort" (rất nhiều công sức) ngược với bài: đoạn 2 nói nhặt rác là "one of the easiest ways" (một trong những cách DỄ NHẤT).`,
+  `"big investment" (khoản đầu tư lớn) sai vì đồ dùng "can be bought cheaply" (mua được với giá rẻ) và dùng được lâu.`,
+  `"nothing" (không cần gì) sai vì bài vẫn nói cần "a rubbish bag and a litter picker" (túi rác và kẹp gắp rác).`],
+ ev:`Litter picking is one of the easiest ways to improve your city. All you need is a rubbish bag and a litter picker. These can be bought cheaply, and you can use them for a long time.`,
+ evvi:`Nhặt rác là một trong những cách dễ nhất để cải thiện thành phố của bạn. Tất cả những gì bạn cần là một chiếc túi rác và một cây kẹp gắp rác. Chúng có thể được mua với giá rẻ, và bạn có thể dùng chúng trong thời gian dài.`,
+ dict:[`investment`,`effort`,`litter`,`cheaply`]},
+{id:2,part:1,col:'pink',text:`The writer mentions ______ benefits that litter picking brings to the city.`,
+ opts:[OPT(`one`,`number`,`wʌn`,`một`),OPT(`two`,`number`,`tuː`,`hai`,1),OPT(`three`,`number`,`θriː`,`ba`),OPT(`four`,`number`,`fɔː`,`bốn`)],
+ vnt:`Tác giả nhắc đến hai lợi ích mà việc nhặt rác mang lại cho thành phố.`,
+ why:[`Bước 1: Từ khoá "benefits" (lợi ích) của "litter picking" → đọc đoạn 2 (¶2 · Go Litter-picking), tìm những câu nói nhặt rác giúp được gì cho thành phố.`,
+  `Bước 2: Lợi ích 1: nhặt rác "can make your local park or streets a much more pleasant place to live" (làm công viên hay đường phố nơi bạn sống dễ chịu hơn nhiều).`,
+  `Bước 3: Lợi ích 2: "It also helps to reduce water pollution" (Nó cũng giúp giảm ô nhiễm nguồn nước). Chữ "also" (cũng) báo hiệu thêm một lợi ích nữa.`,
+  `Bước 4: Đếm lại: nơi sống dễ chịu hơn + bớt ô nhiễm nước = 2 lợi ích → chọn "two". Đếm chuẩn từng ý là ăn trọn điểm!`],
+ bad:[`"one" (một) thiếu: con đã bỏ quên lợi ích thứ hai được nối bằng "also" (cũng).`,
+  `"three" (ba) thừa: chuyện đồ dùng "can be bought cheaply" (mua được giá rẻ) nói về chi phí của người nhặt, không phải lợi ích cho thành phố.`,
+  `"four" (bốn) thừa: đoạn 2 chỉ có đúng 2 câu nói về điều tốt mà nhặt rác mang lại cho thành phố.`],
+ ev:`Going to pick up the trash can make your local park or streets a much more pleasant place to live. It also helps to reduce water pollution.`,
+ evvi:`Đi nhặt rác có thể làm cho công viên hay đường phố nơi bạn sống trở thành một nơi sống dễ chịu hơn nhiều. Nó cũng giúp giảm ô nhiễm nguồn nước.`,
+ dict:[`benefit`,`pleasant`,`pollution`,`trash`]},
+{id:3,part:1,col:'lilac',text:`______ is not mentioned as a volunteer activity in the passage.`,
+ opts:[OPT(`Visiting old people`,`V-ing phrase`,``,`Thăm người già`),OPT(`Working in a community library`,`V-ing phrase`,``,`Làm việc ở thư viện cộng đồng`),OPT(`Caring for homeless animals`,`V-ing phrase`,``,`Chăm sóc động vật vô gia cư`),OPT(`Picking litter`,`V-ing phrase`,``,`Nhặt rác`,1)],
+ vnt:`Nhặt rác không được nhắc đến như một hoạt động tình nguyện trong bài đọc.`,
+ why:[`Bước 1: Câu hỏi có "not mentioned" (KHÔNG được nhắc đến) → con dò danh sách hoạt động tình nguyện ở đoạn 3 (¶3 · Volunteer), phương án nào có trong danh sách thì loại.`,
+  `Bước 2: Đoạn 3 liệt kê: "visiting elderly people, working in a food bank or community library, taking care of homeless animals, and supporting local charities".`,
+  `Bước 3: "Visiting old people" = "visiting elderly people"; "Caring for homeless animals" = "taking care of homeless animals"; "Working in a community library" có gần như nguyên văn → cả ba đều CÓ.`,
+  `Bước 4: Nhặt rác nằm ở đoạn 2 như một cách riêng để làm đẹp thành phố, không thuộc danh sách tình nguyện ở đoạn 3 → chọn "Picking litter". Bẫy NOT đã bị con hạ gục!`],
+ bad:[`"Visiting old people" (thăm người già) CÓ trong bài: "old people" là cách nói khác của "elderly people".`,
+  `"Working in a community library" (làm việc ở thư viện cộng đồng) CÓ trong bài: "working in a food bank or community library".`,
+  `"Caring for homeless animals" (chăm sóc động vật vô gia cư) CÓ trong bài: "caring for" = "taking care of".`],
+ ev:`The most common activities are visiting elderly people, working in a food bank or community library, taking care of homeless animals, and supporting local charities.`,
+ evvi:`Những hoạt động phổ biến nhất là thăm người cao tuổi, làm việc ở ngân hàng thực phẩm hoặc thư viện cộng đồng, chăm sóc động vật vô gia cư và hỗ trợ các tổ chức từ thiện địa phương.`,
+ dict:[`volunteer`,`elderly`,`homeless`,`litter`]},
+{id:4,part:1,col:'blue',text:`Walking, cycling, or taking public transport help reduce street ______.`,
+ opts:[OPT(`congestion`,`n`,`kənˈdʒestʃən`,`sự tắc nghẽn (giao thông)`,1),OPT(`noise`,`n`,`nɔɪz`,`tiếng ồn`),OPT(`safety`,`n`,`ˈseɪfti`,`sự an toàn`),OPT(`construction`,`n`,`kənˈstrʌkʃən`,`việc xây dựng, công trình`)],
+ vnt:`Đi bộ, đạp xe hoặc đi phương tiện công cộng giúp giảm tắc nghẽn đường phố.`,
+ why:[`Bước 1: Từ khoá "walking, cycling, or taking public transport" → tìm ở đoạn 4 (¶4 · Take Public Transport or Cycle).`,
+  `Bước 2: Đoạn 4 viết: "So, walk, cycle, or take public transport whenever you can" rồi nói kết quả ngay sau: "This means the streets will be less congested".`,
+  `Bước 3: "less congested" (bớt tắc nghẽn) dùng tính từ "congested"; danh từ của nó là "congestion" (sự tắc nghẽn). Đường bớt tắc = "reduce street congestion".`,
+  `Bước 4: Chọn "congestion". Nhớ luôn cặp từ loại congested (adj) và congestion (n) để ăn điểm cả phần từ vựng nhé!`],
+ bad:[`"noise" (tiếng ồn) không hề được nhắc trong đoạn 4; bài chỉ nói bớt tắc đường và bớt ô nhiễm không khí.`,
+  `"safety" (sự an toàn) là điều tốt, không ai muốn "reduce" (giảm) sự an toàn; bài cũng không nói đến chuyện này.`,
+  `"construction" (việc xây dựng) không liên quan đến đi bộ hay đạp xe; bài không nhắc đến công trình nào.`],
+ ev:`So, walk, cycle, or take public transport whenever you can. This means the streets will be less congested and there will be less air pollution.`,
+ evvi:`Vì vậy, hãy đi bộ, đạp xe hoặc đi phương tiện công cộng bất cứ khi nào có thể. Điều này có nghĩa là đường phố sẽ bớt tắc nghẽn hơn và không khí sẽ bớt ô nhiễm hơn.`,
+ dict:[`congestion`,`congested`,`noise`,`safety`,`construction`]},
+{id:5,part:1,col:'mint',text:`This passage is concerned with ______.`,
+ opts:[OPT(`how we volunteer`,`wh-clause`,``,`chúng ta làm tình nguyện như thế nào`),OPT(`what we can do to help our community`,`wh-clause`,``,`những việc chúng ta có thể làm để giúp cộng đồng`,1),OPT(`why we should take public transport`,`wh-clause`,``,`tại sao chúng ta nên đi phương tiện công cộng`),OPT(`why litter picking is a 'should do'`,`wh-clause`,``,`tại sao nhặt rác là việc nên làm`)],
+ vnt:`Bài đọc này nói về những việc chúng ta có thể làm để giúp cộng đồng của mình.`,
+ why:[`Bước 1: Câu hỏi ý chính → đọc lại đoạn 1 (¶1): "There are many things you can do to improve your urban neighbourhood and make it a livable place" (Có nhiều việc bạn có thể làm để cải thiện khu phố và biến nó thành nơi đáng sống).`,
+  `Bước 2: Ba đoạn sau là ba việc cụ thể: nhặt rác (đoạn 2), làm tình nguyện (đoạn 3), đi phương tiện công cộng hoặc đạp xe (đoạn 4).`,
+  `Bước 3: Phương án ôm trọn CẢ BA việc chính là "what we can do to help our community" (những việc ta có thể làm để giúp cộng đồng) → chọn phương án này. Câu ý chính luôn chọn ý bao trùm cả bài!`],
+ bad:[`"how we volunteer" (cách làm tình nguyện) chỉ là ý của đoạn 3, quá hẹp so với cả bài.`,
+  `"why we should take public transport" (vì sao nên đi phương tiện công cộng) chỉ là ý của đoạn 4.`,
+  `"why litter picking is a 'should do'" (vì sao nên đi nhặt rác) chỉ là ý của đoạn 2.`],
+ ev:`There are many things you can do to improve your urban neighbourhood and make it a livable place. Here are some of them.`,
+ evvi:`Có nhiều việc bạn có thể làm để cải thiện khu phố đô thị của mình và biến nó thành một nơi đáng sống. Dưới đây là một vài việc trong số đó.`,
+ dict:[`community`,`neighbourhood`,`livable`,`volunteer`]},
+{id:6,part:1,col:'butter',text:`The word "<b>reduce</b>" in paragraph 2 is CLOSEST in meaning to ______.`,
+ opts:[OPT(`increase`,`v`,`ɪnˈkriːs`,`tăng lên`),OPT(`get down`,`phrasal v`,``,`cúi xuống, bước xuống; làm ai buồn chán`),OPT(`cut down on`,`phrasal v`,``,`cắt giảm, giảm bớt`,1),OPT(`maintain`,`v`,`meɪnˈteɪn`,`duy trì, giữ nguyên`)],
+ vnt:`Từ "reduce" ở đoạn 2 gần nghĩa nhất với "cut down on" (cắt giảm, giảm bớt).`,
+ why:[`Bước 1: Tìm "reduce" ở đoạn 2 (¶2 · Go Litter-picking): "It also helps to reduce water pollution" (Nó cũng giúp giảm ô nhiễm nguồn nước).`,
+  `Bước 2: Ô nhiễm là điều xấu, nhặt rác giúp nó ÍT đi → "reduce" = làm giảm, làm bớt đi.`,
+  `Bước 3: "cut down on" (cắt giảm, giảm bớt) mang đúng nghĩa đó: "cut down on water pollution" = giảm bớt ô nhiễm nước → chọn "cut down on". Từ đồng nghĩa chuẩn chỉnh, điểm này là của con!`],
+ bad:[`"increase" (tăng lên) trái nghĩa hoàn toàn với "reduce".`,
+  `"get down" (cúi xuống, bước xuống; làm ai buồn chán) chỉ hành động hoặc cảm xúc, không mang nghĩa giảm bớt ô nhiễm.`,
+  `"maintain" (duy trì, giữ nguyên) là giữ ở mức cũ, không làm giảm đi chút nào.`],
+ ev:`Going to pick up the trash can make your local park or streets a much more pleasant place to live. It also helps to reduce water pollution.`,
+ evvi:`Đi nhặt rác có thể làm cho công viên hay đường phố nơi bạn sống trở thành một nơi sống dễ chịu hơn nhiều. Nó cũng giúp giảm ô nhiễm nguồn nước.`,
+ dict:[`reduce`,`increase`,`maintain`]},
+{id:7,part:2,col:'mint',text:`What is NOT mentioned as a community activity?`,
+ opts:[OPT(`Planting trees`,`V-ing phrase`,``,`Trồng cây`),OPT(`Visiting elderly neighbours`,`V-ing phrase`,``,`Thăm hàng xóm cao tuổi`),OPT(`Collecting old books`,`V-ing phrase`,``,`Thu gom sách cũ`),OPT(`Organising sports competitions`,`V-ing phrase`,``,`Tổ chức các cuộc thi thể thao`,1)],
+ vnt:`Điều gì KHÔNG được nhắc đến như một hoạt động cộng đồng?`,
+ why:[`Bước 1: "NOT mentioned" (KHÔNG được nhắc đến) → dò danh sách hoạt động ở đoạn 2 (¶2 · Join Community Activities), phương án nào có trong bài thì loại.`,
+  `Bước 2: Đoạn 2 liệt kê: "join clean-up days, plant trees, collect old books or clothes for people in need, and visit elderly neighbours".`,
+  `Bước 3: "plant trees" = trồng cây ✔, "collect old books" = thu gom sách cũ ✔, "visit elderly neighbours" = thăm hàng xóm cao tuổi ✔.`,
+  `Bước 4: Cả bài không có chữ nào về thể thao hay cuộc thi → chọn "Organising sports competitions". Gặp NOT là bật radar ngay, con làm chuẩn rồi!`],
+ bad:[`"Planting trees" (trồng cây) CÓ trong bài: "plant trees".`,
+  `"Visiting elderly neighbours" (thăm hàng xóm cao tuổi) CÓ trong bài: "visit elderly neighbours".`,
+  `"Collecting old books" (thu gom sách cũ) CÓ trong bài: "collect old books or clothes".`],
+ ev:`Teenagers can join clean-up days, plant trees, collect old books or clothes for people in need, and visit elderly neighbours.`,
+ evvi:`Thanh thiếu niên có thể tham gia các ngày dọn dẹp vệ sinh, trồng cây, thu gom sách cũ hoặc quần áo cũ cho những người gặp khó khăn, và thăm những người hàng xóm cao tuổi.`,
+ dict:[`organise`,`competition`,`elderly`,`neighbour`]},
+{id:8,part:2,col:'lilac',text:`The word "<b>These</b>" in paragraph 2 refers to ______.`,
+ opts:[OPT(`local traditions`,`n phrase`,``,`truyền thống địa phương`),OPT(`community activities`,`n phrase`,``,`các hoạt động cộng đồng`,1),OPT(`traditional crafts`,`n phrase`,``,`các nghề thủ công truyền thống`),OPT(`handmade products`,`n phrase`,``,`các sản phẩm làm bằng tay`)],
+ vnt:`Từ "These" ở đoạn 2 chỉ các hoạt động cộng đồng.`,
+ why:[`Bước 1: Tìm "These" ở đoạn 2 (¶2 · Join Community Activities): "These activities do not require a lot of money" (Những hoạt động này không tốn nhiều tiền).`,
+  `Bước 2: "These" đi liền với "activities" (hoạt động), nên nó nhắc lại các hoạt động vừa kể ở câu ngay trước.`,
+  `Bước 3: Câu trước kể: "join clean-up days, plant trees, collect old books or clothes for people in need, and visit elderly neighbours". Đó chính là các hoạt động cộng đồng, đúng như tiêu đề đoạn "Join Community Activities".`,
+  `Bước 4: Chọn "community activities". Từ quy chiếu cứ lùi lại câu ngay trước là ra, quá dễ với con!`],
+ bad:[`"local traditions" (truyền thống địa phương) chỉ xuất hiện ở đoạn 3, nằm SAU chữ "These" nên không thể được nhắc lại.`,
+  `"traditional crafts" (nghề thủ công truyền thống) là chủ đề của đoạn 3; đoạn 2 không nói gì đến nghề thủ công.`,
+  `"handmade products" (sản phẩm làm bằng tay) chỉ xuất hiện ở đoạn 4.`],
+ ev:`Teenagers can join clean-up days, plant trees, collect old books or clothes for people in need, and visit elderly neighbours. These activities do not require a lot of money, but they can make a big difference.`,
+ evvi:`Thanh thiếu niên có thể tham gia các ngày dọn dẹp vệ sinh, trồng cây, thu gom sách cũ hoặc quần áo cũ cho người gặp khó khăn, và thăm hàng xóm cao tuổi. Những hoạt động này không đòi hỏi nhiều tiền, nhưng chúng có thể tạo nên sự khác biệt lớn.`,
+ dict:[`activity`,`community`,`tradition`,`craft`]},
+{id:9,part:2,col:'blue',text:`How many types of traditional products are mentioned in the passage?`,
+ opts:[OPT(`Two`,`number`,`tuː`,`Hai`),OPT(`Three`,`number`,`θriː`,`Ba`),OPT(`Four`,`number`,`fɔː`,`Bốn`,1),OPT(`Five`,`number`,`faɪv`,`Năm`)],
+ vnt:`Có bao nhiêu loại sản phẩm truyền thống được nhắc đến trong bài đọc?`,
+ why:[`Bước 1: Từ khoá "traditional products" (sản phẩm truyền thống) → tìm ở đoạn 3 (¶3 · Learn About Traditional Crafts), chỗ có "such as" (chẳng hạn như) để liệt kê.`,
+  `Bước 2: Đoạn 3 viết: "people still make products by hand, such as pottery, silk, bamboo products and traditional conical hats".`,
+  `Bước 3: Đếm từng món: (1) "pottery" đồ gốm, (2) "silk" lụa, (3) "bamboo products" đồ tre, (4) "traditional conical hats" nón lá truyền thống.`,
+  `Bước 4: Tổng cộng 4 loại → chọn "Four". Đánh số từng món ngay trong bài là không bao giờ đếm trượt!`],
+ bad:[`"Two" (hai) thiếu: con mới đếm được một nửa danh sách.`,
+  `"Three" (ba) thiếu: rất dễ bỏ sót món cuối "traditional conical hats" được nối bằng "and".`,
+  `"Five" (năm) thừa: "handmade products" ở đoạn 4 là cách gọi chung, không phải thêm một loại sản phẩm mới.`],
+ ev:`In many Vietnamese villages, people still make products by hand, such as pottery, silk, bamboo products and traditional conical hats.`,
+ evvi:`Ở nhiều làng quê Việt Nam, người dân vẫn làm ra các sản phẩm bằng tay, chẳng hạn như đồ gốm, lụa, đồ tre và nón lá truyền thống.`,
+ dict:[`pottery`,`silk`,`bamboo`,`conical`]},
+{id:10,part:2,col:'butter',text:`What can teenagers do to learn more about traditional crafts?`,
+ opts:[OPT(`Move to a craft village`,`verb phrase`,``,`Chuyển đến sống ở một làng nghề`),OPT(`Visit craft villages and watch craftsmen`,`verb phrase`,``,`Đến thăm làng nghề và xem những người thợ thủ công làm việc`,1),OPT(`Buy expensive machines`,`verb phrase`,``,`Mua máy móc đắt tiền`),OPT(`Open their own businesses`,`verb phrase`,``,`Mở cơ sở kinh doanh riêng`)],
+ vnt:`Thanh thiếu niên có thể làm gì để tìm hiểu thêm về các nghề thủ công truyền thống?`,
+ why:[`Bước 1: Từ khoá "learn more about traditional crafts" → đọc đoạn 3 (¶3 · Learn About Traditional Crafts).`,
+  `Bước 2: Đoạn 3 viết: "Young people can visit craft villages, watch skilled craftsmen at work or even try making simple products themselves".`,
+  `Bước 3: Câu tiếp theo chốt mục đích: "In this way, they can learn more about their local traditions" (Bằng cách này, các bạn có thể hiểu thêm về truyền thống địa phương).`,
+  `Bước 4: "visit craft villages" + "watch skilled craftsmen" khớp với "Visit craft villages and watch craftsmen" → chọn phương án này. Bằng chứng rõ như ban ngày, chốt luôn!`],
+ bad:[`"Move to a craft village" (chuyển đến sống ở làng nghề) đi quá xa: bài chỉ nói đến THĂM làng nghề, không nói chuyển nhà.`,
+  `"Buy expensive machines" (mua máy móc đắt tiền) sai: sản phẩm được làm "by hand" (bằng tay), bài không nhắc đến máy móc.`,
+  `"Open their own businesses" (mở cơ sở kinh doanh riêng) không hề có trong bài.`],
+ ev:`Young people can visit craft villages, watch skilled craftsmen at work or even try making simple products themselves. In this way, they can learn more about their local traditions and help keep them alive.`,
+ evvi:`Các bạn trẻ có thể đến thăm làng nghề, xem những người thợ lành nghề làm việc hoặc thậm chí tự tay thử làm những sản phẩm đơn giản. Bằng cách này, các bạn có thể hiểu thêm về truyền thống địa phương và giúp giữ gìn chúng.`,
+ dict:[`craftsman`,`village`,`skilled`,`machine`]},
+{id:11,part:2,col:'pink',text:`This passage is mainly concerned with ______.`,
+ opts:[OPT(`how teenagers can support their local community and culture`,`wh-clause`,``,`cách thanh thiếu niên có thể hỗ trợ cộng đồng và văn hoá địa phương`,1),OPT(`why traditional crafts are more popular than modern products`,`wh-clause`,``,`vì sao nghề thủ công truyền thống được ưa chuộng hơn sản phẩm hiện đại`),OPT(`how to make traditional Vietnamese products`,`wh-phrase`,``,`cách làm ra các sản phẩm truyền thống Việt Nam`),OPT(`why teenagers should work in craft villages`,`wh-clause`,``,`vì sao thanh thiếu niên nên làm việc ở làng nghề`)],
+ vnt:`Bài đọc này chủ yếu nói về cách thanh thiếu niên có thể hỗ trợ cộng đồng và văn hoá địa phương.`,
+ why:[`Bước 1: Câu hỏi ý chính → đọc đoạn 1 (¶1): "There are many ways teenagers can help their local community" và "learning about traditional crafts can help young people understand and protect their local culture".`,
+  `Bước 2: Ba đoạn sau triển khai đúng hai ý đó: đoạn 2 là hoạt động cộng đồng, đoạn 3 là tìm hiểu nghề thủ công, đoạn 4 là chia sẻ và bảo vệ văn hoá địa phương.`,
+  `Bước 3: Câu kết đoạn 4 gói lại cả hai: "both their community and its traditional culture" (cả cộng đồng lẫn văn hoá truyền thống) → chọn "how teenagers can support their local community and culture". Ý chính phải ôm trọn cả bài, con chọn quá chuẩn!`],
+ bad:[`"why traditional crafts are more popular than modern products" sai: bài không hề so sánh nghề thủ công với sản phẩm hiện đại.`,
+  `"how to make traditional Vietnamese products" sai: bài chỉ kể tên sản phẩm, không hướng dẫn cách làm.`,
+  `"why teenagers should work in craft villages" sai: bài chỉ khuyên đến thăm làng nghề, không bảo thanh thiếu niên đi làm ở đó.`],
+ ev:`There are many ways teenagers can help their local community. They can take part in activities that make their neighbourhood cleaner, friendlier and more connected. At the same time, learning about traditional crafts can help young people understand and protect their local culture.`,
+ evvi:`Có nhiều cách để thanh thiếu niên giúp đỡ cộng đồng địa phương. Các bạn có thể tham gia những hoạt động giúp khu phố của mình sạch hơn, thân thiện hơn và gắn kết hơn. Đồng thời, việc tìm hiểu các nghề thủ công truyền thống có thể giúp các bạn trẻ hiểu và bảo vệ văn hoá địa phương của mình.`,
+ dict:[`mainly`,`support`,`culture`,`community`]},
+{id:12,part:2,col:'mint',text:`The word "<b>sustainable</b>" in the passage is CLOSEST in meaning to ______.`,
+ opts:[OPT(`long-lasting`,`adj`,`ˌlɒŋˈlɑːstɪŋ`,`lâu dài, bền lâu`,1),OPT(`temporary`,`adj`,`ˈtemprəri`,`tạm thời`),OPT(`traditional`,`adj`,`trəˈdɪʃənl`,`truyền thống`),OPT(`expensive`,`adj`,`ɪkˈspensɪv`,`đắt đỏ`)],
+ vnt:`Từ "sustainable" trong bài gần nghĩa nhất với "long-lasting" (lâu dài, bền lâu).`,
+ why:[`Bước 1: Tìm "sustainable" ở câu cuối đoạn 4 (¶4 · Share and Protect Local Culture): "they can help create a stronger and more sustainable community".`,
+  `Bước 2: "sustainable" (bền vững) đi cùng "stronger" (vững mạnh hơn): một cộng đồng có thể tồn tại và phát triển LÂU DÀI, không mất đi theo thời gian.`,
+  `Bước 3: Đoạn 3 cũng có cùng ý giữ cho truyền thống sống mãi: "help keep them alive" → cả bài hướng tới điều lâu bền.`,
+  `Bước 4: "long-lasting" (lâu dài, bền lâu) gần nghĩa nhất → chọn "long-lasting". Từ vựng học thuật lớp 9 đã nằm gọn trong tay con!`],
+ bad:[`"temporary" (tạm thời) trái nghĩa: chỉ tồn tại trong thời gian ngắn.`,
+  `"traditional" (truyền thống) là từ có sẵn trong bài nên rất dễ bị bẫy, nhưng nó nói về cái có từ xưa, không phải cái bền lâu.`,
+  `"expensive" (đắt đỏ) nói về giá tiền, không hợp để mô tả "community" (cộng đồng).`],
+ ev:`When young people take an interest in both their community and its traditional culture, they can help create a stronger and more sustainable community.`,
+ evvi:`Khi các bạn trẻ quan tâm đến cả cộng đồng lẫn văn hoá truyền thống của cộng đồng đó, các bạn có thể góp phần tạo nên một cộng đồng vững mạnh và bền vững hơn.`,
+ dict:[`sustainable`,`temporary`,`traditional`,`expensive`]}
+];
+QS.forEach(function(q){q.options=q.opts.map(function(o){return o.w});q.correct=q.opts.filter(function(o){return o.ok})[0].w});
+
+/* ══ dựng trang ══ */
+var TOTAL=QS.length,answered=0,score=0,done={},MAP={};
+var TINT={pink:'#FFEAF4',mint:'#E3FBF1',lilac:'#F1EBFF',blue:'#E6F1FF',butter:'#FFF9DB'};
+var SECINFO={
+ 1:{c:'pink',t:"🏙️ Phần 1 · Make Your City Livable — Câu 1 → 6",s:"Read the passage and choose the correct answer A, B, C, or D."},
+ 2:{c:'blue',t:"🏺 Phần 2 · Teens & Local Culture — Câu 7 → 12",s:"Read the passage and choose the correct answer A, B, C, or D."}};
+var app=document.getElementById('app'),secs={};
+[1,2].forEach(function(p){var s=document.createElement('div');s.className='sec';s.dataset.part=p;s.style.borderColor='var(--'+SECINFO[p].c+')';
+ s.innerHTML='<div class="sech" style="color:var(--'+SECINFO[p].c+'-d)">'+SECINFO[p].t+'</div><div class="secs">'+SECINFO[p].s+'</div>';
+ secs[p]=s;app.appendChild(s)});
+QS.forEach(function(q){
+ var so=q.tf?q.options.slice():shuffle(q.options);
+ MAP[q.id]=so;
+ var card=document.createElement('div');
+ card.className='q';card.id='c'+q.id;
+ card.style.setProperty('--qc','var(--'+q.col+')');
+ card.style.borderLeftColor='var(--'+q.col+')';
+ card.style.background=TINT[q.col];
+ card.innerHTML='<div class="qt"><span class="qn">'+q.id+'</span>'+q.text.replace(/<b>/g,'<b class="bk-'+q.col+'">')+'</div>'+
+  '<div class="og" id="o'+q.id+'">'+so.map(function(o,i){return '<button class="ob" onclick="pick('+q.id+','+i+')">'+String.fromCharCode(65+i)+'. '+o+'</button>'}).join('')+'</div>'+
+  '<div class="ex" id="e'+q.id+'"></div>';
+ secs[q.part].appendChild(card);
+});
+
+function pick(qid,i){
+ if(done[qid])return;done[qid]=true;answered++;
+ var q=QS.find(function(x){return x.id===qid});
+ var so=MAP[qid],bs=document.getElementById('o'+qid).children;
+ var ok=so[i]===q.correct;
+ for(var k=0;k<bs.length;k++){bs[k].classList.add('dn');
+  if(so[k]===q.correct)bs[k].classList.add('ok');else if(k===i)bs[k].classList.add('no')}
+ document.getElementById('e'+qid).innerHTML=render(q);
+ document.getElementById('e'+qid).classList.add('on');
+ if(ok){score++;ding();conf()}
+ else{buzz();var c=document.getElementById('c'+qid);c.classList.add('shk');setTimeout(function(){c.classList.remove('shk')},430)}
+ bump();
+}
+function bump(){document.getElementById('lv').textContent=score+'/'+TOTAL;document.getElementById('sc').textContent=score+'/'+TOTAL}
+
+/* ══ khung đọc vừa màn hình: chừa ~95px đáy cho cảnh căn bếp ══ */
+function fitPanels(){var m=document.querySelector('.main'),ps=document.querySelectorAll('.lp,.rp');if(!m||!ps.length)return;
+ if(window.innerWidth<=940){ps.forEach(function(e){e.style.maxHeight=''});m.style.paddingBottom='';return}
+ var n=document.querySelector('.note'),nh=n?n.offsetHeight:0,h=Math.max(320,window.innerHeight-nh-104);
+ ps.forEach(function(e){e.style.maxHeight=h+'px'});
+ var pb=parseFloat(getComputedStyle(m).paddingBottom)||0,top=ps[0].getBoundingClientRect().top+window.scrollY,want=Math.max(40,top-nh-8),extra=document.documentElement.scrollHeight-window.innerHeight-pb;
+ m.style.paddingBottom=Math.max(0,want-extra)+'px'}
+window.addEventListener('resize',fitPanels);window.addEventListener('load',fitPanels);
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitPanels);
+fitPanels();
+
+/* ══ nộp bài ══ */
+function openName(){
+ if(answered<TOTAL){alert('Con ơi, con còn '+(TOTAL-answered)+' câu chưa làm kìa! Hoàn thành hết rồi mới nộp bài nhé!');return;}
+ document.getElementById('ovN').classList.add('on');setTimeout(function(){document.getElementById('nIn').focus()},150);
+}
+document.getElementById('nIn').addEventListener('keydown',function(e){if(e.key==='Enter')showResult()});
+function showResult(){
+ var i=document.getElementById('nIn'),n=i.value.trim();
+ if(!n){document.getElementById('nEm').classList.add('show');i.focus();return}
+ document.getElementById('nEm').classList.remove('show');
+ document.getElementById('ovN').classList.remove('on');
+ var pct=score/TOTAL,ten=(pct*10).toFixed(2),g,m,gif;
+ document.getElementById('rn').textContent='Học viên: '+n;
+ if(score===TOTAL){g='🏆 ĐIỂM 10 TUYỆT ĐỐI, '+n+'!';m='Con bắt trọn '+TOTAL+' câu đọc hiểu không trượt câu nào — phong độ này vào phòng thi giữa kì I là gặt điểm cao! MS Chí Nên rất tự hào về con! 🌟 ☎️ 0852639652.';gif='https://media.giphy.com/media/11sBLVxNs7v6WA/giphy.gif'}
+ else if(pct>=.8){g='👏 QUÁ ĐỈNH, '+n+'!';m='Chỉ còn vài câu nữa là tròn điểm 10 — xem lại những câu có bẫy NOT và từ đồng nghĩa là bài thi giữa kì I của con chắc chắn bứt phá! ☎️ 0852639652.';gif='https://media.giphy.com/media/3o7abGQa0p2EWzchcg/giphy.gif'}
+ else if(pct>=.6){g='💪 LỬA ĐÃ CHÁY, '+n+'!';m='Con đã qua ngưỡng an toàn rồi đó. Mở lời giải từng câu, tô lại bằng chứng trong bài và chép từ mới vào vở — lần sau điểm sẽ vọt lên!';gif='https://media.giphy.com/media/3o7abGQa0p2EWzchcg/giphy.gif'}
+ else{g='🌱 BỨT PHÁ LẦN SAU NÀO, '+n+'!';m='Đừng buồn con nhé. Đọc kĩ lời giải của cô, ghi chép từ mới, rồi bấm làm lại — chiến binh lớp 9 nào cũng mạnh lên sau mỗi lần sai! 💪';gif='https://media.giphy.com/media/l378giAZgxPw3eO52/giphy.gif'}
+ document.getElementById('rSc').textContent=score;
+ document.getElementById('rTt').textContent=TOTAL;
+ document.getElementById('r10').textContent=ten;
+ document.getElementById('rGif').src=gif;
+ document.getElementById('rMs').innerHTML='<b>'+g+'</b><br>'+m;
+ document.getElementById('ovR').classList.add('on');
+ if(pct>=.6){conf();ding()}
+}
+function closeR(){document.getElementById('ovR').classList.remove('on')}
+
+/* ══ lời nhắc — đổi theo phần đang làm (khung nhắc giữ cố định 2 dòng) ══ */
+var GEN=[
+ '🧁 Chào chiến binh lớp 9! Tây Mỗ p6 có 12 câu đọc hiểu (1 → 12) — hai bài đọc, mười hai bằng chứng, bắt trọn từng câu để bước vào phòng thi giữa kì I thật tự tin! 🔥',
+ '🚨 LƯU Ý TỪ MS CHÍ NÊN: Cuộn câu hỏi đến đâu làm đến đó! TỰ GIÁC tra từ mới bằng Google Dịch/Từ điển Cambridge, tuyệt đối KHÔNG chọn bừa. Đọc kỹ giải thích và GHI CHÉP từ mới vào vở thì tiếng Anh mới thực sự giỏi lên. Tránh làm qua loa chống đối! 📝',
+ '✏️ Mẹo thi thật: dùng thanh HIGHLIGHT màu đen tô từ khoá và bằng chứng ngay trong bài đọc — tô trúng chỗ là đáp án tự lộ diện, nhanh và chắc như cao thủ! 🔥',
+ '🔥 Đúng liên tục là chuỗi lửa bùng cháy — giữ nhịp thật đều, câu nào cũng phải có bằng chứng trong bài rồi mới chốt!',
+ '💪 Kì thi giữa kì I đang đến rất gần — mỗi câu đọc hiểu làm chắc hôm nay là thêm một điểm an toàn trong phòng thi!',
+ '🦆 Chọn sai là chú vịt kêu quạc quạc — không sao, đọc lời giải, ghi lại cái bẫy, câu sau con sẽ bắn trúng hồng tâm!',
+ '🏆 Lớp 9 rồi, mỗi điểm đều quý như vàng — luyện thật kĩ hôm nay, vào phòng thi chỉ việc gặt điểm 10 về nhà! 🧁',
+ '☎️ Đăng ký khoá tiếng Anh lớp 1 → 12 cùng MS Chí Nên — 0852639652 — luyện đề giữa kì, cuối kì và thi vào 10 bài bản, điểm số bứt phá mỗi tuần!'];
+var PMSG={
+ 1:['🏙️ PHẦN 1 · Make Your City Livable! 6 câu chờ con — nhặt rác, làm tình nguyện, đi xe buýt, câu nào cũng có bằng chứng ngay trong bài, săn thật nhanh nào! 🔥',
+    '🔍 Câu có NOT hay câu hỏi từ đồng nghĩa là bẫy quen mặt của đề thi — khoanh từ khoá, dò từng dòng, không để lọt một điểm nào!'],
+ 2:['🏺 PHẦN 2 · Teens & Local Culture! 6 câu cuối — gốm, lụa, nón lá đang chờ con đếm chuẩn và chốt gọn điểm 10! 🔥',
+    '🎉 Về đích tới nơi rồi! Giữ lửa thêm vài câu nữa, bài đọc hiểu giữa kì I sẽ chỉ là chuyện nhỏ với con! 🏆']};
+var curP=0,mk=0,msEl=document.getElementById('msTx');
+function fitMsg(){var box=msEl.parentNode;msEl.style.fontSize='';var fs=parseFloat(getComputedStyle(msEl).fontSize),k=0;
+ while(msEl.offsetHeight>box.clientHeight+1&&fs>10&&k<20){fs-=.5;k++;msEl.style.fontSize=fs+'px'}}
+function showMsg(t){msEl.style.opacity=0;setTimeout(function(){
+ var de=document.documentElement,atEnd=window.scrollY>0&&window.scrollY>=de.scrollHeight-window.innerHeight-2;
+ msEl.innerHTML=t;fitMsg();msEl.style.opacity=1;fitPanels();
+ if(atEnd)window.scrollTo(0,de.scrollHeight)},250)}
+fitMsg();
+setInterval(function(){var list=(PMSG[curP]||[]).concat(GEN);mk=(mk+1)%list.length;showMsg(list[mk])},5200);
+function whichPart(){
+ var rp=document.querySelector('.rp'),r=rp.getBoundingClientRect(),mid=Math.max(r.top,0)+Math.min(r.height,window.innerHeight)*0.45,p=1;
+ [1,2].forEach(function(k){if(secs[k].getBoundingClientRect().top<mid)p=k});
+ if(p!==curP){curP=p;mk=0;showMsg(PMSG[p][0])}
+}
+document.querySelector('.rp').addEventListener('scroll',whichPart,{passive:true});
+window.addEventListener('scroll',whichPart,{passive:true});
+window.addEventListener('resize',fitMsg);
+</script>
+<style>/*streak*/
+#stkRow{display:flex;align-items:center;flex:0 0 auto;margin:0 4px}#stkRow.in{align-self:center;margin:0 0 0 8px}#stkRow.in .bar,#stkRow.in .nx,#stkRow.in .lbl{display:none!important}#stkRow.in #stkP{flex-direction:row!important;gap:6px;padding:4px 10px 4px 8px;position:static}#stkRow.in .fl,#stkRow.in .n{position:static;line-height:1}
+#stkRow.fixed{position:fixed;left:10px;bottom:12px;z-index:60}
+#stkP{display:flex;align-items:center;gap:6px;padding:2px 10px 2px 7px;border-radius:999px;background:#FDF2F8;border:2px solid #F9A8D4;font-family:'Baloo 2','Nunito',sans-serif;
+ font-weight:700;color:#9D174D;font-size:.92rem;transition:transform .25s;white-space:nowrap}
+#stkP .fl{display:inline-block;position:static;font-size:1.1rem;transition:font-size .3s;transform-origin:50% 90%}
+#stkP.hot .fl{animation:stkFl .5s ease-in-out infinite alternate}@keyframes stkFl{from{transform:scale(1) rotate(-6deg)}to{transform:scale(1.25) rotate(6deg)}}
+#stkP.pop{transform:scale(1.15)}#stkP.cold{filter:grayscale(.6);opacity:.85}
+#stkP .n{display:inline-grid;place-items:center;min-width:22px;height:22px;padding:0 5px;border-radius:999px;background:linear-gradient(135deg,#F472B6,#A855F7);color:#fff;font-size:.9rem}
+#stkP .bar{width:54px;height:6px;border-radius:99px;background:#FBCFE8;overflow:hidden}#stkP .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#EC4899,#A855F7);transition:width .3s}
+#stkP .nx{font-size:.78rem;color:#BE185D}
+#stkToast{position:fixed;left:50%;top:38%;z-index:70;transform:translate(-50%,-50%) scale(.4);opacity:0;pointer-events:none;text-align:center;padding:18px 26px;border-radius:26px;
+ background:linear-gradient(135deg,#FDF2F8,#F5F3FF);border:4px solid #F9A8D4;box-shadow:0 18px 40px rgba(0,0,0,.25);font-family:'Baloo 2','Nunito',sans-serif;color:#9D174D;max-width:86vw;transition:all .35s cubic-bezier(.2,1.6,.4,1)}
+#stkToast.show{opacity:1;transform:translate(-50%,-50%) scale(1)}#stkToast b{display:block;font-size:2.3rem;line-height:1.15}#stkToast span{font-weight:700;font-size:1.05rem}
+#stkToast.soft{background:linear-gradient(135deg,#EFF6FF,#F5F3FF);border-color:#93C5FD;color:#1E3A8A}#stkToast.soft b{font-size:1.6rem}
+.stkSpark{position:fixed;z-index:69;pointer-events:none;font-size:26px;animation:stkSp 1.2s ease-out forwards}
+@keyframes stkSp{0%{opacity:1;transform:translate(0,0) scale(.6)}100%{opacity:0;transform:translate(var(--x),var(--y)) scale(1.3) rotate(240deg)}}
+@media(max-width:700px){#stkP .bar,#stkP .nx,#stkP .lbl{display:none}#stkP{padding:2px 7px 2px 5px}#stkToast b{font-size:1.8rem}}
+@media (prefers-reduced-motion:reduce){#stkP.hot .fl,.stkSpark{animation:none}}
+</style>
+<script>/*streak*/(function(){
+ const $=id=>document.getElementById(id),num=el=>{const m=(el.textContent||'').match(/(\d+)\s*\/\s*(\d+)/);return m?[+m[1],+m[2]]:[0,0]};
+ let get=null,anchor=null,mode='after';const sc=$('scoreChip'),pg=$('progChip');
+ if(sc&&pg){get=()=>{const s=num(sc),a=num(pg);return [a[0],s[0],a[1]]};anchor=sc}
+ else{try{if(typeof answered!=='undefined'&&typeof score!=='undefined'){get=()=>[answered,score,typeof TOTAL!=='undefined'?TOTAL:0];anchor=$('sc')&&$('sc').parentElement}}catch(e){}
+  if(!get)try{if(typeof done==='object'&&done&&$('lv')){get=()=>{const v=Object.values(done);return [v.length,v.filter(x=>x===true).length,typeof QS!=='undefined'?QS.length:0]};anchor=$('lv').closest('.gauge')||$('lv');mode='in'}}catch(e){}}
+ if(!get)return;
+ const row=document.createElement('div');row.id='stkRow';
+ row.innerHTML='<div id="stkP" class="cold" title="Số câu đúng liên tiếp"><span class="fl">🔥</span><span class="lbl">Chuỗi đúng</span><span class="n" id="stkN">0</span><span class="bar"><i id="stkB"></i></span><span class="nx" id="stkX">→ 3</span></div>';
+ if(!anchor){row.className='fixed';document.body.appendChild(row)}else if(mode==='in'){row.className='in';anchor.insertAdjacentElement('afterend',row)}else anchor.insertAdjacentElement('afterend',row);
+ const toast=document.createElement('div');toast.id='stkToast';document.body.appendChild(toast);
+ const P=document.getElementById('stkP'),N=document.getElementById('stkN'),B=document.getElementById('stkB'),X=document.getElementById('stkX');
+ let cur=0,best=0,[lastA,lastS]=get(),tmr=null;
+ const NEXT=n=>n<3?3:n<5?5:n<10?10:(Math.floor(n/5)+1)*5,LOW=n=>n<3?0:n<5?3:n<10?5:Math.floor(n/5)*5;
+ const PRAISE={3:['🔥 3 câu liền!','Con đang vào guồng rồi đó!'],5:['🔥🔥 5 câu liền!','Siêu đỉnh luôn — cô thấy con tập trung lắm!'],10:['🌟 10 câu liền!','Không ai cản nổi con nữa rồi!'],
+  15:['🏆 15 câu liền!','Con là ngôi sao của lớp đó!'],20:['👑 20 câu liền!','Tuyệt vời — cô tự hào về con lắm!']};
+ const OOPS=['Không sao đâu con — mình bắt đầu chuỗi mới nhé! 💪','Đọc lời giải rồi làm tiếp, chuỗi mới đang chờ con! 🌱','Sai một câu là học thêm một điều — cố lên con! 🌈','Hít một hơi thật sâu, câu sau con sẽ làm được! ⭐'];
+ function say(t,sub,soft){toast.className=soft?'soft':'';toast.innerHTML='<b>'+t+'</b><span>'+sub+'</span>';void toast.offsetWidth;toast.classList.add('show');clearTimeout(tmr);tmr=setTimeout(()=>toast.classList.remove('show'),soft?1600:2000)}
+ function burst(){const E=['🔥','⭐','✨','🎉','💗','🌟'];for(let i=0;i<16;i++){const s=document.createElement('div');s.className='stkSpark';s.textContent=E[i%E.length];
+  const a=Math.random()*Math.PI*2,r=120+Math.random()*160;s.style.cssText='left:50%;top:38%;--x:'+Math.cos(a)*r+'px;--y:'+Math.sin(a)*r+'px';document.body.appendChild(s);setTimeout(()=>s.remove(),1300)}}
+ function paint(){N.textContent=cur;const lo=LOW(cur),hi=NEXT(cur);B.style.width=Math.min(100,(cur-lo)/(hi-lo)*100)+'%';X.textContent='→ '+hi;
+  P.classList.toggle('cold',cur===0);P.classList.toggle('hot',cur>=3);P.classList.add('pop');setTimeout(()=>P.classList.remove('pop'),250);
+  P.querySelector('.fl').style.fontSize=(1.1+Math.min(cur,15)*.03)+'rem'}
+ function check(){const [a,s,tot]=get();if(a===lastA)return;const dA=a-lastA,dS=s-lastS;lastA=a;lastS=s;if(dA<=0)return;
+  if(dS>=dA){const before=cur;cur+=dA;best=Math.max(best,cur);paint();
+   const hit=Object.keys(PRAISE).map(Number).filter(m=>before<m&&cur>=m).pop()||(cur>=25&&Math.floor(cur/5)>Math.floor(before/5)?cur-cur%5:0);
+   if(hit){const p=PRAISE[hit]||['🚀 '+hit+' câu liền!','Con đang bay cao lắm rồi!'];say(p[0],p[1]);burst()}}
+  else{const had=cur;cur=0;paint();if(had>=3)say('Chuỗi '+had+' câu — giỏi lắm!',OOPS[Math.floor(Math.random()*OOPS.length)],true)}
+  if(tot&&a>=tot)setTimeout(()=>{say('🏅 Chuỗi dài nhất: '+best+' câu',best>=5?'Con làm bài thật tuyệt vời!':'Lần sau mình thử phá kỷ lục này nhé!');if(best>=5)burst()},2400)}
+ setInterval(check,250);
+})();</script>
+<script>/*devclean*/(function(){
+var ZW=/[\u00AD\u034F\u061C\u115F\u1160\u17B4\u17B5\u180E\u200B-\u200F\u202A-\u202E\u2060-\u206F\uFEFF]/g,
+    SP=/[\u00A0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\t]/g,
+    AP=/[\u2018\u2019\u201A\u201B\u2032\u2035\u02B9\u02BB\u02BC\u02BD\u02C8\u0060\u00B4\uFF07]/g,
+    DQ=/[\u201C\u201D\u201E\u201F\u2033\u2036\u00AB\u00BB\uFF02]/g,
+    DS=/[\u2010\u2011\u2012\u2212\uFE63\uFF0D]/g;
+function clean(v){if(!v)return v;var s=String(v);try{s=s.normalize('NFKC')}catch(e){}
+  return s.replace(ZW,'').replace(SP,' ').replace(AP,"'").replace(DQ,'"').replace(DS,'-').replace(/[\u0300-\u036f]/g,'').replace(/ {2,}/g,' ');}
+window.__devclean=clean;
+function fix(skip){var L=document.querySelectorAll('input:not([type]),input[type=text],input[type=search],textarea');
+  for(var i=0;i<L.length;i++){var el=L[i];if(el===skip||el.readOnly||el.disabled)continue;var v=el.value,c=clean(v);if(c!==v)el.value=c;}}
+['pointerdown','mousedown','touchstart','click','change','focusout'].forEach(function(t){document.addEventListener(t,function(e){fix(t==='focusout'||t==='change'?null:e.target)},true)});
+document.addEventListener('keydown',function(e){if(e.key==='Enter'||e.keyCode===13)fix(null)},true);
+})();</script>
+<div id="hlPop">
+ <button type="button" class="y" title="Vàng" onclick="hlApply('y')"></button>
+ <button type="button" class="g" title="Xanh lá" onclick="hlApply('g')"></button>
+ <button type="button" class="p" title="Hồng" onclick="hlApply('p')"></button>
+ <button type="button" class="b" title="Xanh" onclick="hlApply('b')"></button>
+ <button type="button" class="er" title="Tẩy tô" onclick="hlErase()">🧽</button>
+</div>
+<script>/*hltool*/
+/* ══ công cụ highlight: chỉ tô trong bài đọc (.paragraph, .translation ở khung trái) ══ */
+var HLT={saved:null,t:null,target:null,gid:0},hlPop=document.getElementById('hlPop');
+function hlGroup(g){return Array.prototype.slice.call(document.querySelectorAll('.lp mark.uhl[data-g="'+g+'"]'))}
+function hlUnpick(){document.querySelectorAll('mark.uhl.pick').forEach(function(m){m.classList.remove('pick')});HLT.target=null}
+function hlShowGroup(){
+ var ms=hlGroup(HLT.target);if(!ms.length){hlUnpick();hlHide();return}
+ var L=1e9,T=1e9,R=-1e9,B=-1e9;
+ ms.forEach(function(m){var b=m.getBoundingClientRect();if(!b.width&&!b.height)return;L=Math.min(L,b.left);T=Math.min(T,b.top);R=Math.max(R,b.right);B=Math.max(B,b.bottom)});
+ if(R<L){hlHide();return}
+ hlShow({getBoundingClientRect:function(){return {left:L,top:T,right:R,bottom:B,width:R-L,height:B-T}}});
+}
+function hlZone(n){var e=n&&(n.nodeType===1?n:n.parentNode);return e&&e.closest?e.closest('.lp .paragraph,.lp .translation'):null}
+function hlNodes(r){
+ var root=r.commonAncestorContainer;if(root.nodeType!==1)root=root.parentNode;
+ var out=[],w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,null),n;
+ while((n=w.nextNode())){
+  if(!r.intersectsNode(n))continue;
+  var z=hlZone(n);if(!z||!z.getClientRects().length)continue;
+  var s=n===r.startContainer?r.startOffset:0,e=n===r.endContainer?r.endOffset:n.length;
+  if(e>s)out.push([n,s,e]);
+ }
+ return out;
+}
+function hlRange(){
+ var sel=window.getSelection();if(!sel||!sel.rangeCount||sel.isCollapsed)return null;
+ var r=sel.getRangeAt(0),lp=document.querySelector('.lp');
+ if(!lp.contains(r.commonAncestorContainer))return null;
+ var L=hlNodes(r);if(!L.some(function(x){return x[0].nodeValue.slice(x[1],x[2]).trim()}))return null;
+ return r;
+}
+function hlIsMark(e){return e&&e.nodeName==='MARK'&&e.classList.contains('uhl')}
+function hlPaint(r,cls){
+ var L=hlNodes(r),zones=[],g=cls?String(++HLT.gid):'';
+ L.forEach(function(x){
+  var n=x[0],s=x[1],e=x[2];
+  if(e<n.length)n.splitText(e);
+  if(s>0)n=n.splitText(s);
+  var z=hlZone(n);if(zones.indexOf(z)<0)zones.push(z);
+  var p=n.parentNode;
+  if(hlIsMark(p)){
+   var host=p.parentNode,ref=p.nextSibling,aft=null,put=n;
+   if(n.nextSibling){aft=document.createElement('mark');aft.className=p.className;if(p.dataset.g)aft.dataset.g=p.dataset.g;while(n.nextSibling)aft.appendChild(n.nextSibling)}
+   if(cls){put=document.createElement('mark');put.className='uhl uhl-'+cls;put.dataset.g=g;put.appendChild(n)}
+   host.insertBefore(put,ref);
+   if(aft)host.insertBefore(aft,put.nextSibling);
+   if(!p.firstChild)host.removeChild(p);
+  }else if(cls){
+   var m=document.createElement('mark');m.className='uhl uhl-'+cls;m.dataset.g=g;p.insertBefore(m,n);m.appendChild(n);
+  }
+ });
+ zones.forEach(function(z){if(z){z.querySelectorAll('mark.uhl').forEach(function(m){if(!m.textContent)m.remove()});z.normalize()}});
+}
+function hlDone(){HLT.saved=null;hlUnpick();try{window.getSelection().removeAllRanges()}catch(e){}hlHide()}
+function hlApply(cls){
+ if(HLT.target&&!hlRange()){hlGroup(HLT.target).forEach(function(m){m.className='uhl uhl-'+cls});hlDone();return}
+ var r=HLT.saved||hlRange();
+ if(!r){HLT.saved=null;hlHide();var t=document.getElementById('hlTip');t.classList.remove('ping');void t.offsetWidth;t.classList.add('ping');return}
+ hlPaint(r,cls);hlDone();
+}
+function hlErase(){
+ if(HLT.target&&!hlRange()){hlGroup(HLT.target).forEach(function(m){var p=m.parentNode;while(m.firstChild)p.insertBefore(m.firstChild,m);p.removeChild(m);p.normalize()});hlDone();return}
+ var r=HLT.saved||hlRange();
+ if(r){hlPaint(r,null)}
+ else{document.querySelectorAll('mark.uhl').forEach(function(m){var p=m.parentNode;while(m.firstChild)p.insertBefore(m.firstChild,m);p.removeChild(m);p.normalize()})}
+ hlDone();
+}
+function hlHide(){hlPop.classList.remove('on','below')}
+function hlShow(r){
+ var b=r.getBoundingClientRect();if(!b.width&&!b.height){hlHide();return}
+ hlPop.classList.add('on');
+ var w=hlPop.offsetWidth,h=hlPop.offsetHeight,note=document.querySelector('.note'),nb=note?note.getBoundingClientRect().bottom:0;
+ var x=Math.max(6,Math.min(window.innerWidth-w-6,b.left+b.width/2-w/2)),y=b.top-h-10,below=false;
+ if(y<nb+6){y=b.bottom+10;below=true}
+ hlPop.style.left=x+'px';hlPop.style.top=y+'px';hlPop.classList.toggle('below',below);
+}
+function hlCheck(){clearTimeout(HLT.t);HLT.t=setTimeout(function(){var r=hlRange();if(r){hlUnpick();hlShow(r)}else if(HLT.target)hlShowGroup();else hlHide()},90)}
+document.addEventListener('click',function(e){
+ var t=e.target;if(t.closest&&t.closest('#hlPop,.hlbar'))return;
+ var m=t.closest?t.closest('.lp mark.uhl'):null;
+ if(m&&!hlRange()){
+  if(!m.dataset.g)m.dataset.g=String(++HLT.gid);
+  hlUnpick();HLT.target=m.dataset.g;hlGroup(HLT.target).forEach(function(x){x.classList.add('pick')});hlShowGroup();
+ }else if(HLT.target){hlUnpick();hlHide()}
+});
+function hlKeep(e){var r=hlRange();if(r)HLT.saved=r.cloneRange();if(e.type==='mousedown')e.preventDefault()}
+document.querySelectorAll('.hlbar button,#hlPop button').forEach(function(b){
+ b.addEventListener('pointerdown',function(){var r=hlRange();HLT.saved=r?r.cloneRange():null});
+ b.addEventListener('mousedown',hlKeep);
+ b.addEventListener('touchstart',hlKeep,{passive:true});
+});
+document.addEventListener('mouseup',hlCheck);
+document.addEventListener('touchend',hlCheck);
+document.addEventListener('selectionchange',hlCheck);
+window.addEventListener('scroll',function(){if(hlPop.classList.contains('on'))hlCheck()},{passive:true});
+document.querySelector('.lp').addEventListener('scroll',function(){if(hlPop.classList.contains('on'))hlCheck()},{passive:true});
+if(typeof fitPanels==='function')fitPanels();
+</script>
+<style>/*namegate*/.ngTag{display:block;margin:2px auto 8px;padding:8px 12px;border-radius:14px;background:#F5F3FF;border:2px dashed #C4B5FD;font-weight:800;color:#4C1D95;line-height:1.6;font-size:.95rem;text-align:center}
+.ngTag small{font-weight:700;color:#6D28D9}
+#ngClock{position:fixed;left:10px;bottom:10px;z-index:90;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.92);border:2px solid #C4B5FD;font:800 .9rem inherit;color:#5B21B6;box-shadow:0 4px 12px rgba(0,0,0,.12);pointer-events:none}</style>
+<div id="ngClock">⏱ 00:00</div>
+<script>/*namegate*/(function(){
+var T0=Date.now(),TEND=0,clk=document.getElementById('ngClock');
+function mmss(ms){var s=Math.floor(ms/1000),m=Math.floor(s/60);s%=60;return (m<10?'0':'')+m+':'+(s<10?'0':'')+s;}
+function dur(ms){var s=Math.floor(ms/1000),m=Math.floor(s/60);s%=60;return (m?m+' phút ':'')+s+' giây';}
+function esc(s){return String(s).replace(/[<>&]/g,'');}
+function clean(s){s=(s||'');try{s=s.normalize('NFC')}catch(e){}return s.replace(/[​-‏⁠﻿]/g,'').replace(/\s+/g,' ').trim();}
+function stamp(){var d=new Date(),p=function(n){return(n<10?'0':'')+n};return p(d.getHours())+':'+p(d.getMinutes())+' · '+p(d.getDate())+'/'+p(d.getMonth()+1)+'/'+d.getFullYear();}
+setInterval(function(){if(!TEND&&clk)clk.textContent='⏱ '+mmss(Date.now()-T0);},1000);
+var orig=window.showResult;if(typeof orig!=='function')return;
+window.showResult=function(){var i=document.getElementById('nIn'),v=clean(i&&i.value);if(i)i.value=v;
+  orig.apply(this,arguments);
+  var ov=document.getElementById('ovR'),rn=document.getElementById('rn');if(!v||!ov||!ov.classList.contains('on')||!rn)return;
+  if(!TEND)TEND=Date.now();if(clk)clk.textContent='⏱ '+mmss(TEND-T0)+' ✔';
+  rn.innerHTML='<span class="ngTag">👤 '+esc(v)+'<br>⏱ Làm bài trong <b>'+dur(TEND-T0)+'</b><br><small>⏰ Nộp lúc '+stamp()+'<br>📘 '+esc(document.title.split('|')[0].trim())+'</small></span>';};
+})();</script>
+<script>/*attempts*/(function(){
+var KEY='att:'+decodeURIComponent(location.pathname),done=false;
+function load(){try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){return []}}
+function save(a){try{localStorage.setItem(KEY,JSON.stringify(a.slice(-20)))}catch(e){}}
+function fmt(d){var p=function(n){return(n<10?'0':'')+n};return p(d.getDate())+'/'+p(d.getMonth()+1);}
+function durOf(tag){var m=(tag.textContent||'').match(/Làm bài trong\s*((?:\d+\s*phút\s*)?\d+\s*giây)/);return m?m[1].replace(/\s+/g,' '):'';}
+function score(){var a=document.getElementById('resScore');if(a)return a.textContent.replace(/\s+/g,'');
+  a=document.getElementById('rS');if(a)return a.textContent.replace(/\s+/g,'');
+  a=document.getElementById('rSc');var b=document.getElementById('rTt');if(a)return a.textContent.trim()+'/'+(b?b.textContent.trim():'?');return '?';}
+function add(tag){
+  if(tag.querySelector('.ngAtt'))return;
+  var a=load();
+  if(!done){done=true;a.push({s:score(),t:Date.now(),d:durOf(tag)});save(a);}
+  var k=a.length,prev=a.slice(Math.max(0,k-6),k-1);
+  var d=document.createElement('div');d.className='ngAtt';
+  d.style.cssText='display:block;margin-top:6px;padding-top:6px;border-top:2px dashed #DDD6FE';
+  d.innerHTML='🔁 <b>Lần nộp thứ '+k+'</b> trên máy này'+(prev.length?'<br><small>'+prev.map(function(x,i){return 'Lần '+(k-prev.length+i)+': <b>'+x.s+'</b>'+(x.d?' · ⏱ làm trong <b>'+x.d+'</b>':'')+' · '+fmt(new Date(x.t))}).join('<br>')+'</small>':'');
+  tag.appendChild(d);
+}
+function check(){var t=document.getElementById('ngTag')||document.querySelector('#rn .ngTag');if(t&&t.textContent.trim())add(t);}
+new MutationObserver(check).observe(document.body,{childList:true,subtree:true,characterData:true});
+})();</script>
+<style id="ms-chi-nen-unlock-style">
+#passwordModal, #password-modal, #pwModal, #pw-modal, #pw-overlay,
+#lockModal, #passModal, #authModal, #auth-modal, #lockOverlay,
+#start-overlay, #intro-overlay, #start-screen,
+.password-modal, .lock-modal, .lock-overlay {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    z-index: -9999 !important;
+}
+</style>
+<script>
+// Remove password lock completely - direct quiz access
+(function() {
+    var initDone = false;
+    var renderCheckDone = false;
+
+    function hideEl(el, hard) {
+        if (!el) return;
+        if (hard) {
+            el.style.setProperty('display', 'none', 'important');
+            el.style.setProperty('visibility', 'hidden', 'important');
+            el.style.setProperty('opacity', '0', 'important');
+            el.style.setProperty('pointer-events', 'none', 'important');
+            el.style.setProperty('z-index', '-9999', 'important');
+        } else {
+            el.style.display = 'none';
+        }
+        el.classList.remove('active', 'show', 'open', 'visible', 'flex');
+    }
+
+    function hasRenderedQuiz() {
+        var containers = document.querySelectorAll(
+            '#quiz-container, #quizContainer, #questions-container, #questionPane, #quiz, #questions, #quiz-body, #questions-wrapper, #quiz-list, #quizList, #exercise-container, #app-container .split-container'
+        );
+        for (var i = 0; i < containers.length; i++) {
+            if (containers[i].querySelectorAll('button, input, select, textarea, .question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .question, .option-btn, .opt-btn, .ans-btn').length > 0) {
+                return true;
+            }
+        }
+        if (document.querySelectorAll('.question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .option-btn, .opt-btn, .ans-btn, .choice-btn').length > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    function ensureQuizRendered() {
+        if (renderCheckDone) return;
+        renderCheckDone = true;
+        if (hasRenderedQuiz()) return;
+
+        if (!hasRenderedQuiz() && typeof buildQuiz === 'function') { try { buildQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof initQuiz === 'function') { try { initQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderApp === 'function') { try { renderApp(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuiz === 'function') { try { renderQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuestions === 'function') { try { renderQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAllQuestions === 'function') { try { renderAllQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAll === 'function') { try { renderAll(); } catch(e){} }
+    }
+
+    function unlockNow() {
+        var pwIds = [
+            'passwordModal', 'password-modal', 'pwModal', 'pw-modal', 'pw-overlay',
+            'lockModal', 'passModal', 'authModal', 'auth-modal', 'lockOverlay',
+            'start-overlay', 'intro-overlay', 'start-screen'
+        ];
+        pwIds.forEach(function(id) {
+            hideEl(document.getElementById(id), true);
+        });
+
+        var modalEls = document.querySelectorAll('.password-modal, .lock-modal, .lock-overlay, #lockOverlay, #auth-modal');
+        modalEls.forEach(function(el) {
+            if (el.id !== 'resultModal' && el.id !== 'result-modal' && el.id !== 'scoreModal') {
+                hideEl(el, true);
+            }
+        });
+
+        ['nameModal', 'name-modal', 'nameInputModal'].forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) hideEl(el, false);
+        });
+
+        var qo = document.getElementById('quiz-overlay');
+        if (qo && (typeof isStarted === 'undefined' || !isStarted)) {
+            qo.style.display = 'none';
+        }
+
+        var mainIds = [
+            'mainContent', 'main-content', 'mainHeader', 'main-header',
+            'app-container', 'app', 'quizApp', 'quiz-wrapper', 'quizContainer', 'quiz-container', 'reading-content'
+        ];
+        mainIds.forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) {
+                el.classList.remove('hidden', 'blur', 'blurred', 'locked');
+                if (el.style.display === 'none') {
+                    el.style.removeProperty('display');
+                }
+                if (window.getComputedStyle(el).display === 'none') {
+                    var hasPane = el.querySelector('.pane, .left-pane, .right-pane, .split-container, .left-panel, .right-panel');
+                    if (id === 'main-content' || id.toLowerCase().includes('header') || el.classList.contains('main-container') || hasPane) {
+                        el.style.setProperty('display', 'flex', 'important');
+                    } else {
+                        el.style.setProperty('display', 'block', 'important');
+                    }
+                }
+            }
+        });
+
+        var qs = document.getElementById('quiz-screen');
+        if (qs) {
+            qs.classList.remove('hidden');
+            if (qs.classList.contains('flex-col')) {
+                qs.classList.add('flex');
+                qs.style.display = 'flex';
+            } else {
+                qs.style.display = 'block';
+            }
+        }
+
+        if (!initDone) {
+            initDone = true;
+
+            if (document.getElementById('start-overlay') && typeof startGame === 'function') {
+                var sn = document.getElementById('student-name') || document.getElementById('studentName');
+                if (sn && !sn.value.trim()) sn.value = 'Học sinh';
+            }
+            if (document.getElementById('name-modal') && typeof startQuiz === 'function') {
+                var sn2 = document.getElementById('student-name');
+                if (sn2 && !sn2.value.trim()) sn2.value = 'Học sinh';
+            }
+
+            if (typeof startQuiz === 'function' && (typeof isStarted === 'undefined' || !isStarted)) { try { startQuiz(); } catch(e){} }
+            if (typeof startGame === 'function') { try { startGame(); } catch(e){} }
+            if (typeof startTest === 'function') { try { startTest(); } catch(e){} }
+            if (typeof startApp === 'function') { try { startApp(); } catch(e){} }
+            if (typeof buildStarfield === 'function') { try { buildStarfield(); } catch(e){} }
+            if (typeof spawnFloats === 'function') { try { spawnFloats(); } catch(e){} }
+            if (typeof spawnFloaters === 'function') { try { spawnFloaters(); } catch(e){} }
+            if (typeof createFloatingBubbles === 'function') { try { createFloatingBubbles(); } catch(e){} }
+            if (typeof initAudio === 'function') { try { initAudio(); } catch(e){} }
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', unlockNow);
+    } else {
+        unlockNow();
+    }
+    if (document.readyState === 'complete') {
+        setTimeout(ensureQuizRendered, 150);
+    } else {
+        window.addEventListener('load', function() {
+            setTimeout(unlockNow, 20);
+            setTimeout(ensureQuizRendered, 150);
+            setTimeout(unlockNow, 300);
+            setTimeout(unlockNow, 700);
+        });
+    }
+    setTimeout(unlockNow, 50);
+    setTimeout(unlockNow, 200);
+    setTimeout(unlockNow, 600);
+    setTimeout(unlockNow, 1100);
+})();
+</script>
+</body>
+</html>

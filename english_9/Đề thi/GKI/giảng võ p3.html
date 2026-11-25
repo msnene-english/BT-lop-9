@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎮 Giảng Võ Midterm p3 — English 9 Test 1 | MS Chí Nên</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+:root{
+ --ink:#23324A;--dim:#5D6B85;
+ --sky:#2FA3EE;--sky-d:#1366A8;
+ --coral:#FF7A1A;--coral-d:#C2520E;
+ --pink:#FF4D8D;--pink-d:#C42A68;
+ --sun:#FFC531;--sun-d:#9A6A00;
+ --mint:#2FBF4A;--mint-d:#167A2B;
+ --lilac:#8F6BFF;--lilac-d:#5B3BD0;
+ --card:#FFFFFF;--edge:#CFE3F5;
+ --good:#1B9C5A;--good-bg:#DDF7E6;
+ --bad:#E0503C;--bad-bg:#FFE6E0;
+ --pix:'Press Start 2P',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito',sans-serif;color:var(--ink);min-height:100vh;overflow-x:hidden;
+ background:linear-gradient(180deg,#45BEFF 0%,#78D3FF 34%,#AEE8FF 68%,#DDF6FF 100%);background-attachment:fixed}
+/* ── pixel sprites (box-shadow art) ── */
+.spr{position:relative}
+.spr>i{position:absolute;display:block}
+#sky{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.pcl{position:absolute;left:0;animation:pcl linear infinite}
+@keyframes pcl{0%{transform:translateX(-160px)}100%{transform:translateX(110vw)}}
+.coin{position:absolute;animation:bob 2.2s ease-in-out infinite}
+.coin .spr{animation:coinSpin 1.2s linear infinite}
+@keyframes coinSpin{0%,100%{transform:scaleX(1)}25%{transform:scaleX(.4)}50%{transform:scaleX(.08)}75%{transform:scaleX(.4)}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.blk{position:absolute;display:flex}
+.qb,.brk{width:44px;height:44px;position:relative;flex:none}
+.qb{background:#FFB627;border:4px solid #7A3E00;box-shadow:inset -4px -4px 0 #D9822B,inset 4px 4px 0 #FFE08A;
+ font-family:var(--pix);color:#fff;font-size:18px;display:grid;place-items:center;text-shadow:2px 2px 0 #7A3E00;animation:qbump 3.4s infinite}
+.qb::before{content:'';position:absolute;inset:3px;background:radial-gradient(circle,#7A3E00 1.6px,transparent 2px) 0 0/30px 30px}
+@keyframes qbump{0%,84%,100%{transform:translateY(0)}88%{transform:translateY(-12px)}92%{transform:translateY(0)}}
+.qb .pop{position:absolute;left:8px;top:-6px;opacity:0;animation:qpop 3.4s infinite}
+@keyframes qpop{0%,85%{opacity:0;transform:translateY(0)}88%{opacity:1;transform:translateY(-34px)}96%{opacity:1;transform:translateY(-58px)}100%{opacity:0;transform:translateY(-64px)}}
+.brk{border:3px solid #6E2A08;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Crect width='32' height='32' fill='%23D9732F'/%3E%3Cpath d='M0 0h32v2H0zM0 16h32v2H0zM0 0h2v16H0zM16 16h2v16h-2z' fill='%238E3E14'/%3E%3Cpath d='M2 2h14v2H2zM18 18h14v2H18zM2 18h14v2H2z' fill='%23F3A56C'/%3E%3C/svg%3E") 0 0/19px 19px}
+.ctrl{position:absolute;animation:ctrlSw 3s ease-in-out infinite alternate}
+@keyframes ctrlSw{from{transform:rotate(-8deg) translateY(0)}to{transform:rotate(8deg) translateY(-10px)}}
+.up{position:absolute;bottom:-40px;animation:up linear infinite}
+@keyframes up{0%{transform:translateY(0);opacity:0}10%{opacity:1}80%{opacity:.9}100%{transform:translateY(-92vh);opacity:0}}
+/* ── ground: grass + bricks, pipes, bins, hero, mobs ── */
+#ground{position:fixed;left:0;right:0;bottom:0;height:170px;z-index:1;pointer-events:none;overflow:hidden}
+#ground .dirt{position:absolute;left:0;right:0;bottom:0;height:56px;
+ background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Crect width='32' height='32' fill='%23D9732F'/%3E%3Cpath d='M0 0h32v2H0zM0 16h32v2H0zM0 0h2v16H0zM16 16h2v16h-2z' fill='%238E3E14'/%3E%3Cpath d='M2 2h14v2H2zM18 18h14v2H18zM2 18h14v2H2z' fill='%23F3A56C'/%3E%3C/svg%3E") 0 0/28px 28px}
+#ground .grass{position:absolute;left:0;right:0;bottom:56px;height:12px;background:repeating-linear-gradient(90deg,#4CD14C 0 12px,#3DBA3D 12px 24px);border-top:4px solid #1E7F2B}
+#ground .grass::before{content:'';position:absolute;left:0;right:0;top:-12px;height:8px;
+ background:linear-gradient(90deg,transparent 0 4px,#4CD14C 4px 8px,transparent 8px 20px,#3DBA3D 20px 24px,transparent 24px) 0 0/40px 8px repeat-x}
+.pipe{position:absolute;bottom:68px;width:54px}
+.pipe .lip{position:relative;height:24px;margin:0 -7px;border:4px solid #0F4D18;
+ background:linear-gradient(90deg,#1E8A2E 0 10%,#7CF08A 10% 26%,#33C24B 26% 78%,#1E8A2E 78%)}
+.pipe .tube{border:4px solid #0F4D18;border-top:none;background:linear-gradient(90deg,#1E8A2E 0 10%,#7CF08A 10% 24%,#33C24B 24% 76%,#1E8A2E 76%)}
+.pipe .pc2{position:absolute;left:14px;top:-10px;opacity:0;animation:pipeCoin 4.6s infinite}
+@keyframes pipeCoin{0%,70%{opacity:0;transform:translateY(20px)}76%{opacity:1;transform:translateY(-40px)}86%{opacity:1;transform:translateY(-70px)}94%{opacity:0;transform:translateY(-20px)}100%{opacity:0}}
+.bin{position:absolute;bottom:68px;width:32px;height:40px;border:3px solid #1A2440;border-radius:2px 2px 6px 6px;
+ display:grid;place-items:center;color:#fff;font-size:18px;font-weight:900;line-height:1;box-shadow:inset -5px 0 0 rgba(0,0,0,.18),inset 5px 0 0 rgba(255,255,255,.25)}
+.bin::before{content:'';position:absolute;top:-11px;left:-7px;right:-7px;height:7px;background:inherit;border:3px solid #1A2440;border-radius:2px}
+.bin::after{content:'';position:absolute;top:-17px;left:9px;width:8px;height:5px;border:3px solid #1A2440;border-bottom:none}
+.hero{position:absolute;left:0;bottom:68px;animation:runR linear infinite}
+.hero .jp{animation:jump 3.2s ease-in-out infinite}
+.hero .fa,.hero .fb{animation:frA .36s steps(1) infinite}
+.hero .fb{position:absolute;left:0;top:0;animation-name:frB}
+@keyframes frA{0%{opacity:1}50%{opacity:0}}
+@keyframes frB{0%{opacity:0}50%{opacity:1}}
+@keyframes jump{0%,52%,100%{transform:translateY(0)}64%{transform:translateY(-74px)}72%{transform:translateY(-78px)}84%{transform:translateY(0)}}
+@keyframes runR{0%{transform:translateX(-8vw)}100%{transform:translateX(108vw)}}
+.mob{position:absolute;left:0;bottom:68px;animation:walkL linear infinite}
+.mob .sq{transform-origin:50% 100%;animation:squish .6s ease-in-out infinite}
+@keyframes squish{0%,100%{transform:scale(1,1)}50%{transform:scale(1.12,.86)}}
+.mob .wb{animation:wob .5s ease-in-out infinite alternate}
+@keyframes wob{from{transform:rotate(-6deg)}to{transform:rotate(6deg)}}
+@keyframes walkL{0%{transform:translateX(106vw)}100%{transform:translateX(-10vw)}}
+@media(max-width:820px){#ground{height:130px}.blk,.ctrl,.up{display:none}.bin{transform:scale(.8);transform-origin:50% 100%}}
+/* ── sticky note ── */
+.note{position:sticky;top:0;z-index:50;padding:8px 16px;text-align:center;
+ background:linear-gradient(90deg,#FF4D6D,#FF9F1C 50%,#2FA3EE);box-shadow:0 4px 0 #1A2440}
+.note .in{display:flex;align-items:center;gap:10px;max-width:1400px;margin:0 auto;justify-content:center}
+.note .tg{flex:none;background:#FFF6C9;color:#7A3E00;font-weight:900;font-size:.8rem;padding:3px 13px;border:3px solid #7A3E00;border-radius:4px;white-space:nowrap;box-shadow:2px 2px 0 #7A3E00}
+.note .tx{color:#fff;font-weight:800;font-size:1rem;line-height:1.5;text-shadow:0 1px 4px rgba(0,0,0,.35);transition:opacity .25s}
+/* ── header ── */
+header{position:relative;z-index:10;max-width:1380px;margin:16px auto 10px;background:var(--card);
+ border:4px solid #1A2440;border-radius:14px;box-shadow:6px 6px 0 #FFB627;
+ padding:16px 26px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px}
+header::before{content:'🎮';position:absolute;top:-20px;left:-12px;font-size:1.9rem;transform:rotate(-14deg)}
+header::after{content:'🏆';position:absolute;bottom:-16px;right:120px;font-size:1.6rem}
+header h1{font-family:'Baloo 2',cursive;font-size:clamp(1.15rem,2.6vw,1.6rem);font-weight:800;color:var(--sky-d);line-height:1.3}
+header h1 .p1{font-family:var(--pix);font-size:.62rem;vertical-align:middle;background:#FF4D6D;color:#fff;padding:5px 8px;margin-left:8px;border:3px solid #1A2440;box-shadow:2px 2px 0 #1A2440}
+header .sub{font-size:.9rem;color:var(--dim);margin-top:4px;font-weight:700}
+header .by{display:inline-block;margin-top:6px;background:linear-gradient(135deg,#FFE27A,#9BE8A8);color:#24452A;
+ font-weight:900;font-size:.84rem;padding:5px 14px;border-radius:999px}
+.hright{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.gauge{position:relative;background:radial-gradient(circle at 35% 30%,#FFF7C2,#FFD23F 70%,#F0A800);border:4px solid #7A3E00;border-radius:50%;width:86px;height:86px;
+ display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:4px 4px 0 #1A2440;flex:none}
+.gauge::before{content:'🪙';position:absolute;top:-13px;right:-6px;font-size:17px}
+.gauge .num{font-family:'Baloo 2',cursive;font-size:1.25rem;color:#5A2E00;font-weight:800;line-height:1}
+.gauge .lbl{font-size:.6rem;font-weight:900;color:#7A3E00;letter-spacing:.05em;text-transform:uppercase}
+/* ── layout ── */
+.main{position:relative;z-index:5;max-width:1380px;margin:0 auto;display:flex;gap:20px;padding:6px 16px 42px;align-items:flex-start}
+.lp,.rp{max-height:calc(100vh - 150px);overflow-y:auto}
+.lp{flex:0 0 47%}
+.rp{flex:1;min-width:0}
+.lp::-webkit-scrollbar,.rp::-webkit-scrollbar{width:9px}
+.lp::-webkit-scrollbar-thumb,.rp::-webkit-scrollbar-thumb{background:#FFB627;border-radius:2px;border:2px solid #7A3E00}
+.slbl{font-family:'Baloo 2',cursive;font-size:1.15rem;font-weight:800;color:var(--sky-d);margin-bottom:12px;display:flex;align-items:center;gap:10px;
+ background:rgba(255,255,255,.85);border-radius:8px;padding:2px 12px;border:3px solid #1A2440}
+.slbl::after{content:'';flex:1;height:8px;background:repeating-linear-gradient(90deg,#FFD23F 0 8px,transparent 8px 16px)}
+@media(max-width:940px){.main{flex-direction:column}.lp{flex:1 1 auto;width:100%}.lp,.rp{max-height:none}}
+/* ── passage cards ── */
+.pc{position:relative;background:var(--card);border:4px solid var(--edge);border-radius:14px;padding:28px 20px 16px;margin:22px 0 24px;box-shadow:6px 6px 0 rgba(26,36,64,.22)}
+.pc .stamp{position:absolute;top:-22px;right:18px;width:54px;height:54px;border-radius:10px;background:radial-gradient(circle at 35% 30%,#fff,#FFF3D1);
+ border:4px solid currentColor;display:grid;place-items:center;font-size:25px;box-shadow:3px 3px 0 #1A2440}
+.lvl{position:absolute;top:-15px;left:18px;font-family:var(--pix);font-size:.62rem;background:#FFD23F;color:#5A2E00;border:3px solid #5A2E00;padding:6px 9px;box-shadow:3px 3px 0 #5A2E00}
+.ptitle{font-family:'Baloo 2',cursive;font-size:1.25rem;font-weight:800;margin-bottom:4px}
+.pins{font-size:.92rem;color:var(--dim);font-style:italic;font-weight:700;margin-bottom:12px;line-height:1.6}
+.pblk{border-left:7px solid;border-radius:10px;padding:12px 14px 4px;margin:16px 0;position:relative}
+.pblk .em{position:absolute;top:-13px;right:10px;font-size:1.2rem;background:#fff;border:3px solid #1A2440;border-radius:8px;width:34px;height:34px;display:grid;place-items:center;box-shadow:2px 2px 0 #1A2440}
+.paragraph{font-size:1.14rem;line-height:1.95;margin-bottom:10px;text-align:justify}
+.paragraph b{padding:1px 6px;border-radius:7px;white-space:nowrap}
+.btr{font-family:'Baloo 2',cursive;font-size:.85rem;background:linear-gradient(135deg,#FFE27A,#9BE8A8);border:3px solid #1E7F2B;color:#1E4A24;
+ padding:5px 16px;border-radius:10px;cursor:pointer;transition:.15s;font-weight:800;display:block;margin:6px 0 12px;box-shadow:3px 3px 0 #1E7F2B}
+.btr:hover{transform:translate(1px,1px);box-shadow:2px 2px 0 #1E7F2B}
+.translation{display:none;margin-bottom:12px;font-size:1rem;line-height:1.8;color:#2E3F5A;background:#FFFDF3;border-left:4px solid var(--sun);border-radius:0 12px 12px 0;padding:10px 14px;font-style:italic}
+.gl{margin-top:12px;background:var(--card);border:3px solid var(--edge);border-radius:12px;overflow:hidden}
+.gl h3{font-family:'Baloo 2',cursive;font-size:1rem;font-weight:800;color:#fff;margin:0;padding:8px 14px}
+table.gtb{width:100%;border-collapse:collapse;table-layout:fixed;font-size:.93rem}
+.gtb tr{border-top:1px dotted var(--edge)}
+.gtb tr:nth-child(even){background:#F4F9FF}
+.gtb td,.gtb th{padding:7px 12px;text-align:left;vertical-align:top}
+.gtb th{font-weight:800;font-size:.82rem;color:var(--dim)}
+.gtb .gw{font-weight:900;color:var(--sky-d)}
+.gtb .gp{color:var(--lilac-d);font-weight:700;font-size:.86rem}
+/* ── quiz cards ── */
+.sec{background:rgba(255,255,255,.96);border-radius:14px;padding:16px;margin-bottom:16px;box-shadow:6px 6px 0 rgba(26,36,64,.22);border:4px solid var(--edge)}
+.sech{font-family:'Baloo 2',cursive;font-size:1.12rem;font-weight:800;margin-bottom:2px}
+.secs{font-size:.88rem;color:var(--dim);font-style:italic;font-weight:700;margin-bottom:12px;line-height:1.55}
+.q{background:#FCFDFF;border:2px solid #DCE9F5;border-left:7px solid var(--sky);border-radius:12px;padding:14px;margin-bottom:14px}
+.q .qt{font-weight:800;font-size:1.06rem;line-height:1.75}
+.q .qt b{padding:1px 6px;border-radius:7px;white-space:nowrap;background:#FFF1B8;color:#8A5A00}
+.qn{display:inline-block;background:var(--qc,var(--sky));color:#fff;min-width:34px;text-align:center;border:2px solid #1A2440;border-radius:4px;padding:5px 7px;margin-right:9px;
+ font-family:var(--pix);font-size:.66rem;line-height:1;vertical-align:2px;box-shadow:2px 2px 0 #1A2440}
+.og{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:11px}
+.ob{background:#fff;color:var(--ink);border:2px solid #D5E5F3;border-radius:10px;padding:11px 13px;
+ font-family:'Nunito';font-weight:800;font-size:.98rem;cursor:pointer;text-align:left;line-height:1.5;transition:.14s;box-shadow:0 3px 0 #D5E5F3}
+.ob:hover:not(.dn){transform:translateY(-2px);border-color:var(--qc,var(--sky))}
+.ob.dn{cursor:default}
+.ob.ok{background:var(--good-bg);border-color:var(--good);color:#0b6b3c;box-shadow:0 3px 0 #9fe3bd}
+.ob.no{background:var(--bad-bg);border-color:var(--bad);color:#a31832;box-shadow:0 3px 0 #f7bac5}
+.ex{display:none;margin-top:12px;background:#fff;border:2px solid #E1ECF6;border-radius:12px;padding:14px;font-size:.98rem;line-height:1.85}
+.ex.on{display:block;animation:pop .3s}
+@keyframes pop{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+.shk{animation:shk .42s}
+@keyframes shk{0%,100%{transform:translateX(0)}25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+/* ── explanation content ── */
+.vnt{margin-bottom:10px;padding:9px 13px;border-radius:12px;background:#FFF5D6;border-left:5px solid var(--sun);font-weight:700;line-height:1.7}
+.ex ol{margin:0;padding-left:22px}
+.ex ol>li{margin:10px 0;line-height:1.75;padding-left:4px}
+.ex ol>li::marker{font-weight:900;color:var(--pink-d)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+@media(max-width:600px){.grid2{grid-template-columns:1fr}}
+.grid2>div{border:2px solid #D6E4F0;border-radius:12px;padding:8px 11px;background:#FBFDFF;line-height:1.7;font-size:.97rem}
+.grid2>div.gk{border-color:var(--good);background:var(--good-bg);box-shadow:0 0 0 3px rgba(27,156,90,.14)}
+.p-word{color:#1E6FD9;font-weight:800}
+.hl-green{color:#11924E;font-weight:900}
+.hl-red{color:#D8334A;font-weight:900}
+.wt{display:inline-block;margin:0 3px;padding:0 7px;border-radius:6px;font-size:.78em;font-weight:700;background:rgba(110,100,160,.14);color:#5B5480}
+.p-phonetic{padding:0 6px;border-radius:6px;background:#F1E8FF;color:#7A3FC8;font-weight:700}
+.p-mean{color:#B5532E;font-weight:700}
+.p-grammar{display:inline;line-height:1.95;padding:3px 8px 3px 2px;border-radius:8px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.hx0{background:#FFF3B0}.hx1{background:#D6ECFF}.hx2{background:#FFDDEE}
+.hx3{background:#DDF7D0}.hx4{background:#EBDFFF}.hx5{background:#FFE4CC}
+.qe0{color:#1D4ED8;font-weight:800}.qe1{color:#C2185B;font-weight:800}.qe2{color:#0F8A5F;font-weight:800}.qe3{color:#7C3AED;font-weight:800}.qe4{color:#D9480F;font-weight:800}.qe5{color:#0E7490;font-weight:800}
+.frame{margin-top:10px;padding:10px 13px;border-radius:14px;background:#fff;border:2px dashed var(--edge);line-height:1.75}
+.frame i{color:var(--dim)}
+.dk{margin-top:12px;padding:11px 13px;border-radius:14px;background:#FFFBEF;border-left:5px solid var(--sun)}
+.dict{margin-top:7px;display:flex;flex-wrap:wrap;gap:8px}
+.dict a{display:inline-flex;align-items:center;gap:5px;padding:5px 14px;border-radius:999px;font-size:.9rem;font-weight:800;text-decoration:none;color:#fff;transition:transform .15s;box-shadow:0 3px 0 rgba(0,0,0,.15)}
+.dict a:hover{transform:translateY(-2px)}
+.dict a.d0{background:linear-gradient(135deg,#FF4D8D,#FF9F1C)}.dict a.d1{background:linear-gradient(135deg,#2FBF4A,#2FA3EE)}
+.dict a.d2{background:linear-gradient(135deg,#2FA3EE,#6A7BFF)}.dict a.d3{background:linear-gradient(135deg,#8F6BFF,#FF4D8D)}
+.say{margin-top:7px;font-size:.9rem;color:var(--dim)}
+/* ── submit / modal ── */
+.sw{text-align:center;padding:16px 0 8px}
+.sbtn{font-family:'Baloo 2',cursive;font-size:1.08rem;font-weight:800;color:#fff;background:linear-gradient(135deg,#FF7A1A,#FF4D6D);border:4px solid #1A2440;
+ padding:12px 34px;border-radius:12px;cursor:pointer;transition:.15s;box-shadow:5px 5px 0 #FFB627}
+.sbtn:hover{transform:translate(2px,2px);box-shadow:3px 3px 0 #FFB627}
+.ov{display:none;position:fixed;inset:0;z-index:100;background:rgba(20,40,80,.55);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:16px}
+.ov.on{display:flex}
+.mb{position:relative;background:var(--card);border:4px solid #1A2440;border-radius:16px;padding:26px 28px;max-width:460px;width:100%;
+ text-align:center;box-shadow:7px 7px 0 #FFB627;animation:popin .3s ease}
+@keyframes popin{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+.mb h2{font-family:'Baloo 2',cursive;font-size:1.3rem;font-weight:800;color:var(--sky-d);margin-bottom:14px}
+.mb input{width:100%;font-family:'Nunito';font-size:1rem;font-weight:700;padding:12px 14px;background:#fff;border:2.5px solid var(--edge);border-radius:12px;color:var(--ink);text-align:center;outline:none;margin-bottom:10px}
+.mb input:focus{border-color:var(--sky)}
+.err{color:var(--bad);font-size:.85rem;font-weight:800;margin-bottom:8px;display:none}
+.err.show{display:block}
+.rname{font-size:1.05rem;font-weight:800;color:var(--pink-d);margin-bottom:6px}
+.rscore{font-family:'Baloo 2',cursive;font-size:2.6rem;font-weight:800;color:var(--sky-d);line-height:1;margin:6px 0}
+.rs10{font-size:1rem;font-weight:800;color:var(--ink);margin-bottom:9px}
+.rgif{width:190px;margin:10px auto;display:block;border:3px solid #1A2440;box-shadow:4px 4px 0 #FFB627;border-radius:10px}
+.rcmt{font-size:.96rem;line-height:1.75;background:#FFF8DE;border:2.5px dashed var(--edge);border-radius:14px;padding:12px 14px;margin:12px 0}
+.bcl{font-family:'Nunito';font-size:.88rem;font-weight:800;background:transparent;border:2.5px solid var(--edge);color:var(--ink);padding:10px 24px;border-radius:12px;cursor:pointer}
+.cn{position:fixed;top:-16px;z-index:200;pointer-events:none;animation:cf 2.4s forwards}
+@keyframes cf{0%{transform:translateY(0) rotate(0);opacity:1}100%{transform:translateY(108vh) rotate(700deg);opacity:0}}
+.foot{position:relative;z-index:5;text-align:center;margin:20px auto 182px;max-width:900px;font-size:.92rem;color:var(--ink);font-weight:800;line-height:1.7;
+ background:rgba(255,255,255,.92);border:3px solid #1A2440;border-radius:12px;padding:10px 16px;box-shadow:4px 4px 0 #FFB627}
+@media(max-width:820px){.foot{margin-bottom:136px}}
+/* ── school & amusement park props ── */
+.fw{position:absolute;bottom:68px;width:96px;height:106px}
+.fw .lg{position:absolute;top:47px;left:44px;width:8px;height:64px;background:#8F6BFF;border:2px solid #1A2440;transform-origin:50% 0}
+.fw .lg.a{transform:rotate(27deg)}.fw .lg.b{transform:rotate(-27deg)}
+.fw .wh{position:absolute;left:4px;top:3px;width:88px;height:88px;border-radius:50%;border:5px solid #1A2440;
+ background:repeating-conic-gradient(#1A2440 0 3deg,transparent 3deg 45deg);animation:fwSpin 16s linear infinite}
+.fw .wh::before{content:'';position:absolute;inset:9px;border-radius:50%;border:3px dashed #FF4D6D}
+.fw .wh::after{content:'';position:absolute;left:50%;top:50%;width:14px;height:14px;margin:-7px;background:#FFD23F;border:3px solid #1A2440;border-radius:3px}
+.fw .wh i{position:absolute;left:50%;top:50%;width:13px;height:13px;margin:-6.5px;border:2px solid #1A2440;border-radius:2px}
+@keyframes fwSpin{to{transform:rotate(360deg)}}
+.bk{position:absolute;bottom:68px}
+@media(max-width:820px){.fw{transform:scale(.72);transform-origin:50% 100%}}
+.obox{background:#FFFBEB;border:3px dashed var(--sun-d);border-radius:12px;padding:10px 14px;margin:6px 0 16px;color:var(--ink);font-weight:700;line-height:1.85;font-size:1.02rem}
+.obox .obh{font-family:'Baloo 2',cursive;font-weight:800;color:var(--sun-d);margin-bottom:2px}
+.obox b{display:inline-block;min-width:26px;color:#fff;background:var(--lilac);border:2px solid #1A2440;border-radius:4px;font-family:var(--pix);font-size:.6rem;padding:4px 5px;margin-right:8px;text-align:center;vertical-align:2px}
+.bld{position:absolute;bottom:68px;border:4px solid #1A2440;border-bottom:none;box-shadow:inset -7px 0 0 rgba(0,0,0,.18);
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='18'%3E%3Crect x='3' y='3' width='9' height='10' fill='%23FFE27A' stroke='%231A2440' stroke-width='2'/%3E%3C/svg%3E");background-size:16px 18px;background-position:3px 8px}
+.bld::before{content:'';position:absolute;top:-10px;left:-6px;right:-6px;height:6px;background:#1A2440;border-radius:2px}
+.bld::after{content:'';position:absolute;top:-24px;left:50%;width:4px;height:14px;margin-left:-2px;background:#1A2440}
+.flg .spr{transform-origin:0 100%;animation:flgW 1.6s ease-in-out infinite alternate}
+@keyframes flgW{from{transform:skewY(-2deg)}to{transform:skewY(2deg)}}
+@media(max-width:820px){.bld{transform:scale(.72);transform-origin:50% 100%}}
+
+/*hltool*/
+/* ── công cụ highlight ── */
+.hlbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:6px;flex-wrap:wrap;background:#111827;border-radius:14px 14px 0 0;padding:7px 8px 7px 12px;box-shadow:0 4px 10px rgba(17,24,39,.22)}
+.hlbar .ht{color:#fff;font-weight:900;font-size:.74rem;letter-spacing:.3px;text-transform:uppercase;white-space:nowrap}
+.hlgrp{display:flex;align-items:center;gap:4px;background:#1F2937;border:1px solid #374151;border-radius:999px;padding:3px 4px;flex-wrap:wrap}
+.hlb{display:inline-flex;align-items:center;gap:5px;border:none;border-radius:999px;padding:4px 8px 4px 6px;font-family:'Nunito',sans-serif;font-weight:900;font-size:.74rem;line-height:1.2;cursor:pointer;transition:transform .12s,filter .12s;white-space:nowrap}
+.hlb:hover{transform:translateY(-1px);filter:brightness(1.05)}
+.hlb:active{transform:scale(.95)}
+.hlb .dt{display:inline-block;width:10px;height:10px;border-radius:50%;border:2px solid rgba(0,0,0,.22)}
+.hlb.y{background:#FEF08A;color:#713F12}.hlb.y .dt{background:#FACC15}
+.hlb.g{background:#BBF7D0;color:#14532D}.hlb.g .dt{background:#22C55E}
+.hlb.p{background:#FBCFE8;color:#831843}.hlb.p .dt{background:#EC4899}
+.hlb.b{background:#BAE6FD;color:#0C4A6E}.hlb.b .dt{background:#0EA5E9}
+.hlb.er{background:#E5E7EB;color:#374151;padding:4px 9px}
+.hldv{display:inline-block;width:1px;height:18px;background:#4B5563;margin:0 2px}
+.hltip{display:flex;gap:9px;align-items:flex-start;background:#FEF9C3;border:2px solid #FDE68A;border-top:none;border-radius:0 0 14px 14px;padding:9px 13px;margin-bottom:12px;font-size:.92rem;line-height:1.6;color:#713F12;font-weight:700}
+.hltip .ic{font-size:1.15rem;line-height:1.4}
+.hltip b{color:#92400E}
+.hltip.ping{animation:tipPing .6s ease}
+@keyframes tipPing{0%,100%{transform:none}30%{transform:translateX(-5px)}60%{transform:translateX(5px)}}
+#hlPop{position:fixed;z-index:65;display:none;align-items:center;gap:6px;background:#111827;border-radius:999px;padding:6px 8px;box-shadow:0 6px 18px rgba(0,0,0,.3)}
+#hlPop.on{display:flex}
+#hlPop::after{content:'';position:absolute;left:50%;bottom:-6px;margin-left:-6px;border:6px solid transparent;border-bottom:none;border-top-color:#111827}
+#hlPop.below::after{bottom:auto;top:-6px;border:6px solid transparent;border-top:none;border-bottom-color:#111827}
+#hlPop button{width:24px;height:24px;border-radius:50%;border:2px solid #fff;cursor:pointer;padding:0;transition:transform .12s}
+#hlPop button:hover{transform:scale(1.15)}
+#hlPop .y{background:#FACC15}#hlPop .g{background:#22C55E}#hlPop .p{background:#EC4899}#hlPop .b{background:#0EA5E9}
+#hlPop .er{background:#E5E7EB;border-color:#9CA3AF;font-size:13px;display:grid;place-items:center}
+mark.uhl{color:inherit;border-radius:5px;padding:1px 0;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.lp mark.uhl{cursor:pointer}mark.uhl.pick{outline:2px dashed #111827;outline-offset:2px}
+mark.uhl-y{background:#FFF27A}mark.uhl-g{background:#B9F6D3}mark.uhl-p{background:#FFC7E3}mark.uhl-b{background:#C3E6FF}
+@media(max-width:940px){.hlbar{top:58px}}
+</style>
+<style>/*touchscroll*/@media (hover:none),(pointer:coarse){html,body{overflow-y:auto!important;height:auto!important;-webkit-overflow-scrolling:touch}.lp,.rp{max-height:none!important;overflow:visible!important}.main{padding-bottom:42px!important;align-items:flex-start}}</style>
+</head>
+<body>
+<div id="sky"></div>
+<div id="ground">
+ <div id="gdeco"></div>
+ <div class="grass"></div>
+ <div class="dirt"></div>
+</div>
+
+<div class="note"><div class="in">
+ <span class="tg">🎮 MS NHẮN</span>
+ <span class="tx" id="msTx">🎮 Player 1 sẵn sàng! Pixel Quest Reading có 10 câu (31 → 40) — nhặt đủ 10 đồng xu vàng, phá đảo giữa kì I lớp 9 nào! 🔥</span>
+</div></div>
+
+<header>
+ <div>
+  <h1>🎮 Pixel Quest Reading · Câu 31 → 40 🪙<span class="p1">PLAYER 1</span></h1>
+  <div class="by">👩‍🏫 Giáo viên tạo: MS Chí Nên &nbsp;·&nbsp; ☎️ 0852639652 &nbsp;·&nbsp; Khoá tiếng Anh lớp 1 → 12</div>
+  <div class="sub">Ôn giữa kì I · English 9 · Test 1 · Level 1: Setting Goals (31 – 36) · Level 2: City Life (37 – 40)</div>
+ </div>
+ <div class="hright"><div><span id="sc" style="display:none"></span><div class="gauge"><div class="num" id="lv">0/10</div><div class="lbl">Điểm</div></div></div></div>
+</header>
+
+<div class="main">
+<div class="lp">
+ <div class="hlbar" id="hlBar">
+  <span class="ht">✏️ CÔNG CỤ HIGHLIGHT:</span>
+  <div class="hlgrp">
+   <button type="button" class="hlb y" onclick="hlApply('y')"><i class="dt"></i>Vàng</button>
+   <button type="button" class="hlb g" onclick="hlApply('g')"><i class="dt"></i>Xanh lá</button>
+   <button type="button" class="hlb p" onclick="hlApply('p')"><i class="dt"></i>Hồng</button>
+   <button type="button" class="hlb b" onclick="hlApply('b')"><i class="dt"></i>Xanh</button>
+   <span class="hldv"></span>
+   <button type="button" class="hlb er" onclick="hlErase()">🧽 Tẩy tô</button>
+  </div>
+ </div>
+ <div class="hltip" id="hlTip"><span class="ic">💡</span><div><b>Cách dùng Highlight:</b> Bôi đen (quét chuột) đoạn chữ trong bài đọc → Nhấn nút màu trên thanh công cụ màu đen ở trên (hoặc nút nổi ngay tại vị trí bôi đen) để tô màu tức thì!<br><b>Đổi màu / xoá:</b> Bấm thẳng vào chữ đã tô → chọn màu mới hoặc 🧽 để xoá, không cần bôi đen lại.</div></div>
+
+ <div class="slbl">📖 Bài đọc</div>
+
+ <div class="pc" style="border-color:var(--mint);color:var(--mint)">
+  <div class="lvl">LEVEL 1</div>
+  <div class="stamp">🎯</div>
+  <div class="ptitle" style="color:var(--mint-d)">Passage 1 · Setting Goals</div>
+  <div class="pins">Read the following passage and mark the letter A, B, C, or D on your answer sheet to indicate the correct answer to each of the following questions from 31 to 36.</div>
+
+  <div class="pblk" style="border-color:var(--sky);background:#EEF8FF;color:var(--ink)">
+   <div class="em">⚖️</div>
+   <div class="paragraph">As teenagers, setting goals can help you live a more balanced life. Goals give you a sense of direction and help you manage your time better. When you have clear goals, it's easier to focus on schoolwork, hobbies, and time with friends and family.</div>
+   <button class="btr" onclick="toggleTranslation('trans1')">Mở dịch đoạn này 🌟</button>
+   <div class="translation" id="trans1">Ở tuổi thiếu niên, việc đặt ra mục tiêu có thể giúp các em sống một cuộc sống cân bằng hơn. Mục tiêu cho các em một hướng đi rõ ràng và giúp các em quản lí thời gian tốt hơn. Khi có mục tiêu rõ ràng, các em sẽ dễ tập trung hơn vào việc học, sở thích và thời gian dành cho bạn bè, gia đình.</div>
+  </div>
+
+  <div class="pblk" style="border-color:var(--mint);background:#ECFBEF;color:var(--ink)">
+   <div class="em">🪜</div>
+   <div class="paragraph">To start, think about what is important to you. For example, you may want to improve your grades, learn a new sport, or spend more time with family. Once you know your goal, break it into smaller steps. This makes it easier to work on and helps you stay <b style="background:#C9F2D2;color:var(--mint-d)"><u>motivated</u></b>.</div>
+   <button class="btr" onclick="toggleTranslation('trans2')">Mở dịch đoạn này 🌟</button>
+   <div class="translation" id="trans2">Để bắt đầu, hãy nghĩ xem điều gì là quan trọng với bản thân. Ví dụ, em có thể muốn cải thiện điểm số, học một môn thể thao mới, hoặc dành nhiều thời gian hơn cho gia đình. Khi đã biết mục tiêu của mình, hãy chia nhỏ nó thành những bước nhỏ hơn. Việc này giúp em dễ bắt tay vào làm hơn và luôn giữ được <b>động lực</b>.</div>
+  </div>
+
+  <div class="pblk" style="border-color:var(--coral);background:#FFF3EA;color:var(--ink)">
+   <div class="em">🏃</div>
+   <div class="paragraph">It's also important to set goals that you can achieve. If your goal is too hard, you might feel <b style="background:#FFE0C7;color:var(--coral-d)"><u>frustrated</u></b> and give up. For example, if you want to get fit, start by jogging a few times a week instead of trying to run a marathon.</div>
+   <button class="btr" onclick="toggleTranslation('trans3')">Mở dịch đoạn này 🌟</button>
+   <div class="translation" id="trans3">Việc đặt ra những mục tiêu mà mình có thể đạt được cũng rất quan trọng. Nếu mục tiêu quá khó, em có thể cảm thấy <b>bực bội, nản lòng</b> rồi bỏ cuộc. Ví dụ, nếu em muốn có thân hình khoẻ mạnh, hãy bắt đầu bằng việc chạy bộ vài lần mỗi tuần, thay vì cố chạy ngay cả một cuộc marathon.</div>
+  </div>
+
+  <div class="pblk" style="border-color:var(--lilac);background:#F5F0FF;color:var(--ink)">
+   <div class="em">📈</div>
+   <div class="paragraph">Finally, check your progress often. Ask yourself if you are still on track to reach your goal. If not, change your plan and try again. This will help you stay focused and not lose motivation.</div>
+   <button class="btr" onclick="toggleTranslation('trans4')">Mở dịch đoạn này 🌟</button>
+   <div class="translation" id="trans4">Cuối cùng, hãy thường xuyên kiểm tra tiến độ của mình. Tự hỏi bản thân xem mình có còn đi đúng hướng để đạt được mục tiêu hay không. Nếu không, hãy thay đổi kế hoạch và thử lại. Điều này sẽ giúp em luôn tập trung và không đánh mất động lực.</div>
+  </div>
+
+  <div class="pblk" style="border-color:var(--sun);background:#FFFBEB;color:var(--ink)">
+   <div class="em">😊</div>
+   <div class="paragraph">By setting your own goals, you can create a balanced and happy life, making sure there is time for everything that matters to you.</div>
+   <button class="btr" onclick="toggleTranslation('trans5')">Mở dịch đoạn này 🌟</button>
+   <div class="translation" id="trans5">Bằng cách tự đặt ra mục tiêu cho riêng mình, em có thể tạo nên một cuộc sống cân bằng và hạnh phúc, đảm bảo luôn có thời gian cho mọi điều quan trọng với mình.</div>
+  </div>
+
+  <div class="gl"><h3 style="background:linear-gradient(90deg,var(--mint-d),var(--mint))">📚 Glossary — Passage 1</h3>
+   <table class="gtb"><tr><th>Từ vựng</th><th>Loại từ</th><th>Nghĩa tiếng Việt</th></tr>
+    <tr><td class="gw">goal</td><td class="gp">Noun</td><td>mục tiêu</td></tr>
+    <tr><td class="gw">balanced</td><td class="gp">Adjective</td><td>cân bằng, hài hoà</td></tr>
+    <tr><td class="gw">a sense of direction</td><td class="gp">Noun phrase</td><td>cảm giác có định hướng, biết mình đang đi đâu</td></tr>
+    <tr><td class="gw">manage</td><td class="gp">Verb</td><td>quản lí, sắp xếp</td></tr>
+    <tr><td class="gw">focus on</td><td class="gp">Verb phrase</td><td>tập trung vào</td></tr>
+    <tr><td class="gw">break into</td><td class="gp">Phrasal verb</td><td>chia nhỏ thành</td></tr>
+    <tr><td class="gw">motivated</td><td class="gp">Adjective</td><td>có động lực, hăng hái</td></tr>
+    <tr><td class="gw">achieve</td><td class="gp">Verb</td><td>đạt được</td></tr>
+    <tr><td class="gw">frustrated</td><td class="gp">Adjective</td><td>bực bội, nản lòng</td></tr>
+    <tr><td class="gw">give up</td><td class="gp">Phrasal verb</td><td>bỏ cuộc</td></tr>
+    <tr><td class="gw">get fit</td><td class="gp">Verb phrase</td><td>trở nên khoẻ mạnh, cân đối</td></tr>
+    <tr><td class="gw">progress</td><td class="gp">Noun</td><td>sự tiến bộ, tiến độ</td></tr>
+    <tr><td class="gw">on track</td><td class="gp">Phrase</td><td>đi đúng hướng, đúng kế hoạch</td></tr>
+    <tr><td class="gw">motivation</td><td class="gp">Noun</td><td>động lực</td></tr>
+   </table>
+  </div>
+ </div>
+
+ <div class="pc" style="border-color:var(--lilac);color:var(--lilac)">
+  <div class="lvl" style="background:#C9B8FF;color:#2B1A6B;border-color:#2B1A6B;box-shadow:3px 3px 0 #2B1A6B">LEVEL 2</div>
+  <div class="stamp">🏙️</div>
+  <div class="ptitle" style="color:var(--lilac-d)">Passage 2 · City Life</div>
+  <div class="pins">Four phrases/ sentences have been removed from the text below. For each question, mark the letter A, B, C, or D on your answer sheet to indicate the correct option that best fits each of the numbered blanks from 37 to 40.</div>
+
+  <div class="obox">
+   <div class="obh">🧩 Các mảnh ghép cho chỗ trống 37 – 40</div>
+   <div><b>A</b>crowded public spaces</div>
+   <div><b>B</b>public services like hospitals and schools</div>
+   <div><b>C</b>people's mental and physical health</div>
+   <div><b>D</b>if they are constantly working in big cities</div>
+  </div>
+
+  <div class="pblk" style="border-color:var(--coral);background:#FFF3EA;color:var(--ink)">
+   <div class="em">🏙️</div>
+   <div class="paragraph">Living in a big city can have both positive and negative effects on <b style="background:#FFE0C7;color:var(--coral-d)">(37) ______</b>. On the one hand, cities offer many opportunities such as access to better jobs and <b style="background:#FFE0C7;color:var(--coral-d)">(38) ______</b>. On the other hand, city life can also be stressful due to <b style="background:#FFE0C7;color:var(--coral-d)">(39) ______</b> and noise pollution. Additionally, many people struggle to find a balance between work and personal life <b style="background:#FFE0C7;color:var(--coral-d)">(40) ______</b>.</div>
+   <button class="btr" onclick="toggleTranslation('trans6')">Mở dịch đoạn này 🌟</button>
+   <div class="translation" id="trans6">Sống ở một thành phố lớn có thể mang lại cả những ảnh hưởng tích cực lẫn tiêu cực đến (37) ______. Một mặt, thành phố đem đến nhiều cơ hội, chẳng hạn như được tiếp cận những công việc tốt hơn và (38) ______. Mặt khác, cuộc sống ở thành phố cũng có thể gây căng thẳng do (39) ______ và ô nhiễm tiếng ồn. Ngoài ra, nhiều người còn chật vật tìm sự cân bằng giữa công việc và cuộc sống riêng (40) ______.</div>
+  </div>
+
+  <div class="gl"><h3 style="background:linear-gradient(90deg,var(--lilac-d),var(--lilac))">📚 Glossary — Passage 2</h3>
+   <table class="gtb"><tr><th>Từ vựng</th><th>Loại từ</th><th>Nghĩa tiếng Việt</th></tr>
+    <tr><td class="gw">positive</td><td class="gp">Adjective</td><td>tích cực</td></tr>
+    <tr><td class="gw">negative</td><td class="gp">Adjective</td><td>tiêu cực</td></tr>
+    <tr><td class="gw">effect (on)</td><td class="gp">Noun</td><td>ảnh hưởng, tác động (lên)</td></tr>
+    <tr><td class="gw">opportunity</td><td class="gp">Noun</td><td>cơ hội</td></tr>
+    <tr><td class="gw">access (to)</td><td class="gp">Noun</td><td>sự tiếp cận, được sử dụng (cái gì)</td></tr>
+    <tr><td class="gw">public service</td><td class="gp">Noun</td><td>dịch vụ công (bệnh viện, trường học, xe buýt)</td></tr>
+    <tr><td class="gw">mental</td><td class="gp">Adjective</td><td>(thuộc về) tinh thần</td></tr>
+    <tr><td class="gw">physical</td><td class="gp">Adjective</td><td>(thuộc về) thể chất, cơ thể</td></tr>
+    <tr><td class="gw">stressful</td><td class="gp">Adjective</td><td>gây căng thẳng</td></tr>
+    <tr><td class="gw">due to</td><td class="gp">Preposition</td><td>do, bởi vì</td></tr>
+    <tr><td class="gw">crowded</td><td class="gp">Adjective</td><td>đông đúc</td></tr>
+    <tr><td class="gw">noise pollution</td><td class="gp">Noun</td><td>ô nhiễm tiếng ồn</td></tr>
+    <tr><td class="gw">struggle</td><td class="gp">Verb</td><td>chật vật, vất vả (làm gì)</td></tr>
+    <tr><td class="gw">constantly</td><td class="gp">Adverb</td><td>liên tục, lúc nào cũng</td></tr>
+   </table>
+  </div>
+ </div>
+</div>
+
+<div class="rp">
+ <div class="slbl">🎯 10 câu hỏi</div>
+ <div id="app"></div>
+ <div class="sw"><button class="sbtn" onclick="openName()">🎯 NỘP BÀI TÍNH ĐIỂM &amp; XEM KẾT QUẢ</button></div>
+</div>
+</div>
+
+<div class="foot">🎮 Bài tập của <b>MS Chí Nên</b> · Đăng ký khoá tiếng Anh lớp 1 → 12: <b>☎️ 0852639652</b> để được trải nghiệm hệ thống web học tập đẹp, sinh động — chấm điểm tự động, giải chi tiết từng câu, học vui như chơi game mỗi ngày!</div>
+
+<div class="ov" id="ovN"><div class="mb">
+ <h2>📮 Con ghi tên vào đây nhé!</h2>
+ <input id="nIn" placeholder="Ví dụ: Nguyễn Văn A" autocomplete="off" maxlength="50">
+ <div class="err" id="nEm">⚠️ Con chưa nhập tên kìa! Nhập tên rồi mới xem điểm được nha.</div>
+ <button class="sbtn" style="margin-top:12px;font-size:1rem;padding:11px 26px" onclick="showResult()">🚀 Xem kết quả</button>
+</div></div>
+
+<div class="ov" id="ovR"><div class="mb" style="max-width:480px">
+ <div class="rname" id="rn"></div>
+ <div class="rscore"><span id="rSc">0</span>/<span id="rTt">0</span></div>
+ <div class="rs10">🎓 Quy đổi: <span id="r10">0</span>/10 điểm</div>
+ <img class="rgif" id="rGif" src="" alt="">
+ <div class="rcmt" id="rMs"></div>
+ <button class="bcl" onclick="closeR()">Đóng &amp; xem lại bài</button>
+</div></div>
+
+<script>
+/* ══ cảnh thế giới game pixel ══ */
+function rnd(a,b){return a+Math.random()*(b-a)}
+function SPR(rows,pal,s){var sh=[];
+ rows.forEach(function(r,y){for(var x=0;x<r.length;x++){var c=pal[r.charAt(x)];if(c)sh.push(((x+1)*s)+'px '+((y+1)*s)+'px 0 '+c)}});
+ return '<div class="spr" style="width:'+(rows[0].length*s)+'px;height:'+(rows.length*s)+'px"><i style="left:-'+s+'px;top:-'+s+'px;width:'+s+'px;height:'+s+'px;box-shadow:'+sh.join(',')+'"></i></div>'}
+var CLOUD=['_____wwww_______','___wwwwwww_www__','__wwwwwwwwwwwww_','_wwwwwwwwwwwwwww','wwwwwwwwwwwwwwww','_bbbbbbbbbbbbbb_'];
+var COIN=['__ddd__','_dyyyd_','dyywyyd','dyywyyd','dyywyyd','dyywyyd','dyywyyd','_dyyyd_','__ddd__'];
+var HERO_A=['__cccccc__','_cccccccc_','_cCCCCCCCC','_hssssss__','_hskssks__','_hssssss__','__ssssss__','_oooooooo_','sooooooos_','__bbbbbb__','__bb__bb__','_ff____ff_'];
+var HERO_B=['__cccccc__','_cccccccc_','_cCCCCCCCC','_hssssss__','_hskssks__','_hssssss__','__ssssss__','_oooooooo_','_soooooos_','__bbbbbb__','___bbbb___','___ffff___'];
+var SLIME=['___gggg___','__gLgggg__','_gLgggggg_','_gggggggg_','gggkggkggg','gggkggkggg','gggggggggg','_GGGGGGGG_'];
+var MUSH=['___rrrr___','_rrwwrrrr_','rrwwwrrwwr','rrrwrrrwwr','rrrrrrrrrr','__ssssss__','__skssks__','__ssssss__','_ff____ff_'];
+var HEART=['_rr_rr_','rwrrrrr','rrrrrrr','_rrrrr_','__rrr__','___r___'];
+var STAR=['___y___','___y___','yyyyyyy','_yyyyy_','__yyy__','_yy_yy_','yy___yy'];
+var PAD=['__pppppppppp__','_pppkppppprppp','ppkkkpppyppbpp','pppkppppppgppp','pppppPPPPppppp','_pppp____pppp_','__pp______pp__'];
+var BOOK=['_rrrrrrrrrr_','rwwwwwwwwwwr','rrrrrrrrrrrr','__bbbbbbbbbb','_bwwwwwwwwwb','_bbbbbbbbbbb','gggggggggg__','gwwwwwwwwwg_','gggggggggg__'];
+var PC={w:'#FFFFFF',b:'#CDEBFF'},PCO={d:'#A86A00',y:'#FFD23F',w:'#FFF7C2'},
+ PH={c:'#1E6FD9',C:'#0F4A9E',h:'#6B3A1E',s:'#FFC99A',k:'#23324A',o:'#FF6B1A',b:'#2B3A8C',f:'#6B3A1E'},
+ PS1={g:'#5BD65B',L:'#D4FFCC',k:'#1D3B1D',G:'#2E9A3A'},PS2={g:'#5AB8FF',L:'#DDF2FF',k:'#16304F',G:'#2A7BC4'},
+ PM={r:'#FF4D6D',w:'#FFFFFF',s:'#FFE6C7',k:'#23324A',f:'#8A4B1E'},
+ PHT={r:'#FF4D6D',w:'#FFC2CF'},PST={y:'#FFD23F'},PPD={p:'#8F6BFF',P:'#6B4CE0',k:'#2B2050',r:'#FF4D6D',y:'#FFD23F',b:'#2FA3EE',g:'#34C759'},
+ PBK={r:'#FF4D6D',b:'#2FA3EE',g:'#2FBF4A',w:'#FFF7E0'};
+var TROPHY=['y_yyyyyy_y','yyywyyyyyy','y_ywyyyy_y','__yyyyyy__','___yyyy___','____dd____','____dd____','___dddd___','__bbbbbb__','__bbbbbb__'];
+var FLAG=['kRRRRRRR_','kRRRyRRRR','kRRyyyRRR','kRRRyRRRR','kRRRRRRR_','k________','k________','k________','k________','k________','k________','k________','k________','k________','kkk______'];
+var PTR={y:'#FFD23F',w:'#FFF7C2',d:'#C98A00',b:'#7A3E00'},PFL={k:'#1A2440',R:'#FF4D6D',y:'#FFD23F'};
+function BLD(left,w,h,c){return '<div class="bld" style="left:'+left+';width:'+w+'px;height:'+h+'px;background-color:'+c+'"></div>'}
+function FW(left,dur){var cs=['#FF4D6D','#FFD23F','#2FBF4A','#2FA3EE'],g='';
+ for(var k=0;k<8;k++)g+='<i style="background:'+cs[k%4]+';transform:rotate('+(k*45)+'deg) translateY(-37px)"></i>';
+ return '<div class="fw" style="left:'+left+'"><div class="lg a"></div><div class="lg b"></div><div class="wh" style="animation-duration:'+dur+'s">'+g+'</div></div>'}
+(function(){var h='',sky=document.getElementById('sky');
+ for(var i=0;i<5;i++)h+='<div class="pcl" style="top:'+rnd(5,46).toFixed(0)+'vh;animation-duration:'+rnd(70,110).toFixed(0)+'s;animation-delay:-'+rnd(0,70).toFixed(0)+'s">'+SPR(CLOUD,PC,i%2?5:7)+'</div>';
+ var CO=[['left:2.4vw;top:30vh',0],['left:5vw;top:36vh',.3],['left:2.4vw;top:44vh',.6],['right:2.6vw;top:62vh',.2],['right:5.2vw;top:68vh',.5],['right:2.6vw;top:24vh',.8]];
+ CO.forEach(function(c){h+='<div class="coin" style="'+c[0]+';animation-delay:-'+c[1]+'s">'+SPR(COIN,PCO,4)+'</div>'});
+ h+='<div class="blk" style="left:1.6vw;top:17vh"><div class="brk"></div><div class="qb">?<div class="pop">'+SPR(COIN,PCO,3)+'</div></div></div>';
+ h+='<div class="blk" style="right:1.6vw;top:44vh"><div class="qb" style="animation-delay:-1.6s">?<div class="pop" style="animation-delay:-1.6s">'+SPR(COIN,PCO,3)+'</div></div><div class="brk"></div></div>';
+ h+='<div class="blk" style="right:3vw;top:13vh"><div class="brk"></div></div>';
+ h+='<div class="ctrl" style="left:2vw;top:58vh">'+SPR(PAD,PPD,5)+'</div>';
+ for(var i=0;i<8;i++){var side=i%2?'right:'+rnd(1,6).toFixed(1):'left:'+rnd(1,6).toFixed(1);
+  h+='<div class="up" style="'+side+'vw;animation-duration:'+rnd(11,17).toFixed(0)+'s;animation-delay:-'+rnd(0,16).toFixed(0)+'s">'+SPR(i%3?HEART:STAR,i%3?PHT:PST,4)+'</div>'}
+ sky.innerHTML=h;
+ h='';
+ var PI=[['left:4vw',44],['left:47vw',64],['right:4vw',84]];
+ PI.forEach(function(p,i){h+='<div class="pipe" style="'+p[0]+'"><div class="pc2" style="animation-delay:-'+(i*1.5)+'s">'+SPR(COIN,PCO,3)+'</div><div class="lip"></div><div class="tube" style="height:'+p[1]+'px"></div></div>'});
+ h+=BLD('10.6vw',58,76,'#5B7BD6')+BLD('14.6vw',46,56,'#FF7A1A')+BLD('56vw',50,64,'#2FBF4A')+BLD('60vw',60,78,'#8F6BFF')+FW('70vw',20);
+ h+='<div class="bk" style="left:22vw">'+SPR(TROPHY,PTR,4)+'</div><div class="bk flg" style="left:81vw">'+SPR(FLAG,PFL,4)+'</div>';
+ h+='<div class="hero" style="animation-duration:26s"><div class="jp"><div class="fa">'+SPR(HERO_A,PH,4)+'</div><div class="fb">'+SPR(HERO_B,PH,4)+'</div></div></div>';
+ h+='<div class="hero" style="animation-duration:26s;animation-delay:-13s"><div class="jp" style="animation-delay:-1.4s"><div class="fa">'+SPR(HERO_A,PH,4)+'</div><div class="fb">'+SPR(HERO_B,PH,4)+'</div></div></div>';
+ var MB=[[SLIME,PS1,'sq',34,4],[MUSH,PM,'wb',44,4],[SLIME,PS2,'sq',52,4],[MUSH,PM,'wb',38,3]];
+ MB.forEach(function(m,i){h+='<div class="mob" style="animation-duration:'+m[3]+'s;animation-delay:-'+(i*m[3]/MB.length*2.2%m[3]).toFixed(1)+'s"><div class="'+m[2]+'">'+SPR(m[0],m[1],m[4])+'</div></div>'});
+ document.getElementById('gdeco').innerHTML=h;
+})();
+
+/* ══ âm thanh ══ */
+var AC=null;
+function ac(){if(!AC){try{AC=new (window.AudioContext||window.webkitAudioContext)()}catch(e){}}if(AC&&AC.state==='suspended')AC.resume();return AC}
+function ding(){var c=ac();if(!c)return;var t=c.currentTime;[988,1318.5,1975.5].forEach(function(f,i){var o=c.createOscillator(),g=c.createGain();o.type='square';o.frequency.value=f;o.connect(g);g.connect(c.destination);var s=t+i*0.08;g.gain.setValueAtTime(0.0001,s);g.gain.exponentialRampToValueAtTime(.09,s+.02);g.gain.exponentialRampToValueAtTime(.0001,s+.28);o.start(s);o.stop(s+.3)})}
+var DUCK_URL='https://hoctienganhcungcomaianulis.github.io/homework/%E1%BA%A2nh_File%20nghe/Sound/Ti%E1%BA%BFng%20V%E1%BB%8Bt%20k%C3%AAu%20meme%20mp3.mp3';
+function buzz(){try{var a=new Audio(DUCK_URL);a.volume=.75;a.play().catch(function(){})}catch(e){}}
+function conf(){var cs=['#FF4D6D','#FFD23F','#2FBF4A','#2FA3EE','#8F6BFF'];
+ for(var i=0;i<50;i++){var d=document.createElement('div');d.className='cn';
+  d.style.cssText='left:'+(Math.random()*100)+'vw;width:10px;height:10px;background:'+cs[i%5]+';opacity:.95';
+  document.body.appendChild(d);(function(d){setTimeout(function(){d.remove()},2500)})(d)}}
+function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}
+function toggleTranslation(id){
+ var el=document.getElementById(id);
+ if(el.style.display==='block'){el.style.display='none';}else{el.style.display='block';}
+}
+
+/* ══ lời giải ══ */
+function OPT(w,pos,ipa,vi,ok){return {w:w,pos:pos||'',ipa:ipa||'',vi:vi,ok:ok?1:0}}
+function grid2(opts){
+ return '<div class="grid2">'+opts.map(function(o){
+  var cls=o.ok?'hl-green':'p-word';
+  var pos=o.pos?' <span class="wt">'+o.pos+'</span>':'';
+  var ipa=o.ipa?' <span class="p-phonetic">/'+o.ipa+'/</span>':'';
+  return '<div'+(o.ok?' class="gk"':'')+'>'+(o.ok?'✅ ':'')+'<span class="'+cls+'">'+o.w+'</span>'+pos+ipa+'<br>= <span class="p-mean">'+o.vi+'</span></div>';
+ }).join('')+'</div>';
+}
+var hxI=0;
+function ln(txt){
+ var cls='hx'+(hxI++%6),qeI=0;
+ txt=txt.replace(/"([^"]+)"/g,function(m,p1){return '<span class="qe'+(qeI++%6)+'">"'+p1+'"</span>'});
+ return '<span class="p-grammar '+cls+'">▸ '+txt+'</span>';
+}
+function lines(a){return a.map(ln).join('<br>')}
+function DICT(w,i){
+ var slug=w.trim().toLowerCase().replace(/\s+/g,'-');
+ return '<a class="d'+(i%4)+'" href="https://dictionary.cambridge.org/vi/dictionary/english/'+slug+'" target="_blank" rel="noopener">🔊 Cambridge · '+w+'</a>';
+}
+function render(q){
+ hxI=0;
+ var shown=MAP[q.id].map(function(w){return q.opts.find(function(o){return o.w===w})});
+ var lab='Nghĩa của 4 phương án:';
+ var html='<div class="vnt">💬 Dịch: '+q.vnt+'</div><ol>'+
+  '<li><b>'+lab+'</b>'+grid2(shown)+'</li>'+
+  '<li><span class="hl-green">✅ TẠI SAO ĐÚNG?</span><br>'+lines(q.why)+'</li>'+
+  '<li><span class="hl-red">❌ TẠI SAO SAI?</span><br>'+lines(q.bad)+'</li></ol>'+
+  '<div class="frame">🔍 <i>'+q.ev+'</i><br>👉 <span class="p-mean">'+q.evvi+'</span></div>';
+ if(q.dict&&q.dict.length){
+  html+='<div class="dk"><b>🔊 Tra từ điển Cambridge:</b><br>Con bấm vào đây để nghe phát âm chuẩn và đọc theo cho hay nhé:'+
+   '<div class="dict">'+q.dict.map(DICT).join('')+'</div>'+
+   '<div class="say">👉 Nếu trang chưa hiện đúng từ, con gõ từ đó vào ô tìm kiếm, bấm loa 🔊 nghe và đọc theo.</div></div>';
+ }
+ return html;
+}
+
+/* ══ câu hỏi ══ */
+var SA=`crowded public spaces`,SB=`public services like hospitals and schools`,SC=`people's mental and physical health`,SD=`if they are constantly working in big cities`;
+function OPT4(k){return [
+ OPT(SA,`cụm danh từ`,``,`những nơi công cộng đông đúc`,k===SA),
+ OPT(SB,`cụm danh từ`,``,`các dịch vụ công như bệnh viện và trường học`,k===SB),
+ OPT(SC,`cụm danh từ`,``,`sức khoẻ tinh thần và thể chất của con người`,k===SC),
+ OPT(SD,`mệnh đề if`,``,`nếu họ liên tục làm việc ở các thành phố lớn`,k===SD)]}
+var L2=[SA,SB,SC,SD];
+var Q31A=`To show why teenagers should focus more on their hobbies.`,Q31B=`To describe how teenagers can achieve school success easily.`,Q31C=`To encourage teenagers to spend more time with family.`,Q31D=`To explain how setting goals can lead to a more balanced life.`;
+var Q33A=`Begin working on all parts of the goal at once.`,Q33B=`Break the goal into smaller, more achievable steps.`,Q33C=`Try to focus on the goal and forget about distractions.`,Q33D=`Work on the goal only when they feel motivated.`;
+var Q35A=`Setting realistic goals helps teenagers stay motivated.`,Q35B=`Checking progress regularly keeps teenagers on track.`,Q35C=`It is better to work on many goals at the same time.`,Q35D=`Breaking a goal into smaller steps makes it easier to achieve.`;
+var Q36A=`See if they are making progress and make changes if necessary.`,Q36B=`Look at their goals only after they have finished.`,Q36C=`Ask their friends to check their goals for them.`,Q36D=`Check their progress only when they feel like it.`;
+var QS=[
+{id:31,part:1,col:'sky',text:`What is the main purpose of the text?`,correct:Q31D,
+ options:[Q31A,Q31B,Q31C,Q31D],
+ opts:[OPT(Q31A,`cụm từ`,``,`Để chỉ ra vì sao thanh thiếu niên nên tập trung nhiều hơn vào sở thích của mình.`),OPT(Q31B,`cụm từ`,``,`Để mô tả cách thanh thiếu niên có thể dễ dàng thành công trong học tập.`),OPT(Q31C,`cụm từ`,``,`Để khuyến khích thanh thiếu niên dành nhiều thời gian hơn cho gia đình.`),OPT(Q31D,`cụm từ`,``,`Để giải thích việc đặt mục tiêu có thể giúp cuộc sống cân bằng hơn như thế nào.`,1)],
+ vnt:`Mục đích chính của bài đọc là gì?`,
+ why:[`Ngay câu mở bài, tác giả đã nêu chủ đề: "setting goals can help you live a more balanced life" (đặt mục tiêu giúp con sống cân bằng hơn).`,`Đoạn 2, 3, 4 lần lượt hướng dẫn CÁCH đặt mục tiêu: chọn điều quan trọng, chia nhỏ từng bước, đặt vừa sức, kiểm tra tiến độ.`,`Câu kết ở đoạn 5 nhắc lại đúng ý ấy: "By setting your own goals, you can create a balanced and happy life" → mục đích chính là giải thích đặt mục tiêu giúp cuộc sống cân bằng hơn ra sao → chọn D.`],
+ bad:[`A "focus more on their hobbies": sở thích chỉ được nhắc thoáng qua ở đoạn 1, đứng cạnh việc học và gia đình; bài không hề khuyên tập trung NHIỀU HƠN vào sở thích.`,`B "achieve school success easily": "improve your grades" chỉ là MỘT ví dụ ở đoạn 2, và bài cũng không nói thành công là dễ dàng (đoạn 3 còn cảnh báo mục tiêu quá khó sẽ khiến con nản).`,`C "spend more time with family": đây cũng chỉ là một ví dụ về mục tiêu ở đoạn 2, quá hẹp, không bao quát được cả bài.`],
+ ev:`As teenagers, setting goals can help you live a more balanced life. / By setting your own goals, you can create a balanced and happy life.`,
+ evvi:`Ở tuổi thiếu niên, việc đặt mục tiêu có thể giúp các em sống cân bằng hơn. / Bằng cách tự đặt mục tiêu, em có thể tạo nên một cuộc sống cân bằng và hạnh phúc.`,
+ dict:[`purpose`,`goal`,`balanced`,`encourage`]},
+{id:32,part:1,col:'mint',text:`The word <b>"motivated"</b> in paragraph 2 is OPPOSITE in meaning to ______.`,correct:`uninterested`,
+ options:[`uninterested`,`focused`,`balanced`,`excited`],
+ opts:[OPT(`uninterested`,`adj`,`ʌnˈɪntrəstɪd`,`không hứng thú, thờ ơ`,1),OPT(`focused`,`adj`,`ˈfəʊkəst`,`tập trung`),OPT(`balanced`,`adj`,`ˈbælənst`,`cân bằng, hài hoà`),OPT(`excited`,`adj`,`ɪkˈsaɪtɪd`,`hào hứng, phấn khích`)],
+ vnt:`Từ "motivated" ở đoạn 2 TRÁI NGHĨA với ______.`,
+ why:[`"motivated" /ˈməʊtɪveɪtɪd/ = có động lực, hăng hái muốn làm. Trong bài: chia nhỏ mục tiêu "helps you stay motivated" (giúp con luôn giữ được động lực).`,`Ngược với hăng hái muốn làm là chẳng còn hứng thú gì nữa → "uninterested" = un (không) + interested (hứng thú) = thờ ơ, không hứng thú. Đây đúng là từ TRÁI NGHĨA.`],
+ bad:[`"focused" (tập trung) cùng mang ý tích cực như "motivated", lại còn xuất hiện ở đoạn 4 "stay focused" → không trái nghĩa.`,`"balanced" (cân bằng) là từ khoá của cả bài nhưng nói về cuộc sống cân bằng, chẳng liên quan gì đến nghĩa của "motivated".`,`"excited" (hào hứng) gần nghĩa với "motivated" → là đồng nghĩa chứ không phải trái nghĩa. Đề hỏi OPPOSITE, coi chừng bẫy nhé!`],
+ ev:`Once you know your goal, break it into smaller steps. This makes it easier to work on and helps you stay motivated.`,
+ evvi:`Khi đã biết mục tiêu của mình, hãy chia nhỏ nó thành những bước nhỏ hơn. Việc này giúp em dễ bắt tay vào làm hơn và luôn giữ được động lực.`,
+ dict:[`motivated`,`uninterested`,`focused`,`excited`]},
+{id:33,part:1,col:'mint',text:`After choosing a goal, what should teenagers do next?`,correct:Q33B,
+ options:[Q33A,Q33B,Q33C,Q33D],
+ opts:[OPT(Q33A,`câu`,``,`Bắt tay làm tất cả các phần của mục tiêu cùng một lúc.`),OPT(Q33B,`câu`,``,`Chia mục tiêu thành những bước nhỏ hơn, dễ đạt được hơn.`,1),OPT(Q33C,`câu`,``,`Cố tập trung vào mục tiêu và quên đi những thứ gây xao nhãng.`),OPT(Q33D,`câu`,``,`Chỉ làm mục tiêu khi cảm thấy có động lực.`)],
+ vnt:`Sau khi chọn được mục tiêu, thanh thiếu niên nên làm gì tiếp theo?`,
+ why:[`Đoạn 2 viết: "Once you know your goal, break it into smaller steps." Cụm "Once you know your goal" (một khi đã biết mục tiêu) chính là "After choosing a goal" trong câu hỏi.`,`"break it into smaller steps" (chia nhỏ thành các bước) khớp với B; bài còn nói việc này "makes it easier to work on" → các bước nhỏ thì dễ đạt được hơn.`],
+ bad:[`A "all parts of the goal at once" (làm tất cả cùng một lúc) ngược hẳn với lời khuyên chia nhỏ ra làm từng bước.`,`C "forget about distractions" (quên đi thứ gây xao nhãng): bài không hề nhắc tới "distractions" ở bước này.`,`D "only when they feel motivated": bài nói chia nhỏ mục tiêu để "stay motivated" (luôn giữ động lực), chứ không bảo con đợi lúc có hứng mới làm.`],
+ ev:`Once you know your goal, break it into smaller steps. This makes it easier to work on and helps you stay motivated.`,
+ evvi:`Khi đã biết mục tiêu của mình, hãy chia nhỏ nó thành những bước nhỏ hơn. Việc này giúp em dễ bắt tay vào làm hơn và luôn giữ được động lực.`,
+ dict:[`break`,`step`,`achievable`,`distraction`]},
+{id:34,part:1,col:'coral',text:`The word <b>"frustrated"</b> in paragraph 3 is CLOSEST in meaning to ______.`,correct:`annoyed`,
+ options:[`annoyed`,`satisfied`,`interested`,`surprised`],
+ opts:[OPT(`annoyed`,`adj`,`əˈnɔɪd`,`bực mình, khó chịu`,1),OPT(`satisfied`,`adj`,`ˈsætɪsfaɪd`,`hài lòng, thoả mãn`),OPT(`interested`,`adj`,`ˈɪntrəstɪd`,`quan tâm, hứng thú`),OPT(`surprised`,`adj`,`səˈpraɪzd`,`ngạc nhiên`)],
+ vnt:`Từ "frustrated" ở đoạn 3 GẦN NGHĨA NHẤT với ______.`,
+ why:[`"frustrated" /frʌˈstreɪtɪd/ = bực bội, nản lòng vì cố mãi mà không làm được. Bài viết: "If your goal is too hard, you might feel frustrated and give up."`,`Mục tiêu quá khó, làm mãi không xong thì con thấy bực mình rồi "give up" (bỏ cuộc) → gần nghĩa nhất là "annoyed" (bực mình, khó chịu).`],
+ bad:[`"satisfied" (hài lòng) là cảm xúc vui, gần như ngược nghĩa với "frustrated"; đã hài lòng thì chẳng ai "give up" cả.`,`"interested" (hứng thú) cũng mang nghĩa tích cực, không khớp với cảnh nản chí bỏ cuộc trong bài.`,`"surprised" (ngạc nhiên) là cảm xúc bất ngờ, không liên quan đến chuyện mục tiêu quá khó.`],
+ ev:`If your goal is too hard, you might feel frustrated and give up.`,
+ evvi:`Nếu mục tiêu quá khó, em có thể cảm thấy bực bội, nản lòng rồi bỏ cuộc.`,
+ dict:[`frustrated`,`annoyed`,`satisfied`,`surprised`]},
+{id:35,part:1,col:'coral',text:`Which statement is NOT true according to the text?`,correct:Q35C,
+ options:[Q35A,Q35B,Q35C,Q35D],
+ opts:[OPT(Q35A,`câu`,``,`Đặt mục tiêu thực tế giúp thanh thiếu niên giữ được động lực.`),OPT(Q35B,`câu`,``,`Thường xuyên kiểm tra tiến độ giúp thanh thiếu niên đi đúng hướng.`),OPT(Q35C,`câu`,``,`Làm nhiều mục tiêu cùng một lúc thì tốt hơn.`,1),OPT(Q35D,`câu`,``,`Chia mục tiêu thành những bước nhỏ hơn giúp mục tiêu dễ đạt được hơn.`)],
+ vnt:`Theo bài đọc, câu nào KHÔNG đúng?`,
+ why:[`Câu hỏi có chữ NOT → con phải tìm câu SAI so với bài. Cả bài chỉ nói cách đặt và theo đuổi TỪNG mục tiêu, không chỗ nào khuyên làm "many goals at the same time" (nhiều mục tiêu cùng lúc).`,`Đoạn 2 còn dạy làm từ từ: "break it into smaller steps" (chia nhỏ từng bước) → C đi ngược tinh thần của bài, nên C là đáp án.`],
+ bad:[`A ĐÚNG với bài: đoạn 3 khuyên "set goals that you can achieve" vì mục tiêu quá khó khiến con "give up" (bỏ cuộc), tức là mất động lực.`,`B ĐÚNG với bài: đoạn 4 viết "check your progress often. Ask yourself if you are still on track".`,`D ĐÚNG với bài: đoạn 2 viết "break it into smaller steps. This makes it easier to work on".`],
+ ev:`Once you know your goal, break it into smaller steps. / It's also important to set goals that you can achieve. / Finally, check your progress often.`,
+ evvi:`Khi đã biết mục tiêu, hãy chia nhỏ nó thành từng bước. / Đặt mục tiêu vừa sức cũng rất quan trọng. / Cuối cùng, hãy thường xuyên kiểm tra tiến độ. → Không có chỗ nào khuyên làm nhiều mục tiêu cùng lúc.`,
+ dict:[`realistic`,`progress`,`regularly`,`achieve`]},
+{id:36,part:1,col:'lilac',text:`How should teenagers check their progress on their goals?`,correct:Q36A,
+ options:[Q36A,Q36B,Q36C,Q36D],
+ opts:[OPT(Q36A,`câu`,``,`Xem mình có đang tiến bộ không và điều chỉnh khi cần thiết.`,1),OPT(Q36B,`câu`,``,`Chỉ xem lại mục tiêu sau khi đã làm xong.`),OPT(Q36C,`câu`,``,`Nhờ bạn bè kiểm tra mục tiêu giúp mình.`),OPT(Q36D,`câu`,``,`Chỉ kiểm tra tiến độ khi nào mình thích.`)],
+ vnt:`Thanh thiếu niên nên kiểm tra tiến độ thực hiện mục tiêu của mình như thế nào?`,
+ why:[`Đoạn 4: "Ask yourself if you are still on track to reach your goal" (tự hỏi xem mình có còn đi đúng hướng không) = "See if they are making progress".`,`Câu tiếp theo: "If not, change your plan and try again" (nếu không thì đổi kế hoạch và thử lại) = "make changes if necessary" → A khớp trọn cả hai ý.`],
+ bad:[`B "only after they have finished": bài nói "check your progress often" (kiểm tra thường xuyên) ngay trong lúc làm, chứ không đợi làm xong mới xem.`,`C "Ask their friends": bài viết "Ask yourself" (tự hỏi BẢN THÂN), không hề nhờ bạn bè.`,`D "only when they feel like it" (khi nào thích mới kiểm tra) trái với chữ "often" (thường xuyên) trong bài.`],
+ ev:`Finally, check your progress often. Ask yourself if you are still on track to reach your goal. If not, change your plan and try again.`,
+ evvi:`Cuối cùng, hãy thường xuyên kiểm tra tiến độ của mình. Tự hỏi bản thân xem mình có còn đi đúng hướng để đạt mục tiêu không. Nếu không, hãy thay đổi kế hoạch và thử lại.`,
+ dict:[`progress`,`track`,`necessary`,`plan`]},
+
+{id:37,part:2,col:'coral',text:`Living in a big city can have both positive and negative effects on <b>(37) ______</b>.`,correct:SC,
+ options:L2,opts:OPT4(SC),
+ vnt:`Sống ở một thành phố lớn có thể mang lại cả ảnh hưởng tích cực lẫn tiêu cực đến sức khoẻ tinh thần và thể chất của con người.`,
+ why:[`Chỗ trống đứng sau giới từ "on" trong cụm "effects on" (ảnh hưởng lên) → cần một danh từ / cụm danh từ chỉ ĐỐI TƯỢNG chịu ảnh hưởng.`,`C "people's mental and physical health" (sức khoẻ tinh thần và thể chất của con người) là cụm danh từ, lại hợp nghĩa: các câu sau nói thành phố có mặt tốt và mặt "stressful" (gây căng thẳng), tức là ảnh hưởng tới sức khoẻ → chọn C.`],
+ bad:[`A "crowded public spaces" cũng là cụm danh từ, nhưng nó là NGUYÊN NHÂN gây căng thẳng, phải đứng sau "due to" và đi cặp với "and noise pollution" → thuộc chỗ (39).`,`B "public services like hospitals and schools" là một CƠ HỘI thành phố mang lại, phải nối sau "better jobs and" → thuộc chỗ (38).`,`D "if they are constantly working in big cities" là mệnh đề if, không đứng ngay sau giới từ "on" được → thuộc chỗ (40), ở cuối câu.`],
+ ev:`Living in a big city can have both positive and negative effects on people's mental and physical health.`,
+ evvi:`Sống ở một thành phố lớn có thể mang lại cả ảnh hưởng tích cực lẫn tiêu cực đến sức khoẻ tinh thần và thể chất của con người.`,
+ dict:[`mental`,`physical`,`effect`,`negative`]},
+{id:38,part:2,col:'coral',text:`On the one hand, cities offer many opportunities such as access to better jobs and <b>(38) ______</b>.`,correct:SB,
+ options:L2,opts:OPT4(SB),
+ vnt:`Một mặt, thành phố đem đến nhiều cơ hội, chẳng hạn như được tiếp cận những công việc tốt hơn và các dịch vụ công như bệnh viện và trường học.`,
+ why:[`Cụm "access to better jobs and ______": chữ "and" nối hai thứ cùng loại → sau "and" phải là một cụm danh từ, cũng là thứ con được "access to" (tiếp cận) giống như "better jobs".`,`Câu đang kể mặt TỐT ("On the one hand", "opportunities" = cơ hội) → B "public services like hospitals and schools" (dịch vụ công như bệnh viện, trường học) đúng là một lợi ích của thành phố → chọn B.`],
+ bad:[`A "crowded public spaces" (nơi công cộng đông đúc) là điều KHÔNG tốt, không thể xếp vào "opportunities" (cơ hội) → thuộc chỗ (39).`,`C "people's mental and physical health" là đối tượng chịu ảnh hưởng, phải đứng sau "effects on" → thuộc chỗ (37).`,`D "if they are constantly working" là mệnh đề if, không nối bằng "and" với cụm danh từ "better jobs" được → thuộc chỗ (40).`],
+ ev:`On the one hand, cities offer many opportunities such as access to better jobs and public services like hospitals and schools.`,
+ evvi:`Một mặt, thành phố đem đến nhiều cơ hội, chẳng hạn như được tiếp cận những công việc tốt hơn và các dịch vụ công như bệnh viện và trường học.`,
+ dict:[`access`,`opportunity`,`service`,`hospital`]},
+{id:39,part:2,col:'coral',text:`On the other hand, city life can also be stressful due to <b>(39) ______</b> and noise pollution.`,correct:SA,
+ options:L2,opts:OPT4(SA),
+ vnt:`Mặt khác, cuộc sống ở thành phố cũng có thể gây căng thẳng do những nơi công cộng đông đúc và ô nhiễm tiếng ồn.`,
+ why:[`"due to" (do, bởi vì) phải đi với danh từ / cụm danh từ chỉ NGUYÊN NHÂN. Phía sau chỗ trống còn "and noise pollution" (ô nhiễm tiếng ồn) → chỗ trống là một nguyên nhân gây căng thẳng, cùng loại với tiếng ồn.`,`Câu mở đầu bằng "On the other hand" (mặt khác) → chuyển sang mặt XẤU. A "crowded public spaces" (nơi công cộng đông đúc) vừa là cụm danh từ vừa đúng là thứ gây căng thẳng → chọn A.`],
+ bad:[`B "public services like hospitals and schools" là điều TỐT, không thể là lí do khiến cuộc sống "stressful" → thuộc chỗ (38), sau "better jobs and".`,`C "people's mental and physical health" là thứ BỊ ảnh hưởng chứ không phải nguyên nhân gây căng thẳng → thuộc chỗ (37), sau "effects on".`,`D "if they are constantly working" là mệnh đề if, không đứng sau "due to" được → thuộc chỗ (40).`],
+ ev:`On the other hand, city life can also be stressful due to crowded public spaces and noise pollution.`,
+ evvi:`Mặt khác, cuộc sống ở thành phố cũng có thể gây căng thẳng do những nơi công cộng đông đúc và ô nhiễm tiếng ồn.`,
+ dict:[`crowded`,`stressful`,`pollution`,`noise`]},
+{id:40,part:2,col:'coral',text:`Additionally, many people struggle to find a balance between work and personal life <b>(40) ______</b>.`,correct:SD,
+ options:L2,opts:OPT4(SD),
+ vnt:`Ngoài ra, nhiều người còn chật vật tìm sự cân bằng giữa công việc và cuộc sống riêng nếu họ liên tục làm việc ở các thành phố lớn.`,
+ why:[`Trước chỗ trống, câu đã đủ chủ ngữ và động từ: "many people struggle to find a balance between work and personal life" (nhiều người chật vật cân bằng công việc và cuộc sống riêng). Chỗ trống ở CUỐI câu chỉ cần thêm một mệnh đề phụ nói rõ điều kiện.`,`D "if they are constantly working in big cities" (nếu họ liên tục làm việc ở thành phố lớn) là mệnh đề if đứng cuối câu, cho biết KHI NÀO khó cân bằng → hợp cả ngữ pháp lẫn nghĩa → chọn D.`],
+ bad:[`A "crowded public spaces" ghép vào thành "personal life crowded public spaces", hai cụm danh từ đứng sát nhau vô nghĩa → A thuộc chỗ (39), sau "due to".`,`B "public services like hospitals and schools" ghép vào cũng thành hai cụm danh từ dính nhau, sai ngữ pháp → B thuộc chỗ (38), sau "better jobs and".`,`C "people's mental and physical health" cũng là cụm danh từ, không nối thẳng sau "personal life" được → C thuộc chỗ (37), sau "effects on".`],
+ ev:`Additionally, many people struggle to find a balance between work and personal life if they are constantly working in big cities.`,
+ evvi:`Ngoài ra, nhiều người còn chật vật tìm sự cân bằng giữa công việc và cuộc sống riêng nếu họ liên tục làm việc ở các thành phố lớn.`,
+ dict:[`struggle`,`balance`,`constantly`,`personal`]}
+];
+
+/* ══ dựng trang ══ */
+var TOTAL=QS.length,answered=0,score=0,done={},MAP={};
+var TINT={sky:'#F3FAFF',mint:'#F1FCF3',coral:'#FFF7F0',lilac:'#F8F4FF',pink:'#FFF4F8',sun:'#FFFBEB'};
+var SECINFO={
+ 1:{c:'mint',t:'🎯 Level 1 · Setting Goals — Câu 31 → 36',s:'Read the following passage and mark the letter A, B, C, or D on your answer sheet to indicate the correct answer to each of the following questions from 31 to 36.'},
+ 2:{c:'lilac',t:'🏙️ Level 2 · City Life — Câu 37 → 40',s:'Four phrases/ sentences have been removed from the text below. For each question, mark the letter A, B, C, or D on your answer sheet to indicate the correct option that best fits each of the numbered blanks from 37 to 40.'}};
+var app=document.getElementById('app'),secs={};
+[1,2].forEach(function(p){var s=document.createElement('div');s.className='sec';s.dataset.part=p;s.style.borderColor='var(--'+SECINFO[p].c+')';
+ s.innerHTML='<div class="sech" style="color:var(--'+SECINFO[p].c+'-d)">'+SECINFO[p].t+'</div><div class="secs">'+SECINFO[p].s+'</div>';
+ secs[p]=s;app.appendChild(s)});
+QS.forEach(function(q){
+ var so=shuffle(q.options);
+ MAP[q.id]=so;
+ var card=document.createElement('div');
+ card.className='q';card.id='c'+q.id;
+ card.style.setProperty('--qc','var(--'+q.col+')');
+ card.style.borderLeftColor='var(--'+q.col+')';
+ card.style.background=TINT[q.col];
+ card.innerHTML='<div class="qt"><span class="qn">'+q.id+'</span>'+q.text+'</div>'+
+  '<div class="og" id="o'+q.id+'">'+so.map(function(o,i){var L=q.part===2?q.options.indexOf(o):i;return '<button class="ob" onclick="pick('+q.id+','+i+')">'+String.fromCharCode(65+L)+'. '+o+'</button>'}).join('')+'</div>'+
+  '<div class="ex" id="e'+q.id+'"></div>';
+ secs[q.part].appendChild(card);
+});
+
+function pick(qid,i){
+ if(done[qid])return;done[qid]=true;answered++;
+ var q=QS.find(function(x){return x.id===qid});
+ var so=MAP[qid],bs=document.getElementById('o'+qid).children;
+ var ok=so[i]===q.correct;
+ for(var k=0;k<bs.length;k++){bs[k].classList.add('dn');
+  if(so[k]===q.correct)bs[k].classList.add('ok');else if(k===i)bs[k].classList.add('no')}
+ document.getElementById('e'+qid).innerHTML=render(q);
+ document.getElementById('e'+qid).classList.add('on');
+ if(ok){score++;ding();conf()}
+ else{buzz();var c=document.getElementById('c'+qid);c.classList.add('shk');setTimeout(function(){c.classList.remove('shk')},430)}
+ bump();
+}
+function bump(){document.getElementById('lv').textContent=score+'/'+TOTAL;document.getElementById('sc').textContent=score+'/'+TOTAL}
+
+/* ══ nộp bài ══ */
+function openName(){
+ if(answered<TOTAL){alert('Con ơi, con còn '+(TOTAL-answered)+' câu chưa làm kìa! Hoàn thành hết rồi mới nộp bài nhé!');return;}
+ document.getElementById('ovN').classList.add('on');setTimeout(function(){document.getElementById('nIn').focus()},150);
+}
+document.getElementById('nIn').addEventListener('keydown',function(e){if(e.key==='Enter')showResult()});
+function showResult(){
+ var i=document.getElementById('nIn'),n=i.value.trim();
+ if(!n){document.getElementById('nEm').classList.add('show');i.focus();return}
+ document.getElementById('nEm').classList.remove('show');
+ document.getElementById('ovN').classList.remove('on');
+ var pct=score/TOTAL,ten=(pct*10).toFixed(2),g,m,gif;
+ document.getElementById('rn').textContent='Học viên: '+n;
+ if(score===TOTAL){g='🏆 PHÁ ĐẢO TUYỆT ĐỐI, '+n+'!';m='Con ăn trọn cả '+TOTAL+' đồng xu vàng, không mất mạng nào — đúng chuẩn game thủ huyền thoại lớp 9! MS Chí Nên rất tự hào! 🌟 ☎️ 0852639652.';gif='https://media.giphy.com/media/11sBLVxNs7v6WA/giphy.gif'}
+ else if(pct>=.8){g='👏 GIỎI LẮM, '+n+'!';m='Con đã qua màn rất đẹp, chỉ cần để ý thêm chút xíu ở các câu dễ nhầm là phá đảo luôn! Giữa kì I con sẽ làm thật tốt! ☎️ 0852639652.';gif='https://media.giphy.com/media/3o7abGQa0p2EWzchcg/giphy.gif'}
+ else if(pct>=.6){g='💪 KHÁ RỒI ĐẤY, '+n+'!';m='Con đã qua ngưỡng an toàn rồi. Mở lời giải từng câu ra xem lại, lần chơi sau con sẽ lên level nhanh lắm!';gif='https://media.giphy.com/media/3o7abGQa0p2EWzchcg/giphy.gif'}
+ else{g='🌱 CỐ LÊN NHÉ, '+n+'!';m='Đừng buồn con nhé. Game thủ giỏi nào cũng từng thua vài màn — xem lời giải của cô để hồi đầy máu, rồi bấm chơi lại nha, Ms tin con sẽ làm tốt hơn! 💪';gif='https://media.giphy.com/media/l378giAZgxPw3eO52/giphy.gif'}
+ document.getElementById('rSc').textContent=score;
+ document.getElementById('rTt').textContent=TOTAL;
+ document.getElementById('r10').textContent=ten;
+ document.getElementById('rGif').src=gif;
+ document.getElementById('rMs').innerHTML='<b>'+g+'</b><br>'+m;
+ document.getElementById('ovR').classList.add('on');
+ if(pct>=.6){conf();ding()}
+}
+function closeR(){document.getElementById('ovR').classList.remove('on')}
+
+/* ══ lời nhắc — đổi theo phần đang làm ══ */
+var GEN=[
+ '🎮 Player 1 sẵn sàng! Pixel Quest Reading có 10 câu (31 → 40) — nhặt đủ 10 đồng xu vàng, phá đảo giữa kì I lớp 9 nào! 🔥',
+ '🚨 LƯU Ý TỪ MS CHÍ NÊN: Các em cuộn câu hỏi đến đâu thì làm đến đó! TỰ GIÁC tra cứu từ mới bằng Google Dịch/Từ điển Cambridge để hiểu rõ câu hỏi, tuyệt đối KHÔNG chọn bừa. Chỉ có đọc kỹ giải thích và GHI CHÉP từ mới vào vở thì tiếng Anh mới thực sự giỏi lên. Tránh làm qua loa chống đối! 📝',
+ '⚡ Lớp 9 là năm nước rút — mỗi câu đọc hiểu con hạ gục hôm nay là thêm một mạng cho giữa kì và cả kì thi vào lớp 10! Level up liên tục nào!',
+ '🔥 COMBO! Đúng liền 3 câu là lửa bùng cháy, đúng liền 10 câu là phá đảo luôn — chiến binh lớp 9 làm được!',
+ '💪 Game thủ xịn không phải người không bao giờ thua, mà là người thua xong bấm chơi tiếp ngay. Sai thì xem lời giải, hồi máu rồi chiến tiếp!',
+ '🦆 Chọn sai thì chú vịt kêu quạc quạc — cười một cái, xem lời giải, rồi bứt tốc qua màn tiếp nhé!',
+ '🏆 Cánh cổng lớp 10 đang mở dần — ai cày level chăm từ bây giờ thì ngày thi chỉ việc cắm cờ chiến thắng! 🚩',
+ '☎️ Đăng ký khoá tiếng Anh lớp 1 → 12 cùng MS Chí Nên — 0852639652 — học vui như chơi game, điểm lên vù vù!'];
+var PMSG={
+ 1:['🎯 LEVEL 1 — Màn Đặt mục tiêu! Mục tiêu của con lúc này: ăn trọn 6 đồng xu vàng — săn bằng chứng trong từng đoạn và chiến thôi! 🔥',
+    '🕵️ Câu nào cũng giấu dấu vết trong bài — khoá đúng đoạn, chốt chắc bằng chứng, combo sẽ tự bùng cháy! 🪙'],
+ 2:['🏙️ LEVEL 2 — Màn Thành phố lớn! 4 chỗ trống là 4 mảnh ghép — lắp chuẩn cả 4 là con phóng thẳng tới điểm 10! 🔥',
+    '👾 Chỉ còn 4 câu nữa là hạ gục Boss cuối — tung chiêu thật dứt khoát, lá cờ phá đảo đang vẫy gọi chiến binh lớp 9! 🚩']};
+var curP=0,mk=0,msEl=document.getElementById('msTx');
+function showMsg(t){msEl.style.opacity=0;setTimeout(function(){msEl.innerHTML=t;msEl.style.opacity=1},250)}
+setInterval(function(){var list=(PMSG[curP]||[]).concat(GEN);mk=(mk+1)%list.length;showMsg(list[mk])},5200);
+if('IntersectionObserver' in window){
+ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var p=+e.target.dataset.part;if(p!==curP){curP=p;mk=0;showMsg(PMSG[p][0])}}})},{threshold:.35});
+ [1,2].forEach(function(p){io.observe(secs[p])});
+}
+</script>
+<style>/*streak*/
+#stkRow{display:flex;align-items:center;flex:0 0 auto;margin:0 4px}#stkRow.in{align-self:center;margin:0 0 0 8px}#stkRow.in .bar,#stkRow.in .nx,#stkRow.in .lbl{display:none!important}#stkRow.in #stkP{flex-direction:row!important;gap:6px;padding:4px 10px 4px 8px;position:static}#stkRow.in .fl,#stkRow.in .n{position:static;line-height:1}
+#stkRow.fixed{position:fixed;left:10px;bottom:12px;z-index:60}
+#stkP{display:flex;align-items:center;gap:6px;padding:2px 10px 2px 7px;border-radius:999px;background:#FFF7ED;border:2px solid #FDBA74;font-family:'Baloo 2','Nunito',sans-serif;
+ font-weight:700;color:#9A3412;font-size:.92rem;transition:transform .25s;white-space:nowrap}
+#stkP .fl{display:inline-block;position:static;font-size:1.1rem;transition:font-size .3s;transform-origin:50% 90%}
+#stkP.hot .fl{animation:stkFl .5s ease-in-out infinite alternate}@keyframes stkFl{from{transform:scale(1) rotate(-6deg)}to{transform:scale(1.25) rotate(6deg)}}
+#stkP.pop{transform:scale(1.15)}#stkP.cold{filter:grayscale(.6);opacity:.85}
+#stkP .n{display:inline-grid;place-items:center;min-width:22px;height:22px;padding:0 5px;border-radius:999px;background:linear-gradient(135deg,#FB923C,#EF4444);color:#fff;font-size:.9rem}
+#stkP .bar{width:54px;height:6px;border-radius:99px;background:#FED7AA;overflow:hidden}#stkP .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#F97316,#EF4444);transition:width .3s}
+#stkP .nx{font-size:.78rem;color:#C2410C}
+#stkToast{position:fixed;left:50%;top:38%;z-index:70;transform:translate(-50%,-50%) scale(.4);opacity:0;pointer-events:none;text-align:center;padding:18px 26px;border-radius:26px;
+ background:linear-gradient(135deg,#FFF7ED,#FEF3C7);border:4px solid #FDBA74;box-shadow:0 18px 40px rgba(0,0,0,.25);font-family:'Baloo 2','Nunito',sans-serif;color:#9A3412;max-width:86vw;transition:all .35s cubic-bezier(.2,1.6,.4,1)}
+#stkToast.show{opacity:1;transform:translate(-50%,-50%) scale(1)}#stkToast b{display:block;font-size:2.3rem;line-height:1.15}#stkToast span{font-weight:700;font-size:1.05rem}
+#stkToast.soft{background:linear-gradient(135deg,#EFF6FF,#F5F3FF);border-color:#93C5FD;color:#1E3A8A}#stkToast.soft b{font-size:1.6rem}
+.stkSpark{position:fixed;z-index:69;pointer-events:none;font-size:26px;animation:stkSp 1.2s ease-out forwards}
+@keyframes stkSp{0%{opacity:1;transform:translate(0,0) scale(.6)}100%{opacity:0;transform:translate(var(--x),var(--y)) scale(1.3) rotate(240deg)}}
+@media(max-width:700px){#stkP .bar,#stkP .nx,#stkP .lbl{display:none}#stkP{padding:2px 7px 2px 5px}#stkToast b{font-size:1.8rem}}
+@media (prefers-reduced-motion:reduce){#stkP.hot .fl,.stkSpark{animation:none}}
+
+/*scrollfix*/
+@media(min-width:941px){body{height:auto!important;overflow:visible!important;overflow-x:clip!important}.foot{margin-bottom:8px!important}.note{min-height:66px;display:flex;align-items:center;justify-content:center}.note .in{width:100%}}
+</style>
+<script>/*streak*/(function(){
+ const $=id=>document.getElementById(id),num=el=>{const m=(el.textContent||'').match(/(\d+)\s*\/\s*(\d+)/);return m?[+m[1],+m[2]]:[0,0]};
+ let get=null,anchor=null,mode='after';const sc=$('scoreChip'),pg=$('progChip');
+ if(sc&&pg){get=()=>{const s=num(sc),a=num(pg);return [a[0],s[0],a[1]]};anchor=sc}
+ else{try{if(typeof answered!=='undefined'&&typeof score!=='undefined'){get=()=>[answered,score,typeof TOTAL!=='undefined'?TOTAL:0];anchor=$('sc')&&$('sc').parentElement}}catch(e){}
+  if(!get)try{if(typeof done==='object'&&done&&$('lv')){get=()=>{const v=Object.values(done);return [v.length,v.filter(x=>x===true).length,typeof QS!=='undefined'?QS.length:0]};anchor=$('lv').closest('.gauge')||$('lv');mode='in'}}catch(e){}}
+ if(!get)return;
+ const row=document.createElement('div');row.id='stkRow';
+ row.innerHTML='<div id="stkP" class="cold" title="Số câu đúng liên tiếp"><span class="fl">🔥</span><span class="lbl">Chuỗi đúng</span><span class="n" id="stkN">0</span><span class="bar"><i id="stkB"></i></span><span class="nx" id="stkX">→ 3</span></div>';
+ if(!anchor){row.className='fixed';document.body.appendChild(row)}else if(mode==='in'){row.className='in';anchor.insertAdjacentElement('afterend',row)}else anchor.insertAdjacentElement('afterend',row);
+ const toast=document.createElement('div');toast.id='stkToast';document.body.appendChild(toast);
+ const P=document.getElementById('stkP'),N=document.getElementById('stkN'),B=document.getElementById('stkB'),X=document.getElementById('stkX');
+ let cur=0,best=0,[lastA,lastS]=get(),tmr=null;
+ const NEXT=n=>n<3?3:n<5?5:n<10?10:(Math.floor(n/5)+1)*5,LOW=n=>n<3?0:n<5?3:n<10?5:Math.floor(n/5)*5;
+ const PRAISE={3:['🔥 3 câu liền!','Con đang vào guồng rồi đó!'],5:['🔥🔥 5 câu liền!','Siêu đỉnh luôn — cô thấy con tập trung lắm!'],10:['🌟 10 câu liền!','Không ai cản nổi con nữa rồi!'],
+  15:['🏆 15 câu liền!','Con là ngôi sao của lớp đó!'],20:['👑 20 câu liền!','Tuyệt vời — cô tự hào về con lắm!']};
+ const OOPS=['Không sao đâu con — mình bắt đầu chuỗi mới nhé! 💪','Đọc lời giải rồi làm tiếp, chuỗi mới đang chờ con! 🌱','Sai một câu là học thêm một điều — cố lên con! 🌈','Hít một hơi thật sâu, câu sau con sẽ làm được! ⭐'];
+ function say(t,sub,soft){toast.className=soft?'soft':'';toast.innerHTML='<b>'+t+'</b><span>'+sub+'</span>';void toast.offsetWidth;toast.classList.add('show');clearTimeout(tmr);tmr=setTimeout(()=>toast.classList.remove('show'),soft?1600:2000)}
+ function burst(){const E=['🔥','⭐','✨','🎉','💛','🌟'];for(let i=0;i<16;i++){const s=document.createElement('div');s.className='stkSpark';s.textContent=E[i%E.length];
+  const a=Math.random()*Math.PI*2,r=120+Math.random()*160;s.style.cssText='left:50%;top:38%;--x:'+Math.cos(a)*r+'px;--y:'+Math.sin(a)*r+'px';document.body.appendChild(s);setTimeout(()=>s.remove(),1300)}}
+ function paint(){N.textContent=cur;const lo=LOW(cur),hi=NEXT(cur);B.style.width=Math.min(100,(cur-lo)/(hi-lo)*100)+'%';X.textContent='→ '+hi;
+  P.classList.toggle('cold',cur===0);P.classList.toggle('hot',cur>=3);P.classList.add('pop');setTimeout(()=>P.classList.remove('pop'),250);
+  P.querySelector('.fl').style.fontSize=(1.1+Math.min(cur,15)*.03)+'rem'}
+ function check(){const [a,s,tot]=get();if(a===lastA)return;const dA=a-lastA,dS=s-lastS;lastA=a;lastS=s;if(dA<=0)return;
+  if(dS>=dA){const before=cur;cur+=dA;best=Math.max(best,cur);paint();
+   const hit=Object.keys(PRAISE).map(Number).filter(m=>before<m&&cur>=m).pop()||(cur>=25&&Math.floor(cur/5)>Math.floor(before/5)?cur-cur%5:0);
+   if(hit){const p=PRAISE[hit]||['🚀 '+hit+' câu liền!','Con đang bay cao lắm rồi!'];say(p[0],p[1]);burst()}}
+  else{const had=cur;cur=0;paint();if(had>=3)say('Chuỗi '+had+' câu — giỏi lắm!',OOPS[Math.floor(Math.random()*OOPS.length)],true)}
+  if(tot&&a>=tot)setTimeout(()=>{say('🏅 Chuỗi dài nhất: '+best+' câu',best>=5?'Con làm bài thật tuyệt vời!':'Lần sau mình thử phá kỷ lục này nhé!');if(best>=5)burst()},2400)}
+ setInterval(check,250);
+})();</script>
+<script>/*devclean*/(function(){
+var ZW=/[\u00AD\u034F\u061C\u115F\u1160\u17B4\u17B5\u180E\u200B-\u200F\u202A-\u202E\u2060-\u206F\uFEFF]/g,
+    SP=/[\u00A0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\t]/g,
+    AP=/[\u2018\u2019\u201A\u201B\u2032\u2035\u02B9\u02BB\u02BC\u02BD\u02C8\u0060\u00B4\uFF07]/g,
+    DQ=/[\u201C\u201D\u201E\u201F\u2033\u2036\u00AB\u00BB\uFF02]/g,
+    DS=/[\u2010\u2011\u2012\u2212\uFE63\uFF0D]/g;
+function clean(v){if(!v)return v;var s=String(v);try{s=s.normalize('NFKC')}catch(e){}
+  return s.replace(ZW,'').replace(SP,' ').replace(AP,"'").replace(DQ,'"').replace(DS,'-').replace(/[\u0300-\u036f]/g,'').replace(/ {2,}/g,' ');}
+window.__devclean=clean;
+function fix(skip){var L=document.querySelectorAll('input:not([type]),input[type=text],input[type=search],textarea');
+  for(var i=0;i<L.length;i++){var el=L[i];if(el===skip||el.readOnly||el.disabled)continue;var v=el.value,c=clean(v);if(c!==v)el.value=c;}}
+['pointerdown','mousedown','touchstart','click','change','focusout'].forEach(function(t){document.addEventListener(t,function(e){fix(t==='focusout'||t==='change'?null:e.target)},true)});
+document.addEventListener('keydown',function(e){if(e.key==='Enter'||e.keyCode===13)fix(null)},true);
+})();</script>
+<div id="hlPop">
+ <button type="button" class="y" title="Vàng" onclick="hlApply('y')"></button>
+ <button type="button" class="g" title="Xanh lá" onclick="hlApply('g')"></button>
+ <button type="button" class="p" title="Hồng" onclick="hlApply('p')"></button>
+ <button type="button" class="b" title="Xanh" onclick="hlApply('b')"></button>
+ <button type="button" class="er" title="Tẩy tô" onclick="hlErase()">🧽</button>
+</div>
+<script>/*hltool*/
+/* ══ công cụ highlight: chỉ tô trong bài đọc (.paragraph, .translation ở khung trái) ══ */
+var HLT={saved:null,t:null,target:null,gid:0},hlPop=document.getElementById('hlPop');
+function hlGroup(g){return Array.prototype.slice.call(document.querySelectorAll('.lp mark.uhl[data-g="'+g+'"]'))}
+function hlUnpick(){document.querySelectorAll('mark.uhl.pick').forEach(function(m){m.classList.remove('pick')});HLT.target=null}
+function hlShowGroup(){
+ var ms=hlGroup(HLT.target);if(!ms.length){hlUnpick();hlHide();return}
+ var L=1e9,T=1e9,R=-1e9,B=-1e9;
+ ms.forEach(function(m){var b=m.getBoundingClientRect();if(!b.width&&!b.height)return;L=Math.min(L,b.left);T=Math.min(T,b.top);R=Math.max(R,b.right);B=Math.max(B,b.bottom)});
+ if(R<L){hlHide();return}
+ hlShow({getBoundingClientRect:function(){return {left:L,top:T,right:R,bottom:B,width:R-L,height:B-T}}});
+}
+function hlZone(n){var e=n&&(n.nodeType===1?n:n.parentNode);return e&&e.closest?e.closest('.lp .paragraph,.lp .translation'):null}
+function hlNodes(r){
+ var root=r.commonAncestorContainer;if(root.nodeType!==1)root=root.parentNode;
+ var out=[],w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,null),n;
+ while((n=w.nextNode())){
+  if(!r.intersectsNode(n))continue;
+  var z=hlZone(n);if(!z||!z.getClientRects().length)continue;
+  var s=n===r.startContainer?r.startOffset:0,e=n===r.endContainer?r.endOffset:n.length;
+  if(e>s)out.push([n,s,e]);
+ }
+ return out;
+}
+function hlRange(){
+ var sel=window.getSelection();if(!sel||!sel.rangeCount||sel.isCollapsed)return null;
+ var r=sel.getRangeAt(0),lp=document.querySelector('.lp');
+ if(!lp.contains(r.commonAncestorContainer))return null;
+ var L=hlNodes(r);if(!L.some(function(x){return x[0].nodeValue.slice(x[1],x[2]).trim()}))return null;
+ return r;
+}
+function hlIsMark(e){return e&&e.nodeName==='MARK'&&e.classList.contains('uhl')}
+function hlPaint(r,cls){
+ var L=hlNodes(r),zones=[],g=cls?String(++HLT.gid):'';
+ L.forEach(function(x){
+  var n=x[0],s=x[1],e=x[2];
+  if(e<n.length)n.splitText(e);
+  if(s>0)n=n.splitText(s);
+  var z=hlZone(n);if(zones.indexOf(z)<0)zones.push(z);
+  var p=n.parentNode;
+  if(hlIsMark(p)){
+   var host=p.parentNode,ref=p.nextSibling,aft=null,put=n;
+   if(n.nextSibling){aft=document.createElement('mark');aft.className=p.className;if(p.dataset.g)aft.dataset.g=p.dataset.g;while(n.nextSibling)aft.appendChild(n.nextSibling)}
+   if(cls){put=document.createElement('mark');put.className='uhl uhl-'+cls;put.dataset.g=g;put.appendChild(n)}
+   host.insertBefore(put,ref);
+   if(aft)host.insertBefore(aft,put.nextSibling);
+   if(!p.firstChild)host.removeChild(p);
+  }else if(cls){
+   var m=document.createElement('mark');m.className='uhl uhl-'+cls;m.dataset.g=g;p.insertBefore(m,n);m.appendChild(n);
+  }
+ });
+ zones.forEach(function(z){if(z){z.querySelectorAll('mark.uhl').forEach(function(m){if(!m.textContent)m.remove()});z.normalize()}});
+}
+function hlDone(){HLT.saved=null;hlUnpick();try{window.getSelection().removeAllRanges()}catch(e){}hlHide()}
+function hlApply(cls){
+ if(HLT.target&&!hlRange()){hlGroup(HLT.target).forEach(function(m){m.className='uhl uhl-'+cls});hlDone();return}
+ var r=HLT.saved||hlRange();
+ if(!r){HLT.saved=null;hlHide();var t=document.getElementById('hlTip');t.classList.remove('ping');void t.offsetWidth;t.classList.add('ping');return}
+ hlPaint(r,cls);hlDone();
+}
+function hlErase(){
+ if(HLT.target&&!hlRange()){hlGroup(HLT.target).forEach(function(m){var p=m.parentNode;while(m.firstChild)p.insertBefore(m.firstChild,m);p.removeChild(m);p.normalize()});hlDone();return}
+ var r=HLT.saved||hlRange();
+ if(r){hlPaint(r,null)}
+ else{document.querySelectorAll('mark.uhl').forEach(function(m){var p=m.parentNode;while(m.firstChild)p.insertBefore(m.firstChild,m);p.removeChild(m);p.normalize()})}
+ hlDone();
+}
+function hlHide(){hlPop.classList.remove('on','below')}
+function hlShow(r){
+ var b=r.getBoundingClientRect();if(!b.width&&!b.height){hlHide();return}
+ hlPop.classList.add('on');
+ var w=hlPop.offsetWidth,h=hlPop.offsetHeight,note=document.querySelector('.note'),nb=note?note.getBoundingClientRect().bottom:0;
+ var x=Math.max(6,Math.min(window.innerWidth-w-6,b.left+b.width/2-w/2)),y=b.top-h-10,below=false;
+ if(y<nb+6){y=b.bottom+10;below=true}
+ hlPop.style.left=x+'px';hlPop.style.top=y+'px';hlPop.classList.toggle('below',below);
+}
+function hlCheck(){clearTimeout(HLT.t);HLT.t=setTimeout(function(){var r=hlRange();if(r){hlUnpick();hlShow(r)}else if(HLT.target)hlShowGroup();else hlHide()},90)}
+document.addEventListener('click',function(e){
+ var t=e.target;if(t.closest&&t.closest('#hlPop,.hlbar'))return;
+ var m=t.closest?t.closest('.lp mark.uhl'):null;
+ if(m&&!hlRange()){
+  if(!m.dataset.g)m.dataset.g=String(++HLT.gid);
+  hlUnpick();HLT.target=m.dataset.g;hlGroup(HLT.target).forEach(function(x){x.classList.add('pick')});hlShowGroup();
+ }else if(HLT.target){hlUnpick();hlHide()}
+});
+function hlKeep(e){var r=hlRange();if(r)HLT.saved=r.cloneRange();if(e.type==='mousedown')e.preventDefault()}
+document.querySelectorAll('.hlbar button,#hlPop button').forEach(function(b){
+ b.addEventListener('pointerdown',function(){var r=hlRange();HLT.saved=r?r.cloneRange():null});
+ b.addEventListener('mousedown',hlKeep);
+ b.addEventListener('touchstart',hlKeep,{passive:true});
+});
+document.addEventListener('mouseup',hlCheck);
+document.addEventListener('touchend',hlCheck);
+document.addEventListener('selectionchange',hlCheck);
+window.addEventListener('scroll',function(){if(hlPop.classList.contains('on'))hlCheck()},{passive:true});
+document.querySelector('.lp').addEventListener('scroll',function(){if(hlPop.classList.contains('on'))hlCheck()},{passive:true});
+if(typeof fitPanels==='function')fitPanels();
+</script>
+<script>/*scrollfix*/
+function fitPanelsX(){var m=document.querySelector('.main'),ps=document.querySelectorAll('.lp,.rp'),i;if(!m||!ps.length)return;
+ if(window.innerWidth<=940){for(i=0;i<ps.length;i++)ps[i].style.maxHeight='';m.style.paddingBottom='';return}
+ var n=document.querySelector('.note'),nh=n?n.offsetHeight:0,h=Math.max(320,window.innerHeight-nh-104);
+ for(i=0;i<ps.length;i++)ps[i].style.maxHeight=h+'px';
+ var pb=parseFloat(getComputedStyle(m).paddingBottom)||0,top=ps[0].getBoundingClientRect().top+window.scrollY,want=Math.max(40,top-nh-8),extra=document.documentElement.scrollHeight-window.innerHeight-pb;
+ m.style.paddingBottom=Math.max(0,want-extra)+'px'}
+window.fitPanels=fitPanelsX;
+window.addEventListener('resize',fitPanelsX);window.addEventListener('load',fitPanelsX);
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitPanelsX);
+fitPanelsX();
+</script>
+<style>/*namegate*/.ngTag{display:block;margin:2px auto 8px;padding:8px 12px;border-radius:14px;background:#F5F3FF;border:2px dashed #C4B5FD;font-weight:800;color:#4C1D95;line-height:1.6;font-size:.95rem;text-align:center}
+.ngTag small{font-weight:700;color:#6D28D9}
+#ngClock{position:fixed;left:10px;bottom:10px;z-index:90;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.92);border:2px solid #C4B5FD;font:800 .9rem inherit;color:#5B21B6;box-shadow:0 4px 12px rgba(0,0,0,.12);pointer-events:none}</style>
+<div id="ngClock">⏱ 00:00</div>
+<script>/*namegate*/(function(){
+var T0=Date.now(),TEND=0,clk=document.getElementById('ngClock');
+function mmss(ms){var s=Math.floor(ms/1000),m=Math.floor(s/60);s%=60;return (m<10?'0':'')+m+':'+(s<10?'0':'')+s;}
+function dur(ms){var s=Math.floor(ms/1000),m=Math.floor(s/60);s%=60;return (m?m+' phút ':'')+s+' giây';}
+function esc(s){return String(s).replace(/[<>&]/g,'');}
+function clean(s){s=(s||'');try{s=s.normalize('NFC')}catch(e){}return s.replace(/[​-‏⁠﻿]/g,'').replace(/\s+/g,' ').trim();}
+function stamp(){var d=new Date(),p=function(n){return(n<10?'0':'')+n};return p(d.getHours())+':'+p(d.getMinutes())+' · '+p(d.getDate())+'/'+p(d.getMonth()+1)+'/'+d.getFullYear();}
+setInterval(function(){if(!TEND&&clk)clk.textContent='⏱ '+mmss(Date.now()-T0);},1000);
+var orig=window.showResult;if(typeof orig!=='function')return;
+window.showResult=function(){var i=document.getElementById('nIn'),v=clean(i&&i.value);if(i)i.value=v;
+  orig.apply(this,arguments);
+  var ov=document.getElementById('ovR'),rn=document.getElementById('rn');if(!v||!ov||!ov.classList.contains('on')||!rn)return;
+  if(!TEND)TEND=Date.now();if(clk)clk.textContent='⏱ '+mmss(TEND-T0)+' ✔';
+  rn.innerHTML='<span class="ngTag">👤 '+esc(v)+'<br>⏱ Làm bài trong <b>'+dur(TEND-T0)+'</b><br><small>⏰ Nộp lúc '+stamp()+'<br>📘 '+esc(document.title.split('|')[0].trim())+'</small></span>';};
+})();</script>
+<script>/*attempts*/(function(){
+var KEY='att:'+decodeURIComponent(location.pathname),done=false;
+function load(){try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){return []}}
+function save(a){try{localStorage.setItem(KEY,JSON.stringify(a.slice(-20)))}catch(e){}}
+function fmt(d){var p=function(n){return(n<10?'0':'')+n};return p(d.getDate())+'/'+p(d.getMonth()+1);}
+function durOf(tag){var m=(tag.textContent||'').match(/Làm bài trong\s*((?:\d+\s*phút\s*)?\d+\s*giây)/);return m?m[1].replace(/\s+/g,' '):'';}
+function score(){var a=document.getElementById('resScore');if(a)return a.textContent.replace(/\s+/g,'');
+  a=document.getElementById('rS');if(a)return a.textContent.replace(/\s+/g,'');
+  a=document.getElementById('rSc');var b=document.getElementById('rTt');if(a)return a.textContent.trim()+'/'+(b?b.textContent.trim():'?');return '?';}
+function add(tag){
+  if(tag.querySelector('.ngAtt'))return;
+  var a=load();
+  if(!done){done=true;a.push({s:score(),t:Date.now(),d:durOf(tag)});save(a);}
+  var k=a.length,prev=a.slice(Math.max(0,k-6),k-1);
+  var d=document.createElement('div');d.className='ngAtt';
+  d.style.cssText='display:block;margin-top:6px;padding-top:6px;border-top:2px dashed #DDD6FE';
+  d.innerHTML='🔁 <b>Lần nộp thứ '+k+'</b> trên máy này'+(prev.length?'<br><small>'+prev.map(function(x,i){return 'Lần '+(k-prev.length+i)+': <b>'+x.s+'</b>'+(x.d?' · ⏱ làm trong <b>'+x.d+'</b>':'')+' · '+fmt(new Date(x.t))}).join('<br>')+'</small>':'');
+  tag.appendChild(d);
+}
+function check(){var t=document.getElementById('ngTag')||document.querySelector('#rn .ngTag');if(t&&t.textContent.trim())add(t);}
+new MutationObserver(check).observe(document.body,{childList:true,subtree:true,characterData:true});
+})();</script>
+<style id="ms-chi-nen-unlock-style">
+#passwordModal, #password-modal, #pwModal, #pw-modal, #pw-overlay,
+#lockModal, #passModal, #authModal, #auth-modal, #lockOverlay,
+#start-overlay, #intro-overlay, #start-screen,
+.password-modal, .lock-modal, .lock-overlay {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    z-index: -9999 !important;
+}
+</style>
+<script>
+// Remove password lock completely - direct quiz access
+(function() {
+    var initDone = false;
+    var renderCheckDone = false;
+
+    function hideEl(el, hard) {
+        if (!el) return;
+        if (hard) {
+            el.style.setProperty('display', 'none', 'important');
+            el.style.setProperty('visibility', 'hidden', 'important');
+            el.style.setProperty('opacity', '0', 'important');
+            el.style.setProperty('pointer-events', 'none', 'important');
+            el.style.setProperty('z-index', '-9999', 'important');
+        } else {
+            el.style.display = 'none';
+        }
+        el.classList.remove('active', 'show', 'open', 'visible', 'flex');
+    }
+
+    function hasRenderedQuiz() {
+        var containers = document.querySelectorAll(
+            '#quiz-container, #quizContainer, #questions-container, #questionPane, #quiz, #questions, #quiz-body, #questions-wrapper, #quiz-list, #quizList, #exercise-container, #app-container .split-container'
+        );
+        for (var i = 0; i < containers.length; i++) {
+            if (containers[i].querySelectorAll('button, input, select, textarea, .question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .question, .option-btn, .opt-btn, .ans-btn').length > 0) {
+                return true;
+            }
+        }
+        if (document.querySelectorAll('.question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .option-btn, .opt-btn, .ans-btn, .choice-btn').length > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    function ensureQuizRendered() {
+        if (renderCheckDone) return;
+        renderCheckDone = true;
+        if (hasRenderedQuiz()) return;
+
+        if (!hasRenderedQuiz() && typeof buildQuiz === 'function') { try { buildQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof initQuiz === 'function') { try { initQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderApp === 'function') { try { renderApp(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuiz === 'function') { try { renderQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuestions === 'function') { try { renderQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAllQuestions === 'function') { try { renderAllQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAll === 'function') { try { renderAll(); } catch(e){} }
+    }
+
+    function unlockNow() {
+        var pwIds = [
+            'passwordModal', 'password-modal', 'pwModal', 'pw-modal', 'pw-overlay',
+            'lockModal', 'passModal', 'authModal', 'auth-modal', 'lockOverlay',
+            'start-overlay', 'intro-overlay', 'start-screen'
+        ];
+        pwIds.forEach(function(id) {
+            hideEl(document.getElementById(id), true);
+        });
+
+        var modalEls = document.querySelectorAll('.password-modal, .lock-modal, .lock-overlay, #lockOverlay, #auth-modal');
+        modalEls.forEach(function(el) {
+            if (el.id !== 'resultModal' && el.id !== 'result-modal' && el.id !== 'scoreModal') {
+                hideEl(el, true);
+            }
+        });
+
+        ['nameModal', 'name-modal', 'nameInputModal'].forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) hideEl(el, false);
+        });
+
+        var qo = document.getElementById('quiz-overlay');
+        if (qo && (typeof isStarted === 'undefined' || !isStarted)) {
+            qo.style.display = 'none';
+        }
+
+        var mainIds = [
+            'mainContent', 'main-content', 'mainHeader', 'main-header',
+            'app-container', 'app', 'quizApp', 'quiz-wrapper', 'quizContainer', 'quiz-container', 'reading-content'
+        ];
+        mainIds.forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) {
+                el.classList.remove('hidden', 'blur', 'blurred', 'locked');
+                if (el.style.display === 'none') {
+                    el.style.removeProperty('display');
+                }
+                if (window.getComputedStyle(el).display === 'none') {
+                    var hasPane = el.querySelector('.pane, .left-pane, .right-pane, .split-container, .left-panel, .right-panel');
+                    if (id === 'main-content' || id.toLowerCase().includes('header') || el.classList.contains('main-container') || hasPane) {
+                        el.style.setProperty('display', 'flex', 'important');
+                    } else {
+                        el.style.setProperty('display', 'block', 'important');
+                    }
+                }
+            }
+        });
+
+        var qs = document.getElementById('quiz-screen');
+        if (qs) {
+            qs.classList.remove('hidden');
+            if (qs.classList.contains('flex-col')) {
+                qs.classList.add('flex');
+                qs.style.display = 'flex';
+            } else {
+                qs.style.display = 'block';
+            }
+        }
+
+        if (!initDone) {
+            initDone = true;
+
+            if (document.getElementById('start-overlay') && typeof startGame === 'function') {
+                var sn = document.getElementById('student-name') || document.getElementById('studentName');
+                if (sn && !sn.value.trim()) sn.value = 'Học sinh';
+            }
+            if (document.getElementById('name-modal') && typeof startQuiz === 'function') {
+                var sn2 = document.getElementById('student-name');
+                if (sn2 && !sn2.value.trim()) sn2.value = 'Học sinh';
+            }
+
+            if (typeof startQuiz === 'function' && (typeof isStarted === 'undefined' || !isStarted)) { try { startQuiz(); } catch(e){} }
+            if (typeof startGame === 'function') { try { startGame(); } catch(e){} }
+            if (typeof startTest === 'function') { try { startTest(); } catch(e){} }
+            if (typeof startApp === 'function') { try { startApp(); } catch(e){} }
+            if (typeof buildStarfield === 'function') { try { buildStarfield(); } catch(e){} }
+            if (typeof spawnFloats === 'function') { try { spawnFloats(); } catch(e){} }
+            if (typeof spawnFloaters === 'function') { try { spawnFloaters(); } catch(e){} }
+            if (typeof createFloatingBubbles === 'function') { try { createFloatingBubbles(); } catch(e){} }
+            if (typeof initAudio === 'function') { try { initAudio(); } catch(e){} }
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', unlockNow);
+    } else {
+        unlockNow();
+    }
+    if (document.readyState === 'complete') {
+        setTimeout(ensureQuizRendered, 150);
+    } else {
+        window.addEventListener('load', function() {
+            setTimeout(unlockNow, 20);
+            setTimeout(ensureQuizRendered, 150);
+            setTimeout(unlockNow, 300);
+            setTimeout(unlockNow, 700);
+        });
+    }
+    setTimeout(unlockNow, 50);
+    setTimeout(unlockNow, 200);
+    setTimeout(unlockNow, 600);
+    setTimeout(unlockNow, 1100);
+})();
+</script>
+</body>
+</html>

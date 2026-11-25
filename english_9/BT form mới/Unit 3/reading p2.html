@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master English Quiz - MS Chí Nên</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
+
+        :root {
+            --bg-color-1: #e0c3fc;
+            --bg-color-2: #8ec5fc;
+            --bg-color-3: #ffecd2;
+            --bg-color-4: #fcb69f;
+            --glass-bg: rgba(255, 255, 255, 0.4);
+            --glass-border: rgba(255, 255, 255, 0.6);
+            --text-dark: #2c3e50;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        body {
+            overflow: hidden; 
+            color: var(--text-dark);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* CSS Gradient Animated Background */
+        #bg-animation {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: linear-gradient(45deg, var(--bg-color-1), var(--bg-color-2), var(--bg-color-3), var(--bg-color-4));
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            z-index: -2;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Floating SVG Emojis */
+        .floating-pattern {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0) 70%);
+        }
+
+        /* Glassmorphism Utilities */
+        .glass {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+        }
+
+        /* Header */
+        header {
+            padding: 10px 20px;
+            text-align: right;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #fff;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Sticky Reminder - Compact & Prominent */
+        #sticky-reminder {
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 95%;
+            max-width: 900px;
+            padding: 10px 20px;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #b00020;
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px dashed #ff4757;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(255, 71, 87, 0.3);
+        }
+
+        /* Split Screen Layout */
+        .main-container {
+            display: flex;
+            flex: 1;
+            padding: 20px;
+            gap: 20px;
+            height: calc(100vh - 50px);
+            margin-top: 50px;
+        }
+        .panel {
+            flex: 1;
+            overflow-y: auto;
+            padding: 25px;
+            border-radius: 25px;
+        }
+        .panel::-webkit-scrollbar { width: 8px; }
+        .panel::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.2); border-radius: 10px; }
+
+        /* Reading Content */
+        .passage-box {
+            margin-bottom: 40px;
+            padding: 20px;
+            background: rgba(255,255,255,0.4);
+            border-radius: 15px;
+        }
+        .passage-title {
+            font-size: 1.4rem;
+            color: #d35400;
+            margin-bottom: 15px;
+            text-align: center;
+            font-weight: 700;
+        }
+        .paragraph {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        .translate-btn {
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid #3498db;
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #2980b9;
+            transition: 0.2s;
+            margin-top: 5px;
+            display: block;
+        }
+        .translate-btn:hover { background: #3498db; color: #fff; }
+        .translation-text {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            border-left: 4px solid #3498db;
+            font-style: italic;
+            border-radius: 5px;
+        }
+
+        /* Glossary Table */
+        .glossary-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background: rgba(255,255,255,0.6);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .glossary-table th, .glossary-table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+        .glossary-table th { background: rgba(52, 152, 219, 0.3); font-weight: 700; color: #2c3e50; }
+
+        /* Questions Layout */
+        .question-card {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: rgba(255,255,255,0.5);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+        .q-text { font-size: 1.15rem; font-weight: 600; margin-bottom: 15px; color: #8e44ad; }
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* 1 column for full sentence translations */
+            gap: 10px;
+        }
+        .opt-btn {
+            background: rgba(255,255,255,0.8);
+            border: 2px solid transparent;
+            padding: 12px;
+            font-size: 1.05rem;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.2s;
+            color: #333;
+            text-align: left;
+        }
+        .opt-btn:hover:not(:disabled) { background: #fff; transform: translateX(5px); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .opt-btn:disabled { cursor: not-allowed; }
+        
+        /* Answer states */
+        .opt-btn.correct { background: #d4edda !important; border-color: #28a745 !important; color: #155724; }
+        .opt-btn.wrong { background: #f8d7da !important; border-color: #dc3545 !important; color: #721c24; animation: shake 0.4s; }
+        
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
+        }
+
+        /* Explanation Box */
+        .explanation-box {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            background: rgba(255,255,255,0.95);
+            border-radius: 10px;
+            border-left: 5px solid #f39c12;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        
+        /* Master Explanation CSS Classes */
+        .p-word { color: #007bff; font-weight: bold; } 
+        .p-mean { color: #e2725b; font-weight: bold; } 
+        .p-grammar { color: red; text-decoration: underline; font-weight: bold; } 
+        .hl-green { color: #28a745; font-weight: bold; } 
+        .hl-red { color: #8b0000; text-decoration: line-through; font-weight: bold; } 
+
+        /* Submit Button */
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #fff;
+            background: linear-gradient(45deg, #a18cd1, #fbc2eb);
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(161, 140, 209, 0.4);
+            transition: 0.3s;
+            margin-top: 20px;
+        }
+        .submit-btn:hover { transform: scale(1.02); box-shadow: 0 8px 20px rgba(161, 140, 209, 0.6); }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0,0,0,0.6);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .modal-content {
+            background: #fff;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .modal-content input {
+            width: 100%;
+            padding: 12px;
+            margin: 15px 0;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 1rem;
+        }
+        .modal-content button {
+            background: #8e44ad;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .result-gif { width: 100%; max-height: 200px; object-fit: cover; border-radius: 10px; margin-top: 15px; }
+
+        /* Overlay Bắt đầu */
+        #start-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(255,255,255,0.95);
+            z-index: 2000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        #start-overlay button {
+            padding: 15px 40px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: #ff758c;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(255, 117, 140, 0.4);
+            transition: 0.3s;
+        }
+        #start-overlay button:hover { transform: scale(1.1); }
+
+        /* Confetti */
+        .confetti {
+            position: fixed;
+            width: 10px; height: 10px;
+            background-color: #f2d74e;
+            opacity: 0;
+            z-index: 1000;
+            pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+            .main-container { flex-direction: column; height: auto; overflow: auto; padding-top: 90px; }
+            body { overflow: auto; }
+            .panel { overflow: visible; height: auto; }
+            #sticky-reminder { font-size: 0.8rem; width: 95%; flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="bg-animation"></div>
+    
+    <svg class="floating-pattern" xmlns="http://www.w3.org/2000/svg">
+        <text x="5%" y="15%" font-size="50" opacity="0.4" transform="rotate(-15 50 50)">😌</text>
+        <text x="85%" y="10%" font-size="60" opacity="0.3" transform="rotate(20 50 50)">🏢</text>
+        <text x="15%" y="85%" font-size="70" opacity="0.4" transform="rotate(-10 50 50)">🇬🇧</text>
+        <text x="75%" y="80%" font-size="55" opacity="0.3" transform="rotate(15 50 50)">💖</text>
+        <text x="45%" y="50%" font-size="40" opacity="0.2">📚</text>
+    </svg>
+
+    <div id="start-overlay">
+        <h1 style="color:#c0392b; margin-bottom: 20px; text-align: center;">Chào mừng đến với lớp học của MS Chí Nên</h1>
+        <button onclick="startQuiz()">BẮT ĐẦU LÀM BÀI 🚀</button>
+    </div>
+
+    <div id="sticky-reminder">
+        <span>⚠️ <b>LƯU Ý TỪ MS CHÍ NÊN:</b> Tự giác tra cứu từ mới bằng Google Dịch/AI để hiểu rõ nội dung. Đừng lười suy nghĩ mà chọn bừa! Tra cứu ngữ âm Cambridge và nghe đọc theo. Chỉ có đọc kỹ giải thích & ghi chép cấu trúc vào vở thì mới thật sự giỏi lên. Làm cho xong mà không ghi chép thì chỉ tốn thời gian vô ích! 🧠✍️</span>
+    </div>
+
+    <header>Giáo viên tạo: MS Chí Nên</header>
+
+    <div class="main-container">
+        <div class="panel glass" id="left-panel">
+            
+            <div class="passage-box glass">
+                <div class="passage-title">Passage 1: Managing Stress</div>
+                <div class="paragraph">
+                    It's important to acknowledge that stress is a normal part of life, <b>(1)</b> ______ it's vital to learn healthy ways to manage it. Talking to trusted <b>(2)</b> ______ like a parent, teacher, or counselor, can be a great way to receive support and guidance.
+                    <button class="translate-btn" onclick="toggleTrans(this)">Mở dịch đoạn này 🌟</button>
+                    <div class="translation-text">Điều quan trọng là phải thừa nhận rằng căng thẳng là một phần bình thường của cuộc sống, nhưng điều sống còn là phải học các cách lành mạnh để quản lý nó. Nói chuyện với những người trưởng thành đáng tin cậy như cha mẹ, giáo viên hoặc cố vấn, có thể là một cách tuyệt vời để nhận được sự hỗ trợ và hướng dẫn.</div>
+                </div>
+                <div class="paragraph">
+                    Finding healthy outlets for stress is <b>(3)</b> ______. Regular exercise, spending time in nature, listening to calming music, or pursuing creative hobbies can all be <b>(4)</b> ______ coping mechanisms. Learning healthy sleep hygiene and maintaining a <b>(5)</b> ______ diet can also significantly impact stress levels. Finally, remember to be kind to yourself. Don't be afraid to ask <b>(6)</b> ______ help and prioritize your well-being.
+                    <button class="translate-btn" onclick="toggleTrans(this)">Mở dịch đoạn này 🌟</button>
+                    <div class="translation-text">Tìm kiếm những lối thoát lành mạnh cho căng thẳng là rất quan trọng. Tập thể dục thường xuyên, dành thời gian trong thiên nhiên, nghe nhạc êm dịu hoặc theo đuổi các sở thích sáng tạo đều có thể là những cơ chế đối phó hữu ích. Học cách giữ vệ sinh giấc ngủ lành mạnh và duy trì một chế độ ăn uống cân bằng cũng có thể tác động đáng kể đến mức độ căng thẳng. Cuối cùng, hãy nhớ đối xử tử tế với bản thân. Đừng ngại yêu cầu sự giúp đỡ và ưu tiên sức khỏe của bạn.</div>
+                </div>
+                <table class="glossary-table">
+                    <tr><th>Từ vựng</th><th>Từ loại</th><th>Nghĩa tiếng Việt</th></tr>
+                    <tr><td>acknowledge</td><td>v</td><td>công nhận, thừa nhận</td></tr>
+                    <tr><td>vital</td><td>adj</td><td>sống còn, rất quan trọng</td></tr>
+                    <tr><td>counselor</td><td>n</td><td>người cố vấn, tư vấn viên</td></tr>
+                    <tr><td>guidance</td><td>n</td><td>sự hướng dẫn</td></tr>
+                    <tr><td>coping mechanism</td><td>n</td><td>cơ chế đối phó</td></tr>
+                    <tr><td>outlet</td><td>n</td><td>lối thoát, phương tiện giải tỏa</td></tr>
+                    <tr><td>crucial</td><td>adj</td><td>cực kỳ quan trọng</td></tr>
+                    <tr><td>pursue</td><td>v</td><td>theo đuổi</td></tr>
+                    <tr><td>hygiene</td><td>n</td><td>sự vệ sinh (sleep hygiene: thói quen ngủ tốt)</td></tr>
+                    <tr><td>prioritize</td><td>v</td><td>ưu tiên</td></tr>
+                </table>
+            </div>
+
+            <div class="passage-box glass">
+                <div class="passage-title">Passage 2: Robert's Apartment</div>
+                <div class="paragraph">
+                    My name is Robert. I live in an apartment. My apartment is on the twelfth floor. There is a supermarket on the first floor in our building. My mother and I often buy food, drinks and household items in the supermarket because of its convenience. Sometimes, I buy some bread and milk for breakfast when I go to school.
+                    <button class="translate-btn" onclick="toggleTrans(this)">Mở dịch đoạn này 🌟</button>
+                    <div class="translation-text">Tên tôi là Robert. Tôi sống trong một căn hộ. Căn hộ của tôi ở tầng mười hai. Có một siêu thị ở tầng một trong tòa nhà của chúng tôi. Mẹ tôi và tôi thường mua đồ ăn, thức uống và các vật dụng gia đình ở siêu thị vì sự tiện lợi của nó. Đôi khi, tôi mua một ít bánh mì và sữa cho bữa sáng khi tôi đi học.</div>
+                </div>
+                <div class="paragraph">
+                    There is a park near my building. In the afternoons, I often play soccer with my friends in the park to improve our health. There is also a big restaurant with plenty of delicious dishes in my neighbourhood and my family usually has dinner at the restaurant on Saturday evenings. After dinner, if I want to see a film, I can go to the cinema which is not far from my building. It is interesting to live in a city like our city.
+                    <button class="translate-btn" onclick="toggleTrans(this)">Mở dịch đoạn này 🌟</button>
+                    <div class="translation-text">Có một công viên gần tòa nhà của tôi. Vào các buổi chiều, tôi thường chơi bóng đá với bạn bè trong công viên để cải thiện sức khỏe. Cũng có một nhà hàng lớn với nhiều món ăn ngon trong khu phố của tôi và gia đình tôi thường ăn tối tại nhà hàng vào các tối thứ Bảy. Sau bữa tối, nếu muốn xem phim, tôi có thể đến rạp chiếu phim cách tòa nhà của tôi không xa. Thật thú vị khi sống trong một thành phố như thành phố của chúng tôi.</div>
+                </div>
+                <table class="glossary-table">
+                    <tr><th>Từ vựng</th><th>Từ loại</th><th>Nghĩa tiếng Việt</th></tr>
+                    <tr><td>apartment</td><td>n</td><td>căn hộ</td></tr>
+                    <tr><td>supermarket</td><td>n</td><td>siêu thị</td></tr>
+                    <tr><td>convenience</td><td>n</td><td>sự tiện lợi</td></tr>
+                    <tr><td>household item</td><td>n</td><td>vật dụng gia đình</td></tr>
+                    <tr><td>improve</td><td>v</td><td>cải thiện</td></tr>
+                    <tr><td>neighbourhood</td><td>n</td><td>khu vực lân cận, khu phố</td></tr>
+                    <tr><td>plenty of</td><td>pron</td><td>rất nhiều</td></tr>
+                    <tr><td>delicious</td><td>adj</td><td>thơm ngon</td></tr>
+                    <tr><td>interesting</td><td>adj</td><td>thú vị</td></tr>
+                    <tr><td>distance</td><td>n</td><td>khoảng cách</td></tr>
+                </table>
+            </div>
+
+            <div class="passage-box glass">
+                <div class="passage-title">Passage 3: What is it like being a teenager in Britain?</div>
+                <div class="paragraph">
+                    British teenagers spend most of their time at school. Students in Britain can leave school at sixteen (grade 11). This is also the age when most students take their first important exams, the GCSE (General Certificate of Secondary Education). Most teens take between 5-10 subjects, which means a lot of studying. They are spending more time on homework than teenagers ever before. Forget watching TV, teenagers in Britain now spend 2-3 hours on homework after school.
+                    <button class="translate-btn" onclick="toggleTrans(this)">Mở dịch đoạn này 🌟</button>
+                    <div class="translation-text">Thanh thiếu niên Anh dành phần lớn thời gian ở trường. Học sinh ở Anh có thể rời trường lúc mười sáu tuổi (lớp 11). Đây cũng là độ tuổi mà hầu hết học sinh tham gia kỳ thi quan trọng đầu tiên của mình, kỳ thi GCSE (Chứng chỉ Giáo dục Trung học Phổ thông). Hầu hết thanh thiếu niên học từ 5-10 môn, điều này đồng nghĩa với việc phải học rất nhiều. Họ đang dành nhiều thời gian cho bài tập về nhà hơn thanh thiếu niên trước đây. Hãy quên việc xem TV đi, thanh thiếu niên ở Anh hiện dành 2-3 giờ cho bài tập về nhà sau giờ học.</div>
+                </div>
+                <div class="paragraph">
+                    <b>School uniform:</b> Visit almost any school in Britain and the first thing you'll notice is the school uniform. Although school uniform has its advantages, when they are 15 or 16 most teenagers are tired of wearing it. When there is more than one school in a town, school uniforms can highlight differences between schools. In London there are many cases of bullying and fighting between pupils from different schools.
+                    <button class="translate-btn" onclick="toggleTrans(this)">Mở dịch đoạn này 🌟</button>
+                    <div class="translation-text"><b>Đồng phục học sinh:</b> Đến thăm hầu hết mọi trường học ở Anh và điều đầu tiên bạn sẽ chú ý là đồng phục học sinh. Mặc dù đồng phục học sinh có những ưu điểm của nó, nhưng khi ở tuổi 15 hoặc 16, hầu hết thanh thiếu niên đều mệt mỏi với việc mặc nó. Khi có nhiều hơn một trường học trong một thị trấn, đồng phục học sinh có thể làm nổi bật sự khác biệt giữa các trường. Ở London có nhiều trường hợp bắt nạt và đánh nhau giữa học sinh từ các trường khác nhau.</div>
+                </div>
+                <div class="paragraph">
+                    <b>Clothes and looks:</b> In Britain, some teens judge you by the shirt or trainers you are wearing, as 40% of British teenagers believe it's important to wear designer labels. If you want to follow the crowd, you need to wear trendy labels. Teenagers in Britain wear fashionable trainers and the more expensive, the better.
+                    <button class="translate-btn" onclick="toggleTrans(this)">Mở dịch đoạn này 🌟</button>
+                    <div class="translation-text"><b>Quần áo và vẻ ngoài:</b> Ở Anh, một số thanh thiếu niên đánh giá bạn qua chiếc áo sơ mi hoặc đôi giày thể thao bạn đang mặc, vì 40% thanh thiếu niên Anh tin rằng việc mặc đồ hiệu (hàng thiết kế) là quan trọng. Nếu bạn muốn chạy theo đám đông, bạn cần mặc những nhãn hiệu thịnh hành. Thanh thiếu niên ở Anh đi những đôi giày thể thao thời trang và càng đắt tiền càng tốt.</div>
+                </div>
+                <table class="glossary-table">
+                    <tr><th>Từ vựng</th><th>Từ loại</th><th>Nghĩa tiếng Việt</th></tr>
+                    <tr><td>certificate</td><td>n</td><td>chứng chỉ, giấy chứng nhận</td></tr>
+                    <tr><td>secondary</td><td>adj</td><td>trung học</td></tr>
+                    <tr><td>advantage</td><td>n</td><td>lợi thế, ưu điểm</td></tr>
+                    <tr><td>highlight</td><td>v</td><td>làm nổi bật, nhấn mạnh</td></tr>
+                    <tr><td>bullying</td><td>n</td><td>sự bắt nạt</td></tr>
+                    <tr><td>judge</td><td>v</td><td>đánh giá, phán xét</td></tr>
+                    <tr><td>designer label</td><td>n</td><td>thương hiệu thiết kế (đồ hiệu)</td></tr>
+                    <tr><td>trendy</td><td>adj</td><td>thịnh hành, hợp thời trang</td></tr>
+                    <tr><td>fashionable</td><td>adj</td><td>đúng mốt, thời trang</td></tr>
+                    <tr><td>economical</td><td>adj</td><td>tiết kiệm, kinh tế</td></tr>
+                </table>
+            </div>
+
+            <div class="passage-box glass">
+                <div class="passage-title">Passage 4: Following Your Passions</div>
+                <div class="paragraph">
+                    Have you ever felt so passionate about something that you couldn't stop thinking about it? That overwhelming feeling of excitement and dedication is what makes following your passions so rewarding. For teenagers, discovering their passions can be a significant step towards a fulfilling future. Passions can take many forms. It could be a love for music and playing an instrument, a fascination with science and conducting experiments, or a talent for writing and expressing oneself creatively.
+                    <button class="translate-btn" onclick="toggleTrans(this)">Mở dịch đoạn này 🌟</button>
+                    <div class="translation-text">Bạn đã bao giờ cảm thấy quá đam mê một điều gì đó đến mức không thể ngừng nghĩ về nó chưa? Cảm giác phấn khích và cống hiến tột độ đó là điều khiến việc theo đuổi đam mê của bạn trở nên vô cùng xứng đáng. Đối với thanh thiếu niên, khám phá ra đam mê của mình có thể là một bước quan trọng hướng tới một tương lai viên mãn. Đam mê có thể mang nhiều hình thức. Nó có thể là tình yêu với âm nhạc và việc chơi một nhạc cụ, niềm say mê với khoa học và tiến hành các thí nghiệm, hoặc tài năng viết lách và thể hiện bản thân một cách sáng tạo.</div>
+                </div>
+                <div class="paragraph">
+                    When teenagers pursue their passions, they often experience a sense of purpose and motivation. They become eager to learn, develop new skills, and overcome challenges. However, focusing on a passion isn't always easy. There may be times when friends seem more interested in different things, or family expectations can seem at odds with personal aspirations. It's important to remember that pursuing a passion requires commitment and perseverance. There will be setbacks and moments of doubt, but the feeling of accomplishment and satisfaction from pursuing something you truly love is worth the effort.
+                    <button class="translate-btn" onclick="toggleTrans(this)">Mở dịch đoạn này 🌟</button>
+                    <div class="translation-text">Khi thanh thiếu niên theo đuổi đam mê, họ thường cảm thấy có mục đích sống và động lực. Họ trở nên háo hức học hỏi, phát triển các kỹ năng mới và vượt qua thử thách. Tuy nhiên, tập trung vào một đam mê không phải lúc nào cũng dễ dàng. Có thể có những lúc bạn bè dường như quan tâm hơn đến những thứ khác, hoặc kỳ vọng của gia đình có vẻ mâu thuẫn với khát vọng cá nhân. Điều quan trọng cần nhớ là theo đuổi đam mê đòi hỏi sự cam kết và kiên trì. Sẽ có những thất bại và khoảnh khắc nghi ngờ, nhưng cảm giác thành tựu và sự thỏa mãn khi theo đuổi thứ bạn thực sự yêu thích là hoàn toàn xứng đáng với nỗ lực bỏ ra.</div>
+                </div>
+                <table class="glossary-table">
+                    <tr><th>Từ vựng</th><th>Từ loại</th><th>Nghĩa tiếng Việt</th></tr>
+                    <tr><td>passionate</td><td>adj</td><td>đam mê, say đắm</td></tr>
+                    <tr><td>overwhelming</td><td>adj</td><td>tột độ, tràn ngập, áp đảo</td></tr>
+                    <tr><td>dedication</td><td>n</td><td>sự cống hiến, tận tụy</td></tr>
+                    <tr><td>rewarding</td><td>adj</td><td>đáng giá, bổ ích</td></tr>
+                    <tr><td>significant</td><td>adj</td><td>quan trọng, đáng kể</td></tr>
+                    <tr><td>fulfilling</td><td>adj</td><td>viên mãn, trọn vẹn</td></tr>
+                    <tr><td>fascination</td><td>n</td><td>sự say mê, quyến rũ</td></tr>
+                    <tr><td>aspiration</td><td>n</td><td>khát vọng, nguyện vọng</td></tr>
+                    <tr><td>perseverance</td><td>n</td><td>sự kiên trì, bền bỉ</td></tr>
+                    <tr><td>setback</td><td>n</td><td>sự thất bại, khó khăn cản trở</td></tr>
+                </table>
+            </div>
+
+        </div>
+
+        <div class="panel glass" id="right-panel">
+            <h2 style="text-align: center; color: #8e44ad; margin-bottom: 20px; font-size: 1.8rem;">💡 BÀI TẬP TRẮC NGHIỆM</h2>
+            <div id="questions-container"></div>
+            <button class="submit-btn" onclick="submitQuiz()">🎯 NỘP BÀI TÍNH ĐIỂM & XEM KẾT QUẢ</button>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="name-modal">
+        <div class="modal-content">
+            <h2>Nhập tên của bạn để nộp bài</h2>
+            <input type="text" id="student-name" placeholder="Ví dụ: Minh Đức">
+            <button onclick="calculateScore()">Xác nhận nộp bài</button>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="result-modal">
+        <div class="modal-content">
+            <h2 id="r-name" style="color: #2980b9;"></h2>
+            <h1 id="r-score" style="color: #c0392b; margin: 10px 0; font-size: 2.5rem;"></h1>
+            <h3 id="r-score-10" style="color: #27ae60; margin-bottom: 10px;"></h3>
+            <p id="r-comment" style="font-weight: bold; font-size: 1.1rem; line-height: 1.5;"></p>
+            <img id="r-gif" class="result-gif" src="" alt="result meme">
+            <br><br>
+            <button onclick="closeModal('result-modal')">Xem lại bài giải</button>
+        </div>
+    </div>
+
+    <audio id="audio-wrong" src="https://hoctienganhcungcomaianulis.github.io/homework/%E1%BA%A2nh_File%20nghe/Sound/Ti%E1%BA%BFng%20V%E1%BB%8Bt%20k%C3%AAu%20meme%20mp3.mp3"></audio>
+
+<script>
+    const audioMission = new Audio('https://hoctienganhcungcomaianulis.github.io/homework/%E1%BA%A2nh_File%20nghe/Sound/super_mario_bros.mp3');
+    
+    // Create AudioContext for "Ding" sound
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    let audioCtx;
+
+    function playDing() {
+        if (!audioCtx) audioCtx = new AudioContext();
+        const osc = audioCtx.createOscillator();
+        const gainNode = audioCtx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(800, audioCtx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(1200, audioCtx.currentTime + 0.1);
+        gainNode.gain.setValueAtTime(0.8, audioCtx.currentTime);
+        gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.5);
+        osc.connect(gainNode);
+        gainNode.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.5);
+    }
+
+    function startQuiz() {
+        document.getElementById('start-overlay').style.display = 'none';
+        audioMission.play(); // Chơi 1 lần khi bắt đầu
+    }
+
+    function toggleTrans(btn) {
+        const transDiv = btn.nextElementSibling;
+        if (transDiv.style.display === 'block') {
+            transDiv.style.display = 'none';
+        } else {
+            transDiv.style.display = 'block';
+        }
+    }
+
+    // Questions Data 
+    const quizData = [
+        // PASSAGE 1: CLOZE (Questions 1-6 MUST ONLY SAY "Câu [X]: Select the best answer")
+        {
+            id: 1, p: 1, type: 'cloze', num: 1,
+            options: [
+                { t: "so", c: false }, { t: "but", c: true }, { t: "therefore", c: false }, { t: "however", c: false }
+            ],
+            exp: `
+                <p>Dịch câu chứa ô trống (1): Điều quan trọng là phải thừa nhận rằng căng thẳng là một phần bình thường của cuộc sống, (1) ______ điều sống còn là phải học các cách lành mạnh để quản lý nó.</p>
+                <p>Phân tích các đáp án:</p>
+                <ul>
+                    <li><span class='hl-green'>but (conj) - nhưng</span>: ✅ Đúng. Dùng để nối 2 mệnh đề có ý nghĩa tương phản nhưng bổ sung cho nhau (căng thẳng là bình thường >< NHƯNG phải biết cách quản lý).</li>
+                    <li><span class='hl-red'>so / therefore</span>: ❌ Sai vì không hợp logic nhân - quả.</li>
+                    <li><span class='hl-red'>however</span>: ❌ Sai ngữ pháp. "However" phải đứng sau dấu chấm hoặc chấm phẩy, không nối trực tiếp 2 mệnh đề bằng dấu phẩy như trong bài.</li>
+                </ul>
+                <p>🔍 Dẫn chứng: "...stress is a normal part of life, (1) but it's vital to learn healthy ways to manage it."</p>
+                <p>👉 Dịch: ...căng thẳng là bình thường, <span style='color:red; font-weight:bold'>nhưng</span> điều sống còn là phải học cách lành mạnh để quản lý nó.</p>
+            `
+        },
+        {
+            id: 2, p: 1, type: 'cloze', num: 2,
+            options: [
+                { t: "adults", c: true }, { t: "men", c: false }, { t: "infants", c: false }, { t: "adolescents", c: false }
+            ],
+            exp: `
+                <p>Dịch câu chứa ô trống (2): Nói chuyện với những (2) ______ đáng tin cậy như cha mẹ, giáo viên hoặc cố vấn...</p>
+                <p>Phân tích các đáp án:</p>
+                <ul>
+                    <li><span class='hl-green'>adults (n) - người lớn</span>: ✅ Đúng. Cha mẹ (parent), giáo viên (teacher) đều là người lớn. (Lưu ý: trong bài gốc in thiếu 's' ở adult, nhưng ngữ cảnh chọn 'adult' là chính xác nhất).</li>
+                    <li><span class='hl-red'>men (n) - đàn ông</span>: ❌ Sai vì giáo viên/cha mẹ không chỉ giới hạn là đàn ông.</li>
+                    <li><span class='hl-red'>infants (n) - trẻ sơ sinh</span> / <span class='hl-red'>adolescents (n) - vị thành niên</span>: ❌ Sai logic hoàn toàn vì không thể là cha mẹ/giáo viên.</li>
+                </ul>
+                <p>🔍 Dẫn chứng: "Talking to trusted (2) adults like a parent, teacher..."</p>
+                <p>👉 Dịch: Nói chuyện với những <span style='color:red; font-weight:bold'>người lớn</span> đáng tin cậy như cha mẹ, giáo viên...</p>
+            `
+        },
+        {
+            id: 3, p: 1, type: 'cloze', num: 3,
+            options: [
+                { t: "low", c: false }, { t: "dependent", c: false }, { t: "light", c: false }, { t: "crucial", c: true }
+            ],
+            exp: `
+                <p>Dịch câu chứa ô trống (3): Tìm kiếm những lối thoát lành mạnh cho căng thẳng là (3) ______.</p>
+                <p>Phân tích các đáp án:</p>
+                <ul>
+                    <li><span class='hl-green'>crucial (adj) - cực kỳ quan trọng</span>: ✅ Đúng. Cấu trúc <span class='p-grammar'>S + is + adj</span>. Việc tìm lối thoát lành mạnh cho căng thẳng mang tính quan trọng, cấp thiết.</li>
+                    <li><span class='hl-red'>low / dependent / light</span>: ❌ Sai vì ghép vào câu hoàn toàn không có nghĩa logic.</li>
+                </ul>
+                <p>🔍 Dẫn chứng: "Finding healthy outlets for stress is (3) crucial."</p>
+                <p>👉 Dịch: Tìm lối thoát lành mạnh cho căng thẳng là <span style='color:red; font-weight:bold'>vô cùng quan trọng</span>.</p>
+            `
+        },
+        {
+            id: 4, p: 1, type: 'cloze', num: 4,
+            options: [
+                { t: "helpful", c: true }, { t: "helpless", c: false }, { t: "hopeful", c: false }, { t: "hopeless", c: false }
+            ],
+            exp: `
+                <p>Dịch câu chứa ô trống (4): ...đều có thể là những cơ chế đối phó (4) ______.</p>
+                <p>Phân tích các đáp án:</p>
+                <ul>
+                    <li><span class='hl-green'>helpful (adj) - hữu ích</span>: ✅ Đúng. Các hành động như tập thể dục, nghe nhạc là những phương pháp giải tỏa căng thẳng <span class='p-mean'>có ích</span>.</li>
+                    <li><span class='hl-red'>helpless (adj) - bất lực</span> / <span class='hl-red'>hopeless (adj) - vô vọng</span>: ❌ Sai vì mang nghĩa tiêu cực.</li>
+                    <li><span class='hl-red'>hopeful (adj) - đầy hy vọng</span>: ❌ Sai vì cơ chế đối phó thì mang tính "hữu ích" chứ không tự nó "có hy vọng".</li>
+                </ul>
+                <p>🔍 Dẫn chứng: "...can all be (4) helpful coping mechanisms."</p>
+                <p>👉 Dịch: ...đều có thể là những cơ chế đối phó <span style='color:red; font-weight:bold'>hữu ích</span>.</p>
+            `
+        },
+        {
+            id: 5, p: 1, type: 'cloze', num: 5,
+            options: [
+                { t: "fair", c: false }, { t: "balanced", c: true }, { t: "equalized", c: false }, { t: "delicious", c: false }
+            ],
+            exp: `
+                <p>Dịch câu chứa ô trống (5): Học cách giữ vệ sinh giấc ngủ lành mạnh và duy trì một chế độ ăn uống (5) ______...</p>
+                <p>Phân tích các đáp án:</p>
+                <ul>
+                    <li><span class='hl-green'>balanced (adj) - cân bằng</span>: ✅ Đúng. Ta có cụm từ cố định (collocation) <span class='p-grammar'>a balanced diet</span> mang nghĩa là <span class='p-mean'>một chế độ ăn uống cân bằng/đầy đủ dưỡng chất</span>.</li>
+                    <li><span class='hl-red'>fair / equalized</span>: ❌ Sai vì không dùng để miêu tả chế độ ăn.</li>
+                    <li><span class='hl-red'>delicious (ngon)</span>: ❌ Sai vì ngữ cảnh đang khuyên về sức khỏe/giảm căng thẳng, ăn "ngon" chưa chắc đã "khỏe".</li>
+                </ul>
+                <p>🔍 Dẫn chứng: "...and maintaining a (5) balanced diet can also significantly impact..."</p>
+                <p>👉 Dịch: ...và duy trì một chế độ ăn <span style='color:red; font-weight:bold'>cân bằng</span> cũng có thể ảnh hưởng lớn...</p>
+            `
+        },
+        {
+            id: 6, p: 1, type: 'cloze', num: 6,
+            options: [
+                { t: "about", c: false }, { t: "to", c: false }, { t: "for", c: true }, { t: "with", c: false }
+            ],
+            exp: `
+                <p>Dịch câu chứa ô trống (6): Đừng ngại yêu cầu (6) ______ sự giúp đỡ và ưu tiên sức khỏe của bạn.</p>
+                <p>Phân tích các đáp án:</p>
+                <ul>
+                    <li><span class='hl-green'>for (prep)</span>: ✅ Đúng. Cấu trúc động từ đi kèm giới từ <span class='p-grammar'>ask for something</span> mang nghĩa là <span class='p-mean'>yêu cầu, xin cái gì đó</span> (ở đây là ask for help - xin sự giúp đỡ).</li>
+                    <li><span class='hl-red'>about / to / with</span>: ❌ Sai vì sai cấu trúc ngữ pháp bắt buộc của cụm từ này.</li>
+                </ul>
+                <p>🔍 Dẫn chứng: "Don't be afraid to ask (6) for help and prioritize your well-being."</p>
+                <p>👉 Dịch: Đừng ngại <span style='color:red; font-weight:bold'>xin</span> sự giúp đỡ và ưu tiên sức khỏe của bạn.</p>
+            `
+        },
+        
+        // PASSAGE 2: READING COMP (Keep original questions)
+        {
+            id: 7, p: 2, type: 'reading',
+            q: "Robert lives in _______.",
+            options: [
+                { t: "a house", c: false }, { t: "an apartment", c: true }, { t: "a detached house", c: false }, { t: "a stilt house", c: false }
+            ],
+            exp: `
+                <p>Dịch câu hỏi: Robert sống ở đâu?</p>
+                <p>Phân tích đáp án:</p>
+                <ul>
+                    <li><span class='hl-green'>an apartment</span>: ✅ Đúng. Tác giả giới thiệu ngay từ đầu là sống trong một căn hộ.</li>
+                    <li><span class='hl-red'>Các đáp án khác</span>: ❌ Sai so với thông tin bài đọc.</li>
+                </ul>
+                <p>🔍 Dẫn chứng: "My name is Robert. I live in an apartment."</p>
+                <p>👉 Dịch: Tên tôi là Robert. Tôi sống trong <span style='color:red; font-weight:bold'>một căn hộ</span>.</p>
+            `
+        },
+        {
+            id: 8, p: 2, type: 'reading',
+            q: "The supermarket is on the _______ floor in the building.",
+            options: [
+                { t: "first", c: true }, { t: "second", c: false }, { t: "third", c: false }, { t: "fourth", c: false }
+            ],
+            exp: `
+                <p>Dịch câu hỏi: Siêu thị nằm ở tầng mấy trong tòa nhà?</p>
+                <p>Phân tích đáp án:</p>
+                <ul>
+                    <li><span class='hl-green'>first</span>: ✅ Đúng. Siêu thị nằm ở tầng 1. (Lưu ý: Căn hộ của Robert ở tầng 12, nhưng siêu thị thì ở tầng 1).</li>
+                </ul>
+                <p>🔍 Dẫn chứng: "There is a supermarket on the first floor in our building."</p>
+                <p>👉 Dịch: Có một siêu thị ở <span style='color:red; font-weight:bold'>tầng một</span> trong tòa nhà của chúng tôi.</p>
+            `
+        },
+        {
+            id: 9, p: 2, type: 'reading',
+            q: "Robert sometimes buys some _______ for breakfast when he goes to school.",
+            options: [
+                { t: "bread and orange juice", c: false }, { t: "banana and milk", c: false }, { t: "bread and eggs", c: false }, { t: "bread and milk", c: true }
+            ],
+            exp: `
+                <p>Dịch câu hỏi: Robert thỉnh thoảng mua _______ cho bữa sáng khi cậu ấy đi học.</p>
+                <p>Phân tích đáp án:</p>
+                <ul>
+                    <li><span class='hl-green'>bread and milk</span>: ✅ Đúng theo chi tiết trong bài.</li>
+                </ul>
+                <p>🔍 Dẫn chứng: "Sometimes, I buy some bread and milk for breakfast when I go to school."</p>
+                <p>👉 Dịch: Đôi khi, tôi mua một ít <span style='color:red; font-weight:bold'>bánh mì và sữa</span> cho bữa sáng khi đi học.</p>
+            `
+        },
+        {
+            id: 10, p: 2, type: 'reading',
+            q: "He often plays soccer with _______ in the park near the building.",
+            options: [
+                { t: "his brother", c: false }, { t: "his sister", c: false }, { t: "his friends", c: true }, { t: "his father", c: false }
+            ],
+            exp: `
+                <p>Dịch câu hỏi: Cậu ấy thường chơi bóng đá với ai ở công viên gần tòa nhà?</p>
+                <p>Phân tích đáp án:</p>
+                <ul>
+                    <li><span class='hl-green'>his friends</span>: ✅ Đúng. Robert chơi với bạn bè.</li>
+                </ul>
+                <p>🔍 Dẫn chứng: "In the afternoons, I often play soccer with my friends in the park..."</p>
+                <p>👉 Dịch: Vào các buổi chiều, tôi thường chơi bóng đá với <span style='color:red; font-weight:bold'>những người bạn</span> trong công viên...</p>
+            `
+        },
+        {
+            id: 11, p: 2, type: 'reading',
+            q: "There is also a _______ and a cinema in his neighbourhood.",
+            options: [
+                { t: "post office", c: false }, { t: "tower", c: false }, { t: "zoo", c: false }, { t: "restaurant", c: true }
+            ],
+            exp: `
+                <p>Dịch câu hỏi: Cũng có một _______ và một rạp chiếu phim trong khu phố của cậu ấy.</p>
+                <p>Phân tích đáp án:</p>
+                <ul>
+                    <li><span class='hl-green'>restaurant</span>: ✅ Đúng. Khu phố có một nhà hàng lớn và rạp chiếu phim.</li>
+                </ul>
+                <p>🔍 Dẫn chứng: "There is also a big restaurant with plenty of delicious dishes in my neighbourhood... go to the cinema which is not far..."</p>
+                <p>👉 Dịch: Cũng có một <span style='color:red; font-weight:bold'>nhà hàng</span> lớn... rạp chiếu phim cách không xa...</p>
+            `
+        },
+
+        // PASSAGE 3
+        {
+            id: 12, p: 3, type: 'reading',
+            q: "Most students in Britain take the GCSE when _______.",
+            options: [
+                { t: "they are 11 years old", c: false }, { t: "they are 16 years old", c: true }, { t: "they finish grade 10", c: false }, { t: "they begin grade 11", c: false }
+            ],
+            exp: `
+                <p>Dịch câu hỏi: Hầu hết học sinh ở Anh thi GCSE khi nào?</p>
+                <p>Phân tích đáp án:</p>
+                <ul>
+                    <li><span class='hl-green'>they are 16 years old</span>: ✅ Đúng. Bài đọc xác định 16 tuổi (lớp 11) là độ tuổi thi GCSE.</li>
+                    <li><span class='hl-red'>they finish grade 10 / begin grade 11</span>: ❌ Sai vì tuy nói lớp 11 nhưng không chỉ rõ là lúc "bắt đầu", đáp án chính xác bằng con số 16 tuổi (sixteen) được ghi rõ trong bài là đáng tin cậy nhất.</li>
+                </ul>
+                <p>🔍 Dẫn chứng: "Students in Britain can leave school at sixteen (grade 11). This is also the age when most students take their first important exams, the GCSE..."</p>
+                <p>👉 Dịch: Học sinh ở Anh có thể rời trường lúc <span style='color:red; font-weight:bold'>mười sáu tuổi</span>... Đây cũng là độ tuổi hầu hết học sinh thi GCSE...</p>
+            `
+        },
+        {
+            id: 13, p: 3, type: 'reading',
+            q: "What is the first thing you'll notice when you visit almost any school in Britain?",
+            options: [
+                { t: "the school logo", c: false }, { t: "the school gate", c: false }, { t: "the school playground", c: false }, { t: "the school uniform", c: true }
+            ],
+            exp: `
+                <p>Dịch câu hỏi: Điều đầu tiên bạn sẽ chú ý khi đến thăm hầu hết mọi trường học ở Anh là gì?</p>
+                <p>Phân tích đáp án:</p>
+                <ul>
+                    <li><span class='hl-green'>the school uniform</span>: ✅ Đúng. Ngay câu đầu đoạn 2 đã khẳng định điều này.</li>
+                </ul>
+                <p>🔍 Dẫn chứng: "Visit almost any school in Britain and the first thing you'll notice is the school uniform."</p>
+                <p>👉 Dịch: Đến thăm hầu hết mọi trường học ở Anh và điều đầu tiên bạn sẽ chú ý là <span style='color:red; font-weight:bold'>đồng phục học sinh</span>.</p>
+            `
+        },
+        {
+            id: 14, p: 3, type: 'reading',
+            q: "What do most teenagers in Britain prefer to wear?",
+            options: [
+                { t: "trendy labels", c: true }, { t: "expensive uniforms", c: false }, { t: "fashionable hats", c: false }, { t: "economical trainers", c: false }
+            ],
+            exp: `
+                <p>Dịch câu hỏi: Hầu hết thanh thiếu niên ở Anh thích mặc gì hơn?</p>
+                <p>Phân tích đáp án:</p>
+                <ul>
+                    <li><span class='hl-green'>trendy labels</span>: ✅ Đúng. Bài đọc nói 40% cho rằng việc mặc đồ hiệu (designer labels) là quan trọng, và muốn theo đám đông thì phải mặc "trendy labels".</li>
+                    <li><span class='hl-red'>economical trainers</span>: ❌ Sai. Bọn trẻ thích đồ càng đắt càng tốt (the more expensive, the better) chứ không phải loại tiết kiệm (economical).</li>
+                </ul>
+                <p>🔍 Dẫn chứng: "If you want to follow the crowd, you need to wear trendy labels."</p>
+                <p>👉 Dịch: Nếu bạn muốn chạy theo đám đông, bạn cần mặc <span style='color:red; font-weight:bold'>những nhãn hiệu thịnh hành</span>.</p>
+            `
+        },
+        {
+            id: 15, p: 3, type: 'reading',
+            q: "The word 'highlight' in paragraph 2 is closest in meaning to _______.",
+            options: [
+                { t: "confuse", c: false }, { t: "remark", c: false }, { t: "emphasize", c: true }, { t: "decrease", c: false }
+            ],
+            exp: `
+                <p>Dịch câu hỏi: Từ 'highlight' trong đoạn 2 có nghĩa gần nhất với từ nào?</p>
+                <p>Phân tích đáp án:</p>
+                <ul>
+                    <li><span class='hl-green'>emphasize (v)</span>: ✅ Đúng. <span class='p-word'>highlight</span> và <span class='p-word'>emphasize</span> đều có nghĩa là <span class='p-mean'>làm nổi bật, nhấn mạnh</span>. (Đồng phục làm nổi bật sự khác biệt giữa học sinh các trường).</li>
+                </ul>
+                <p>🔍 Dẫn chứng: "...school uniforms can highlight differences between schools."</p>
+                <p>👉 Dịch: ...đồng phục có thể <span style='color:red; font-weight:bold'>làm nổi bật</span> sự khác biệt giữa các trường.</p>
+            `
+        },
+        {
+            id: 16, p: 3, type: 'reading',
+            q: "According to the passage, which of the following statements is NOT true?",
+            options: [
+                { t: "Students in Britain can take 8 subjects at the GCSE.", c: false }, { t: "Most British teenagers spend 2-3 hours watching TV after school.", c: true }, { t: "Most 16-year-old students in Britain don't like school uniforms.", c: false }, { t: "Many British teenagers judge their friends by their shirt or trainers.", c: false }
+            ],
+            exp: `
+                <p>Dịch câu hỏi: Theo bài đọc, câu nào sau đây là KHÔNG đúng?</p>
+                <p>Phân tích đáp án:</p>
+                <ul>
+                    <li><span class='hl-green'>Most British teenagers spend 2-3 hours watching TV after school.</span>: ✅ ĐÂY LÀ CÂU SAI. Bài đọc nói rõ "Forget watching TV" (Hãy quên việc xem TV đi), thực chất các em dành 2-3 tiếng để LÀM BÀI TẬP VỀ NHÀ. Nên câu này là câu Not True (cần chọn).</li>
+                    <li><span class='hl-red'>take 8 subjects</span>: ❌ Câu này ĐÚNG vì bài nói học "5-10 môn" (8 nằm trong khoảng này).</li>
+                    <li><span class='hl-red'>don't like school uniforms</span>: ❌ Câu này ĐÚNG vì bài nói 15-16 tuổi "are tired of wearing it" (chán mặc nó).</li>
+                    <li><span class='hl-red'>judge by shirt...</span>: ❌ Câu này ĐÚNG vì bài có đề cập thẳng thông tin này.</li>
+                </ul>
+                <p>🔍 Dẫn chứng: "Forget watching TV, teenagers in Britain now spend 2-3 hours on homework after school."</p>
+                <p>👉 Dịch: <span style='color:red; font-weight:bold'>Hãy quên việc xem TV đi</span>, thanh thiếu niên Anh hiện dành 2-3 giờ cho <span style='color:red; font-weight:bold'>bài tập về nhà</span>.</p>
+            `
+        },
+
+        // PASSAGE 4
+        {
+            id: 17, p: 4, type: 'reading',
+            q: "What can be the best title for the passage?",
+            options: [
+                { t: "'Teenagers and Their Hobbies'", c: false }, { t: "'The Importance of Family Expectations'", c: false }, { t: "'Overcoming Challenges in Pursuing Passions'", c: false }, { t: "'Discovering and Following Your Passions'", c: true }
+            ],
+            exp: `
+                <p>Dịch câu hỏi: Tiêu đề nào phù hợp nhất cho bài đọc?</p>
+                <p>Phân tích đáp án:</p>
+                <ul>
+                    <li><span class='hl-green'>"Discovering and Following Your Passions"</span>: ✅ Đúng. Xuyên suốt bài đọc đều nói về định nghĩa đam mê, lợi ích của việc khám phá đam mê và những nỗ lực cần có để theo đuổi nó.</li>
+                    <li><span class='hl-red'>Overcoming Challenges...</span>: ❌ Sai vì phần "thử thách" chỉ là một đoạn nhỏ ở cuối, không bao quát toàn bài.</li>
+                </ul>
+                <p>🔍 Dẫn chứng: Nội dung toàn bài xoay quanh từ khóa chính "passions".</p>
+                <p>👉 Dịch: Bài viết khuyến khích thanh thiếu niên <span style='color:red; font-weight:bold'>khám phá và theo đuổi đam mê</span>.</p>
+            `
+        },
+        {
+            id: 18, p: 4, type: 'reading',
+            q: "What is the main benefit of following one's passions, according to the passage?",
+            options: [
+                { t: "Feeling overwhelmed", c: false }, { t: "Developing new skills", c: true }, { t: "Facing setbacks", c: false }, { t: "Meeting family expectations", c: false }
+            ],
+            exp: `
+                <p>Dịch câu hỏi: Theo bài đọc, lợi ích chính của việc theo đuổi đam mê là gì?</p>
+                <p>Phân tích đáp án:</p>
+                <ul>
+                    <li><span class='hl-green'>Developing new skills</span>: ✅ Đúng. Bài có liệt kê rõ những lợi ích tích cực, trong đó có việc phát triển các kỹ năng mới.</li>
+                    <li><span class='hl-red'>Feeling overwhelmed / Facing setbacks</span>: ❌ Sai. Đây không phải là lợi ích.</li>
+                </ul>
+                <p>🔍 Dẫn chứng: "They become eager to learn, develop new skills, and overcome challenges."</p>
+                <p>👉 Dịch: Họ trở nên háo hức học hỏi, <span style='color:red; font-weight:bold'>phát triển kỹ năng mới</span>, và vượt qua thử thách.</p>
+            `
+        },
+        {
+            id: 19, p: 4, type: 'reading',
+            q: "Why might it be challenging to focus on a passion?",
+            options: [
+                { t: "Friends are not interested", c: false }, { t: "Family expectations conflict", c: true }, { t: "Personal aspirations are unclear", c: false }, { t: "Pursuing passions is effortless", c: false }
+            ],
+            exp: `
+                <p>Dịch câu hỏi: Tại sao việc tập trung vào đam mê lại có thể gặp khó khăn?</p>
+                <p>Phân tích đáp án:</p>
+                <ul>
+                    <li><span class='hl-green'>Family expectations conflict</span>: ✅ Đúng. Đoạn 2 chỉ ra những khó khăn: bạn bè có sở thích khác, hoặc kỳ vọng gia đình mâu thuẫn (at odds) với khát vọng cá nhân.</li>
+                </ul>
+                <p>🔍 Dẫn chứng: "...or family expectations can seem at odds with personal aspirations."</p>
+                <p>👉 Dịch: ...hoặc kỳ vọng của gia đình có vẻ <span style='color:red; font-weight:bold'>mâu thuẫn</span> với khát vọng cá nhân.</p>
+            `
+        },
+        {
+            id: 20, p: 4, type: 'reading',
+            q: "According to the passage, why do teenagers experience a sense of purpose when pursuing their passions? (What happens when they do?)",
+            options: [
+                { t: "They want to impress their friends", c: false }, { t: "They need to overcome challenges", c: false }, { t: "They become motivated", c: true }, { t: "They love music", c: false }
+            ],
+            exp: `
+                <p>Dịch câu hỏi: Theo bài đọc, tại sao/điều gì xảy ra khi thanh thiếu niên cảm thấy có mục đích lúc theo đuổi đam mê?</p>
+                <p>Phân tích đáp án:</p>
+                <ul>
+                    <li><span class='hl-green'>They become motivated</span>: ✅ Đúng. Trong bài, cảm giác "có mục đích" (purpose) luôn đi liền với "có động lực" (motivation), nó là hiệu ứng song hành khiến các em háo hức tiến lên.</li>
+                </ul>
+                <p>🔍 Dẫn chứng: "When teenagers pursue their passions, they often experience a sense of purpose and motivation."</p>
+                <p>👉 Dịch: Khi thanh thiếu niên theo đuổi đam mê, họ thường cảm nhận được mục đích và <span style='color:red; font-weight:bold'>động lực</span>.</p>
+            `
+        },
+        {
+            id: 21, p: 4, type: 'reading',
+            q: "What does the word 'perseverance' in the passage mostly mean?",
+            options: [
+                { t: "laziness", c: false }, { t: "determination", c: true }, { t: "indifference", c: false }, { t: "confusion", c: false }
+            ],
+            exp: `
+                <p>Dịch câu hỏi: Từ 'perseverance' trong bài đọc có nghĩa gần nhất với từ nào?</p>
+                <p>Phân tích đáp án:</p>
+                <ul>
+                    <li><span class='hl-green'>determination (n)</span>: ✅ Đúng. <span class='p-word'>perseverance</span> nghĩa là <span class='p-mean'>sự kiên trì, bền bỉ</span>, tương đương với ý chí quyết tâm vượt qua khó khăn.</li>
+                    <li><span class='hl-red'>laziness (lười) / indifference (thờ ơ)</span>: ❌ Sai, trái ngược hoàn toàn nghĩa gốc.</li>
+                </ul>
+                <p>🔍 Dẫn chứng: "It's important to remember that pursuing a passion requires commitment and perseverance."</p>
+                <p>👉 Dịch: Theo đuổi đam mê đòi hỏi sự cam kết và <span style='color:red; font-weight:bold'>sự kiên trì/quyết tâm</span>.</p>
+            `
+        }
+    ];
+
+    let userAnswers = {};
+    let score = 0;
+
+    // Shuffle array function
+    function shuffle(array) {
+        let currentIndex = array.length, randomIndex;
+        while (currentIndex != 0) {
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+            [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+        }
+        return array;
+    }
+
+    // Render questions
+    const container = document.getElementById('questions-container');
+    quizData.forEach((item, index) => {
+        let card = document.createElement('div');
+        card.className = 'question-card';
+        
+        let qText = '';
+        if (item.type === 'cloze') {
+            qText = `Câu ${index + 1}: Select the best answer`;
+        } else {
+            qText = `Câu ${index + 1}: ${item.q}`;
+        }
+        
+        card.innerHTML = `<div class='q-text'>${qText}</div>`;
+        
+        let grid = document.createElement('div');
+        grid.className = 'options-grid';
+        
+        let shuffledOpts = shuffle([...item.options]);
+        
+        shuffledOpts.forEach(opt => {
+            let btn = document.createElement('button');
+            btn.className = 'opt-btn';
+            btn.innerText = opt.t; // Render direct text, no A, B, C, D — KHÔNG kèm nghĩa tiếng Việt
+            btn.dataset.correct = opt.c;
+            btn.onclick = () => checkAnswer(btn, opt.c, item.id, card);
+            grid.appendChild(btn);
+        });
+        
+        card.appendChild(grid);
+        
+        let expBox = document.createElement('div');
+        expBox.className = 'explanation-box';
+        expBox.id = `exp-${item.id}`;
+        expBox.innerHTML = item.exp;
+        
+        card.appendChild(expBox);
+        container.appendChild(card);
+    });
+
+    // Handle answer checking
+    function checkAnswer(btn, isCorrect, qId, card) {
+        // Disable all buttons in this card
+        let buttons = card.querySelectorAll('.opt-btn');
+        buttons.forEach(b => b.disabled = true);
+        
+        if(isCorrect) {
+            btn.classList.add('correct');
+            userAnswers[qId] = true;
+            playDing();
+            createConfetti();
+        } else {
+            btn.classList.add('wrong');
+            userAnswers[qId] = false;
+            document.getElementById('audio-wrong').play();
+            // Highlight the correct one
+            buttons.forEach(b => {
+                if(b.dataset.correct === 'true') b.classList.add('correct');
+            });
+        }
+        
+        // Show explanation
+        document.getElementById(`exp-${qId}`).style.display = 'block';
+    }
+
+    // Confetti Effect
+    function createConfetti() {
+        for(let i=0; i<30; i++) {
+            let conf = document.createElement('div');
+            conf.className = 'confetti';
+            conf.style.left = Math.random() * window.innerWidth + 'px';
+            conf.style.top = '-10px';
+            conf.style.backgroundColor = ['#f2d74e', '#95c3de', '#ff9a9e', '#a1c4fd'][Math.floor(Math.random()*4)];
+            document.body.appendChild(conf);
+            
+            let duration = Math.random() * 2 + 1;
+            conf.animate([
+                { transform: `translate3d(0,0,0) rotate(0deg)`, opacity: 1 },
+                { transform: `translate3d(${Math.random()*100 - 50}px, ${window.innerHeight}px, 0) rotate(${Math.random()*360}deg)`, opacity: 0 }
+            ], {
+                duration: duration * 1000,
+                easing: 'cubic-bezier(.37,0,.63,1)',
+                fill: 'forwards'
+            });
+            
+            setTimeout(() => conf.remove(), duration * 1000);
+        }
+    }
+
+    // Submit logic
+    function submitQuiz() {
+        if(Object.keys(userAnswers).length < quizData.length) {
+            alert('Các con chưa làm hết câu hỏi kìa! Hãy cuộn lên và hoàn thành trước khi nộp bài nhé.');
+            return;
+        }
+        document.getElementById('name-modal').style.display = 'flex';
+    }
+
+    function calculateScore() {
+        const name = document.getElementById('student-name').value.trim();
+        if(!name) {
+            alert('Con quên nhập tên rồi!');
+            return;
+        }
+        
+        score = Object.values(userAnswers).filter(v => v).length;
+        const total = quizData.length;
+        const score10 = (score / total * 10).toFixed(1);
+        const percent = score / total;
+        
+        document.getElementById('name-modal').style.display = 'none';
+        
+        document.getElementById('r-name').innerText = `Học sinh: ${name}`;
+        document.getElementById('r-score').innerText = `${score}/${total} CÂU ĐÚNG`;
+        document.getElementById('r-score-10').innerText = `Quy đổi: ${score10} / 10 Điểm`;
+        
+        let comment, gifUrl;
+        if(percent === 1) {
+            comment = "MS Chí Nên: Tuyệt cú mèo! Con đúng là thiên tài ngôn ngữ! Hãy giữ vững phong độ này nhé. 🏆✨";
+            gifUrl = "https://media.giphy.com/media/11sBLVxNs7v6WA/giphy.gif"; 
+        } else if(percent >= 0.6) {
+            comment = "MS Chí Nên: Rất tốt! Nhưng hãy ghi chép cẩn thận thêm từ vựng để đạt điểm tuyệt đối nhé. Cô tin con làm được! 👏";
+            gifUrl = "https://media.giphy.com/media/l0ErFafpUCQTQFZi8/giphy.gif"; 
+        } else {
+            comment = "MS Chí Nên: Đừng buồn nha! Hãy đọc kỹ giải thích, ghi chép lại và thử lại lần nữa. Chăm chỉ làm bài nhé, con sẽ tiến bộ thôi! 💪😢";
+            gifUrl = "https://media.giphy.com/media/L95W4wv8nnb9K/giphy.gif"; 
+        }
+        
+        document.getElementById('r-comment').innerText = comment;
+        document.getElementById('r-gif').src = gifUrl;
+        
+        document.getElementById('result-modal').style.display = 'flex';
+    }
+
+    function closeModal(id) {
+        document.getElementById(id).style.display = 'none';
+    }
+</script>
+
+<script>/*devclean*/(function(){
+var ZW=/[\u00AD\u034F\u061C\u115F\u1160\u17B4\u17B5\u180E\u200B-\u200F\u202A-\u202E\u2060-\u206F\uFEFF]/g,
+    SP=/[\u00A0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\t]/g,
+    AP=/[\u2018\u2019\u201A\u201B\u2032\u2035\u02B9\u02BB\u02BC\u02BD\u02C8\u0060\u00B4\uFF07]/g,
+    DQ=/[\u201C\u201D\u201E\u201F\u2033\u2036\u00AB\u00BB\uFF02]/g,
+    DS=/[\u2010\u2011\u2012\u2212\uFE63\uFF0D]/g;
+function clean(v){if(!v)return v;var s=String(v);try{s=s.normalize('NFKC')}catch(e){}
+  return s.replace(ZW,'').replace(SP,' ').replace(AP,"'").replace(DQ,'"').replace(DS,'-').replace(/[\u0300-\u036f]/g,'').replace(/ {2,}/g,' ');}
+window.__devclean=clean;
+function fix(skip){var L=document.querySelectorAll('input:not([type]),input[type=text],input[type=search],textarea');
+  for(var i=0;i<L.length;i++){var el=L[i];if(el===skip||el.readOnly||el.disabled)continue;var v=el.value,c=clean(v);if(c!==v)el.value=c;}}
+['pointerdown','mousedown','touchstart','click','change','focusout'].forEach(function(t){document.addEventListener(t,function(e){fix(t==='focusout'||t==='change'?null:e.target)},true)});
+document.addEventListener('keydown',function(e){if(e.key==='Enter'||e.keyCode===13)fix(null)},true);
+})();</script>
+<style id="ms-chi-nen-unlock-style">
+#passwordModal, #password-modal, #pwModal, #pw-modal, #pw-overlay,
+#lockModal, #passModal, #authModal, #auth-modal, #lockOverlay,
+#start-overlay, #intro-overlay, #start-screen,
+.password-modal, .lock-modal, .lock-overlay {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    z-index: -9999 !important;
+}
+</style>
+<script>
+// Remove password lock completely - direct quiz access
+(function() {
+    var initDone = false;
+    var renderCheckDone = false;
+
+    function hideEl(el, hard) {
+        if (!el) return;
+        if (hard) {
+            el.style.setProperty('display', 'none', 'important');
+            el.style.setProperty('visibility', 'hidden', 'important');
+            el.style.setProperty('opacity', '0', 'important');
+            el.style.setProperty('pointer-events', 'none', 'important');
+            el.style.setProperty('z-index', '-9999', 'important');
+        } else {
+            el.style.display = 'none';
+        }
+        el.classList.remove('active', 'show', 'open', 'visible', 'flex');
+    }
+
+    function hasRenderedQuiz() {
+        var containers = document.querySelectorAll(
+            '#quiz-container, #quizContainer, #questions-container, #questionPane, #quiz, #questions, #quiz-body, #questions-wrapper, #quiz-list, #quizList, #exercise-container, #app-container .split-container'
+        );
+        for (var i = 0; i < containers.length; i++) {
+            if (containers[i].querySelectorAll('button, input, select, textarea, .question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .question, .option-btn, .opt-btn, .ans-btn').length > 0) {
+                return true;
+            }
+        }
+        if (document.querySelectorAll('.question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .option-btn, .opt-btn, .ans-btn, .choice-btn').length > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    function ensureQuizRendered() {
+        if (renderCheckDone) return;
+        renderCheckDone = true;
+        if (hasRenderedQuiz()) return;
+
+        if (!hasRenderedQuiz() && typeof buildQuiz === 'function') { try { buildQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof initQuiz === 'function') { try { initQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderApp === 'function') { try { renderApp(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuiz === 'function') { try { renderQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuestions === 'function') { try { renderQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAllQuestions === 'function') { try { renderAllQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAll === 'function') { try { renderAll(); } catch(e){} }
+    }
+
+    function unlockNow() {
+        var pwIds = [
+            'passwordModal', 'password-modal', 'pwModal', 'pw-modal', 'pw-overlay',
+            'lockModal', 'passModal', 'authModal', 'auth-modal', 'lockOverlay',
+            'start-overlay', 'intro-overlay', 'start-screen'
+        ];
+        pwIds.forEach(function(id) {
+            hideEl(document.getElementById(id), true);
+        });
+
+        var modalEls = document.querySelectorAll('.password-modal, .lock-modal, .lock-overlay, #lockOverlay, #auth-modal');
+        modalEls.forEach(function(el) {
+            if (el.id !== 'resultModal' && el.id !== 'result-modal' && el.id !== 'scoreModal') {
+                hideEl(el, true);
+            }
+        });
+
+        ['nameModal', 'name-modal', 'nameInputModal'].forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) hideEl(el, false);
+        });
+
+        var qo = document.getElementById('quiz-overlay');
+        if (qo && (typeof isStarted === 'undefined' || !isStarted)) {
+            qo.style.display = 'none';
+        }
+
+        var mainIds = [
+            'mainContent', 'main-content', 'mainHeader', 'main-header',
+            'app-container', 'app', 'quizApp', 'quiz-wrapper', 'quizContainer', 'quiz-container', 'reading-content'
+        ];
+        mainIds.forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) {
+                el.classList.remove('hidden', 'blur', 'blurred', 'locked');
+                if (el.style.display === 'none') {
+                    el.style.removeProperty('display');
+                }
+                if (window.getComputedStyle(el).display === 'none') {
+                    var hasPane = el.querySelector('.pane, .left-pane, .right-pane, .split-container, .left-panel, .right-panel');
+                    if (id === 'main-content' || id.toLowerCase().includes('header') || el.classList.contains('main-container') || hasPane) {
+                        el.style.setProperty('display', 'flex', 'important');
+                    } else {
+                        el.style.setProperty('display', 'block', 'important');
+                    }
+                }
+            }
+        });
+
+        var qs = document.getElementById('quiz-screen');
+        if (qs) {
+            qs.classList.remove('hidden');
+            if (qs.classList.contains('flex-col')) {
+                qs.classList.add('flex');
+                qs.style.display = 'flex';
+            } else {
+                qs.style.display = 'block';
+            }
+        }
+
+        if (!initDone) {
+            initDone = true;
+
+            if (document.getElementById('start-overlay') && typeof startGame === 'function') {
+                var sn = document.getElementById('student-name') || document.getElementById('studentName');
+                if (sn && !sn.value.trim()) sn.value = 'Học sinh';
+            }
+            if (document.getElementById('name-modal') && typeof startQuiz === 'function') {
+                var sn2 = document.getElementById('student-name');
+                if (sn2 && !sn2.value.trim()) sn2.value = 'Học sinh';
+            }
+
+            if (typeof startQuiz === 'function' && (typeof isStarted === 'undefined' || !isStarted)) { try { startQuiz(); } catch(e){} }
+            if (typeof startGame === 'function') { try { startGame(); } catch(e){} }
+            if (typeof startTest === 'function') { try { startTest(); } catch(e){} }
+            if (typeof startApp === 'function') { try { startApp(); } catch(e){} }
+            if (typeof buildStarfield === 'function') { try { buildStarfield(); } catch(e){} }
+            if (typeof spawnFloats === 'function') { try { spawnFloats(); } catch(e){} }
+            if (typeof spawnFloaters === 'function') { try { spawnFloaters(); } catch(e){} }
+            if (typeof createFloatingBubbles === 'function') { try { createFloatingBubbles(); } catch(e){} }
+            if (typeof initAudio === 'function') { try { initAudio(); } catch(e){} }
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', unlockNow);
+    } else {
+        unlockNow();
+    }
+    if (document.readyState === 'complete') {
+        setTimeout(ensureQuizRendered, 150);
+    } else {
+        window.addEventListener('load', function() {
+            setTimeout(unlockNow, 20);
+            setTimeout(ensureQuizRendered, 150);
+            setTimeout(unlockNow, 300);
+            setTimeout(unlockNow, 700);
+        });
+    }
+    setTimeout(unlockNow, 50);
+    setTimeout(unlockNow, 200);
+    setTimeout(unlockNow, 600);
+    setTimeout(unlockNow, 1100);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🧃 Tây Mỗ p9 — English 9 Ôn giữa kì I | MS Chí Nên</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+ --ink:#2B2340;--dim:#5E5674;
+ --aqua:#12B5B0;--aqua-d:#0B7C78;
+ --orange:#FF7A1A;--orange-d:#C24E00;
+ --straw:#F0457A;--straw-d:#B01E52;
+ --kiwi:#3DB43A;--kiwi-d:#1F7A1D;
+ --grape:#8B4FE0;--grape-d:#5B27A8;
+ --sky:#2A9DF4;--sky-d:#1565B8;
+ --card:#FFFFFF;--edge:#CFE6FA;
+ --good:#1B9C5A;--good-bg:#DDF7E6;
+ --bad:#E0503C;--bad-bg:#FFE6E0;
+ --line:#2B2340;
+ --mg:max(0px,calc((100vw - 1240px) / 2));
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito',sans-serif;color:var(--ink);min-height:100vh;overflow-x:hidden;
+ background:radial-gradient(circle at 8% 22%,rgba(42,157,244,.13) 0 150px,transparent 151px),radial-gradient(circle at 92% 30%,rgba(240,69,122,.12) 0 190px,transparent 191px),
+ radial-gradient(circle at 50% 88%,rgba(18,181,176,.12) 0 240px,transparent 241px),radial-gradient(rgba(240,69,122,.14) 2px,transparent 2.6px) 0 0/28px 28px,
+ linear-gradient(180deg,#EAF6FF 0%,#FFF0F7 55%,#E6FBF6 100%);background-attachment:fixed}
+/* ══ phòng thí nghiệm nước ép: dây trái cây, bong bóng, lát trái cây bay, ống nghiệm, nhân vật trái cây ══ */
+#lab{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.garl{position:absolute;left:0;top:54px;width:2800px;height:110px}
+.swag{position:absolute;top:0;width:140px;height:26px;border-bottom:3px solid #F49AC1;border-radius:0 0 70px 70px/0 0 26px 26px}
+.hang{position:absolute;top:-2px;width:28px;transform-origin:50% 0;animation:swing 3s ease-in-out infinite alternate}
+.hang .str{display:block;margin:0 auto;width:2px;height:var(--l);background:#7FB8E6}
+@keyframes swing{from{transform:rotate(-9deg)}to{transform:rotate(9deg)}}
+.fr{display:block;position:relative;width:var(--s,34px);height:var(--s,34px)}
+.f-orange{border-radius:50%;border:4px solid #FF8A1F;box-shadow:inset 0 0 0 3px #FFF1D6;background:radial-gradient(circle,#FFF1D6 0 12%,transparent 13%),repeating-conic-gradient(#FFB347 0 26deg,#FFF1D6 26deg 30deg)}
+.f-lemon{border-radius:50%;border:4px solid #E8B800;box-shadow:inset 0 0 0 3px #FFFBE0;background:radial-gradient(circle,#FFFBE0 0 12%,transparent 13%),repeating-conic-gradient(#FFE45C 0 26deg,#FFFBE0 26deg 30deg)}
+.f-kiwi{border-radius:50%;border:4px solid #8B5A2B;background:radial-gradient(circle,#FFFBD9 0 20%,transparent 21%),repeating-conic-gradient(#8BD448 0 12deg,#72C232 12deg 24deg)}
+.f-kiwi::after{content:'';position:absolute;inset:24%;border-radius:50%;border:3px dotted #2B2340}
+.f-straw{width:calc(var(--s,34px) * .9);border-radius:48% 48% 50% 50%/30% 30% 70% 70%;background:radial-gradient(circle,#FFE27A 0 1.3px,transparent 1.9px) 0 0/7px 7px,linear-gradient(160deg,#FF6B81,#E0243F)}
+.f-straw::before{content:'';position:absolute;left:14%;right:14%;top:-20%;height:34%;background:#3DB43A;clip-path:polygon(0 40%,20% 62%,30% 0,50% 50%,70% 0,80% 62%,100% 40%,75% 100%,25% 100%)}
+.f-melon{height:calc(var(--s,34px) / 1.8);border-radius:0 0 999px 999px;background:radial-gradient(circle at 50% 30%,#2B2340 0 1.6px,transparent 2.1px) 0 0/9px 8px,#FF5A6E;border:4px solid #3DB43A;border-top:3px solid #FFE1E5}
+.f-berry{border-radius:50%;background:radial-gradient(circle at 32% 28%,#fff 0 12%,transparent 14%),radial-gradient(circle at 50% 45%,#8FB8FF,#4A63E0 60%,#2E3FA8);border:2px solid #22307A}
+.f-berry::before{content:'';position:absolute;left:50%;top:-4px;width:10px;height:6px;margin-left:-5px;background:#22307A;clip-path:polygon(0 100%,20% 0,50% 60%,80% 0,100% 100%)}
+.f-mango{width:calc(var(--s,34px) * .82);border-radius:50% 50% 45% 55%/60% 60% 40% 40%;background:radial-gradient(circle at 35% 30%,#FFE066,#FFA41B 60%,#FF7A1A)}
+.f-mango::before{content:'';position:absolute;top:-6px;left:48%;width:12px;height:7px;border-radius:0 80% 0 80%;background:#3DB43A}
+.bub{position:absolute;bottom:-50px;border-radius:50%;border:2px solid rgba(255,255,255,.95);background:radial-gradient(circle at 32% 28%,rgba(255,255,255,.95) 0 18%,rgba(255,255,255,.25) 30%,rgba(120,200,255,.18) 70%);
+ box-shadow:0 2px 8px rgba(42,157,244,.18);animation:bubUp linear infinite}
+@keyframes bubUp{0%{transform:translate(0,0);opacity:0}8%{opacity:.95}50%{transform:translate(22px,-55vh)}92%{opacity:.85}100%{transform:translate(-14px,-112vh);opacity:0}}
+.fsl{position:absolute;animation:drift ease-in-out infinite alternate}
+.fsl>.fr{animation:rot 14s linear infinite}
+@keyframes drift{from{transform:translateY(-18px)}to{transform:translateY(22px)}}
+@keyframes rot{to{transform:rotate(360deg)}}
+.spk{position:absolute;width:16px;height:16px;clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%);animation:tw 2.4s ease-in-out infinite}
+@keyframes tw{0%,100%{transform:scale(.4);opacity:.25}50%{transform:scale(1.15);opacity:1}}
+.drp{position:absolute;width:9px;height:12px;border-radius:50% 50% 50% 50%/62% 62% 38% 38%;background:radial-gradient(circle at 35% 60%,#fff 0 18%,rgba(140,210,255,.85) 30%);border:1.5px solid rgba(42,157,244,.5);animation:drpDn ease-in infinite}
+@keyframes drpDn{0%,40%{transform:translateY(0);opacity:0}48%{opacity:1}100%{transform:translateY(46vh);opacity:0}}
+/* ống nghiệm bên trái, bình tam giác bên phải */
+.rack{position:absolute;left:calc(var(--mg) / 2 - 26px);top:24vh;width:52px;height:120px;transform-origin:50% 0}
+.tube{position:absolute;top:0;width:13px;height:96px;border:2px solid var(--line);border-radius:0 0 8px 8px;background:rgba(255,255,255,.8);overflow:hidden}
+.tube .lq{position:absolute;left:0;right:0;bottom:0;height:var(--h);background:var(--c);animation:slosh 2.6s ease-in-out infinite alternate}
+@keyframes slosh{from{height:var(--h)}to{height:calc(var(--h) + 12%)}}
+.tube .tb{position:absolute;left:3px;bottom:4px;width:4px;height:4px;border-radius:50%;background:#fff;animation:tbUp 1.6s linear infinite}
+@keyframes tbUp{from{transform:translateY(0);opacity:1}to{transform:translateY(-60px);opacity:0}}
+.rack .bar{position:absolute;left:-4px;right:-4px;height:9px;border-radius:4px;background:#7FB8E6;border:2px solid #1565B8}
+.pf{position:absolute;width:12px;height:12px;border-radius:50%;background:rgba(255,255,255,.9);border:1.5px solid rgba(43,35,64,.15);animation:puff 3s ease-out infinite}
+@keyframes puff{0%{transform:translate(0,0) scale(.4);opacity:0}20%{opacity:.95}100%{transform:translate(10px,-60px) scale(1.7);opacity:0}}
+.flask{position:absolute;right:calc(var(--mg) / 2 - 30px);top:23vh;width:60px;height:96px;transform-origin:50% 0}
+.flask svg{display:block;width:60px;height:90px;overflow:visible}
+.flask .fbb{position:absolute;bottom:12px;width:6px;height:6px;border-radius:50%;border:1.5px solid #fff;animation:fbUp 1.8s linear infinite}
+@keyframes fbUp{from{transform:translateY(0);opacity:1}to{transform:translateY(-34px);opacity:0}}
+.slim{position:absolute;top:54vh}
+.cyl{left:calc(var(--mg) / 2 - 16px);width:32px;height:118px}
+.cyl .cb{position:absolute;left:3px;top:0;width:26px;height:108px;border:3px solid var(--line);border-top:none;border-radius:0 0 8px 8px;background:rgba(255,255,255,.8);overflow:hidden;
+ background-image:repeating-linear-gradient(0deg,transparent 0 13px,rgba(43,35,64,.35) 13px 15px);background-size:9px 100%;background-repeat:repeat-y}
+.cyl .cb i{position:absolute;left:0;right:0;bottom:0;height:62%;background:linear-gradient(0deg,#F0457A,#FF9EC4);animation:slosh 3s ease-in-out infinite alternate;--h:56%}
+.cyl .ft{position:absolute;left:-4px;bottom:0;width:40px;height:10px;border-radius:5px;background:var(--grape);border:2px solid var(--line)}
+.jbox{right:calc(var(--mg) / 2 - 22px);width:44px;height:90px;animation:hopS 1.2s ease-in-out infinite}
+@keyframes hopS{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.jbox .bx{position:absolute;left:0;bottom:0;width:44px;height:62px;border:3px solid var(--line);border-radius:8px;background:linear-gradient(180deg,#12B5B0 0 30%,#fff 30% 34%,#FF8FB8 34%)}
+.jbox .bx::after{content:'';position:absolute;left:8px;top:28px;width:24px;height:12px;border:3px solid var(--line);border-top:none;border-radius:0 0 14px 14px}
+.jbox .bx::before{content:'';position:absolute;left:10px;top:20px;width:20px;height:5px;background:radial-gradient(circle,var(--line) 0 2.5px,transparent 3px) 0 0/10px 5px}
+.jbox .st{position:absolute;left:28px;bottom:58px;width:6px;height:34px;border-radius:3px;background:repeating-linear-gradient(0deg,#fff 0 5px,#F0457A 5px 10px);border:1.5px solid rgba(43,35,64,.6);transform:rotate(14deg)}
+/* nhân vật trái cây ở lề (màn hình rộng) */
+.mch{position:absolute;display:none}
+.chr{position:relative;width:var(--bs);height:var(--bs)}
+.chr .body{position:absolute;inset:0;z-index:2;border-radius:50%;border:3px solid var(--line);box-shadow:inset -6px -8px 0 rgba(0,0,0,.08)}
+.b-orange{background:radial-gradient(circle,rgba(255,255,255,.35) 0 1.5px,transparent 2px) 0 0/9px 9px,radial-gradient(circle at 35% 30%,#FFC77A,#FF8A1F 65%,#E8650A)}
+.b-orange::before{content:'';position:absolute;top:-12px;left:50%;width:22px;height:13px;border-radius:0 80% 0 80%;background:#3DB43A;border:2px solid var(--line)}
+.b-straw{border-radius:48% 48% 50% 50%/32% 32% 68% 68%!important;background:radial-gradient(circle,#FFE27A 0 1.6px,transparent 2.2px) 0 0/10px 10px,linear-gradient(160deg,#FF6B81,#E0243F)}
+.b-straw::before{content:'';position:absolute;left:18%;right:18%;top:-16px;height:22px;background:#3DB43A;clip-path:polygon(0 40%,20% 62%,30% 0,50% 50%,70% 0,80% 62%,100% 40%,75% 100%,25% 100%)}
+.b-kiwi{background:radial-gradient(circle,#FFFBD9 0 18%,transparent 19%),repeating-conic-gradient(#9BDB55 0 12deg,#82CC3C 12deg 24deg);border:6px solid #8B5A2B!important}
+.b-berry{background:radial-gradient(circle at 32% 26%,rgba(255,255,255,.7) 0 8%,transparent 10%),radial-gradient(circle at 40% 35%,#9CC2FF,#4A63E0 62%,#2E3FA8)}
+.b-berry::before{content:'';position:absolute;top:-10px;left:50%;width:22px;height:12px;margin-left:-11px;background:#22307A;clip-path:polygon(0 100%,20% 0,50% 60%,80% 0,100% 100%)}
+.b-grape{background:radial-gradient(circle,rgba(255,255,255,.35) 0 4px,transparent 5px) 0 0/16px 16px,radial-gradient(circle at 35% 30%,#D9B8FF,#9B5DE5 60%,#6B35C4)}
+.b-melon{background:radial-gradient(circle at 50% 30%,#2B2340 0 2px,transparent 2.6px) 0 0/12px 11px,radial-gradient(circle at 50% 40%,#FF6B81,#E0243F);box-shadow:inset 0 0 0 6px #3DB43A!important}
+.b-lemon{border-radius:50% 50% 50% 50%/55% 55% 45% 45%!important;background:radial-gradient(circle at 35% 30%,#FFF6A8,#FFE14D 60%,#F2C200)}
+.eye{position:absolute;top:34%;width:10px;height:13px;border-radius:50%;z-index:3;background:radial-gradient(circle at 35% 30%,#fff 0 2px,#2B2340 2.6px);animation:blink 4s infinite}
+.eye.l{left:28%}.eye.r{right:28%}
+@keyframes blink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
+.mouth{position:absolute;left:50%;top:55%;z-index:3;width:24px;height:12px;margin-left:-12px;border:3px solid #2B2340;border-top:none;border-radius:0 0 24px 24px;background:#E0243F}
+.blush{position:absolute;top:52%;z-index:3;width:11px;height:6px;border-radius:50%;background:rgba(255,105,140,.75)}
+.blush.l{left:13%}.blush.r{right:13%}
+.limb{position:absolute;left:calc(50% - 3px);top:50%;width:6px;height:calc(var(--bs) / 2 + 24px);background:var(--line);border-radius:4px;transform-origin:50% 0;z-index:1}
+.limb::after{content:'';position:absolute;bottom:-6px;left:-4px;width:14px;height:14px;border-radius:50%;background:#fff;border:2px solid var(--line)}
+.cart .arm.l{transform:rotate(140deg)}.cart .arm.r{transform:rotate(-140deg)}.cart .leg.l{transform:rotate(28deg)}.cart .leg.r{transform:rotate(-28deg)}
+.mc-cart{left:calc(var(--mg) / 2 - 41px);top:44vh;animation:cartX 3.4s ease-in-out infinite}
+.mc-cart .cart{animation:cartR 3.4s ease-in-out infinite}
+@keyframes cartX{0%,100%{transform:translateX(-70px)}50%{transform:translateX(70px)}}
+@keyframes cartR{0%,100%{transform:rotate(0)}50%{transform:rotate(360deg)}}
+.mc-hf{right:calc(var(--mg) / 2 - 105px);top:44vh;width:210px;height:150px}
+.mc-hf .hl{position:absolute;left:0;top:30px;animation:leanL 2.4s ease-in-out infinite}
+.mc-hf .hr{position:absolute;right:0;top:30px;animation:leanR 2.4s ease-in-out infinite}
+@keyframes leanL{0%,35%,80%,100%{transform:translate(0,0)}55%,65%{transform:translate(22px,-10px)}}
+@keyframes leanR{0%,35%,80%,100%{transform:translate(0,0)}55%,65%{transform:translate(-22px,-10px)}}
+.mc-hf .leg.l{transform:rotate(12deg)}.mc-hf .leg.r{transform:rotate(-12deg)}
+.mc-hf .hl .arm.l{transform:rotate(35deg)}.mc-hf .hr .arm.r{transform:rotate(-35deg)}
+.mc-hf .hl .arm.r{animation:hfL 2.4s ease-in-out infinite}.mc-hf .hr .arm.l{animation:hfR 2.4s ease-in-out infinite}
+@keyframes hfL{0%,30%,85%,100%{transform:rotate(-35deg)}55%,65%{transform:rotate(-142deg)}}
+@keyframes hfR{0%,30%,85%,100%{transform:rotate(35deg)}55%,65%{transform:rotate(142deg)}}
+.clap{position:absolute;left:83px;top:0;width:44px;height:44px;background:#FFE14D;clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);animation:clap 2.4s ease-in-out infinite}
+@keyframes clap{0%,55%{transform:scale(0);opacity:0}60%{transform:scale(1.3);opacity:1}75%,100%{transform:scale(.6);opacity:0}}
+.hf5{position:absolute;left:62px;top:-26px;font-family:'Baloo 2',cursive;font-weight:800;font-size:1rem;color:var(--straw-d);background:#fff;border:3px solid var(--line);border-radius:999px;padding:0 10px;animation:clap 2.4s ease-in-out infinite}
+.mc-lem{left:calc(var(--mg) / 2 - 30px);top:66vh;animation:hopS .9s ease-in-out infinite}
+.mc-lem .arm.l{animation:wave1 .45s ease-in-out infinite alternate}.mc-lem .arm.r{animation:wave2 .45s ease-in-out infinite alternate}
+.mc-lem .leg.l{transform:rotate(14deg)}.mc-lem .leg.r{transform:rotate(-14deg)}
+@keyframes wave1{from{transform:rotate(120deg)}to{transform:rotate(160deg)}}
+@keyframes wave2{from{transform:rotate(-120deg)}to{transform:rotate(-160deg)}}
+.mc-mel{right:calc(var(--mg) / 2 - 40px);top:68vh}
+.mc-mel .tbl{position:absolute;left:-10px;top:56px;width:100px;height:10px;border-radius:5px;background:#C98B4E;border:2px solid var(--line)}
+@media(min-width:1480px){.mch{display:block}.slim{display:none}.rack,.flask{transform:scale(1.55)}}
+/* ══ quầy pha chế: máy xay, băng chuyền, ly nước ép, pin năng lượng, lon nước ngọt buồn, chai nước nhảy ══ */
+#ground{position:fixed;left:0;right:0;bottom:0;height:300px;z-index:1;pointer-events:none;overflow:hidden}
+.counter{position:absolute;left:0;right:0;bottom:0;height:34px;border-top:5px solid var(--line);
+ background:linear-gradient(#fff 0 4px,transparent 4px),repeating-linear-gradient(90deg,#FFE4F0 0 46px,#F7BCD6 46px 48px,#E3F3FF 48px 94px,#A9D6FA 94px 96px)}
+.blender{position:absolute;left:2vw;bottom:30px;width:130px;height:240px;animation:vib .14s linear infinite alternate}
+@keyframes vib{from{transform:translateX(-1px) rotate(-.4deg)}to{transform:translateX(1px) rotate(.4deg)}}
+.blender .jw{position:absolute;left:15px;top:20px;width:100px;height:140px;clip-path:polygon(4% 3%,96% 3%,84% 97%,16% 97%);background:rgba(220,244,255,.55)}
+.vortex{position:absolute;left:8%;right:8%;top:16%;bottom:2%;border-radius:46% 54% 40% 60%/50% 40% 60% 50%;
+ background:conic-gradient(from 0deg,#F0457A,#FF9EC4,#8B4FE0,#2A9DF4,#12B5B0,#7BE0B5,#F0457A);animation:rot .8s linear infinite;opacity:.92}
+.vortex::after{content:'';position:absolute;inset:18%;border-radius:50%;background:repeating-conic-gradient(rgba(255,255,255,.55) 0 14deg,transparent 14deg 40deg);animation:rot .5s linear infinite reverse}
+.orbit{position:absolute;left:50%;top:58%;width:0;height:0;animation:rot 1.3s linear infinite}
+.orbit .fr{position:absolute}
+.blender svg.jar{position:absolute;left:15px;top:20px;width:100px;height:140px;overflow:visible}
+.blender .lid{position:absolute;left:10px;top:6px;width:110px;height:18px;border-radius:9px;background:var(--straw);border:3px solid var(--line)}
+.blender .lid::before{content:'';position:absolute;left:44px;top:-12px;width:16px;height:12px;border-radius:6px 6px 0 0;background:var(--straw-d);border:3px solid var(--line);border-bottom:none}
+.blender .base{position:absolute;left:8px;bottom:0;width:114px;height:76px;border:4px solid var(--line);border-radius:18px 18px 10px 10px;background:linear-gradient(180deg,#A877F0,#6B35C4)}
+.base .bt{position:absolute;top:34px;width:16px;height:16px;border-radius:50%;border:2px solid var(--line);animation:bl 1.2s steps(1) infinite}
+@keyframes bl{0%{filter:brightness(1.35)}50%{filter:brightness(.7)}}
+.base .dial{position:absolute;right:12px;top:14px;width:26px;height:26px;border-radius:50%;background:#fff;border:3px solid var(--line);animation:rot 1s linear infinite}
+.base .dial::after{content:'';position:absolute;left:9px;top:1px;width:3px;height:9px;background:var(--line)}
+.spl{position:absolute;top:10px;width:9px;height:9px;border-radius:50%;animation:spl 1.6s ease-out infinite}
+@keyframes spl{0%{transform:translate(0,0);opacity:0}10%{opacity:1}60%{transform:translate(var(--dx),-34px)}100%{transform:translate(calc(var(--dx) * 1.6),10px);opacity:0}}
+.belt{position:absolute;left:calc(2vw + 128px);bottom:34px;width:24vw;height:40px}
+.belt .band{position:absolute;left:0;right:0;bottom:10px;height:18px;border:3px solid var(--line);border-radius:12px;
+ background:repeating-linear-gradient(90deg,#3B3355 0 14px,#5E5578 14px 28px);animation:beltMv .6s linear infinite}
+@keyframes beltMv{to{background-position:-28px 0}}
+.belt .wh{position:absolute;bottom:12px;width:14px;height:14px;border-radius:50%;background:conic-gradient(#12B5B0 0 25%,#fff 25% 50%,#12B5B0 50% 75%,#fff 75%);border:2px solid var(--line);animation:rot .6s linear infinite reverse}
+.belt .wh.l{left:3px}.belt .wh.r{right:3px}
+.belt .lg{position:absolute;bottom:0;width:8px;height:12px;background:var(--line)}
+.belt .lg.l{left:16px}.belt .lg.r{right:16px}
+.cf{position:absolute;left:0;bottom:26px;animation:conv 8s linear infinite;opacity:0}
+@keyframes conv{0%{transform:translate(24vw,0) rotate(0);opacity:0}4%{opacity:1}70%{transform:translate(0,0) rotate(-360deg);opacity:1}80%{transform:translate(-42px,-210px) rotate(-460deg)}88%{transform:translate(-66px,-160px) rotate(-520deg) scale(.7);opacity:1}93%,100%{transform:translate(-66px,-130px) scale(.4);opacity:0}}
+.pile{position:absolute;left:calc(2vw + 128px + 24vw + 6px);bottom:34px;width:80px;height:50px}
+.pile .fr{position:absolute}
+.glasses{position:absolute;right:calc(2vw + 272px);bottom:34px;display:flex;gap:18px;align-items:flex-end}
+.gw{position:relative;width:54px;height:var(--h)}
+.gls{position:absolute;inset:0;border:3px solid rgba(43,35,64,.8);border-top:2px solid rgba(43,35,64,.3);border-radius:4px 4px 14px 14px;background:rgba(255,255,255,.55);overflow:hidden}
+.gls .jc{position:absolute;left:0;right:0;bottom:0;height:8%;animation:gfill 9s ease-in-out infinite;
+ background:linear-gradient(0deg,#F0457A 0 20px,#FF9EC4 20px 40px,#7BE0B5 40px 60px,#12B5B0 60px 80px,#2A9DF4 80px 100px,#8B4FE0 100px)}
+@keyframes gfill{0%{height:8%}45%,80%{height:84%}96%,100%{height:8%}}
+.gls .jc::before{content:'';position:absolute;left:-2px;right:-2px;top:-4px;height:8px;border-radius:50%;background:rgba(255,255,255,.6)}
+.gls .ice{position:absolute;top:-12px;width:16px;height:15px;border-radius:4px;background:rgba(235,250,255,.92);border:2px solid #8CCFFF;animation:ice 1.5s ease-in-out infinite alternate}
+@keyframes ice{from{transform:translateY(-2px) rotate(-12deg)}to{transform:translateY(4px) rotate(14deg)}}
+.gls .gb{position:absolute;bottom:4px;width:6px;height:6px;border-radius:50%;border:1.5px solid rgba(255,255,255,.95);z-index:2;animation:gbUp 2s linear infinite}
+@keyframes gbUp{from{transform:translateY(0);opacity:1}to{transform:translateY(-90px);opacity:0}}
+.gls::after{content:'';position:absolute;left:6px;top:8px;width:6px;bottom:10px;border-radius:3px;background:rgba(255,255,255,.7);z-index:3}
+.straw{position:absolute;left:30px;bottom:14px;width:8px;height:calc(var(--h) + 18px);background:repeating-linear-gradient(0deg,#fff 0 6px,var(--sc) 6px 12px);border:1.5px solid rgba(43,35,64,.55);border-radius:4px;transform:rotate(9deg);transform-origin:50% 100%}
+.straw::after{content:'';position:absolute;top:-17px;left:-1.5px;width:8px;height:20px;background:repeating-linear-gradient(0deg,#fff 0 3px,var(--sc) 3px 6px);border:1.5px solid rgba(43,35,64,.55);border-radius:4px;transform:rotate(-58deg);transform-origin:50% 100%}
+.cd{position:absolute;width:6px;height:8px;border-radius:50% 50% 50% 50%/62% 62% 38% 38%;background:rgba(170,225,255,.95);border:1px solid rgba(42,157,244,.6);z-index:4;animation:cdDn 4s ease-in infinite}
+@keyframes cdDn{0%,30%{transform:translateY(0);opacity:0}38%{opacity:1}100%{transform:translateY(60px);opacity:0}}
+.icec{position:absolute;right:calc(2vw + 236px);bottom:34px;width:70px;height:40px}
+.icec i{position:absolute;bottom:0;width:20px;height:19px;border-radius:5px;background:rgba(235,250,255,.95);border:2px solid #8CCFFF;box-shadow:inset -4px -4px 0 rgba(140,207,255,.35)}
+.icec i.a{left:4px;animation:clinkA 1.4s ease-in-out infinite}.icec i.b{right:4px;animation:clinkB 1.4s ease-in-out infinite}
+@keyframes clinkA{0%,100%{transform:translate(0,0) rotate(0)}40%{transform:translate(10px,-22px) rotate(30deg)}55%{transform:translate(14px,0) rotate(45deg)}}
+@keyframes clinkB{0%,100%{transform:translate(0,0) rotate(0)}40%{transform:translate(-10px,-22px) rotate(-30deg)}55%{transform:translate(-14px,0) rotate(-45deg)}}
+.icec b{position:absolute;left:27px;top:0;width:16px;height:16px;background:#8CCFFF;clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%);animation:clk 1.4s ease-in-out infinite}
+@keyframes clk{0%,50%{transform:scale(0);opacity:0}58%{transform:scale(1.4);opacity:1}80%,100%{transform:scale(.4);opacity:0}}
+.batt{position:absolute;right:calc(2vw + 118px);bottom:34px;width:140px;height:120px}
+.batt .blbl{position:absolute;left:0;bottom:64px;font-family:'Baloo 2',cursive;font-weight:800;font-size:.9rem;color:var(--kiwi-d);background:#fff;border:3px solid var(--line);border-radius:999px;padding:0 9px;line-height:1.5}
+.batt .pc100{position:absolute;left:76px;bottom:64px;font-family:'Baloo 2',cursive;font-weight:800;font-size:.85rem;color:#fff;background:var(--kiwi);border:3px solid var(--line);border-radius:999px;padding:0 7px;line-height:1.5;animation:full 9s steps(1) infinite}
+@keyframes full{0%{opacity:0}64%{opacity:1}87%{opacity:0}}
+.bat{position:absolute;left:0;bottom:0;width:126px;height:58px;border:5px solid var(--line);border-radius:12px;background:#fff;display:flex;gap:4px;padding:5px;box-shadow:3px 3px 0 rgba(43,35,64,.2)}
+.bat::after{content:'';position:absolute;right:-14px;top:13px;width:9px;height:22px;background:var(--line);border-radius:0 5px 5px 0}
+.bat .sg{flex:1;border-radius:4px;background:#E6E1EF}
+.bat .bolt{position:absolute;left:46px;top:4px;width:26px;height:40px;background:#FFE14D;clip-path:polygon(60% 0,8% 58%,44% 58%,30% 100%,92% 38%,54% 38%);animation:boltB 9s linear infinite}
+@keyframes boltB{0%,61%{opacity:.35}62%,65%,68%,71%,74%,77%,80%,83%{opacity:1}63.5%,66.5%,69.5%,72.5%,75.5%,78.5%,81.5%{opacity:.2}86%,100%{opacity:.35}}
+.bfx{position:absolute;left:46px;bottom:58px}
+.bfx .fr{position:absolute;left:0;top:0;opacity:0;animation:bfall 9s ease-in infinite}
+@keyframes bfall{0%{transform:translateY(-80px) scale(1);opacity:0}1%{opacity:1}5%{transform:translateY(-6px) scale(.6);opacity:1}6.5%,100%{transform:translateY(0) scale(.2);opacity:0}}
+.canw{position:absolute;right:2vw;bottom:34px;width:112px;height:150px}
+.can{position:absolute;left:4px;bottom:0;width:56px;height:96px;border:3px solid var(--line);border-radius:10px 10px 8px 8px;
+ background:linear-gradient(90deg,#3A1F55,#7A3FB0 35%,#A97BE6 45%,#5B2C8A 70%,#3A1F55);animation:wob 1.4s ease-in-out infinite;transform-origin:50% 100%}
+@keyframes wob{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(6deg) translateY(-2px)}}
+.can .rim{position:absolute;left:-3px;right:-3px;top:-3px;height:12px;border-radius:8px 8px 3px 3px;background:linear-gradient(90deg,#9CA3AF,#F3F4F6,#9CA3AF);border:3px solid var(--line)}
+.can .tab{position:absolute;left:18px;top:-9px;width:16px;height:7px;border-radius:4px;border:2px solid var(--line);background:#E5E7EB}
+.can .eye{top:30px;width:7px;height:9px;background:#fff;animation:none}
+.can .eye::after{content:'';position:absolute;left:1px;bottom:0;width:4px;height:5px;border-radius:50%;background:#2B2340}
+.can .eye.l{left:12px}.can .eye.r{left:32px;right:auto}
+.can .eye.l::before,.can .eye.r::before{content:'';position:absolute;top:-6px;left:-2px;width:11px;height:3px;background:#fff;border-radius:2px}
+.can .eye.l::before{transform:rotate(-20deg)}.can .eye.r::before{transform:rotate(20deg)}
+.can .frown{position:absolute;left:16px;top:46px;width:20px;height:9px;border:3px solid #fff;border-bottom:none;border-radius:20px 20px 0 0}
+.can .sweat{position:absolute;right:5px;top:22px;width:8px;height:11px;border-radius:50% 50% 50% 50%/62% 62% 38% 38%;background:#9AD7FF;animation:cdDn 2.4s ease-in infinite}
+.can .cl{position:absolute;left:0;right:0;bottom:8px;text-align:center;font-family:'Baloo 2',cursive;font-weight:800;font-size:.8rem;color:#B7FF3B;letter-spacing:1px;text-shadow:0 0 6px rgba(183,255,59,.7)}
+.fizz{position:absolute;left:14px;bottom:96px;width:30px;height:40px}
+.fizz i{position:absolute;bottom:0;width:7px;height:7px;border-radius:50%;border:1.5px solid #A97BE6;background:rgba(255,255,255,.8);animation:fz 1.3s ease-out infinite}
+@keyframes fz{0%{transform:translate(0,0) scale(.5);opacity:0}20%{opacity:1}85%{transform:translate(var(--dx),-36px) scale(1);opacity:1}100%{transform:translate(var(--dx),-40px) scale(1.8);opacity:0}}
+.warn{position:absolute;left:68px;bottom:0;width:44px;height:84px}
+.warn::before{content:'';position:absolute;left:19px;top:36px;bottom:0;width:6px;background:#6B7280;border:1.5px solid var(--line)}
+.warn .tri{position:absolute;left:0;top:0;width:44px;height:40px;background:var(--line);clip-path:polygon(50% 0,100% 100%,0 100%);animation:wbl 1s steps(1) infinite}
+.warn .tri i{position:absolute;left:5px;top:7px;width:34px;height:30px;background:#FFC233;clip-path:polygon(50% 0,100% 100%,0 100%)}
+.warn .tri b{position:absolute;left:0;right:0;top:14px;text-align:center;font-family:'Baloo 2',cursive;font-weight:800;font-size:1.05rem;line-height:1;color:var(--line)}
+@keyframes wbl{0%{filter:none}50%{filter:brightness(1.25) drop-shadow(0 0 6px #FF4D4D)}}
+.bottle{position:absolute;left:45vw;bottom:34px;width:58px;height:128px;animation:dance .5s ease-in-out infinite alternate;transform-origin:50% 100%}
+@keyframes dance{from{transform:rotate(-9deg)}to{transform:rotate(9deg) translateY(-7px)}}
+.bottle .bt{position:absolute;left:9px;bottom:14px;width:40px;height:94px;border:3px solid var(--line);border-radius:40% 40% 10px 10px/20% 20% 10px 10px;background:rgba(220,242,255,.85);overflow:hidden}
+.bottle .wat{position:absolute;left:0;right:0;bottom:0;height:64%;background:linear-gradient(180deg,#7CC8FF,#2A9DF4)}
+.bottle .wat::before{content:'';position:absolute;left:-10px;right:-10px;top:-5px;height:10px;border-radius:50%;background:#A8DCFF;animation:wv 1s ease-in-out infinite alternate}
+@keyframes wv{from{transform:rotate(-6deg)}to{transform:rotate(6deg)}}
+.bottle .lbl{position:absolute;left:0;right:0;top:38%;height:30px;background:#fff;border-top:2px solid var(--line);border-bottom:2px solid var(--line)}
+.bottle .lbl .eye{top:6px;width:6px;height:8px;animation:blink 3s infinite}
+.bottle .lbl .eye.l{left:10px}.bottle .lbl .eye.r{right:10px}
+.bottle .lbl .mouth{top:15px;width:14px;height:7px;margin-left:-7px;border-width:2px}
+.bottle .cap{position:absolute;left:19px;bottom:106px;width:20px;height:14px;border-radius:4px;background:var(--sky-d);border:3px solid var(--line)}
+.bottle .bar{position:absolute;top:58px;width:5px;height:26px;background:var(--line);border-radius:3px;transform-origin:50% 0}
+.bottle .bar::after{content:'';position:absolute;bottom:-5px;left:-4px;width:12px;height:12px;border-radius:50%;background:#fff;border:2px solid var(--line)}
+.bottle .bar.l{left:6px;animation:wave1 .5s ease-in-out infinite alternate}.bottle .bar.r{right:6px;animation:wave2 .5s ease-in-out infinite alternate}
+.bottle .ft{position:absolute;bottom:0;width:14px;height:12px;border-radius:7px 7px 3px 3px;background:var(--sky-d);border:2px solid var(--line)}
+.bottle .ft.l{left:12px}.bottle .ft.r{right:12px}
+.mn{position:absolute;top:-4px;font-size:22px;font-weight:900;opacity:0;animation:noteUp 3s ease-out infinite;font-family:'Segoe UI Symbol','Segoe UI',sans-serif}
+@keyframes noteUp{0%{opacity:0;transform:translate(0,0) rotate(0)}15%{opacity:1}100%{opacity:0;transform:translate(var(--dx),-90px) rotate(24deg)}}
+.runner{position:absolute;left:0;bottom:30px;animation:runX 24s linear infinite}
+.runner.r2{animation:runBack 30s linear infinite;animation-delay:-14s}
+@keyframes runX{from{transform:translateX(-120px)}to{transform:translateX(calc(100vw + 120px))}}
+@keyframes runBack{from{transform:translateX(calc(100vw + 120px))}to{transform:translateX(-120px)}}
+.runner .cart{animation:rot 1.1s linear infinite}
+.runner.r2 .hop2{animation:hopS .6s ease-in-out infinite}
+.runner.r2 .leg.l{animation:wave1 .3s ease-in-out infinite alternate}.runner.r2 .leg.r{animation:wave2 .3s ease-in-out infinite alternate}
+.runner.r2 .arm.l{transform:rotate(60deg)}.runner.r2 .arm.r{transform:rotate(-60deg)}
+.runner.r2 .leg{height:calc(var(--bs) / 2 + 16px)}
+@media(max-width:1480px){.blender{transform-origin:50% 100%}}
+@media(max-width:940px){#ground{height:190px}.rack,.flask,.slim,.mch,.glasses,.icec,.pile{display:none}.belt{width:40vw}.bottle{left:58vw}}
+@media(prefers-reduced-motion:reduce){#lab *,#ground *{animation:none!important}}
+/* ── sticky note ── */
+.note{position:sticky;top:0;z-index:50;padding:6px 14px;text-align:center;
+ background:linear-gradient(90deg,#1F7FD1,#3E9BF0 18%,#8B5BE0 42%,#E0408A 66%,#0E9F9A 90%);box-shadow:0 4px 0 var(--line)}
+.note .in{display:flex;align-items:center;gap:10px;max-width:1400px;margin:0 auto;justify-content:center;min-height:calc(.95rem * 1.45 * 2)}
+.note .tg{flex:none;background:#FFE4F0;color:#9C1747;font-weight:900;font-size:.8rem;padding:3px 12px;border:3px solid #9C1747;border-radius:999px;white-space:nowrap;box-shadow:2px 2px 0 #9C1747}
+.note .tx{color:#fff;font-weight:800;font-size:.95rem;line-height:1.45;text-shadow:0 1px 4px rgba(0,0,0,.45);transition:opacity .25s}
+/* ── compact header ── */
+header{position:relative;z-index:10;max-width:1240px;margin:8px auto 6px;background:var(--card);
+ border:4px solid var(--line);border-radius:16px;box-shadow:5px 5px 0 var(--straw);
+ padding:5px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:64px}
+header h1{font-family:'Baloo 2',cursive;font-size:clamp(1.05rem,1.8vw,1.35rem);font-weight:800;color:var(--sky-d);line-height:1.25;white-space:nowrap}
+header h1 .p1{font-family:'Baloo 2',cursive;font-size:.72rem;vertical-align:middle;background:var(--straw);color:#fff;padding:1px 9px;margin-left:8px;border:3px solid var(--line);border-radius:999px;box-shadow:2px 2px 0 var(--line)}
+header .by{font-size:.8rem;color:var(--dim);font-weight:800;margin-top:1px}
+header .by b{color:var(--straw-d)}
+.hright{display:flex;align-items:center;gap:10px}
+.chips{display:grid;grid-template-columns:auto auto;gap:4px 6px}
+.chip{font-family:'Baloo 2',cursive;font-weight:800;font-size:.74rem;line-height:1.1;padding:3px 9px;border:3px solid var(--line);border-radius:999px;box-shadow:2px 2px 0 var(--line);white-space:nowrap;color:#fff;text-align:center}
+.chip.c1{background:var(--straw)}.chip.c2{background:var(--sky)}.chip.c3{background:var(--aqua)}.chip.c4{background:var(--grape)}
+.gauge{position:relative;background:radial-gradient(circle at 35% 30%,#FFFFFF,#BDE6FF 55%,#6FC2F7);border:4px solid #1565B8;border-radius:50%;width:58px;height:58px;
+ display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:3px 3px 0 var(--line);flex:none}
+.gauge::before{content:'🧃';position:absolute;top:-12px;right:-9px;font-size:15px}
+.gauge .num{font-family:'Baloo 2',cursive;font-size:1rem;color:#0B3A6E;font-weight:800;line-height:1}
+.gauge .lbl{font-size:.55rem;font-weight:900;color:#B01E52;text-transform:uppercase}
+@media(max-width:1180px){header{flex-wrap:wrap}header h1{white-space:normal}}
+/* ── layout ── */
+.main{position:relative;z-index:5;max-width:1240px;margin:0 auto;display:flex;gap:18px;padding:4px 16px 0;align-items:flex-start}
+.lp,.rp{max-height:calc(100vh - 240px);overflow-y:auto;padding-right:4px}
+.lp{flex:0 0 48%}
+.rp{flex:1;min-width:0}
+.lp::-webkit-scrollbar,.rp::-webkit-scrollbar{width:9px}
+.lp::-webkit-scrollbar-thumb,.rp::-webkit-scrollbar-thumb{background:#FF9EC4;border-radius:6px;border:2px solid var(--sky)}
+.slbl{font-family:'Baloo 2',cursive;font-size:1.1rem;font-weight:800;color:var(--sky-d);margin-bottom:8px;display:flex;align-items:center;gap:10px;
+ background:rgba(255,255,255,.94);border-radius:999px;padding:1px 14px;border:3px solid var(--line)}
+.slbl::after{content:'';flex:1;height:8px;border-radius:8px;background:repeating-linear-gradient(90deg,#2A9DF4 0 10px,#F0457A 10px 20px,#12B5B0 20px 30px,#8B4FE0 30px 40px,#7BE0B5 40px 50px)}
+@media(max-width:940px){.main{flex-direction:column;padding-bottom:210px}.lp{flex:1 1 auto;width:100%}.lp,.rp{max-height:none!important}}
+/* ── passage cards ── */
+.pc{position:relative;background:var(--card);border:4px solid var(--edge);border-radius:18px;padding:26px 18px 14px;margin:20px 0 22px;box-shadow:6px 6px 0 rgba(43,35,64,.2)}
+.pc .stamp{position:absolute;top:-22px;right:18px;width:52px;height:52px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,#EAF6FF);
+ border:4px solid currentColor;display:grid;place-items:center;font-size:24px;box-shadow:3px 3px 0 var(--line)}
+.lvl{position:absolute;top:-15px;left:18px;font-family:'Baloo 2',cursive;font-weight:800;font-size:.85rem;line-height:1.2;background:#A6EDE3;color:#0B5E5A;border:3px solid #0B5E5A;border-radius:999px;padding:3px 12px;box-shadow:3px 3px 0 #0B5E5A}
+.ptitle{font-family:'Baloo 2',cursive;font-size:1.3rem;font-weight:800;margin-bottom:4px}
+.pins{font-size:.92rem;color:var(--dim);font-style:italic;font-weight:700;margin-bottom:10px;line-height:1.6}
+.pblk{border-left:7px solid;border-radius:12px;padding:12px 14px 4px;margin:16px 0;position:relative}
+.pblk .em{position:absolute;top:-13px;right:10px;font-size:1.2rem;background:#fff;border:3px solid var(--line);border-radius:50%;width:36px;height:36px;display:grid;place-items:center;box-shadow:2px 2px 0 var(--line)}
+.pblk .ptag{position:absolute;top:-12px;left:12px;font-family:'Baloo 2',cursive;font-size:.74rem;font-weight:800;line-height:1.2;color:#fff;background:var(--line);border-radius:999px;padding:2px 10px}
+.paragraph{font-size:1.16rem;line-height:1.95;margin-bottom:10px;text-align:justify}
+.paragraph b{padding:1px 6px;border-radius:7px;white-space:nowrap}
+.bk-aqua{background:#CDF5F0;color:#0B6E6A}.bk-straw{background:#FFD6E4;color:#B01E52}.bk-kiwi{background:#D7F5CF;color:#1F7A1D}
+.bk-grape{background:#E8DCFF;color:#5B27A8}.bk-sky{background:#D4EBFF;color:#1565B8}
+.btr{font-family:'Baloo 2',cursive;font-size:.85rem;background:linear-gradient(135deg,#FFC9DE,#E6D9FF 50%,#B8E2FF);border:3px solid var(--straw);color:#2B2340;
+ padding:5px 16px;border-radius:999px;cursor:pointer;transition:.15s;font-weight:800;display:block;margin:6px 0 12px;box-shadow:3px 3px 0 var(--straw)}
+.btr:hover{transform:translate(1px,1px);box-shadow:2px 2px 0 var(--straw)}
+.translation{display:none;margin-bottom:12px;font-size:1rem;line-height:1.8;color:#3A2F4A;background:#F5FAFF;border-left:4px solid var(--sky);border-radius:0 12px 12px 0;padding:10px 14px;font-style:italic}
+.gl{margin-top:12px;background:var(--card);border:3px solid var(--edge);border-radius:12px;overflow:hidden}
+.gl h3{font-family:'Baloo 2',cursive;font-size:1rem;font-weight:800;color:#fff;margin:0;padding:8px 14px}
+table.gtb{width:100%;border-collapse:collapse;table-layout:fixed;font-size:.95rem}
+.gtb tr{border-top:1px dotted var(--edge)}
+.gtb tr:nth-child(even){background:#F3F9FF}
+.gtb td,.gtb th{padding:7px 12px;text-align:left;vertical-align:top}
+.gtb th{font-weight:800;font-size:.82rem;color:var(--dim)}
+.gtb .gw{font-weight:900;color:var(--sky-d)}
+.gtb .gp{color:var(--straw-d);font-weight:700;font-size:.86rem}
+/* ── quiz cards ── */
+.sec{background:rgba(255,255,255,.96);border-radius:18px;padding:16px;margin-bottom:16px;box-shadow:6px 6px 0 rgba(43,35,64,.2);border:4px solid var(--edge)}
+.sech{font-family:'Baloo 2',cursive;font-size:1.15rem;font-weight:800;margin-bottom:2px}
+.secs{font-size:.88rem;color:var(--dim);font-style:italic;font-weight:700;margin-bottom:12px;line-height:1.55}
+.q{background:#FFFEFA;border:2px solid #DCEBF7;border-left:7px solid var(--sky);border-radius:14px;padding:14px;margin-bottom:14px}
+.q .qt{font-weight:800;font-size:1.08rem;line-height:1.75}
+.q .qt b{padding:1px 6px;border-radius:7px;white-space:nowrap}
+.qn{display:inline-block;background:var(--qc,var(--sky));color:#fff;min-width:38px;text-align:center;border:2px solid var(--line);border-radius:999px;padding:2px 9px;margin-right:9px;
+ font-family:'Baloo 2',cursive;font-weight:800;font-size:.95rem;line-height:1.3;vertical-align:1px;box-shadow:2px 2px 0 var(--line);text-shadow:0 1px 2px rgba(0,0,0,.3)}
+.og{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:11px}
+.ob{background:#fff;color:var(--ink);border:2px solid #D3E4F4;border-radius:12px;padding:11px 13px;
+ font-family:'Nunito';font-weight:800;font-size:1rem;cursor:pointer;text-align:left;line-height:1.5;transition:.14s;box-shadow:0 3px 0 #D3E4F4}
+.ob:hover:not(.dn){transform:translateY(-2px);border-color:var(--qc,var(--sky))}
+.ob.dn{cursor:default}
+.ob.ok{background:var(--good-bg);border-color:var(--good);color:#0b6b3c;box-shadow:0 3px 0 #9fe3bd}
+.ob.no{background:var(--bad-bg);border-color:var(--bad);color:#a31832;box-shadow:0 3px 0 #f7bac5}
+.ex{display:none;margin-top:12px;background:#fff;border:2px solid #DCEBF7;border-radius:12px;padding:14px;font-size:.98rem;line-height:1.85}
+.ex.on{display:block;animation:pop .3s}
+@keyframes pop{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+.shk{animation:shk .42s}
+@keyframes shk{0%,100%{transform:translateX(0)}25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+/* ── explanation content ── */
+.vnt{margin-bottom:10px;padding:9px 13px;border-radius:12px;background:#EAF6FF;border-left:5px solid var(--sky);font-weight:700;line-height:1.7}
+.ex ol{margin:0;padding-left:22px}
+.ex ol>li{margin:10px 0;line-height:1.75;padding-left:4px}
+.ex ol>li::marker{font-weight:900;color:var(--straw-d)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+@media(max-width:600px){.grid2{grid-template-columns:1fr}.og{grid-template-columns:1fr}}
+.grid2>div{border:2px solid #D3E4F4;border-radius:12px;padding:8px 11px;background:#FAFCFF;line-height:1.7;font-size:.97rem}
+.grid2>div.gk{border-color:var(--good);background:var(--good-bg);box-shadow:0 0 0 3px rgba(27,156,90,.14)}
+.p-word{color:#1E6FD9;font-weight:800}
+.hl-green{color:#11924E;font-weight:900}
+.hl-red{color:#D8334A;font-weight:900}
+.wt{display:inline-block;margin:0 3px;padding:0 7px;border-radius:6px;font-size:.78em;font-weight:700;background:rgba(110,100,160,.14);color:#5B5480}
+.p-phonetic{padding:0 6px;border-radius:6px;background:#F1E8FF;color:#7A3FC8;font-weight:700;font-family:'Segoe UI','Lucida Sans Unicode','Arial Unicode MS',sans-serif}
+.p-mean{color:#B5532E;font-weight:700}
+.p-grammar{display:inline;line-height:1.95;padding:3px 8px 3px 2px;border-radius:8px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.hx0{background:#FFF3B0}.hx1{background:#D6ECFF}.hx2{background:#FFDDEE}
+.hx3{background:#DDF7D0}.hx4{background:#EBDFFF}.hx5{background:#FFE4CC}
+.qe0{color:#1D4ED8;font-weight:800}.qe1{color:#C2185B;font-weight:800}.qe2{color:#0F8A5F;font-weight:800}.qe3{color:#7C3AED;font-weight:800}.qe4{color:#D9480F;font-weight:800}.qe5{color:#0E7490;font-weight:800}
+.frame{margin-top:10px;padding:10px 13px;border-radius:14px;background:#fff;border:2px dashed var(--edge);line-height:1.75}
+.frame i{color:var(--dim)}
+.dk{margin-top:12px;padding:11px 13px;border-radius:14px;background:#F5F0FF;border-left:5px solid var(--grape)}
+.dict{margin-top:7px;display:flex;flex-wrap:wrap;gap:8px}
+.dict a{display:inline-flex;align-items:center;gap:5px;padding:5px 14px;border-radius:999px;font-size:.9rem;font-weight:800;text-decoration:none;color:#fff;transition:transform .15s;box-shadow:0 3px 0 rgba(0,0,0,.15)}
+.dict a:hover{transform:translateY(-2px)}
+.dict a.d0{background:linear-gradient(135deg,#FF4D8D,#FF9F1C)}.dict a.d1{background:linear-gradient(135deg,#2FBF4A,#2FA3EE)}
+.dict a.d2{background:linear-gradient(135deg,#2FA3EE,#6A7BFF)}.dict a.d3{background:linear-gradient(135deg,#8F6BFF,#FF4D8D)}
+.say{margin-top:7px;font-size:.9rem;color:var(--dim)}
+/* ── submit / modal ── */
+.sw{text-align:center;padding:12px 0 8px}
+.sbtn{font-family:'Baloo 2',cursive;font-size:1.08rem;font-weight:800;color:#fff;background:linear-gradient(135deg,#2A9DF4,#F0457A 50%,#8B4FE0);border:4px solid var(--line);
+ padding:12px 34px;border-radius:999px;cursor:pointer;transition:.15s;box-shadow:5px 5px 0 #FF9EC4}
+.sbtn:hover{transform:translate(2px,2px);box-shadow:3px 3px 0 #FF9EC4}
+.foot{text-align:center;margin:10px 0 14px;font-size:.92rem;color:var(--ink);font-weight:800;line-height:1.7;
+ background:rgba(255,255,255,.96);border:3px solid var(--line);border-radius:14px;padding:10px 16px;box-shadow:4px 4px 0 #7FD1F7}
+.foot b{color:var(--straw-d)}
+.ov{display:none;position:fixed;inset:0;z-index:100;background:rgba(43,35,64,.55);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:16px}
+.ov.on{display:flex}
+.mb{position:relative;background:var(--card);border:4px solid var(--line);border-radius:20px;padding:26px 28px;max-width:460px;width:100%;
+ text-align:center;box-shadow:7px 7px 0 #FF9EC4;animation:popin .3s ease}
+@keyframes popin{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+.mb h2{font-family:'Baloo 2',cursive;font-size:1.3rem;font-weight:800;color:var(--sky-d);margin-bottom:14px}
+.mb input{width:100%;font-family:'Nunito';font-size:1rem;font-weight:700;padding:12px 14px;background:#fff;border:2.5px solid var(--edge);border-radius:12px;color:var(--ink);text-align:center;outline:none;margin-bottom:10px}
+.mb input:focus{border-color:var(--sky)}
+.err{color:var(--bad);font-size:.85rem;font-weight:800;margin-bottom:8px;display:none}
+.err.show{display:block}
+.rname{font-size:1.05rem;font-weight:800;color:var(--straw-d);margin-bottom:6px}
+.rscore{font-family:'Baloo 2',cursive;font-size:2.6rem;font-weight:800;color:var(--sky-d);line-height:1;margin:6px 0}
+.rs10{font-size:1rem;font-weight:800;color:var(--ink);margin-bottom:9px}
+.rgif{width:190px;margin:10px auto;display:block;border:3px solid var(--line);box-shadow:4px 4px 0 #FF9EC4;border-radius:12px}
+.rcmt{font-size:.96rem;line-height:1.75;background:#EEF7FF;border:2.5px dashed var(--edge);border-radius:14px;padding:12px 14px;margin:12px 0}
+.bcl{font-family:'Nunito';font-size:.88rem;font-weight:800;background:transparent;border:2.5px solid var(--edge);color:var(--ink);padding:10px 24px;border-radius:12px;cursor:pointer}
+.cn{position:fixed;top:-16px;z-index:200;pointer-events:none;animation:cf 2.4s forwards}
+@keyframes cf{0%{transform:translateY(0) rotate(0);opacity:1}100%{transform:translateY(108vh) rotate(700deg);opacity:0}}
+
+/* trang luôn có thanh kéo: kéo xuống thì khung bài lên cao, lộ cảnh quầy nước ép động phía dưới */
+@media(min-width:941px){body{height:auto!important;overflow:visible!important;overflow-x:clip!important}}
+/* lời nhắc đổi nội dung thì không kéo lệch trang: khung bài luôn sát thanh nhắc */
+html,body{overflow-anchor:none}
+
+/*hltool*/
+/* ── công cụ highlight ── */
+.hlbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:6px;flex-wrap:wrap;background:#111827;border-radius:14px 14px 0 0;padding:7px 8px 7px 12px;box-shadow:0 4px 10px rgba(17,24,39,.22)}
+.hlbar .ht{color:#fff;font-weight:900;font-size:.74rem;letter-spacing:.3px;text-transform:uppercase;white-space:nowrap}
+.hlgrp{display:flex;align-items:center;gap:4px;background:#1F2937;border:1px solid #374151;border-radius:999px;padding:3px 4px;flex-wrap:wrap}
+.hlb{display:inline-flex;align-items:center;gap:5px;border:none;border-radius:999px;padding:4px 8px 4px 6px;font-family:'Nunito',sans-serif;font-weight:900;font-size:.74rem;line-height:1.2;cursor:pointer;transition:transform .12s,filter .12s;white-space:nowrap}
+.hlb:hover{transform:translateY(-1px);filter:brightness(1.05)}
+.hlb:active{transform:scale(.95)}
+.hlb .dt{display:inline-block;width:10px;height:10px;border-radius:50%;border:2px solid rgba(0,0,0,.22)}
+.hlb.y{background:#FEF08A;color:#713F12}.hlb.y .dt{background:#FACC15}
+.hlb.g{background:#BBF7D0;color:#14532D}.hlb.g .dt{background:#22C55E}
+.hlb.p{background:#FBCFE8;color:#831843}.hlb.p .dt{background:#EC4899}
+.hlb.b{background:#BAE6FD;color:#0C4A6E}.hlb.b .dt{background:#0EA5E9}
+.hlb.er{background:#E5E7EB;color:#374151;padding:4px 9px}
+.hldv{display:inline-block;width:1px;height:18px;background:#4B5563;margin:0 2px}
+.hltip{display:flex;gap:9px;align-items:flex-start;background:#FEF9C3;border:2px solid #FDE68A;border-top:none;border-radius:0 0 14px 14px;padding:9px 13px;margin-bottom:12px;font-size:.92rem;line-height:1.6;color:#713F12;font-weight:700}
+.hltip .ic{font-size:1.15rem;line-height:1.4}
+.hltip b{color:#92400E}
+.hltip.ping{animation:tipPing .6s ease}
+@keyframes tipPing{0%,100%{transform:none}30%{transform:translateX(-5px)}60%{transform:translateX(5px)}}
+#hlPop{position:fixed;z-index:65;display:none;align-items:center;gap:6px;background:#111827;border-radius:999px;padding:6px 8px;box-shadow:0 6px 18px rgba(0,0,0,.3)}
+#hlPop.on{display:flex}
+#hlPop::after{content:'';position:absolute;left:50%;bottom:-6px;margin-left:-6px;border:6px solid transparent;border-bottom:none;border-top-color:#111827}
+#hlPop.below::after{bottom:auto;top:-6px;border:6px solid transparent;border-top:none;border-bottom-color:#111827}
+#hlPop button{width:24px;height:24px;border-radius:50%;border:2px solid #fff;cursor:pointer;padding:0;transition:transform .12s}
+#hlPop button:hover{transform:scale(1.15)}
+#hlPop .y{background:#FACC15}#hlPop .g{background:#22C55E}#hlPop .p{background:#EC4899}#hlPop .b{background:#0EA5E9}
+#hlPop .er{background:#E5E7EB;border-color:#9CA3AF;font-size:13px;display:grid;place-items:center}
+mark.uhl{color:inherit;border-radius:5px;padding:1px 0;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.lp mark.uhl{cursor:pointer}mark.uhl.pick{outline:2px dashed #111827;outline-offset:2px}
+mark.uhl-y{background:#FFF27A}mark.uhl-g{background:#B9F6D3}mark.uhl-p{background:#FFC7E3}mark.uhl-b{background:#C3E6FF}
+@media(max-width:940px){.hlbar{top:58px}}
+</style>
+<style>/*touchscroll*/@media (hover:none),(pointer:coarse){html,body{overflow-y:auto!important;height:auto!important;-webkit-overflow-scrolling:touch}.lp,.rp{max-height:none!important;overflow:visible!important}.main{padding-bottom:42px!important;align-items:flex-start}}</style>
+</head>
+<body>
+<div id="lab">
+ <div class="rack">
+  <div class="tube" style="left:0"><i class="lq" style="--c:#2A9DF4;--h:58%"></i><i class="tb"></i><i class="tb" style="left:5px;animation-delay:-.8s"></i></div>
+  <div class="tube" style="left:19px"><i class="lq" style="--c:#3DB43A;--h:44%;animation-delay:-1s"></i><i class="tb" style="animation-delay:-.4s"></i><i class="tb" style="left:6px;animation-delay:-1.2s"></i></div>
+  <div class="tube" style="left:38px"><i class="lq" style="--c:#F0457A;--h:66%;animation-delay:-.5s"></i><i class="tb" style="animation-delay:-.2s"></i><i class="tb" style="left:5px;animation-delay:-1s"></i></div>
+  <i class="bar" style="top:28px"></i><i class="bar" style="top:100px"></i>
+  <i class="pf" style="left:0;top:-8px"></i><i class="pf" style="left:20px;top:-8px;animation-delay:-1s"></i><i class="pf" style="left:39px;top:-8px;animation-delay:-2s"></i>
+ </div>
+ <div class="flask">
+  <svg viewBox="0 0 60 90" aria-hidden="true"><path d="M22 4 H38 V30 L56 80 Q58 86 52 86 H8 Q2 86 4 80 L22 30 Z" fill="rgba(255,255,255,.75)" stroke="#2B2340" stroke-width="3" stroke-linejoin="round"/>
+   <path d="M13 56 Q22 50 30 56 T47 56 L55 80 Q56 84 51 84 H9 Q4 84 5 80 Z" fill="#8B4FE0"><animate attributeName="d" dur="1.6s" repeatCount="indefinite" values="M13 56 Q22 50 30 56 T47 56 L55 80 Q56 84 51 84 H9 Q4 84 5 80 Z;M13 56 Q22 62 30 56 T47 56 L55 80 Q56 84 51 84 H9 Q4 84 5 80 Z;M13 56 Q22 50 30 56 T47 56 L55 80 Q56 84 51 84 H9 Q4 84 5 80 Z"/></path>
+   <path d="M18 2 H42" stroke="#2B2340" stroke-width="4" stroke-linecap="round"/><path d="M26 36 L14 72" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".8"/></svg>
+  <i class="fbb" style="left:20px;background:#7BE0B5"></i><i class="fbb" style="left:32px;background:#F0457A;animation-delay:-.6s"></i><i class="fbb" style="left:40px;background:#fff;animation-delay:-1.2s"></i>
+  <i class="pf" style="left:24px;top:-10px"></i><i class="pf" style="left:30px;top:-12px;animation-delay:-1.5s"></i>
+ </div>
+ <div class="slim cyl"><div class="cb"><i></i></div><i class="ft"></i></div>
+ <div class="slim jbox"><i class="st"></i><div class="bx"></div></div>
+ <div class="mch mc-cart"><div class="chr cart" style="--bs:82px"><div class="body b-berry"><i class="eye l"></i><i class="eye r"></i><i class="mouth"></i><i class="blush l"></i><i class="blush r"></i></div><i class="limb arm l"></i><i class="limb arm r"></i><i class="limb leg l"></i><i class="limb leg r"></i></div></div>
+ <div class="mch mc-hf"><i class="hf5">HIGH 5!</i><i class="clap"></i>
+  <div class="hl"><div class="chr" style="--bs:72px"><div class="body b-straw"><i class="eye l"></i><i class="eye r"></i><i class="mouth"></i><i class="blush l"></i><i class="blush r"></i></div><i class="limb arm l"></i><i class="limb arm r"></i><i class="limb leg l"></i><i class="limb leg r"></i></div></div>
+  <div class="hr"><div class="chr" style="--bs:72px"><div class="body b-kiwi"><i class="eye l"></i><i class="eye r"></i><i class="mouth"></i><i class="blush l"></i><i class="blush r"></i></div><i class="limb arm l"></i><i class="limb arm r"></i><i class="limb leg l"></i><i class="limb leg r"></i></div></div>
+ </div>
+ <div class="mch mc-lem"><div class="chr" style="--bs:60px"><div class="body b-grape"><i class="eye l"></i><i class="eye r"></i><i class="mouth"></i><i class="blush l"></i><i class="blush r"></i></div><i class="limb arm l"></i><i class="limb arm r"></i><i class="limb leg l"></i><i class="limb leg r"></i></div></div>
+ <div class="mch mc-mel"><i class="tbl"></i></div>
+</div>
+<div id="ground">
+ <div class="blender">
+  <div class="jw"><div class="vortex"></div><div class="orbit" id="orbit"></div></div>
+  <svg class="jar" viewBox="0 0 100 140" aria-hidden="true"><path d="M4 4 H96 L84 136 H16 Z" fill="rgba(255,255,255,.18)" stroke="#2B2340" stroke-width="4" stroke-linejoin="round"/>
+   <path d="M14 14 L23 120" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".85"/><path d="M80 30 h8 M79 52 h8 M77 74 h8 M75 96 h8" stroke="#2B2340" stroke-width="2.5" opacity=".6"/></svg>
+  <i class="lid"></i>
+  <div class="base"><i class="bt" style="left:12px;background:#F0457A"></i><i class="bt" style="left:34px;background:#3DB43A;animation-delay:-.4s"></i><i class="bt" style="left:56px;background:#2A9DF4;animation-delay:-.8s"></i><i class="dial"></i></div>
+  <i class="spl" style="left:40px;background:#2A9DF4;--dx:-18px"></i><i class="spl" style="left:62px;background:#F0457A;--dx:16px;animation-delay:-.6s"></i><i class="spl" style="left:84px;background:#12B5B0;--dx:24px;animation-delay:-1.1s"></i>
+ </div>
+ <div class="belt"><div id="cfr"></div><div class="band"></div><i class="wh l"></i><i class="wh r"></i><i class="lg l"></i><i class="lg r"></i></div>
+ <div class="pile" id="pile"></div>
+ <div class="bottle"><i class="cap"></i><div class="bt"><i class="wat"></i><div class="lbl"><i class="eye l"></i><i class="eye r"></i><i class="mouth"></i></div></div>
+  <i class="bar l"></i><i class="bar r"></i><i class="ft l"></i><i class="ft r"></i>
+  <span class="mn" style="left:-12px;color:#2A9DF4;--dx:-22px">♪</span><span class="mn" style="left:46px;color:#F0457A;--dx:20px;animation-delay:-1.4s">♫</span></div>
+ <div class="glasses" id="glasses"></div>
+ <div class="icec"><i class="a"></i><b></b><i class="b"></i></div>
+ <div class="batt"><span class="blbl">ENERGY</span><span class="pc100">100%</span><div class="bfx" id="bfx"></div>
+  <div class="bat"><i class="sg"></i><i class="sg"></i><i class="sg"></i><i class="sg"></i><i class="sg"></i><i class="bolt"></i></div></div>
+ <div class="canw"><div class="fizz"><i style="left:2px;--dx:-8px"></i><i style="left:12px;--dx:4px;animation-delay:-.4s"></i><i style="left:20px;--dx:10px;animation-delay:-.8s"></i><i style="left:8px;--dx:-3px;animation-delay:-1.1s"></i></div>
+  <div class="can"><i class="rim"></i><i class="tab"></i><i class="eye l"></i><i class="eye r"></i><i class="frown"></i><i class="sweat"></i><span class="cl">FIZZ</span></div>
+  <div class="warn"><div class="tri"><i></i><b>!</b></div></div></div>
+ <div class="runner"><div class="chr cart" style="--bs:40px"><div class="body b-berry"><i class="eye l" style="width:6px;height:8px"></i><i class="eye r" style="width:6px;height:8px"></i><i class="mouth" style="width:14px;height:7px;margin-left:-7px;border-width:2px"></i></div><i class="limb arm l"></i><i class="limb arm r"></i><i class="limb leg l"></i><i class="limb leg r"></i></div></div>
+ <div class="runner r2"><div class="hop2"><div class="chr" style="--bs:38px"><div class="body b-straw"><i class="eye l" style="width:6px;height:8px"></i><i class="eye r" style="width:6px;height:8px"></i><i class="mouth" style="width:14px;height:7px;margin-left:-7px;border-width:2px"></i></div><i class="limb arm l"></i><i class="limb arm r"></i><i class="limb leg l"></i><i class="limb leg r"></i></div></div></div>
+ <div class="counter"></div>
+</div>
+
+<div class="note"><div class="in">
+ <span class="tg">🧪 MS NHẮN</span>
+ <span class="tx" id="msTx">🔥 Chiến binh lớp 9 vào phòng thí nghiệm nào! Juice Lab có 8 câu đọc điền từ (1 → 8) — kì thi giữa kì I đang tới gần, xay nhuyễn từng chỗ trống, rót đầy ly điểm 10 thôi! 🧃</span>
+</div></div>
+
+<header>
+ <div>
+  <h1>🧃 Juice Lab Reading · Câu 1 → 8<span class="p1">8 câu</span></h1>
+  <div class="by">MS Chí Nên · ☎️ <b>0852639652</b> · English 9 · Ôn giữa kì I · Đề thi GKI Tây Mỗ</div>
+ </div>
+ <div class="hright">
+  <div class="chips">
+   <span class="chip c1">🧪 JUICE LAB</span>
+   <span class="chip c2">📝 Ôn giữa kì I</span>
+   <span class="chip c3">🏙️ LAB 1 · CITY LIFE</span>
+   <span class="chip c4">🤝 LAB 2 · COMMUNITY</span>
+  </div>
+  <div><span id="sc" style="display:none"></span><div class="gauge"><div class="num" id="lv">0/8</div><div class="lbl">Điểm</div></div></div>
+ </div>
+</header>
+
+<div class="main">
+<div class="lp">
+ <div class="hlbar" id="hlBar">
+  <span class="ht">✏️ CÔNG CỤ HIGHLIGHT:</span>
+  <div class="hlgrp">
+   <button type="button" class="hlb y" onclick="hlApply('y')"><i class="dt"></i>Vàng</button>
+   <button type="button" class="hlb g" onclick="hlApply('g')"><i class="dt"></i>Xanh lá</button>
+   <button type="button" class="hlb p" onclick="hlApply('p')"><i class="dt"></i>Hồng</button>
+   <button type="button" class="hlb b" onclick="hlApply('b')"><i class="dt"></i>Xanh</button>
+   <span class="hldv"></span>
+   <button type="button" class="hlb er" onclick="hlErase()">🧽 Tẩy tô</button>
+  </div>
+ </div>
+ <div class="hltip" id="hlTip"><span class="ic">💡</span><div><b>Cách dùng Highlight:</b> Bôi đen (quét chuột) đoạn chữ trong bài đọc → Nhấn nút màu trên thanh công cụ màu đen ở trên (hoặc nút nổi ngay tại vị trí bôi đen) để tô màu tức thì!<br><b>Đổi màu / xoá:</b> Bấm thẳng vào chữ đã tô → chọn màu mới hoặc 🧽 để xoá, không cần bôi đen lại.</div></div>
+
+ <div class="slbl">📖 Bài đọc</div>
+
+ <div class="pc" style="border-color:var(--sky);color:var(--sky)">
+  <div class="lvl">LAB 1</div>
+  <div class="stamp">🏙️</div>
+  <div class="ptitle" style="color:var(--sky-d)">LAB 1 · Better City Life</div>
+  <div class="pins">I. Read the passage and choose the option A, B, C, or D that best fits each of the numbered blanks. (Questions 1 → 4)</div>
+
+  <div class="pblk" style="border-color:var(--aqua);background:#E6FBF9;color:var(--ink)">
+   <div class="em">🏙️</div><span class="ptag">Paragraph 1</span>
+   <div class="paragraph">Living in a modern city gives teenagers many opportunities, but it also brings challenges such as traffic, pollution and crowded public spaces.</div>
+   <button class="btr" onclick="toggleTranslation('trans1')">Mở dịch đoạn này 🌟</button>
+   <div class="translation" id="trans1">Sống ở một thành phố hiện đại mang lại cho thanh thiếu niên nhiều cơ hội, nhưng nó cũng mang đến những thách thức như giao thông, ô nhiễm và những nơi công cộng đông đúc.</div>
+  </div>
+  <div class="pblk" style="border-color:var(--straw);background:#FFEEF4;color:var(--ink)">
+   <div class="em">🌳</div><span class="ptag">Paragraph 1</span>
+   <div class="paragraph">Young people can help make their local community better by taking part in activities such as clean-up days, tree planting and charity events. By working together, they can make their neighbourhood cleaner and friendlier.</div>
+   <button class="btr" onclick="toggleTranslation('trans2')">Mở dịch đoạn này 🌟</button>
+   <div class="translation" id="trans2">Những người trẻ có thể giúp cộng đồng địa phương của mình tốt đẹp hơn bằng cách tham gia các hoạt động như ngày dọn dẹp, trồng cây và các sự kiện từ thiện. Bằng cách cùng nhau chung tay, họ có thể làm cho khu phố của mình sạch hơn và thân thiện hơn.</div>
+  </div>
+  <div class="pblk" style="border-color:var(--kiwi);background:#EEFBE9;color:var(--ink)">
+   <div class="em">🚲</div><span class="ptag">Paragraph 2</span>
+   <div class="paragraph">Another way to improve city life is to choose greener forms of transport. <b class="bk-kiwi">(1) ______</b>, teenagers can walk, cycle or use public transport instead of travelling by private vehicles whenever possible.</div>
+   <button class="btr" onclick="toggleTranslation('trans3')">Mở dịch đoạn này 🌟</button>
+   <div class="translation" id="trans3">Một cách khác để cải thiện cuộc sống thành phố là chọn những hình thức đi lại xanh hơn. (1) ______, thanh thiếu niên có thể đi bộ, đạp xe hoặc dùng phương tiện công cộng thay vì đi bằng phương tiện cá nhân bất cứ khi nào có thể.</div>
+  </div>
+  <div class="pblk" style="border-color:var(--grape);background:#F4EDFF;color:var(--ink)">
+   <div class="em">🍃</div><span class="ptag">Paragraph 2</span>
+   <div class="paragraph">These choices can help reduce traffic and air pollution.</div>
+   <button class="btr" onclick="toggleTranslation('trans4')">Mở dịch đoạn này 🌟</button>
+   <div class="translation" id="trans4">Những lựa chọn này có thể giúp giảm ùn tắc giao thông và ô nhiễm không khí.</div>
+  </div>
+  <div class="pblk" style="border-color:var(--sky);background:#EAF6FF;color:var(--ink)">
+   <div class="em">📚</div><span class="ptag">Paragraph 3</span>
+   <div class="paragraph">To stay active while contributing to their community, teenagers also need to look after their health. They should <b class="bk-sky">(2) ______</b> during long periods of studying, eat healthy food and get enough sleep.</div>
+   <button class="btr" onclick="toggleTranslation('trans5')">Mở dịch đoạn này 🌟</button>
+   <div class="translation" id="trans5">Để luôn năng động trong khi đóng góp cho cộng đồng, thanh thiếu niên cũng cần chăm sóc sức khoẻ của mình. Các bạn nên (2) ______ trong những khoảng thời gian học dài, ăn thức ăn lành mạnh và ngủ đủ giấc.</div>
+  </div>
+  <div class="pblk" style="border-color:var(--aqua);background:#E6FBF9;color:var(--ink)">
+   <div class="em">🏃</div><span class="ptag">Paragraph 3</span>
+   <div class="paragraph">Regular exercise can also help them <b class="bk-aqua">(3) ______</b> and have more energy for their daily activities. With good habits, teenagers can stay healthy while taking an active role in their community.</div>
+   <button class="btr" onclick="toggleTranslation('trans6')">Mở dịch đoạn này 🌟</button>
+   <div class="translation" id="trans6">Tập thể dục đều đặn cũng có thể giúp các bạn (3) ______ và có nhiều năng lượng hơn cho các hoạt động hằng ngày. Với những thói quen tốt, thanh thiếu niên có thể giữ sức khoẻ trong khi đóng vai trò tích cực trong cộng đồng của mình.</div>
+  </div>
+  <div class="pblk" style="border-color:var(--straw);background:#FFEEF4;color:var(--ink)">
+   <div class="em">🌟</div><span class="ptag">Paragraph 3</span>
+   <div class="paragraph">They should always <b class="bk-straw">(4) ______</b> activities that make their city cleaner, healthier and more pleasant.</div>
+   <button class="btr" onclick="toggleTranslation('trans7')">Mở dịch đoạn này 🌟</button>
+   <div class="translation" id="trans7">Các bạn nên luôn (4) ______ những hoạt động làm cho thành phố của mình sạch hơn, trong lành hơn và dễ chịu hơn.</div>
+  </div>
+
+  <div class="gl"><h3 style="background:linear-gradient(90deg,var(--sky-d),var(--sky))">📚 Glossary — LAB 1</h3>
+   <table class="gtb"><tr><th>Từ vựng</th><th>Loại từ</th><th>Nghĩa tiếng Việt</th></tr>
+    <tr><td class="gw">opportunity</td><td class="gp">Noun</td><td>cơ hội</td></tr>
+    <tr><td class="gw">challenge</td><td class="gp">Noun</td><td>thách thức, thử thách</td></tr>
+    <tr><td class="gw">pollution</td><td class="gp">Noun</td><td>sự ô nhiễm</td></tr>
+    <tr><td class="gw">crowded</td><td class="gp">Adjective</td><td>đông đúc</td></tr>
+    <tr><td class="gw">community</td><td class="gp">Noun</td><td>cộng đồng</td></tr>
+    <tr><td class="gw">charity event</td><td class="gp">Noun phrase</td><td>sự kiện từ thiện</td></tr>
+    <tr><td class="gw">neighbourhood</td><td class="gp">Noun</td><td>khu phố, hàng xóm láng giềng</td></tr>
+    <tr><td class="gw">transport</td><td class="gp">Noun</td><td>phương tiện đi lại, giao thông</td></tr>
+    <tr><td class="gw">private vehicle</td><td class="gp">Noun phrase</td><td>phương tiện cá nhân</td></tr>
+    <tr><td class="gw">reduce</td><td class="gp">Verb</td><td>giảm, làm giảm</td></tr>
+    <tr><td class="gw">contribute (to)</td><td class="gp">Verb</td><td>đóng góp (cho)</td></tr>
+    <tr><td class="gw">habit</td><td class="gp">Noun</td><td>thói quen</td></tr>
+    <tr><td class="gw">pleasant</td><td class="gp">Adjective</td><td>dễ chịu, thoải mái</td></tr>
+   </table>
+  </div>
+ </div>
+
+ <div class="pc" style="border-color:var(--straw);color:var(--straw)">
+  <div class="lvl" style="background:#FFB8D0;color:#7A0F35;border-color:#7A0F35;box-shadow:3px 3px 0 #7A0F35">LAB 2</div>
+  <div class="stamp">🤝</div>
+  <div class="ptitle" style="color:var(--straw-d)">LAB 2 · Building a Stronger Local Community</div>
+  <div class="pins">II. Read the passage and choose the option A, B, C, or D that best fits each of the numbered blanks. (Questions 5 → 8)</div>
+
+  <div class="pblk" style="border-color:var(--kiwi);background:#EEFBE9;color:var(--ink)">
+   <div class="em">🤝</div><span class="ptag">Paragraph 1</span>
+   <div class="paragraph">A strong local community is built when people are willing to cooperate and support one another. Teenagers can make a meaningful contribution by taking part in activities that improve their neighbourhood.</div>
+   <button class="btr" onclick="toggleTranslation('trans8')">Mở dịch đoạn này 🌟</button>
+   <div class="translation" id="trans8">Một cộng đồng địa phương vững mạnh được xây dựng khi mọi người sẵn lòng hợp tác và hỗ trợ lẫn nhau. Thanh thiếu niên có thể có những đóng góp ý nghĩa bằng cách tham gia các hoạt động giúp cải thiện khu phố của mình.</div>
+  </div>
+  <div class="pblk" style="border-color:var(--grape);background:#F4EDFF;color:var(--ink)">
+   <div class="em">🧹</div><span class="ptag">Paragraph 1</span>
+   <div class="paragraph">They can join clean-up campaigns, plant trees, collect old books or volunteer at community centres.</div>
+   <button class="btr" onclick="toggleTranslation('trans9')">Mở dịch đoạn này 🌟</button>
+   <div class="translation" id="trans9">Các bạn có thể tham gia các chiến dịch dọn dẹp, trồng cây, thu gom sách cũ hoặc làm tình nguyện tại các trung tâm cộng đồng.</div>
+  </div>
+  <div class="pblk" style="border-color:var(--sky);background:#EAF6FF;color:var(--ink)">
+   <div class="em">📖</div><span class="ptag">Paragraph 2</span>
+   <div class="paragraph">There are many simple ways for young people to get involved. <b class="bk-sky">(5) ______</b>, they can organise a book-sharing programme for children in their neighbourhood.</div>
+   <button class="btr" onclick="toggleTranslation('trans10')">Mở dịch đoạn này 🌟</button>
+   <div class="translation" id="trans10">Có nhiều cách đơn giản để người trẻ góp sức. (5) ______, các bạn có thể tổ chức một chương trình chia sẻ sách cho trẻ em trong khu phố.</div>
+  </div>
+  <div class="pblk" style="border-color:var(--aqua);background:#E6FBF9;color:var(--ink)">
+   <div class="em">💞</div><span class="ptag">Paragraph 2</span>
+   <div class="paragraph">Such activities help teenagers develop a sense of responsibility and strengthen their relationships with other residents.</div>
+   <button class="btr" onclick="toggleTranslation('trans11')">Mở dịch đoạn này 🌟</button>
+   <div class="translation" id="trans11">Những hoạt động như vậy giúp thanh thiếu niên phát triển tinh thần trách nhiệm và thắt chặt mối quan hệ với những cư dân khác.</div>
+  </div>
+  <div class="pblk" style="border-color:var(--straw);background:#FFEEF4;color:var(--ink)">
+   <div class="em">🏺</div><span class="ptag">Paragraph 3</span>
+   <div class="paragraph">Teenagers can also learn about their local cultural heritage by visiting traditional craft villages. Community projects give them opportunities to develop <b class="bk-straw">(6) ______</b> while working with other volunteers.</div>
+   <button class="btr" onclick="toggleTranslation('trans12')">Mở dịch đoạn này 🌟</button>
+   <div class="translation" id="trans12">Thanh thiếu niên cũng có thể tìm hiểu về di sản văn hoá địa phương bằng cách đến thăm các làng nghề truyền thống. Các dự án cộng đồng cho các bạn cơ hội phát triển (6) ______ trong khi làm việc cùng các tình nguyện viên khác.</div>
+  </div>
+  <div class="pblk" style="border-color:var(--kiwi);background:#EEFBE9;color:var(--ink)">
+   <div class="em">👨‍👩‍👧</div><span class="ptag">Paragraph 3</span>
+   <div class="paragraph">They can also share what they learn about local traditions with friends and family.</div>
+   <button class="btr" onclick="toggleTranslation('trans13')">Mở dịch đoạn này 🌟</button>
+   <div class="translation" id="trans13">Các bạn cũng có thể chia sẻ những gì mình học được về truyền thống địa phương với bạn bè và gia đình.</div>
+  </div>
+  <div class="pblk" style="border-color:var(--grape);background:#F4EDFF;color:var(--ink)">
+   <div class="em">🏘️</div><span class="ptag">Paragraph 4</span>
+   <div class="paragraph">The more actively teenagers participate in community activities, the stronger <b class="bk-grape">(7) ______</b> becomes. If more young people work together, their neighbourhood can become a more connected and supportive place.</div>
+   <button class="btr" onclick="toggleTranslation('trans14')">Mở dịch đoạn này 🌟</button>
+   <div class="translation" id="trans14">Thanh thiếu niên tham gia các hoạt động cộng đồng càng tích cực thì (7) ______ càng trở nên mạnh mẽ. Nếu có nhiều người trẻ cùng chung tay hơn, khu phố của họ có thể trở thành một nơi gắn kết và biết hỗ trợ nhau hơn.</div>
+  </div>
+  <div class="pblk" style="border-color:var(--sky);background:#EAF6FF;color:var(--ink)">
+   <div class="em">🎎</div><span class="ptag">Paragraph 4</span>
+   <div class="paragraph">Everyone should also <b class="bk-sky">(8) ______</b> local traditions and encourage younger generations to learn about them.</div>
+   <button class="btr" onclick="toggleTranslation('trans15')">Mở dịch đoạn này 🌟</button>
+   <div class="translation" id="trans15">Mọi người cũng nên (8) ______ những truyền thống địa phương và khuyến khích các thế hệ trẻ hơn tìm hiểu về chúng.</div>
+  </div>
+
+  <div class="gl"><h3 style="background:linear-gradient(90deg,var(--straw-d),var(--straw))">📚 Glossary — LAB 2</h3>
+   <table class="gtb"><tr><th>Từ vựng</th><th>Loại từ</th><th>Nghĩa tiếng Việt</th></tr>
+    <tr><td class="gw">cooperate</td><td class="gp">Verb</td><td>hợp tác</td></tr>
+    <tr><td class="gw">contribution</td><td class="gp">Noun</td><td>sự đóng góp</td></tr>
+    <tr><td class="gw">campaign</td><td class="gp">Noun</td><td>chiến dịch</td></tr>
+    <tr><td class="gw">volunteer</td><td class="gp">Verb / Noun</td><td>làm tình nguyện / tình nguyện viên</td></tr>
+    <tr><td class="gw">organise</td><td class="gp">Verb</td><td>tổ chức</td></tr>
+    <tr><td class="gw">responsibility</td><td class="gp">Noun</td><td>trách nhiệm</td></tr>
+    <tr><td class="gw">strengthen</td><td class="gp">Verb</td><td>làm vững mạnh, thắt chặt</td></tr>
+    <tr><td class="gw">resident</td><td class="gp">Noun</td><td>cư dân</td></tr>
+    <tr><td class="gw">cultural heritage</td><td class="gp">Noun phrase</td><td>di sản văn hoá</td></tr>
+    <tr><td class="gw">craft village</td><td class="gp">Noun phrase</td><td>làng nghề</td></tr>
+    <tr><td class="gw">tradition</td><td class="gp">Noun</td><td>truyền thống</td></tr>
+    <tr><td class="gw">generation</td><td class="gp">Noun</td><td>thế hệ</td></tr>
+    <tr><td class="gw">supportive</td><td class="gp">Adjective</td><td>biết hỗ trợ, quan tâm giúp đỡ</td></tr>
+   </table>
+  </div>
+ </div>
+</div>
+
+<div class="rp">
+ <div class="slbl">🎯 8 câu hỏi</div>
+ <div id="app"></div>
+ <div class="sw"><button class="sbtn" onclick="openName()">🎯 NỘP BÀI TÍNH ĐIỂM &amp; XEM KẾT QUẢ</button></div>
+ <div class="foot">🧃 Bài tập của <b>MS Chí Nên</b> · Đăng ký khoá tiếng Anh lớp 1 → 12: <b>☎️ 0852639652</b> để được trải nghiệm hệ thống web học tập đẹp, sinh động — chấm điểm tự động, giải chi tiết từng câu, học vui như mỗi ngày bước vào phòng thí nghiệm nước ép!</div>
+</div>
+</div>
+
+<div class="ov" id="ovN"><div class="mb">
+ <h2>📮 Con ghi tên vào đây nhé!</h2>
+ <input id="nIn" placeholder="Ví dụ: Nguyễn Văn A" autocomplete="off" maxlength="50">
+ <div class="err" id="nEm">⚠️ Con chưa nhập tên kìa! Nhập tên rồi mới xem điểm được nha.</div>
+ <button class="sbtn" style="margin-top:12px;font-size:1rem;padding:11px 26px" onclick="showResult()">🚀 Xem kết quả</button>
+</div></div>
+
+<div class="ov" id="ovR"><div class="mb" style="max-width:480px">
+ <div class="rname" id="rn"></div>
+ <div class="rscore"><span id="rSc">0</span>/<span id="rTt">0</span></div>
+ <div class="rs10">🎓 Quy đổi: <span id="r10">0</span>/10 điểm</div>
+ <img class="rgif" id="rGif" src="" alt="">
+ <div class="rcmt" id="rMs"></div>
+ <button class="bcl" onclick="closeR()">Đóng &amp; xem lại bài</button>
+</div></div>
+
+<script>
+/* ══ cảnh phòng thí nghiệm nước ép: dây trái cây, bong bóng, lát trái cây, máy xay, băng chuyền, ly nước ép, pin năng lượng ══ */
+function rnd(a,b){return a+Math.random()*(b-a)}
+var FRT=['f-straw','f-kiwi','f-berry','f-melon','f-straw','f-berry','f-kiwi','f-orange'];
+function FR(k,s){return '<i class="fr '+k+'" style="--s:'+s+'px"></i>'}
+(function(){
+ var lab=document.getElementById('lab'),h='<div class="garl">',i;
+ for(i=0;i<20;i++){h+='<i class="swag" style="left:'+(i*140)+'px"></i><div class="hang" style="left:'+(i*140-14)+'px;animation-delay:-'+rnd(0,3).toFixed(1)+'s"><i class="str" style="--l:'+rnd(8,30).toFixed(0)+'px"></i>'+FR(FRT[i%8],28)+'</div>'}
+ h+='</div>';
+ var BC=['rgba(42,157,244,.35)','rgba(240,69,122,.3)','rgba(61,180,58,.3)','rgba(139,79,224,.3)','rgba(42,157,244,.3)'];
+ for(i=0;i<28;i++){var s=rnd(8,32).toFixed(0);
+  h+='<i class="bub" style="left:'+rnd(0,99).toFixed(1)+'vw;width:'+s+'px;height:'+s+'px;background-color:'+BC[i%5]+';animation-duration:'+rnd(9,18).toFixed(1)+'s;animation-delay:-'+rnd(0,18).toFixed(1)+'s"></i>'}
+ function mx(){return Math.random()<.5?rnd(.4,3.2):rnd(95.8,98.6)}
+ for(i=0;i<14;i++){var x=i<10?mx():rnd(8,90),sz=rnd(24,38).toFixed(0);
+  h+='<div class="fsl" style="left:'+x.toFixed(1)+'vw;top:'+rnd(16,72).toFixed(0)+'vh;animation-duration:'+rnd(3,6).toFixed(1)+'s;animation-delay:-'+rnd(0,5).toFixed(1)+'s">'+FR(FRT[i%8],sz)+'</div>'}
+ var SC=['#7BE0B5','#F0457A','#12B5B0','#8B4FE0','#2A9DF4','#FF9EC4'];
+ for(i=0;i<18;i++){var sx=i<12?mx():rnd(5,95);
+  h+='<i class="spk" style="left:'+sx.toFixed(1)+'vw;top:'+rnd(12,80).toFixed(0)+'vh;background:'+SC[i%6]+';animation-delay:-'+rnd(0,2.4).toFixed(1)+'s"></i>'}
+ for(i=0;i<8;i++){h+='<i class="drp" style="left:'+mx().toFixed(1)+'vw;top:'+rnd(14,40).toFixed(0)+'vh;animation-duration:'+rnd(5,9).toFixed(1)+'s;animation-delay:-'+rnd(0,8).toFixed(1)+'s"></i>'}
+ lab.insertAdjacentHTML('afterbegin',h);
+ document.querySelector('.mc-mel').insertAdjacentHTML('afterbegin','<div class="chr" style="--bs:70px;animation:hopS 1.1s ease-in-out infinite"><div class="body b-melon"><i class="eye l"></i><i class="eye r"></i><i class="mouth"></i><i class="blush l"></i><i class="blush r"></i></div><i class="limb arm l" style="animation:wave1 .5s ease-in-out infinite alternate"></i><i class="limb arm r" style="animation:wave2 .5s ease-in-out infinite alternate"></i><i class="limb leg l" style="transform:rotate(12deg)"></i><i class="limb leg r" style="transform:rotate(-12deg)"></i></div>');
+ /* máy xay: trái cây xoay trong cối */
+ var ob='';[['f-berry',22,-30,-8],['f-straw',20,22,-14],['f-kiwi',20,-6,22],['f-mango',20,26,16]].forEach(function(f){ob+='<i class="fr '+f[0]+'" style="--s:'+f[1]+'px;left:'+f[2]+'px;top:'+f[3]+'px"></i>'});
+ document.getElementById('orbit').innerHTML=ob;
+ /* băng chuyền: trái cây nhảy vào máy xay */
+ var cf='';for(i=0;i<5;i++)cf+='<div class="cf" style="animation-delay:-'+(i*1.6).toFixed(1)+'s">'+FR(['f-straw','f-berry','f-kiwi','f-melon','f-orange'][i],26)+'</div>';
+ document.getElementById('cfr').innerHTML=cf;
+ document.getElementById('pile').innerHTML='<i class="fr f-berry" style="--s:28px;left:0;bottom:0;position:absolute"></i><i class="fr f-kiwi" style="--s:28px;left:30px;bottom:0;position:absolute"></i><i class="fr f-straw" style="--s:28px;left:58px;bottom:0;position:absolute"></i><i class="fr f-berry" style="--s:22px;left:18px;bottom:26px;position:absolute"></i>';
+ /* ly nước ép cầu vồng */
+ var gl='',G=[[118,'#F0457A',0],[134,'#2A9DF4',-3],[110,'#3DB43A',-6]];
+ G.forEach(function(g,j){var ice='<i class="ice" style="left:6px"></i><i class="ice" style="left:26px;animation-delay:-.7s"></i>';
+  var bb='';for(var k=0;k<4;k++)bb+='<i class="gb" style="left:'+(8+k*10)+'px;animation-delay:-'+rnd(0,2).toFixed(1)+'s"></i>';
+  gl+='<div class="gw" style="--h:'+g[0]+'px"><i class="straw" style="--sc:'+g[1]+'"></i><div class="gls"><div class="jc" style="animation-delay:'+g[2]+'s">'+ice+'</div>'+bb+'</div>'+
+   '<i class="cd" style="left:-3px;top:30px;animation-delay:-'+rnd(0,4).toFixed(1)+'s"></i><i class="cd" style="right:-3px;top:50px;animation-delay:-'+rnd(0,4).toFixed(1)+'s"></i></div>'});
+ document.getElementById('glasses').innerHTML=gl;
+ /* pin năng lượng: trái cây rơi vào, từng vạch sạc xanh */
+ var bf='';for(i=0;i<5;i++)bf+='<span style="position:absolute;left:0;top:0">'+FR(['f-berry','f-kiwi','f-straw','f-melon','f-kiwi'][i],18).replace('class="fr ','class="fr ').replace('style="','style="animation-delay:'+(i*1.26).toFixed(2)+'s;')+'</span>';
+ document.getElementById('bfx').innerHTML=bf;
+ var css='';for(var j=0;j<5;j++){var a=6+j*14,b=a+1;
+  css+='@keyframes sg'+j+'{0%,'+a+'%{background:#E6E1EF;box-shadow:none}'+b+'%,86%{background:#3DB43A;box-shadow:0 0 8px #7CFF6B}87%,100%{background:#E6E1EF;box-shadow:none}}.bat .sg:nth-child('+(j+1)+'){animation:sg'+j+' 9s linear infinite}'}
+ var se=document.createElement('style');se.textContent=css+'@media(prefers-reduced-motion:reduce){.bat .sg{animation:none!important}}';document.head.appendChild(se);
+})();
+
+/* ══ âm thanh ══ */
+var AC=null;
+function ac(){if(!AC){try{AC=new (window.AudioContext||window.webkitAudioContext)()}catch(e){}}if(AC&&AC.state==='suspended')AC.resume();return AC}
+function ding(){var c=ac();if(!c)return;var t=c.currentTime;[988,1318.5,1975.5].forEach(function(f,i){var o=c.createOscillator(),g=c.createGain();o.type='sine';o.frequency.value=f;o.connect(g);g.connect(c.destination);var s=t+i*0.08;g.gain.setValueAtTime(0.0001,s);g.gain.exponentialRampToValueAtTime(.12,s+.02);g.gain.exponentialRampToValueAtTime(.0001,s+.32);o.start(s);o.stop(s+.34)})}
+var DUCK_URL='https://hoctienganhcungcomaianulis.github.io/homework/%E1%BA%A2nh_File%20nghe/Sound/Ti%E1%BA%BFng%20V%E1%BB%8Bt%20k%C3%AAu%20meme%20mp3.mp3';
+function buzz(){try{var a=new Audio(DUCK_URL);a.volume=.75;a.play().catch(function(){})}catch(e){}}
+function conf(){var cs=['#2A9DF4','#F0457A','#12B5B0','#8B4FE0','#7BE0B5','#FF9EC4'];
+ for(var i=0;i<50;i++){var d=document.createElement('div');d.className='cn';
+  d.style.cssText='left:'+(Math.random()*100)+'vw;width:10px;height:10px;border-radius:'+(i%2?'50%':'2px')+';background:'+cs[i%6]+';opacity:.95';
+  document.body.appendChild(d);(function(d){setTimeout(function(){d.remove()},2500)})(d)}}
+function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}
+function toggleTranslation(id){
+ var el=document.getElementById(id);
+ if(el.style.display==='block'){el.style.display='none';}else{el.style.display='block';}
+}
+
+/* ══ lời giải ══ */
+function OPT(w,pos,ipa,vi,ok){return {w:w,pos:pos||'',ipa:ipa||'',vi:vi,ok:ok?1:0}}
+function grid2(opts){
+ return '<div class="grid2">'+opts.map(function(o){
+  var cls=o.ok?'hl-green':'p-word';
+  var pos=o.pos?' <span class="wt">'+o.pos+'</span>':'';
+  var ipa=o.ipa?' <span class="p-phonetic">/'+o.ipa+'/</span>':'';
+  return '<div'+(o.ok?' class="gk"':'')+'>'+(o.ok?'✅ ':'')+'<span class="'+cls+'">'+o.w+'</span>'+pos+ipa+'<br>= <span class="p-mean">'+o.vi+'</span></div>';
+ }).join('')+'</div>';
+}
+var hxI=0;
+function ln(txt){
+ var cls='hx'+(hxI++%6),qeI=0;
+ txt=txt.replace(/"([^"]+)"/g,function(m,p1){return '<span class="qe'+(qeI++%6)+'">"'+p1+'"</span>'});
+ return '<span class="p-grammar '+cls+'">▸ '+txt+'</span>';
+}
+function lines(a){return a.map(ln).join('<br>')}
+function DICT(w,i){
+ var slug=w.trim().toLowerCase().replace(/\s+/g,'-');
+ return '<a class="d'+(i%4)+'" href="https://dictionary.cambridge.org/vi/dictionary/english/'+slug+'" target="_blank" rel="noopener">🔊 Cambridge · '+w+'</a>';
+}
+function render(q){
+ hxI=0;
+ var shown=MAP[q.id].map(function(w){return q.opts.find(function(o){return o.w===w})});
+ var lab='Nghĩa của '+shown.length+' phương án:';
+ var html='<div class="vnt">💬 Dịch: '+q.vnt+'</div><ol>'+
+  '<li><b>'+lab+'</b>'+grid2(shown)+'</li>'+
+  '<li><span class="hl-green">✅ TẠI SAO ĐÚNG?</span><br>'+lines(q.why)+'</li>'+
+  '<li><span class="hl-red">❌ TẠI SAO SAI?</span><br>'+lines(q.bad)+'</li></ol>'+
+  '<div class="frame">🔍 <i>'+q.ev+'</i><br>👉 <span class="p-mean">'+q.evvi+'</span></div>';
+ if(q.dict&&q.dict.length){
+  html+='<div class="dk"><b>🔊 Tra từ điển Cambridge:</b><br>Con bấm vào đây để nghe phát âm chuẩn và đọc theo cho hay nhé:'+
+   '<div class="dict">'+q.dict.map(DICT).join('')+'</div>'+
+   '<div class="say">👉 Nếu trang chưa hiện đúng từ, con gõ từ đó vào ô tìm kiếm, bấm loa 🔊 nghe và đọc theo.</div></div>';
+ }
+ return html;
+}
+
+/* ══ câu hỏi ══ */
+var TF=function(t){return [OPT(`True`,`adj`,`truː`,`Đúng`,t),OPT(`False`,`adj`,`fɔːls`,`Sai`,!t)]};
+var QS=[
+{id:1,part:1,col:'kiwi',text:`Another way to improve city life is to choose greener forms of transport. <b>(1) ______</b>, teenagers can walk, cycle or use public transport instead of travelling by private vehicles whenever possible.`,
+ opts:[OPT(`However`,`adv`,`haʊˈevə(r)`,`Tuy nhiên (nối hai ý trái ngược)`),OPT(`Therefore`,`adv`,`ˈðeəfɔː(r)`,`Vì vậy, do đó (nêu kết quả, hệ quả)`,1),OPT(`Although`,`conj`,`ɔːlˈðəʊ`,`Mặc dù (nối hai vế trong cùng một câu)`),OPT(`Because`,`conj`,`bɪˈkɒz`,`Bởi vì (nối hai vế trong cùng một câu)`)],
+ vnt:`Một cách khác để cải thiện cuộc sống thành phố là chọn những hình thức đi lại xanh hơn. Vì vậy, thanh thiếu niên có thể đi bộ, đạp xe hoặc dùng phương tiện công cộng thay vì đi bằng phương tiện cá nhân bất cứ khi nào có thể.`,
+ why:[`Bước 1: Chỗ trống đứng ĐẦU câu và có dấu phẩy ngay sau, nên ta cần một TRẠNG TỪ NỐI (linking adverb) để nối câu này với câu trước.`,
+  `Bước 2: Câu trước nêu ý chung: "choose greener forms of transport" (chọn hình thức đi lại xanh hơn) để cải thiện cuộc sống thành phố.`,
+  `Bước 3: Câu sau là việc làm cụ thể RÚT RA từ ý đó: "walk, cycle or use public transport" (đi bộ, đạp xe, đi xe buýt). Hai câu cùng chiều, câu sau là hệ quả của câu trước.`,
+  `Bước 4: Từ nối chỉ kết quả, hệ quả là "Therefore" (Vì vậy) → "Therefore, teenagers can walk, cycle or use public transport" → chọn "Therefore". Ly nước ép đầu tiên rót đầy rồi!`],
+ bad:[`"However" (Tuy nhiên) dùng khi hai câu TRÁI NGƯỢC nhau; ở đây cả hai câu đều khuyên đi lại xanh, không hề đối lập.`,
+  `"Although" (Mặc dù) là liên từ, phải nối hai vế trong cùng một câu như "Although it rained, we went out"; không đứng một mình rồi thêm dấu phẩy như "Although, teenagers".`,
+  `"Because" (Bởi vì) cũng là liên từ nối hai vế trong một câu; "Because, teenagers can walk" sai ngữ pháp và sai ý, vì đi bộ không phải là lí do của câu trước.`],
+ ev:`Another way to improve city life is to choose greener forms of transport. Therefore, teenagers can walk, cycle or use public transport instead of travelling by private vehicles whenever possible.`,
+ evvi:`Một cách khác để cải thiện cuộc sống thành phố là chọn hình thức đi lại xanh hơn. Vì vậy, thanh thiếu niên có thể đi bộ, đạp xe hoặc dùng phương tiện công cộng.`,
+ dict:[`however`,`therefore`,`although`,`because`]},
+{id:2,part:1,col:'sky',text:`They should <b>(2) ______</b> during long periods of studying, eat healthy food and get enough sleep.`,
+ opts:[OPT(`take breaks regularly`,`V + N + Adv`,``,`nghỉ giải lao đều đặn`,1),OPT(`regularly breaks take`,`Adv + N + V`,``,`sai trật tự: động từ bị đẩy xuống cuối`),OPT(`take regularly breaks`,`V + Adv + N`,``,`sai trật tự: trạng từ chen giữa động từ và tân ngữ`),OPT(`breaks take regularly`,`N + V + Adv`,``,`sai trật tự: danh từ đứng trước động từ`)],
+ vnt:`Các bạn nên nghỉ giải lao đều đặn trong những khoảng thời gian học dài, ăn thức ăn lành mạnh và ngủ đủ giấc.`,
+ why:[`Bước 1: Trước chỗ trống là "should" (nên), nên ngay sau phải là ĐỘNG TỪ NGUYÊN MẪU: "should + V". Động từ ở đây là "take".`,
+  `Bước 2: "take a break / take breaks" là cụm cố định = nghỉ giải lao. Tân ngữ "breaks" phải đi LIỀN sau động từ "take".`,
+  `Bước 3: Trạng từ chỉ tần suất "regularly" (đều đặn) đứng ở CUỐI cụm, sau tân ngữ: V + O + Adv → "take breaks regularly".`,
+  `Bước 4: Câu song song với "eat healthy food" và "get enough sleep", cả ba đều bắt đầu bằng động từ → chọn "take breaks regularly". Máy xay chạy êm ru!`],
+ bad:[`"regularly breaks take": động từ "take" bị đẩy xuống cuối, sau "should" không có động từ ngay, sai cấu trúc "should + V".`,
+  `"take regularly breaks": trạng từ "regularly" không được chen vào giữa động từ "take" và tân ngữ "breaks".`,
+  `"breaks take regularly": danh từ "breaks" đứng trước động từ, câu thành "should breaks take", hoàn toàn sai trật tự.`],
+ ev:`They should take breaks regularly during long periods of studying, eat healthy food and get enough sleep.`,
+ evvi:`Các bạn nên nghỉ giải lao đều đặn trong những khoảng thời gian học dài, ăn thức ăn lành mạnh và ngủ đủ giấc.`,
+ dict:[`break`,`regularly`,`period`,`sleep`]},
+{id:3,part:1,col:'aqua',text:`Regular exercise can also help them <b>(3) ______</b> and have more energy for their daily activities.`,
+ opts:[OPT(`stay physically active`,`V + Adv + Adj`,``,`giữ cơ thể năng động, khoẻ khoắn`,1),OPT(`physically stay active`,`Adv + V + Adj`,``,`sai vị trí trạng từ`),OPT(`stay active physically`,`V + Adj + Adv`,``,`sai vị trí trạng từ`),OPT(`active stay physically`,`Adj + V + Adv`,``,`sai trật tự: tính từ đứng trước động từ`)],
+ vnt:`Tập thể dục đều đặn cũng có thể giúp các bạn giữ cơ thể năng động và có nhiều năng lượng hơn cho các hoạt động hằng ngày.`,
+ why:[`Bước 1: Cấu trúc "help + sb + V nguyên mẫu": "help them stay" (giúp các bạn giữ). Vậy sau "them" phải là động từ "stay".`,
+  `Bước 2: "stay" là động từ nối (giống "be"), theo sau là TÍNH TỪ: "stay active" (luôn năng động).`,
+  `Bước 3: Trạng từ "physically" (về mặt thể chất) bổ nghĩa cho tính từ "active", nên đứng NGAY TRƯỚC tính từ: Adv + Adj → "physically active" (năng động về thể chất).`,
+  `Bước 4: Ghép lại: V + Adv + Adj → "stay physically active". Câu đúng: "help them stay physically active and have more energy" → chọn đáp án này. Thêm một tầng màu cho ly nước ép!`],
+ bad:[`"physically stay active": trạng từ đứng trước động từ "stay", tách xa tính từ "active" mà nó cần bổ nghĩa, không theo trật tự chuẩn Adv + Adj.`,
+  `"stay active physically": trạng từ bị đẩy ra sau tính từ; trong đề thi, trạng từ bổ nghĩa cho tính từ phải đứng TRƯỚC tính từ.`,
+  `"active stay physically": tính từ đứng trước động từ, sau "help them" không có động từ ngay, sai hoàn toàn.`],
+ ev:`Regular exercise can also help them stay physically active and have more energy for their daily activities.`,
+ evvi:`Tập thể dục đều đặn cũng có thể giúp các bạn giữ cơ thể năng động và có nhiều năng lượng hơn cho các hoạt động hằng ngày.`,
+ dict:[`physically`,`active`,`stay`,`exercise`]},
+{id:4,part:1,col:'straw',text:`They should always <b>(4) ______</b> activities that make their city cleaner, healthier and more pleasant.`,
+ opts:[OPT(`take up`,`phrasal verb`,``,`bắt đầu tập (một sở thích, môn mới)`),OPT(`take over`,`phrasal verb`,``,`tiếp quản, giành quyền kiểm soát`),OPT(`take part in`,`phrasal verb`,``,`tham gia (vào)`,1),OPT(`in take part`,`sai trật tự`,``,`không phải cụm từ đúng`)],
+ vnt:`Các bạn nên luôn tham gia những hoạt động làm cho thành phố của mình sạch hơn, trong lành hơn và dễ chịu hơn.`,
+ why:[`Bước 1: Sau "should always" cần một động từ nguyên mẫu, và sau chỗ trống là tân ngữ "activities" (các hoạt động).`,
+  `Bước 2: Ý cả đoạn là các bạn trẻ đóng vai trò tích cực trong cộng đồng, tức là THAM GIA các hoạt động.`,
+  `Bước 3: "take part in + hoạt động" = tham gia vào hoạt động, giống "join". Đoạn 1 cũng dùng đúng cụm này: "taking part in activities such as clean-up days".`,
+  `Bước 4: "They should always take part in activities that make their city cleaner" = Các bạn nên luôn tham gia những hoạt động làm thành phố sạch hơn → chọn "take part in". LAB 1 xay xong rồi, chuẩn bị qua LAB 2!`],
+ bad:[`"take up" (bắt đầu tập một sở thích mới, như "take up yoga") không hợp với "always" và ý tham gia hoạt động cộng đồng.`,
+  `"take over" (tiếp quản, giành quyền kiểm soát, như "take over a company") sai nghĩa: các bạn trẻ không "giành quyền" các hoạt động.`,
+  `"in take part" đảo lộn trật tự; cụm đúng là "take part in", giới từ "in" luôn đứng cuối.`],
+ ev:`They should always take part in activities that make their city cleaner, healthier and more pleasant.`,
+ evvi:`Các bạn nên luôn tham gia những hoạt động làm cho thành phố của mình sạch hơn, trong lành hơn và dễ chịu hơn.`,
+ dict:[`take`,`part`,`activity`,`pleasant`]},
+{id:5,part:2,col:'sky',text:`There are many simple ways for young people to get involved. <b>(5) ______</b>, they can organise a book-sharing programme for children in their neighbourhood.`,
+ opts:[OPT(`In contrast`,`linking phrase`,``,`Ngược lại (so sánh hai điều trái ngược)`),OPT(`Nevertheless`,`adv`,`ˌnevəðəˈles`,`Tuy nhiên, dù vậy`),OPT(`Otherwise`,`adv`,`ˈʌðəwaɪz`,`Nếu không thì`),OPT(`For instance`,`linking phrase`,``,`Ví dụ, chẳng hạn`,1)],
+ vnt:`Có nhiều cách đơn giản để người trẻ góp sức. Ví dụ, các bạn có thể tổ chức một chương trình chia sẻ sách cho trẻ em trong khu phố.`,
+ why:[`Bước 1: Chỗ trống đứng đầu câu, có dấu phẩy phía sau, nên cần một từ nối giữa hai câu.`,
+  `Bước 2: Câu trước nói chung chung: "many simple ways" (nhiều cách đơn giản) để người trẻ góp sức.`,
+  `Bước 3: Câu sau đưa ra MỘT cách cụ thể: "organise a book-sharing programme" (tổ chức chương trình chia sẻ sách). Ý chung rồi đến ví dụ cụ thể.`,
+  `Bước 4: Từ nối dùng để đưa ra ví dụ là "For instance" (Ví dụ), nghĩa giống "For example" → chọn "For instance". Mở màn LAB 2 thật đẹp!`],
+ bad:[`"In contrast" (Ngược lại) dùng khi hai câu trái ngược nhau; tổ chức chia sẻ sách không hề trái với ý "nhiều cách góp sức".`,
+  `"Nevertheless" (Tuy nhiên, dù vậy) cũng chỉ sự tương phản, sai logic vì câu sau cùng chiều với câu trước.`,
+  `"Otherwise" (Nếu không thì) nêu hậu quả khi không làm điều gì, như "Hurry up, otherwise you will be late"; ở đây không có ý điều kiện nào.`],
+ ev:`There are many simple ways for young people to get involved. For instance, they can organise a book-sharing programme for children in their neighbourhood.`,
+ evvi:`Có nhiều cách đơn giản để người trẻ góp sức. Ví dụ, các bạn có thể tổ chức một chương trình chia sẻ sách cho trẻ em trong khu phố.`,
+ dict:[`instance`,`nevertheless`,`otherwise`,`contrast`]},
+{id:6,part:2,col:'straw',text:`Community projects give them opportunities to develop <b>(6) ______</b> while working with other volunteers.`,
+ opts:[OPT(`useful communication skills`,`Adj + N + N`,``,`những kĩ năng giao tiếp hữu ích`,1),OPT(`communication useful skills`,`N + Adj + N`,``,`sai trật tự: tính từ chen vào giữa danh từ ghép`),OPT(`useful skills communication`,`Adj + N + N`,``,`sai trật tự: danh từ chính bị đặt sai chỗ`),OPT(`skills useful communication`,`N + Adj + N`,``,`sai trật tự hoàn toàn`)],
+ vnt:`Các dự án cộng đồng cho các bạn cơ hội phát triển những kĩ năng giao tiếp hữu ích trong khi làm việc cùng các tình nguyện viên khác.`,
+ why:[`Bước 1: Sau động từ "develop" (phát triển) cần một CỤM DANH TỪ làm tân ngữ.`,
+  `Bước 2: Danh từ chính là "skills" (kĩ năng). "communication" đứng ngay trước nó tạo thành DANH TỪ GHÉP "communication skills" (kĩ năng giao tiếp), hai từ này không được tách rời.`,
+  `Bước 3: Tính từ "useful" (hữu ích) bổ nghĩa cho cả cụm, nên đứng TRƯỚC cả danh từ ghép: Adj + N + N.`,
+  `Bước 4: Ghép lại: "useful communication skills" (những kĩ năng giao tiếp hữu ích) → chọn đáp án này. Trật tự từ chuẩn không cần chỉnh!`],
+ bad:[`"communication useful skills": tính từ "useful" chen vào giữa danh từ ghép "communication skills", làm vỡ cụm.`,
+  `"useful skills communication": danh từ chính "skills" phải đứng cuối; đặt "communication" ra sau thì nghĩa thành vô lí.`,
+  `"skills useful communication": danh từ đứng đầu, tính từ đứng giữa, sai hoàn toàn trật tự Adj + N trong tiếng Anh.`],
+ ev:`Community projects give them opportunities to develop useful communication skills while working with other volunteers.`,
+ evvi:`Các dự án cộng đồng cho các bạn cơ hội phát triển những kĩ năng giao tiếp hữu ích trong khi làm việc cùng các tình nguyện viên khác.`,
+ dict:[`useful`,`communication`,`skill`,`develop`]},
+{id:7,part:2,col:'grape',text:`The more actively teenagers participate in community activities, the stronger <b>(7) ______</b> becomes.`,
+ opts:[OPT(`their sense of belonging`,`Det + N + of + N`,``,`cảm giác gắn bó, thuộc về (cộng đồng) của các bạn`,1),OPT(`their belonging of sense`,`Det + N + of + N`,``,`sai trật tự: đảo hai danh từ`),OPT(`belonging of their sense`,`N + of + Det + N`,``,`sai trật tự, vô nghĩa`),OPT(`sense of their belonging`,`N + of + Det + N`,``,`thiếu từ hạn định trước "sense"`)],
+ vnt:`Thanh thiếu niên tham gia các hoạt động cộng đồng càng tích cực thì cảm giác gắn bó với cộng đồng của các bạn càng trở nên mạnh mẽ.`,
+ why:[`Bước 1: Đây là cấu trúc so sánh kép "The + so sánh hơn + S + V, the + so sánh hơn + S + V" = càng A thì càng B.`,
+  `Bước 2: Vế sau là "the stronger ______ becomes", nên chỗ trống phải là CHỦ NGỮ (một cụm danh từ) đứng trước động từ "becomes".`,
+  `Bước 3: "sense of belonging" là cụm cố định = cảm giác gắn bó, cảm giác thuộc về một nơi; tính từ sở hữu "their" đứng ĐẦU cụm: "their sense of belonging".`,
+  `Bước 4: "the stronger their sense of belonging becomes" = cảm giác gắn bó của các bạn càng mạnh mẽ → chọn đáp án này. Ly nước ép sắp đầy rồi!`],
+ bad:[`"their belonging of sense": đảo ngược hai danh từ, cụm đúng phải là "sense of belonging".`,
+  `"belonging of their sense": sai trật tự và vô nghĩa, "their" bị đặt nhầm vào giữa cụm.`,
+  `"sense of their belonging": danh từ đếm được số ít "sense" đứng đầu mà không có từ hạn định ("their", "a"), lại không đúng cụm cố định "sense of belonging".`],
+ ev:`The more actively teenagers participate in community activities, the stronger their sense of belonging becomes.`,
+ evvi:`Thanh thiếu niên tham gia các hoạt động cộng đồng càng tích cực thì cảm giác gắn bó của các bạn càng trở nên mạnh mẽ.`,
+ dict:[`sense`,`belonging`,`stronger`,`participate`]},
+{id:8,part:2,col:'sky',text:`Everyone should also <b>(8) ______</b> local traditions and encourage younger generations to learn about them.`,
+ opts:[OPT(`take care of`,`phrasal verb`,``,`chăm sóc, giữ gìn`,1),OPT(`take after`,`phrasal verb`,``,`giống (cha mẹ, người thân)`),OPT(`take up`,`phrasal verb`,``,`bắt đầu tập (một sở thích, môn mới)`),OPT(`take off`,`phrasal verb`,``,`cất cánh; cởi (quần áo)`)],
+ vnt:`Mọi người cũng nên giữ gìn những truyền thống địa phương và khuyến khích các thế hệ trẻ hơn tìm hiểu về chúng.`,
+ why:[`Bước 1: Sau "should also" cần động từ nguyên mẫu; tân ngữ phía sau là "local traditions" (truyền thống địa phương).`,
+  `Bước 2: Vế sau là "encourage younger generations to learn about them" (khuyến khích thế hệ trẻ tìm hiểu), nên vế trước phải mang nghĩa BẢO VỆ, GÌN GIỮ truyền thống.`,
+  `Bước 3: "take care of" = chăm sóc, giữ gìn, dùng được cho cả người lẫn những thứ quý giá như truyền thống.`,
+  `Bước 4: "Everyone should also take care of local traditions" = Mọi người cũng nên giữ gìn truyền thống địa phương → chọn "take care of". Ly điểm 10 đầy tràn rồi đó!`],
+ bad:[`"take after" (giống cha mẹ, người thân, như "She takes after her mother") chỉ dùng cho người trong gia đình, không dùng với truyền thống.`,
+  `"take up" (bắt đầu tập một sở thích mới) không hợp nghĩa giữ gìn và khuyến khích thế hệ sau.`,
+  `"take off" (cất cánh, cởi ra) hoàn toàn sai nghĩa: không ai "cởi" truyền thống địa phương.`],
+ ev:`Everyone should also take care of local traditions and encourage younger generations to learn about them.`,
+ evvi:`Mọi người cũng nên giữ gìn những truyền thống địa phương và khuyến khích các thế hệ trẻ hơn tìm hiểu về chúng.`,
+ dict:[`care`,`tradition`,`generation`,`encourage`]}
+];
+QS.forEach(function(q){q.options=q.opts.map(function(o){return o.w});q.correct=q.opts.filter(function(o){return o.ok})[0].w});
+
+/* ══ dựng trang ══ */
+var TOTAL=QS.length,answered=0,score=0,done={},MAP={};
+var TINT={aqua:'#E6FBF9',straw:'#FFEEF4',kiwi:'#EEFBE9',grape:'#F4EDFF',sky:'#EAF6FF'};
+var SECINFO={
+ 1:{c:'sky',t:"🏙️ LAB 1 · Better City Life — Câu 1 → 4",s:"I. Read the passage and choose the option A, B, C, or D that best fits each of the numbered blanks."},
+ 2:{c:'straw',t:"🤝 LAB 2 · Building a Stronger Local Community — Câu 5 → 8",s:"II. Read the passage and choose the option A, B, C, or D that best fits each of the numbered blanks."}};
+var app=document.getElementById('app'),secs={};
+[1,2].forEach(function(p){var s=document.createElement('div');s.className='sec';s.dataset.part=p;s.style.borderColor='var(--'+SECINFO[p].c+')';
+ s.innerHTML='<div class="sech" style="color:var(--'+SECINFO[p].c+'-d)">'+SECINFO[p].t+'</div><div class="secs">'+SECINFO[p].s+'</div>';
+ secs[p]=s;app.appendChild(s)});
+QS.forEach(function(q){
+ var so=q.tf?q.options.slice():shuffle(q.options);
+ MAP[q.id]=so;
+ var card=document.createElement('div');
+ card.className='q';card.id='c'+q.id;
+ card.style.setProperty('--qc','var(--'+q.col+')');
+ card.style.borderLeftColor='var(--'+q.col+')';
+ card.style.background=TINT[q.col];
+ card.innerHTML='<div class="qt"><span class="qn">'+q.id+'</span>'+q.text.replace(/<b>/g,'<b class="bk-'+q.col+'">')+'</div>'+
+  '<div class="og" id="o'+q.id+'">'+so.map(function(o,i){return '<button class="ob" onclick="pick('+q.id+','+i+')">'+String.fromCharCode(65+i)+'. '+o+'</button>'}).join('')+'</div>'+
+  '<div class="ex" id="e'+q.id+'"></div>';
+ secs[q.part].appendChild(card);
+});
+
+function pick(qid,i){
+ if(done[qid])return;done[qid]=true;answered++;
+ var q=QS.find(function(x){return x.id===qid});
+ var so=MAP[qid],bs=document.getElementById('o'+qid).children;
+ var ok=so[i]===q.correct;
+ for(var k=0;k<bs.length;k++){bs[k].classList.add('dn');
+  if(so[k]===q.correct)bs[k].classList.add('ok');else if(k===i)bs[k].classList.add('no')}
+ document.getElementById('e'+qid).innerHTML=render(q);
+ document.getElementById('e'+qid).classList.add('on');
+ if(ok){score++;ding();conf()}
+ else{buzz();var c=document.getElementById('c'+qid);c.classList.add('shk');setTimeout(function(){c.classList.remove('shk')},430)}
+ bump();
+}
+function bump(){document.getElementById('lv').textContent=score+'/'+TOTAL;document.getElementById('sc').textContent=score+'/'+TOTAL}
+
+/* ══ khung đọc vừa màn hình: chừa ~95px đáy cho cảnh quầy nước ép ══ */
+function fitPanels(){var m=document.querySelector('.main'),ps=document.querySelectorAll('.lp,.rp');if(!m||!ps.length)return;
+ if(window.innerWidth<=940){ps.forEach(function(e){e.style.maxHeight=''});m.style.paddingBottom='';return}
+ var n=document.querySelector('.note'),nh=n?n.offsetHeight:0,h=Math.max(320,window.innerHeight-nh-104);
+ ps.forEach(function(e){e.style.maxHeight=h+'px'});
+ var pb=parseFloat(getComputedStyle(m).paddingBottom)||0,top=ps[0].getBoundingClientRect().top+window.scrollY,want=Math.max(40,top-nh-8),extra=document.documentElement.scrollHeight-window.innerHeight-pb;
+ m.style.paddingBottom=Math.max(0,want-extra)+'px'}
+window.addEventListener('resize',fitPanels);window.addEventListener('load',fitPanels);
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitPanels);
+fitPanels();
+
+/* ══ nộp bài ══ */
+function openName(){
+ if(answered<TOTAL){alert('Con ơi, con còn '+(TOTAL-answered)+' câu chưa rót vào ly kìa! Hoàn thành hết rồi mới nộp bài nhé!');return;}
+ document.getElementById('ovN').classList.add('on');setTimeout(function(){document.getElementById('nIn').focus()},150);
+}
+document.getElementById('nIn').addEventListener('keydown',function(e){if(e.key==='Enter')showResult()});
+function showResult(){
+ var i=document.getElementById('nIn'),n=i.value.trim();
+ if(!n){document.getElementById('nEm').classList.add('show');i.focus();return}
+ document.getElementById('nEm').classList.remove('show');
+ document.getElementById('ovN').classList.remove('on');
+ var pct=score/TOTAL,ten=(pct*10).toFixed(2),g,m,gif;
+ document.getElementById('rn').textContent='Học viên: '+n;
+ if(score===TOTAL){g='🏆 LY ĐIỂM 10 ĐẦY TRÀN, '+n+'!';m='Con xay nhuyễn cả '+TOTAL+' chỗ trống mà không làm đổ một giọt nào — đúng phong độ của chiến binh lớp 9 sẵn sàng chinh phục kì thi giữa kì I! MS Chí Nên rất tự hào về con! 🌟 ☎️ 0852639652.';gif='https://media.giphy.com/media/11sBLVxNs7v6WA/giphy.gif'}
+ else if(pct>=.8){g='👏 LY NƯỚC ÉP QUÁ NGON, '+n+'!';m='Chỉ còn vài giọt nữa là đầy ly — soi lại câu trượt, nắm chắc từ nối và trật tự từ là bài thi giữa kì I của con sẽ bứt phá! ☎️ 0852639652.';gif='https://media.giphy.com/media/3o7abGQa0p2EWzchcg/giphy.gif'}
+ else if(pct>=.6){g='💪 MÁY XAY ĐÃ CHẠY ĐỀU, '+n+'!';m='Con đã qua ngưỡng an toàn rồi đó. Mở lời giải từng câu ra xem lại, chép từ mới vào vở — kì thi đang tới, mỗi câu sửa hôm nay là thêm điểm ngày mai!';gif='https://media.giphy.com/media/3o7abGQa0p2EWzchcg/giphy.gif'}
+ else{g='🌱 XAY LẠI LY MỚI NÀO, '+n+'!';m='Đừng nản con nhé. Chiến binh nào cũng từng vấp — đọc kĩ lời giải của cô, ghi chép từ mới, rồi bấm làm lại thật chắc tay, Ms tin con sẽ bứt phá trước kì thi! 💪';gif='https://media.giphy.com/media/l378giAZgxPw3eO52/giphy.gif'}
+ document.getElementById('rSc').textContent=score;
+ document.getElementById('rTt').textContent=TOTAL;
+ document.getElementById('r10').textContent=ten;
+ document.getElementById('rGif').src=gif;
+ document.getElementById('rMs').innerHTML='<b>'+g+'</b><br>'+m;
+ document.getElementById('ovR').classList.add('on');
+ if(pct>=.6){conf();ding()}
+}
+function closeR(){document.getElementById('ovR').classList.remove('on')}
+
+/* ══ lời nhắc — đổi theo phần đang làm ══ */
+var GEN=[
+ '🔥 Chiến binh lớp 9 vào phòng thí nghiệm nào! Juice Lab có 8 câu đọc điền từ (1 → 8) — kì thi giữa kì I đang tới gần, xay nhuyễn từng chỗ trống, rót đầy ly điểm 10 thôi! 🧃',
+ '🚨 LƯU Ý TỪ MS CHÍ NÊN: Cuộn câu hỏi đến đâu làm đến đó! TỰ GIÁC tra từ mới bằng Google Dịch/Từ điển Cambridge, tuyệt đối KHÔNG chọn bừa. Đọc kỹ giải thích và GHI CHÉP từ mới vào vở thì tiếng Anh mới thực sự giỏi lên. Tránh làm qua loa chống đối! 📝',
+ '✏️ Bật CÔNG CỤ HIGHLIGHT lên — quét chữ trong bài đọc rồi bấm màu để đánh dấu manh mối, dân thi giữa kì chuyên nghiệp là phải có bài đọc rực rỡ như vậy! 🌈',
+ '🔋 Đúng liên tục là chuỗi 🔥 bùng cháy — pin năng lượng của con đang sạc xanh rực, giữ nhịp thêm chút nữa là chạm đích! ⚡',
+ '💪 Lớp 9 rồi, mỗi bài luyện hôm nay là một viên gạch cho kì thi giữa kì I — lỡ sai thì đọc lời giải, đứng dậy và xay ly mới ngon hơn!',
+ '🦆 Chọn sai thì chú vịt kêu quạc quạc — cười một cái, đọc lời giải rồi quay lại chiến tiếp, phong độ thi cử là phải lì như vậy! 🔥',
+ '🏆 Đề thi giữa kì I đang đếm ngược — hôm nay luyện thật kĩ, ngày thi chỉ việc nâng ly nước ép mừng điểm 10! 🧃',
+ '☎️ Đăng ký khoá tiếng Anh lớp 1 → 12 cùng MS Chí Nên — 0852639652 — học vui như vào phòng thí nghiệm, điểm thi bứt phá từng tuần!'];
+var PMSG={
+ 1:['🏙️ LAB 1 · Better City Life! 4 chỗ trống là 4 trái cây chờ vào máy xay — chiến binh lớp 9 xay nhuyễn từng câu, nạp đầy năng lượng cho kì thi nào! 🔥',
+    '⚡ Hạ gọn cả 4 câu LAB 1 là mở khoá LAB 2 ngay — giữ lửa, giữ chuỗi, điểm 10 giữa kì đang vẫy tay! 🌈'],
+ 2:['🤝 LAB 2 · Building a Stronger Local Community! 4 câu cuối là 4 bậc thang lên đỉnh — bứt tốc về đích như ngày thi thật nào! 🔥',
+    '🧃 Chỉ còn vài câu nữa là ly điểm 10 đầy tràn — chiến binh lớp 9 tăng tốc, kì thi giữa kì I là sân khấu của con! 🏆']};
+var curP=0,mk=0,msEl=document.getElementById('msTx');
+function showMsg(t){msEl.style.opacity=0;setTimeout(function(){
+ var de=document.documentElement,atEnd=window.scrollY>0&&window.scrollY>=de.scrollHeight-window.innerHeight-2;
+ msEl.innerHTML=t;msEl.style.opacity=1;fitPanels();
+ if(atEnd)window.scrollTo(0,de.scrollHeight)},250)}
+setInterval(function(){var list=(PMSG[curP]||[]).concat(GEN);mk=(mk+1)%list.length;showMsg(list[mk])},5200);
+function whichPart(){
+ var rp=document.querySelector('.rp'),r=rp.getBoundingClientRect(),mid=Math.max(r.top,0)+Math.min(r.height,window.innerHeight)*0.45,p=1;
+ [1,2].forEach(function(k){if(secs[k].getBoundingClientRect().top<mid)p=k});
+ if(p!==curP){curP=p;mk=0;showMsg(PMSG[p][0])}
+}
+document.querySelector('.rp').addEventListener('scroll',whichPart,{passive:true});
+window.addEventListener('scroll',whichPart,{passive:true});
+</script>
+<style>/*streak*/
+#stkRow{display:flex;align-items:center;flex:0 0 auto;margin:0 4px}#stkRow.in{align-self:center;margin:0 0 0 8px}#stkRow.in .bar,#stkRow.in .nx,#stkRow.in .lbl{display:none!important}#stkRow.in #stkP{flex-direction:row!important;gap:6px;padding:4px 10px 4px 8px;position:static}#stkRow.in .fl,#stkRow.in .n{position:static;line-height:1}
+#stkRow.fixed{position:fixed;left:10px;bottom:12px;z-index:60}
+#stkP{display:flex;align-items:center;gap:6px;padding:2px 10px 2px 7px;border-radius:999px;background:#FFF7ED;border:2px solid #FDBA74;font-family:'Baloo 2','Nunito',sans-serif;
+ font-weight:700;color:#9A3412;font-size:.92rem;transition:transform .25s;white-space:nowrap}
+#stkP .fl{display:inline-block;position:static;font-size:1.1rem;transition:font-size .3s;transform-origin:50% 90%}
+#stkP.hot .fl{animation:stkFl .5s ease-in-out infinite alternate}@keyframes stkFl{from{transform:scale(1) rotate(-6deg)}to{transform:scale(1.25) rotate(6deg)}}
+#stkP.pop{transform:scale(1.15)}#stkP.cold{filter:grayscale(.6);opacity:.85}
+#stkP .n{display:inline-grid;place-items:center;min-width:22px;height:22px;padding:0 5px;border-radius:999px;background:linear-gradient(135deg,#FB923C,#EF4444);color:#fff;font-size:.9rem}
+#stkP .bar{width:54px;height:6px;border-radius:99px;background:#FED7AA;overflow:hidden}#stkP .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#F97316,#EF4444);transition:width .3s}
+#stkP .nx{font-size:.78rem;color:#C2410C}
+#stkToast{position:fixed;left:50%;top:38%;z-index:70;transform:translate(-50%,-50%) scale(.4);opacity:0;pointer-events:none;text-align:center;padding:18px 26px;border-radius:26px;
+ background:linear-gradient(135deg,#FFF7ED,#FEF3C7);border:4px solid #FDBA74;box-shadow:0 18px 40px rgba(0,0,0,.25);font-family:'Baloo 2','Nunito',sans-serif;color:#9A3412;max-width:86vw;transition:all .35s cubic-bezier(.2,1.6,.4,1)}
+#stkToast.show{opacity:1;transform:translate(-50%,-50%) scale(1)}#stkToast b{display:block;font-size:2.3rem;line-height:1.15}#stkToast span{font-weight:700;font-size:1.05rem}
+#stkToast.soft{background:linear-gradient(135deg,#EFF6FF,#F5F3FF);border-color:#93C5FD;color:#1E3A8A}#stkToast.soft b{font-size:1.6rem}
+.stkSpark{position:fixed;z-index:69;pointer-events:none;font-size:26px;animation:stkSp 1.2s ease-out forwards}
+@keyframes stkSp{0%{opacity:1;transform:translate(0,0) scale(.6)}100%{opacity:0;transform:translate(var(--x),var(--y)) scale(1.3) rotate(240deg)}}
+@media(max-width:700px){#stkP .bar,#stkP .nx,#stkP .lbl{display:none}#stkP{padding:2px 7px 2px 5px}#stkToast b{font-size:1.8rem}}
+@media (prefers-reduced-motion:reduce){#stkP.hot .fl,.stkSpark{animation:none}}
+</style>
+<script>/*streak*/(function(){
+ const $=id=>document.getElementById(id),num=el=>{const m=(el.textContent||'').match(/(\d+)\s*\/\s*(\d+)/);return m?[+m[1],+m[2]]:[0,0]};
+ let get=null,anchor=null,mode='after';const sc=$('scoreChip'),pg=$('progChip');
+ if(sc&&pg){get=()=>{const s=num(sc),a=num(pg);return [a[0],s[0],a[1]]};anchor=sc}
+ else{try{if(typeof answered!=='undefined'&&typeof score!=='undefined'){get=()=>[answered,score,typeof TOTAL!=='undefined'?TOTAL:0];anchor=$('sc')&&$('sc').parentElement}}catch(e){}
+  if(!get)try{if(typeof done==='object'&&done&&$('lv')){get=()=>{const v=Object.values(done);return [v.length,v.filter(x=>x===true).length,typeof QS!=='undefined'?QS.length:0]};anchor=$('lv').closest('.gauge')||$('lv');mode='in'}}catch(e){}}
+ if(!get)return;
+ const row=document.createElement('div');row.id='stkRow';
+ row.innerHTML='<div id="stkP" class="cold" title="Số câu đúng liên tiếp"><span class="fl">🔥</span><span class="lbl">Chuỗi đúng</span><span class="n" id="stkN">0</span><span class="bar"><i id="stkB"></i></span><span class="nx" id="stkX">→ 3</span></div>';
+ if(!anchor){row.className='fixed';document.body.appendChild(row)}else if(mode==='in'){row.className='in';anchor.insertAdjacentElement('afterend',row)}else anchor.insertAdjacentElement('afterend',row);
+ const toast=document.createElement('div');toast.id='stkToast';document.body.appendChild(toast);
+ const P=document.getElementById('stkP'),N=document.getElementById('stkN'),B=document.getElementById('stkB'),X=document.getElementById('stkX');
+ let cur=0,best=0,[lastA,lastS]=get(),tmr=null;
+ const NEXT=n=>n<3?3:n<5?5:n<10?10:(Math.floor(n/5)+1)*5,LOW=n=>n<3?0:n<5?3:n<10?5:Math.floor(n/5)*5;
+ const PRAISE={3:['🔥 3 câu liền!','Con đang vào guồng rồi đó!'],5:['🔥🔥 5 câu liền!','Siêu đỉnh luôn — cô thấy con tập trung lắm!'],10:['🌟 10 câu liền!','Không ai cản nổi con nữa rồi!'],
+  15:['🏆 15 câu liền!','Con là ngôi sao của lớp đó!'],20:['👑 20 câu liền!','Tuyệt vời — cô tự hào về con lắm!']};
+ const OOPS=['Không sao đâu con — mình bắt đầu chuỗi mới nhé! 💪','Đọc lời giải rồi làm tiếp, chuỗi mới đang chờ con! 🌱','Sai một câu là học thêm một điều — cố lên con! 🌈','Hít một hơi thật sâu, câu sau con sẽ làm được! ⭐'];
+ function say(t,sub,soft){toast.className=soft?'soft':'';toast.innerHTML='<b>'+t+'</b><span>'+sub+'</span>';void toast.offsetWidth;toast.classList.add('show');clearTimeout(tmr);tmr=setTimeout(()=>toast.classList.remove('show'),soft?1600:2000)}
+ function burst(){const E=['🔥','⭐','✨','🎉','💛','🌟'];for(let i=0;i<16;i++){const s=document.createElement('div');s.className='stkSpark';s.textContent=E[i%E.length];
+  const a=Math.random()*Math.PI*2,r=120+Math.random()*160;s.style.cssText='left:50%;top:38%;--x:'+Math.cos(a)*r+'px;--y:'+Math.sin(a)*r+'px';document.body.appendChild(s);setTimeout(()=>s.remove(),1300)}}
+ function paint(){N.textContent=cur;const lo=LOW(cur),hi=NEXT(cur);B.style.width=Math.min(100,(cur-lo)/(hi-lo)*100)+'%';X.textContent='→ '+hi;
+  P.classList.toggle('cold',cur===0);P.classList.toggle('hot',cur>=3);P.classList.add('pop');setTimeout(()=>P.classList.remove('pop'),250);
+  P.querySelector('.fl').style.fontSize=(1.1+Math.min(cur,15)*.03)+'rem'}
+ function check(){const [a,s,tot]=get();if(a===lastA)return;const dA=a-lastA,dS=s-lastS;lastA=a;lastS=s;if(dA<=0)return;
+  if(dS>=dA){const before=cur;cur+=dA;best=Math.max(best,cur);paint();
+   const hit=Object.keys(PRAISE).map(Number).filter(m=>before<m&&cur>=m).pop()||(cur>=25&&Math.floor(cur/5)>Math.floor(before/5)?cur-cur%5:0);
+   if(hit){const p=PRAISE[hit]||['🚀 '+hit+' câu liền!','Con đang bay cao lắm rồi!'];say(p[0],p[1]);burst()}}
+  else{const had=cur;cur=0;paint();if(had>=3)say('Chuỗi '+had+' câu — giỏi lắm!',OOPS[Math.floor(Math.random()*OOPS.length)],true)}
+  if(tot&&a>=tot)setTimeout(()=>{say('🏅 Chuỗi dài nhất: '+best+' câu',best>=5?'Con làm bài thật tuyệt vời!':'Lần sau mình thử phá kỷ lục này nhé!');if(best>=5)burst()},2400)}
+ setInterval(check,250);
+})();</script>
+<script>/*devclean*/(function(){
+var ZW=/[\u00AD\u034F\u061C\u115F\u1160\u17B4\u17B5\u180E\u200B-\u200F\u202A-\u202E\u2060-\u206F\uFEFF]/g,
+    SP=/[\u00A0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\t]/g,
+    AP=/[\u2018\u2019\u201A\u201B\u2032\u2035\u02B9\u02BB\u02BC\u02BD\u02C8\u0060\u00B4\uFF07]/g,
+    DQ=/[\u201C\u201D\u201E\u201F\u2033\u2036\u00AB\u00BB\uFF02]/g,
+    DS=/[\u2010\u2011\u2012\u2212\uFE63\uFF0D]/g;
+function clean(v){if(!v)return v;var s=String(v);try{s=s.normalize('NFKC')}catch(e){}
+  return s.replace(ZW,'').replace(SP,' ').replace(AP,"'").replace(DQ,'"').replace(DS,'-').replace(/[\u0300-\u036f]/g,'').replace(/ {2,}/g,' ');}
+window.__devclean=clean;
+function fix(skip){var L=document.querySelectorAll('input:not([type]),input[type=text],input[type=search],textarea');
+  for(var i=0;i<L.length;i++){var el=L[i];if(el===skip||el.readOnly||el.disabled)continue;var v=el.value,c=clean(v);if(c!==v)el.value=c;}}
+['pointerdown','mousedown','touchstart','click','change','focusout'].forEach(function(t){document.addEventListener(t,function(e){fix(t==='focusout'||t==='change'?null:e.target)},true)});
+document.addEventListener('keydown',function(e){if(e.key==='Enter'||e.keyCode===13)fix(null)},true);
+})();</script>
+<div id="hlPop">
+ <button type="button" class="y" title="Vàng" onclick="hlApply('y')"></button>
+ <button type="button" class="g" title="Xanh lá" onclick="hlApply('g')"></button>
+ <button type="button" class="p" title="Hồng" onclick="hlApply('p')"></button>
+ <button type="button" class="b" title="Xanh" onclick="hlApply('b')"></button>
+ <button type="button" class="er" title="Tẩy tô" onclick="hlErase()">🧽</button>
+</div>
+<script>/*hltool*/
+/* ══ công cụ highlight: chỉ tô trong bài đọc (.paragraph, .translation ở khung trái) ══ */
+var HLT={saved:null,t:null,target:null,gid:0},hlPop=document.getElementById('hlPop');
+function hlGroup(g){return Array.prototype.slice.call(document.querySelectorAll('.lp mark.uhl[data-g="'+g+'"]'))}
+function hlUnpick(){document.querySelectorAll('mark.uhl.pick').forEach(function(m){m.classList.remove('pick')});HLT.target=null}
+function hlShowGroup(){
+ var ms=hlGroup(HLT.target);if(!ms.length){hlUnpick();hlHide();return}
+ var L=1e9,T=1e9,R=-1e9,B=-1e9;
+ ms.forEach(function(m){var b=m.getBoundingClientRect();if(!b.width&&!b.height)return;L=Math.min(L,b.left);T=Math.min(T,b.top);R=Math.max(R,b.right);B=Math.max(B,b.bottom)});
+ if(R<L){hlHide();return}
+ hlShow({getBoundingClientRect:function(){return {left:L,top:T,right:R,bottom:B,width:R-L,height:B-T}}});
+}
+function hlZone(n){var e=n&&(n.nodeType===1?n:n.parentNode);return e&&e.closest?e.closest('.lp .paragraph,.lp .translation'):null}
+function hlNodes(r){
+ var root=r.commonAncestorContainer;if(root.nodeType!==1)root=root.parentNode;
+ var out=[],w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,null),n;
+ while((n=w.nextNode())){
+  if(!r.intersectsNode(n))continue;
+  var z=hlZone(n);if(!z||!z.getClientRects().length)continue;
+  var s=n===r.startContainer?r.startOffset:0,e=n===r.endContainer?r.endOffset:n.length;
+  if(e>s)out.push([n,s,e]);
+ }
+ return out;
+}
+function hlRange(){
+ var sel=window.getSelection();if(!sel||!sel.rangeCount||sel.isCollapsed)return null;
+ var r=sel.getRangeAt(0),lp=document.querySelector('.lp');
+ if(!lp.contains(r.commonAncestorContainer))return null;
+ var L=hlNodes(r);if(!L.some(function(x){return x[0].nodeValue.slice(x[1],x[2]).trim()}))return null;
+ return r;
+}
+function hlIsMark(e){return e&&e.nodeName==='MARK'&&e.classList.contains('uhl')}
+function hlPaint(r,cls){
+ var L=hlNodes(r),zones=[],g=cls?String(++HLT.gid):'';
+ L.forEach(function(x){
+  var n=x[0],s=x[1],e=x[2];
+  if(e<n.length)n.splitText(e);
+  if(s>0)n=n.splitText(s);
+  var z=hlZone(n);if(zones.indexOf(z)<0)zones.push(z);
+  var p=n.parentNode;
+  if(hlIsMark(p)){
+   var host=p.parentNode,ref=p.nextSibling,aft=null,put=n;
+   if(n.nextSibling){aft=document.createElement('mark');aft.className=p.className;if(p.dataset.g)aft.dataset.g=p.dataset.g;while(n.nextSibling)aft.appendChild(n.nextSibling)}
+   if(cls){put=document.createElement('mark');put.className='uhl uhl-'+cls;put.dataset.g=g;put.appendChild(n)}
+   host.insertBefore(put,ref);
+   if(aft)host.insertBefore(aft,put.nextSibling);
+   if(!p.firstChild)host.removeChild(p);
+  }else if(cls){
+   var m=document.createElement('mark');m.className='uhl uhl-'+cls;m.dataset.g=g;p.insertBefore(m,n);m.appendChild(n);
+  }
+ });
+ zones.forEach(function(z){if(z){z.querySelectorAll('mark.uhl').forEach(function(m){if(!m.textContent)m.remove()});z.normalize()}});
+}
+function hlDone(){HLT.saved=null;hlUnpick();try{window.getSelection().removeAllRanges()}catch(e){}hlHide()}
+function hlApply(cls){
+ if(HLT.target&&!hlRange()){hlGroup(HLT.target).forEach(function(m){m.className='uhl uhl-'+cls});hlDone();return}
+ var r=HLT.saved||hlRange();
+ if(!r){HLT.saved=null;hlHide();var t=document.getElementById('hlTip');t.classList.remove('ping');void t.offsetWidth;t.classList.add('ping');return}
+ hlPaint(r,cls);hlDone();
+}
+function hlErase(){
+ if(HLT.target&&!hlRange()){hlGroup(HLT.target).forEach(function(m){var p=m.parentNode;while(m.firstChild)p.insertBefore(m.firstChild,m);p.removeChild(m);p.normalize()});hlDone();return}
+ var r=HLT.saved||hlRange();
+ if(r){hlPaint(r,null)}
+ else{document.querySelectorAll('mark.uhl').forEach(function(m){var p=m.parentNode;while(m.firstChild)p.insertBefore(m.firstChild,m);p.removeChild(m);p.normalize()})}
+ hlDone();
+}
+function hlHide(){hlPop.classList.remove('on','below')}
+function hlShow(r){
+ var b=r.getBoundingClientRect();if(!b.width&&!b.height){hlHide();return}
+ hlPop.classList.add('on');
+ var w=hlPop.offsetWidth,h=hlPop.offsetHeight,note=document.querySelector('.note'),nb=note?note.getBoundingClientRect().bottom:0;
+ var x=Math.max(6,Math.min(window.innerWidth-w-6,b.left+b.width/2-w/2)),y=b.top-h-10,below=false;
+ if(y<nb+6){y=b.bottom+10;below=true}
+ hlPop.style.left=x+'px';hlPop.style.top=y+'px';hlPop.classList.toggle('below',below);
+}
+function hlCheck(){clearTimeout(HLT.t);HLT.t=setTimeout(function(){var r=hlRange();if(r){hlUnpick();hlShow(r)}else if(HLT.target)hlShowGroup();else hlHide()},90)}
+document.addEventListener('click',function(e){
+ var t=e.target;if(t.closest&&t.closest('#hlPop,.hlbar'))return;
+ var m=t.closest?t.closest('.lp mark.uhl'):null;
+ if(m&&!hlRange()){
+  if(!m.dataset.g)m.dataset.g=String(++HLT.gid);
+  hlUnpick();HLT.target=m.dataset.g;hlGroup(HLT.target).forEach(function(x){x.classList.add('pick')});hlShowGroup();
+ }else if(HLT.target){hlUnpick();hlHide()}
+});
+function hlKeep(e){var r=hlRange();if(r)HLT.saved=r.cloneRange();if(e.type==='mousedown')e.preventDefault()}
+document.querySelectorAll('.hlbar button,#hlPop button').forEach(function(b){
+ b.addEventListener('pointerdown',function(){var r=hlRange();HLT.saved=r?r.cloneRange():null});
+ b.addEventListener('mousedown',hlKeep);
+ b.addEventListener('touchstart',hlKeep,{passive:true});
+});
+document.addEventListener('mouseup',hlCheck);
+document.addEventListener('touchend',hlCheck);
+document.addEventListener('selectionchange',hlCheck);
+window.addEventListener('scroll',function(){if(hlPop.classList.contains('on'))hlCheck()},{passive:true});
+document.querySelector('.lp').addEventListener('scroll',function(){if(hlPop.classList.contains('on'))hlCheck()},{passive:true});
+if(typeof fitPanels==='function')fitPanels();
+</script>
+<style>/*namegate*/.ngTag{display:block;margin:2px auto 8px;padding:8px 12px;border-radius:14px;background:#F5F3FF;border:2px dashed #C4B5FD;font-weight:800;color:#4C1D95;line-height:1.6;font-size:.95rem;text-align:center}
+.ngTag small{font-weight:700;color:#6D28D9}
+#ngClock{position:fixed;left:10px;bottom:10px;z-index:90;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.92);border:2px solid #C4B5FD;font:800 .9rem inherit;color:#5B21B6;box-shadow:0 4px 12px rgba(0,0,0,.12);pointer-events:none}</style>
+<div id="ngClock">⏱ 00:00</div>
+<script>/*namegate*/(function(){
+var T0=Date.now(),TEND=0,clk=document.getElementById('ngClock');
+function mmss(ms){var s=Math.floor(ms/1000),m=Math.floor(s/60);s%=60;return (m<10?'0':'')+m+':'+(s<10?'0':'')+s;}
+function dur(ms){var s=Math.floor(ms/1000),m=Math.floor(s/60);s%=60;return (m?m+' phút ':'')+s+' giây';}
+function esc(s){return String(s).replace(/[<>&]/g,'');}
+function clean(s){s=(s||'');try{s=s.normalize('NFC')}catch(e){}return s.replace(/[​-‏⁠﻿]/g,'').replace(/\s+/g,' ').trim();}
+function stamp(){var d=new Date(),p=function(n){return(n<10?'0':'')+n};return p(d.getHours())+':'+p(d.getMinutes())+' · '+p(d.getDate())+'/'+p(d.getMonth()+1)+'/'+d.getFullYear();}
+setInterval(function(){if(!TEND&&clk)clk.textContent='⏱ '+mmss(Date.now()-T0);},1000);
+var orig=window.showResult;if(typeof orig!=='function')return;
+window.showResult=function(){var i=document.getElementById('nIn'),v=clean(i&&i.value);if(i)i.value=v;
+  orig.apply(this,arguments);
+  var ov=document.getElementById('ovR'),rn=document.getElementById('rn');if(!v||!ov||!ov.classList.contains('on')||!rn)return;
+  if(!TEND)TEND=Date.now();if(clk)clk.textContent='⏱ '+mmss(TEND-T0)+' ✔';
+  rn.innerHTML='<span class="ngTag">👤 '+esc(v)+'<br>⏱ Làm bài trong <b>'+dur(TEND-T0)+'</b><br><small>⏰ Nộp lúc '+stamp()+'<br>📘 '+esc(document.title.split('|')[0].trim())+'</small></span>';};
+})();</script>
+<script>/*attempts*/(function(){
+var KEY='att:'+decodeURIComponent(location.pathname),done=false;
+function load(){try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){return []}}
+function save(a){try{localStorage.setItem(KEY,JSON.stringify(a.slice(-20)))}catch(e){}}
+function fmt(d){var p=function(n){return(n<10?'0':'')+n};return p(d.getDate())+'/'+p(d.getMonth()+1);}
+function durOf(tag){var m=(tag.textContent||'').match(/Làm bài trong\s*((?:\d+\s*phút\s*)?\d+\s*giây)/);return m?m[1].replace(/\s+/g,' '):'';}
+function score(){var a=document.getElementById('resScore');if(a)return a.textContent.replace(/\s+/g,'');
+  a=document.getElementById('rS');if(a)return a.textContent.replace(/\s+/g,'');
+  a=document.getElementById('rSc');var b=document.getElementById('rTt');if(a)return a.textContent.trim()+'/'+(b?b.textContent.trim():'?');return '?';}
+function add(tag){
+  if(tag.querySelector('.ngAtt'))return;
+  var a=load();
+  if(!done){done=true;a.push({s:score(),t:Date.now(),d:durOf(tag)});save(a);}
+  var k=a.length,prev=a.slice(Math.max(0,k-6),k-1);
+  var d=document.createElement('div');d.className='ngAtt';
+  d.style.cssText='display:block;margin-top:6px;padding-top:6px;border-top:2px dashed #DDD6FE';
+  d.innerHTML='🔁 <b>Lần nộp thứ '+k+'</b> trên máy này'+(prev.length?'<br><small>'+prev.map(function(x,i){return 'Lần '+(k-prev.length+i)+': <b>'+x.s+'</b>'+(x.d?' · ⏱ làm trong <b>'+x.d+'</b>':'')+' · '+fmt(new Date(x.t))}).join('<br>')+'</small>':'');
+  tag.appendChild(d);
+}
+function check(){var t=document.getElementById('ngTag')||document.querySelector('#rn .ngTag');if(t&&t.textContent.trim())add(t);}
+new MutationObserver(check).observe(document.body,{childList:true,subtree:true,characterData:true});
+})();</script>
+<style id="ms-chi-nen-unlock-style">
+#passwordModal, #password-modal, #pwModal, #pw-modal, #pw-overlay,
+#lockModal, #passModal, #authModal, #auth-modal, #lockOverlay,
+#start-overlay, #intro-overlay, #start-screen,
+.password-modal, .lock-modal, .lock-overlay {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    z-index: -9999 !important;
+}
+</style>
+<script>
+// Remove password lock completely - direct quiz access
+(function() {
+    var initDone = false;
+    var renderCheckDone = false;
+
+    function hideEl(el, hard) {
+        if (!el) return;
+        if (hard) {
+            el.style.setProperty('display', 'none', 'important');
+            el.style.setProperty('visibility', 'hidden', 'important');
+            el.style.setProperty('opacity', '0', 'important');
+            el.style.setProperty('pointer-events', 'none', 'important');
+            el.style.setProperty('z-index', '-9999', 'important');
+        } else {
+            el.style.display = 'none';
+        }
+        el.classList.remove('active', 'show', 'open', 'visible', 'flex');
+    }
+
+    function hasRenderedQuiz() {
+        var containers = document.querySelectorAll(
+            '#quiz-container, #quizContainer, #questions-container, #questionPane, #quiz, #questions, #quiz-body, #questions-wrapper, #quiz-list, #quizList, #exercise-container, #app-container .split-container'
+        );
+        for (var i = 0; i < containers.length; i++) {
+            if (containers[i].querySelectorAll('button, input, select, textarea, .question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .question, .option-btn, .opt-btn, .ans-btn').length > 0) {
+                return true;
+            }
+        }
+        if (document.querySelectorAll('.question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .option-btn, .opt-btn, .ans-btn, .choice-btn').length > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    function ensureQuizRendered() {
+        if (renderCheckDone) return;
+        renderCheckDone = true;
+        if (hasRenderedQuiz()) return;
+
+        if (!hasRenderedQuiz() && typeof buildQuiz === 'function') { try { buildQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof initQuiz === 'function') { try { initQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderApp === 'function') { try { renderApp(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuiz === 'function') { try { renderQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuestions === 'function') { try { renderQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAllQuestions === 'function') { try { renderAllQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAll === 'function') { try { renderAll(); } catch(e){} }
+    }
+
+    function unlockNow() {
+        var pwIds = [
+            'passwordModal', 'password-modal', 'pwModal', 'pw-modal', 'pw-overlay',
+            'lockModal', 'passModal', 'authModal', 'auth-modal', 'lockOverlay',
+            'start-overlay', 'intro-overlay', 'start-screen'
+        ];
+        pwIds.forEach(function(id) {
+            hideEl(document.getElementById(id), true);
+        });
+
+        var modalEls = document.querySelectorAll('.password-modal, .lock-modal, .lock-overlay, #lockOverlay, #auth-modal');
+        modalEls.forEach(function(el) {
+            if (el.id !== 'resultModal' && el.id !== 'result-modal' && el.id !== 'scoreModal') {
+                hideEl(el, true);
+            }
+        });
+
+        ['nameModal', 'name-modal', 'nameInputModal'].forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) hideEl(el, false);
+        });
+
+        var qo = document.getElementById('quiz-overlay');
+        if (qo && (typeof isStarted === 'undefined' || !isStarted)) {
+            qo.style.display = 'none';
+        }
+
+        var mainIds = [
+            'mainContent', 'main-content', 'mainHeader', 'main-header',
+            'app-container', 'app', 'quizApp', 'quiz-wrapper', 'quizContainer', 'quiz-container', 'reading-content'
+        ];
+        mainIds.forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) {
+                el.classList.remove('hidden', 'blur', 'blurred', 'locked');
+                if (el.style.display === 'none') {
+                    el.style.removeProperty('display');
+                }
+                if (window.getComputedStyle(el).display === 'none') {
+                    var hasPane = el.querySelector('.pane, .left-pane, .right-pane, .split-container, .left-panel, .right-panel');
+                    if (id === 'main-content' || id.toLowerCase().includes('header') || el.classList.contains('main-container') || hasPane) {
+                        el.style.setProperty('display', 'flex', 'important');
+                    } else {
+                        el.style.setProperty('display', 'block', 'important');
+                    }
+                }
+            }
+        });
+
+        var qs = document.getElementById('quiz-screen');
+        if (qs) {
+            qs.classList.remove('hidden');
+            if (qs.classList.contains('flex-col')) {
+                qs.classList.add('flex');
+                qs.style.display = 'flex';
+            } else {
+                qs.style.display = 'block';
+            }
+        }
+
+        if (!initDone) {
+            initDone = true;
+
+            if (document.getElementById('start-overlay') && typeof startGame === 'function') {
+                var sn = document.getElementById('student-name') || document.getElementById('studentName');
+                if (sn && !sn.value.trim()) sn.value = 'Học sinh';
+            }
+            if (document.getElementById('name-modal') && typeof startQuiz === 'function') {
+                var sn2 = document.getElementById('student-name');
+                if (sn2 && !sn2.value.trim()) sn2.value = 'Học sinh';
+            }
+
+            if (typeof startQuiz === 'function' && (typeof isStarted === 'undefined' || !isStarted)) { try { startQuiz(); } catch(e){} }
+            if (typeof startGame === 'function') { try { startGame(); } catch(e){} }
+            if (typeof startTest === 'function') { try { startTest(); } catch(e){} }
+            if (typeof startApp === 'function') { try { startApp(); } catch(e){} }
+            if (typeof buildStarfield === 'function') { try { buildStarfield(); } catch(e){} }
+            if (typeof spawnFloats === 'function') { try { spawnFloats(); } catch(e){} }
+            if (typeof spawnFloaters === 'function') { try { spawnFloaters(); } catch(e){} }
+            if (typeof createFloatingBubbles === 'function') { try { createFloatingBubbles(); } catch(e){} }
+            if (typeof initAudio === 'function') { try { initAudio(); } catch(e){} }
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', unlockNow);
+    } else {
+        unlockNow();
+    }
+    if (document.readyState === 'complete') {
+        setTimeout(ensureQuizRendered, 150);
+    } else {
+        window.addEventListener('load', function() {
+            setTimeout(unlockNow, 20);
+            setTimeout(ensureQuizRendered, 150);
+            setTimeout(unlockNow, 300);
+            setTimeout(unlockNow, 700);
+        });
+    }
+    setTimeout(unlockNow, 50);
+    setTimeout(unlockNow, 200);
+    setTimeout(unlockNow, 600);
+    setTimeout(unlockNow, 1100);
+})();
+</script>
+</body>
+</html>
