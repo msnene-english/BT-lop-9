@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🏮 Phố Cổ · Writing sắp xếp — English 9 Unit 6 | MS Chí Nên</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=Fredoka:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFFFF;--ink:#1E1B4B;--ink2:#4B5075;--hl:#6366F1;--line:#C7D2FE;--glow:rgba(255,255,255,.3);--birdc:#1E1B4B;--ffc:#FFD84D;--c1:#6366F1;--c2:#C7D2FE;--c3:#4B5075;--a1:linear-gradient(135deg,#A5B4FC,#6366F1);--a2:linear-gradient(135deg,#F9A8D4,#EC4899);--a3:linear-gradient(135deg,#FDE68A,#F59E0B);--a4:linear-gradient(135deg,#86EFAC,#16A34A);--rainbow:linear-gradient(90deg,#A5B4FC,#F9A8D4,#FDE68A,#86EFAC);--title:linear-gradient(90deg,#6366F1,#EC4899 35%,#F59E0B 70%,#16A34A);--rmbbg:#EEF2FF;--shadow:rgba(30,30,60,.18);--cardline:#FFFFFF;--optline:#FFFFFF;--focus:rgba(99,102,241,.25);--expbg:linear-gradient(150deg,#EEF2FF,#fff 55%,#FDF2F8);--modalbg:linear-gradient(160deg,#EEF2FF,#fff 45%,#FDF2F8);--rg1:#6366F1;--rg2:#EC4899;
+  --ok:#12A366;--ok-bg:#DCF8EA;--no:#E5486F;--no-bg:#FFE3EA;}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito',sans-serif;font-size:19px;font-weight:500;line-height:1.7;color:var(--ink);background:var(--bg);min-height:100vh;overflow-x:hidden}
+button{font-family:inherit;cursor:pointer}
+.wrap{position:relative;z-index:2;max-width:900px;margin:0 auto;padding:0 16px 120px}
+.deco{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+@media(prefers-reduced-motion:reduce){.deco *,.bgmove{animation:none!important}}
+
+/* ── thanh trên ── */
+.topbar{position:sticky;top:0;z-index:50;padding:10px 0 12px;margin-bottom:10px}
+.topbar-in{padding:10px 14px;border-radius:24px;background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border:3px solid #fff;box-shadow:0 10px 28px var(--shadow)}
+.prog-row{display:flex;align-items:center;gap:12px}
+.pbar{flex:1;height:16px;border-radius:99px;background:rgba(0,0,0,.06);overflow:hidden}
+.pfill{height:100%;width:0;border-radius:99px;transition:width .6s cubic-bezier(.3,1.4,.5,1);background:var(--rainbow)}
+.pchip{flex:none;padding:2px 14px;border-radius:99px;font-weight:700;font-size:1.02rem;color:#fff;background:var(--a1)}
+.pchip.s2{background:var(--a3)}
+.rmb{display:flex;align-items:center;gap:10px;margin-top:9px;padding:8px 12px;border-radius:16px;font-size:1rem;line-height:1.55;background:var(--rmbbg)}
+.rmb .ic{flex:none;font-size:1.6rem;animation:bob 2.4s ease-in-out infinite}
+#rmbTxt{flex:1;animation:fadeUp .5s ease}
+#rmbTxt b{color:var(--hl)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.rmb-min{flex:none;width:32px;height:32px;border:none;border-radius:10px;font-weight:800;font-size:1.1rem;color:#fff;background:var(--a1)}
+.rmb.mini #rmbTxt{display:none}
+.rmb.mini::after{content:'Lời nhắc của cô (bấm + để mở)';flex:1;opacity:.8}
+
+/* ── hero ── */
+.hero{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:24px;margin:6px 0 20px;border-radius:34px;background:rgba(255,255,255,.8);backdrop-filter:blur(8px);border:4px solid #fff;box-shadow:0 16px 44px var(--shadow)}
+.hero-txt{flex:1 1 320px}
+.kick{display:inline-block;padding:1px 14px;border-radius:99px;font-weight:700;font-size:.98rem;color:#fff;background:var(--a2)}
+.hero h1{font-size:clamp(1.9rem,5.4vw,2.8rem);font-weight:800;line-height:1.15;margin:8px 0 6px;background:var(--title);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .sub{font-size:1.04rem;color:var(--ink2)}
+.tag{display:inline-block;margin-top:10px;padding:5px 16px;border-radius:99px;font-weight:700;font-size:1rem;color:var(--hl);background:var(--rmbbg);border:2px solid #fff}
+.heroart{flex:none;width:200px;height:170px;margin:0 auto}
+
+/* ── tiêu đề phần ── */
+.sec{display:flex;align-items:center;gap:14px;margin:30px 0 16px;padding:14px 18px;border-radius:24px;background:rgba(255,255,255,.85);backdrop-filter:blur(6px);border:3px solid #fff;box-shadow:0 6px 18px var(--shadow)}
+.sec .si{flex:none;width:58px;height:58px;display:grid;place-items:center;font-size:1.7rem;border-radius:20px;background:var(--a2);box-shadow:inset 0 -5px 0 rgba(0,0,0,.12),0 5px 12px var(--shadow)}
+.sec:nth-of-type(2n) .si{background:var(--a3)}
+.sec h2{font-size:1.28rem;font-weight:800;line-height:1.3}
+.sec p{font-size:1rem;color:var(--ink2)}
+.sec p b{color:var(--hl)}
+.sec .cnt{flex:none;margin-left:auto;padding:2px 12px;border-radius:99px;font-weight:700;background:var(--rmbbg);color:var(--hl)}
+
+/* ── thẻ câu hỏi ── */
+.card{position:relative;margin-bottom:18px;padding:18px 18px 16px;border-radius:28px;background:rgba(255,255,255,.93);border:4px solid var(--cardline);box-shadow:0 8px 0 var(--cardline),0 16px 30px var(--shadow)}
+.card .top{display:flex;align-items:flex-start;gap:11px;margin-bottom:6px}
+.qn{flex:none;min-width:44px;height:44px;display:grid;place-items:center;padding:0 8px;font-weight:800;font-size:1.1rem;color:#fff;border-radius:16px;background:var(--qc,var(--a1));box-shadow:inset 0 -4px 0 rgba(0,0,0,.15)}
+.qt{flex:1;font-size:1.18rem;font-weight:600;line-height:1.8;padding-top:4px}
+.blank{display:inline-block;min-width:90px;border-bottom:3px dashed var(--line);margin:0 4px;vertical-align:-4px}
+.hw{display:inline-block;margin:0 3px;padding:0 10px;border-radius:99px;font-size:.98rem;font-weight:700;color:var(--hl);background:var(--rmbbg);line-height:1.6}
+.opts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:10px}
+@media(max-width:560px){.opts{grid-template-columns:1fr}}
+.opt{position:relative;overflow:hidden;display:flex;align-items:center;gap:10px;padding:11px 14px;border-radius:18px;border:3px solid var(--optline);background:#fff;
+  font-size:1.1rem;font-weight:600;color:var(--ink);text-align:left;box-shadow:0 4px 0 var(--optline);transition:transform .15s,box-shadow .15s}
+.opt::after{content:'';position:absolute;left:10px;right:10px;top:4px;height:35%;border-radius:12px;background:linear-gradient(rgba(255,255,255,.7),rgba(255,255,255,0));pointer-events:none}
+.opt:hover{transform:translateY(-3px);box-shadow:0 7px 0 var(--optline)}
+.opt .l{flex:none;width:32px;height:32px;display:grid;place-items:center;border-radius:50%;font-weight:800;font-size:.95rem;color:#fff;background:var(--a2)}
+.opt.good{border-color:var(--ok);background:var(--ok-bg);box-shadow:0 4px 0 #9ED9BD}.opt.good .l{background:var(--ok)}
+.opt.bad{border-color:var(--no);background:var(--no-bg);box-shadow:0 4px 0 #F5AFC0}.opt.bad .l{background:var(--no)}
+.opt.dim{opacity:.5}.opt:disabled{cursor:default;transform:none}
+.fline{font-size:1.18rem;font-weight:600;line-height:2.3}
+.fi{width:210px;max-width:100%;margin:0 4px;padding:3px 10px;text-align:center;font-family:inherit;font-size:1.12rem;font-weight:700;color:var(--ink);
+  border:none;border-bottom:3px dashed var(--line);border-radius:12px 12px 0 0;background:var(--rmbbg);outline:none;transition:all .2s}
+.fi:focus{background:#fff;border-bottom-style:solid;box-shadow:0 0 0 3px var(--focus)}
+.fi.ok{color:var(--ok);background:var(--ok-bg);border-bottom:3px solid var(--ok)}
+.fi.no{color:var(--no);background:var(--no-bg);border-bottom:3px solid var(--no);text-decoration:line-through}
+.fi.shake{animation:shake .4s ease}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}50%{transform:translateX(6px)}75%{transform:translateX(-3px)}}
+.fix{display:inline-block;margin-left:3px;padding:0 10px;border-radius:99px;font-size:1rem;font-weight:700;color:#fff;background:var(--ok);line-height:1.6}
+.fb{display:block;margin-top:8px;font-size:1.02rem;font-weight:700}
+.fb.tip{color:var(--ink2);font-weight:500;font-size:.95rem}
+.fb.ok{color:var(--ok)}.fb.no{color:var(--no)}.fb.part{color:#C27A00}
+.ansbox{display:inline-block;margin-left:4px;padding:0 10px;border-radius:10px;background:var(--ok-bg);color:var(--ok)}
+
+/* ── nối câu ── */
+.match{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:680px){.match{grid-template-columns:1fr}}
+.mcol{padding:12px;border-radius:26px;background:rgba(255,255,255,.88);border:4px solid var(--cardline);box-shadow:0 8px 0 var(--cardline)}
+.mcol h3{font-size:1.05rem;font-weight:800;color:var(--hl);margin:0 4px 8px}
+.mb{width:100%;display:flex;align-items:center;gap:10px;margin-bottom:8px;padding:9px 12px;border-radius:16px;border:3px solid var(--optline);background:#fff;text-align:left;
+  font-size:1.05rem;font-weight:600;color:var(--ink);box-shadow:0 3px 0 var(--optline);transition:transform .15s}
+.mb:hover{transform:translateY(-2px)}
+.mb .k{flex:none;width:32px;height:32px;display:grid;place-items:center;border-radius:12px;font-weight:800;color:#fff;background:var(--a2)}
+.mb.a .k{background:var(--a3)}
+.mb.sel{border-color:var(--line);background:var(--rmbbg);transform:scale(1.02)}
+.mb.good{border-color:var(--ok);background:var(--ok-bg)}.mb.good .k{background:var(--ok)}
+.mb.bad{border-color:var(--no);background:var(--no-bg);animation:shake .4s ease}
+.mb:disabled{cursor:default;transform:none}
+.mexp{display:none;margin:-2px 0 10px;padding:9px 12px;border-radius:14px;font-size:.98rem;line-height:1.65;background:var(--expbg);border:2px dashed var(--optline)}
+.mexp.show{display:block;animation:fadeUp .4s ease}
+.mexp b.pair{color:var(--ok)}
+
+/* ── lời giải (giữ nội dung gốc, trình bày lại) ── */
+.expl{display:none;margin-top:12px}
+.expl.show{display:block;animation:fadeUp .45s ease}
+.exp-box{padding:13px 14px;border-radius:22px;font-size:1.02rem;line-height:1.7;background:var(--expbg);border:3px dashed var(--optline)}
+.exp-box h4{font-size:1.02rem;font-weight:800;color:var(--hl);margin-bottom:8px}
+.exp-box>div{margin-bottom:8px!important;padding:9px 13px;border-radius:14px;background:rgba(255,255,255,.9);border-left:6px solid var(--a3)}
+.exp-box>div:nth-of-type(2){border-left-color:var(--a2)}
+.exp-box>div:nth-of-type(3){border-left-color:var(--ok)}
+.exp-box>div:nth-of-type(4){border-left-color:var(--no);background:#FFF4F7}
+.exp-box>div:last-child{margin-bottom:0!important}
+.exp-box>div>b:first-child{color:var(--hl)}
+.p-word{font-weight:700;color:var(--hl)}
+.p-mean{color:var(--ink2)}
+.p-phonetic{color:#2E7BD6;font-weight:600}
+.p-grammar,.mexp .p-grammar{padding:0 7px;border-radius:7px;font-weight:700;background:#FFF1C4;color:#8A5A00}
+.hl-green{padding:0 7px;border-radius:7px;font-weight:700;background:var(--ok-bg);color:var(--ok)}
+.hl-red{padding:0 7px;border-radius:7px;font-weight:700;background:var(--no-bg);color:var(--no)}
+
+/* ── kết quả ── */
+.pop{position:fixed;z-index:999;pointer-events:none;font-size:22px;animation:pop 1.1s ease-out forwards}
+@keyframes pop{0%{opacity:1;transform:translate(0,0) scale(.4)}100%{opacity:0;transform:translate(var(--dx),var(--dy)) scale(1.2) rotate(var(--r))}}
+.btn{padding:12px 34px;border:none;border-radius:99px;font-size:1.15rem;font-weight:800;color:#fff;background:var(--a1);box-shadow:inset 0 -5px 0 rgba(0,0,0,.15),0 6px 16px var(--shadow);transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.b2{background:var(--a3)}
+.finish{text-align:center;margin:30px 0 10px}
+.foot{text-align:center;margin-top:24px;font-size:1rem;color:var(--ink2)}
+.foot b{color:var(--hl)}
+.ov{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:16px;background:rgba(60,40,80,.32);backdrop-filter:blur(6px)}
+.ov.show{display:flex}
+.modal{width:100%;max-width:430px;max-height:92vh;overflow:auto;padding:26px 22px 22px;text-align:center;border-radius:30px;background:var(--modalbg);border:4px solid #fff;box-shadow:0 20px 50px rgba(90,50,130,.3);animation:fadeUp .4s ease}
+.modal .em{font-size:3.3rem;line-height:1.1}
+.modal .big{font-size:2.8rem;font-weight:800;background:var(--title);-webkit-background-clip:text;background-clip:text;color:transparent}
+.modal .ten{font-size:1.18rem;font-weight:800;color:var(--hl);margin-bottom:10px}
+.row{display:flex;justify-content:space-between;padding:7px 14px;margin:6px 0;border-radius:14px;background:rgba(255,255,255,.85);font-size:1.02rem}
+.row b{color:var(--hl)}
+.modal .note{margin:12px 0 14px;font-size:1.02rem;color:var(--ink2)}
+@media(max-width:600px){body{font-size:18px}.hero{padding:18px 14px}.heroart{width:170px;height:145px}.card{padding:14px 11px}.qt,.fline{font-size:1.1rem}.fi{width:170px}}
+
+/* ══════════ THEME ══════════ */
+/* ══════════ CHIM · BƯỚM · ONG ══════════ */
+.fauna{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.flock{position:absolute;left:0;width:150px;height:80px;animation:flyAcross linear infinite}
+.flock .bird{position:absolute;width:30px;height:16px;animation:glide 3s ease-in-out infinite alternate}
+.flock .bird svg{width:100%;height:100%;overflow:visible;animation:flap .42s ease-in-out infinite alternate;transform-origin:50% 60%}
+@keyframes flyAcross{from{transform:translateX(-200px)}to{transform:translateX(calc(100vw + 60px))}}
+@keyframes glide{from{transform:translateY(0)}to{transform:translateY(-12px)}}
+@keyframes flap{from{transform:scaleY(1)}to{transform:scaleY(-.35)}}
+.flock.rev{animation-name:flyBack}.flock.rev .bird svg{transform:scaleX(-1)}
+@keyframes flyBack{from{transform:translateX(calc(100vw + 60px))}to{transform:translateX(-200px)}}
+.bfly{position:absolute;width:44px;height:38px;animation:var(--path) var(--dur) ease-in-out infinite}
+.bfly svg{width:100%;height:100%;overflow:visible}
+.bfly .wl,.bfly .wr{animation:wing .28s ease-in-out infinite alternate}
+.bfly .wl{transform-origin:22px 19px}.bfly .wr{transform-origin:22px 19px}
+@keyframes wing{from{transform:scaleX(1)}to{transform:scaleX(.18)}}
+.bee{position:absolute;width:40px;height:32px;animation:var(--path) var(--dur) ease-in-out infinite}
+.bee .in{width:100%;height:100%;animation:buzz .35s ease-in-out infinite alternate}
+.bee svg{width:100%;height:100%;overflow:visible}
+.bee .bw{animation:bw .06s linear infinite alternate;transform-origin:20px 12px}
+@keyframes bw{from{transform:scaleY(1)}to{transform:scaleY(.35)}}
+@keyframes buzz{from{transform:translate(0,0) rotate(-6deg)}to{transform:translate(2px,-3px) rotate(6deg)}}
+@keyframes p1{0%{transform:translate(-8vw,70vh)}20%{transform:translate(18vw,48vh)}40%{transform:translate(35vw,62vh)}60%{transform:translate(58vw,30vh)}80%{transform:translate(80vw,50vh)}100%{transform:translate(108vw,22vh)}}
+@keyframes p2{0%{transform:translate(106vw,40vh) scaleX(-1)}25%{transform:translate(78vw,64vh) scaleX(-1)}50%{transform:translate(52vw,36vh) scaleX(-1)}75%{transform:translate(24vw,72vh) scaleX(-1)}100%{transform:translate(-10vw,46vh) scaleX(-1)}}
+@keyframes p3{0%{transform:translate(4vw,20vh)}25%{transform:translate(90vw,34vh)}50%{transform:translate(70vw,82vh)}75%{transform:translate(10vw,60vh)}100%{transform:translate(4vw,20vh)}}
+@keyframes p4{0%{transform:translate(92vw,86vh)}20%{transform:translate(66vw,70vh)}45%{transform:translate(84vw,40vh)}70%{transform:translate(30vw,26vh)}100%{transform:translate(92vw,86vh)}}
+@keyframes p5{0%{transform:translate(-6vw,88vh)}30%{transform:translate(30vw,76vh)}55%{transform:translate(48vw,90vh)}80%{transform:translate(74vw,74vh)}100%{transform:translate(106vw,84vh)}}
+@media(prefers-reduced-motion:reduce){.fauna{display:none}}
+
+
+.fauna{z-index:1}
+.flock .bird svg path{fill:var(--birdc)!important}
+.flock .bird svg{filter:drop-shadow(0 0 5px var(--glow)) drop-shadow(0 0 12px var(--glow))}
+.bfly svg{filter:drop-shadow(0 0 6px rgba(255,255,255,.9)) drop-shadow(0 0 16px var(--glow))}
+.bee svg{filter:drop-shadow(0 0 6px rgba(255,240,150,.95)) drop-shadow(0 0 14px rgba(255,210,80,.7))}
+.sec,.card,.topbar-in,.hero,.wbox,.cols .col{box-shadow:0 0 0 2px rgba(255,255,255,.55),0 0 28px var(--glow),0 14px 34px rgba(5,0,30,.4)!important}
+.foot{color:#F1EAFF}.foot b{color:#FFD970}
+.p-ph,.p-phonetic{font-family:'Segoe UI','Lucida Sans Unicode','Arial Unicode MS',sans-serif;color:#2E7BD6;font-weight:700}
+.vi-note{display:block}.p-mean{color:var(--ink2)}
+.qgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px;margin-bottom:18px}
+.qgrid .card{margin:0;text-align:center}
+.qgrid .card .top{justify-content:center}
+.qgrid .card.opened{grid-column:1/-1;text-align:left}
+.qgrid .card.opened .top{justify-content:flex-start}
+.pic{display:flex;justify-content:center;margin:2px 0 4px}
+.pic svg{width:92px;height:92px;filter:drop-shadow(0 4px 8px rgba(40,20,90,.2))}
+.partial{font-size:1.6rem;font-weight:900;letter-spacing:3px;color:var(--ink)}
+.partial .gap{color:var(--hl);text-shadow:0 0 10px var(--glow)}
+.cword{font-size:1.5rem;font-weight:900;color:var(--ink)}
+.qgrid .opts{grid-template-columns:1fr 1fr}
+.qgrid .opt{justify-content:center;font-size:1.4rem;font-weight:900}
+.qgrid .opt .l{display:none}
+.qgrid .qt{padding-top:0}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:0 0 16px}
+.col{padding:12px;border-radius:22px;background:rgba(255,255,255,.9);min-height:80px}
+.col-t{font-weight:900;font-size:1.15rem;color:var(--hl);margin-bottom:6px;text-align:center}
+.col-in{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+.cw{padding:3px 12px;border-radius:99px;font-weight:800;font-size:1rem;color:#fff;background:var(--a4)}.cw.bad{background:var(--no)}
+.wline{display:flex;align-items:stretch;margin-top:8px;border-radius:16px;overflow:hidden;border:3px solid var(--optline);background:#fff;transition:all .2s}
+.wline:focus-within{border-color:var(--line);box-shadow:0 0 0 4px var(--focus)}
+.wline.ok{border-color:var(--ok);background:var(--ok-bg)}.wline.no{border-color:var(--no);background:var(--no-bg)}
+.wline.shake{animation:shake .4s ease}
+.wline .px{flex:none;display:flex;align-items:center;padding:0 14px;font-weight:800;color:#fff;background:var(--a1)}
+.wi{flex:1;min-width:0;padding:10px 12px;border:none;outline:none;background:transparent;font-family:inherit;font-size:1.15rem;font-weight:700;color:var(--ink);text-align:inherit}
+.qgrid .card .wi{text-align:center}
+.wline.ok .wi{color:var(--ok)}.wline.no .wi{color:var(--no)}
+.cue{display:inline-block;padding:4px 14px;border-radius:12px;background:var(--rmbbg);font-weight:800}
+.eg{margin:-4px 0 14px;padding:10px 16px;border-radius:18px;font-size:1.05rem;background:rgba(255,255,255,.92);border:3px dashed var(--line)}
+.wbox{position:relative;margin:4px 0 20px;padding:16px 16px 18px;border-radius:28px;border:4px solid transparent;
+  background:linear-gradient(#FFFDF6,#FFFDF6) padding-box,linear-gradient(120deg,var(--c1),var(--c2),var(--c3),var(--c1)) border-box;background-size:100% 100%,300% 300%;animation:wbGlow 6s linear infinite}
+@keyframes wbGlow{to{background-position:0 0,300% 0}}
+.wb-t{font-weight:900;font-size:1.15rem;letter-spacing:2px;color:var(--hl);text-align:center;margin-bottom:10px}
+.wb-t small{display:block;letter-spacing:0;font-weight:600;font-size:.9rem;color:var(--ink2)}
+.wb-in{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.wchip{padding:7px 18px;border:none;border-radius:16px;font-size:1.12rem;font-weight:800;color:#fff;background:var(--a1);box-shadow:0 4px 0 rgba(0,0,0,.18),0 0 14px var(--glow);transition:transform .15s}
+.wchip:nth-child(2n){background:var(--a2)}.wchip:nth-child(3n){background:var(--a3)}
+.wchip:hover{transform:translateY(-3px) scale(1.05)}
+.wchip.used{opacity:.4;text-decoration:line-through;transform:none}
+.dict{margin-top:6px;display:flex;flex-wrap:wrap;gap:7px}
+.dict a{display:inline-flex;align-items:center;gap:5px;padding:4px 13px;border-radius:99px;font-size:.95rem;font-weight:800;text-decoration:none;color:#fff;background:var(--a1);transition:transform .15s}
+.dict a:hover{transform:translateY(-2px)}
+.say{margin-top:6px;font-size:.95rem;color:var(--ink2)}
+.exp-box>div.dk{border-left-color:#FFC04D;background:#FFFBEF}
+.tw{position:absolute;animation:tw 2.6s ease-in-out infinite}
+@keyframes tw{0%,100%{transform:scale(.5);opacity:.3}50%{transform:scale(1.15);opacity:1}}
+.ff{position:absolute;width:6px;height:6px;border-radius:50%;background:var(--ffc);box-shadow:0 0 10px 4px var(--ffc),0 0 24px 8px var(--glow);
+  animation:ffMove var(--d) ease-in-out infinite alternate,ffBlink var(--b) ease-in-out infinite}
+@keyframes ffMove{0%{transform:translate(0,0)}33%{transform:translate(var(--x1),var(--y1))}66%{transform:translate(var(--x2),var(--y2))}100%{transform:translate(var(--x3),var(--y3))}}
+@keyframes ffBlink{0%,100%{opacity:.25}50%{opacity:1}}
+
+.cue{display:inline-block;padding:5px 14px;border-radius:12px;background:var(--rmbbg);font-weight:800;letter-spacing:.2px;line-height:1.6}
+.orig{font-weight:700}
+.kw{display:inline-block;margin-left:6px;padding:1px 12px;border-radius:99px;font-weight:900;color:#fff;background:var(--a2);letter-spacing:.5px}
+.wline{display:flex;align-items:stretch;margin-top:10px;border-radius:14px;overflow:hidden;border:3px solid var(--optline);background:#fff;transition:all .2s}
+.wline:focus-within{border-color:var(--line);box-shadow:0 0 0 4px var(--focus)}
+.wline.ok{border-color:var(--ok);background:var(--ok-bg)}.wline.no{border-color:var(--no);background:var(--no-bg)}
+.wline.shake{animation:shake .4s ease}
+.wline .px{flex:none;display:flex;align-items:center;padding:0 14px;font-weight:800;color:#fff;background:var(--a1)}
+.wi{flex:1;min-width:0;width:100%;padding:11px 14px;border:none;outline:none;background:transparent;font-family:inherit;font-size:1.1rem;font-weight:700;color:var(--ink)}
+.wline.ok .wi{color:var(--ok)}.wline.no .wi{color:var(--no)}
+.tiles{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.tile{padding:6px 14px;font-family:inherit;font-size:1.04rem;font-weight:800;cursor:pointer;border-radius:10px;border:2px solid var(--optline);background:#fff;color:var(--ink);box-shadow:0 3px 0 var(--optline);transition:transform .12s,opacity .2s}
+.tile:hover{transform:translateY(-2px)}.tile.used{opacity:.2;pointer-events:none}
+.tile.clr{color:var(--hl);border-style:dashed}
+.opened .tiles{display:none}
+.ask{display:block;font-size:.98rem;color:var(--ink2);font-weight:700;margin-bottom:6px}
+.dlg{display:flex;flex-direction:column;gap:6px;margin-top:4px}
+.dlg .ln{padding:6px 12px;border-radius:12px;background:var(--rmbbg);font-size:1.04rem;line-height:1.55}
+.dlg .ln.fx{background:transparent;font-style:italic;color:var(--ink2);padding:2px 12px}
+.dlg .ln b{display:inline-grid;place-items:center;width:28px;height:28px;margin-right:6px;border-radius:50%;color:#fff;background:var(--a2)}
+.para{margin:4px 0 8px;padding:10px 14px;border-radius:12px;background:#fff;border:2px dashed var(--optline);line-height:1.7;font-size:1.04rem}
+.gap{color:var(--hl);font-style:normal}
+.opt{text-align:left}
+.exp-box .wvoc{margin-top:4px;padding:6px 10px;border-radius:10px;background:rgba(255,255,255,.8);border:1.5px solid #E6E1F4;line-height:1.75}
+.exp-box .ansline{margin-top:6px;padding:6px 12px;border-radius:10px;background:#E4F8EC;border-left:5px solid #11924E}
+.exp-box .ansline b{color:#11924E}
+.exp-box .addw{display:inline-block;margin:2px 3px;padding:0 9px;border-radius:7px;font-weight:800;background:#FFF0A6;color:#6A4A00;border:1.5px dashed #E0B400}
+.exp-box .frame{margin-top:6px;padding:6px 10px;border-radius:14px;background:#fff;border:2px dashed #D9DEEA}
+.exp-box .fl{display:flex;gap:10px;align-items:flex-start;padding:7px 4px;border-bottom:1px dashed rgba(0,0,0,.1)}.exp-box .fl:last-child{border-bottom:none}
+.exp-box .fl .no{flex:none;min-width:40px;height:30px;display:grid;place-items:center;border-radius:9px;font-weight:800;color:#fff;background:var(--a1);font-size:.85rem}
+.exp-box .fl .no.fx{background:var(--a3)}
+.exp-box .fl .en{display:block;font-weight:700}.exp-box .fl .vi{display:block;color:#B5532E;font-style:italic}
+
+
+.flt{position:fixed;z-index:0;pointer-events:none;bottom:-80px;animation:fltUp linear infinite;will-change:transform}
+@keyframes fltUp{0%{transform:translate(0,0) rotate(0);opacity:0}8%{opacity:.9}25%{transform:translate(28px,-28vh) rotate(40deg)}50%{transform:translate(-22px,-58vh) rotate(-30deg)}
+ 75%{transform:translate(26px,-86vh) rotate(30deg)}92%{opacity:.85}100%{transform:translate(0,-118vh) rotate(0);opacity:0}}
+.fall{position:fixed;z-index:0;pointer-events:none;top:-30px;width:9px;height:16px;border-radius:3px;animation:fallDn linear infinite}
+@keyframes fallDn{0%{transform:translate(0,0) rotate(0)}50%{transform:translate(40px,55vh) rotate(360deg)}100%{transform:translate(-20px,112vh) rotate(720deg)}}
+.flyx{position:fixed;z-index:0;pointer-events:none;animation:flyX linear infinite}
+@keyframes flyX{0%{transform:translate(-12vw,0)}25%{transform:translate(22vw,-4vh)}50%{transform:translate(55vw,2vh)}75%{transform:translate(85vw,-5vh)}100%{transform:translate(115vw,0)}}
+.bubi{display:grid;place-items:center;border-radius:50%;background:radial-gradient(circle at 35% 30%,rgba(255,255,255,.95),rgba(255,255,255,.35) 60%,rgba(255,255,255,.15));border:2px solid rgba(255,255,255,.9);box-shadow:0 6px 16px rgba(0,0,0,.08)}
+@media (prefers-reduced-motion:reduce){.flt,.fall,.flyx{animation:none;display:none}}
+
+.sk9{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.sk-c{position:absolute;left:0;animation:skc linear infinite;filter:drop-shadow(0 6px 10px rgba(124,58,237,.15))}
+.sk-c svg{animation:skbob 5s ease-in-out infinite}
+@keyframes skc{from{transform:translateX(-220px)}to{transform:translateX(calc(100vw + 40px))}}
+@keyframes skbob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.sk-b{position:absolute;left:0;animation:skbx linear infinite}
+@keyframes skbx{from{transform:translateX(-80px)}to{transform:translateX(calc(100vw + 80px))}}
+.sk-bob{animation:skbb 2.2s ease-in-out infinite}
+@keyframes skbb{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-16px) rotate(4deg)}}
+.sk-w{transform-origin:28px 23px;animation:skw .32s ease-in-out infinite alternate}
+@keyframes skw{from{transform:scaleY(1)}to{transform:scaleY(-.75)}}
+.sk-f{position:absolute;animation:skf0 ease-in-out infinite}
+.sk-f1{animation-name:skf1}.sk-f2{animation-name:skf2}
+@keyframes skf0{0%,100%{transform:translate(0,0) rotate(-8deg)}25%{transform:translate(60px,-40px) rotate(10deg)}50%{transform:translate(110px,10px) rotate(-6deg)}75%{transform:translate(40px,35px) rotate(8deg)}}
+@keyframes skf1{0%,100%{transform:translate(0,0) rotate(8deg)}30%{transform:translate(-70px,-30px) rotate(-10deg)}60%{transform:translate(-30px,40px) rotate(6deg)}}
+@keyframes skf2{0%,100%{transform:translate(0,0)}35%{transform:translate(50px,45px) rotate(12deg)}70%{transform:translate(-40px,-25px) rotate(-10deg)}}
+.sk-bw{transform-origin:25px 20px;animation:skbf .22s ease-in-out infinite alternate}
+@keyframes skbf{from{transform:scaleX(1)}to{transform:scaleX(.25)}}
+
+.cb .car{offset-path:none!important;margin:-4px 0 0 -35px;animation-name:cbWire!important}@keyframes cbWire{from{left:-4vw;top:74.29vh}to{left:104vw;top:-5.71vh}}
+@media (prefers-reduced-motion:reduce){.sk9 *{animation:none!important}}
+.qn{border-radius:14px!important;color:#fff!important;background:linear-gradient(135deg,#F9A8D4,#EC4899)!important;border-bottom:4px solid #FBCFE8!important;text-shadow:0 1px 2px rgba(0,0,0,.15)}.card:nth-child(4n+2) .qn{background:linear-gradient(135deg,#7DD3FC,#0EA5E9)!important;border-bottom-color:#BAE6FD!important}.card:nth-child(4n+3) .qn{background:linear-gradient(135deg,#86EFAC,#10B981)!important;border-bottom-color:#A7F3D0!important}.card:nth-child(4n) .qn{background:linear-gradient(135deg,#C4B5FD,#8B5CF6)!important;border-bottom-color:#DDD6FE!important}.opt .l{color:#fff!important;font-weight:900!important;background:linear-gradient(135deg,#F9A8D4,#EC4899)!important;box-shadow:0 3px 0 #FBCFE8!important}.opt:nth-child(2) .l{background:linear-gradient(135deg,#7DD3FC,#0EA5E9)!important;box-shadow:0 3px 0 #BAE6FD!important}.opt:nth-child(3) .l{background:linear-gradient(135deg,#86EFAC,#10B981)!important;box-shadow:0 3px 0 #A7F3D0!important}.opt:nth-child(4) .l{background:linear-gradient(135deg,#C4B5FD,#8B5CF6)!important;box-shadow:0 3px 0 #DDD6FE!important}
+body{font-size:20px}
+.qt,.opt,.exp-box,.sec p,#rmbTxt{font-size:1.12rem!important}
+.sec h2{font-size:1.3rem!important}
+.opt u,.qt u{text-decoration-thickness:3px;text-underline-offset:5px;text-decoration-color:var(--hl);font-weight:900}
+.kind{display:block;margin-bottom:6px;font-size:.92rem;font-weight:900;color:var(--hl);letter-spacing:.3px}
+.reg{display:flex;align-items:center;gap:14px;margin:4px 0 22px;padding:16px 20px;border-radius:24px;font-size:1.08rem;line-height:1.6;color:#fff;position:relative;z-index:1;
+  background:linear-gradient(120deg,var(--rg1),var(--rg2));box-shadow:0 12px 28px rgba(0,0,0,.18);border:3px solid rgba(255,255,255,.7)}
+.reg-ic{flex:none;width:58px;height:58px;display:grid;place-items:center;border-radius:50%;font-size:1.9rem;background:rgba(255,255,255,.25);animation:ring 1.6s ease-in-out infinite}
+@keyframes ring{0%,100%{transform:rotate(0)}10%,30%{transform:rotate(-14deg)}20%,40%{transform:rotate(14deg)}50%{transform:rotate(0)}}
+.reg-ph{display:inline-block;padding:2px 14px;border-radius:99px;background:#fff;color:var(--rg2);font-weight:900;font-size:1.15em;letter-spacing:.5px}
+.reg-sub{font-size:.95em;opacity:.95}
+/* thanh tiến độ: giữ 2 dòng như cũ nhưng gọn hơn một chút */
+.topbar{padding:6px 0 8px!important;margin-bottom:8px!important}
+.topbar-in{padding:7px 12px!important;border-radius:20px!important}
+.topbar-in .pbar{height:12px!important}
+.topbar-in .pchip{font-size:.92rem!important;padding:1px 12px!important}
+.topbar-in .rmb{margin-top:6px!important;padding:5px 10px!important;gap:8px!important}
+.topbar-in .rmb .ic{font-size:1.25rem!important}
+.topbar-in #rmbTxt{font-size:.98rem!important;line-height:1.45}
+.topbar-in .rmb-min{width:28px!important;height:28px!important;font-size:1rem!important}
+@media(max-width:600px){.topbar-in #rmbTxt{font-size:.9rem!important}}
+
+.ask{display:block;font-weight:700;margin:6px 0}
+.ctx{display:block;padding:10px 14px;border-radius:14px;background:rgba(255,255,255,.9);border-left:5px solid var(--hl);margin:4px 0 8px;line-height:1.9;font-weight:600}
+.task{display:block;margin-top:6px;font-weight:700;color:var(--ink2);font-size:.95rem}
+.dlg2{line-height:2}.sp{font-weight:800;color:var(--hl);margin-right:2px}.cuehint{color:var(--hl);font-weight:800}
+.signbox{display:flex;justify-content:center;margin:2px 0 10px}.signbox .frame{background:#fff;border-radius:18px;padding:12px;box-shadow:0 8px 20px rgba(0,0,0,.12);border:1.5px solid #eee}.signbox svg{display:block;max-width:100%;height:auto}
+.exp-box .frame{margin-top:6px;padding:6px 10px;border-radius:14px;background:#fff;border:2px dashed rgba(0,0,0,.14)}
+.exp-box .fl{display:flex;gap:9px;align-items:flex-start;padding:6px 4px;border-bottom:1px dashed rgba(0,0,0,.1)}.exp-box .fl:last-child{border-bottom:none}
+.exp-box .fl .no{flex:none;min-width:38px;height:30px;display:grid;place-items:center;border-radius:10px;font-weight:800;color:#fff;background:var(--hl);font-size:.85rem}
+.exp-box .fl .en{display:block;font-weight:700}.exp-box .fl .vi{display:block;color:#B5532E;font-style:italic}
+
+.ansline{margin-top:4px;padding:6px 10px;border-radius:6px;background:rgba(26,158,95,.1)}
+
+.exp-box .ar{color:#E8590C;font-weight:900}
+.exp-box .p-grammar{line-height:1.95}.exp-box li>.p-grammar,.exp-box .mexp .p-grammar{background:none!important}
+.exp-box .p-grammar .p-grammar .hx,.exp-box .hl-green .hx,.exp-box .hl-red .hx{background:transparent;padding:0}.exp-box ol li{margin-bottom:6px}
+.exp-box .hx{padding:3px 1px;border-radius:3px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.exp-box .hx0{background:#FFF3B0}.exp-box .hx1{background:#D6ECFF}.exp-box .hx2{background:#FFDDEE}
+.exp-box .hx3{background:#DDF7D0}.exp-box .hx4{background:#EBDFFF}.exp-box .hx5{background:#FFE4CC}
+.exp-box .qe{font-weight:800}
+.exp-box .qe0{color:#1D4ED8}.exp-box .qe1{color:#C2185B}.exp-box .qe2{color:#0F8A5F}.exp-box .qe3{color:#7C3AED}.exp-box .qe4{color:#D9480F}.exp-box .qe5{color:#0E7490}
+
+</style>
+<style id="footfix">.foot{display:block;width:fit-content;max-width:94%;margin:26px auto 12px!important;padding:12px 20px;border-radius:18px;background:rgba(255,255,255,.95)!important;box-shadow:0 6px 18px rgba(0,0,0,.14);border:2px solid rgba(0,0,0,.06);color:#1F2440!important;font-weight:800!important;font-size:1.1rem!important;line-height:1.7;text-align:center}.foot b,.foot *{color:#D6336C!important;font-weight:900!important}</style>
+<style id="u4exp">
+.exp-box .vnt{margin-bottom:10px;padding:9px 13px;border-radius:12px;background:#FFF6DC;border-left:5px solid #F5A300;font-weight:600;line-height:1.7}
+.exp-box ol{margin:0;padding-left:24px}
+.exp-box ol>li{margin:10px 0;line-height:1.75;padding-left:4px}
+.exp-box ol>li::marker{font-weight:800;color:var(--hl)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:7px}
+.grid2>div{padding:8px 11px;border-radius:12px;background:rgba(255,255,255,.92);border:1.5px solid #E6E1F4;line-height:1.6}
+@media(max-width:620px){.grid2{grid-template-columns:1fr}}
+.exp-box .p-word{color:#1E6FD9;font-weight:800;background:none;padding:0}
+.exp-box .hl-green{color:#11924E;font-weight:900;background:none;padding:0}
+.exp-box .hl-red{color:#D8334A;font-weight:900;background:none;padding:0}
+.exp-box .wt{display:inline-block;margin:0 3px;padding:0 7px;border-radius:6px;font-size:.8em;font-weight:700;background:rgba(110,100,160,.13);color:#5B5480}
+.exp-box .p-phonetic{padding:0 6px;border-radius:6px;background:#F1E8FF;color:#7A3FC8;font-weight:700;font-family:'Segoe UI','Lucida Sans Unicode',sans-serif}
+.exp-box .p-mean{color:#B5532E;font-weight:700}
+.exp-box .p-grammar{text-decoration:none;color:inherit;font-weight:600;padding:1px 6px;border-radius:7px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.exp-box ol>li>.p-grammar.why{background:linear-gradient(90deg,#E6F8EE,#F2FBF6);line-height:1.95}
+.exp-box ol>li>.p-grammar.bad{background:linear-gradient(90deg,#FFEEF1,#FFF6F7);line-height:1.95}
+.exp-box .p-grammar .p-grammar,.exp-box .p-gram{font-weight:800;color:#3A2F55;padding:1px 6px;border-radius:7px;background:#FFF0A6}
+.exp-box .p-grammar .p-grammar:nth-of-type(4n+2),.exp-box .p-gram:nth-of-type(4n+2){background:#D4ECFF}
+.exp-box .p-grammar .p-grammar:nth-of-type(4n+3),.exp-box .p-gram:nth-of-type(4n+3){background:#FFD6EA}
+.exp-box .p-grammar .p-grammar:nth-of-type(4n),.exp-box .p-gram:nth-of-type(4n){background:#DDF5C6}
+.exp-box .hl-red{background:#FFE0E4;padding:0 5px;border-radius:6px}
+.exp-box li .hl-green{background:#D9F7E6;padding:0 5px;border-radius:6px}
+.exp-box .frame{margin-top:6px;padding:6px 10px;border-radius:14px;background:#fff;border:2px dashed #E6D7C2}
+.exp-box .fl{display:flex;gap:9px;align-items:flex-start;padding:6px 4px;border-bottom:1px dashed rgba(0,0,0,.1)}.exp-box .fl:last-child{border-bottom:none}
+.exp-box .fl .no{flex:none;min-width:34px;height:30px;display:grid;place-items:center;border-radius:10px;font-weight:800;color:#fff;background:var(--a1);font-size:.85rem}
+.exp-box .fl .en{display:block;font-weight:700}.exp-box .fl .vi{display:block;color:#B5532E;font-style:italic}
+</style>
+<style>/*compacthero*/
+.hero{flex-wrap:nowrap!important;align-items:center!important;gap:12px!important;padding:6px 16px!important;margin:2px 0 14px!important;min-height:0!important}
+.heroart{flex:none!important;order:-1;width:64px!important;height:56px!important;margin:0!important}
+.hero-txt{flex:1 1 auto!important;display:flex;flex-wrap:wrap;align-items:center;column-gap:10px;row-gap:1px;min-width:0}
+.hero h1{order:-1;font-size:1.7rem!important;margin:0!important;line-height:1.15!important}
+.kick{font-size:.74rem!important;padding:0 10px!important;line-height:1.7}
+.hero .sub{font-size:.84rem!important;line-height:1.35}
+.tag{font-size:.78rem!important;margin:0!important;padding:0 10px!important;border-width:1px!important}
+@media(max-width:600px){.hero{padding:6px 10px!important;gap:8px!important}.heroart{width:50px!important;height:44px!important}.hero h1{font-size:1.35rem!important}.tag{display:none!important}}
+</style>
+<style>/*pa-theme*/
+:root{--hl:#7C5CE0;--line:#C9D8FF;--a1:linear-gradient(135deg,#93D5FF,#5AA9F0);--a2:linear-gradient(135deg,#F9B8DA,#EC6FAE);--a3:linear-gradient(135deg,#A9EBD3,#3CC79A);--a4:linear-gradient(135deg,#D5C8FF,#9B7BF0);
+ --rainbow:linear-gradient(90deg,#8FD3FF,#A9EBD3,#D5C8FF,#F9B8DA);--title:linear-gradient(90deg,#3B9BE8,#8B6CF0 50%,#E2609F);--rmbbg:#EEF4FF;--shadow:rgba(60,70,140,.16);
+ --expbg:linear-gradient(150deg,#EEF6FF,#fff 55%,#FBF0FF);--modalbg:linear-gradient(160deg,#E8F4FF,#fff 45%,#FDF0F8);--rg1:#5AA9F0;--rg2:#A577E8}
+body{background:#E3EEFF}
+.pa-scene{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;background:linear-gradient(180deg,#CDE8FF 0%,#E4E2FF 40%,#FCE4F0 74%,#D9F6EA 100%)}
+.pa-scene>*{position:absolute}
+.pa-map{inset:0;width:100%;height:100%;opacity:.95}
+.pa-dash{animation:paDash 2.4s linear infinite}@keyframes paDash{to{stroke-dashoffset:-34}}
+.pa-ping{transform-box:fill-box;transform-origin:center;animation:paPing 2.2s ease-out infinite}@keyframes paPing{0%{transform:scale(.6);opacity:.6}100%{transform:scale(3);opacity:0}}
+.pa-cld{left:0;animation:paDrift linear infinite;filter:drop-shadow(0 6px 10px rgba(124,92,224,.12))}@keyframes paDrift{from{transform:translateX(-260px)}to{transform:translateX(calc(100vw + 40px))}}
+.pa-bal{animation:paBob ease-in-out infinite;filter:drop-shadow(0 8px 12px rgba(124,92,224,.18))}@keyframes paBob{0%,100%{transform:translate(0,0) rotate(-3deg)}50%{transform:translate(18px,-26px) rotate(3deg)}}
+.pa-pp{left:0;animation:paFly linear infinite;filter:drop-shadow(0 5px 6px rgba(124,92,224,.2))}@keyframes paFly{0%{transform:translate(-80px,40px) rotate(-8deg)}35%{transform:translate(35vw,-30px) rotate(-14deg)}65%{transform:translate(65vw,20px) rotate(4deg)}100%{transform:translate(calc(100vw + 80px),-50px) rotate(-12deg)}}
+.pa-pp2{animation-name:paFly2}@keyframes paFly2{0%{transform:translate(calc(100vw + 80px),0) scaleX(-1) rotate(-8deg)}50%{transform:translate(50vw,-40px) scaleX(-1) rotate(-14deg)}100%{transform:translate(-90px,10px) scaleX(-1) rotate(-6deg)}}
+.pa-pc{width:158px;transform:rotate(var(--r));animation:paSway ease-in-out infinite;filter:drop-shadow(0 10px 14px rgba(90,80,170,.18))}
+.pa-st{transform:rotate(var(--r));animation:paSway ease-in-out infinite;opacity:.9}
+@keyframes paSway{0%,100%{transform:rotate(var(--r)) translateY(0)}50%{transform:rotate(calc(var(--r) * -1)) translateY(-12px)}}
+.pa-cmp{width:118px;animation:paSpin 60s linear infinite;filter:drop-shadow(0 8px 14px rgba(124,92,224,.2))}@keyframes paSpin{to{transform:rotate(360deg)}}
+.pa-bags{bottom:-6px;display:flex;align-items:flex-end;gap:2px}.pa-bl{left:.6%}.pa-br{right:.6%}
+.pa-bags svg{filter:drop-shadow(0 6px 8px rgba(90,80,170,.18))}.pa-bags svg:nth-child(2){animation:paHop 3.4s ease-in-out infinite}
+@keyframes paHop{0%,80%,100%{transform:translateY(0)}88%{transform:translateY(-8px) rotate(-3deg)}}
+@media(max-width:1100px){.pa-st3,.pa-bal2{display:none}}
+@media(max-width:700px){.pa-pc{width:104px;opacity:.75}.pa-st{width:74px!important;opacity:.6}.pa-cmp{width:74px;opacity:.75}.pa-bal svg{width:58px}.pa-bags{transform:scale(.62);transform-origin:bottom left}.pa-br{transform-origin:bottom right}}
+@media(prefers-reduced-motion:reduce){.pa-scene *{animation:none!important}}
+.hero{background:rgba(255,255,255,.92)!important;border:3px solid #fff!important;border-radius:26px!important;box-shadow:0 0 0 3px #D8E6FF,0 10px 24px rgba(90,110,200,.22)!important}
+.hero h1{font-family:'Fredoka',sans-serif!important;font-weight:700!important;background:var(--title)!important;-webkit-background-clip:text!important;background-clip:text!important;color:transparent!important}
+.kick{background:linear-gradient(90deg,#6FB8F5,#A98BF5,#EE8FC2)!important}
+.tag{color:#7C5CE0!important;background:#F3EEFF!important}
+.card{border-radius:24px!important;background:rgba(255,255,255,.96)!important;border:3px solid #fff!important;box-shadow:0 0 0 3px #E2DAFF,0 10px 24px rgba(90,110,200,.2)!important}
+.opt{border-radius:16px!important;border:2px solid #DCE8FF!important;box-shadow:0 4px 0 #CFE0FF!important}.opt:hover{border-color:#F48FC2!important}
+.opt.good{border-color:var(--ok)!important;box-shadow:0 4px 0 #9ED9BD!important}.opt.bad{border-color:var(--no)!important;box-shadow:0 4px 0 #F5AFC0!important}
+.opt::after{display:none!important}
+.sec{background:linear-gradient(100deg,#5AA9F0,#9B7BF0 55%,#E77FB6)!important;border:3px solid rgba(255,255,255,.7)!important;box-shadow:0 10px 24px rgba(80,90,180,.25)!important}
+.sec h2{color:#fff!important}.sec p{color:#F3F0FF!important}.sec p b{color:#FFE1F0!important}.sec .si,.si{background:#E3FBF1!important}
+.topbar-in{background:rgba(255,255,255,.95)!important;border:3px solid #D5E4FF!important;box-shadow:0 8px 20px rgba(90,110,200,.18)!important}
+.pfill{background:linear-gradient(90deg,#7CC6F2,#6EE7B7,#C4B5FD,#F9A8D4)!important}
+.btn{background:linear-gradient(135deg,#6FB8F5,#9B7BF0 60%,#E77FB6)!important}.btn.b2{background:linear-gradient(135deg,#6EE7B7,#3CB8E0)!important}
+.foot{color:#3B3F8F!important;text-shadow:none!important}
+.exp-box{border-color:#D8E4FF!important}
+</style>
+<style>/*w6*/.dialog{background:#F5F3FF;border-radius:12px;padding:8px 12px;margin-top:6px;line-height:1.8;font-size:.95em;color:#1E1B4B;font-weight:500}.orderline{margin:6px 0;line-height:1.7}.orderline .lbl{display:inline-flex;width:1.6em;height:1.6em;align-items:center;justify-content:center;border-radius:50%;background:#6366F1;color:#fff;font-weight:900;margin-right:6px}.p-en{font-weight:700}.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:4px}.chip{display:inline-block;padding:2px 11px;border-radius:99px;background:#EEF2FF;border:1.5px solid #C7D2FE;color:#3730A3;font-weight:800;font-size:.95em}.chipq{margin-left:2px;color:#BE185D;font-weight:700;font-size:.85em}.task{display:block;font-size:.85em;color:#4B5075;margin-top:3px}.src{display:block}.hn{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;background:linear-gradient(180deg,#8FD0F5 0%,#C7E8FA 42%,#FCE7D3 100%)}
+.hn-far{position:absolute;left:0;bottom:146px;width:100%;height:300px;opacity:.6}
+.hn-st{position:absolute;left:0;bottom:122px;width:100%;height:300px}
+.hn-walk{position:absolute;left:0;right:0;bottom:88px;height:34px;background:repeating-linear-gradient(90deg,#D6D3D1 0 38px,#C4C0BC 38px 40px);border-bottom:5px solid #A8A29E}
+.hn-road{position:absolute;left:0;right:0;bottom:0;height:88px;background:linear-gradient(180deg,#4B5563,#374151)}.hn-road i{position:absolute;left:0;right:0;top:42px;height:4px;background:repeating-linear-gradient(90deg,#F8FAFC 0 34px,transparent 34px 68px)}
+.veh{position:absolute;left:0;top:auto;animation:hnr linear infinite;will-change:transform}.veh svg{height:100%;width:auto;display:block}.veh.r{bottom:2px;transform:translateX(-300px)}.veh.l{bottom:46px;animation-name:hnl;z-index:0}.veh .flip{height:100%;transform:scaleX(-1)}
+@keyframes hnr{from{transform:translateX(-320px)}to{transform:translateX(calc(100vw + 40px))}}@keyframes hnl{from{transform:translateX(calc(100vw + 40px))}to{transform:translateX(-320px)}}
+.whl{animation:hnspin .55s linear infinite;transform-box:view-box}@keyframes hnspin{to{transform:rotate(360deg)}}
+.hn-ven{position:absolute;bottom:96px;height:62px;left:0;animation:hnr linear infinite}.hn-ven svg{height:100%;width:auto;animation:hnbob .8s ease-in-out infinite}@keyframes hnbob{50%{transform:translateY(-2px)}}
+.hn-cl{position:absolute;width:130px;height:36px;border-radius:30px;background:rgba(255,255,255,.85);animation:hncl linear infinite}.hn-cl:before{content:"";position:absolute;width:60px;height:60px;left:28px;top:-26px;border-radius:50%;background:inherit}@keyframes hncl{from{transform:translateX(-170px)}to{transform:translateX(110vw)}}
+.hn-bd{position:absolute;font-size:22px;animation:hnbd 24s linear infinite}@keyframes hnbd{from{transform:translate(-40px,0)}50%{transform:translate(50vw,-40px)}to{transform:translate(105vw,10px)}}
+:root{--title:linear-gradient(90deg,#BE123C,#DB2777 50%,#0369A1);--hl:#BE123C}.sec{background:linear-gradient(120deg,#BE123C,#DB2777 55%,#0369A1)!important}.reg{background:linear-gradient(120deg,#0369A1,#7C3AED 55%,#DB2777)!important}.hicon{font-size:56px;line-height:1;filter:drop-shadow(0 4px 8px rgba(0,0,0,.2))}
+@media(max-width:700px){.hn-st,.hn-far{height:220px}.veh.r{height:46px!important}.veh.l{height:40px!important;bottom:30px}}
+</style></head>
+<body>
+<div class="hn" id="paScene" aria-hidden="true"></div>
+<div class="deco" id="deco"></div>
+
+<div class="wrap">
+  <div class="topbar"><div class="topbar-in">
+    <div class="prog-row">
+      <div class="pchip" id="scoreChip">⭐ 0</div>
+      <div class="pbar"><div class="pfill" id="pfill"></div></div>
+      <div class="pchip s2" id="progChip">0</div>
+    </div>
+    <div class="rmb" id="rmbBox"><span class="ic" id="rmbIc">⭐</span><span id="rmbTxt">⭐</span>
+      <button class="rmb-min" id="rmbMin" title="Thu gọn lời nhắc" onclick="toggleRmb()">–</button></div>
+  </div></div>
+
+  <div class="hero">
+    <div class="hero-txt">
+      <span class="kick">🏮 ENGLISH 9 · UNIT 6 · WRITING · SẮP XẾP · 26 CÂU</span>
+      <h1>Phố Cổ Hà Nội</h1>
+      <div class="sub">🛵 Sắp xếp từ · Hiện tại hoàn thành · Sắp xếp đoạn, thư · Đọc</div>
+      <div class="tag">👩‍🏫 MS Chí Nên · ☎️ 0852639652 · Khoá tiếng Anh lớp 1 → 12</div>
+    </div>
+    <div class="hicon">🏮</div>
+  </div>
+
+  <div class="reg"><div class="reg-ic">📞</div><div><b>ĐĂNG KÝ KHOÁ HỌC TIẾNG ANH LỚP 1 → 12</b> cùng <b>MS Chí Nên</b> — <span class="reg-ph">☎️ 0852639652</span><br><span class="reg-sub">✨ Trải nghiệm hệ thống bài tập web độc lạ · chấm tự động · giải chi tiết siêu đẹp · học vui, hiểu sâu, nhớ lâu!</span></div></div>
+  <div id="quiz"></div>
+
+  <div class="finish"><button class="btn" onclick="showFinal()">🏮 Nộp bài &amp; xem kết quả</button></div>
+  <div class="foot">Bài tập của <b>MS Chí Nên</b> · Đăng ký khoá tiếng Anh lớp 1 → 12: <b>☎️ 0852639652</b> để được trải nghiệm hệ thống web học tập đẹp, sinh động — chấm điểm tự động, giải chi tiết từng câu, học vui mỗi ngày!</div>
+</div>
+
+<div class="ov" id="resOv"><div class="modal">
+  <div class="em" id="resEm">🏆</div>
+  <div class="big" id="resScore">0</div>
+  <div class="ten" id="resTen">0 / 10 điểm</div>
+  <div id="resBreak"></div>
+  <div class="note" id="resNote"></div>
+  <button class="btn" onclick="document.getElementById('resOv').classList.remove('show')">📖 Xem lại bài</button>
+  <div style="height:10px"></div>
+  <button class="btn b2" onclick="location.reload()">🔄 Làm lại từ đầu</button>
+</div></div>
+
+<script>
+const POP_EMOJI=["✈️", "🗺️", "🧳", "🛂", "🎈", "🌍", "✨"];
+const FINAL_MSG=[["🏆", "Xuất sắc! Cả phố cổ rực đèn vì con! Cô tự hào về con lắm!"], ["🌟", "Chuyến bay rất đẹp! Con xem lại vài câu sai, chép từ mới vào sổ tay du lịch rồi đọc to 3 lần nhé."], ["💪", "Khá rồi đó! Con đọc kỹ lời giải từng câu rồi cất cánh lại một lượt — lần này hạ cánh điểm cao nha!"], ["💖", "Đừng nản nhé con! Chuyến đi nào cũng có lúc gặp gió — đọc kỹ giải thích rồi làm lại, cô tin con!"]];
+(function(){const H=document.getElementById('paScene')||document.body,small=innerWidth<600,E=["✨"];
+  for(let i=0;i<(small?0:0);i++){const f=document.createElement('div');f.className='flt';const z=22+Math.random()*20;f.textContent=E[i%E.length];f.style.cssText='left:'+(2+Math.random()*96)+'%;font-size:'+z+'px;'+''+'animation-duration:'+(14+Math.random()*16).toFixed(1)+'s;animation-delay:-'+(Math.random()*30).toFixed(1)+'s';H.appendChild(f);}
+})();
+
+/* ═══════════ TỪ ĐIỂN — 1 HÀM DÙNG CHUNG, TỰ CHÈN TỪ VÀO LINK ═══════════
+   Mặc định Cambridge; từ nào không có mục riêng trên Cambridge thì thêm vào OXFORD_ONLY để tự chuyển sang Oxford Learner's. */
+const OXFORD_ONLY=[];
+function DICT(w){
+  const slug=w.trim().toLowerCase().replace(/\s+/g,'-'),ox=OXFORD_ONLY.indexOf(w)>-1;
+  const url=ox?'https://www.oxfordlearnersdictionaries.com/definition/english/'+slug:'https://dictionary.cambridge.org/vi/dictionary/english/'+slug;
+  return '<a class="'+(ox?'ox':'')+'" href="'+url+'" target="_blank" rel="noopener">🔊 '+(ox?"Oxford Learner's":'Cambridge')+' · '+w+'</a>';
+}
+function withDict(q){return q.dict?q.explain.replace(/<\/div>\s*$/,'<div class="dk"><b>🔊 Tra từ điển Cambridge:</b><br>Con hãy bấm vào đây — cô đã trích sẵn link cho con nghe '+(q.dict.length>1?'từng từ':'từ “'+q.dict[0]+'”')+' rồi đó, con nhớ bấm loa 🔊 nghe và đọc theo cho chuẩn nhé:'+
+  '<div class="dict">'+q.dict.map(DICT).join('')+'</div><div class="say">👉 Nếu trang chưa hiện đúng từ, con <b>gõ từ đó vào ô tìm kiếm</b>, bấm loa 🔊 nghe người bản xứ đọc và <b>đọc theo</b>.</div></div></div>'):q.explain}
+let lastFi=null;
+document.addEventListener('focusin',e=>{if(e.target.classList&&e.target.classList.contains('fi'))lastFi=e.target;});
+function wordBox(ws){return '<div class="wbox"><div class="wb-t">✨ WORD BOX <small>— bấm vào từ để điền vào ô trống đang chọn (nhớ đổi dạng số nhiều nếu cần)</small></div><div class="wb-in">'+
+  ws.map(w=>'<button class="wchip" data-w="'+w+'" onclick="pickWord(this)">'+w+'</button>').join('')+'</div></div>';}
+function pickWord(b){let t=(lastFi&&!lastFi.readOnly)?lastFi:Array.from(document.querySelectorAll('.fi')).find(x=>!x.readOnly&&!x.value.trim());if(!t)return;t.value=b.dataset.w;t.focus();try{sPop()}catch(e){}}
+function markUsed(w){document.querySelectorAll('.wchip').forEach(c=>{if(c.dataset.w.toLowerCase()===String(w).toLowerCase())c.classList.add('used')});}
+(function(){let A=null;const play=function(){try{if(!A){A=new Audio('https://hoctienganhcungcomaianulis.github.io/homework/%E1%BA%A2nh_File%20nghe/Sound/Am_thanh_meme_Oi_doi_oi_huan_hoa_hong-www_tiengdong_com.mp3');A.preload='auto';}const a=A.cloneNode();a.volume=.85;a.play().catch(function(){});}catch(e){}};window.sBAD=play;try{sBAD=play}catch(e){}addEventListener('load',function(){window.sBAD=play;try{sBAD=play}catch(e){}});})();
+
+
+/* ═══════════ ÂM THANH & HIỆU ỨNG ═══════════ */
+let AC=null;
+function ac(){if(!AC){try{AC=new(window.AudioContext||window.webkitAudioContext)()}catch(e){}}if(AC&&AC.state==='suspended')AC.resume();return AC}
+function tone(f,t0,dur,type,vol){const c=ac();if(!c)return;const o=c.createOscillator(),g=c.createGain(),t=c.currentTime+t0;
+  o.type=type;o.frequency.value=f;o.connect(g);g.connect(c.destination);
+  g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(vol,t+.01);g.gain.exponentialRampToValueAtTime(.0008,t+dur);o.start(t);o.stop(t+dur+.05);}
+function sOK(){[660,880,1175,1320].forEach((f,i)=>tone(f,i*.07,.42,'sine',.13))}
+function sBAD(){tone(330,0,.25,'triangle',.12);tone(247,.14,.35,'triangle',.12)}
+function sPop(){tone(900+Math.random()*300,0,.08,'sine',.06)}
+function sWin(){[523,659,784,1047,784,1047,1319].forEach((f,i)=>tone(f,i*.1,.5,'sine',.13))}
+document.addEventListener('click',()=>{try{ac()}catch(e){}},{once:true});
+function burst(el,n){const E=POP_EMOJI;const r=el.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2;
+  for(let i=0;i<n;i++){const d=document.createElement('div');d.className='pop';d.textContent=E[i%E.length];const a=-Math.PI/2+(Math.random()-.5)*2.8,dist=60+Math.random()*110;
+    d.style.cssText='left:'+(cx-11)+'px;top:'+(cy-11)+'px;--dx:'+(Math.cos(a)*dist).toFixed(0)+'px;--dy:'+(Math.sin(a)*dist).toFixed(0)+'px;--r:'+((Math.random()-.5)*120).toFixed(0)+'deg;animation-delay:'+(Math.random()*.15).toFixed(2)+'s';
+    document.body.appendChild(d);setTimeout(()=>d.remove(),1400);}}
+
+/* ═══════════ LỜI NHẮC LỚP 6 — XOAY 4.2s ═══════════ */
+const RMB=[["🏮", "Chào con! Đèn lồng phố cổ đã lên: <b>26 câu</b> về lối sống Việt xưa và nay — mỗi câu đúng thắp thêm một chiếc đèn!"], ["🧩", "Dạo phố nào! Gõ cả câu thật chắc tay, phố cổ đang chờ con!"], ["🎯", "Con rẽ sang phố mới rồi! Soi thật kĩ, con tinh mắt lắm!"], ["💌", "Gần đến Hồ Gươm rồi! Đọc mạch thư như đang trò chuyện với bà nhé!"], ["📖", "Đoạn phố cuối cùng! Thắp nốt đèn rồi về đích thôi con!"], ["🚨", "<b>LƯU Ý TỪ MS CHÍ NÊN:</b> câu nào sai, con chép từ vào sổ và đọc to 3 lần — lần sau <b>đóng dấu</b> ngay, không chần chừ! ☎️ 0852639652"], ["🦆", "Cẩn thận nhé — chọn sai là <b>chú vịt kêu “quạc quạc”</b> đó! Bình tĩnh, tự tin, hạ cánh an toàn!"], ["☎️", "Đăng ký khoá tiếng Anh <b>lớp 1 → 12</b> cùng <b>MS Chí Nên — ☎️ 0852639652</b> — web bài tập độc lạ, giải chi tiết siêu đẹp!"]];
+(function(){const t=document.getElementById('rmbTxt'),ic=document.getElementById('rmbIc');let k=0;
+  function go(){t.style.animation='none';void t.offsetWidth;t.style.animation='';t.innerHTML=RMB[k][1];ic.textContent=RMB[k][0];k=(k+1)%RMB.length;}
+  go();setInterval(go,4200);})();
+function toggleRmb(){const b=document.getElementById('rmbBox'),m=document.getElementById('rmbMin');
+  b.classList.toggle('mini');const mini=b.classList.contains('mini');m.textContent=mini?'+':'–';m.title=mini?'Mở lời nhắc':'Thu gọn lời nhắc';}
+
+/* ═══════════ DỮ LIỆU (trích nguyên văn đề, đáp án & lời giải gốc) ═══════════ */
+const SECS=[{"type": "write", "icon": "🧩", "short": "Ex 17", "title": "Exercise 17. Sắp xếp từ thành câu đúng", "desc": "Các từ chỉ để nhìn. Con tự sắp xếp trong đầu rồi <b>gõ cả câu</b> vào ô.", "items": [{"cue": "<span class=\"chips\"><span class=\"chip\">Vietnamese</span><span class=\"chip\">have</span><span class=\"chip\">eating</span><span class=\"chip\">changed</span><span class=\"chip\">habits</span><span class=\"chip\">recently</span><span class=\"chip\">in</span><span class=\"chip\">urban</span><span class=\"chip\">areas</span><span class=\"chip\">significantly</span></span><span class=\"task\">✍️ Sắp xếp rồi gõ cả câu, nhấn Enter</span>", "pre": "", "acc": ["Vietnamese eating habits have changed significantly recently in urban areas.", "Vietnamese eating habits have changed significantly in urban areas recently", "Vietnamese eating habits have recently changed significantly in urban areas", "Vietnamese eating habits in urban areas have changed significantly recently", "Recently Vietnamese eating habits have changed significantly in urban areas"], "show": "Vietnamese eating habits have changed significantly recently in urban areas.", "dict": ["significantly", "vietnamese", "recently"], "explain": "<div class=\"exp-box\"><h4>⚡ GIẢI THÍCH CHI TIẾT</h4><div class=\"vnt\">💬 Dịch: Thói quen ăn uống của người Việt đã thay đổi đáng kể gần đây ở các khu vực thành thị.</div><ol><li>Điểm ngữ pháp:<div class=\"grid2\"><div><span class='hl-green'>have changed</span> <span class='wt'>HTHT</span> = <span class='p-mean'>have + V3 (số nhiều)</span></div><div><span class='hl-green'>significantly · recently</span> <span class='wt'>adv</span> = <span class='p-mean'>cách → thời gian → nơi chốn</span></div></div></li><li><span class=\"hl-green\">✅ TẠI SAO ĐÚNG?</span><br>▸ <span class='p-grammar'><span class=\"hx hx0\">Chủ ngữ \"Vietnamese eating habits\" (số nhiều) + have changed; trật tự trạng từ: cách (significantly) → thời gian (recently) → nơi chốn (in urban areas).</span></span></li><li><div class=\"ansline\">✅ Đáp án: <b>Vietnamese eating habits have changed significantly recently in urban areas.</b></div></li></ol></div>", "num": 1}, {"cue": "<span class=\"chips\"><span class=\"chip\">Has</span><span class=\"chip\">traditional</span><span class=\"chip\">lifestyle</span><span class=\"chip\">your</span><span class=\"chip\">changed</span><span class=\"chip\">family's</span><span class=\"chip\">much</span><span class=\"chip\">the</span><span class=\"chip\">over</span><span class=\"chip\">past</span><span class=\"chip\">twenty</span><span class=\"chip\">years</span></span><span class=\"chipq\">(câu hỏi)</span><span class=\"task\">✍️ Sắp xếp rồi gõ cả câu, nhấn Enter</span>", "pre": "", "acc": ["Has your family's traditional lifestyle changed much over the past twenty years?"], "show": "Has your family's traditional lifestyle changed much over the past twenty years?", "dict": ["traditional", "lifestyle", "changed"], "explain": "<div class=\"exp-box\"><h4>⚡ GIẢI THÍCH CHI TIẾT</h4><div class=\"vnt\">💬 Dịch: Lối sống truyền thống của gia đình bạn có thay đổi nhiều trong hai mươi năm qua không?</div><ol><li>Điểm ngữ pháp:<div class=\"grid2\"><div><span class='hl-green'>Has + S + V3 ...?</span> <span class='wt'>HTHT</span> = <span class='p-mean'>câu hỏi hiện tại hoàn thành</span></div><div><span class='hl-green'>over the past twenty years</span> <span class='wt'>time</span> = <span class='p-mean'>dấu hiệu HTHT</span></div></div></li><li><span class=\"hl-green\">✅ TẠI SAO ĐÚNG?</span><br>▸ <span class='p-grammar'><span class=\"hx hx0\">Đảo \"Has\" lên đầu; cụm sở hữu \"your family's traditional lifestyle\".</span></span></li><li><span class=\"hl-red\">❌ BẪY HAY GẶP</span><br>▸ <span class='p-grammar'><span class=\"hx hx2\">Quên đảo trợ động từ, sai thứ tự cụm danh từ sở hữu, hoặc bỏ \"the past\".</span></span></li><li><div class=\"ansline\">✅ Đáp án: <b>Has your family's traditional lifestyle changed much over the past twenty years?</b></div></li></ol></div>", "num": 2}, {"cue": "<span class=\"chips\"><span class=\"chip\">Young</span><span class=\"chip\">people</span><span class=\"chip\">moved</span><span class=\"chip\">have</span><span class=\"chip\">cities</span><span class=\"chip\">many</span><span class=\"chip\">to</span><span class=\"chip\">big</span><span class=\"chip\">better</span><span class=\"chip\">work</span><span class=\"chip\">for</span><span class=\"chip\">opportunities</span><span class=\"chip\">recently</span></span><span class=\"task\">✍️ Sắp xếp rồi gõ cả câu, nhấn Enter</span>", "pre": "", "acc": ["Many young people have moved to big cities recently for better work opportunities.", "Many young people have recently moved to big cities for better work opportunities", "Many young people have moved to big cities for better work opportunities recently", "Recently many young people have moved to big cities for better work opportunities"], "show": "Many young people have moved to big cities recently for better work opportunities.", "dict": ["opportunities", "recently", "people"], "explain": "<div class=\"exp-box\"><h4>⚡ GIẢI THÍCH CHI TIẾT</h4><div class=\"vnt\">💬 Dịch: Nhiều người trẻ gần đây đã chuyển đến các thành phố lớn để có cơ hội việc làm tốt hơn.</div><ol><li>Điểm ngữ pháp:<div class=\"grid2\"><div><span class='hl-green'>have moved to</span> <span class='wt'>HTHT</span> = <span class='p-mean'>đã chuyển đến (nơi chốn)</span></div><div><span class='hl-green'>for ... opportunities</span> <span class='wt'>purpose</span> = <span class='p-mean'>để (chỉ mục đích)</span></div></div></li><li><span class=\"hl-green\">✅ TẠI SAO ĐÚNG?</span><br>▸ <span class='p-grammar'><span class=\"hx hx0\">\"Many young people have moved to big cities\"; trạng từ \"recently\"; \"for better work opportunities\".</span></span></li><li><span class=\"hl-red\">❌ BẪY HAY GẶP</span><br>▸ <span class='p-grammar'><span class=\"hx hx2\">Sai vị trí \"many/recently\"; quên giới từ \"to/for\".</span></span></li><li><div class=\"ansline\">✅ Đáp án: <b>Many young people have moved to big cities recently for better work opportunities.</b></div></li></ol></div>", "num": 3}, {"cue": "<span class=\"chips\"><span class=\"chip\">traditional</span><span class=\"chip\">haven't</span><span class=\"chip\">We</span><span class=\"chip\">our</span><span class=\"chip\">forgotten</span><span class=\"chip\">important</span><span class=\"chip\">values</span><span class=\"chip\">cultural</span><span class=\"chip\">and</span><span class=\"chip\">customs</span><span class=\"chip\">yet</span></span><span class=\"task\">✍️ Sắp xếp rồi gõ cả câu, nhấn Enter</span>", "pre": "", "acc": ["We haven't forgotten our important traditional values and cultural customs yet.", "We haven't forgotten our important cultural values and traditional customs yet", "We haven't forgotten our traditional values and important cultural customs yet", "We haven't yet forgotten our important traditional values and cultural customs"], "show": "We haven't forgotten our important traditional values and cultural customs yet.", "dict": ["traditional", "forgotten", "important"], "explain": "<div class=\"exp-box\"><h4>⚡ GIẢI THÍCH CHI TIẾT</h4><div class=\"vnt\">💬 Dịch: Chúng tôi vẫn chưa quên những giá trị truyền thống quan trọng và phong tục văn hóa của mình.</div><ol><li>Điểm ngữ pháp:<div class=\"grid2\"><div><span class='hl-green'>haven't forgotten</span> <span class='wt'>HTHT</span> = <span class='p-mean'>phủ định: haven't + V3</span></div><div><span class='hl-green'>... yet</span> <span class='wt'>adv</span> = <span class='p-mean'>\"yet\" cuối câu phủ định</span></div></div></li><li><span class=\"hl-green\">✅ TẠI SAO ĐÚNG?</span><br>▸ <span class='p-grammar'><span class=\"hx hx0\">\"haven't forgotten ... yet\"; trật tự tính từ: important traditional values / cultural customs.</span></span></li><li><span class=\"hl-red\">❌ BẪY HAY GẶP</span><br>▸ <span class='p-grammar'><span class=\"hx hx2\">Quên \"yet\" hoặc sắp sai trật tự tính từ.</span></span></li><li><div class=\"ansline\">✅ Đáp án: <b>We haven't forgotten our important traditional values and cultural customs yet.</b></div></li></ol></div>", "num": 4}, {"cue": "<span class=\"chips\"><span class=\"chip\">Have</span><span class=\"chip\">ever</span><span class=\"chip\">you</span><span class=\"chip\">Tet</span><span class=\"chip\">celebrated</span><span class=\"chip\">peacefully</span><span class=\"chip\">the</span><span class=\"chip\">in</span><span class=\"chip\">quiet</span><span class=\"chip\">Vietnamese</span><span class=\"chip\">countryside</span></span><span class=\"chipq\">(câu hỏi)</span><span class=\"task\">✍️ Sắp xếp rồi gõ cả câu, nhấn Enter</span>", "pre": "", "acc": ["Have you ever celebrated Tet peacefully in the quiet Vietnamese countryside?", "Have you ever peacefully celebrated Tet in the quiet Vietnamese countryside", "Have you ever celebrated Tet in the quiet Vietnamese countryside peacefully"], "show": "Have you ever celebrated Tet peacefully in the quiet Vietnamese countryside?", "dict": ["countryside", "celebrated", "peacefully"], "explain": "<div class=\"exp-box\"><h4>⚡ GIẢI THÍCH CHI TIẾT</h4><div class=\"vnt\">💬 Dịch: Bạn đã bao giờ đón Tết một cách yên bình ở vùng quê Việt Nam yên tĩnh chưa?</div><ol><li>Điểm ngữ pháp:<div class=\"grid2\"><div><span class='hl-green'>Have + S + ever + V3?</span> <span class='wt'>HTHT</span> = <span class='p-mean'>hỏi kinh nghiệm</span></div><div><span class='hl-green'>peacefully / in the ... countryside</span> <span class='wt'>adv</span> = <span class='p-mean'>cách → nơi chốn</span></div></div></li><li><span class=\"hl-green\">✅ TẠI SAO ĐÚNG?</span><br>▸ <span class='p-grammar'><span class=\"hx hx0\">\"Have you ever celebrated\"; \"peacefully\" (cách) trước \"in the quiet Vietnamese countryside\" (nơi chốn).</span></span></li><li><span class=\"hl-red\">❌ BẪY HAY GẶP</span><br>▸ <span class='p-grammar'><span class=\"hx hx2\">Sai vị trí \"ever/peacefully\".</span></span></li><li><div class=\"ansline\">✅ Đáp án: <b>Have you ever celebrated Tet peacefully in the quiet Vietnamese countryside?</b></div></li></ol></div>", "num": 5}, {"cue": "<span class=\"chips\"><span class=\"chip\">Modern</span><span class=\"chip\">technology</span><span class=\"chip\">has</span><span class=\"chip\">daily</span><span class=\"chip\">our</span><span class=\"chip\">changed</span><span class=\"chip\">life</span><span class=\"chip\">routine</span><span class=\"chip\">completely</span><span class=\"chip\">past</span><span class=\"chip\">the</span><span class=\"chip\">in</span><span class=\"chip\">decade</span></span><span class=\"task\">✍️ Sắp xếp rồi gõ cả câu, nhấn Enter</span>", "pre": "", "acc": ["Modern technology has completely changed our daily routine life in the past decade.", "Modern technology has completely changed our daily life routine in the past decade", "In the past decade modern technology has completely changed our daily routine life", "In the past decade modern technology has completely changed our daily life routine", "Modern technology has changed our daily routine life completely in the past decade", "Modern technology has changed our daily life routine completely in the past decade"], "show": "Modern technology has completely changed our daily routine life in the past decade.", "dict": ["technology", "completely", "changed"], "explain": "<div class=\"exp-box\"><h4>⚡ GIẢI THÍCH CHI TIẾT</h4><div class=\"vnt\">💬 Dịch: Công nghệ hiện đại đã thay đổi hoàn toàn nếp sinh hoạt hằng ngày của chúng ta trong thập kỷ qua.</div><ol><li>Điểm ngữ pháp:<div class=\"grid2\"><div><span class='hl-green'>has completely changed</span> <span class='wt'>HTHT</span> = <span class='p-mean'>trạng từ giữa have và V3</span></div><div><span class='hl-green'>in the past decade</span> <span class='wt'>time</span> = <span class='p-mean'>dấu hiệu HTHT</span></div></div></li><li><span class=\"hl-green\">✅ TẠI SAO ĐÚNG?</span><br>▸ <span class='p-grammar'><span class=\"hx hx0\">\"has completely changed\" — \"completely\" đứng giữa \"has\" và phân từ; cụm \"our daily routine life\".</span></span></li><li><span class=\"hl-red\">❌ BẪY HAY GẶP</span><br>▸ <span class='p-grammar'><span class=\"hx hx2\">Đặt \"completely\" sai chỗ hoặc xếp sai cụm danh từ.</span></span></li><li><div class=\"ansline\">✅ Đáp án: <b>Modern technology has completely changed our daily routine life in the past decade.</b></div></li></ol></div>", "num": 6}, {"cue": "<span class=\"chips\"><span class=\"chip\">Haven't</span><span class=\"chip\">worn</span><span class=\"chip\">beautiful</span><span class=\"chip\">ao dai</span><span class=\"chip\">you</span><span class=\"chip\">to</span><span class=\"chip\">ever</span><span class=\"chip\">school</span><span class=\"chip\">special</span><span class=\"chip\">on</span><span class=\"chip\">occasions</span></span><span class=\"chipq\">(câu hỏi)</span><span class=\"task\">✍️ Sắp xếp rồi gõ cả câu, nhấn Enter</span>", "pre": "", "acc": ["Haven't you ever worn beautiful ao dai to school on special occasions?", "Haven't you ever worn beautiful ao dai on special occasions to school"], "show": "Haven't you ever worn beautiful ao dai to school on special occasions?", "dict": ["beautiful", "occasions", "special"], "explain": "<div class=\"exp-box\"><h4>⚡ GIẢI THÍCH CHI TIẾT</h4><div class=\"vnt\">💬 Dịch: Bạn chưa bao giờ mặc áo dài đẹp đến trường vào những dịp đặc biệt à?</div><ol><li>Điểm ngữ pháp:<div class=\"grid2\"><div><span class='hl-green'>Haven't + S + ever + V3?</span> <span class='wt'>HTHT</span> = <span class='p-mean'>câu hỏi phủ định</span></div><div><span class='hl-green'>wear – wore – worn</span> <span class='wt'>v</span> = <span class='p-mean'>phân từ \"worn\"</span></div></div></li><li><span class=\"hl-green\">✅ TẠI SAO ĐÚNG?</span><br>▸ <span class='p-grammar'><span class=\"hx hx0\">\"Haven't you ever worn\"; \"to school\" (nơi đến), \"on special occasions\" (dịp).</span></span></li><li><span class=\"hl-red\">❌ BẪY HAY GẶP</span><br>▸ <span class='p-grammar'><span class=\"hx hx2\">Sai vị trí \"ever\" hoặc sai phân từ (worn).</span></span></li><li><div class=\"ansline\">✅ Đáp án: <b>Haven't you ever worn beautiful ao dai to school on special occasions?</b></div></li></ol></div>", "num": 7}, {"cue": "<span class=\"chips\"><span class=\"chip\">Extended</span><span class=\"chip\">families</span><span class=\"chip\">become</span><span class=\"chip\">Vietnamese</span><span class=\"chip\">have</span><span class=\"chip\">much</span><span class=\"chip\">smaller</span><span class=\"chip\">years</span><span class=\"chip\">recent</span><span class=\"chip\">in</span><span class=\"chip\">than</span><span class=\"chip\">before</span></span><span class=\"task\">✍️ Sắp xếp rồi gõ cả câu, nhấn Enter</span>", "pre": "", "acc": ["Extended Vietnamese families have become much smaller in recent years than before.", "Extended Vietnamese families have become much smaller than before in recent years", "Vietnamese extended families have become much smaller in recent years than before", "Vietnamese extended families have become much smaller than before in recent years", "In recent years extended Vietnamese families have become much smaller than before"], "show": "Extended Vietnamese families have become much smaller in recent years than before.", "dict": ["vietnamese", "extended", "families"], "explain": "<div class=\"exp-box\"><h4>⚡ GIẢI THÍCH CHI TIẾT</h4><div class=\"vnt\">💬 Dịch: Các gia đình mở rộng của người Việt đã trở nên nhỏ hơn nhiều trong những năm gần đây so với trước kia.</div><ol><li>Điểm ngữ pháp:<div class=\"grid2\"><div><span class='hl-green'>have become</span> <span class='wt'>HTHT</span> = <span class='p-mean'>become – became – become</span></div><div><span class='hl-green'>much smaller ... than before</span> <span class='wt'>comp</span> = <span class='p-mean'>so sánh hơn (\"much\" nhấn mạnh)</span></div></div></li><li><span class=\"hl-green\">✅ TẠI SAO ĐÚNG?</span><br>▸ <span class='p-grammar'><span class=\"hx hx0\">\"Extended Vietnamese families have become much smaller\"; \"in recent years\"; \"than before\".</span></span></li><li><span class=\"hl-red\">❌ BẪY HAY GẶP</span><br>▸ <span class='p-grammar'><span class=\"hx hx2\">Sai trật tự \"Extended Vietnamese families\" hoặc quên \"much\" trước so sánh hơn.</span></span></li><li><div class=\"ansline\">✅ Đáp án: <b>Extended Vietnamese families have become much smaller in recent years than before.</b></div></li></ol></div>", "num": 8}, {"cue": "<span class=\"chips\"><span class=\"chip\">They</span><span class=\"chip\">already</span><span class=\"chip\">built</span><span class=\"chip\">have</span><span class=\"chip\">modern</span><span class=\"chip\">many</span><span class=\"chip\">concrete</span><span class=\"chip\">houses</span><span class=\"chip\">traditional</span><span class=\"chip\">village</span><span class=\"chip\">the</span><span class=\"chip\">in</span></span><span class=\"task\">✍️ Sắp xếp rồi gõ cả câu, nhấn Enter</span>", "pre": "", "acc": ["They have already built many modern concrete houses in the traditional village.", "They have already built many modern concrete houses in the traditional village"], "show": "They have already built many modern concrete houses in the traditional village.", "dict": ["traditional", "concrete", "already"], "explain": "<div class=\"exp-box\"><h4>⚡ GIẢI THÍCH CHI TIẾT</h4><div class=\"vnt\">💬 Dịch: Họ đã xây dựng nhiều ngôi nhà bê tông hiện đại trong ngôi làng truyền thống.</div><ol><li>Điểm ngữ pháp:<div class=\"grid2\"><div><span class='hl-green'>have already built</span> <span class='wt'>HTHT</span> = <span class='p-mean'>\"already\" giữa have và V3</span></div><div><span class='hl-green'>many modern concrete houses</span> <span class='wt'>NP</span> = <span class='p-mean'>trật tự tính từ</span></div></div></li><li><span class=\"hl-green\">✅ TẠI SAO ĐÚNG?</span><br>▸ <span class='p-grammar'><span class=\"hx hx0\">\"have already built\"; \"in the traditional village\" (nơi chốn) ở cuối.</span></span></li><li><span class=\"hl-red\">❌ BẪY HAY GẶP</span><br>▸ <span class='p-grammar'><span class=\"hx hx2\">Đặt \"already\" sai chỗ hoặc sắp sai trật tự tính từ.</span></span></li><li><div class=\"ansline\">✅ Đáp án: <b>They have already built many modern concrete houses in the traditional village.</b></div></li></ol></div>", "num": 9}, {"cue": "<span class=\"chips\"><span class=\"chip\">young</span><span class=\"chip\">Have</span><span class=\"chip\">people</span><span class=\"chip\">still</span><span class=\"chip\">their</span><span class=\"chip\">kept</span><span class=\"chip\">important</span><span class=\"chip\">traditions</span><span class=\"chip\">cultural</span><span class=\"chip\">and</span><span class=\"chip\">ancestral</span><span class=\"chip\">customs</span></span><span class=\"chipq\">(câu hỏi)</span><span class=\"task\">✍️ Sắp xếp rồi gõ cả câu, nhấn Enter</span>", "pre": "", "acc": ["Have young people still kept their important cultural traditions and ancestral customs?", "Have young people still kept their important ancestral traditions and cultural customs"], "show": "Have young people still kept their important cultural traditions and ancestral customs?", "dict": ["traditions", "important", "ancestral"], "explain": "<div class=\"exp-box\"><h4>⚡ GIẢI THÍCH CHI TIẾT</h4><div class=\"vnt\">💬 Dịch: Giới trẻ có còn giữ những truyền thống văn hóa quan trọng và phong tục tổ tiên của họ không?</div><ol><li>Điểm ngữ pháp:<div class=\"grid2\"><div><span class='hl-green'>Have + S + still + V3?</span> <span class='wt'>HTHT</span> = <span class='p-mean'>\"still\" đứng giữa</span></div><div><span class='hl-green'>keep – kept – kept</span> <span class='wt'>v</span> = <span class='p-mean'>phân từ \"kept\"</span></div></div></li><li><span class=\"hl-green\">✅ TẠI SAO ĐÚNG?</span><br>▸ <span class='p-grammar'><span class=\"hx hx0\">\"Have young people still kept\"; cụm \"important cultural traditions and ancestral customs\".</span></span></li><li><span class=\"hl-red\">❌ BẪY HAY GẶP</span><br>▸ <span class='p-grammar'><span class=\"hx hx2\">Sai vị trí \"still\" hoặc sai phân từ (kept).</span></span></li><li><div class=\"ansline\">✅ Đáp án: <b>Have young people still kept their important cultural traditions and ancestral customs?</b></div></li></ol></div>", "num": 10}]}, {"type": "mcq", "icon": "🎯", "short": "Ex 18", "title": "Exercise 18. Chọn câu đúng (thì hiện tại hoàn thành)", "desc": "Dựa vào gợi ý, chọn câu viết <b>đúng ngữ pháp</b> ở thì hiện tại hoàn thành.", "items": [{"text": "Traditional festivals / become / more commercial / recent years.", "opts": ["Traditional festivals have become more commercial in recent years.", "Traditional festivals became more commercial in recent years.", "Traditional festivals have became more commercial in recent years.", "Traditional festivals are become more commercial recent years."], "correct": 0, "dict": ["traditional", "commercial", "festivals"], "explain": "<div class=\"exp-box\"><h4>⚡ GIẢI THÍCH CHI TIẾT</h4><div class=\"vnt\">💬 Dịch: Các lễ hội truyền thống đã trở nên thương mại hóa hơn trong những năm gần đây.</div><ol><li>Các phương án:<div class=\"grid2\"><div><span class='hl-green'>Traditional festivals have become more commercial in recent years.</span> = <span class='p-mean'>đúng (become–became–become)</span></div><div><span class='p-word'>Traditional festivals became more commercial in recent years.</span> = <span class='p-mean'>quá khứ đơn (thiếu have)</span></div><div><span class='p-word'>Traditional festivals have became more commercial in recent years.</span> = <span class='p-mean'>sai phân từ</span></div><div><span class='p-word'>Traditional festivals are become more commercial recent years.</span> = <span class='p-mean'>sai cấu trúc</span></div></div></li><li><span class=\"hl-green\">✅ TẠI SAO ĐÚNG?</span><br>▸ <span class='p-grammar'><span class=\"hx hx0\">\"in recent years\" là dấu hiệu HTHT → have become.</span></span></li><li><span class=\"hl-red\">❌ TẠI SAO SAI?</span><br>▸ <span class='p-grammar'><span class=\"hx hx2\"><b>became</b>: quá khứ đơn (thiếu have).</span></span><br>▸ <span class='p-grammar'><span class=\"hx hx3\"><b>have became</b>: sai phân từ.</span></span><br>▸ <span class='p-grammar'><span class=\"hx hx4\"><b>are become</b>: sai cấu trúc.</span></span></li></ol></div>", "num": 1}, {"text": "Many families / not / keep / the tradition / living / three generations / together.", "opts": ["Many families have not kept the tradition of living three generations together.", "Many families did not keep the tradition of living three generations together.", "Many families have not keep the tradition to living three generations together.", "Many families not kept the tradition of living three generations together."], "correct": 0, "dict": ["generations", "tradition", "families"], "explain": "<div class=\"exp-box\"><h4>⚡ GIẢI THÍCH CHI TIẾT</h4><div class=\"vnt\">💬 Dịch: Nhiều gia đình đã không còn giữ truyền thống ba thế hệ sống chung.</div><ol><li>Các phương án:<div class=\"grid2\"><div><span class='hl-green'>Many families have not kept the tradition of living three generations together.</span> = <span class='p-mean'>đúng (HTHT + \"tradition of V-ing\")</span></div><div><span class='p-word'>Many families did not keep the tradition of living three generations together.</span> = <span class='p-mean'>quá khứ đơn</span></div><div><span class='p-word'>Many families have not keep the tradition to living three generations together.</span> = <span class='p-mean'>sai phân từ + sai giới từ</span></div><div><span class='p-word'>Many families not kept the tradition of living three generations together.</span> = <span class='p-mean'>thiếu trợ động từ \"have\"</span></div></div></li><li><span class=\"hl-green\">✅ TẠI SAO ĐÚNG?</span><br>▸ <span class='p-grammar'><span class=\"hx hx0\">\"have not kept\"; \"the tradition OF + V-ing\".</span></span></li><li><span class=\"hl-red\">❌ TẠI SAO SAI?</span><br>▸ <span class='p-grammar'><span class=\"hx hx2\"><b>did not keep</b>: quá khứ đơn.</span></span><br>▸ <span class='p-grammar'><span class=\"hx hx3\"><b>have not keep / to living</b>: sai phân từ + sai giới từ.</span></span><br>▸ <span class='p-grammar'><span class=\"hx hx4\"><b>not kept</b>: thiếu trợ động từ \"have\".</span></span></li></ol></div>", "num": 2}, {"text": "Vietnamese cuisine / gain / international recognition / the past decade.", "opts": ["Vietnamese cuisine has gained international recognition in the past decade.", "Vietnamese cuisine gained international recognition in the past decade.", "Vietnamese cuisine has gain international recognition in the past decade.", "Vietnamese cuisine have gained international recognition on the past decade."], "correct": 0, "dict": ["international", "recognition", "vietnamese"], "explain": "<div class=\"exp-box\"><h4>⚡ GIẢI THÍCH CHI TIẾT</h4><div class=\"vnt\">💬 Dịch: Ẩm thực Việt Nam đã được công nhận trên trường quốc tế trong thập kỷ qua.</div><ol><li>Các phương án:<div class=\"grid2\"><div><span class='hl-green'>Vietnamese cuisine has gained international recognition in the past decade.</span> = <span class='p-mean'>đúng (cuisine số ít → has)</span></div><div><span class='p-word'>Vietnamese cuisine gained international recognition in the past decade.</span> = <span class='p-mean'>quá khứ đơn</span></div><div><span class='p-word'>Vietnamese cuisine has gain international recognition in the past decade.</span> = <span class='p-mean'>thiếu -ed (phân từ)</span></div><div><span class='p-word'>Vietnamese cuisine have gained international recognition on the past decade.</span> = <span class='p-mean'>sai chủ ngữ + giới từ \"on\"</span></div></div></li><li><span class=\"hl-green\">✅ TẠI SAO ĐÚNG?</span><br>▸ <span class='p-grammar'><span class=\"hx hx0\">\"the past decade\" → HTHT; \"cuisine\" số ít → has gained; \"in the past decade\".</span></span></li><li><span class=\"hl-red\">❌ TẠI SAO SAI?</span><br>▸ <span class='p-grammar'><span class=\"hx hx2\"><b>gained</b>: quá khứ đơn.</span></span><br>▸ <span class='p-grammar'><span class=\"hx hx3\"><b>has gain</b>: thiếu -ed (phân từ).</span></span><br>▸ <span class='p-grammar'><span class=\"hx hx4\"><b>have gained / on</b>: sai chủ ngữ + giới từ \"on\".</span></span></li></ol></div>", "num": 3}, {"text": "Young people / already / adopt / Western fashion styles / daily life.", "opts": ["Young people have already adopted Western fashion styles in daily life.", "Young people already adopted Western fashion styles in daily life.", "Young people have already adopt Western fashion styles on daily life.", "Young people has already adopted Western fashion styles in daily life."], "correct": 0, "dict": ["already", "adopted", "western"], "explain": "<div class=\"exp-box\"><h4>⚡ GIẢI THÍCH CHI TIẾT</h4><div class=\"vnt\">💬 Dịch: Giới trẻ đã áp dụng các phong cách thời trang phương Tây vào đời sống hằng ngày.</div><ol><li>Các phương án:<div class=\"grid2\"><div><span class='hl-green'>Young people have already adopted Western fashion styles in daily life.</span> = <span class='p-mean'>đúng</span></div><div><span class='p-word'>Young people already adopted Western fashion styles in daily life.</span> = <span class='p-mean'>thiếu \"have\" (quá khứ đơn)</span></div><div><span class='p-word'>Young people have already adopt Western fashion styles on daily life.</span> = <span class='p-mean'>sai phân từ + giới từ</span></div><div><span class='p-word'>Young people has already adopted Western fashion styles in daily life.</span> = <span class='p-mean'>sai số (people → have)</span></div></div></li><li><span class=\"hl-green\">✅ TẠI SAO ĐÚNG?</span><br>▸ <span class='p-grammar'><span class=\"hx hx0\">\"have already adopted\"; \"in daily life\".</span></span></li><li><span class=\"hl-red\">❌ TẠI SAO SAI?</span><br>▸ <span class='p-grammar'><span class=\"hx hx2\"><b>already adopted</b>: thiếu \"have\" (quá khứ đơn).</span></span><br>▸ <span class='p-grammar'><span class=\"hx hx3\"><b>Young people have already adopt Western fashion styles on daily life</b>: sai phân từ + giới từ.</span></span><br>▸ <span class='p-grammar'><span class=\"hx hx4\"><b>has adopted</b>: sai số (people → have).</span></span></li></ol></div>", "num": 4}, {"text": "We / never / forget / our ancestors' / teachings / values.", "opts": ["We have never forgotten our ancestors' teachings and values.", "We never forgot our ancestors' teachings and values.", "We have never forget our ancestors' teachings and values.", "We never have forgotten our ancestors' teachings and values."], "correct": 0, "dict": ["forgotten", "ancestors", "teachings"], "explain": "<div class=\"exp-box\"><h4>⚡ GIẢI THÍCH CHI TIẾT</h4><div class=\"vnt\">💬 Dịch: Chúng tôi chưa bao giờ quên những lời dạy và giá trị của tổ tiên.</div><ol><li>Các phương án:<div class=\"grid2\"><div><span class='hl-green'>We have never forgotten our ancestors' teachings and values.</span> = <span class='p-mean'>đúng (\"never\" giữa have và V3)</span></div><div><span class='p-word'>We never forgot our ancestors' teachings and values.</span> = <span class='p-mean'>quá khứ đơn</span></div><div><span class='p-word'>We have never forget our ancestors' teachings and values.</span> = <span class='p-mean'>sai phân từ</span></div><div><span class='p-word'>We never have forgotten our ancestors' teachings and values.</span> = <span class='p-mean'>sai vị trí \"never\"</span></div></div></li><li><span class=\"hl-green\">✅ TẠI SAO ĐÚNG?</span><br>▸ <span class='p-grammar'><span class=\"hx hx0\">\"have never forgotten\" (forget–forgot–forgotten).</span></span></li><li><span class=\"hl-red\">❌ TẠI SAO SAI?</span><br>▸ <span class='p-grammar'><span class=\"hx hx2\"><b>never forgot</b>: quá khứ đơn.</span></span><br>▸ <span class='p-grammar'><span class=\"hx hx3\"><b>have never forget</b>: sai phân từ.</span></span><br>▸ <span class='p-grammar'><span class=\"hx hx4\"><b>never have forgotten</b>: sai vị trí \"never\".</span></span></li></ol></div>", "num": 5}, {"text": "Rural areas / experience / significant changes / infrastructure / recently.", "opts": ["Rural areas have experienced significant changes in infrastructure recently.", "Rural areas experienced significant changes in infrastructure recently.", "Rural areas have experience significant changes on infrastructure recently.", "Rural areas has experienced significant changes in infrastructure recently."], "correct": 0, "dict": ["infrastructure", "experienced", "significant"], "explain": "<div class=\"exp-box\"><h4>⚡ GIẢI THÍCH CHI TIẾT</h4><div class=\"vnt\">💬 Dịch: Các vùng nông thôn gần đây đã trải qua những thay đổi đáng kể về cơ sở hạ tầng.</div><ol><li>Các phương án:<div class=\"grid2\"><div><span class='hl-green'>Rural areas have experienced significant changes in infrastructure recently.</span> = <span class='p-mean'>đúng</span></div><div><span class='p-word'>Rural areas experienced significant changes in infrastructure recently.</span> = <span class='p-mean'>thiếu have (quá khứ đơn)</span></div><div><span class='p-word'>Rural areas have experience significant changes on infrastructure recently.</span> = <span class='p-mean'>sai phân từ + giới từ</span></div><div><span class='p-word'>Rural areas has experienced significant changes in infrastructure recently.</span> = <span class='p-mean'>sai số (areas → have)</span></div></div></li><li><span class=\"hl-green\">✅ TẠI SAO ĐÚNG?</span><br>▸ <span class='p-grammar'><span class=\"hx hx0\">\"recently\" → HTHT; \"changes IN infrastructure\".</span></span></li><li><span class=\"hl-red\">❌ TẠI SAO SAI?</span><br>▸ <span class='p-grammar'><span class=\"hx hx2\"><b>experienced</b>: thiếu have (quá khứ đơn).</span></span><br>▸ <span class='p-grammar'><span class=\"hx hx3\"><b>have experience / on</b>: sai phân từ + giới từ.</span></span><br>▸ <span class='p-grammar'><span class=\"hx hx4\"><b>has experienced</b>: sai số (areas → have).</span></span></li></ol></div>", "num": 6}, {"text": "Traditional crafts / not / disappear / completely / yet.", "opts": ["Traditional crafts have not disappeared completely yet.", "Traditional crafts did not disappear completely yet.", "Traditional crafts have not disappear completely yet.", "Traditional crafts not have disappeared completely yet."], "correct": 0, "dict": ["traditional", "disappeared", "completely"], "explain": "<div class=\"exp-box\"><h4>⚡ GIẢI THÍCH CHI TIẾT</h4><div class=\"vnt\">💬 Dịch: Các nghề thủ công truyền thống vẫn chưa biến mất hoàn toàn.</div><ol><li>Các phương án:<div class=\"grid2\"><div><span class='hl-green'>Traditional crafts have not disappeared completely yet.</span> = <span class='p-mean'>đúng</span></div><div><span class='p-word'>Traditional crafts did not disappear completely yet.</span> = <span class='p-mean'>quá khứ đơn</span></div><div><span class='p-word'>Traditional crafts have not disappear completely yet.</span> = <span class='p-mean'>thiếu -ed (phân từ)</span></div><div><span class='p-word'>Traditional crafts not have disappeared completely yet.</span> = <span class='p-mean'>sai trật tự \"not have\"</span></div></div></li><li><span class=\"hl-green\">✅ TẠI SAO ĐÚNG?</span><br>▸ <span class='p-grammar'><span class=\"hx hx0\">\"yet\" → HTHT phủ định \"have not disappeared\".</span></span></li><li><span class=\"hl-red\">❌ TẠI SAO SAI?</span><br>▸ <span class='p-grammar'><span class=\"hx hx2\"><b>did not disappear</b>: quá khứ đơn.</span></span><br>▸ <span class='p-grammar'><span class=\"hx hx3\"><b>have not disappear</b>: thiếu -ed (phân từ).</span></span><br>▸ <span class='p-grammar'><span class=\"hx hx4\"><b>not have disappeared</b>: sai trật tự \"not have\".</span></span></li></ol></div>", "num": 7}, {"text": "Extended families / gradually / replace / nuclear families / urban areas. (bị động)", "opts": ["Extended families have gradually been replaced by nuclear families in urban areas.", "Extended families have gradually replaced by nuclear families in urban areas.", "Extended families gradually replaced by nuclear families in urban areas.", "Extended families has gradually been replaced by nuclear families in urban areas."], "correct": 0, "dict": ["gradually", "extended", "families"], "explain": "<div class=\"exp-box\"><h4>⚡ GIẢI THÍCH CHI TIẾT</h4><div class=\"vnt\">💬 Dịch: Các gia đình mở rộng đã dần bị thay thế bởi gia đình hạt nhân ở khu vực thành thị.</div><ol><li>Các phương án:<div class=\"grid2\"><div><span class='hl-green'>Extended families have gradually been replaced by nuclear families in urban areas.</span> = <span class='p-mean'>bị động HTHT đúng</span></div><div><span class='p-word'>Extended families have gradually replaced by nuclear families in urban areas.</span> = <span class='p-mean'>thiếu \"been\" (chưa bị động)</span></div><div><span class='p-word'>Extended families gradually replaced by nuclear families in urban areas.</span> = <span class='p-mean'>thiếu \"have been\"</span></div><div><span class='p-word'>Extended families has gradually been replaced by nuclear families in urban areas.</span> = <span class='p-mean'>sai số (families → have)</span></div></div></li><li><span class=\"hl-green\">✅ TẠI SAO ĐÚNG?</span><br>▸ <span class='p-grammar'><span class=\"hx hx0\">\"replaced BY nuclear families\" → cần bị động \"have been replaced\".</span></span></li><li><span class=\"hl-red\">❌ TẠI SAO SAI?</span><br>▸ <span class='p-grammar'><span class=\"hx hx2\"><b>Extended families have gradually replaced by nuclear families in urban areas</b>: thiếu \"been\" (chưa bị động).</span></span><br>▸ <span class='p-grammar'><span class=\"hx hx3\"><b>gradually replaced by</b>: thiếu \"have been\".</span></span><br>▸ <span class='p-grammar'><span class=\"hx hx4\"><b>Extended families has gradually been replaced by nuclear families in urban areas</b>: sai số (families → have).</span></span></li></ol></div>", "num": 8}, {"text": "Vietnamese students / start / study / abroad / more frequently / than before.", "opts": ["Vietnamese students have started to study abroad more frequently than before.", "Vietnamese students started to study abroad more frequently than before.", "Vietnamese students have start to study abroad more frequently than before.", "Vietnamese students has started studying abroad more frequently than before."], "correct": 0, "dict": ["vietnamese", "frequently", "students"], "explain": "<div class=\"exp-box\"><h4>⚡ GIẢI THÍCH CHI TIẾT</h4><div class=\"vnt\">💬 Dịch: Học sinh Việt Nam đã bắt đầu đi du học thường xuyên hơn trước.</div><ol><li>Các phương án:<div class=\"grid2\"><div><span class='hl-green'>Vietnamese students have started to study abroad more frequently than before.</span> = <span class='p-mean'>đúng (start + to V)</span></div><div><span class='p-word'>Vietnamese students started to study abroad more frequently than before.</span> = <span class='p-mean'>thiếu have (quá khứ đơn)</span></div><div><span class='p-word'>Vietnamese students have start to study abroad more frequently than before.</span> = <span class='p-mean'>thiếu -ed (phân từ)</span></div><div><span class='p-word'>Vietnamese students has started studying abroad more frequently than before.</span> = <span class='p-mean'>sai số (students → have)</span></div></div></li><li><span class=\"hl-green\">✅ TẠI SAO ĐÚNG?</span><br>▸ <span class='p-grammar'><span class=\"hx hx0\">\"have started\"; \"start TO study\".</span></span></li><li><span class=\"hl-red\">❌ TẠI SAO SAI?</span><br>▸ <span class='p-grammar'><span class=\"hx hx2\"><b>started</b>: thiếu have (quá khứ đơn).</span></span><br>▸ <span class='p-grammar'><span class=\"hx hx3\"><b>have start</b>: thiếu -ed (phân từ).</span></span><br>▸ <span class='p-grammar'><span class=\"hx hx4\"><b>has started</b>: sai số (students → have).</span></span></li></ol></div>", "num": 9}, {"text": "Street vendors / not / disappear / from Vietnamese cities / yet.", "opts": ["Street vendors have not disappeared from Vietnamese cities yet.", "Street vendors did not disappear from Vietnamese cities yet.", "Street vendors have not disappear from Vietnamese cities yet.", "Street vendors not disappeared from Vietnamese cities yet."], "correct": 0, "dict": ["disappeared", "vietnamese", "vendors"], "explain": "<div class=\"exp-box\"><h4>⚡ GIẢI THÍCH CHI TIẾT</h4><div class=\"vnt\">💬 Dịch: Những người bán hàng rong vẫn chưa biến mất khỏi các thành phố Việt Nam.</div><ol><li>Các phương án:<div class=\"grid2\"><div><span class='hl-green'>Street vendors have not disappeared from Vietnamese cities yet.</span> = <span class='p-mean'>đúng</span></div><div><span class='p-word'>Street vendors did not disappear from Vietnamese cities yet.</span> = <span class='p-mean'>quá khứ đơn</span></div><div><span class='p-word'>Street vendors have not disappear from Vietnamese cities yet.</span> = <span class='p-mean'>thiếu -ed (phân từ)</span></div><div><span class='p-word'>Street vendors not disappeared from Vietnamese cities yet.</span> = <span class='p-mean'>thiếu \"have\"</span></div></div></li><li><span class=\"hl-green\">✅ TẠI SAO ĐÚNG?</span><br>▸ <span class='p-grammar'><span class=\"hx hx0\">\"yet\" → HTHT phủ định \"have not disappeared\".</span></span></li><li><span class=\"hl-red\">❌ TẠI SAO SAI?</span><br>▸ <span class='p-grammar'><span class=\"hx hx2\"><b>did not disappear</b>: quá khứ đơn.</span></span><br>▸ <span class='p-grammar'><span class=\"hx hx3\"><b>have not disappear</b>: thiếu -ed (phân từ).</span></span><br>▸ <span class='p-grammar'><span class=\"hx hx4\"><b>not disappeared</b>: thiếu \"have\".</span></span></li></ol></div>", "num": 10}], "shuffle": true}, {"type": "mcq", "icon": "💌", "short": "Ex 21", "title": "Exercise 21. Sắp xếp câu thành đoạn văn, lá thư", "desc": "Đọc các câu a–e rồi chọn trật tự đúng.", "items": [{"text": "Chọn trật tự đúng cho lá thư:<div class=\"dialog\"><b>a.</b> The traditional markets are being replaced by modern supermarkets, and many young people prefer eating fast food to traditional Vietnamese dishes.<br>\n<b>b.</b> Dear Grandma, I hope you're doing well in your hometown. I've been thinking a lot about how much Hanoi has changed since you moved away.<br>\n<b>c.</b> However, I'm happy to say that some traditions are still alive. We still celebrate Tet with the whole family, and people still respect their elders.<br>\n<b>d.</b> Looking forward to seeing you during Tet holiday. With love, Minh<br>\n<b>e.</b> Sometimes I feel sad seeing these changes because I remember the stories you told me about old Hanoi.</div>", "opts": ["d – b – a – c – e", "e – b – a – c – d", "b – a – e – c – d", "a – c – b – d – e"], "correct": 2, "dict": ["supermarkets", "traditional", "vietnamese"], "explain": "<div class=\"exp-box\"><h4>⚡ GIẢI THÍCH CHI TIẾT</h4><div class=\"vnt\">💬 Chủ đề: Lá thư Minh gửi cho bà, kể về những thay đổi của Hà Nội.</div><ol><li>📖 Từng câu theo đúng thứ tự:<div class=\"orderline\"><span class=\"lbl\">b</span> <span class=\"p-en\">Dear Grandma, I hope you're doing well in your hometown. I've been thinking a lot about how much Hanoi has changed since you moved away.</span><br><span class=\"p-mean\">Bà ơi, cháu mong bà khỏe ở quê. Cháu đã nghĩ nhiều về việc Hà Nội thay đổi ra sao từ khi bà chuyển đi.</span> <i>(lời chào mở đầu)</i></div><div class=\"orderline\"><span class=\"lbl\">a</span> <span class=\"p-en\">The traditional markets are being replaced by modern supermarkets, and many young people prefer eating fast food to traditional Vietnamese dishes.</span><br><span class=\"p-mean\">Chợ truyền thống đang bị thay bằng siêu thị hiện đại, nhiều người trẻ thích đồ ăn nhanh hơn món Việt.</span> <i>(nêu thay đổi)</i></div><div class=\"orderline\"><span class=\"lbl\">e</span> <span class=\"p-en\">Sometimes I feel sad seeing these changes because I remember the stories you told me about old Hanoi.</span><br><span class=\"p-mean\">Đôi khi cháu thấy buồn khi thấy những thay đổi này vì nhớ chuyện bà kể về Hà Nội xưa.</span> <i>(cảm xúc)</i></div><div class=\"orderline\"><span class=\"lbl\">c</span> <span class=\"p-en\">However, I'm happy to say that some traditions are still alive. We still celebrate Tet with the whole family, and people still respect their elders.</span><br><span class=\"p-mean\">Tuy nhiên, cháu vui vì vài truyền thống vẫn còn: cả nhà vẫn đón Tết, mọi người vẫn kính trọng người lớn.</span> <i>(chuyển ý tích cực)</i></div><div class=\"orderline\"><span class=\"lbl\">d</span> <span class=\"p-en\">Looking forward to seeing you during Tet holiday. With love, Minh</span><br><span class=\"p-mean\">Mong sớm gặp bà dịp Tết. Thương bà, Minh.</span> <i>(kết thư &amp; ký tên)</i></div></li><li><span class=\"hl-green\">✅ TẠI SAO ĐÚNG?</span><br>▸ <span class='p-grammar'><span class=\"hx hx0\">Lời chào (b) → nêu thay đổi (a) → cảm xúc buồn (e) → \"However\" đảo sang điều tích cực (c) → lời chào kết & ký tên (d) ⇒ b-a-e-c-d.</span></span></li><li><span class=\"hl-red\">❌ TẠI SAO SAI?</span><br>▸ <span class='p-grammar'><span class=\"hx hx2\">Các đáp án khác đặt \"d\" (ký tên) không ở cuối, hoặc mở đầu bằng a/d/e thay vì lời chào \"b\" (thư luôn mở bằng lời chào “Dear Grandma”).</span></span></li></ol></div>", "num": 1}, {"text": "Chọn trật tự đúng cho đoạn văn:<div class=\"dialog\"><b>a.</b> Firstly, social media and smartphones have transformed how families communicate, with many preferring texting over face-to-face conversations.<br>\n<b>b.</b> Vietnamese lifestyle has undergone dramatic changes in the past two decades.<br>\n<b>c.</b> Additionally, urbanization has led to smaller living spaces, causing extended families to live separately rather than in traditional multi-generational homes.<br>\n<b>d.</b> Despite these changes, core Vietnamese values like respect for ancestors and family bonds remain strong.<br>\n<b>e.</b> Finally, work culture has shifted from agricultural rhythms to office schedules, changing meal times and family gatherings.</div>", "opts": ["a – c – e – b – d", "b – a – c – e – d", "d – b – a – c – e", "b – c – a – e – d"], "correct": 1, "dict": ["conversations", "additionally", "urbanization"], "explain": "<div class=\"exp-box\"><h4>⚡ GIẢI THÍCH CHI TIẾT</h4><div class=\"vnt\">💬 Chủ đề: Đoạn văn về những thay đổi mạnh mẽ trong lối sống của người Việt.</div><ol><li>📖 Từng câu theo đúng thứ tự:<div class=\"orderline\"><span class=\"lbl\">b</span> <span class=\"p-en\">Vietnamese lifestyle has undergone dramatic changes in the past two decades.</span><br><span class=\"p-mean\">Lối sống của người Việt đã trải qua thay đổi lớn trong hai thập kỷ qua.</span> <i>(câu chủ đề)</i></div><div class=\"orderline\"><span class=\"lbl\">a</span> <span class=\"p-en\">Firstly, social media and smartphones have transformed how families communicate, with many preferring texting over face-to-face conversations.</span><br><span class=\"p-mean\">Trước tiên, mạng xã hội &amp; điện thoại đã thay đổi cách gia đình giao tiếp, nhiều người thích nhắn tin hơn nói trực tiếp.</span> <i>(ý 1 (Firstly))</i></div><div class=\"orderline\"><span class=\"lbl\">c</span> <span class=\"p-en\">Additionally, urbanization has led to smaller living spaces, causing extended families to live separately rather than in traditional multi-generational homes.</span><br><span class=\"p-mean\">Thêm vào đó, đô thị hóa khiến không gian sống nhỏ hơn, các gia đình nhiều thế hệ phải sống riêng.</span> <i>(ý 2 (Additionally))</i></div><div class=\"orderline\"><span class=\"lbl\">e</span> <span class=\"p-en\">Finally, work culture has shifted from agricultural rhythms to office schedules, changing meal times and family gatherings.</span><br><span class=\"p-mean\">Cuối cùng, văn hóa làm việc chuyển từ nhịp nông nghiệp sang lịch văn phòng, đổi giờ ăn &amp; sum họp.</span> <i>(ý 3 (Finally))</i></div><div class=\"orderline\"><span class=\"lbl\">d</span> <span class=\"p-en\">Despite these changes, core Vietnamese values like respect for ancestors and family bonds remain strong.</span><br><span class=\"p-mean\">Bất chấp những thay đổi đó, giá trị cốt lõi như kính trọng tổ tiên &amp; tình thân vẫn bền chặt.</span> <i>(kết (Despite))</i></div></li><li><span class=\"hl-green\">✅ TẠI SAO ĐÚNG?</span><br>▸ <span class='p-grammar'><span class=\"hx hx0\">Câu chủ đề (b) → Firstly (a) → Additionally (c) → Finally (e) → Despite/kết (d) ⇒ b-a-c-e-d.</span></span></li><li><span class=\"hl-red\">❌ TẠI SAO SAI?</span><br>▸ <span class='p-grammar'><span class=\"hx hx2\">Các đáp án khác đảo lộn Firstly/Additionally/Finally hoặc đặt câu chủ đề (b) / câu kết (d) sai vị trí.</span></span></li></ol></div>", "num": 2}]}, {"type": "mcq", "icon": "📖", "short": "Ex 22", "title": "Exercise 22. Đọc và chọn đáp án đúng", "desc": "Đọc kĩ đoạn văn rồi chọn đáp án.", "items": [{"text": "① Sắp xếp 3 câu a–c để điền vào chỗ trống cho hợp lý:<div class=\"dialog\"><i>Traditional Vietnamese markets are gradually disappearing from urban areas. While modern supermarkets offer convenience and variety, many people still miss the old market atmosphere. ____.</i><br><br>\n<b>a.</b> The vendors knew their regular customers by name and often gave them special discounts or extra portions.<br>\n<b>b.</b> In the past, going to the market was not just about shopping but also a social activity where neighbors would meet and chat.<br>\n<b>c.</b> These personal connections and the sense of community are what make traditional markets irreplaceable in many people's hearts.</div>", "opts": ["c – b – a", "c – a – b", "a – c – b", "b – a – c"], "correct": 3, "dict": ["irreplaceable", "disappearing", "supermarkets"], "explain": "<div class=\"exp-box\"><h4>⚡ GIẢI THÍCH CHI TIẾT</h4><div class=\"vnt\">💬 Bối cảnh: Chợ truyền thống dần biến mất; nhiều người vẫn nhớ không khí chợ xưa.</div><ol><li>📖 Từng câu theo đúng thứ tự:<div class=\"orderline\"><span class=\"lbl\">b</span> <span class=\"p-en\">In the past, going to the market was not just about shopping but also a social activity where neighbors would meet and chat.</span><br><span class=\"p-mean\">Ngày xưa, đi chợ không chỉ để mua sắm mà còn là hoạt động xã hội, nơi hàng xóm gặp gỡ trò chuyện.</span> <i>(mở (quá khứ))</i></div><div class=\"orderline\"><span class=\"lbl\">a</span> <span class=\"p-en\">The vendors knew their regular customers by name and often gave them special discounts or extra portions.</span><br><span class=\"p-mean\">Người bán biết tên từng khách quen, thường giảm giá hoặc cho thêm phần.</span> <i>(chi tiết minh họa)</i></div><div class=\"orderline\"><span class=\"lbl\">c</span> <span class=\"p-en\">These personal connections and the sense of community are what make traditional markets irreplaceable in many people's hearts.</span><br><span class=\"p-mean\">Chính sự kết nối &amp; cảm giác cộng đồng đó khiến chợ truyền thống không thể thay thế trong lòng nhiều người.</span> <i>(kết luận)</i></div></li><li><span class=\"hl-green\">✅ TẠI SAO ĐÚNG?</span><br>▸ <span class='p-grammar'><span class=\"hx hx0\">Bối cảnh quá khứ (b) → chi tiết về người bán (a) → câu tổng kết \"These personal connections...\" (c) ⇒ b-a-c.</span></span></li><li><span class=\"hl-red\">❌ TẠI SAO SAI?</span><br>▸ <span class='p-grammar'><span class=\"hx hx2\">Các thứ tự khác để câu “These personal connections…” (c) đứng trước khi kể các mối quan hệ, hoặc đặt câu bối cảnh “In the past…” (b) xuống cuối, làm mất mạch quá khứ → minh họa → kết luận.</span></span></li></ol></div>", "num": 1}, {"text": "① Chọn câu KẾT phù hợp nhất cho đoạn văn về chợ truyền thống ở trên:", "opts": ["Supermarkets have air conditioning and better hygiene standards.", "That's why many cities are now trying to preserve and modernize their traditional markets.", "Traditional markets usually open very early in the morning.", "Young people prefer shopping online to going to physical stores."], "correct": 1, "dict": ["traditional", "modernize", "preserve"], "explain": "<div class=\"exp-box\"><h4>⚡ GIẢI THÍCH CHI TIẾT</h4><div class=\"vnt\">💬 Cả đoạn ca ngợi giá trị của chợ truyền thống → cần câu kết tổng hợp lại.</div><ol><li>Các phương án:<div class=\"grid2\"><div><span class='p-word'>Supermarkets have air conditioning and better hygiene standards.</span> = <span class='p-mean'>\"Siêu thị có điều hòa &amp; vệ sinh tốt hơn.\" → ý phụ, lạc</span></div><div><span class='hl-green'>That's why many cities are now trying to preserve and modernize their traditional markets.</span> = <span class='p-mean'>\"Đó là lý do nhiều thành phố đang cố bảo tồn &amp; hiện đại hóa chợ truyền thống.\" → kết hợp lý</span></div><div><span class='p-word'>Traditional markets usually open very early in the morning.</span> = <span class='p-mean'>\"Chợ truyền thống thường mở rất sớm.\" → chi tiết lạc</span></div><div><span class='p-word'>Young people prefer shopping online to going to physical stores.</span> = <span class='p-mean'>\"Người trẻ thích mua sắm online hơn.\" → lạc ý</span></div></div></li><li><span class=\"hl-green\">✅ TẠI SAO ĐÚNG?</span><br>▸ <span class='p-grammar'><span class=\"hx hx0\">Đoạn nhấn mạnh chợ truyền thống đáng giữ gìn → câu kết nêu giải pháp \"bảo tồn &amp; hiện đại hóa\".</span></span></li><li><span class=\"hl-red\">❌ TẠI SAO SAI?</span><br>▸ <span class='p-grammar'><span class=\"hx hx2\"><b>Supermarkets have air conditioning and better hygiene standards</b>: \"Siêu thị có điều hòa &amp; vệ sinh tốt hơn.\" → ý phụ, lạc.</span></span><br>▸ <span class='p-grammar'><span class=\"hx hx3\"><b>Traditional markets usually open very early in the morning</b>: \"Chợ truyền thống thường mở rất sớm.\" → chi tiết lạc.</span></span><br>▸ <span class='p-grammar'><span class=\"hx hx4\"><b>Young people prefer shopping online to going to physical stores</b>: \"Người trẻ thích mua sắm online hơn.\" → lạc ý.</span></span></li></ol></div>", "num": 2}, {"text": "② Chọn câu CHỦ ĐỀ mở đầu (chỗ trống 1):<div class=\"dialog\"><i>(1) ____. First of all, technology has transformed how we communicate — my grandparents used to write letters, but now we video call instantly. (2) ____ the way we celebrate Tet has changed significantly, with many families ordering food instead of cooking traditional dishes together. Finally, young people now prefer Western fashion over áo dài for daily wear. Despite these changes, Vietnamese people still maintain strong family values and respect for their ancestors.</i></div>", "opts": ["Vietnamese culture is one of the oldest in Southeast Asia.", "Modern technology affects every aspect of our daily lives.", "The Vietnamese lifestyle has changed dramatically over the past three decades.", "Tet is the most important festival in Vietnamese culture."], "correct": 2, "dict": ["dramatically", "vietnamese", "lifestyle"], "explain": "<div class=\"exp-box\"><h4>⚡ GIẢI THÍCH CHI TIẾT</h4><div class=\"vnt\">💬 Đoạn liệt kê nhiều thay đổi: công nghệ, Tết, thời trang → câu chủ đề phải KHÁI QUÁT.</div><ol><li>Các phương án:<div class=\"grid2\"><div><span class='p-word'>Vietnamese culture is one of the oldest in Southeast Asia.</span> = <span class='p-mean'>\"Văn hóa Việt là một trong những nền lâu đời nhất ĐNÁ.\" → quá rộng, không nói \"thay đổi\"</span></div><div><span class='p-word'>Modern technology affects every aspect of our daily lives.</span> = <span class='p-mean'>\"Công nghệ ảnh hưởng mọi mặt đời sống.\" → chỉ về công nghệ, hẹp</span></div><div><span class='hl-green'>The Vietnamese lifestyle has changed dramatically over the past three decades.</span> = <span class='p-mean'>\"Lối sống của người Việt đã thay đổi mạnh mẽ trong ba thập kỷ qua.\" → bao trùm cả đoạn</span></div><div><span class='p-word'>Tet is the most important festival in Vietnamese culture.</span> = <span class='p-mean'>\"Tết là lễ hội quan trọng nhất.\" → chỉ về Tết, hẹp</span></div></div></li><li><span class=\"hl-green\">✅ TẠI SAO ĐÚNG?</span><br>▸ <span class='p-grammar'><span class=\"hx hx0\">Các ý sau đều là ví dụ về sự THAY ĐỔI của lối sống → câu chủ đề \"lifestyle has changed dramatically\".</span></span></li><li><span class=\"hl-red\">❌ TẠI SAO SAI?</span><br>▸ <span class='p-grammar'><span class=\"hx hx2\"><b>Vietnamese culture is one of the oldest in Southeast Asia</b>: \"Văn hóa Việt là một trong những nền lâu đời nhất ĐNÁ.\" → quá rộng, không nói \"thay đổi\".</span></span><br>▸ <span class='p-grammar'><span class=\"hx hx3\"><b>Modern technology affects every aspect of our daily lives</b>: \"Công nghệ ảnh hưởng mọi mặt đời sống.\" → chỉ về công nghệ, hẹp.</span></span><br>▸ <span class='p-grammar'><span class=\"hx hx4\"><b>Tet is the most important festival in Vietnamese culture</b>: \"Tết là lễ hội quan trọng nhất.\" → chỉ về Tết, hẹp.</span></span></li></ol></div>", "num": 3}, {"text": "② Chọn từ nối điền vào chỗ trống (2):<div class=\"dialog\"><i>(1) ____. First of all, technology has transformed how we communicate — my grandparents used to write letters, but now we video call instantly. (2) ____ the way we celebrate Tet has changed significantly, with many families ordering food instead of cooking traditional dishes together. Finally, young people now prefer Western fashion over áo dài for daily wear. Despite these changes, Vietnamese people still maintain strong family values and respect for their ancestors.</i></div>", "opts": ["However,", "Therefore,", "In contrast,", "Moreover,"], "correct": 3, "dict": ["moreover", "however", "therefore", "contrast"], "explain": "<div class=\"exp-box\"><h4>⚡ GIẢI THÍCH CHI TIẾT</h4><div class=\"vnt\">💬 Chỗ (2) thêm MỘT thay đổi nữa (sau \"First of all\", trước \"Finally\") → cần từ nối BỔ SUNG cùng chiều.</div><ol><li>Các phương án:<div class=\"grid2\"><div><span class='p-word'>However,</span> <span class='wt'>conj</span> <span class='p-phonetic'>/haʊˈevə(r)/</span> = <span class='p-mean'>Tuy nhiên (tương phản)</span></div><div><span class='p-word'>Therefore,</span> <span class='wt'>conj</span> <span class='p-phonetic'>/ˈðeəfɔː(r)/</span> = <span class='p-mean'>Vì vậy (kết quả)</span></div><div><span class='p-word'>In contrast,</span> <span class='wt'>conj</span> <span class='p-phonetic'>/ɪn ˈkɒntrɑːst/</span> = <span class='p-mean'>Ngược lại (đối lập)</span></div><div><span class='hl-green'>Moreover,</span> <span class='wt'>conj</span> <span class='p-phonetic'>/mɔːrˈəʊvə(r)/</span> = <span class='p-mean'>Hơn nữa (bổ sung cùng chiều)</span></div></div></li><li><span class=\"hl-green\">✅ TẠI SAO ĐÚNG?</span><br>▸ <span class='p-grammar'><span class=\"hx hx0\">Mạch liệt kê: First of all → Moreover → Finally.</span></span><br>▸ <span class='p-grammar'><span class=\"hx hx1\">\"Moreover\" thêm ý cùng chiều (thay đổi về Tết).</span></span></li><li><span class=\"hl-red\">❌ TẠI SAO SAI?</span><br>▸ <span class='p-grammar'><span class=\"hx hx2\"><b>However</b>: Tuy nhiên (tương phản).</span></span><br>▸ <span class='p-grammar'><span class=\"hx hx3\"><b>Therefore</b>: Vì vậy (kết quả).</span></span><br>▸ <span class='p-grammar'><span class=\"hx hx4\"><b>In contrast</b>: Ngược lại (đối lập).</span></span></li></ol></div>", "num": 4}]}];
+
+/* ═══════════ CHẤM ĐIỂM ═══════════ */
+function norm(v){
+  let s=(v||'').toLowerCase().replace(/[‘’ʼ`´]/g,"'");
+  s=s.replace(/\bwon't\b/g,'will not').replace(/\bcan't\b/g,'can not').replace(/\bcannot\b/g,'can not').replace(/n't\b/g,' not')
+     .replace(/\bi'm\b/g,'i am').replace(/'re\b/g,' are').replace(/\b(it|that|what|there|where|who|he|she|here|how|this)'s (?=(?:(?:just|already|never|ever|not|recently|always|only|finally|nearly|almost|still) )*(?:been|gone|got|gotten|done|had|seen|arrived|made|taken|known|lived|left|come|become|eaten|written|given|told|found|bought|met|won|lost|started|finished|visited|worked|tried|stayed|travelled|traveled|moved|tasted|booked|attended|ridden|played|joined|learned|learnt|read|heard|broken|chosen|forgotten|spent|sent|taught|thought|brought|kept|slept|swum|flown|driven|grown|shown|spoken|stolen|worn|begun|run|sung|drunk|cooked|watched|used|called|helped|changed|decided|completed|enrolled|applied|climbed|explored)\b)/g,'$1 has ').replace(/\b(it|he|she|there|what|that|here)'s\b/g,'$1 is')
+     .replace(/-/g,' ').replace(/neighborhood/g,'neighbourhood').replace(/\bhanoi\b/g,'ha noi').replace(/\bcentre\b/g,'center');
+  return s.replace(/[.,!?;:"]/g,' ').replace(/\s+/g,' ').trim();
+}
+const L='ABCD',TINT=['var(--a1)','var(--a2)','var(--a3)','var(--a4)'];
+let TOTAL=0,score=0,answered=0;const secScore=[],secTotal=[],done={};
+function shuffleArray(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function refresh(){
+  document.getElementById('scoreChip').textContent='⭐ '+score+'/'+TOTAL;
+  document.getElementById('progChip').textContent=answered+'/'+TOTAL;
+  document.getElementById('pfill').style.width=(answered/TOTAL*100)+'%';
+}
+function gain(si,n){score+=n;secScore[si]+=n;}
+function effect(ok,el,big){try{if(ok){sOK();burst(el,big?18:12)}else sBAD();}catch(e){}}
+const hintify=s=>s.replace(/\(([^)]+)\)/g,'<span class="hw">($1)</span>');
+(function(){
+  const Q=document.getElementById('quiz');
+  SECS.forEach((S,si)=>{
+    secScore[si]=0;
+    const tot=S.type==='fill'?S.items.reduce((a,q)=>a+q.ans.length,0):S.type==='match'?S.Q.length:S.items.length;
+    secTotal[si]=tot;TOTAL+=tot;
+    const Q0=Q;
+    Q0.insertAdjacentHTML('beforeend','<div class="sec"><div class="si">'+S.icon+'</div><div><h2>'+S.title+'</h2><p>'+S.desc+'</p></div></div>');
+    if(S.box)Q0.insertAdjacentHTML('beforeend',wordBox(S.box));
+    if(S.cols)Q0.insertAdjacentHTML('beforeend','<div class="cols">'+S.cols.map((t,j)=>'<div class="col"><div class="col-t">'+t+'</div><div class="col-in" id="col'+si+'_'+j+'"></div></div>').join('')+'</div>');
+    const QQ=S.grid?(()=>{const g=document.createElement('div');g.className='qgrid';Q0.appendChild(g);return g})():Q0;
+    if(S.type==='mcq')S.items.forEach((q,i)=>{
+      if(S.shuffle){const ix=shuffleArray(q.opts.map((_,j)=>j));q.opts=ix.map(j=>q.opts[j]);q.correct=ix.indexOf(q.correct);}
+      const k=si+'_'+i,c=document.createElement('div');c.className='card';c.style.setProperty('--qc',TINT[i%4]);
+      c.innerHTML='<div class="top"><div class="qn">'+(q.num||i+1)+'</div><div class="qt">'+q.text.replace(/_{3,}/g,'<span class="blank"></span>')+'</div></div>'+
+        '<div class="opts">'+q.opts.map((o,j)=>'<button class="opt" data-j="'+j+'"><span class="l">'+L[j]+'</span><span>'+o+'</span></button>').join('')+'</div>'+
+        '<span class="fb tip" id="f'+k+'">👆 Bấm chọn là hiện đáp án ngay</span><div class="expl" id="e'+k+'">'+withDict(q)+'</div>';
+      QQ.appendChild(c);
+      c.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{
+        if(done[k])return;done[k]=1;answered++;const j=+b.dataset.j,ok=j===q.correct;
+        c.querySelectorAll('.opt').forEach(x=>{x.disabled=true;const jj=+x.dataset.j;x.classList.add(jj===q.correct?'good':jj===j?'bad':'dim');});
+        const f=document.getElementById('f'+k);f.className='fb '+(ok?'ok':'no');
+        f.innerHTML=ok?'✅ Chính xác! Giỏi quá!':'❌ Chưa đúng — đáp án là <span class="ansbox">'+L[q.correct]+'. '+q.opts[q.correct]+'</span>. Xem giải thích bên dưới nhé!';
+        document.getElementById('e'+k).classList.add('show');c.classList.add('opened');if(ok)gain(si,1);refresh();effect(ok,b);
+        if(S.cols)document.getElementById('col'+si+'_'+q.correct).insertAdjacentHTML('beforeend','<span class="cw '+(ok?'good':'bad')+'">'+q.word+(ok?' ✓':'')+'</span>');
+      });
+    });
+    if(S.type==='fill')S.items.forEach((q,i)=>{
+      const k=si+'_'+i,c=document.createElement('div');c.className='card';c.style.setProperty('--qc',TINT[i%4]);
+      let h='',n=q.ans.length;
+      q.parts.forEach((p,j)=>{h+=hintify(p);if(j<n)h+='<input class="fi" id="i'+k+'_'+j+'" placeholder="✍️" autocomplete="off" spellcheck="false" autocapitalize="off" enterkeyhint="done">';});
+      c.innerHTML='<div class="top"><div class="qn">'+(q.num||i+1)+'</div><div class="fline">'+h+'</div></div>'+
+        '<span class="fb tip" id="f'+k+'">⌨️ '+(n>1?'Gõ đủ '+n+' ô rồi nhấn <b>Enter</b>':'Gõ xong nhấn <b>Enter</b>')+' là hiện đáp án</span><div class="expl" id="e'+k+'">'+withDict(q)+'</div>';
+      QQ.appendChild(c);
+      const ins=Array.from(c.querySelectorAll('.fi'));
+      ins.forEach(el=>el.addEventListener('keydown',e=>{if(e.key!=='Enter')return;e.preventDefault();
+        const empty=ins.filter(x=>!x.value.trim());
+        if(!empty.length){checkFill(si,i,k,ins);return}
+        if(el.value.trim())empty[0].focus();else{el.classList.remove('shake');void el.offsetWidth;el.classList.add('shake')}}));
+    });
+    if(S.type==='write')S.items.forEach((q,i)=>{
+      const k=si+'_'+i,c=document.createElement('div');c.className='card';c.style.setProperty('--qc',TINT[i%4]);
+      c.innerHTML='<div class="top"><div class="qn">'+(q.num||i+1)+'</div><div class="qt">'+q.cue+'</div></div>'+
+        '<div class="wline">'+(q.pre?'<span class="px">'+q.pre+'</span>':'')+
+        '<input class="wi" id="i'+k+'" placeholder="'+(q.pre?'gõ tiếp — hoặc gõ lại cả câu':'gõ cả câu hoàn chỉnh vào đây')+'" autocomplete="off" spellcheck="false" autocapitalize="off" enterkeyhint="done"></div>'+
+        (q.tiles?'<div class="tiles">'+q.tiles.map(w=>'<button class="tile">'+w+'</button>').join('')+'<button class="tile clr">⌫ Xoá</button></div>':'')+
+        '<span class="fb tip" id="f'+k+'">'+(q.tiles?'👆 Bấm đủ các ô từ là tự chấm — hoặc tự gõ cả câu rồi nhấn <b>Enter</b>':'⌨️ Gõ xong nhấn <b>Enter</b> là hiện đáp án')+'</span><div class="expl" id="e'+k+'">'+withDict(q)+'</div>';
+      QQ.appendChild(c);
+      const inp=c.querySelector('.wi'),tl=Array.from(c.querySelectorAll('.tile:not(.clr)'));
+      tl.forEach(t=>t.onclick=()=>{if(done[k])return;try{sPop()}catch(e){}t.classList.add('used');
+        inp.value=(inp.value.trim()?inp.value.trim()+' ':'')+t.textContent;if(tl.every(x=>x.classList.contains('used')))checkWrite(si,i,k,inp,c);});
+      const cl=c.querySelector('.clr');if(cl)cl.onclick=()=>{if(done[k])return;inp.value='';tl.forEach(x=>x.classList.remove('used'));};
+      inp.addEventListener('keydown',e=>{if(e.key!=='Enter')return;e.preventDefault();
+        if(!inp.value.trim()){const l=c.querySelector('.wline');l.classList.remove('shake');void l.offsetWidth;l.classList.add('shake');return}checkWrite(si,i,k,inp,c);});
+    });
+    if(S.type==='match'){
+      const box=document.createElement('div');box.className='match';
+      box.innerHTML='<div class="mcol"><h3>❓ Questions</h3>'+S.Q.map(q=>'<button class="mb q" data-q="'+q.id+'"><span class="k">'+q.id+'</span><span>'+q.text+'</span></button><div class="mexp" id="mx'+q.id+'"></div>').join('')+'</div>'+
+        '<div class="mcol"><h3>💬 Answers</h3>'+S.A.map(a=>'<button class="mb a" data-a="'+a.letter+'"><span class="k">'+a.letter+'</span><span>'+a.text+'</span></button>').join('')+'</div>';
+      QQ.appendChild(box);
+      let selQ=null;
+      box.querySelectorAll('.mb.q').forEach(b=>b.onclick=()=>{
+        if(b.disabled)return;box.querySelectorAll('.mb.q').forEach(x=>x.classList.remove('sel'));
+        if(selQ===b.dataset.q){selQ=null;return}selQ=b.dataset.q;b.classList.add('sel');try{sPop()}catch(e){}});
+      box.querySelectorAll('.mb.a').forEach(b=>b.onclick=()=>{
+        if(!selQ||b.disabled)return;const qb=box.querySelector('.mb.q[data-q="'+selQ+'"]'),ok=S.C[selQ]===b.dataset.a;
+        if(ok){qb.classList.remove('sel');qb.classList.add('good');b.classList.add('good');qb.disabled=b.disabled=true;answered++;gain(si,1);
+          const mx=document.getElementById('mx'+selQ);mx.innerHTML='<b class="pair">'+selQ+' → '+b.dataset.a+'</b> &nbsp;'+S.E[selQ];mx.classList.add('show');
+          refresh();effect(true,b);selQ=null;}
+        else{[qb,b].forEach(x=>{x.classList.remove('bad');void x.offsetWidth;x.classList.add('bad');setTimeout(()=>x.classList.remove('bad'),500)});effect(false,b);}
+      });
+    }
+  });
+  refresh();
+})();
+function checkFill(si,i,k,ins){
+  if(done[k])return;done[k]=1;const q=SECS[si].items[i];let good=0;
+  ins.forEach((el,j)=>{const ok=q.ans[j].map(norm).indexOf(norm(el.value))>-1;el.readOnly=true;el.classList.add(ok?'ok':'no');
+    if(ok){good++;markUsed(q.ans[j][0]);}else el.insertAdjacentHTML('afterend','<span class="fix">'+q.ans[j][0]+'</span>');});
+  answered+=q.ans.length;gain(si,good);
+  const f=document.getElementById('f'+k),n=q.ans.length;
+  f.className='fb '+(good===n?'ok':good?'part':'no');
+  f.innerHTML=good===n?'✅ Chính xác! Giỏi quá!':good?'🔶 Đúng '+good+'/'+n+' ô — xem giải thích bên dưới nhé!':'❌ Chưa đúng — đáp án đã hiện ngay cạnh ô, xem giải thích bên dưới nhé!';
+  document.getElementById('e'+k).classList.add('show');refresh();effect(good===n,ins[ins.length-1]);
+}
+function checkWrite(si,i,k,inp,c){
+  if(done[k])return;done[k]=1;answered++;const q=SECS[si].items[i],A=q.acc.map(norm);
+  const ok=A.indexOf(norm(inp.value))>-1||(q.pre&&A.indexOf(norm(q.pre+' '+inp.value))>-1);
+  inp.readOnly=true;c.querySelector('.wline').classList.add(ok?'ok':'no');c.classList.add('opened');if(ok)gain(si,1);
+  const f=document.getElementById('f'+k);f.className='fb '+(ok?'ok':'no');
+  f.innerHTML=ok?'✅ Chính xác! Giỏi quá!':'❌ Chưa đúng — đáp án: <span class="ansbox">'+q.show+'</span>';
+  document.getElementById('e'+k).classList.add('show');refresh();effect(ok,inp);
+}
+function showFinal(){
+  const pct=TOTAL?score/TOTAL:0,M=FINAL_MSG;let i=pct>=.9?0:pct>=.7?1:pct>=.5?2:3;
+  document.getElementById('resEm').textContent=M[i][0];
+  document.getElementById('resScore').textContent=score+'/'+TOTAL;
+  document.getElementById('resTen').textContent='⭐ '+(pct*10).toFixed(1)+' / 10 điểm';
+  document.getElementById('resBreak').innerHTML=SECS.map((S,si)=>'<div class="row"><span>'+S.icon+' '+S.short+'</span><b>'+secScore[si]+'/'+secTotal[si]+'</b></div>').join('');
+  document.getElementById('resNote').innerHTML=M[i][1]+'<br><small>Đã làm '+answered+'/'+TOTAL+' câu</small>';
+  document.getElementById('resOv').classList.add('show');
+  try{if(pct>=.5){sWin();burst(document.querySelector('#resOv .modal'),30)}}catch(e){}
+}
+</script>
+<style>/*streak*/
+#stkRow{display:flex;align-items:center;flex:0 0 auto;margin:0 4px}#stkRow.in{align-self:center;margin:0 0 0 8px}#stkRow.in .bar,#stkRow.in .nx,#stkRow.in .lbl{display:none!important}#stkRow.in #stkP{flex-direction:row!important;gap:6px;padding:4px 10px 4px 8px;position:static}#stkRow.in .fl,#stkRow.in .n{position:static;line-height:1}
+#stkRow.fixed{position:fixed;left:10px;bottom:12px;z-index:60}
+#stkP{display:flex;align-items:center;gap:6px;padding:2px 10px 2px 7px;border-radius:999px;background:#FFF7ED;border:2px solid #FDBA74;font-family:'Fredoka','Nunito',sans-serif;
+ font-weight:700;color:#9A3412;font-size:.92rem;transition:transform .25s;white-space:nowrap}
+#stkP .fl{display:inline-block;font-size:1.1rem;transition:font-size .3s;transform-origin:50% 90%}
+#stkP.hot .fl{animation:stkFl .5s ease-in-out infinite alternate}@keyframes stkFl{from{transform:scale(1) rotate(-6deg)}to{transform:scale(1.25) rotate(6deg)}}
+#stkP.pop{transform:scale(1.15)}#stkP.cold{filter:grayscale(.6);opacity:.85}
+#stkP .n{display:inline-grid;place-items:center;min-width:22px;height:22px;padding:0 5px;border-radius:999px;background:linear-gradient(135deg,#FB923C,#EF4444);color:#fff;font-size:.9rem}
+#stkP .bar{width:54px;height:6px;border-radius:99px;background:#FED7AA;overflow:hidden}#stkP .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#F97316,#EF4444);transition:width .3s}
+#stkP .nx{font-size:.78rem;color:#C2410C}
+#stkToast{position:fixed;left:50%;top:38%;z-index:70;transform:translate(-50%,-50%) scale(.4);opacity:0;pointer-events:none;text-align:center;padding:18px 26px;border-radius:26px;
+ background:linear-gradient(135deg,#FFF7ED,#FEF3C7);border:4px solid #FDBA74;box-shadow:0 18px 40px rgba(0,0,0,.25);font-family:'Fredoka','Nunito',sans-serif;color:#9A3412;max-width:86vw;transition:all .35s cubic-bezier(.2,1.6,.4,1)}
+#stkToast.show{opacity:1;transform:translate(-50%,-50%) scale(1)}#stkToast b{display:block;font-size:2.3rem;line-height:1.15}#stkToast span{font-weight:700;font-size:1.05rem}
+#stkToast.soft{background:linear-gradient(135deg,#EFF6FF,#F5F3FF);border-color:#93C5FD;color:#1E3A8A}#stkToast.soft b{font-size:1.6rem}
+.stkSpark{position:fixed;z-index:69;pointer-events:none;font-size:26px;animation:stkSp 1.2s ease-out forwards}
+@keyframes stkSp{0%{opacity:1;transform:translate(0,0) scale(.6)}100%{opacity:0;transform:translate(var(--x),var(--y)) scale(1.3) rotate(240deg)}}
+@media(max-width:700px){#stkP .bar,#stkP .nx,#stkP .lbl{display:none}#stkP{padding:2px 7px 2px 5px}#stkToast b{font-size:1.8rem}}
+@media (prefers-reduced-motion:reduce){#stkP.hot .fl,.stkSpark{animation:none}}
+</style>
+<script>/*streak*/(function(){
+ const $=id=>document.getElementById(id),num=el=>{const m=(el.textContent||'').match(/(\d+)\s*\/\s*(\d+)/);return m?[+m[1],+m[2]]:[0,0]};
+ let get=null,anchor=null,mode='after';const sc=$('scoreChip'),pg=$('progChip');
+ if(sc&&pg){get=()=>{const s=num(sc),a=num(pg);return [a[0],s[0],a[1]]};anchor=sc}
+ else{try{if(typeof answered!=='undefined'&&typeof score!=='undefined'){get=()=>[answered,score,typeof TOTAL!=='undefined'?TOTAL:0];anchor=$('sc')&&$('sc').parentElement}}catch(e){}
+  if(!get)try{if(typeof done==='object'&&done&&$('lv')){get=()=>{const v=Object.values(done);return [v.length,v.filter(x=>x===true).length,typeof QS!=='undefined'?QS.length:0]};anchor=$('lv').closest('.gauge')||$('lv');mode='in'}}catch(e){}}
+ if(!get)return;
+ const row=document.createElement('div');row.id='stkRow';
+ row.innerHTML='<div id="stkP" class="cold" title="Số câu đúng liên tiếp"><span class="fl">🔥</span><span class="lbl">Chuỗi đúng</span><span class="n" id="stkN">0</span><span class="bar"><i id="stkB"></i></span><span class="nx" id="stkX">→ 3</span></div>';
+ if(!anchor){row.className='fixed';document.body.appendChild(row)}else if(mode==='in'){row.className='in';anchor.insertAdjacentElement('afterend',row)}else anchor.insertAdjacentElement('afterend',row);
+ const toast=document.createElement('div');toast.id='stkToast';document.body.appendChild(toast);
+ const P=document.getElementById('stkP'),N=document.getElementById('stkN'),B=document.getElementById('stkB'),X=document.getElementById('stkX');
+ let cur=0,best=0,[lastA,lastS]=get(),tmr=null;
+ const NEXT=n=>n<3?3:n<5?5:n<10?10:(Math.floor(n/5)+1)*5,LOW=n=>n<3?0:n<5?3:n<10?5:Math.floor(n/5)*5;
+ const PRAISE={3:['🔥 3 câu liền!','Con đang vào guồng rồi đó!'],5:['🔥🔥 5 câu liền!','Siêu đỉnh luôn — cô thấy con tập trung lắm!'],10:['🌟 10 câu liền!','Không ai cản nổi con nữa rồi!'],
+  15:['🏆 15 câu liền!','Con là ngôi sao của lớp đó!'],20:['👑 20 câu liền!','Tuyệt vời — cô tự hào về con lắm!']};
+ const OOPS=['Không sao đâu con — mình bắt đầu chuỗi mới nhé! 💪','Đọc lời giải rồi làm tiếp, chuỗi mới đang chờ con! 🌱','Sai một câu là học thêm một điều — cố lên con! 🌈','Hít một hơi thật sâu, câu sau con sẽ làm được! ⭐'];
+ function say(t,sub,soft){toast.className=soft?'soft':'';toast.innerHTML='<b>'+t+'</b><span>'+sub+'</span>';void toast.offsetWidth;toast.classList.add('show');clearTimeout(tmr);tmr=setTimeout(()=>toast.classList.remove('show'),soft?1600:2000)}
+ function burst(){const E=['🔥','⭐','✨','🎉','💛','🌟'];for(let i=0;i<16;i++){const s=document.createElement('div');s.className='stkSpark';s.textContent=E[i%E.length];
+  const a=Math.random()*Math.PI*2,r=120+Math.random()*160;s.style.cssText='left:50%;top:38%;--x:'+Math.cos(a)*r+'px;--y:'+Math.sin(a)*r+'px';document.body.appendChild(s);setTimeout(()=>s.remove(),1300)}}
+ function paint(){N.textContent=cur;const lo=LOW(cur),hi=NEXT(cur);B.style.width=Math.min(100,(cur-lo)/(hi-lo)*100)+'%';X.textContent='→ '+hi;
+  P.classList.toggle('cold',cur===0);P.classList.toggle('hot',cur>=3);P.classList.add('pop');setTimeout(()=>P.classList.remove('pop'),250);
+  P.querySelector('.fl').style.fontSize=(1.1+Math.min(cur,15)*.03)+'rem'}
+ function check(){const [a,s,tot]=get();if(a===lastA)return;const dA=a-lastA,dS=s-lastS;lastA=a;lastS=s;if(dA<=0)return;
+  if(dS>=dA){const before=cur;cur+=dA;best=Math.max(best,cur);paint();
+   const hit=Object.keys(PRAISE).map(Number).filter(m=>before<m&&cur>=m).pop()||(cur>=25&&Math.floor(cur/5)>Math.floor(before/5)?cur-cur%5:0);
+   if(hit){const p=PRAISE[hit]||['🚀 '+hit+' câu liền!','Con đang bay cao lắm rồi!'];say(p[0],p[1]);burst()}}
+  else{const had=cur;cur=0;paint();if(had>=3)say('Chuỗi '+had+' câu — giỏi lắm!',OOPS[Math.floor(Math.random()*OOPS.length)],true)}
+  if(tot&&a>=tot)setTimeout(()=>{say('🏅 Chuỗi dài nhất: '+best+' câu',best>=5?'Con làm bài thật tuyệt vời!':'Lần sau mình thử phá kỷ lục này nhé!');if(best>=5)burst()},2400)}
+ setInterval(check,250);
+})();</script>
+<style>/*stkpop*/
+#stkP{background:linear-gradient(90deg,#FF3D8B,#FF7A00 55%,#FFC400)!important;border:2px solid #fff!important;color:#fff!important;
+ box-shadow:0 4px 12px rgba(255,80,60,.45),0 0 0 3px rgba(255,170,0,.28)!important;text-shadow:0 1px 2px rgba(120,30,0,.35)}
+#stkP.cold{filter:none!important;opacity:1!important;background:linear-gradient(90deg,#8B5CF6,#3B82F6 50%,#06B6D4)!important;
+ box-shadow:0 4px 12px rgba(80,90,255,.4),0 0 0 3px rgba(139,92,246,.25)!important}
+#stkP .fl{filter:drop-shadow(0 0 4px rgba(255,255,255,.9))}
+#stkP .n{background:#fff!important;color:#E11D48!important;text-shadow:none;box-shadow:0 2px 6px rgba(0,0,0,.18)}
+#stkP.cold .n{color:#4F46E5!important}
+#stkP .bar{background:rgba(255,255,255,.4)!important}#stkP .bar i{background:linear-gradient(90deg,#FFFFFF,#FFF176)!important}
+#stkP .nx,#stkP .lbl{color:#fff!important;font-weight:800}
+#stkToast{background:linear-gradient(135deg,#FFE4F1,#FFF3C4 50%,#DDF4FF)!important;border-color:#FF7A00!important;color:#C2185B!important}
+</style>
+<style>/*dictpop*/
+.cbw,.dict{display:flex!important;flex-wrap:wrap;gap:9px;margin-top:8px}
+.cbw a,.dict a{display:inline-flex!important;align-items:center;gap:6px;padding:7px 16px!important;border-radius:99px!important;
+ font-weight:900!important;font-size:1.02rem!important;text-decoration:none!important;color:#fff!important;border:3px solid #fff!important;
+ background:linear-gradient(135deg,#FF3D8B,#FF7A00)!important;box-shadow:0 4px 0 rgba(0,0,0,.14),0 6px 14px rgba(255,61,139,.32)!important;
+ text-shadow:0 1px 2px rgba(0,0,0,.22);transition:transform .15s}
+.cbw a:nth-child(5n+2),.dict a:nth-child(5n+2){background:linear-gradient(135deg,#3B82F6,#06B6D4)!important;box-shadow:0 4px 0 rgba(0,0,0,.14),0 6px 14px rgba(59,130,246,.32)!important}
+.cbw a:nth-child(5n+3),.dict a:nth-child(5n+3){background:linear-gradient(135deg,#22C55E,#14B8A6)!important;box-shadow:0 4px 0 rgba(0,0,0,.14),0 6px 14px rgba(34,197,94,.32)!important}
+.cbw a:nth-child(5n+4),.dict a:nth-child(5n+4){background:linear-gradient(135deg,#8B5CF6,#EC4899)!important;box-shadow:0 4px 0 rgba(0,0,0,.14),0 6px 14px rgba(139,92,246,.32)!important}
+.cbw a:nth-child(5n),.dict a:nth-child(5n){background:linear-gradient(135deg,#F59E0B,#EF4444)!important;box-shadow:0 4px 0 rgba(0,0,0,.14),0 6px 14px rgba(245,158,11,.32)!important}
+.cbw a:hover,.dict a:hover{transform:translateY(-3px) scale(1.05)}
+</style>
+<script>/*devclean*/(function(){
+var ZW=/[\u00AD\u034F\u061C\u115F\u1160\u17B4\u17B5\u180E\u200B-\u200F\u202A-\u202E\u2060-\u206F\uFEFF]/g,
+    SP=/[\u00A0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\t]/g,
+    AP=/[\u2018\u2019\u201A\u201B\u2032\u2035\u02B9\u02BB\u02BC\u02BD\u02C8\u0060\u00B4\uFF07]/g,
+    DQ=/[\u201C\u201D\u201E\u201F\u2033\u2036\u00AB\u00BB\uFF02]/g,
+    DS=/[\u2010\u2011\u2012\u2212\uFE63\uFF0D]/g;
+function clean(v){if(!v)return v;var s=String(v);try{s=s.normalize('NFKC')}catch(e){}
+  return s.replace(ZW,'').replace(SP,' ').replace(AP,"'").replace(DQ,'"').replace(DS,'-').replace(/[\u0300-\u036f]/g,'').replace(/ {2,}/g,' ');}
+window.__devclean=clean;
+function fix(skip){var L=document.querySelectorAll('input:not([type]),input[type=text],input[type=search],textarea');
+  for(var i=0;i<L.length;i++){var el=L[i];if(el===skip||el.readOnly||el.disabled)continue;var v=el.value,c=clean(v);if(c!==v)el.value=c;}}
+['pointerdown','mousedown','touchstart','click','change','focusout'].forEach(function(t){document.addEventListener(t,function(e){fix(t==='focusout'||t==='change'?null:e.target)},true)});
+document.addEventListener('keydown',function(e){if(e.key==='Enter'||e.keyCode===13)fix(null)},true);
+})();</script>
+<style>/*namegate*/#ngOv{position:fixed;inset:0;z-index:99999;display:none;align-items:center;justify-content:center;background:rgba(15,23,42,.55);padding:16px}
+#ngOv.show{display:flex}#ngBox{width:min(420px,100%);background:#fff;border-radius:24px;padding:24px 22px;box-shadow:0 20px 50px rgba(0,0,0,.3);text-align:center;font-family:inherit;border:4px solid #C4B5FD}
+#ngBox h3{margin:0 0 6px;font-size:1.35rem;color:#5B21B6}#ngBox p{margin:0 0 14px;color:#475569;line-height:1.5}
+#ngName{width:100%;box-sizing:border-box;font:700 1.1rem inherit;padding:12px 14px;border-radius:14px;border:3px solid #DDD6FE;outline:none;text-align:center}
+#ngName:focus{border-color:#8B5CF6}#ngErr{color:#E11D48;font-weight:800;min-height:1.4em;margin:6px 0}
+#ngBox button{border:0;border-radius:999px;padding:12px 26px;font:900 1.05rem inherit;color:#fff;cursor:pointer;background:linear-gradient(135deg,#8B5CF6,#EC4899);box-shadow:0 4px 0 rgba(0,0,0,.18)}
+#ngBox .ngx{background:#E2E8F0;color:#334155;margin-left:6px}.ngTag{display:block;margin:4px 0 8px;padding:8px 12px;border-radius:14px;background:#F5F3FF;border:2px dashed #C4B5FD;font-weight:800;color:#4C1D95;line-height:1.55}
+#ngClock{position:fixed;left:10px;bottom:10px;z-index:9990;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.92);border:2px solid #C4B5FD;font:800 .9rem inherit;color:#5B21B6;box-shadow:0 4px 12px rgba(0,0,0,.12);pointer-events:none}</style>
+<div id="ngClock">⏱ 00:00</div>
+<div id="ngOv"><div id="ngBox"><h3>✍️ Nhập họ và tên của con</h3><p>Cô cần biết tên con để chấm bài. Con nhập <b>đầy đủ họ tên</b> rồi bấm <b>Nộp bài</b> nhé!</p>
+<input id="ngName" placeholder="VD: Nguyễn Minh Anh" autocomplete="off" maxlength="40"><div id="ngErr"></div>
+<button type="button" id="ngOk">🚀 Nộp bài</button><button type="button" class="ngx" id="ngCancel">Làm tiếp</button></div></div>
+<script>/*namegate*/(function(){
+var T0=Date.now(),TEND=0,clk=document.getElementById('ngClock');
+function mmss(ms){var s=Math.floor(ms/1000),m=Math.floor(s/60);s%=60;return (m<10?'0':'')+m+':'+(s<10?'0':'')+s;}
+function dur(ms){var s=Math.floor(ms/1000),m=Math.floor(s/60);s%=60;return (m?m+' phút ':'')+s+' giây';}
+setInterval(function(){if(!TEND&&clk)clk.textContent='⏱ '+mmss(Date.now()-T0);},1000);
+function clean(s){s=(s||'');try{s=s.normalize('NFC')}catch(e){}return s.replace(/[​-‏⁠﻿]/g,'').replace(/\s+/g,' ').trim();}
+function full(v){return v.length>=4&&v.split(' ').length>=2&&/\p{L}/u.test(v);}
+function stamp(){var d=new Date(),p=function(n){return(n<10?'0':'')+n};return p(d.getHours())+':'+p(d.getMinutes())+' · '+p(d.getDate())+'/'+p(d.getMonth()+1)+'/'+d.getFullYear();}
+function tagHTML(who){if(!TEND)TEND=Date.now();if(clk)clk.textContent='⏱ '+mmss(TEND-T0)+' ✔';
+  return '👤 '+who.replace(/[<>&]/g,'')+'<br>⏱ Làm bài trong <b>'+dur(TEND-T0)+'</b><br><small>⏰ Nộp lúc '+stamp()+' · '+document.title.split('|')[0].trim().replace(/[<>&]/g,'')+'</small>';}
+function putTag(anchor,who,before){if(!anchor)return;var t=document.getElementById('ngTag');if(!t){t=document.createElement('div');t.id='ngTag';t.className='ngTag';
+  if(before)anchor.parentNode.insertBefore(t,anchor);else anchor.appendChild(t);}t.innerHTML=tagHTML(who);}
+window.__ngTag=putTag;window.__ngFull=full;window.__ngClean=clean;
+var orig=window.showFinal;
+if(typeof orig==='function'&&document.getElementById('resOv')){
+  var ov=document.getElementById('ngOv'),inp=document.getElementById('ngName'),err=document.getElementById('ngErr'),who='';
+  var run=function(){orig();putTag(document.getElementById('resNote'),who,true);};
+  window.showFinal=function(){if(who){run();return;}ov.classList.add('show');err.textContent='';setTimeout(function(){inp.focus()},50);};
+  var ok=function(){var v=clean(inp.value);if(!full(v)){err.textContent='⚠️ Con nhập đầy đủ họ và tên nhé (ít nhất 2 chữ).';inp.focus();return;}who=v;ov.classList.remove('show');run();};
+  document.getElementById('ngOk').onclick=ok;document.getElementById('ngCancel').onclick=function(){ov.classList.remove('show')};
+  inp.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();ok();}});
+}
+var ds=window.doSubmit,nin=document.getElementById('nin');
+if(typeof ds==='function'&&nin){
+  window.doSubmit=function(){var v=clean(nin.value);var wr=document.getElementById('nwr');
+    if(v&&!full(v)){nin.classList.add('er');if(wr){wr.textContent='⚠️ Con ghi đầy đủ họ và tên nhé (ít nhất 2 chữ)!';wr.classList.add('on');}setTimeout(function(){nin.classList.remove('er')},460);return;}
+    nin.value=v;ds.apply(this,arguments);if(!v)return;
+    var rm=document.getElementById('rm');var box=rm&&rm.querySelector('.box');if(box){var big=box.querySelector('.big')||box.firstElementChild;putTag(big&&big.nextSibling?big.nextSibling:box.lastChild,v,true);}};
+}
+})();</script>
+<script>/*attempts*/(function(){
+var KEY='att:'+decodeURIComponent(location.pathname),done=false;
+function load(){try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){return []}}
+function save(a){try{localStorage.setItem(KEY,JSON.stringify(a.slice(-20)))}catch(e){}}
+function fmt(d){var p=function(n){return(n<10?'0':'')+n};return p(d.getDate())+'/'+p(d.getMonth()+1);}
+function durOf(tag){var m=(tag.textContent||'').match(/Làm bài trong\s*((?:\d+\s*phút\s*)?\d+\s*giây)/);return m?m[1].replace(/\s+/g,' '):'';}
+function score(){var a=document.getElementById('resScore');if(a)return a.textContent.replace(/\s+/g,'');
+  a=document.getElementById('rS');if(a)return a.textContent.replace(/\s+/g,'');
+  a=document.getElementById('rSc');var b=document.getElementById('rTt');if(a)return a.textContent.trim()+'/'+(b?b.textContent.trim():'?');return '?';}
+function add(tag){
+  if(tag.querySelector('.ngAtt'))return;
+  var a=load();
+  if(!done){done=true;a.push({s:score(),t:Date.now(),d:durOf(tag)});save(a);}
+  var k=a.length,prev=a.slice(Math.max(0,k-6),k-1);
+  var d=document.createElement('div');d.className='ngAtt';
+  d.style.cssText='display:block;margin-top:6px;padding-top:6px;border-top:2px dashed #DDD6FE';
+  d.innerHTML='🔁 <b>Lần nộp thứ '+k+'</b> trên máy này'+(prev.length?'<br><small>'+prev.map(function(x,i){return 'Lần '+(k-prev.length+i)+': <b>'+x.s+'</b>'+(x.d?' · ⏱ làm trong <b>'+x.d+'</b>':'')+' · '+fmt(new Date(x.t))}).join('<br>')+'</small>':'');
+  tag.appendChild(d);
+}
+function check(){var t=document.getElementById('ngTag')||document.querySelector('#rn .ngTag');if(t&&t.textContent.trim())add(t);}
+new MutationObserver(check).observe(document.body,{childList:true,subtree:true,characterData:true});
+})();</script>
+<script>/*pa-reduce*/(function(){try{if(matchMedia("(prefers-reduced-motion: reduce)").matches)document.querySelectorAll("svg").forEach(function(s){s.pauseAnimations&&s.pauseAnimations()})}catch(e){}})();</script>
+<script>/*w6fx*/(function(){
+var H=document.getElementById("paScene");if(!H)return;
+var sd=11;function R(n){sd=(sd*9301+49297)%233280;return sd/233280*n}
+var SK="#F1C27D",SK2="#E0A878";
+function W(cx,cy,r){return '<g class="whl" style="transform-origin:'+cx+'px '+cy+'px"><circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="#111827"/><circle cx="'+cx+'" cy="'+cy+'" r="'+(r*.64).toFixed(1)+'" fill="#CBD5E1"/><path d="M'+(cx-r*.6)+' '+cy+'H'+(cx+r*.6)+'M'+cx+' '+(cy-r*.6)+'V'+(cy+r*.6)+'M'+(cx-r*.42)+' '+(cy-r*.42)+'L'+(cx+r*.42)+' '+(cy+r*.42)+'M'+(cx-r*.42)+' '+(cy+r*.42)+'L'+(cx+r*.42)+' '+(cy-r*.42)+'" stroke="#64748B" stroke-width="1.6"/><circle cx="'+cx+'" cy="'+cy+'" r="'+(r*.2).toFixed(1)+'" fill="#475569"/></g>'}
+function NON(x,y,s){s=s||1;return '<path d="M'+(x-15*s)+' '+y+' L'+x+' '+(y-12*s)+' L'+(x+15*s)+' '+y+' Q'+x+' '+(y+3*s)+' '+(x-15*s)+' '+y+'Z" fill="#F5DEB3" stroke="#C8A86B" stroke-width="1"/>'}
+function HELM(x,y,c){return '<path d="M'+(x-10)+' '+(y+1)+' A10.5 10.5 0 0 1 '+(x+10)+' '+(y-1)+' L'+(x+11)+' '+(y+2)+' L'+(x-10)+' '+(y+3)+'Z" fill="'+c+'"/><path d="M'+(x-8)+' '+(y-4)+' Q'+x+' '+(y-9)+' '+(x+7)+' '+(y-5)+'" stroke="#fff" stroke-opacity=".5" stroke-width="2" fill="none"/>'}
+function moto(jc,hc,bc,pas){var s='<svg viewBox="0 0 134 100">';
+s+='<ellipse cx="66" cy="97" rx="58" ry="3" fill="#000" opacity=".25"/>'+W(28,82,15)+W(104,82,15);
+s+='<path d="M12 70 Q20 55 40 57 L82 57 Q94 49 102 59 L110 68 Q98 75 88 72 L46 75 Q30 77 12 70Z" fill="'+bc+'"/><path d="M40 62 L84 62" stroke="#fff" stroke-opacity=".45" stroke-width="2"/>';
+s+='<rect x="6" y="67" width="22" height="5" rx="2.5" fill="#94A3B8"/><rect x="33" y="50" width="42" height="9" rx="4.5" fill="#111827"/>';
+s+='<path d="M97 45 L105 82" stroke="#475569" stroke-width="4"/><path d="M88 44 L103 40" stroke="#111827" stroke-width="4" stroke-linecap="round"/><circle cx="110" cy="58" r="4.5" fill="#FEF08A" stroke="#CA8A04"/><path d="M114 58 L130 54 L130 62Z" fill="#FEF9C3" opacity=".7"/>';
+if(pas){var px=40;s+='<path d="M'+(px+2)+' 53 L'+(px+16)+' 60 L'+(px+14)+' 76" stroke="#334155" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M'+(px-8)+' 54 Q'+(px-6)+' 33 '+(px+4)+' 27 L'+(px+10)+' 31 Q'+(px+6)+' 42 '+(px+6)+' 56Z" fill="'+(pas==2?"#F9A8D4":"#FDE047")+'"/><path d="M'+(px+6)+' 33 L'+(px+20)+' 40" stroke="'+(pas==2?"#F9A8D4":"#FDE047")+'" stroke-width="5" stroke-linecap="round"/><circle cx="'+(px+5)+'" cy="20" r="7" fill="'+SK+'"/>'+(pas==2?NON(px+5,16,.9):HELM(px+5,19,"#F472B6"))}
+s+='<path d="M56 53 L76 60 L73 78" stroke="#1E3A8A" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M73 78 L80 79" stroke="#111827" stroke-width="5" stroke-linecap="round"/>';
+s+='<path d="M48 55 Q50 30 64 22 L73 28 Q65 40 64 57Z" fill="'+jc+'"/><path d="M67 29 L92 43" stroke="'+jc+'" stroke-width="7" stroke-linecap="round"/><circle cx="93" cy="43" r="3.6" fill="'+SK+'"/>';
+s+='<circle cx="67" cy="15" r="8.5" fill="'+SK+'"/><rect x="68" y="16" width="9" height="5" rx="2" fill="#BAE6FD"/>'+HELM(67,14,hc)+'</svg>';return s}
+function car(c,sh){var s='<svg viewBox="0 0 184 92"><ellipse cx="92" cy="89" rx="84" ry="3.5" fill="#000" opacity=".25"/>';
+s+='<path d="M6 68 Q6 50 24 48 L54 45 Q68 25 94 23 L122 23 Q140 25 152 43 L168 47 Q180 51 180 64 L180 72 L6 72Z" fill="'+c+'"/>';
+s+='<path d="M62 45 Q74 30 94 29 L101 29 L101 45Z M107 29 L120 29 Q134 31 144 45 L107 45Z" fill="#DBEAFE"/>';
+s+='<circle cx="126" cy="36" r="6" fill="#3F2A1D"/><path d="M118 45 Q126 38 134 45Z" fill="'+sh+'"/><circle cx="84" cy="37" r="5.5" fill="#1F2937"/><path d="M77 45 Q84 39 91 45Z" fill="#A78BFA"/>';
+s+='<path d="M62 45 Q74 30 94 29 L101 29 L101 45Z M107 29 L120 29 Q134 31 144 45 L107 45Z" fill="#fff" opacity=".22"/>';
+s+='<path d="M104 47 L104 70 M58 50 L58 70" stroke="#000" stroke-opacity=".18" stroke-width="2"/><rect x="88" y="53" width="9" height="3" rx="1.5" fill="#E5E7EB"/><rect x="140" y="53" width="9" height="3" rx="1.5" fill="#E5E7EB"/>';
+s+='<rect x="171" y="53" width="9" height="6" rx="2" fill="#FEF08A"/><rect x="6" y="53" width="6" height="7" rx="2" fill="#EF4444"/><path d="M6 66 H180" stroke="#000" stroke-opacity=".2" stroke-width="3"/>'+W(44,74,15)+W(142,74,15)+'</svg>';return s}
+function bus(){var s='<svg viewBox="0 0 284 112"><ellipse cx="142" cy="109" rx="134" ry="3.5" fill="#000" opacity=".25"/><rect x="4" y="12" width="270" height="84" rx="12" fill="#DC2626"/><rect x="4" y="62" width="270" height="10" fill="#fff" opacity=".9"/>';
+s+='<path d="M236 18 L268 18 Q274 20 274 30 L274 60 L236 60Z" fill="#BFDBFE"/><circle cx="256" cy="38" r="6" fill="#3F2A1D"/><path d="M248 50 Q256 42 264 50 L264 60 L248 60Z" fill="#0EA5E9"/>';
+for(var i=0;i<6;i++){var x=14+i*36;s+='<rect x="'+x+'" y="22" width="30" height="30" rx="4" fill="#BFDBFE"/>';if(i%3!=1)s+='<circle cx="'+(x+15)+'" cy="36" r="6" fill="'+["#1F2937","#7C2D12","#111827"][i%3]+'"/><path d="M'+(x+7)+' 52 Q'+(x+15)+' 42 '+(x+23)+' 52Z" fill="'+["#F472B6","#60A5FA","#34D399"][i%3]+'"/>'}
+s+='<rect x="18" y="0" width="80" height="14" rx="4" fill="#111827"/><text x="58" y="11" text-anchor="middle" font-size="10" font-weight="800" fill="#FDE047" font-family="sans-serif">09 · Bờ Hồ</text><rect x="268" y="72" width="7" height="8" rx="2" fill="#FEF08A"/>'+W(52,94,16)+W(222,94,16)+'</svg>';return s}
+function cyclo(){var s='<svg viewBox="0 0 164 106"><ellipse cx="82" cy="103" rx="74" ry="3" fill="#000" opacity=".25"/>'+W(30,88,15)+W(128,88,15);
+s+='<path d="M30 88 L58 72 L104 72 M58 72 L44 44 M104 72 L128 88" stroke="#1E293B" stroke-width="4" fill="none"/><path d="M98 74 Q96 48 116 46 L144 48 Q152 60 146 76 Z" fill="#B91C1C"/><path d="M96 50 Q120 18 150 44" stroke="#7F1D1D" stroke-width="4" fill="none"/>';
+s+='<path d="M120 50 Q118 64 112 70" stroke="#2563EB" stroke-width="9" stroke-linecap="round"/><path d="M114 70 L134 72 L136 86" stroke="#F1F5F9" stroke-width="6" fill="none" stroke-linecap="round"/><circle cx="122" cy="40" r="7" fill="#FCE7D6"/><ellipse cx="122" cy="35" rx="13" ry="3" fill="#FDE68A"/><path d="M114 35 Q122 24 130 35Z" fill="#FDE68A"/>';
+s+='<rect x="36" y="40" width="18" height="6" rx="3" fill="#111827"/><path d="M46 44 L62 64 L56 80" stroke="#334155" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M42 44 Q44 22 56 16 L62 20 Q56 30 50 46Z" fill="#E2E8F0"/><path d="M58 22 L96 48" stroke="#E2E8F0" stroke-width="6" stroke-linecap="round"/><circle cx="58" cy="11" r="7" fill="'+SK2+'"/>'+NON(58,8)+'</svg>';return s}
+function bike(){var s='<svg viewBox="0 0 120 108"><ellipse cx="60" cy="105" rx="52" ry="3" fill="#000" opacity=".25"/>'+W(24,88,16)+W(94,88,16);
+s+='<path d="M24 88 L48 62 L84 62 L94 88 M48 62 L58 88 L84 62 M84 62 L88 48 M86 48 L96 46" stroke="#0EA5E9" stroke-width="3.5" fill="none" stroke-linecap="round"/><path d="M90 54 L106 54 L104 66 L92 66Z" fill="#A16207"/><circle cx="95" cy="52" r="3" fill="#F43F5E"/><circle cx="101" cy="51" r="3" fill="#FB7185"/><circle cx="98" cy="49" r="3" fill="#FDE047"/>';
+s+='<path d="M46 58 L62 66 L58 84" stroke="#F8FAFC" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M40 60 Q42 34 54 26 L60 30 Q56 44 54 70 L34 76Z" fill="#FFFFFF" stroke="#CBD5E1"/><path d="M56 32 L88 48" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round"/><circle cx="56" cy="19" r="7" fill="'+SK+'"/><path d="M50 18 Q46 26 48 34" stroke="#111827" stroke-width="4" fill="none"/>'+NON(56,15)+'</svg>';return s}
+function vendor(){return '<svg viewBox="0 0 120 112"><ellipse cx="60" cy="109" rx="40" ry="3" fill="#000" opacity=".2"/><path d="M8 40 Q60 30 112 40" stroke="#92400E" stroke-width="4" fill="none"/><path d="M14 40 L8 80 M14 40 L22 80 M106 40 L100 80 M106 40 L114 80" stroke="#78350F" stroke-width="1.5"/><path d="M4 80 L26 80 L22 96 L8 96Z" fill="#B45309"/><circle cx="10" cy="77" r="5" fill="#F97316"/><circle cx="18" cy="76" r="5" fill="#FACC15"/><path d="M96 80 L118 80 L114 96 L100 96Z" fill="#B45309"/><circle cx="104" cy="77" r="5" fill="#84CC16"/><circle cx="112" cy="77" r="5" fill="#EF4444"/>'+
+'<path d="M54 70 L50 104 M64 70 L68 104" stroke="#1F2937" stroke-width="7" stroke-linecap="round"/><path d="M48 72 Q46 46 54 36 L66 36 Q74 46 72 72Z" fill="#7C3AED"/><circle cx="60" cy="28" r="7" fill="'+SK2+'"/>'+NON(60,24,1.1)+'</svg>'}
+// --- dãy nhà phố ---
+var C=["#F6D78B","#F4B9A0","#BFE3C9","#F9E3A3","#C9D7F8","#F7C6D9","#E9D5B5"],SG=["PHỞ","CÀ PHÊ","BÁNH MÌ","TẠP HOÁ","BÚN CHẢ","TRÀ ĐÁ","HIỆU SÁCH"],x=0,i=0,s="",far="";
+while(x<1700){var w=90+R(44),h=170+R(90),y=300-h,c=C[i%7];
+s+='<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" fill="'+c+'"/><rect x="'+x+'" y="'+y+'" width="6" height="'+h+'" fill="#000" opacity=".06"/><path d="M'+(x-3)+' '+(y+4)+' L'+(x+w/2)+' '+(y-24)+' L'+(x+w+3)+' '+(y+4)+'Z" fill="#9A3412"/><path d="M'+(x+4)+' '+(y-1)+' H'+(x+w-4)+'" stroke="#7C2D12" stroke-width="2"/>';
+for(var f=0;f<Math.floor((h-80)/62);f++){var fy=y+16+f*62;s+='<rect x="'+(x+12)+'" y="'+fy+'" width="'+(w-24)+'" height="36" rx="3" fill="#0F766E"/>';for(var k=1;k<4;k++)s+='<path d="M'+(x+12+(w-24)*k/4)+' '+fy+' V'+(fy+36)+'" stroke="#99F6E4" stroke-width="1.5"/>';
+s+='<rect x="'+(x+6)+'" y="'+(fy+36)+'" width="'+(w-12)+'" height="4" fill="#475569"/><path d="M'+(x+8)+' '+(fy+40)+' V'+(fy+50)+' H'+(x+w-8)+' V'+(fy+40)+'" stroke="#334155" stroke-width="1.5" fill="none"/>';
+for(var p=0;p<3;p++)s+='<circle cx="'+(x+16+p*(w-32)/2)+'" cy="'+(fy+34)+'" r="5" fill="'+["#22C55E","#16A34A","#F43F5E"][p]+'"/>'}
+if(R(1)<.55)s+='<rect x="'+(x+w-22)+'" y="'+(y+20)+'" width="14" height="10" rx="1" fill="#E2E8F0" stroke="#94A3B8"/>';
+var aw=["#E11D48","#2563EB","#16A34A","#7C3AED"][i%4];s+='<rect x="'+(x+10)+'" y="240" width="'+(w-20)+'" height="60" fill="#3F2A1D" opacity=".85"/><rect x="'+(x+14)+'" y="246" width="'+(w-28)+'" height="54" fill="#FDE68A" opacity=".55"/>';
+s+='<path d="M'+(x+4)+' 232 H'+(x+w-4)+' L'+(x+w+4)+' 248 H'+(x-4)+'Z" fill="'+aw+'"/><path d="M'+(x+4)+' 232 H'+(x+w-4)+'" stroke="#fff" stroke-dasharray="8 8" stroke-width="5" opacity=".7"/>';
+s+='<rect x="'+(x+w/2-30)+'" y="212" width="60" height="16" rx="3" fill="#B91C1C"/><text x="'+(x+w/2)+'" y="224" text-anchor="middle" font-size="10" font-weight="900" fill="#FEF08A" font-family="sans-serif">'+SG[i%7]+'</text>';
+if(i%2==0)s+='<path d="M'+(x+w-10)+' 228 V244" stroke="#7F1D1D"/><ellipse cx="'+(x+w-10)+'" cy="250" rx="7" ry="9" fill="#EF4444"/><rect x="'+(x+w-13)+'" y="240" width="6" height="3" fill="#FACC15"/>';
+x+=w;i++}
+x=0;while(x<1700){var w2=60+R(70),h2=120+R(160);far+='<rect x="'+x+'" y="'+(300-h2)+'" width="'+w2+'" height="'+h2+'" fill="#A5B4CB"/>';for(var yy=300-h2+12;yy<290;yy+=18)far+='<rect x="'+(x+8)+'" y="'+yy+'" width="'+(w2-16)+'" height="6" fill="#E2E8F0" opacity=".7"/>';x+=w2+10+R(30)}
+var tr="";for(var t=40;t<1700;t+=210+R(60)){tr+='<rect x="'+(t-4)+'" y="226" width="9" height="74" fill="#6B4F2A"/><circle cx="'+t+'" cy="208" r="34" fill="#15803D"/><circle cx="'+(t-26)+'" cy="222" r="24" fill="#16A34A"/><circle cx="'+(t+26)+'" cy="220" r="26" fill="#22C55E"/><circle cx="'+(t+6)+'" cy="186" r="22" fill="#4ADE80"/>'}
+var wi="",px=[];for(var q=120;q<1700;q+=360)px.push(q);px.forEach(function(q){wi+='<rect x="'+(q-4)+'" y="120" width="8" height="180" fill="#57534E"/><rect x="'+(q-16)+'" y="128" width="32" height="5" fill="#57534E"/>'});
+for(var a=0;a<px.length-1;a++)for(var b=0;b<5;b++)wi+='<path d="M'+px[a]+' '+(130+b*4)+' Q'+((px[a]+px[a+1])/2)+' '+(150+b*9)+' '+px[a+1]+' '+(130+b*5)+'" stroke="#1F2937" stroke-width="1.3" fill="none"/>';
+var st="";for(var z=60;z<1700;z+=300){st+='<rect x="'+z+'" y="286" width="26" height="5" rx="2" fill="#2563EB"/><rect x="'+(z+3)+'" y="291" width="4" height="9" fill="#2563EB"/><rect x="'+(z+19)+'" y="291" width="4" height="9" fill="#2563EB"/><rect x="'+(z+34)+'" y="290" width="14" height="4" fill="#DC2626"/><rect x="'+(z+36)+'" y="294" width="3" height="6" fill="#DC2626"/><rect x="'+(z+44)+'" y="294" width="3" height="6" fill="#DC2626"/>'}
+var o='<svg class="hn-far" viewBox="0 0 1700 300" preserveAspectRatio="xMidYMax slice">'+far+'</svg><svg class="hn-st" viewBox="0 0 1700 300" preserveAspectRatio="xMidYMax slice">'+s+wi+tr+st+'</svg><div class="hn-walk"></div><div class="hn-road"><i></i></div>';
+[[8,80],[30,110],[58,95]].forEach(function(p,j){o+='<div class="hn-cl" style="top:'+p[0]+'%;animation-duration:'+p[1]+'s;animation-delay:-'+(j*30)+'s"></div>'});
+o+='<div class="hn-bd" style="top:14%">🕊️</div><div class="hn-bd" style="top:22%;animation-delay:-9s;font-size:18px">🕊️</div>';
+var A=[[moto("#EC4899","#FACC15","#2563EB",0),82,15,0],[car("#F8FAFC","#0EA5E9"),74,22,-4],[moto("#22C55E","#EF4444","#DC2626",2),82,15,-9],[bike(),80,30,-13],[moto("#3B82F6","#F472B6","#111827",1),82,15,-20],[bus(),104,32,-26],[moto("#F97316","#3B82F6","#A3A3A3",0),82,15,-31]];
+A.forEach(function(v){o+='<div class="veh r" style="height:'+v[1]+'px;animation-duration:'+(v[2]+12)+'s;animation-delay:'+v[3]+'s">'+v[0]+'</div>'});
+var B=[[car("#DC2626","#FDE047"),66,20,-2],[moto("#A855F7","#22C55E","#0EA5E9",0),70,16,-8],[cyclo(),74,40,-14],[moto("#EF4444","#F8FAFC","#16A34A",2),70,16,-24],[car("#2563EB","#F472B6"),66,22,-30]];
+B.forEach(function(v){o+='<div class="veh l" style="height:'+v[1]+'px;animation-duration:'+(v[2]+12)+'s;animation-delay:'+v[3]+'s"><div class="flip">'+v[0]+'</div></div>'});
+o+='<div class="hn-ven" style="animation-duration:70s">'+vendor()+'</div><div class="hn-ven" style="animation-duration:90s;animation-delay:-45s">'+vendor()+'</div>';
+H.innerHTML=o})();
+</script>
+<style id="ms-chi-nen-unlock-style">
+#passwordModal, #password-modal, #pwModal, #pw-modal, #pw-overlay,
+#lockModal, #passModal, #authModal, #auth-modal, #lockOverlay,
+#start-overlay, #intro-overlay, #start-screen,
+.password-modal, .lock-modal, .lock-overlay {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    z-index: -9999 !important;
+}
+</style>
+<script>
+// Remove password lock completely - direct quiz access
+(function() {
+    var initDone = false;
+    var renderCheckDone = false;
+
+    function hideEl(el, hard) {
+        if (!el) return;
+        if (hard) {
+            el.style.setProperty('display', 'none', 'important');
+            el.style.setProperty('visibility', 'hidden', 'important');
+            el.style.setProperty('opacity', '0', 'important');
+            el.style.setProperty('pointer-events', 'none', 'important');
+            el.style.setProperty('z-index', '-9999', 'important');
+        } else {
+            el.style.display = 'none';
+        }
+        el.classList.remove('active', 'show', 'open', 'visible', 'flex');
+    }
+
+    function hasRenderedQuiz() {
+        var containers = document.querySelectorAll(
+            '#quiz-container, #quizContainer, #questions-container, #questionPane, #quiz, #questions, #quiz-body, #questions-wrapper, #quiz-list, #quizList, #exercise-container, #app-container .split-container'
+        );
+        for (var i = 0; i < containers.length; i++) {
+            if (containers[i].querySelectorAll('button, input, select, textarea, .question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .question, .option-btn, .opt-btn, .ans-btn').length > 0) {
+                return true;
+            }
+        }
+        if (document.querySelectorAll('.question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .option-btn, .opt-btn, .ans-btn, .choice-btn').length > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    function ensureQuizRendered() {
+        if (renderCheckDone) return;
+        renderCheckDone = true;
+        if (hasRenderedQuiz()) return;
+
+        if (!hasRenderedQuiz() && typeof buildQuiz === 'function') { try { buildQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof initQuiz === 'function') { try { initQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderApp === 'function') { try { renderApp(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuiz === 'function') { try { renderQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuestions === 'function') { try { renderQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAllQuestions === 'function') { try { renderAllQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAll === 'function') { try { renderAll(); } catch(e){} }
+    }
+
+    function unlockNow() {
+        var pwIds = [
+            'passwordModal', 'password-modal', 'pwModal', 'pw-modal', 'pw-overlay',
+            'lockModal', 'passModal', 'authModal', 'auth-modal', 'lockOverlay',
+            'start-overlay', 'intro-overlay', 'start-screen'
+        ];
+        pwIds.forEach(function(id) {
+            hideEl(document.getElementById(id), true);
+        });
+
+        var modalEls = document.querySelectorAll('.password-modal, .lock-modal, .lock-overlay, #lockOverlay, #auth-modal');
+        modalEls.forEach(function(el) {
+            if (el.id !== 'resultModal' && el.id !== 'result-modal' && el.id !== 'scoreModal') {
+                hideEl(el, true);
+            }
+        });
+
+        ['nameModal', 'name-modal', 'nameInputModal'].forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) hideEl(el, false);
+        });
+
+        var qo = document.getElementById('quiz-overlay');
+        if (qo && (typeof isStarted === 'undefined' || !isStarted)) {
+            qo.style.display = 'none';
+        }
+
+        var mainIds = [
+            'mainContent', 'main-content', 'mainHeader', 'main-header',
+            'app-container', 'app', 'quizApp', 'quiz-wrapper', 'quizContainer', 'quiz-container', 'reading-content'
+        ];
+        mainIds.forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) {
+                el.classList.remove('hidden', 'blur', 'blurred', 'locked');
+                if (el.style.display === 'none') {
+                    el.style.removeProperty('display');
+                }
+                if (window.getComputedStyle(el).display === 'none') {
+                    var hasPane = el.querySelector('.pane, .left-pane, .right-pane, .split-container, .left-panel, .right-panel');
+                    if (id === 'main-content' || id.toLowerCase().includes('header') || el.classList.contains('main-container') || hasPane) {
+                        el.style.setProperty('display', 'flex', 'important');
+                    } else {
+                        el.style.setProperty('display', 'block', 'important');
+                    }
+                }
+            }
+        });
+
+        var qs = document.getElementById('quiz-screen');
+        if (qs) {
+            qs.classList.remove('hidden');
+            if (qs.classList.contains('flex-col')) {
+                qs.classList.add('flex');
+                qs.style.display = 'flex';
+            } else {
+                qs.style.display = 'block';
+            }
+        }
+
+        if (!initDone) {
+            initDone = true;
+
+            if (document.getElementById('start-overlay') && typeof startGame === 'function') {
+                var sn = document.getElementById('student-name') || document.getElementById('studentName');
+                if (sn && !sn.value.trim()) sn.value = 'Học sinh';
+            }
+            if (document.getElementById('name-modal') && typeof startQuiz === 'function') {
+                var sn2 = document.getElementById('student-name');
+                if (sn2 && !sn2.value.trim()) sn2.value = 'Học sinh';
+            }
+
+            if (typeof startQuiz === 'function' && (typeof isStarted === 'undefined' || !isStarted)) { try { startQuiz(); } catch(e){} }
+            if (typeof startGame === 'function') { try { startGame(); } catch(e){} }
+            if (typeof startTest === 'function') { try { startTest(); } catch(e){} }
+            if (typeof startApp === 'function') { try { startApp(); } catch(e){} }
+            if (typeof buildStarfield === 'function') { try { buildStarfield(); } catch(e){} }
+            if (typeof spawnFloats === 'function') { try { spawnFloats(); } catch(e){} }
+            if (typeof spawnFloaters === 'function') { try { spawnFloaters(); } catch(e){} }
+            if (typeof createFloatingBubbles === 'function') { try { createFloatingBubbles(); } catch(e){} }
+            if (typeof initAudio === 'function') { try { initAudio(); } catch(e){} }
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', unlockNow);
+    } else {
+        unlockNow();
+    }
+    if (document.readyState === 'complete') {
+        setTimeout(ensureQuizRendered, 150);
+    } else {
+        window.addEventListener('load', function() {
+            setTimeout(unlockNow, 20);
+            setTimeout(ensureQuizRendered, 150);
+            setTimeout(unlockNow, 300);
+            setTimeout(unlockNow, 700);
+        });
+    }
+    setTimeout(unlockNow, 50);
+    setTimeout(unlockNow, 200);
+    setTimeout(unlockNow, 600);
+    setTimeout(unlockNow, 1100);
+})();
+</script>
+</body>
+</html>
