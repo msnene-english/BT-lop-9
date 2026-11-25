@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Form Challenge: Nature - MS Chí Nên</title>
+    <!-- Google Fonts: Quicksand for friendly, rounded look -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <style>
+        :root {
+            --primary-purple: #8854C0;
+            --primary-teal: #00C9A7;
+            --correct-green: #00D26A;
+            --wrong-red: #FF4757;
+            --bg-pattern: #f0f2f5;
+            --text-dark: #2d3436;
+            --text-light: #ffffff;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--bg-pattern);
+            background-image: radial-gradient(#8854c0 0.5px, transparent 0.5px), radial-gradient(#8854c0 0.5px, var(--bg-pattern) 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* --- Main Layout --- */
+        .game-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 20px;
+            perspective: 1000px;
+        }
+
+        .header-teacher {
+            text-align: center;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--primary-purple), #a29bfe);
+            padding: 15px;
+            border-radius: 20px;
+            color: white;
+            box-shadow: 0 8px 0 rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 10;
+        }
+
+        .header-teacher h1 {
+            margin: 0;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .header-teacher p {
+            margin: 5px 0 0;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 25px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            position: relative;
+            border: 4px solid #fff;
+            transition: transform 0.3s ease;
+        }
+
+        /* --- Progress Bar --- */
+        .progress-container {
+            width: 100%;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            height: 12px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background-color: var(--primary-teal);
+            width: 0%;
+            transition: width 0.5s ease;
+            border-radius: 10px;
+        }
+
+        /* --- Question Area --- */
+        .question-box {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            line-height: 1.5;
+            color: #2c3e50;
+        }
+
+        .target-word {
+            color: var(--primary-purple);
+            text-transform: uppercase;
+            font-weight: 800;
+            background: rgba(136, 84, 192, 0.1);
+            padding: 2px 8px;
+            border-radius: 5px;
+        }
+
+        .hint-text {
+            display: block;
+            font-size: 0.9rem;
+            color: #636e72;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        /* --- Options Grid --- */
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        @media (max-width: 600px) {
+            .options-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .option-btn {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 15px;
+            padding: 15px 20px;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+            box-shadow: 0 5px 0 #dcdcdc; /* 3D Effect */
+            position: relative;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .option-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 7px 0 #dcdcdc;
+            border-color: var(--primary-purple);
+        }
+
+        .option-btn:active:not(:disabled) {
+            transform: translateY(4px);
+            box-shadow: 0 1px 0 #dcdcdc;
+        }
+
+        /* Correct/Wrong States */
+        .option-btn.correct {
+            background-color: var(--correct-green);
+            color: white;
+            border-color: #00b85c;
+            box-shadow: 0 5px 0 #00b85c;
+        }
+
+        .option-btn.wrong {
+            background-color: var(--wrong-red);
+            color: white;
+            border-color: #ff2e40;
+            box-shadow: 0 5px 0 #ff2e40;
+            animation: shake 0.5s;
+        }
+
+        .option-btn:disabled {
+            cursor: default;
+            opacity: 0.7;
+        }
+
+        /* --- Explanation Box --- */
+        .explanation-container {
+            margin-top: 25px;
+            background: #f8f9fa;
+            border-left: 5px solid var(--primary-purple);
+            padding: 20px;
+            border-radius: 0 15px 15px 0;
+            display: none; /* Hidden by default */
+            animation: slideIn 0.4s ease-out;
+        }
+
+        .teacher-avatar {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            color: var(--primary-purple);
+            font-weight: bold;
+        }
+
+        .teacher-avatar i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+
+        .explanation-content {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #444;
+        }
+        
+        .explanation-content strong {
+            color: var(--primary-purple);
+        }
+
+        .next-btn-container {
+            margin-top: 20px;
+            text-align: right;
+            display: none; /* Hidden until answered */
+        }
+
+        .next-btn {
+            background-color: var(--primary-teal);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: bold;
+            box-shadow: 0 5px 0 #00a388;
+            transition: transform 0.2s;
+        }
+
+        .next-btn:hover {
+            transform: scale(1.05);
+        }
+        
+        .next-btn:active {
+            transform: translateY(4px) scale(1.05);
+            box-shadow: 0 1px 0 #00a388;
+        }
+
+        /* --- Result Modal/Popup --- */
+        .result-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .result-card {
+            background: white;
+            padding: 40px;
+            border-radius: 30px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .score-circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: var(--primary-purple);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+            box-shadow: 0 0 20px rgba(136, 84, 192, 0.5);
+        }
+
+        /* --- Animations --- */
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-10px) rotate(-5deg); }
+            50% { transform: translateX(10px) rotate(5deg); }
+            75% { transform: translateX(-10px) rotate(-5deg); }
+            100% { transform: translateX(0); }
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes popIn {
+            from { opacity: 0; transform: scale(0.5); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="game-container">
+        <!-- Teacher Header -->
+        <div class="header-teacher">
+            <h1><i class="fas fa-graduation-cap"></i> MS Chí Nên</h1>
+            <p>Word Form Practice: Nature & Environment</p>
+        </div>
+
+        <div class="card">
+            <!-- Progress -->
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+
+            <!-- Quiz Area -->
+            <div id="quizArea">
+                <div class="question-box" id="questionText">
+                    Loading question...
+                </div>
+
+                <div class="options-grid" id="optionsContainer">
+                    <!-- Options generated via JS -->
+                </div>
+
+                <!-- Explanation Section -->
+                <div class="explanation-container" id="explanationBox">
+                    <div class="teacher-avatar">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <span>MS Chí Nên giải thích:</span>
+                    </div>
+                    <div class="explanation-content" id="explanationText">
+                        <!-- Content goes here -->
+                    </div>
+                </div>
+
+                <!-- Next Button -->
+                <div class="next-btn-container" id="nextBtnContainer">
+                    <button class="next-btn" onclick="nextQuestion()">
+                        Câu tiếp theo <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Result Popup -->
+    <div class="result-overlay" id="resultOverlay">
+        <div class="result-card">
+            <div class="score-circle" id="finalScore">0/10</div>
+            <h2 id="finalMessage">Tuyệt vời!</h2>
+            <p id="finalComment">Bạn đã hoàn thành bài kiểm tra.</p>
+            <button class="next-btn" onclick="location.reload()">Làm lại bài <i class="fas fa-redo"></i></button>
+        </div>
+    </div>
+
+    <script>
+        // --- DATA SOURCE ---
+        const quizData = {
+          "questions": [
+            {
+              "questionNumber": 1,
+              "question": "The Grand Canyon took millions of years of natural ______________ to reach its current form. <span class='target-word'>(DEVELOP)</span>",
+              "answerOptions": [
+                {
+                  "text": "development",
+                  "rationale": "**Phân tích đáp án:**<br>- A. develop (v): phát triển<br>- B. development (n): sự phát triển/quá trình hình thành<br>- C. developing (adj): đang phát triển<br>- D. developed (adj): đã phát triển<br><br>**Dịch câu:** Hẻm núi Grand Canyon đã mất hàng triệu năm của quá trình hình thành tự nhiên để đạt được hình dạng hiện tại.<br><br>**Giải thích:** Sau tính từ 'natural' (tự nhiên), chúng ta cần một danh từ (Noun) để tạo thành cụm danh từ. 'Development' ở đây mang nghĩa là quá trình phát triển/hình thành địa chất.",
+                  "isCorrect": true
+                },
+                {
+                  "text": "develop",
+                  "rationale": "",
+                  "isCorrect": false
+                },
+                {
+                  "text": "developing",
+                  "rationale": "",
+                  "isCorrect": false
+                },
+                {
+                  "text": "developed",
+                  "rationale": "",
+                  "isCorrect": false
+                }
+              ],
+              "hint": "We need a noun after the adjective 'natural'."
+            },
+            {
+              "questionNumber": 2,
+              "question": "Many countries are promoting ______________ tourism to protect their natural wonders. <span class='target-word'>(SUSTAIN)</span>",
+              "answerOptions": [
+                {
+                  "text": "sustainable",
+                  "rationale": "**Phân tích đáp án:**<br>- A. sustain (v): duy trì<br>- B. sustainability (n): sự bền vững<br>- C. sustainable (adj): bền vững<br>- D. sustained (adj): được duy trì liên tục<br><br>**Dịch câu:** Nhiều quốc gia đang thúc đẩy du lịch bền vững để bảo vệ các kỳ quan thiên nhiên của họ.<br><br>**Giải thích:** Chỗ trống đứng trước danh từ 'tourism' (du lịch), nên cần một tính từ (Adjective) để bổ nghĩa. Cụm từ 'sustainable tourism' (du lịch bền vững) là một thuật ngữ phổ biến.",
+                  "isCorrect": true
+                },
+                {
+                  "text": "sustainability",
+                  "rationale": "",
+                  "isCorrect": false
+                },
+                {
+                  "text": "sustain",
+                  "rationale": "",
+                  "isCorrect": false
+                },
+                {
+                  "text": "sustained",
+                  "rationale": "",
+                  "isCorrect": false
+                }
+              ],
+              "hint": "Adjective describing tourism that is good for the environment."
+            },
+            {
+              "questionNumber": 3,
+              "question": "The Great Barrier Reef needs better ______________ from pollution and climate change. <span class='target-word'>(PROTECT)</span>",
+              "answerOptions": [
+                {
+                  "text": "protection",
+                  "rationale": "**Phân tích đáp án:**<br>- A. protect (v): bảo vệ<br>- B. protection (n): sự bảo vệ<br>- C. protective (adj): mang tính bảo vệ<br>- D. protector (n): người bảo vệ<br><br>**Dịch câu:** Rạn san hô Great Barrier cần sự bảo vệ tốt hơn khỏi ô nhiễm và biến đổi khí hậu.<br><br>**Giải thích:** Sau tính từ so sánh 'better' và làm tân ngữ cho động từ 'needs', ta cần một danh từ (Noun).",
+                  "isCorrect": true
+                },
+                {
+                  "text": "protect",
+                  "rationale": "",
+                  "isCorrect": false
+                },
+                {
+                  "text": "protective",
+                  "rationale": "",
+                  "isCorrect": false
+                },
+                {
+                  "text": "protector",
+                  "rationale": "",
+                  "isCorrect": false
+                }
+              ],
+              "hint": "Noun form needed."
+            },
+            {
+              "questionNumber": 4,
+              "question": "Human activities are causing the ______________ of many natural habitats around the world. <span class='target-word'>(DESTROY)</span>",
+              "answerOptions": [
+                {
+                  "text": "destruction",
+                  "rationale": "**Phân tích đáp án:**<br>- A. destroy (v): phá hủy<br>- B. destruction (n): sự phá hủy/hủy hoại<br>- C. destructive (adj): có tính phá hoại<br>- D. destroyer (n): kẻ phá hoại/tàu khu trục<br><br>**Dịch câu:** Các hoạt động của con người đang gây ra sự hủy hoại nhiều môi trường sống tự nhiên trên khắp thế giới.<br><br>**Giải thích:** Cấu trúc 'the ... of' luôn yêu cầu một danh từ (Noun) ở giữa.",
+                  "isCorrect": true
+                },
+                {
+                  "text": "destructive",
+                  "rationale": "",
+                  "isCorrect": false
+                },
+                {
+                  "text": "destroy",
+                  "rationale": "",
+                  "isCorrect": false
+                },
+                {
+                  "text": "destroyer",
+                  "rationale": "",
+                  "isCorrect": false
+                }
+              ],
+              "hint": "Noun form ending in -tion."
+            },
+            {
+              "questionNumber": 5,
+              "question": "Visitors need special ______________ to camp overnight in Yellowstone National Park. <span class='target-word'>(PERMIT)</span>",
+              "answerOptions": [
+                {
+                  "text": "permission",
+                  "rationale": "**Phân tích đáp án:**<br>- A. permit (n/v): giấy phép/cho phép<br>- B. permission (n): sự cho phép<br>- C. permissive (adj): dễ dãi<br>- D. permissibly (adv): một cách chấp nhận được<br><br>**Dịch câu:** Du khách cần sự cho phép đặc biệt để cắm trại qua đêm tại Vườn Quốc gia Yellowstone.<br><br>**Giải thích:** Sau tính từ 'special' cần một danh từ. 'Permission' (sự cho phép - không đếm được) hoặc 'permits' (giấy phép - đếm được). Trong bài tập Word Form, biến đổi từ động từ 'permit' sang danh từ trừu tượng thường là 'permission'.",
+                  "isCorrect": true
+                },
+                {
+                  "text": "permit",
+                  "rationale": "",
+                  "isCorrect": false
+                },
+                {
+                  "text": "permissive",
+                  "rationale": "",
+                  "isCorrect": false
+                },
+                {
+                  "text": "permissibly",
+                  "rationale": "",
+                  "isCorrect": false
+                }
+              ],
+              "hint": "Noun meaning 'authorization'."
+            },
+            {
+              "questionNumber": 6,
+              "question": "Scientists are taking the effects of global warming into ______________ when studying glaciers. <span class='target-word'>(CONSIDER)</span>",
+              "answerOptions": [
+                {
+                  "text": "consideration",
+                  "rationale": "**Phân tích đáp án:**<br>- A. consider (v): cân nhắc<br>- B. consideration (n): sự cân nhắc<br>- C. considerable (adj): đáng kể<br>- D. considerate (adj): ân cần/chu đáo<br><br>**Dịch câu:** Các nhà khoa học đang xem xét/cân nhắc các tác động của sự nóng lên toàn cầu khi nghiên cứu các sông băng.<br><br>**Giải thích:** Cụm từ cố định (Idiom): **take sth into consideration** (cân nhắc kỹ điều gì).",
+                  "isCorrect": true
+                },
+                {
+                  "text": "considerable",
+                  "rationale": "",
+                  "isCorrect": false
+                },
+                {
+                  "text": "considerate",
+                  "rationale": "",
+                  "isCorrect": false
+                },
+                {
+                  "text": "consider",
+                  "rationale": "",
+                  "isCorrect": false
+                }
+              ],
+              "hint": "Idiom: 'Take something into ...'."
+            },
+            {
+              "questionNumber": 7,
+              "question": "The government is ______________ young people to learn about protecting natural wonders. <span class='target-word'>(ENCOURAGE)</span>",
+              "answerOptions": [
+                {
+                  "text": "encouraging",
+                  "rationale": "**Phân tích đáp án:**<br>- A. encourage (v): khuyến khích<br>- B. encouraging (V-ing): đang khuyến khích<br>- C. encouragement (n): sự khuyến khích<br>- D. encouraged (V-ed): bị động/đã khuyến khích<br><br>**Dịch câu:** Chính phủ đang khuyến khích giới trẻ tìm hiểu về việc bảo vệ các kỳ quan thiên nhiên.<br><br>**Giải thích:** Cấu trúc thì Hiện tại tiếp diễn: S + is + V-ing. Chính phủ thực hiện hành động này (chủ động) nên dùng 'encouraging'.",
+                  "isCorrect": true
+                },
+                {
+                  "text": "encourage",
+                  "rationale": "",
+                  "isCorrect": false
+                },
+                {
+                  "text": "encouragement",
+                  "rationale": "",
+                  "isCorrect": false
+                },
+                {
+                  "text": "encouraged",
+                  "rationale": "",
+                  "isCorrect": false
+                }
+              ],
+              "hint": "Present Continuous tense: is + V-ing."
+            },
+            {
+              "questionNumber": 8,
+              "question": "Many ______________ species live in the Amazon rainforest and need our help. <span class='target-word'>(ENDANGER)</span>",
+              "answerOptions": [
+                {
+                  "text": "endangered",
+                  "rationale": "**Phân tích đáp án:**<br>- A. danger (n): sự nguy hiểm<br>- B. dangerous (adj): nguy hiểm (gây hại cho người khác)<br>- C. endangered (adj): bị đe dọa tuyệt chủng/nguy cấp<br>- D. endanger (v): gây nguy hiểm<br><br>**Dịch câu:** Nhiều loài có nguy cơ tuyệt chủng sống trong rừng nhiệt đới Amazon và cần sự giúp đỡ của chúng ta.<br><br>**Giải thích:** Cần một tính từ bổ nghĩa cho 'species'. 'Endangered species' là thuật ngữ chỉ các loài động vật quý hiếm đang bị đe dọa.",
+                  "isCorrect": true
+                },
+                {
+                  "text": "dangerous",
+                  "rationale": "",
+                  "isCorrect": false
+                },
+                {
+                  "text": "danger",
+                  "rationale": "",
+                  "isCorrect": false
+                },
+                {
+                  "text": "endanger",
+                  "rationale": "",
+                  "isCorrect": false
+                }
+              ],
+              "hint": "Adjective describing animals at risk of extinction."
+            },
+            {
+              "questionNumber": 9,
+              "question": "Volcanic eruptions are natural ______________ that can create new landscapes. <span class='target-word'>(OCCUR)</span>",
+              "answerOptions": [
+                {
+                  "text": "occurrences",
+                  "rationale": "**Phân tích đáp án:**<br>- A. occur (v): xảy ra<br>- B. occurrence (n): sự việc/biến cố (số ít)<br>- C. occurrences (n): các sự việc/hiện tượng (số nhiều)<br>- D. occurring (V-ing): đang xảy ra<br><br>**Dịch câu:** Phun trào núi lửa là những hiện tượng tự nhiên có thể tạo ra những cảnh quan mới.<br><br>**Giải thích:** Sau tính từ 'natural' cần một danh từ. Chủ ngữ 'Volcanic eruptions' là số nhiều, động từ 'are' là số nhiều, nên danh từ bổ ngữ cũng phải ở dạng số nhiều -> 'occurrences'.",
+                  "isCorrect": true
+                },
+                {
+                  "text": "occurrence",
+                  "rationale": "",
+                  "isCorrect": false
+                },
+                {
+                  "text": "occur",
+                  "rationale": "",
+                  "isCorrect": false
+                },
+                {
+                  "text": "occurring",
+                  "rationale": "",
+                  "isCorrect": false
+                }
+              ],
+              "hint": "Plural noun meaning 'events' or 'happenings'."
+            },
+            {
+              "questionNumber": 10,
+              "question": "Millions of tourists visit Ha Long Bay every year because of its ______________ beauty. <span class='target-word'>(ADMIRE)</span>",
+              "answerOptions": [
+                {
+                  "text": "admirable",
+                  "rationale": "**Phân tích đáp án:**<br>- A. admire (v): ngưỡng mộ<br>- B. admiration (n): sự ngưỡng mộ<br>- C. admirable (adj): đáng ngưỡng mộ/tuyệt vời<br>- D. admiring (adj): thể hiện sự ngưỡng mộ (dùng cho người)<br><br>**Dịch câu:** Hàng triệu du khách đến thăm Vịnh Hạ Long mỗi năm vì vẻ đẹp đáng ngưỡng mộ của nó.<br><br>**Giải thích:** Trước danh từ 'beauty' cần một tính từ. 'Admirable' chỉ tính chất của sự vật (đáng để người khác ngưỡng mộ).",
+                  "isCorrect": true
+                },
+                {
+                  "text": "admiring",
+                  "rationale": "",
+                  "isCorrect": false
+                },
+                {
+                  "text": "admiration",
+                  "rationale": "",
+                  "isCorrect": false
+                },
+                {
+                  "text": "admire",
+                  "rationale": "",
+                  "isCorrect": false
+                }
+              ]
+            }
+          ]
+        };
+
+        // --- GAME STATE & VARIABLES ---
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let isAnswered = false;
+        let questions = [];
+
+        // Synthesized sounds using simple AudioContext to avoid external link breakage
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        const audioCtx = new AudioContext();
+
+        function playSound(type) {
+            const osc = audioCtx.createOscillator();
+            const gainNode = audioCtx.createGain();
+            osc.connect(gainNode);
+            gainNode.connect(audioCtx.destination);
+
+            if (type === 'correct') {
+                // High chime: C6 -> E6
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(1046.50, audioCtx.currentTime); // C6
+                osc.frequency.exponentialRampToValueAtTime(1318.51, audioCtx.currentTime + 0.1); // E6
+                gainNode.gain.setValueAtTime(0.3, audioCtx.currentTime);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.3);
+                osc.start();
+                osc.stop(audioCtx.currentTime + 0.3);
+            } else if (type === 'wrong') {
+                // Low buzz: G2 -> C2
+                osc.type = 'sawtooth';
+                osc.frequency.setValueAtTime(98, audioCtx.currentTime); // G2
+                osc.frequency.linearRampToValueAtTime(65, audioCtx.currentTime + 0.3); // C2
+                gainNode.gain.setValueAtTime(0.3, audioCtx.currentTime);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.3);
+                osc.start();
+                osc.stop(audioCtx.currentTime + 0.3);
+            }
+        }
+
+        // --- INITIALIZATION ---
+        function initGame() {
+            // Shuffle questions
+            questions = shuffleArray([...quizData.questions]);
+            currentQuestionIndex = 0;
+            score = 0;
+            updateProgressBar();
+            loadQuestion();
+        }
+
+        // Fisher-Yates Shuffle
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        function updateProgressBar() {
+            const percent = ((currentQuestionIndex) / questions.length) * 100;
+            document.getElementById('progressBar').style.width = percent + '%';
+        }
+
+        function loadQuestion() {
+            isAnswered = false;
+            const q = questions[currentQuestionIndex];
+            
+            // Render Question Text
+            document.getElementById('questionText').innerHTML = `
+                <span style="font-size:0.9em; color:#888;">Câu ${currentQuestionIndex + 1}/${questions.length}</span><br>
+                ${q.question}
+                ${q.hint ? `<div class="hint-text"><i class="fas fa-lightbulb" style="color:#f1c40f"></i> Hint: ${q.hint}</div>` : ''}
+            `;
+
+            // Setup Options
+            const optionsContainer = document.getElementById('optionsContainer');
+            optionsContainer.innerHTML = '';
+            
+            // Find correct answer object to get full explanation later
+            const correctAnswerObj = q.answerOptions.find(opt => opt.isCorrect);
+
+            // Shuffle Options for display
+            const displayOptions = shuffleArray([...q.answerOptions]);
+
+            displayOptions.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.className = 'option-btn';
+                btn.innerHTML = `<span>${opt.text}</span>`;
+                btn.onclick = () => checkAnswer(btn, opt, correctAnswerObj, q.questionNumber);
+                optionsContainer.appendChild(btn);
+            });
+
+            // Reset UI
+            document.getElementById('explanationBox').style.display = 'none';
+            document.getElementById('nextBtnContainer').style.display = 'none';
+        }
+
+        function checkAnswer(selectedBtn, selectedOpt, correctOpt, qNum) {
+            if (isAnswered) return;
+            isAnswered = true;
+
+            const allBtns = document.querySelectorAll('.option-btn');
+            let isCorrect = selectedOpt.isCorrect;
+
+            if (isCorrect) {
+                // CORRECT
+                selectedBtn.classList.add('correct');
+                selectedBtn.innerHTML += ` <i class="fas fa-check-circle"></i>`;
+                score++;
+                playSound('correct');
+                
+                // Confetti Effect
+                confetti({
+                    particleCount: 100,
+                    spread: 70,
+                    origin: { y: 0.6 },
+                    colors: ['#00D26A', '#8854C0', '#F1C40F']
+                });
+            } else {
+                // WRONG
+                selectedBtn.classList.add('wrong');
+                selectedBtn.innerHTML += ` <i class="fas fa-times-circle"></i>`;
+                playSound('wrong');
+
+                // Highlight correct one
+                allBtns.forEach(btn => {
+                    if (btn.innerText.trim() === correctOpt.text) {
+                        btn.classList.add('correct');
+                        btn.innerHTML += ` <i class="fas fa-check-circle"></i>`;
+                    }
+                });
+            }
+
+            // Disable all buttons
+            allBtns.forEach(btn => btn.disabled = true);
+
+            // Show Explanation
+            const explanationBox = document.getElementById('explanationBox');
+            const explanationText = document.getElementById('explanationText');
+            
+            // Format markdown text to HTML just in case
+            let rawRationale = correctOpt.rationale;
+            // The JSON input already has formatted HTML breaks <br> and bolding from my manual mapping, 
+            // but let's ensure double asterisks become bold tags if they exist.
+            rawRationale = rawRationale.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            rawRationale = rawRationale.replace(/\n/g, '<br>');
+
+            explanationText.innerHTML = rawRationale;
+            explanationBox.style.display = 'block';
+
+            // Show Next Button
+            document.getElementById('nextBtnContainer').style.display = 'block';
+            
+            // Update progress bar to completed state for this q
+            const percent = ((currentQuestionIndex + 1) / questions.length) * 100;
+            document.getElementById('progressBar').style.width = percent + '%';
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < questions.length) {
+                loadQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function showResults() {
+            const overlay = document.getElementById('resultOverlay');
+            const scoreDiv = document.getElementById('finalScore');
+            const msgDiv = document.getElementById('finalMessage');
+            const commentDiv = document.getElementById('finalComment');
+
+            scoreDiv.textContent = `${score}/${questions.length}`;
+            
+            if (score === questions.length) {
+                msgDiv.textContent = "Xuất sắc! 🌟";
+                commentDiv.textContent = "Bạn là chuyên gia ngôn ngữ tương lai!";
+                confetti({ particleCount: 200, spread: 100, origin: { y: 0.6 } });
+            } else if (score >= questions.length * 0.7) {
+                msgDiv.textContent = "Làm tốt lắm! 👍";
+                commentDiv.textContent = "Cố gắng thêm một chút nữa là đạt điểm tối đa!";
+            } else {
+                msgDiv.textContent = "Cố lên nhé! 💪";
+                commentDiv.textContent = "Hãy xem lại phần giải thích để hiểu rõ hơn nha.";
+            }
+
+            overlay.style.display = 'flex';
+        }
+
+        // Start the game
+        initGame();
+
+        // Prevent resume audio context issues
+        document.body.addEventListener('click', () => {
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+        }, { once: true });
+
+    </script>
+<style id="ms-chi-nen-unlock-style">
+#passwordModal, #password-modal, #pwModal, #pw-modal, #pw-overlay,
+#lockModal, #passModal, #authModal, #auth-modal, #lockOverlay,
+#start-overlay, #intro-overlay, #start-screen,
+.password-modal, .lock-modal, .lock-overlay {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    z-index: -9999 !important;
+}
+</style>
+<script>
+// Remove password lock completely - direct quiz access
+(function() {
+    var initDone = false;
+    var renderCheckDone = false;
+
+    function hideEl(el, hard) {
+        if (!el) return;
+        if (hard) {
+            el.style.setProperty('display', 'none', 'important');
+            el.style.setProperty('visibility', 'hidden', 'important');
+            el.style.setProperty('opacity', '0', 'important');
+            el.style.setProperty('pointer-events', 'none', 'important');
+            el.style.setProperty('z-index', '-9999', 'important');
+        } else {
+            el.style.display = 'none';
+        }
+        el.classList.remove('active', 'show', 'open', 'visible', 'flex');
+    }
+
+    function hasRenderedQuiz() {
+        var containers = document.querySelectorAll(
+            '#quiz-container, #quizContainer, #questions-container, #questionPane, #quiz, #questions, #quiz-body, #questions-wrapper, #quiz-list, #quizList, #exercise-container, #app-container .split-container'
+        );
+        for (var i = 0; i < containers.length; i++) {
+            if (containers[i].querySelectorAll('button, input, select, textarea, .question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .question, .option-btn, .opt-btn, .ans-btn').length > 0) {
+                return true;
+            }
+        }
+        if (document.querySelectorAll('.question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .option-btn, .opt-btn, .ans-btn, .choice-btn').length > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    function ensureQuizRendered() {
+        if (renderCheckDone) return;
+        renderCheckDone = true;
+        if (hasRenderedQuiz()) return;
+
+        if (!hasRenderedQuiz() && typeof buildQuiz === 'function') { try { buildQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof initQuiz === 'function') { try { initQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderApp === 'function') { try { renderApp(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuiz === 'function') { try { renderQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuestions === 'function') { try { renderQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAllQuestions === 'function') { try { renderAllQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAll === 'function') { try { renderAll(); } catch(e){} }
+    }
+
+    function unlockNow() {
+        var pwIds = [
+            'passwordModal', 'password-modal', 'pwModal', 'pw-modal', 'pw-overlay',
+            'lockModal', 'passModal', 'authModal', 'auth-modal', 'lockOverlay',
+            'start-overlay', 'intro-overlay', 'start-screen'
+        ];
+        pwIds.forEach(function(id) {
+            hideEl(document.getElementById(id), true);
+        });
+
+        var modalEls = document.querySelectorAll('.password-modal, .lock-modal, .lock-overlay, #lockOverlay, #auth-modal');
+        modalEls.forEach(function(el) {
+            if (el.id !== 'resultModal' && el.id !== 'result-modal' && el.id !== 'scoreModal') {
+                hideEl(el, true);
+            }
+        });
+
+        ['nameModal', 'name-modal', 'nameInputModal'].forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) hideEl(el, false);
+        });
+
+        var qo = document.getElementById('quiz-overlay');
+        if (qo && (typeof isStarted === 'undefined' || !isStarted)) {
+            qo.style.display = 'none';
+        }
+
+        var mainIds = [
+            'mainContent', 'main-content', 'mainHeader', 'main-header',
+            'app-container', 'app', 'quizApp', 'quiz-wrapper', 'quizContainer', 'quiz-container', 'reading-content'
+        ];
+        mainIds.forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) {
+                el.classList.remove('hidden', 'blur', 'blurred', 'locked');
+                if (el.style.display === 'none') {
+                    el.style.removeProperty('display');
+                }
+                if (window.getComputedStyle(el).display === 'none') {
+                    var hasPane = el.querySelector('.pane, .left-pane, .right-pane, .split-container, .left-panel, .right-panel');
+                    if (id === 'main-content' || id.toLowerCase().includes('header') || el.classList.contains('main-container') || hasPane) {
+                        el.style.setProperty('display', 'flex', 'important');
+                    } else {
+                        el.style.setProperty('display', 'block', 'important');
+                    }
+                }
+            }
+        });
+
+        var qs = document.getElementById('quiz-screen');
+        if (qs) {
+            qs.classList.remove('hidden');
+            if (qs.classList.contains('flex-col')) {
+                qs.classList.add('flex');
+                qs.style.display = 'flex';
+            } else {
+                qs.style.display = 'block';
+            }
+        }
+
+        if (!initDone) {
+            initDone = true;
+
+            if (document.getElementById('start-overlay') && typeof startGame === 'function') {
+                var sn = document.getElementById('student-name') || document.getElementById('studentName');
+                if (sn && !sn.value.trim()) sn.value = 'Học sinh';
+            }
+            if (document.getElementById('name-modal') && typeof startQuiz === 'function') {
+                var sn2 = document.getElementById('student-name');
+                if (sn2 && !sn2.value.trim()) sn2.value = 'Học sinh';
+            }
+
+            if (typeof startQuiz === 'function' && (typeof isStarted === 'undefined' || !isStarted)) { try { startQuiz(); } catch(e){} }
+            if (typeof startGame === 'function') { try { startGame(); } catch(e){} }
+            if (typeof startTest === 'function') { try { startTest(); } catch(e){} }
+            if (typeof startApp === 'function') { try { startApp(); } catch(e){} }
+            if (typeof buildStarfield === 'function') { try { buildStarfield(); } catch(e){} }
+            if (typeof spawnFloats === 'function') { try { spawnFloats(); } catch(e){} }
+            if (typeof spawnFloaters === 'function') { try { spawnFloaters(); } catch(e){} }
+            if (typeof createFloatingBubbles === 'function') { try { createFloatingBubbles(); } catch(e){} }
+            if (typeof initAudio === 'function') { try { initAudio(); } catch(e){} }
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', unlockNow);
+    } else {
+        unlockNow();
+    }
+    if (document.readyState === 'complete') {
+        setTimeout(ensureQuizRendered, 150);
+    } else {
+        window.addEventListener('load', function() {
+            setTimeout(unlockNow, 20);
+            setTimeout(ensureQuizRendered, 150);
+            setTimeout(unlockNow, 300);
+            setTimeout(unlockNow, 700);
+        });
+    }
+    setTimeout(unlockNow, 50);
+    setTimeout(unlockNow, 200);
+    setTimeout(unlockNow, 600);
+    setTimeout(unlockNow, 1100);
+})();
+</script>
+</body>
+</html>

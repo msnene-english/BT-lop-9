@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natural Wonders Quiz - MS Chí Nên</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;900&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #8854C0; /* Tím Pastel */
+            --secondary: #00C9A7; /* Xanh Ngọc */
+            --correct: #00D26A; /* Xanh lá */
+            --wrong: #FF4757; /* Đỏ cam */
+            --bg-pattern: #f0f3f8;
+            --card-bg: #ffffff;
+            --text-main: #2f3542;
+        }
+
+        * {
+            box-sizing: border-box;
+            user-select: none; /* Chống bôi đen để trải nghiệm giống app */
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: var(--bg-pattern);
+            background-image: radial-gradient(#dcdde1 15%, transparent 16%), radial-gradient(#dcdde1 15%, transparent 16%);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            margin: 0;
+            padding: 20px;
+            color: var(--text-main);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* HEADER STYLE */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            background: white;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 8px 0 rgba(0,0,0,0.1);
+            border: 2px solid #eee;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header h1 {
+            color: var(--primary);
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 900;
+            margin: 0;
+            font-size: 2.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .header h2 {
+            color: #57606f;
+            font-size: 1rem;
+            margin-top: 5px;
+            font-weight: 600;
+        }
+
+        .score-board {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: var(--secondary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 0 rgba(0,0,0,0.2);
+        }
+
+        /* QUESTION CARD */
+        .quiz-card {
+            background: var(--card-bg);
+            border-radius: 25px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 25px rgba(136, 84, 192, 0.15);
+            border: 2px solid #f1f2f6;
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .question-badge {
+            display: inline-block;
+            background: #ffa502;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 12px;
+            font-weight: 800;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .question-text {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2f3542;
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+
+        /* OPTIONS GRID */
+        .options-grid {
+            display: grid;
+            gap: 15px;
+        }
+
+        .option-btn {
+            background: white;
+            border: 2px solid #e1e1e1;
+            border-bottom: 5px solid #e1e1e1; /* 3D effect */
+            border-radius: 15px;
+            padding: 15px 20px;
+            font-family: 'Nunito', sans-serif;
+            font-size: 1.1rem;
+            color: #57606f;
+            cursor: pointer;
+            transition: all 0.1s;
+            text-align: left;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .option-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            border-color: var(--primary);
+            color: var(--primary);
+            background-color: #f8effc;
+        }
+
+        .option-btn:active:not(:disabled) {
+            transform: translateY(2px);
+            border-bottom-width: 2px;
+            margin-top: 3px;
+        }
+
+        .option-letter {
+            background: #dfe4ea;
+            color: #747d8c;
+            width: 35px;
+            height: 35px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        /* CORRECT / WRONG STATES */
+        .option-btn.correct {
+            background-color: #d1f7c4;
+            border-color: var(--correct);
+            border-bottom-color: #00b85c;
+            color: #00944a;
+        }
+
+        .option-btn.correct .option-letter {
+            background: var(--correct);
+            color: white;
+        }
+
+        .option-btn.wrong {
+            background-color: #ffeaa7;
+            border-color: var(--wrong);
+            border-bottom-color: #ff2e42;
+            color: #d63031;
+            animation: shake 0.5s;
+        }
+
+        .option-btn.wrong .option-letter {
+            background: var(--wrong);
+            color: white;
+        }
+
+        /* EXPLANATION BOX */
+        .explanation-box {
+            margin-top: 20px;
+            background: #f1f2f6;
+            border-radius: 15px;
+            padding: 20px;
+            border-left: 6px solid var(--primary);
+            display: none; /* Hidden by default */
+            animation: slideDown 0.3s ease-out;
+        }
+
+        .explanation-header {
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .explanation-header svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .explanation-content p {
+            margin: 5px 0;
+            line-height: 1.5;
+        }
+
+        .rationale-highlight {
+            font-weight: bold;
+            color: #2f3542;
+        }
+
+        /* SUBMIT BUTTON */
+        .submit-section {
+            text-align: center;
+            margin-top: 40px;
+            padding-bottom: 50px;
+        }
+
+        .submit-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-bottom: 6px solid #6c429c;
+            padding: 15px 40px;
+            font-size: 1.5rem;
+            font-weight: 800;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 10px 20px rgba(136, 84, 192, 0.4);
+        }
+
+        .submit-btn:hover {
+            transform: scale(1.05);
+            background: #9b59d6;
+        }
+
+        .submit-btn:active {
+            transform: scale(0.95) translateY(4px);
+            border-bottom-width: 2px;
+            box-shadow: none;
+        }
+
+        /* ANIMATIONS */
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            50% { transform: translateX(10px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* CONFETTI CANVAS */
+        #confetti-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        /* MODAL RESULT */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background: white;
+            padding: 40px;
+            border-radius: 30px;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            animation: zoomIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 4px solid var(--primary);
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.5); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .final-score {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--secondary);
+            margin: 20px 0;
+        }
+
+        .teacher-comment {
+            font-size: 1.2rem;
+            color: #57606f;
+            margin-bottom: 30px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <canvas id="confetti-canvas"></canvas>
+
+    <div class="container">
+        <div class="header">
+            <h1>Sắp xếp câu: Natural Wonders</h1>
+            <h2>Giáo viên tạo: MS Chí Nên</h2>
+            <div class="score-board">
+                Điểm: <span id="current-score">0</span>/20
+            </div>
+        </div>
+
+        <div id="quiz-container">
+            <!-- Questions will be injected here via JS -->
+        </div>
+
+        <div class="submit-section">
+            <button class="submit-btn" onclick="finishQuiz()">NỘP BÀI 🚀</button>
+        </div>
+    </div>
+
+    <!-- RESULT MODAL -->
+    <div id="result-modal" class="modal">
+        <div class="modal-content">
+            <h2 style="color: var(--primary); font-size: 2rem; margin: 0;">KẾT QUẢ</h2>
+            <div class="final-score" id="final-score-display">0/20</div>
+            <p class="teacher-comment" id="teacher-comment">...</p>
+            <button class="submit-btn" onclick="location.reload()" style="font-size: 1.2rem; padding: 10px 30px;">Làm lại bài 🔄</button>
+        </div>
+    </div>
+
+    <script>
+        // --- DATA ---
+        // Dữ liệu JSON từ đề bài
+        const rawData = {
+            "questions": [
+                {
+                    "questionNumber": 1,
+                    "question": "1. Grand/ the/ Canyon/ formed/ was/ river/ Colorado/ millions/ by/ the/ over/ of/ years/.",
+                    "answerOptions": [
+                        { "text": "A. The Grand Canyon was formed by the Colorado river over millions of years.", "rationale": "**Dịch:** Hẻm núi Grand Canyon được hình thành bởi sông Colorado qua hàng triệu năm.<br>**Giải thích:** Cấu trúc câu bị động thì Quá khứ đơn: S (The Grand Canyon) + was + V3 (formed) + by + O (the Colorado river) + Time (over millions of years).", "isCorrect": true },
+                        { "text": "B. The Grand Canyon formed was by the Colorado river over millions of years.", "rationale": "**Sai:** Sai trật tự động từ bị động (was formed).", "isCorrect": false },
+                        { "text": "C. The Colorado river was formed by the Grand Canyon over millions of years.", "rationale": "**Sai:** Sai về nghĩa (Sông được hình thành bởi hẻm núi là sai).", "isCorrect": false },
+                        { "text": "D. Over millions of years the Grand Canyon formed was by the Colorado river.", "rationale": "**Sai:** Sai trật tự động từ bị động.", "isCorrect": false }
+                    ],
+                    "hint": "Câu bị động: Was + V3 (formed)."
+                },
+                {
+                    "questionNumber": 2,
+                    "question": "2. Great/ Barrier/ the/ Reef/ home/ is/ to/ species/ 1,500/ of/ fish/ over/.",
+                    "answerOptions": [
+                        { "text": "A. The Great Barrier Reef is home to species over 1,500 of fish.", "rationale": "**Sai:** Sai vị trí lượng từ (over 1,500 species).", "isCorrect": false },
+                        { "text": "B. The Great Barrier Reef is home to over 1,500 species of fish.", "rationale": "**Dịch:** Rạn san hô Great Barrier là nhà của hơn 1.500 loài cá.<br>**Giải thích:** Cấu trúc 'to be home to sth' (là nhà/nơi cư trú của...). Cụm danh từ: over (hơn) + số lượng + species of fish.", "isCorrect": true },
+                        { "text": "C. The Great Barrier Reef is over 1,500 species of fish to home.", "rationale": "**Sai:** Sai cấu trúc cụm từ 'home to'.", "isCorrect": false },
+                        { "text": "D. Home to the Great Barrier Reef is over 1,500 species of fish.", "rationale": "**Sai:** Đảo ngược chủ ngữ làm sai nghĩa.", "isCorrect": false }
+                    ],
+                    "hint": "Cụm từ: be home to (là nhà của)."
+                },
+                {
+                    "questionNumber": 3,
+                    "question": "3. Mount/ Everest/ the/ peak/ world's/ is/ highest/ at/ meters/ 8,848/.",
+                    "answerOptions": [
+                        { "text": "A. Mount Everest is the world's highest peak at 8,848 meters.", "rationale": "**Dịch:** Đỉnh Everest là đỉnh núi cao nhất thế giới ở độ cao 8.848 mét.<br>**Giải thích:** S (Mount Everest) + V (is) + Cụm danh từ so sánh nhất (the world's highest peak) + prep (at) + số đo.", "isCorrect": true },
+                        { "text": "B. Mount Everest is at 8,848 meters the highest world's peak.", "rationale": "**Sai:** Trật tự từ 'world's highest peak' bị đảo lộn.", "isCorrect": false },
+                        { "text": "C. The world's highest peak at 8,848 meters is Mount Everest.", "rationale": "**Không tối ưu:** Mặc dù ngữ pháp không sai hoàn toàn nhưng câu gốc thường đưa chủ ngữ chính (Mount Everest) lên đầu.", "isCorrect": false },
+                        { "text": "D. Mount Everest at 8,848 meters is the peak highest world's.", "rationale": "**Sai:** Sai trật tự tính từ (highest peak).", "isCorrect": false }
+                    ],
+                    "hint": "So sánh nhất: The world's highest peak."
+                },
+                {
+                    "questionNumber": 4,
+                    "question": "4. Northern/ the/ Lights/ can/ seen/ be/ countries/ in/ Arctic/ near/ the/ Circle/.",
+                    "answerOptions": [
+                        { "text": "A. The Northern Lights can be seen in countries near the Arctic Circle.", "rationale": "**Dịch:** Bắc Cực Quang có thể được nhìn thấy ở các quốc gia gần Vòng Bắc Cực.<br>**Giải thích:** Câu bị động với động từ khuyết thiếu: S + can be + V3 (seen) + Place (in countries near...).", "isCorrect": true },
+                        { "text": "B. The Northern Lights can seen be in countries near the Arctic Circle.", "rationale": "**Sai:** Sai trật tự động từ (can be seen).", "isCorrect": false },
+                        { "text": "C. In countries near the Northern Lights can be seen the Arctic Circle.", "rationale": "**Sai:** Sai trật tự các cụm từ chỉ địa điểm.", "isCorrect": false },
+                        { "text": "D. The Arctic Circle can be seen in countries near the Northern Lights.", "rationale": "**Sai:** Sai nghĩa (Vòng Bắc Cực được nhìn thấy gần Bắc Cực Quang là vô lý).", "isCorrect": false }
+                    ],
+                    "hint": "Cụm động từ: can be seen (có thể được nhìn thấy)."
+                },
+                {
+                    "questionNumber": 5,
+                    "question": "5. Victoria/ Falls/ one/ is/ of/ waterfalls/ largest/ the/ world's/ in/ Africa/.",
+                    "answerOptions": [
+                        { "text": "A. Victoria Falls is one of the world's largest waterfalls in Africa.", "rationale": "**Dịch:** Thác Victoria là một trong những thác nước lớn nhất thế giới nằm ở Châu Phi.<br>**Giải thích:** Cấu trúc 'one of the + so sánh nhất + N số nhiều' (one of the world's largest waterfalls).", "isCorrect": true },
+                        { "text": "B. Victoria Falls in Africa is one of the largest world's waterfalls.", "rationale": "**Sai:** Trật tự sở hữu cách 'world's' đứng sai vị trí.", "isCorrect": false },
+                        { "text": "C. One of the world's largest waterfalls is Victoria Falls in Africa.", "rationale": "**Chấp nhận được nhưng ít dùng:** Thường tên riêng đứng đầu câu làm chủ ngữ sẽ tự nhiên hơn.", "isCorrect": false },
+                        { "text": "D. Victoria Falls is largest one of the world's waterfalls in Africa.", "rationale": "**Sai:** Sai cấu trúc 'one of the...'.", "isCorrect": false }
+                    ],
+                    "hint": "Cấu trúc: One of the + so sánh nhất + danh từ số nhiều."
+                },
+                {
+                    "questionNumber": 6,
+                    "question": "6. tourists/ every/ millions/ visit/ of/ year/ natural/ these/ wonders/ amazing/.",
+                    "answerOptions": [
+                        { "text": "A. Millions of tourists visit these amazing natural wonders every year.", "rationale": "**Dịch:** Hàng triệu du khách đến thăm những kỳ quan thiên nhiên tuyệt vời này mỗi năm.<br>**Giải thích:** S (Millions of tourists) + V (visit) + O (these amazing natural wonders) + Time (every year).", "isCorrect": true },
+                        { "text": "B. Every year millions of tourists visit amazing these natural wonders.", "rationale": "**Sai:** Sai trật tự tính từ/chỉ định từ (these amazing).", "isCorrect": false },
+                        { "text": "C. These amazing natural wonders visit millions of tourists every year.", "rationale": "**Sai:** Sai nghĩa (kỳ quan đi thăm du khách).", "isCorrect": false },
+                        { "text": "D. Millions of tourists visit every year these amazing natural wonders.", "rationale": "**Sai:** Trạng từ chỉ thời gian 'every year' thường đứng cuối câu hoặc đầu câu, không đứng giữa V và O.", "isCorrect": false }
+                    ],
+                    "hint": "Sắp xếp theo S + V + O + Time."
+                },
+                {
+                    "questionNumber": 7,
+                    "question": "7. Bay/ Ha Long/ has/ 2,000/ almost/ islands/ limestone/ emerald/ in/ water/.",
+                    "answerOptions": [
+                        { "text": "A. Ha Long Bay has almost 2,000 limestone islands in emerald water.", "rationale": "**Dịch:** Vịnh Hạ Long có gần 2.000 đảo đá vôi trong làn nước màu ngọc lục bảo.<br>**Giải thích:** S (Ha Long Bay) + V (has) + O (almost 2,000 limestone islands) + Place (in emerald water).", "isCorrect": true },
+                        { "text": "B. Ha Long Bay has 2,000 limestone islands in almost emerald water.", "rationale": "**Sai:** 'Almost' (gần như) bổ nghĩa cho số lượng 2,000, không phải bổ nghĩa cho nước.", "isCorrect": false },
+                        { "text": "C. Almost 2,000 limestone islands has Ha Long Bay in emerald water.", "rationale": "**Sai:** Sai trật tự chủ ngữ - động từ.", "isCorrect": false },
+                        { "text": "D. Ha Long Bay has in emerald water almost 2,000 limestone islands.", "rationale": "**Sai:** Cụm giới từ chỉ địa điểm không nên chen giữa động từ và tân ngữ.", "isCorrect": false }
+                    ],
+                    "hint": "'Almost' đi trước con số (almost 2,000)."
+                },
+                {
+                    "questionNumber": 8,
+                    "question": "8. Amazon/ the/ Rainforest/ produces/ oxygen/ world's/ the/ of/ 20/ percent/.",
+                    "answerOptions": [
+                        { "text": "A. The Amazon Rainforest produces 20 percent of the world's oxygen.", "rationale": "**Dịch:** Rừng mưa Amazon tạo ra 20 phần trăm lượng oxy của thế giới.<br>**Giải thích:** S (The Amazon Rainforest) + V (produces) + O (20 percent of the world's oxygen).", "isCorrect": true },
+                        { "text": "B. The Amazon Rainforest produces the world's oxygen of 20 percent.", "rationale": "**Sai:** Sai cấu trúc chỉ số lượng.", "isCorrect": false },
+                        { "text": "C. 20 percent of the Amazon Rainforest produces the world's oxygen.", "rationale": "**Sai:** Sai nghĩa (chỉ 20% rừng sản xuất oxy là sai, ý là rừng sản xuất 20% tổng lượng oxy).", "isCorrect": false },
+                        { "text": "D. The world's oxygen produces 20 percent of the Amazon Rainforest.", "rationale": "**Sai:** Sai nghĩa trầm trọng.", "isCorrect": false }
+                    ],
+                    "hint": "20 percent of..."
+                },
+                {
+                    "questionNumber": 9,
+                    "question": "9. protect/ must/ we/ wonders/ natural/ these/ future/ for/ generations/.",
+                    "answerOptions": [
+                        { "text": "A. We must protect these natural wonders for future generations.", "rationale": "**Dịch:** Chúng ta phải bảo vệ những kỳ quan thiên nhiên này cho các thế hệ tương lai.<br>**Giải thích:** S (We) + Modal V (must protect) + O (these natural wonders) + Purpose (for future generations).", "isCorrect": true },
+                        { "text": "B. We must protect for future generations these natural wonders.", "rationale": "**Sai:** Tân ngữ (these natural wonders) nên đứng ngay sau động từ.", "isCorrect": false },
+                        { "text": "C. These natural wonders must protect we for future generations.", "rationale": "**Sai:** Sai nghĩa (câu chủ động, 'we' là chủ ngữ).", "isCorrect": false },
+                        { "text": "D. Future generations must protect these natural wonders for we.", "rationale": "**Sai:** Sai đại từ 'we' (phải là us) và sai nghĩa ngữ cảnh.", "isCorrect": false }
+                    ],
+                    "hint": "Động từ khuyết thiếu: must protect."
+                },
+                {
+                    "questionNumber": 10,
+                    "question": "10. Sahara/ the/ Desert/ larger/ is/ than/ United/ the/ States/ entire/.",
+                    "answerOptions": [
+                        { "text": "A. The Sahara Desert is larger than the entire United States.", "rationale": "**Dịch:** Sa mạc Sahara lớn hơn toàn bộ Hoa Kỳ.<br>**Giải thích:** So sánh hơn: S1 + be + adj-er + than + S2. 'Entire' bổ nghĩa cho United States.", "isCorrect": true },
+                        { "text": "B. The entire United States is larger than the Sahara Desert.", "rationale": "**Sai:** Sai sự thật (Sahara ~9.2 triệu km2, Mỹ ~9.8 triệu km2). Nhưng trong ngữ cảnh bài này A đúng nhất về sắp xếp từ.", "isCorrect": false },
+                        { "text": "C. The Sahara Desert is entire larger than the United States.", "rationale": "**Sai:** Vị trí từ 'entire' sai.", "isCorrect": false },
+                        { "text": "D. The United States is larger than the entire Sahara Desert.", "rationale": "**Lưu ý:** Ngữ pháp đúng, nhưng thường bài này muốn nhấn mạnh sự to lớn của Sahara nên A là đáp án của sách.", "isCorrect": false }
+                    ],
+                    "hint": "So sánh hơn: larger than."
+                },
+                {
+                    "questionNumber": 11,
+                    "question": "11. coral/ the/ reefs/ dying/ are/ because/ warming/ of/ ocean/ temperatures/.",
+                    "answerOptions": [
+                        { "text": "A. The coral reefs are dying because of warming ocean temperatures.", "rationale": "**Dịch:** Các rạn san hô đang chết dần vì nhiệt độ đại dương nóng lên.<br>**Giải thích:** S + V (are dying) + because of + Noun Phrase (warming ocean temperatures).", "isCorrect": true },
+                        { "text": "B. Because of warming ocean temperatures the coral reefs are dying.", "rationale": "**Đúng nhưng ít phổ biến hơn:** Trật tự S-V-O xuôi thường được ưu tiên.", "isCorrect": false },
+                        { "text": "C. The warming ocean temperatures are dying because of coral reefs.", "rationale": "**Sai:** Sai nghĩa hoàn toàn.", "isCorrect": false },
+                        { "text": "D. The coral reefs are warming because of dying ocean temperatures.", "rationale": "**Sai:** Sai nghĩa.", "isCorrect": false }
+                    ],
+                    "hint": "Cấu trúc: Because of + Noun Phrase."
+                },
+                {
+                    "questionNumber": 12,
+                    "question": "12. Aurora/ Borealis/ the/ appears/ sky/ in/ the/ during/ winter/ months/.",
+                    "answerOptions": [
+                        { "text": "A. The Aurora Borealis appears in the sky during winter months.", "rationale": "**Dịch:** Bắc Cực Quang xuất hiện trên bầu trời trong suốt những tháng mùa đông.<br>**Giải thích:** S (The Aurora Borealis) + V (appears) + Place (in the sky) + Time (during winter months).", "isCorrect": true },
+                        { "text": "B. During winter months the Aurora Borealis appears in the sky.", "rationale": "**Đúng nhưng ưu tiên S-V:** Cấu trúc xuôi S-V-Place-Time là chuẩn nhất.", "isCorrect": false },
+                        { "text": "C. The Aurora Borealis appears during winter months in the sky.", "rationale": "**Sai:** Trạng ngữ chỉ nơi chốn (Place) thường đứng trước thời gian (Time).", "isCorrect": false },
+                        { "text": "D. The sky appears in the Aurora Borealis during winter months.", "rationale": "**Sai:** Sai nghĩa.", "isCorrect": false }
+                    ],
+                    "hint": "Quy tắc: Nơi chốn trước, Thời gian sau (Place before Time)."
+                },
+                {
+                    "questionNumber": 13,
+                    "question": "13. Niagara/ Falls/ borders/ the/ between/ Canada/ United/ and/ the/ States/.",
+                    "answerOptions": [
+                        { "text": "A. Niagara Falls borders between Canada and the United States.", "rationale": "**Dịch:** Thác Niagara nằm ở biên giới giữa Canada và Hoa Kỳ.<br>**Giải thích:** S + V + prep + O.", "isCorrect": true },
+                        { "text": "B. The Niagara Falls borders between Canada and United States.", "rationale": "**Sai:** Thiếu mạo từ 'the' trước United States (phải là The United States).", "isCorrect": false },
+                        { "text": "C. Niagara Falls borders the United States and Canada between.", "rationale": "**Sai:** 'Between' không thể đứng cuối câu kiểu này.", "isCorrect": false },
+                        { "text": "D. Canada and the United States borders between Niagara Falls.", "rationale": "**Sai:** Sai nghĩa.", "isCorrect": false }
+                    ],
+                    "hint": "Lưu ý: The United States (luôn có The)."
+                },
+                {
+                    "questionNumber": 14,
+                    "question": "14. many/ endangered/ species/ live/ natural/ in/ these/ wonders/ only/.",
+                    "answerOptions": [
+                        { "text": "A. Many endangered species live only in these natural wonders.", "rationale": "**Dịch:** Nhiều loài có nguy cơ tuyệt chủng chỉ sống ở những kỳ quan thiên nhiên này.<br>**Giải thích:** S (Many endangered species) + V (live) + Adv (only) + Place (in these natural wonders).", "isCorrect": true },
+                        { "text": "B. Only many endangered species live in these natural wonders.", "rationale": "**Sai:** Sai nghĩa (câu gốc muốn nhấn mạnh nơi sống duy nhất, không phải số lượng duy nhất).", "isCorrect": false },
+                        { "text": "C. Many endangered species live in these natural wonders only.", "rationale": "**Chấp nhận được:** Tuy nhiên vị trí 'only' đứng trước cụm giới từ 'in...' thường tự nhiên hơn.", "isCorrect": false },
+                        { "text": "D. In these natural wonders live many only endangered species.", "rationale": "**Sai:** Sai trật tự từ.", "isCorrect": false }
+                    ],
+                    "hint": "Only in... (Chỉ ở trong...)"
+                },
+                {
+                    "questionNumber": 15,
+                    "question": "15. climate/ change/ threatening/ is/ wonders/ natural/ the/ world's/ seriously/.",
+                    "answerOptions": [
+                        { "text": "A. Climate change is seriously threatening the world's natural wonders.", "rationale": "**Dịch:** Biến đổi khí hậu đang đe dọa nghiêm trọng đến các kỳ quan thiên nhiên của thế giới.<br>**Giải thích:** Thì hiện tại tiếp diễn: S + is + adv (seriously) + V-ing (threatening) + O.", "isCorrect": true },
+                        { "text": "B. Climate change is threatening seriously the world's natural wonders.", "rationale": "**Ít tự nhiên:** Trạng từ 'seriously' thường đứng giữa trợ động từ và động từ chính.", "isCorrect": false },
+                        { "text": "C. The world's natural wonders is seriously threatening climate change.", "rationale": "**Sai:** Sai nghĩa (kỳ quan đe dọa khí hậu là sai).", "isCorrect": false },
+                        { "text": "D. Seriously climate change is threatening the world's natural wonders.", "rationale": "**Sai:** Trạng từ đứng đầu câu thường cần dấu phẩy và mang nghĩa khác.", "isCorrect": false }
+                    ],
+                    "hint": "Trạng từ 'seriously' đứng trước 'threatening'."
+                },
+                {
+                    "questionNumber": 16,
+                    "question": "16. Yellowstone/ Park/ National/ first/ was/ the/ world's/ park/ national/.",
+                    "answerOptions": [
+                        { "text": "A. Yellowstone National Park was the world's first national park.", "rationale": "**Dịch:** Công viên quốc gia Yellowstone là công viên quốc gia đầu tiên trên thế giới.<br>**Giải thích:** S + was + Cụm danh từ (the world's first national park).", "isCorrect": true },
+                        { "text": "B. The world's first national park was Yellowstone National Park.", "rationale": "**Đúng:** Nhưng ưu tiên tên riêng cụ thể làm chủ ngữ.", "isCorrect": false },
+                        { "text": "C. Yellowstone National Park was the first world's national park.", "rationale": "**Sai:** Trật tự tính từ sở hữu 'world's' nên đứng trước 'first'.", "isCorrect": false },
+                        { "text": "D. First national park was the world's Yellowstone National Park.", "rationale": "**Sai:** Cấu trúc lủng củng.", "isCorrect": false }
+                    ],
+                    "hint": "Tên riêng Yellowstone làm chủ ngữ."
+                },
+                {
+                    "questionNumber": 17,
+                    "question": "17. Maldives/ the/ rising/ may/ disappear/ to/ due/ sea/ levels/.",
+                    "answerOptions": [
+                        { "text": "A. The Maldives may disappear due to rising sea levels.", "rationale": "**Dịch:** Quần đảo Maldives có thể biến mất do mực nước biển dâng cao.<br>**Giải thích:** S (The Maldives) + Modal V (may disappear) + Reason (due to rising sea levels).", "isCorrect": true },
+                        { "text": "B. Due to rising sea levels the Maldives may disappear.", "rationale": "**Đúng:** Nhưng ưu tiên cấu trúc S-V-O xuôi.", "isCorrect": false },
+                        { "text": "C. The Maldives may disappear due to sea levels rising.", "rationale": "**Sai:** Cụm danh từ 'rising sea levels' chuẩn hơn là 'sea levels rising'.", "isCorrect": false },
+                        { "text": "D. Rising sea levels may disappear due to the Maldives.", "rationale": "**Sai:** Sai nghĩa hoàn toàn.", "isCorrect": false }
+                    ],
+                    "hint": "Due to + Noun Phrase (rising sea levels)."
+                },
+                {
+                    "questionNumber": 18,
+                    "question": "18. Dead/ the/ Sea/ saltiest/ is/ the/ body/ water/ of/ on/ Earth/.",
+                    "answerOptions": [
+                        { "text": "A. The Dead Sea is the saltiest body of water on Earth.", "rationale": "**Dịch:** Biển Chết là vùng nước mặn nhất trên Trái Đất.<br>**Giải thích:** S + is + So sánh nhất (the saltiest body of water) + Place (on Earth).", "isCorrect": true },
+                        { "text": "B. The saltiest body of water on Earth is the Dead Sea.", "rationale": "**Đúng:** Nhưng ưu tiên tên riêng làm chủ ngữ.", "isCorrect": false },
+                        { "text": "C. The Dead Sea is on Earth the saltiest body of water.", "rationale": "**Sai:** Sai trật tự từ chỉ nơi chốn.", "isCorrect": false },
+                        { "text": "D. The body of water on Earth is the saltiest Dead Sea.", "rationale": "**Sai:** Sai nghĩa.", "isCorrect": false }
+                    ],
+                    "hint": "Cụm từ: body of water (vùng nước)."
+                },
+                {
+                    "questionNumber": 19,
+                    "question": "19. scientists/ new/ discover/ species/ every/ in/ year/ rainforests/ tropical/.",
+                    "answerOptions": [
+                        { "text": "A. Scientists discover new species in tropical rainforests every year.", "rationale": "**Dịch:** Các nhà khoa học phát hiện ra các loài mới trong rừng mưa nhiệt đới mỗi năm.<br>**Giải thích:** S (Scientists) + V (discover) + O (new species) + Place (in tropical rainforests) + Time (every year).", "isCorrect": true },
+                        { "text": "B. Every year scientists discover new species in tropical rainforests.", "rationale": "**Đúng:** Nhưng trật tự Place trước Time ở cuối câu (như đáp án A) là cấu trúc cơ bản nhất.", "isCorrect": false },
+                        { "text": "C. Scientists discover every year new species in tropical rainforests.", "rationale": "**Sai:** Trạng ngữ thời gian không đứng giữa động từ và tân ngữ.", "isCorrect": false },
+                        { "text": "D. New species discover scientists in tropical rainforests every year.", "rationale": "**Sai:** Sai nghĩa (loài vật phát hiện nhà khoa học).", "isCorrect": false }
+                    ],
+                    "hint": "S + V + O + Nơi chốn + Thời gian."
+                },
+                {
+                    "questionNumber": 20,
+                    "question": "20. UNESCO/ protects/ Heritage/ World/ Sites/ around/ important/ the/ world/.",
+                    "answerOptions": [
+                        { "text": "A. UNESCO protects important World Heritage Sites around the world.", "rationale": "**Dịch:** UNESCO bảo vệ các Di sản Thế giới quan trọng trên khắp thế giới.<br>**Giải thích:** S (UNESCO) + V (protects) + O (important World Heritage Sites) + Place (around the world).", "isCorrect": true },
+                        { "text": "B. UNESCO protects around the world important World Heritage Sites.", "rationale": "**Sai:** Cụm từ chỉ địa điểm đứng sai vị trí.", "isCorrect": false },
+                        { "text": "C. Important World Heritage Sites protects UNESCO around the world.", "rationale": "**Sai:** Sai nghĩa (Di sản bảo vệ UNESCO).", "isCorrect": false },
+                        { "text": "D. UNESCO protects World Heritage Sites important around the world.", "rationale": "**Sai:** Tính từ 'important' phải đứng trước danh từ.", "isCorrect": false }
+                    ],
+                    "hint": "Cụm danh từ: important World Heritage Sites."
+                }
+            ]
+        };
+
+        let currentScore = 0;
+        let shuffledQuestions = [];
+
+        // --- SOUND GENERATOR (WEB AUDIO API) ---
+        // Không phụ thuộc vào file bên ngoài, chạy trên mọi trình duyệt
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        const audioCtx = new AudioContext();
+
+        function playSound(type) {
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+            const osc = audioCtx.createOscillator();
+            const gainNode = audioCtx.createGain();
+            
+            osc.connect(gainNode);
+            gainNode.connect(audioCtx.destination);
+
+            if (type === 'correct') {
+                // Tiếng Ding: Sine wave cao độ cao, tắt dần
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(800, audioCtx.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(1200, audioCtx.currentTime + 0.1);
+                gainNode.gain.setValueAtTime(0.5, audioCtx.currentTime);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.6);
+                osc.start();
+                osc.stop(audioCtx.currentTime + 0.6);
+            } else {
+                // Tiếng Buzz: Sawtooth thấp, rè
+                osc.type = 'sawtooth';
+                osc.frequency.setValueAtTime(150, audioCtx.currentTime);
+                osc.frequency.linearRampToValueAtTime(100, audioCtx.currentTime + 0.3);
+                gainNode.gain.setValueAtTime(0.5, audioCtx.currentTime);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.3);
+                osc.start();
+                osc.stop(audioCtx.currentTime + 0.3);
+            }
+        }
+
+        // --- CONFETTI EFFECT ---
+        function fireConfetti() {
+            const canvas = document.getElementById('confetti-canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            const pieces = [];
+            const colors = ['#8854C0', '#00C9A7', '#ff4757', '#ffa502', '#2ed573'];
+
+            for (let i = 0; i < 100; i++) {
+                pieces.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height - canvas.height,
+                    w: Math.random() * 10 + 5,
+                    h: Math.random() * 10 + 5,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    vy: Math.random() * 4 + 2,
+                    vx: Math.random() * 2 - 1
+                });
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                let active = false;
+                pieces.forEach(p => {
+                    p.y += p.vy;
+                    p.x += p.vx;
+                    ctx.fillStyle = p.color;
+                    ctx.fillRect(p.x, p.y, p.w, p.h);
+                    if (p.y < canvas.height) active = true;
+                });
+                if (active) requestAnimationFrame(animate);
+                else ctx.clearRect(0, 0, canvas.width, canvas.height);
+            }
+            animate();
+        }
+
+        // --- QUIZ LOGIC ---
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        function initQuiz() {
+            // Sao chép và xáo trộn câu hỏi
+            shuffledQuestions = JSON.parse(JSON.stringify(rawData.questions));
+            shuffleArray(shuffledQuestions);
+
+            const container = document.getElementById('quiz-container');
+            container.innerHTML = '';
+
+            shuffledQuestions.forEach((q, index) => {
+                // --- THÊM MỚI: Xáo trộn các đáp án trong từng câu hỏi ---
+                shuffleArray(q.answerOptions);
+
+                const card = document.createElement('div');
+                card.className = 'quiz-card';
+                card.id = `q-card-${index}`;
+
+                // Tìm đáp án đúng để lấy explanation chuẩn
+                const correctOption = q.answerOptions.find(opt => opt.isCorrect);
+
+                // Tạo HTML cho các lựa chọn (A, B, C, D)
+                let optionsHTML = '';
+                q.answerOptions.forEach((opt, optIndex) => {
+                    // Tạo nhãn A, B, C, D động dựa trên vị trí mới
+                    const dynamicLabel = String.fromCharCode(65 + optIndex); 
+                    // Xóa phần A., B. cũ cứng trong text gốc để tránh bị lặp (ví dụ: "A. B. ...")
+                    const cleanText = opt.text.replace(/^[A-D]\.\s*/, '');
+
+                    optionsHTML += `
+                        <button class="option-btn" 
+                                id="btn-${index}-${optIndex}" 
+                                onclick="checkAnswer(${index}, ${optIndex}, ${opt.isCorrect})">
+                            <div class="option-letter">${dynamicLabel}</div>
+                            ${cleanText}
+                        </button>
+                    `;
+                });
+
+                // Xây dựng nội dung Box giải thích tổng hợp
+                // Lấy rationale của tất cả đáp án để hiển thị
+                let combinedExplanation = `<div style="margin-bottom: 10px;"><strong>Gợi ý ban đầu:</strong> ${q.hint}</div>`;
+                combinedExplanation += `<div style="margin-bottom: 10px;">${correctOption.rationale}</div>`; // Rationale của câu đúng thường chứa bản dịch và cấu trúc
+                
+                // Thêm phân tích lỗi sai từ các câu sai
+                combinedExplanation += `<strong>Tại sao các câu khác sai?</strong><ul style="margin: 5px 0 0 20px; padding: 0;">`;
+                q.answerOptions.forEach((opt, optIndex) => {
+                    if (!opt.isCorrect) {
+                        // Tính toán lại Label cho phần giải thích khớp với giao diện
+                        const dynamicLabel = String.fromCharCode(65 + optIndex);
+                        // Loại bỏ các ký tự Markdown ** nếu có để hiển thị đẹp hơn
+                        let cleanRationale = opt.rationale.replace(/\*\*/g, '');
+                        combinedExplanation += `<li><strong>${dynamicLabel}:</strong> ${cleanRationale}</li>`;
+                    }
+                });
+                combinedExplanation += `</ul>`;
+
+                card.innerHTML = `
+                    <div class="question-badge">Câu ${index + 1}</div>
+                    <div class="question-text">${q.question}</div>
+                    <div class="options-grid">
+                        ${optionsHTML}
+                    </div>
+                    <div class="explanation-box" id="explain-${index}">
+                        <div class="explanation-header">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                            MS Chí Nên giải thích:
+                        </div>
+                        <div class="explanation-content">
+                            ${combinedExplanation}
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function checkAnswer(questionIndex, optionIndex, isCorrect) {
+            const card = document.getElementById(`q-card-${questionIndex}`);
+            const buttons = card.querySelectorAll('.option-btn');
+            const selectedBtn = document.getElementById(`btn-${questionIndex}-${optionIndex}`);
+            const explainBox = document.getElementById(`explain-${questionIndex}`);
+            
+            // Chặn click lại
+            if (card.getAttribute('data-answered') === 'true') return;
+            card.setAttribute('data-answered', 'true');
+
+            // Hiển thị kết quả
+            if (isCorrect) {
+                selectedBtn.classList.add('correct');
+                playSound('correct');
+                fireConfetti();
+                currentScore++;
+                document.getElementById('current-score').innerText = currentScore;
+            } else {
+                selectedBtn.classList.add('wrong');
+                playSound('wrong');
+                // Tìm và hiện đáp án đúng
+                buttons.forEach(btn => {
+                    // Logic tìm nút đúng dựa trên onclick attribute (hơi thủ công nhưng nhanh gọn cho static HTML)
+                    if (btn.getAttribute('onclick').includes('true')) {
+                        btn.classList.add('correct');
+                    }
+                });
+            }
+
+            // Disable tất cả buttons
+            buttons.forEach(btn => btn.disabled = true);
+
+            // Hiện giải thích
+            explainBox.style.display = 'block';
+        }
+
+        function finishQuiz() {
+            const modal = document.getElementById('result-modal');
+            const scoreDisplay = document.getElementById('final-score-display');
+            const comment = document.getElementById('teacher-comment');
+            
+            scoreDisplay.innerText = `${currentScore}/20`;
+            
+            if (currentScore === 20) {
+                comment.innerText = "Xuất sắc! Em là thiên tài ngữ pháp! 🌟💯";
+                fireConfetti();
+            } else if (currentScore >= 15) {
+                comment.innerText = "Rất tốt! Em nắm bài rất chắc! Keep it up! 👏";
+            } else if (currentScore >= 10) {
+                comment.innerText = "Khá lắm! Cố gắng ôn thêm cấu trúc câu em nhé! 💪";
+            } else {
+                comment.innerText = "Đừng buồn nhé! Hãy xem kỹ lại phần giải thích của cô để làm tốt hơn lần sau! ❤️";
+            }
+
+            modal.style.display = 'flex';
+            playSound('correct');
+        }
+
+        // Khởi tạo
+        initQuiz();
+
+    </script>
+<style id="ms-chi-nen-unlock-style">
+#passwordModal, #password-modal, #pwModal, #pw-modal, #pw-overlay,
+#lockModal, #passModal, #authModal, #auth-modal, #lockOverlay,
+#start-overlay, #intro-overlay, #start-screen,
+.password-modal, .lock-modal, .lock-overlay {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    z-index: -9999 !important;
+}
+</style>
+<script>
+// Remove password lock completely - direct quiz access
+(function() {
+    var initDone = false;
+    var renderCheckDone = false;
+
+    function hideEl(el, hard) {
+        if (!el) return;
+        if (hard) {
+            el.style.setProperty('display', 'none', 'important');
+            el.style.setProperty('visibility', 'hidden', 'important');
+            el.style.setProperty('opacity', '0', 'important');
+            el.style.setProperty('pointer-events', 'none', 'important');
+            el.style.setProperty('z-index', '-9999', 'important');
+        } else {
+            el.style.display = 'none';
+        }
+        el.classList.remove('active', 'show', 'open', 'visible', 'flex');
+    }
+
+    function hasRenderedQuiz() {
+        var containers = document.querySelectorAll(
+            '#quiz-container, #quizContainer, #questions-container, #questionPane, #quiz, #questions, #quiz-body, #questions-wrapper, #quiz-list, #quizList, #exercise-container, #app-container .split-container'
+        );
+        for (var i = 0; i < containers.length; i++) {
+            if (containers[i].querySelectorAll('button, input, select, textarea, .question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .question, .option-btn, .opt-btn, .ans-btn').length > 0) {
+                return true;
+            }
+        }
+        if (document.querySelectorAll('.question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .option-btn, .opt-btn, .ans-btn, .choice-btn').length > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    function ensureQuizRendered() {
+        if (renderCheckDone) return;
+        renderCheckDone = true;
+        if (hasRenderedQuiz()) return;
+
+        if (!hasRenderedQuiz() && typeof buildQuiz === 'function') { try { buildQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof initQuiz === 'function') { try { initQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderApp === 'function') { try { renderApp(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuiz === 'function') { try { renderQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuestions === 'function') { try { renderQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAllQuestions === 'function') { try { renderAllQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAll === 'function') { try { renderAll(); } catch(e){} }
+    }
+
+    function unlockNow() {
+        var pwIds = [
+            'passwordModal', 'password-modal', 'pwModal', 'pw-modal', 'pw-overlay',
+            'lockModal', 'passModal', 'authModal', 'auth-modal', 'lockOverlay',
+            'start-overlay', 'intro-overlay', 'start-screen'
+        ];
+        pwIds.forEach(function(id) {
+            hideEl(document.getElementById(id), true);
+        });
+
+        var modalEls = document.querySelectorAll('.password-modal, .lock-modal, .lock-overlay, #lockOverlay, #auth-modal');
+        modalEls.forEach(function(el) {
+            if (el.id !== 'resultModal' && el.id !== 'result-modal' && el.id !== 'scoreModal') {
+                hideEl(el, true);
+            }
+        });
+
+        ['nameModal', 'name-modal', 'nameInputModal'].forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) hideEl(el, false);
+        });
+
+        var qo = document.getElementById('quiz-overlay');
+        if (qo && (typeof isStarted === 'undefined' || !isStarted)) {
+            qo.style.display = 'none';
+        }
+
+        var mainIds = [
+            'mainContent', 'main-content', 'mainHeader', 'main-header',
+            'app-container', 'app', 'quizApp', 'quiz-wrapper', 'quizContainer', 'quiz-container', 'reading-content'
+        ];
+        mainIds.forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) {
+                el.classList.remove('hidden', 'blur', 'blurred', 'locked');
+                if (el.style.display === 'none') {
+                    el.style.removeProperty('display');
+                }
+                if (window.getComputedStyle(el).display === 'none') {
+                    var hasPane = el.querySelector('.pane, .left-pane, .right-pane, .split-container, .left-panel, .right-panel');
+                    if (id === 'main-content' || id.toLowerCase().includes('header') || el.classList.contains('main-container') || hasPane) {
+                        el.style.setProperty('display', 'flex', 'important');
+                    } else {
+                        el.style.setProperty('display', 'block', 'important');
+                    }
+                }
+            }
+        });
+
+        var qs = document.getElementById('quiz-screen');
+        if (qs) {
+            qs.classList.remove('hidden');
+            if (qs.classList.contains('flex-col')) {
+                qs.classList.add('flex');
+                qs.style.display = 'flex';
+            } else {
+                qs.style.display = 'block';
+            }
+        }
+
+        if (!initDone) {
+            initDone = true;
+
+            if (document.getElementById('start-overlay') && typeof startGame === 'function') {
+                var sn = document.getElementById('student-name') || document.getElementById('studentName');
+                if (sn && !sn.value.trim()) sn.value = 'Học sinh';
+            }
+            if (document.getElementById('name-modal') && typeof startQuiz === 'function') {
+                var sn2 = document.getElementById('student-name');
+                if (sn2 && !sn2.value.trim()) sn2.value = 'Học sinh';
+            }
+
+            if (typeof startQuiz === 'function' && (typeof isStarted === 'undefined' || !isStarted)) { try { startQuiz(); } catch(e){} }
+            if (typeof startGame === 'function') { try { startGame(); } catch(e){} }
+            if (typeof startTest === 'function') { try { startTest(); } catch(e){} }
+            if (typeof startApp === 'function') { try { startApp(); } catch(e){} }
+            if (typeof buildStarfield === 'function') { try { buildStarfield(); } catch(e){} }
+            if (typeof spawnFloats === 'function') { try { spawnFloats(); } catch(e){} }
+            if (typeof spawnFloaters === 'function') { try { spawnFloaters(); } catch(e){} }
+            if (typeof createFloatingBubbles === 'function') { try { createFloatingBubbles(); } catch(e){} }
+            if (typeof initAudio === 'function') { try { initAudio(); } catch(e){} }
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', unlockNow);
+    } else {
+        unlockNow();
+    }
+    if (document.readyState === 'complete') {
+        setTimeout(ensureQuizRendered, 150);
+    } else {
+        window.addEventListener('load', function() {
+            setTimeout(unlockNow, 20);
+            setTimeout(ensureQuizRendered, 150);
+            setTimeout(unlockNow, 300);
+            setTimeout(unlockNow, 700);
+        });
+    }
+    setTimeout(unlockNow, 50);
+    setTimeout(unlockNow, 200);
+    setTimeout(unlockNow, 600);
+    setTimeout(unlockNow, 1100);
+})();
+</script>
+</body>
+</html>
