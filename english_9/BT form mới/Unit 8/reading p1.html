@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 8: Tourism — Reading Cloze | MS Chí Nên</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* THEME: TROPICAL BEACH PARADISE */
+:root{--sky1:#ffb26b;--sky2:#ff7e9a;--sky3:#7d6ae8;--sea1:#26c6da;--sea2:#0f7ea3;--sea3:#0a4f6e;
+  --sand:#fff8ec;--ink:#2b2140;--gold:#ffca4b;--coral:#ff6b6b;--leaf:#1f8a5f;
+  --correct:#1fa565;--correctbg:#d6f6e3;--wrong:#e6455c;--wrongbg:#ffe0e4;}
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:18px}
+body{font-family:'Nunito',sans-serif;color:var(--ink);min-height:100vh;position:relative;overflow-x:hidden;padding-bottom:60px;
+  background:linear-gradient(180deg,var(--sky3) 0%,var(--sky2) 30%,var(--sky1) 52%,var(--sea1) 68%,var(--sea2) 88%,var(--sea3) 100%)}
+.sun{position:fixed;top:6%;left:50%;transform:translateX(-50%);width:110px;height:110px;border-radius:50%;z-index:0;
+  background:radial-gradient(circle,var(--gold),rgba(255,202,75,0));box-shadow:0 0 90px 34px rgba(255,202,75,.55);animation:glow 4s ease-in-out infinite alternate}
+@keyframes glow{from{opacity:.7}to{opacity:1}}
+.fly{position:fixed;z-index:1;font-size:1.3rem;opacity:.85;animation:flyAcross linear infinite}
+@keyframes flyAcross{from{transform:translateX(-10vw)}to{transform:translateX(110vw)}}
+.boat{position:fixed;bottom:17%;z-index:1;font-size:1.6rem;animation:sail 14s linear infinite}
+@keyframes sail{from{transform:translateX(-10vw)}to{transform:translateX(110vw)}}
+.palm{position:fixed;bottom:0;z-index:1;font-size:6rem;transform-origin:bottom center;animation:sway 4s ease-in-out infinite}
+.palm.l{left:-1%}
+.palm.r{right:-1%;animation-delay:-2s}
+@keyframes sway{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
+.crab{position:fixed;bottom:8px;z-index:2;font-size:1.7rem;animation:crabWalk 11s linear infinite}
+@keyframes crabWalk{0%{transform:translateX(-8vw) scaleX(1)}48%{transform:translateX(104vw) scaleX(1)}50%{transform:translateX(104vw) scaleX(-1)}98%{transform:translateX(-8vw) scaleX(-1)}100%{transform:translateX(-8vw) scaleX(1)}}
+.umbrella{position:fixed;bottom:2%;z-index:1;font-size:2.4rem;opacity:.9;animation:sway 5s ease-in-out infinite}
+.bubble{position:fixed;bottom:2%;border-radius:50%;background:rgba(255,255,255,.5);z-index:1;animation:bubbleUp linear infinite}
+@keyframes bubbleUp{0%{transform:translateY(0);opacity:.7}90%{opacity:.5}100%{transform:translateY(-46vh);opacity:0}}
+.wave{position:fixed;bottom:0;left:0;width:100%;height:56px;z-index:1;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 60'%3E%3Cpath d='M0 32 Q50 4 100 32 T200 32 V60 H0 Z' fill='%230f7ea3'/%3E%3C/svg%3E");
+  background-repeat:repeat-x;background-size:200px 56px;animation:waveScroll 7s linear infinite}
+.wave2{position:fixed;bottom:-6px;left:0;width:100%;height:50px;z-index:1;opacity:.8;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 60'%3E%3Cpath d='M0 34 Q50 8 100 34 T200 34 V60 H0 Z' fill='%230a4f6e'/%3E%3C/svg%3E");
+  background-repeat:repeat-x;background-size:160px 50px;animation:waveScroll 4.5s linear infinite reverse}
+@keyframes waveScroll{from{background-position-x:0}to{background-position-x:-200px}}
+.wrap{position:relative;z-index:2;max-width:1420px;margin:0 auto;padding:16px 18px 40px}
+header{background:var(--sand);border-radius:22px;padding:17px 26px;text-align:center;margin-bottom:14px;
+  box-shadow:0 12px 30px rgba(0,0,0,.2);border:3px dashed var(--coral)}
+header h1{font-family:'Pacifico',cursive;font-weight:400;font-size:2.1rem;color:var(--sea3)}
+header .teacher{font-weight:700;color:var(--sea2);margin-top:4px}
+header .promo{font-weight:800;color:#c0392b;margin-top:6px;font-size:.9rem}
+.note{max-width:1050px;margin:0 auto 16px;background:var(--sand);border:2px dashed var(--gold);border-radius:16px;
+  padding:11px 18px;font-weight:700;color:#7a4a1a;text-align:center;font-size:.9rem;line-height:1.7}
+.scorebar{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:8px}
+.chip{background:var(--sand);border-radius:12px;padding:7px 16px;font-family:'Pacifico';font-size:1rem;color:var(--sea3);box-shadow:0 4px 12px rgba(0,0,0,.16)}
+.chip b{color:var(--coral);font-family:'Nunito';font-weight:900}
+.bar{height:11px;background:var(--sand);border-radius:8px;overflow:hidden;max-width:480px;margin:0 auto 18px;box-shadow:0 4px 12px rgba(0,0,0,.16)}
+.bar span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--coral),var(--gold),var(--sea1));transition:width .4s}
+.section{background:var(--sand);border-radius:20px;box-shadow:0 10px 28px rgba(0,0,0,.2);margin-bottom:22px;overflow:hidden;border:1px solid rgba(0,0,0,.06)}
+.sec-head{padding:14px 22px;font-family:'Pacifico';font-size:1.25rem;color:var(--sea3);background:linear-gradient(90deg,#ffe9c7,#ffd7cf)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.lp,.rp{padding:18px 22px;max-height:700px;overflow-y:auto}
+.lp{border-right:2px dashed rgba(0,0,0,.12)}
+.lp::-webkit-scrollbar,.rp::-webkit-scrollbar{width:8px}
+.lp::-webkit-scrollbar-thumb,.rp::-webkit-scrollbar-thumb{background:var(--sea2);border-radius:8px}
+.pblock{background:#fff;border:2px solid rgba(0,0,0,.08);border-left:5px solid var(--sea2);border-radius:14px;padding:13px 16px;margin-bottom:13px}
+.pblock p{font-size:1rem;line-height:1.9}
+.bk{display:inline-block;min-width:30px;text-align:center;font-family:'Pacifico';color:#fff;background:var(--coral);
+  border-radius:8px;padding:1px 8px;margin:0 2px;font-size:.9rem}
+.tbtn{margin-top:8px;cursor:pointer;font-family:'Pacifico';border:none;color:#fff;background:linear-gradient(90deg,var(--gold),var(--coral));
+  padding:6px 16px;border-radius:20px;font-size:.85rem}
+.trans{display:none;margin-top:9px;padding:11px 14px;background:#eaf7f4;border-left:4px solid var(--sea2);border-radius:0 10px 10px 0;font-size:.94rem;line-height:1.8}
+.trans.show{display:block;animation:fade .3s}
+@keyframes fade{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.trans b{color:var(--coral)}
+.gloss{background:#fff8e8;border:2px dashed var(--gold);border-radius:14px;padding:12px 15px;margin-top:6px}
+.gloss .gt{font-family:'Pacifico';color:#7a4a1a;margin-bottom:8px}
+table.gtb{width:100%;border-collapse:collapse;font-size:.86rem}
+table.gtb th{background:var(--sea2);color:#fff;padding:7px 9px;text-align:left;font-family:'Pacifico';font-size:.76rem}
+table.gtb td{padding:6px 9px;border-bottom:1px solid rgba(0,0,0,.08)}
+table.gtb td:first-child{font-weight:700;color:var(--coral)}
+table.gtb td:nth-child(2){color:#7a4a1a;font-style:italic;font-size:.8rem;white-space:nowrap}
+.qh{font-family:'Nunito';font-weight:800;font-size:.96rem;margin-bottom:10px;line-height:1.6}
+.qh .num{display:inline-block;width:30px;height:30px;line-height:30px;text-align:center;border-radius:50%;
+  background:linear-gradient(135deg,var(--coral),var(--sky3));color:#fff;font-family:'Pacifico';margin-right:7px;font-size:.9rem}
+.qblock{background:#fff;border:2px solid rgba(0,0,0,.08);border-radius:14px;padding:14px 16px;margin-bottom:14px}
+.opt{display:block;width:100%;text-align:left;cursor:pointer;margin:7px 0;padding:11px 14px;border:2px solid rgba(0,0,0,.14);
+  border-radius:12px;background:#fff;font-family:'Nunito';font-weight:700;font-size:.94rem;color:var(--ink);transition:.15s}
+.opt:hover:not(:disabled){border-color:var(--sea2);background:#eaf7f4;transform:translateX(3px)}
+.opt:disabled{cursor:default}
+.opt.correct{background:var(--correctbg);border-color:var(--correct);color:#0d5c33}
+.opt.wrong{background:var(--wrongbg);border-color:var(--wrong);color:#8a1620;animation:shk .4s}
+@keyframes shk{10%,90%{transform:translateX(-2px)}20%,80%{transform:translateX(4px)}30%,50%,70%{transform:translateX(-6px)}40%,60%{transform:translateX(6px)}}
+.exp{display:none;margin-top:11px;background:#fff2ea;border:2px solid var(--coral);border-radius:12px;padding:12px 15px;font-size:.88rem;line-height:1.8}
+.exp.on{display:block;animation:fade .3s}
+.exp .badge{display:inline-block;background:var(--correct);color:#fff;font-family:'Pacifico';border-radius:10px;padding:2px 12px;margin-bottom:7px;font-size:.82rem}
+.exp .badge.bad{background:var(--wrong)}
+.exp .step{margin-top:7px}
+.exp .slab{font-family:'Pacifico';color:var(--sea3);font-size:.86rem}
+.exp .obox{background:#fff;border-radius:8px;padding:6px 10px;margin:5px 0;display:flex;flex-wrap:wrap;gap:4px 8px}
+.exp ul{margin:5px 0 0;padding-left:18px}
+.exp li{margin-bottom:5px}
+.p-word{font-weight:800;color:var(--sky3)}
+.p-mean{color:#7a4a1a;font-weight:700}
+.pos{display:inline-block;font-family:'Nunito';font-weight:800;font-size:.64rem;padding:1px 7px;border-radius:8px;text-transform:uppercase;margin-right:2px}
+.pos-n{background:#d0ebff;color:#1c6fb0}
+.pos-v{background:#ffe0d6;color:#c0392b}
+.pos-adj{background:#efd9ff;color:#7a3fc9}
+.pos-adv{background:#c9f2e6;color:#0b8a63}
+.pos-prep{background:#ffdcea;color:#c2255c}
+.pos-art{background:#f1e6cf;color:#8a6a1a}
+.pos-phr{background:#dcefc9;color:#4a7a1f}
+.hl-green{color:var(--correct);font-weight:800}
+.hl-red{color:var(--wrong);font-weight:800}
+.quote{background:#eaf7f4;border-left:4px solid var(--sea2);border-radius:0 10px 10px 0;padding:9px 12px;margin-top:7px;font-size:.85rem;line-height:1.75;color:#0d4f3d}
+.quote b{color:var(--coral)}
+.submit-wrap{text-align:center;margin:20px 0}
+.bsub{font-family:'Pacifico';font-size:1.1rem;color:#fff;border:none;border-radius:28px;padding:14px 32px;cursor:pointer;
+  background:linear-gradient(90deg,var(--coral),var(--sky3));box-shadow:0 10px 22px rgba(255,107,107,.42)}
+.ov{display:none;position:fixed;inset:0;z-index:999;background:rgba(20,10,40,.55);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:16px}
+.ov.on{display:flex}
+.mb{background:var(--sand);border-radius:22px;padding:26px 28px;max-width:440px;width:100%;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.4);max-height:92vh;overflow-y:auto;border:3px dashed var(--coral)}
+.mb h2{font-family:'Pacifico';color:var(--coral);font-size:1.3rem;margin-bottom:12px}
+.mb input{width:100%;font-family:inherit;font-size:1rem;font-weight:700;padding:11px 14px;border:2px solid var(--sea2);border-radius:14px;text-align:center;outline:none;margin-bottom:8px}
+.mb .err{color:var(--wrong);font-weight:700;font-size:.85rem;display:none;margin-bottom:8px}
+.mb .err.show{display:block}
+.mb button{cursor:pointer;font-family:'Pacifico';border:none;color:#fff;border-radius:20px;padding:10px 24px;background:linear-gradient(90deg,var(--sea2),var(--sky3));font-size:.98rem;margin-top:4px}
+.mb .close{background:#999}
+.gif{width:160px;margin:11px auto;display:block;border-radius:12px;border:3px solid var(--gold)}
+.rscore{font-family:'Pacifico';font-size:2.3rem;color:var(--coral)}
+.r10{font-family:'Pacifico';font-size:1.15rem;color:var(--sea2)}
+.rcmt{margin:11px 0;padding:11px 14px;background:#fff8e8;border:2px dashed var(--gold);border-radius:12px;font-size:.88rem;line-height:1.7}
+@media(max-width:860px){.split{grid-template-columns:1fr}.lp{border-right:none;border-bottom:2px dashed rgba(0,0,0,.12)}.palm{font-size:3.5rem}}
+</style>
+</head>
+<body>
+<div class="sun"></div>
+<span class="fly" style="top:11%;animation-duration:16s">🕊️</span>
+<span class="fly" style="top:17%;animation-duration:22s;animation-delay:-6s">☁️</span>
+<span class="fly" style="top:8%;animation-duration:19s;animation-delay:-11s">🕊️</span>
+<span class="boat" style="animation-delay:-3s">⛵</span>
+<div class="palm l">🌴</div><div class="palm r">🌴</div>
+<div class="umbrella" style="left:6%">🏖️</div><div class="umbrella" style="right:8%;animation-delay:-2.5s">⛱️</div>
+<span class="crab" style="animation-delay:-4s">🦀</span>
+<div id="bubbles"></div>
+<div class="wave2"></div><div class="wave"></div>
+
+<div class="wrap">
+<header>
+  <h1>🏝️ Unit 8: Tourism — Reading Cloze</h1>
+  <div class="teacher">Giáo viên tạo: MS Chí Nên</div>
+  <div class="promo">📞 0936 322 809 — Đăng ký khoá học tiếng Anh lớp 1 → lớp 12, trải nghiệm web giải chi tiết đỉnh cao!</div>
+</header>
+
+<div class="note">🌺 Nhắc nhở có tâm từ MS Chí Nên: mỗi đoạn quảng cáo/du lịch đều có văn phong riêng — đọc kỹ câu trước và sau chỗ trống để bắt đúng "tông giọng" nhé! Đọc hết phần giải thích dù câu đó em làm đúng, Ms tin cả lớp mình sẽ làm rất tốt 🐚</div>
+
+<div class="scorebar">
+  <div class="chip">✅ Đúng: <b id="cCorrect">0</b>/14</div>
+  <div class="chip">📝 Đã làm: <b id="cDone">0</b>/14</div>
+</div>
+<div class="bar"><span id="barFill"></span></div>
+
+<!-- ============== 1. HOI AN ============== -->
+<div class="section">
+  <div class="sec-head">🏮 Discover the Magic of Hoi An! (Câu 1–3)</div>
+  <div class="split">
+    <div class="lp">
+      <div class="pblock"><p><b>Ancient Town:</b> Wander through charming streets, admire historic houses, and cross the iconic <span class="bk">1</span> Japanese Covered Bridge.<br>
+      <b>Tailored Clothes:</b> Get clothes made just for you by skilled tailors, from elegant suits to <span class="bk">2</span> dresses.<br>
+      <b>Lanterns at Night:</b> Witness the enchanting glow of colourful lanterns illuminating the river and streets after sunset.<br>
+      <b>Delicious Cuisine:</b> Savour mouthwatering local specialities like Cao Lầu and Banh Mi in cosy restaurants.<br>
+      Book your trip today and experience the unique charm <span class="bk">3</span> Hoi An!</p>
+        <button class="tbtn" onclick="tg('v1',this)">🔊 Xem bản dịch</button>
+        <div class="trans" id="v1"><b>Phố Cổ:</b> Dạo bước qua những con phố duyên dáng, chiêm ngưỡng những ngôi nhà cổ, và băng qua Chùa Cầu Nhật Bản mang tính biểu tượng.<br>
+        <b>Trang phục may đo:</b> Đặt may trang phục riêng cho bạn bởi những người thợ lành nghề, từ bộ vest lịch lãm đến những chiếc váy xinh đẹp.<br>
+        <b>Đèn lồng về đêm:</b> Chiêm ngưỡng ánh sáng huyền ảo của những chiếc đèn lồng đầy màu sắc thắp sáng dòng sông và các con phố sau hoàng hôn.<br>
+        <b>Ẩm thực ngon:</b> Thưởng thức các món đặc sản địa phương hấp dẫn như Cao Lầu và Bánh Mì trong những nhà hàng ấm cúng.<br>
+        Đặt tour ngay hôm nay và trải nghiệm nét quyến rũ độc đáo của Hội An!</div>
+      </div>
+      <div class="gloss"><div class="gt">📖 Từ vựng</div>
+        <table class="gtb"><tr><th>Từ</th><th>Loại</th><th>Nghĩa</th></tr>
+          <tr><td>wander</td><td>v</td><td>dạo bước</td></tr>
+          <tr><td>iconic</td><td>adj</td><td>mang tính biểu tượng</td></tr>
+          <tr><td>tailored</td><td>adj</td><td>may đo</td></tr>
+          <tr><td>illuminate</td><td>v</td><td>thắp sáng</td></tr>
+          <tr><td>savour</td><td>v</td><td>thưởng thức</td></tr>
+          <tr><td>charm</td><td>n</td><td>nét quyến rũ</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="rp" id="secA"></div>
+  </div>
+</div>
+
+<!-- ============== 2. TROPICAL GETAWAY ============== -->
+<div class="section">
+  <div class="sec-head">🏝️ Adventure Awaits! Join our Tropical Getaway! (Câu 4–6)</div>
+  <div class="split">
+    <div class="lp">
+      <div class="pblock"><p>We're thrilled to <span class="bk">4</span> a special island-hopping adventure organised by Island Escapes Co. On this tour, you will:<br>
+      • Explore Islands: Discover hidden beaches and vibrant coral reefs.<br>
+      • Try Island Food: Enjoy fresh seafood and tropical fruits.<br>
+      • Water Activities: Go snorkelling, swimming, and kayaking in crystal-clear waters.<br>
+      • Relaxing Time: Unwind on sandy beaches and <span class="bk">5</span> the sun.<br>
+      Tour Dates: July 20 – August 3, 2024. Destinations: Phuket, Bali, Fiji. Spots are limited!<br>
+      Join us for an <span class="bk">6</span> journey to paradise!</p>
+        <button class="tbtn" onclick="tg('v2',this)">🔊 Xem bản dịch</button>
+        <div class="trans" id="v2">Chúng tôi rất vui mừng <b>thông báo</b> một chuyến phiêu lưu khám phá đảo đặc biệt do Island Escapes Co. tổ chức. Trong tour này, bạn sẽ:<br>
+        • Khám phá các hòn đảo: Tìm ra những bãi biển ẩn giấu và rạn san hô rực rỡ.<br>
+        • Thử ẩm thực đảo: Thưởng thức hải sản tươi và trái cây nhiệt đới.<br>
+        • Hoạt động dưới nước: Lặn ống thở, bơi lội và chèo kayak trong làn nước trong vắt.<br>
+        • Thời gian thư giãn: Thả lỏng trên bãi cát và <b>tắm nắng</b>.<br>
+        Ngày khởi hành: 20/7 – 3/8/2024. Điểm đến: Phuket, Bali, Fiji. Số chỗ có hạn!<br>
+        Hãy tham gia cùng chúng tôi cho một hành trình <b>khó quên</b> đến thiên đường!</div>
+      </div>
+      <div class="gloss"><div class="gt">📖 Từ vựng</div>
+        <table class="gtb"><tr><th>Từ</th><th>Loại</th><th>Nghĩa</th></tr>
+          <tr><td>island-hopping</td><td>n</td><td>du lịch nhảy đảo</td></tr>
+          <tr><td>coral reef</td><td>n</td><td>rạn san hô</td></tr>
+          <tr><td>snorkel</td><td>v</td><td>lặn ống thở</td></tr>
+          <tr><td>kayak</td><td>v</td><td>chèo thuyền kayak</td></tr>
+          <tr><td>crystal-clear</td><td>adj</td><td>trong vắt</td></tr>
+          <tr><td>unwind</td><td>v</td><td>thư giãn, thả lỏng</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="rp" id="secB"></div>
+  </div>
+</div>
+
+<!-- ============== 3. MINHTRAN.COM ============== -->
+<div class="section">
+  <div class="sec-head">🌍 Discover the World and Make Unforgettable Memories! (Câu 7–9)</div>
+  <div class="split">
+    <div class="lp">
+      <div class="pblock"><p>Crafted by passionate travellers, minhtran.com is your one-stop shop for planning incredible journeys. Packed with helpful advice, detailed guides, and inspiring travel videos, our website empowers you to transform ordinary trips <span class="bk">7</span> extraordinary experiences.<br>
+      <span class="bk">8</span> how to choose the perfect destinations, travel on a budget, immerse yourself in diverse cultures, and engage in exciting activities – all from the <span class="bk">9</span> of your home.<br>
+      Embark on your next adventure today! Visit minhtran.com now!</p>
+        <button class="tbtn" onclick="tg('v3',this)">🔊 Xem bản dịch</button>
+        <div class="trans" id="v3">Được xây dựng bởi những người đam mê du lịch, minhtran.com là điểm đến duy nhất giúp bạn lên kế hoạch cho những hành trình tuyệt vời. Với đầy đủ lời khuyên hữu ích, hướng dẫn chi tiết và video truyền cảm hứng, trang web giúp bạn biến những chuyến đi bình thường <b>thành</b> những trải nghiệm phi thường.<br>
+        Hãy <b>học</b> cách chọn điểm đến hoàn hảo, du lịch tiết kiệm, hòa mình vào các nền văn hóa đa dạng và tham gia hoạt động thú vị – tất cả ngay tại sự <b>thoải mái</b> của ngôi nhà bạn.<br>
+        Bắt đầu cuộc phiêu lưu tiếp theo ngay hôm nay! Truy cập minhtran.com ngay!</div>
+      </div>
+      <div class="gloss"><div class="gt">📖 Từ vựng</div>
+        <table class="gtb"><tr><th>Từ</th><th>Loại</th><th>Nghĩa</th></tr>
+          <tr><td>craft</td><td>v</td><td>xây dựng, chế tác tỉ mỉ</td></tr>
+          <tr><td>one-stop shop</td><td>n</td><td>nơi giải quyết mọi nhu cầu</td></tr>
+          <tr><td>empower</td><td>v</td><td>trao quyền, giúp có thể</td></tr>
+          <tr><td>immerse</td><td>v</td><td>hòa mình, đắm chìm</td></tr>
+          <tr><td>embark on</td><td>v.phr</td><td>bắt đầu (hành trình)</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="rp" id="secC"></div>
+  </div>
+</div>
+
+<!-- ============== 4. SPORTS TOURISM ============== -->
+<div class="section">
+  <div class="sec-head">🏆 Different Types of Sports Tourism (Câu 10–14)</div>
+  <div class="split">
+    <div class="lp">
+      <div class="pblock"><p>There are actually four primary types of sports tourism. These include:<br><br>
+      <b>Event-based tourism:</b> Sports event tourism involves travelling to another city or country to watch a sport event. Examples of sports <span class="bk">10</span> in this category include travelling to watch major sporting events like the Olympics or the Super Bowl.</p>
+        <button class="tbtn" onclick="tg('v4',this)">🔊 Xem bản dịch</button>
+        <div class="trans" id="v4">Trên thực tế có bốn loại hình du lịch thể thao chính. Bao gồm:<br><br>
+        <b>Du lịch theo sự kiện:</b> là việc di chuyển đến một thành phố hoặc quốc gia khác để xem một sự kiện thể thao. Ví dụ về <b>du lịch thể thao</b> thuộc loại này bao gồm việc đi xem các sự kiện thể thao lớn như Thế vận hội hay Super Bowl.</div>
+      </div>
+      <div class="pblock"><p><b>Active sports tourism:</b> This form of sports tourism <span class="bk">11</span> actually participating in a sport while visiting a destination. Some travellers choose tourism <span class="bk">12</span> known for a specific sport or outdoor activity. Examples include going to Hawaii for surfing or to Colorado for skiing.</p>
+        <button class="tbtn" onclick="tg('v5',this)">🔊 Xem bản dịch</button>
+        <div class="trans" id="v5"><b>Du lịch thể thao chủ động:</b> Loại hình này <b>liên quan tới</b> việc thực sự tham gia vào một môn thể thao trong khi đi du lịch. Một số du khách chọn các <b>điểm đến</b> du lịch nổi tiếng về một môn thể thao hoặc hoạt động ngoài trời cụ thể. Ví dụ như đến Hawaii để lướt sóng hoặc đến Colorado để trượt tuyết.</div>
+      </div>
+      <div class="pblock"><p><b>Sports heritage tourism:</b> This involves visiting places with <span class="bk">13</span> significance to sport. Examples might include visiting the Baseball Hall of Fame in New York, Camp Nou in Barcelona, or a sports museum.<br><br>
+      <b>Sport-themed cruises or tours:</b> These <span class="bk">14</span> trips combine travel with a sporting event or activity. Examples include cruises for people who love to play tennis or tours that take sport fans to different stadiums around the world.</p>
+        <button class="tbtn" onclick="tg('v6',this)">🔊 Xem bản dịch</button>
+        <div class="trans" id="v6"><b>Du lịch di sản thể thao:</b> Liên quan đến việc ghé thăm những địa điểm có ý nghĩa <b>lịch sử</b> đối với thể thao. Ví dụ như thăm Đại sảnh Danh vọng Bóng chày ở New York, sân Camp Nou ở Barcelona, hoặc một bảo tàng thể thao.<br><br>
+        <b>Du thuyền/tour theo chủ đề thể thao:</b> Đây là những chuyến đi được <b>tổ chức</b> kết hợp du lịch với một sự kiện hoặc hoạt động thể thao. Ví dụ như du thuyền cho người yêu quần vợt hoặc tour đưa fan thể thao đến các sân vận động khác nhau trên thế giới.</div>
+      </div>
+      <div class="gloss"><div class="gt">📖 Từ vựng</div>
+        <table class="gtb"><tr><th>Từ</th><th>Loại</th><th>Nghĩa</th></tr>
+          <tr><td>primary</td><td>adj</td><td>chính, chủ yếu</td></tr>
+          <tr><td>heritage</td><td>n</td><td>di sản</td></tr>
+          <tr><td>Hall of Fame</td><td>n</td><td>đại sảnh danh vọng</td></tr>
+          <tr><td>significance</td><td>n</td><td>ý nghĩa, tầm quan trọng</td></tr>
+          <tr><td>stadium</td><td>n</td><td>sân vận động</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="rp" id="secD"></div>
+  </div>
+</div>
+
+<div class="submit-wrap"><button class="bsub" onclick="askName()">🎯 Nộp bài tính điểm &amp; xem kết quả</button></div>
+</div>
+
+<div class="ov" id="nameModal"><div class="mb">
+  <h2>🖊️ Nhập tên để nộp bài</h2>
+  <input id="nameInput" placeholder="Họ và tên học sinh..." onkeydown="if(event.key==='Enter')okName()">
+  <div class="err" id="nameErr">⚠️ Em chưa nhập tên! Bắt buộc phải có tên mới nộp được bài nha.</div>
+  <button onclick="okName()">✅ Xác nhận &amp; chấm điểm</button>
+</div></div>
+
+<div class="ov" id="scoreModal"><div class="mb">
+  <div id="mEmoji" style="font-size:3.2rem">🏆</div>
+  <h2 id="mTitle">KẾT QUẢ</h2>
+  <div id="mName" style="font-weight:700;color:var(--sea2)"></div>
+  <img class="gif" id="mGif" src="" alt="" onerror="this.style.display='none'">
+  <div class="rscore" id="mScore">0/14</div>
+  <div class="r10" id="mScore10">0.00 / 10</div>
+  <div class="rcmt" id="mComment"></div>
+  <button class="close" onclick="document.getElementById('scoreModal').classList.remove('on')">📚 Xem lại bài</button>
+  <button onclick="location.reload()">🔄 Làm lại</button>
+</div></div>
+
+<script>
+function tg(id,btn){const el=document.getElementById(id);el.classList.toggle('show');
+  btn.textContent=el.classList.contains('show')?'🔼 Ẩn bản dịch':'🔊 Xem bản dịch';}
+var AC;function ac(){if(!AC)AC=new (window.AudioContext||window.webkitAudioContext)();return AC;}
+function ding(){try{var c=ac();[[880,0],[1320,.09],[1760,.19]].forEach(function(p){var o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.type='sine';o.frequency.value=p[0];var t=c.currentTime+p[1];g.gain.setValueAtTime(.25,t);g.gain.exponentialRampToValueAtTime(.001,t+.3);o.start(t);o.stop(t+.3);});}catch(e){}}
+function buzz(){try{var c=ac();[[330,0],[220,.15]].forEach(function(p){var o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.type='square';o.frequency.value=p[0];var t=c.currentTime+p[1];g.gain.setValueAtTime(.2,t);g.gain.exponentialRampToValueAtTime(.001,t+.2);o.start(t);o.stop(t+.2);});}catch(e){}}
+function W(word,pos,mean){return '<div class="obox"><span class="pos pos-'+pos+'">'+pos+'</span><span class="p-word">'+word+'</span><span class="p-mean">— '+mean+'</span></div>';}
+
+var QD=[
+{n:1,lb:'1',s:'A',q:'1. ...cross the iconic <b>(1)</b> Japanese Covered Bridge.',
+ o:["a","an","the","no article"],a:"no article",
+ e:{tr:'Dịch: "...băng qua cây Chùa Cầu Nhật Bản ___ mang tính biểu tượng."',
+ op:W('a','art','một (mạo từ bất định, trước phụ âm)')+W('an','art','một (mạo từ bất định, trước nguyên âm)')+W('the','art','(mạo từ xác định)')+W('no article','art','không dùng mạo từ'),
+ ok:'Đáp án đúng là <span class="hl-green">no article</span>. Nhìn lại cả câu: "cross <b>the</b> iconic (1)___ Japanese Covered Bridge" — mạo từ "the" đã đứng ở ĐẦU cụm danh từ rồi, nên chỗ trống ở giữa "iconic" và "Japanese Covered Bridge" KHÔNG được thêm mạo từ nữa (tránh lỗi lặp hai mạo từ trong một cụm).',
+ ev:'"...cross <b>the</b> iconic Japanese Covered Bridge." 👉 Một cụm danh từ chỉ cần MỘT mạo từ duy nhất đứng đầu.',
+ no:'<ul><li><span class="hl-red">a</span>, <span class="hl-red">an</span>, <span class="hl-red">the</span> — cả ba đều tạo lỗi có HAI mạo từ trong cùng một cụm danh từ, sai ngữ pháp.</li></ul>'}},
+{n:2,lb:'2',s:'A',q:'2. ...from elegant suits to <b>(2)</b> dresses.',
+ o:["beauty","beautifying","beautiful","beautifully"],a:"beautiful",
+ e:{tr:'Dịch: "...từ những bộ vest lịch lãm đến những chiếc váy ___."',
+ op:W('beauty','n','vẻ đẹp')+W('beautifying','v','đang làm đẹp')+W('beautiful','adj','đẹp')+W('beautifully','adv','một cách đẹp đẽ'),
+ ok:'Đáp án đúng là <span class="hl-green">beautiful</span>. Chỗ trống đứng trước danh từ "dresses" cần TÍNH TỪ, song song với "elegant suits" ở vế trước.',
+ ev:'"...from <b>elegant</b> suits to <b>beautiful</b> dresses." 👉 Cấu trúc song song: tính từ + danh từ.',
+ no:'<ul><li><span class="hl-red">beauty</span> — là danh từ, hai danh từ không đứng liền nhau kiểu này.</li><li><span class="hl-red">beautifying</span> — là động từ V-ing, không bổ nghĩa trực tiếp cho danh từ.</li><li><span class="hl-red">beautifully</span> — là trạng từ, chỉ bổ nghĩa cho động từ.</li></ul>'}},
+{n:3,lb:'3',s:'A',q:'3. ...experience the unique charm <b>(3)</b> Hoi An!',
+ o:["to","in","on","of"],a:"of",
+ e:{tr:'Dịch: "...trải nghiệm nét quyến rũ độc đáo ___ Hội An!"',
+ op:W('to','prep','đến, cho')+W('in','prep','trong')+W('on','prep','trên')+W('of','prep','của'),
+ ok:'Đáp án đúng là <span class="hl-green">of</span>. Cấu trúc sở hữu "the charm of + địa danh" nghĩa "nét quyến rũ CỦA [nơi đó]".',
+ ev:'"...experience the unique charm <b>of</b> Hoi An!" 👉 "...trải nghiệm nét quyến rũ độc đáo của Hội An!"',
+ no:'<ul><li><span class="hl-red">to</span>, <span class="hl-red">in</span>, <span class="hl-red">on</span> — không tạo cụm sở hữu có nghĩa "charm ___ Hoi An"; chỉ "of" diễn tả đúng quan hệ sở hữu.</li></ul>'}},
+
+{n:4,lb:'4',s:'B',q:"4. We're thrilled to <b>(4)</b> a special island-hopping adventure.",
+ o:["announce","afford","save","require"],a:"announce",
+ e:{tr:'Dịch: "Chúng tôi rất vui mừng ___ một chuyến phiêu lưu khám phá đảo đặc biệt."',
+ op:W('announce','v','thông báo')+W('afford','v','đủ khả năng chi trả')+W('save','v','tiết kiệm')+W('require','v','yêu cầu'),
+ ok:'Đáp án đúng là <span class="hl-green">announce</span>. Đây là một quảng cáo GIỚI THIỆU tour mới — "thrilled to announce" (rất vui mừng thông báo) là cách mở đầu quảng cáo/thông báo rất phổ biến.',
+ ev:'"We\'re thrilled to <b>announce</b> a special island-hopping adventure organised by Island Escapes Co." 👉 "Chúng tôi rất vui mừng thông báo một chuyến phiêu lưu khám phá đảo đặc biệt."',
+ no:'<ul><li><span class="hl-red">afford</span> — nghĩa "đủ tiền để mua/làm gì", không hợp ngữ cảnh giới thiệu tour.</li><li><span class="hl-red">save</span> — nghĩa "tiết kiệm", không liên quan tới việc công bố tour.</li><li><span class="hl-red">require</span> — nghĩa "yêu cầu", công ty không "yêu cầu" một chuyến đi, họ tổ chức và thông báo nó.</li></ul>'}},
+{n:5,lb:'5',s:'B',q:'5. Unwind on sandy beaches and <b>(5)</b> the sun.',
+ o:["take on","put on","soak up","work out"],a:"soak up",
+ e:{tr:'Dịch: "Thả lỏng trên bãi cát và ___ ánh nắng."',
+ op:W('take on','phr','đảm nhận (công việc)')+W('put on','phr','mặc vào')+W('soak up','phr','tắm nắng, hấp thụ')+W('work out','phr','tập thể dục'),
+ ok:'Đáp án đúng là <span class="hl-green">soak up</span>. Cụm động từ cố định <b>"soak up the sun"</b> nghĩa "tắm nắng, hấp thụ ánh nắng" — rất phổ biến khi mô tả việc thư giãn trên bãi biển.',
+ ev:'"Unwind on sandy beaches and <b>soak up</b> the sun." 👉 "Thả lỏng trên bãi cát và tắm nắng."',
+ no:'<ul><li><span class="hl-red">take on</span> — nghĩa "đảm nhận, nhận lấy (trách nhiệm)", không hợp với "the sun".</li><li><span class="hl-red">put on</span> — nghĩa "mặc/đội vào", không đi với "the sun" theo nghĩa tắm nắng.</li><li><span class="hl-red">work out</span> — nghĩa "tập thể dục", trái ngược với không khí thư giãn "unwind" ở đầu câu.</li></ul>'}},
+{n:6,lb:'6',s:'B',q:'6. Join us for an <b>(6)</b> journey to paradise!',
+ o:["forgetfully","forgetful","forget","unforgettable"],a:"unforgettable",
+ e:{tr:'Dịch: "Hãy tham gia cùng chúng tôi cho một hành trình ___ đến thiên đường!"',
+ op:W('forgetfully','adv','một cách hay quên')+W('forgetful','adj','hay quên')+W('forget','v','quên')+W('unforgettable','adj','khó quên'),
+ ok:'Đáp án đúng là <span class="hl-green">unforgettable</span>. Chỗ trống cần TÍNH TỪ bổ nghĩa cho "journey" (hành trình), và trong ngữ cảnh quảng cáo du lịch, "unforgettable journey" (hành trình khó quên) là cụm mang nghĩa TÍCH CỰC phù hợp để thu hút khách.',
+ ev:'"Join us for an <b>unforgettable</b> journey to paradise!" 👉 "Hãy tham gia cùng chúng tôi cho một hành trình khó quên đến thiên đường!"',
+ no:'<ul><li><span class="hl-red">forgetfully</span> — là trạng từ, không bổ nghĩa cho danh từ "journey".</li><li><span class="hl-red">forgetful</span> — tuy là tính từ nhưng nghĩa "hay quên" (mô tả người), không hợp để mô tả một "journey", và mang nghĩa tiêu cực trái với quảng cáo.</li><li><span class="hl-red">forget</span> — là động từ, sai từ loại, không thể đứng sau "an" trước danh từ.</li></ul>'}},
+
+{n:7,lb:'1',s:'C',q:'7. ...empowers you to transform ordinary trips <b>(7)</b> extraordinary experiences.',
+ o:["about","into","with","for"],a:"into",
+ e:{tr:'Dịch: "...giúp bạn biến những chuyến đi bình thường ___ những trải nghiệm phi thường."',
+ op:W('about','prep','về')+W('into','prep','thành, vào')+W('with','prep','với')+W('for','prep','cho'),
+ ok:'Đáp án đúng là <span class="hl-green">into</span>. Cụm động từ cố định <b>"transform A into B"</b> nghĩa "biến A thành B" — đúng cấu trúc chuẩn khi nói về sự BIẾN ĐỔI từ trạng thái này sang trạng thái khác.',
+ ev:'"...empowers you to transform ordinary trips <b>into</b> extraordinary experiences." 👉 "...giúp bạn biến những chuyến đi bình thường thành những trải nghiệm phi thường."',
+ no:'<ul><li><span class="hl-red">about</span>, <span class="hl-red">with</span>, <span class="hl-red">for</span> — không giới từ nào trong ba từ này tạo thành cụm cố định "transform ___" có nghĩa; chỉ "into" đúng với động từ "transform".</li></ul>'}},
+{n:8,lb:'2',s:'C',q:'8. <b>(8)</b> how to choose the perfect destinations, travel on a budget...',
+ o:["Hunt","Estimate","Confuse","Learn"],a:"Learn",
+ e:{tr:'Dịch: "___ cách chọn điểm đến hoàn hảo, du lịch tiết kiệm..."',
+ op:W('Hunt','v','săn tìm')+W('Estimate','v','ước lượng')+W('Confuse','v','làm bối rối')+W('Learn','v','học'),
+ ok:'Đáp án đúng là <span class="hl-green">Learn</span>. Câu này mời gọi người đọc "học cách" (how to + V) làm nhiều việc — "Learn how to..." là cấu trúc mở đầu tự nhiên và phổ biến nhất khi giới thiệu nội dung hướng dẫn trên một website.',
+ ev:'"<b>Learn</b> how to choose the perfect destinations, travel on a budget, immerse yourself in diverse cultures..." 👉 "Hãy học cách chọn điểm đến hoàn hảo, du lịch tiết kiệm, hòa mình vào các nền văn hóa đa dạng..."',
+ no:'<ul><li><span class="hl-red">Hunt</span> — nghĩa "săn tìm", không tự nhiên khi đi với "how to choose...".</li><li><span class="hl-red">Estimate</span> — nghĩa "ước lượng", không hợp để giới thiệu nội dung hướng dẫn kỹ năng.</li><li><span class="hl-red">Confuse</span> — nghĩa "làm bối rối", hoàn toàn trái với mục đích một website hướng dẫn du lịch.</li></ul>'}},
+{n:9,lb:'3',s:'C',q:'9. ...all from the <b>(9)</b> of your home.',
+ o:["comforts","uncomfortable","comfort","comfortable"],a:"comfort",
+ e:{tr:'Dịch: "...tất cả ngay tại sự ___ của ngôi nhà bạn."',
+ op:W('comforts','n','những sự thoải mái (số nhiều)')+W('uncomfortable','adj','không thoải mái')+W('comfort','n','sự thoải mái')+W('comfortable','adj','thoải mái'),
+ ok:'Đáp án đúng là <span class="hl-green">comfort</span>. Cụm cố định <b>"the comfort of your home"</b> nghĩa "sự thoải mái ngay tại nhà bạn" — sau "the" và trước "of" cần DANH TỪ SỐ ÍT.',
+ ev:'"...all from the <b>comfort</b> of your home." 👉 "...tất cả ngay tại sự thoải mái của ngôi nhà bạn."',
+ no:'<ul><li><span class="hl-red">comforts</span> — số nhiều không khớp với cụm cố định "the comfort of" (luôn ở số ít trong thành ngữ này).</li><li><span class="hl-red">uncomfortable</span>, <span class="hl-red">comfortable</span> — đều là TÍNH TỪ, không thể đứng sau "the" và trước "of" ở vị trí cần DANH TỪ này.</li></ul>'}},
+
+{n:10,lb:'1',s:'D',q:'10. Examples of sports <b>(10)</b> in this category include travelling to watch major sporting events.',
+ o:["tourism","event","type","travel"],a:"tourism",
+ e:{tr:'Dịch: "Ví dụ về ___ thể thao thuộc loại này bao gồm việc đi xem các sự kiện thể thao lớn."',
+ op:W('tourism','n','du lịch')+W('event','n','sự kiện')+W('type','n','loại')+W('travel','n','du lịch, di chuyển'),
+ ok:'Đáp án đúng là <span class="hl-green">tourism</span>. Cụm <b>"sports tourism"</b> (du lịch thể thao) là THUẬT NGỮ CHÍNH xuyên suốt cả bài, và câu đang nói về "examples of sports tourism in this category" (ví dụ về du lịch thể thao thuộc loại này).',
+ ev:'"Examples of sports <b>tourism</b> in this category include travelling to watch major sporting events like the Olympics or the Super Bowl." 👉 "Ví dụ về du lịch thể thao thuộc loại này bao gồm việc đi xem các sự kiện thể thao lớn như Thế vận hội hay Super Bowl."',
+ no:'<ul><li><span class="hl-red">event</span> — "sports event" (sự kiện thể thao) mang nghĩa khác, không phải thuật ngữ đang được định nghĩa xuyên suốt bài (đó là "sports tourism").</li><li><span class="hl-red">type</span>, <span class="hl-red">travel</span> — không tạo thành thuật ngữ chuẩn nào khớp với chủ đề chính của toàn bài.</li></ul>'}},
+{n:11,lb:'2',s:'D',q:'11. This form of sports tourism <b>(11)</b> actually participating in a sport while visiting a destination.',
+ o:["contains","involves","composes","consists"],a:"involves",
+ e:{tr:'Dịch: "Loại hình du lịch thể thao này ___ việc thực sự tham gia vào một môn thể thao trong khi đi du lịch."',
+ op:W('contains','v','chứa đựng')+W('involves','v','liên quan đến, bao gồm')+W('composes','v','sáng tác, cấu thành')+W('consists','v','bao gồm (cần "of")'),
+ ok:'Đáp án đúng là <span class="hl-green">involves</span>. Cụm cố định <b>"involve + V-ing"</b> nghĩa "liên quan đến/bao gồm việc làm gì" — đúng cấu trúc và nghĩa khi định nghĩa một loại hình du lịch.',
+ ev:'"This form of sports tourism <b>involves</b> actually participating in a sport while visiting a destination." 👉 "Loại hình này liên quan đến việc thực sự tham gia vào một môn thể thao trong khi đi du lịch."',
+ no:'<ul><li><span class="hl-red">contains</span> — nghĩa "chứa đựng (vật gì bên trong)", không tự nhiên khi đi với V-ing.</li><li><span class="hl-red">composes</span> — nghĩa "sáng tác/cấu thành", không phù hợp ngữ cảnh định nghĩa hoạt động.</li><li><span class="hl-red">consists</span> — cần thêm giới từ "of" mới đúng ("consists of"), đứng một mình trước V-ing là sai cấu trúc.</li></ul>'}},
+{n:12,lb:'3',s:'D',q:'12. Some travellers choose tourism <b>(12)</b> known for a specific sport or outdoor activity.',
+ o:["departures","arrivals","destinations","activity"],a:"destinations",
+ e:{tr:'Dịch: "Một số du khách chọn ___ du lịch nổi tiếng về một môn thể thao hoặc hoạt động ngoài trời cụ thể."',
+ op:W('departures','n','các điểm khởi hành')+W('arrivals','n','các điểm đến (chuyến bay)')+W('destinations','n','các điểm đến (du lịch)')+W('activity','n','hoạt động'),
+ ok:'Đáp án đúng là <span class="hl-green">destinations</span>. Cụm <b>"tourism destinations"</b> (điểm đến du lịch) là cách diễn đạt chuẩn khi nói về những nơi du khách LỰA CHỌN để đến — khớp với ví dụ ngay sau "Hawaii", "Colorado".',
+ ev:'"Some travellers choose tourism <b>destinations</b> known for a specific sport or outdoor activity. Examples include going to Hawaii for surfing or to Colorado for skiing." 👉 "Một số du khách chọn những điểm đến du lịch nổi tiếng về một môn thể thao..."',
+ no:'<ul><li><span class="hl-red">departures</span> — nghĩa "điểm khởi hành", ngược nghĩa với "điểm đến".</li><li><span class="hl-red">arrivals</span> — thường dùng trong ngữ cảnh sân bay (arrival gate), không tự nhiên với "tourism".</li><li><span class="hl-red">activity</span> — không tạo thành cụm "tourism activity known for..." hợp lý bằng "destinations".</li></ul>'}},
+{n:13,lb:'4',s:'D',q:'13. This involves visiting places with <b>(13)</b> significance to sport.',
+ o:["history","historical","historically","historian"],a:"historical",
+ e:{tr:'Dịch: "Điều này liên quan đến việc ghé thăm những địa điểm có ý nghĩa ___ đối với thể thao."',
+ op:W('history','n','lịch sử')+W('historical','adj','thuộc về lịch sử')+W('historically','adv','về mặt lịch sử')+W('historian','n','nhà sử học'),
+ ok:'Đáp án đúng là <span class="hl-green">historical</span>. Chỗ trống đứng trước danh từ "significance" (ý nghĩa) nên cần TÍNH TỪ bổ nghĩa — "historical significance" (ý nghĩa lịch sử) là cụm cố định chuẩn.',
+ ev:'"This involves visiting places with <b>historical</b> significance to sport." 👉 "Điều này liên quan đến việc ghé thăm những địa điểm có ý nghĩa lịch sử đối với thể thao."',
+ no:'<ul><li><span class="hl-red">history</span> — là danh từ, hai danh từ "history significance" không đứng liền nhau kiểu này.</li><li><span class="hl-red">historically</span> — là trạng từ, chỉ bổ nghĩa cho động từ, không đứng trước danh từ.</li><li><span class="hl-red">historian</span> — là danh từ chỉ NGƯỜI (nhà sử học), hoàn toàn sai nghĩa ở vị trí này.</li></ul>'}},
+{n:14,lb:'5',s:'D',q:'14. These <b>(14)</b> trips combine travel with a sporting event or activity.',
+ o:["organisation","organising","organiser","organised"],a:"organised",
+ e:{tr:'Dịch: "Đây là những chuyến đi được ___ kết hợp du lịch với một sự kiện hoặc hoạt động thể thao."',
+ op:W('organisation','n','tổ chức (cơ quan)')+W('organising','v','đang tổ chức')+W('organiser','n','người tổ chức')+W('organised','adj','được tổ chức'),
+ ok:'Đáp án đúng là <span class="hl-green">organised</span>. Chỗ trống đứng giữa "These" và danh từ "trips", cần TÍNH TỪ (dạng quá khứ phân từ mang nghĩa BỊ ĐỘNG) — "organised trips" nghĩa "những chuyến đi được tổ chức (sẵn)".',
+ ev:'"These <b>organised</b> trips combine travel with a sporting event or activity." 👉 "Đây là những chuyến đi được tổ chức kết hợp du lịch với một sự kiện hoặc hoạt động thể thao."',
+ no:'<ul><li><span class="hl-red">organisation</span> — là danh từ chỉ TỔ CHỨC/CƠ QUAN, không bổ nghĩa được cho "trips".</li><li><span class="hl-red">organising</span> — dạng V-ing mang nghĩa CHỦ ĐỘNG ("đang tổ chức"), không hợp vì "trips" không tự tổ chức chính nó.</li><li><span class="hl-red">organiser</span> — là danh từ chỉ NGƯỜI tổ chức, sai từ loại và sai nghĩa ở vị trí tính từ này.</li></ul>'}}
+];
+
+var TOTAL=QD.length,PICK={};
+function render(){
+  ["A","B","C","D"].forEach(function(s){
+    var host=document.getElementById('sec'+s);host.innerHTML='';
+    QD.filter(function(q){return q.s===s;}).forEach(function(q){
+      var h='<div class="qh"><span class="num">'+q.lb+'</span>'+q.q+'</div>';
+      shuffleOpts(q.o).forEach(function(v){h+='<button class="opt" data-n="'+q.n+'" data-v="'+esc(v)+'" onclick="pick('+q.n+',this)">'+esc(v)+'</button>';});
+      h+='<div class="exp" id="e_'+q.n+'"></div>';
+      var d=document.createElement('div');d.className='qblock';d.innerHTML=h;host.appendChild(d);
+    });
+  });
+  prog();
+}
+function shuffleOpts(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t;}return a;}
+function esc(s){return s.replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');}
+function pick(n,btn){
+  if(PICK[n])return;
+  PICK[n]=btn.getAttribute('data-v');
+  var q=QD.filter(function(x){return x.n===n;})[0];
+  var bs=document.querySelectorAll('.opt[data-n="'+n+'"]');
+  for(var i=0;i<bs.length;i++)bs[i].disabled=true;
+  if(PICK[n]===q.a){btn.classList.add('correct');ding();}
+  else{btn.classList.add('wrong');buzz();for(var j=0;j<bs.length;j++){if(bs[j].getAttribute('data-v')===q.a)bs[j].classList.add('correct');}}
+  showExp(n,q);prog();
+}
+function showExp(n,q){
+  var ok=PICK[n]===q.a,b=document.getElementById('e_'+n);
+  b.innerHTML='<div class="badge'+(ok?'':' bad')+'">'+(ok?'✅ CHÍNH XÁC!':'❌ CHƯA ĐÚNG – Đáp án đúng: '+q.a)+'</div>'
+   +'<div class="step"><span class="slab">① Dịch:</span> '+q.e.tr+'</div>'
+   +'<div class="step"><span class="slab">② Các phương án &amp; nghĩa:</span>'+q.e.op+'</div>'
+   +'<div class="step"><span class="slab">③ Vì sao đúng:</span> '+q.e.ok+(q.e.ev?'<div class="quote">🔍 <b>Dẫn chứng:</b> '+q.e.ev+'</div>':'')+'</div>'
+   +(q.e.no?'<div class="step"><span class="slab">④ Vì sao các phương án khác sai:</span> '+q.e.no+'</div>':'');
+  b.classList.add('on');
+}
+function prog(){var d=Object.keys(PICK).length,c=0;for(var k in PICK){var q=QD.filter(function(x){return x.n==k;})[0];if(PICK[k]===q.a)c++;}
+  document.getElementById('cDone').textContent=d;document.getElementById('cCorrect').textContent=c;
+  document.getElementById('barFill').style.width=(d/TOTAL*100)+'%';}
+function askName(){document.getElementById('nameErr').classList.remove('show');document.getElementById('nameModal').classList.add('on');}
+function okName(){
+  var v=document.getElementById('nameInput').value.trim();
+  if(!v){document.getElementById('nameErr').classList.add('show');return;}
+  document.getElementById('nameModal').classList.remove('on');grade(v);
+}
+function grade(sname){
+  QD.forEach(function(q){
+    if(!PICK[q.n]){
+      PICK[q.n]='__';
+      var bs=document.querySelectorAll('.opt[data-n="'+q.n+'"]');
+      for(var i=0;i<bs.length;i++){bs[i].disabled=true;if(bs[i].getAttribute('data-v')===q.a)bs[i].classList.add('correct');}
+      showExp(q.n,q);
+    }
+  });
+  prog();
+  var cor=QD.filter(function(q){return PICK[q.n]===q.a;}).length;
+  var pct=cor/TOTAL,d10=(cor/TOTAL*10).toFixed(2),em,ti,cm,gif;
+  if(pct===1){em='🏆';ti='XUẤT SẮC — SIÊU SAO ĐẢO NGỌC!';cm='Tuyệt đối hoàn hảo '+cor+'/'+TOTAL+'! MS Chí Nên rất tự hào về em! 🐚';gif='https://media.giphy.com/media/3ohhwytHcusSCXXOUg/giphy.gif';}
+  else if(pct>=.6){em='👏';ti='LÀM TỐT LẮM!';cm='Em đạt '+cor+'/'+TOTAL+' – đã vượt qua rồi! Đọc kỹ phần giải thích những câu sai nhé. 🌊';gif='https://media.giphy.com/media/l4pTfx2qLszoacZRS/giphy.gif';}
+  else{em='😭';ti='CỐ LÊN NHÉ!';cm='Em mới đạt '+cor+'/'+TOTAL+'. Đừng buồn nha! Đọc kỹ đoạn văn rồi làm lại — MS Chí Nên tin em sẽ tiến bộ nhanh. 🐬';gif='https://media.giphy.com/media/d2lcHJTG5Tscg/giphy.gif';}
+  document.getElementById('mEmoji').textContent=em;
+  document.getElementById('mTitle').textContent=ti;
+  document.getElementById('mName').textContent='🎓 Học sinh: '+sname;
+  var g=document.getElementById('mGif');g.style.display='';g.src=gif;
+  document.getElementById('mScore').textContent=cor+'/'+TOTAL;
+  document.getElementById('mScore10').textContent='Điểm hệ 10: '+d10+' / 10';
+  document.getElementById('mComment').textContent=cm;
+  document.getElementById('scoreModal').classList.add('on');
+}
+render();
+(function(){var bh=document.getElementById('bubbles');if(!bh)return;var h='';for(var i=0;i<14;i++){var sz=(Math.random()*14+6).toFixed(0);var left=(Math.random()*100).toFixed(1);var dur=(Math.random()*6+6).toFixed(1);var del=(Math.random()*8).toFixed(1);h+='<span class="bubble" style="left:'+left+'%;width:'+sz+'px;height:'+sz+'px;animation-duration:'+dur+'s;animation-delay:-'+del+'s"></span>';}bh.innerHTML=h;})();
+</script>
+<script>/*devclean*/(function(){
+var ZW=/[\u00AD\u034F\u061C\u115F\u1160\u17B4\u17B5\u180E\u200B-\u200F\u202A-\u202E\u2060-\u206F\uFEFF]/g,
+    SP=/[\u00A0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\t]/g,
+    AP=/[\u2018\u2019\u201A\u201B\u2032\u2035\u02B9\u02BB\u02BC\u02BD\u02C8\u0060\u00B4\uFF07]/g,
+    DQ=/[\u201C\u201D\u201E\u201F\u2033\u2036\u00AB\u00BB\uFF02]/g,
+    DS=/[\u2010\u2011\u2012\u2212\uFE63\uFF0D]/g;
+function clean(v){if(!v)return v;var s=String(v);try{s=s.normalize('NFKC')}catch(e){}
+  return s.replace(ZW,'').replace(SP,' ').replace(AP,"'").replace(DQ,'"').replace(DS,'-').replace(/[\u0300-\u036f]/g,'').replace(/ {2,}/g,' ');}
+window.__devclean=clean;
+function fix(skip){var L=document.querySelectorAll('input:not([type]),input[type=text],input[type=search],textarea');
+  for(var i=0;i<L.length;i++){var el=L[i];if(el===skip||el.readOnly||el.disabled)continue;var v=el.value,c=clean(v);if(c!==v)el.value=c;}}
+['pointerdown','mousedown','touchstart','click','change','focusout'].forEach(function(t){document.addEventListener(t,function(e){fix(t==='focusout'||t==='change'?null:e.target)},true)});
+document.addEventListener('keydown',function(e){if(e.key==='Enter'||e.keyCode===13)fix(null)},true);
+})();</script>
+<style id="ms-chi-nen-unlock-style">
+#passwordModal, #password-modal, #pwModal, #pw-modal, #pw-overlay,
+#lockModal, #passModal, #authModal, #auth-modal, #lockOverlay,
+#start-overlay, #intro-overlay, #start-screen,
+.password-modal, .lock-modal, .lock-overlay {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    z-index: -9999 !important;
+}
+</style>
+<script>
+// Remove password lock completely - direct quiz access
+(function() {
+    var initDone = false;
+    var renderCheckDone = false;
+
+    function hideEl(el, hard) {
+        if (!el) return;
+        if (hard) {
+            el.style.setProperty('display', 'none', 'important');
+            el.style.setProperty('visibility', 'hidden', 'important');
+            el.style.setProperty('opacity', '0', 'important');
+            el.style.setProperty('pointer-events', 'none', 'important');
+            el.style.setProperty('z-index', '-9999', 'important');
+        } else {
+            el.style.display = 'none';
+        }
+        el.classList.remove('active', 'show', 'open', 'visible', 'flex');
+    }
+
+    function hasRenderedQuiz() {
+        var containers = document.querySelectorAll(
+            '#quiz-container, #quizContainer, #questions-container, #questionPane, #quiz, #questions, #quiz-body, #questions-wrapper, #quiz-list, #quizList, #exercise-container, #app-container .split-container'
+        );
+        for (var i = 0; i < containers.length; i++) {
+            if (containers[i].querySelectorAll('button, input, select, textarea, .question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .question, .option-btn, .opt-btn, .ans-btn').length > 0) {
+                return true;
+            }
+        }
+        if (document.querySelectorAll('.question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .option-btn, .opt-btn, .ans-btn, .choice-btn').length > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    function ensureQuizRendered() {
+        if (renderCheckDone) return;
+        renderCheckDone = true;
+        if (hasRenderedQuiz()) return;
+
+        if (!hasRenderedQuiz() && typeof buildQuiz === 'function') { try { buildQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof initQuiz === 'function') { try { initQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderApp === 'function') { try { renderApp(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuiz === 'function') { try { renderQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuestions === 'function') { try { renderQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAllQuestions === 'function') { try { renderAllQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAll === 'function') { try { renderAll(); } catch(e){} }
+    }
+
+    function unlockNow() {
+        var pwIds = [
+            'passwordModal', 'password-modal', 'pwModal', 'pw-modal', 'pw-overlay',
+            'lockModal', 'passModal', 'authModal', 'auth-modal', 'lockOverlay',
+            'start-overlay', 'intro-overlay', 'start-screen'
+        ];
+        pwIds.forEach(function(id) {
+            hideEl(document.getElementById(id), true);
+        });
+
+        var modalEls = document.querySelectorAll('.password-modal, .lock-modal, .lock-overlay, #lockOverlay, #auth-modal');
+        modalEls.forEach(function(el) {
+            if (el.id !== 'resultModal' && el.id !== 'result-modal' && el.id !== 'scoreModal') {
+                hideEl(el, true);
+            }
+        });
+
+        ['nameModal', 'name-modal', 'nameInputModal'].forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) hideEl(el, false);
+        });
+
+        var qo = document.getElementById('quiz-overlay');
+        if (qo && (typeof isStarted === 'undefined' || !isStarted)) {
+            qo.style.display = 'none';
+        }
+
+        var mainIds = [
+            'mainContent', 'main-content', 'mainHeader', 'main-header',
+            'app-container', 'app', 'quizApp', 'quiz-wrapper', 'quizContainer', 'quiz-container', 'reading-content'
+        ];
+        mainIds.forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) {
+                el.classList.remove('hidden', 'blur', 'blurred', 'locked');
+                if (el.style.display === 'none') {
+                    el.style.removeProperty('display');
+                }
+                if (window.getComputedStyle(el).display === 'none') {
+                    var hasPane = el.querySelector('.pane, .left-pane, .right-pane, .split-container, .left-panel, .right-panel');
+                    if (id === 'main-content' || id.toLowerCase().includes('header') || el.classList.contains('main-container') || hasPane) {
+                        el.style.setProperty('display', 'flex', 'important');
+                    } else {
+                        el.style.setProperty('display', 'block', 'important');
+                    }
+                }
+            }
+        });
+
+        var qs = document.getElementById('quiz-screen');
+        if (qs) {
+            qs.classList.remove('hidden');
+            if (qs.classList.contains('flex-col')) {
+                qs.classList.add('flex');
+                qs.style.display = 'flex';
+            } else {
+                qs.style.display = 'block';
+            }
+        }
+
+        if (!initDone) {
+            initDone = true;
+
+            if (document.getElementById('start-overlay') && typeof startGame === 'function') {
+                var sn = document.getElementById('student-name') || document.getElementById('studentName');
+                if (sn && !sn.value.trim()) sn.value = 'Học sinh';
+            }
+            if (document.getElementById('name-modal') && typeof startQuiz === 'function') {
+                var sn2 = document.getElementById('student-name');
+                if (sn2 && !sn2.value.trim()) sn2.value = 'Học sinh';
+            }
+
+            if (typeof startQuiz === 'function' && (typeof isStarted === 'undefined' || !isStarted)) { try { startQuiz(); } catch(e){} }
+            if (typeof startGame === 'function') { try { startGame(); } catch(e){} }
+            if (typeof startTest === 'function') { try { startTest(); } catch(e){} }
+            if (typeof startApp === 'function') { try { startApp(); } catch(e){} }
+            if (typeof buildStarfield === 'function') { try { buildStarfield(); } catch(e){} }
+            if (typeof spawnFloats === 'function') { try { spawnFloats(); } catch(e){} }
+            if (typeof spawnFloaters === 'function') { try { spawnFloaters(); } catch(e){} }
+            if (typeof createFloatingBubbles === 'function') { try { createFloatingBubbles(); } catch(e){} }
+            if (typeof initAudio === 'function') { try { initAudio(); } catch(e){} }
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', unlockNow);
+    } else {
+        unlockNow();
+    }
+    if (document.readyState === 'complete') {
+        setTimeout(ensureQuizRendered, 150);
+    } else {
+        window.addEventListener('load', function() {
+            setTimeout(unlockNow, 20);
+            setTimeout(ensureQuizRendered, 150);
+            setTimeout(unlockNow, 300);
+            setTimeout(unlockNow, 700);
+        });
+    }
+    setTimeout(unlockNow, 50);
+    setTimeout(unlockNow, 200);
+    setTimeout(unlockNow, 600);
+    setTimeout(unlockNow, 1100);
+})();
+</script>
+</body>
+</html>

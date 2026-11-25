@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🛰️ TEST FOR UNIT 8 · V·VI·VII·X · 40 câu | MS Chí Nên</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--cy:#5ff2ff;--pk:#ff77dd;--lm:#b7ff6a;--vi:#a98cff;--am:#ffd166}
+body{font-family:'Nunito',sans-serif;min-height:100vh;color:#dff3ff;overflow-x:hidden;background:#050817}
+/* ══ TINH VÂN ══ */
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+ background:radial-gradient(55% 40% at 16% 4%,rgba(95,242,255,.20),transparent 62%),
+ radial-gradient(50% 38% at 86% 8%,rgba(255,119,221,.20),transparent 62%),
+ radial-gradient(65% 45% at 50% 104%,rgba(169,140,255,.22),transparent 64%),
+ radial-gradient(40% 30% at 70% 55%,rgba(183,255,106,.10),transparent 60%)}
+/* ══ ĐÈN SOI CHUYỂN ĐỘNG ══ */
+.beam{position:fixed;inset:-30% -30%;z-index:0;pointer-events:none;mix-blend-mode:screen;
+ background:conic-gradient(from 0deg,transparent 0 42%,rgba(95,242,255,.16) 47%,rgba(255,255,255,.24) 50%,rgba(255,119,221,.16) 53%,transparent 58% 100%);
+ animation:sweep 14s linear infinite}
+.beam.b2{animation-duration:22s;animation-direction:reverse;
+ background:conic-gradient(from 180deg,transparent 0 44%,rgba(169,140,255,.14) 49%,rgba(183,255,106,.16) 51%,transparent 56% 100%)}
+@keyframes sweep{to{transform:rotate(1turn)}}
+.scan{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.14;
+ background:repeating-linear-gradient(180deg,rgba(255,255,255,.16) 0 1px,transparent 1px 4px)}
+.scan::after{content:'';position:absolute;left:0;right:0;height:26vh;
+ background:linear-gradient(180deg,transparent,rgba(95,242,255,.22),transparent);animation:drop 7s linear infinite}
+@keyframes drop{0%{top:-26vh}100%{top:100vh}}
+/* ══ SAO LẤP LÁNH ══ */
+.st{position:fixed;z-index:1;pointer-events:none;border-radius:50%;background:#fff;animation:tw ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:.15;transform:scale(.6)}50%{opacity:1;transform:scale(1.35)}}
+.st.big{background:radial-gradient(circle,#fff,rgba(255,255,255,0) 70%);box-shadow:0 0 10px #cdfaff}
+.orb{position:fixed;z-index:1;pointer-events:none;border-radius:50%;animation:rise linear infinite}
+@keyframes rise{0%{transform:translate3d(0,0,0) scale(.4);opacity:0}14%{opacity:1}
+ 100%{transform:translate3d(34px,-96vh,0) scale(1.1);opacity:0}}
+#circ{position:fixed;inset:auto 0 0 0;height:56vh;z-index:0;pointer-events:none;opacity:.5}
+.wrap{position:relative;z-index:4;max-width:1020px;margin:0 auto;padding:14px 14px 60px}
+/* ══ KHUNG NEON + GÓC KHUYẾT ══ */
+.neo{position:relative;background:linear-gradient(160deg,rgba(14,22,46,.9),rgba(8,13,30,.94));
+ border:1.5px solid rgba(95,242,255,.42);border-radius:14px;
+ box-shadow:0 0 0 1px rgba(255,119,221,.12),0 14px 38px rgba(0,0,0,.65),inset 0 0 44px rgba(95,242,255,.06);
+ backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.neo::before,.neo::after{content:'';position:absolute;width:16px;height:16px;pointer-events:none}
+.neo::before{left:-1px;top:-1px;border-left:2.5px solid var(--cy);border-top:2.5px solid var(--cy);border-radius:14px 0 0 0;box-shadow:-2px -2px 10px rgba(95,242,255,.6)}
+.neo::after{right:-1px;bottom:-1px;border-right:2.5px solid var(--pk);border-bottom:2.5px solid var(--pk);border-radius:0 0 14px 0;box-shadow:2px 2px 10px rgba(255,119,221,.6)}
+/* ══ THANH NHẮC ══ */
+.tick{position:sticky;top:8px;z-index:30;margin-bottom:14px;padding:9px 15px;font-size:1.05rem;line-height:1.7;font-weight:700;color:#d7ecff}
+.tick b{color:var(--pk)}.tick i{color:var(--lm)}
+.tick .tg{font-family:'Orbitron';font-size:.98rem;letter-spacing:1px;color:var(--cy);text-shadow:0 0 10px rgba(95,242,255,.85)}
+#msRot{transition:opacity .3s ease}
+/* ══ ĐẦU TRANG ══ */
+header{padding:22px 18px;text-align:center;overflow:hidden}
+h1{font-family:'Orbitron';font-size:1.6rem;line-height:1.45;letter-spacing:1px;color:#eaf9ff;
+ text-shadow:0 0 12px rgba(95,242,255,.9),0 0 34px rgba(255,119,221,.5)}
+h1 span{color:var(--pk)}
+.sub{margin-top:9px;font-size:1.05rem;font-weight:700;color:#c0dcf0;line-height:1.85;position:relative;z-index:2}
+.tag{display:inline-block;margin-top:10px;padding:8px 15px;border-radius:999px;font-size:1.02rem;font-weight:800;
+ background:rgba(95,242,255,.1);border:1.5px solid var(--cy);color:#d8fbff;position:relative;z-index:2}
+.hud{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center;margin:14px 0 2px;position:relative;z-index:2}
+.pill{padding:8px 16px;border-radius:10px;font-family:'Orbitron';font-size:.92rem;letter-spacing:1px;
+ background:rgba(183,255,106,.12);border:1.5px solid var(--lm);color:#e6ffd0;box-shadow:0 0 16px rgba(183,255,106,.28)}
+.route{flex:1 1 200px;height:12px;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid rgba(95,242,255,.4);overflow:hidden}
+.route i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--cy),var(--vi),var(--pk));box-shadow:0 0 16px rgba(95,242,255,.85);transition:width .4s}
+/* ══ KHU ══ */
+.leg{margin:26px 0 12px;padding:13px 17px}
+.leg .lt{font-family:'Orbitron';font-size:1.06rem;letter-spacing:1px;color:var(--cy);text-shadow:0 0 12px rgba(95,242,255,.75)}
+.leg .ld{margin-top:7px;font-size:1.05rem;line-height:1.9;font-weight:700;color:#bfdcf0}
+.leg .ld b{color:var(--pk)}.leg .ld i{color:var(--lm)}
+/* ══ THẺ ══ */
+.card{margin:14px 0;padding:16px 18px}
+.qh{display:flex;gap:11px;align-items:flex-start}
+.qn{flex:none;width:40px;height:40px;border-radius:11px;display:grid;place-items:center;font-family:'Orbitron';font-size:.9rem;
+ background:rgba(95,242,255,.12);border:1.5px solid var(--cy);color:#dffbff;box-shadow:0 0 16px rgba(95,242,255,.35)}
+.qt{flex:1;font-size:1.13rem;font-weight:800;line-height:1.95;color:#e7f6ff}
+.qt b{color:var(--pk)}.qt i{color:var(--lm)}
+.qt u{text-decoration-thickness:3px;text-underline-offset:5px;text-decoration-color:var(--am);color:#fff0c9}
+.qt sup{font-family:'Orbitron';font-size:.68em;color:var(--am);margin-left:2px}
+.opts{display:grid;grid-template-columns:1fr;gap:10px;margin-top:12px}
+.opt{padding:12px 15px;border-radius:11px;cursor:pointer;font-weight:700;font-size:1.07rem;line-height:1.78;
+ background:rgba(255,255,255,.04);border:1.5px solid rgba(95,242,255,.3);color:#dff3ff;transition:all .16s}
+.opt:hover:not(.lk){transform:translateY(-2px);border-color:var(--cy);background:rgba(95,242,255,.1);box-shadow:0 0 20px rgba(95,242,255,.4)}
+.opt.rt{border-color:var(--lm)!important;background:rgba(183,255,106,.16)!important;color:#eaffd8!important;box-shadow:0 0 24px rgba(183,255,106,.5)!important}
+.opt.wr{border-color:#ff5f7a!important;background:rgba(255,95,122,.14)!important;color:#ffdbe2!important;box-shadow:0 0 22px rgba(255,95,122,.42)!important}
+.opt.lk{cursor:default}.opt.dim{opacity:.45}
+/* ══ CHỮ CÁI A B C D ══ */
+.ltr{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px}
+.lb{padding:13px 0;border-radius:11px;cursor:pointer;font-family:'Orbitron';font-size:1.05rem;
+ background:rgba(255,209,102,.1);border:1.5px solid rgba(255,209,102,.55);color:#ffe9b8;transition:all .16s}
+.lb:hover:not(.lk){transform:translateY(-2px);box-shadow:0 0 20px rgba(255,209,102,.45);border-color:var(--am)}
+.lb.on{background:rgba(255,209,102,.28);border-color:var(--am);box-shadow:0 0 22px rgba(255,209,102,.6)}
+.lb.rt{border-color:var(--lm)!important;background:rgba(183,255,106,.2)!important;color:#eaffd8!important}
+.lb.wr{border-color:#ff5f7a!important;background:rgba(255,95,122,.18)!important;color:#ffdbe2!important}
+.lb.lk{cursor:default}
+.frow{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px;align-items:center}
+.stem{padding:10px 13px;border-radius:10px;background:rgba(255,119,221,.12);border:1.5px solid var(--pk);font-weight:900;color:#ffd9f4}
+.tin{flex:1 1 240px;padding:12px 15px;border-radius:11px;font-family:'Nunito';font-size:1.08rem;font-weight:700;
+ background:rgba(4,9,22,.85);border:1.5px solid rgba(95,242,255,.4);color:#e7f6ff}
+.tin::placeholder{color:#7f9bb5}
+.tin:focus{outline:none;border-color:var(--pk);box-shadow:0 0 0 3px rgba(255,119,221,.22)}
+.tin.ok{border-color:var(--lm);background:rgba(183,255,106,.12)}.tin.bad{border-color:#ff5f7a;background:rgba(255,95,122,.12)}
+.ck{padding:12px 20px;border-radius:11px;cursor:pointer;font-family:'Orbitron';font-size:.9rem;letter-spacing:1px;
+ background:linear-gradient(135deg,rgba(95,242,255,.22),rgba(255,119,221,.22));border:1.5px solid var(--cy);color:#eaf9ff;box-shadow:0 0 18px rgba(95,242,255,.4)}
+.ck:hover{box-shadow:0 0 28px rgba(255,119,221,.55)}
+.shk{animation:sh .42s}@keyframes sh{25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
+/* ══ GIẢI THÍCH ══ */
+.exp{max-height:0;overflow:hidden;transition:max-height .45s ease,padding .3s,margin .3s;border-radius:12px;font-size:1.07rem;line-height:1.95;color:#dbeeff}
+.exp.on{max-height:4200px;margin-top:12px;padding:14px 16px;background:rgba(4,9,22,.75);border:1.5px dashed rgba(95,242,255,.45)}
+.kbx{padding:9px 14px;border-radius:10px;font-weight:900;margin-bottom:9px;font-family:'Orbitron';font-size:.9rem;
+ background:rgba(183,255,106,.14);border:1.5px solid var(--lm);color:#eaffd8}
+.stp{margin-top:8px}.stp .l{display:inline-block;padding:2px 11px;border-radius:999px;font-family:'Orbitron';font-size:.7rem;letter-spacing:1px;
+ background:linear-gradient(135deg,var(--cy),var(--vi));color:#06101f;margin-bottom:4px;font-weight:900}
+.lines{margin-top:5px}
+.ln{padding:7px 2px;border-bottom:1px dashed rgba(95,242,255,.22);line-height:1.95}
+.ln:last-child{border-bottom:0}
+.pw{color:var(--cy);font-weight:900}.pm{color:var(--pk);font-weight:800}
+.gr{color:var(--lm);font-weight:900}.rd{color:#ff8095;font-weight:900}
+.wt{background:rgba(169,140,255,.16);border:1px solid rgba(169,140,255,.5);border-radius:7px;padding:1px 9px;font-weight:800;color:#ddd0ff}
+/* ══ NỘP BÀI ══ */
+.subw{text-align:center;margin:26px 0 6px}
+.sbtn{padding:16px 32px;border-radius:14px;cursor:pointer;font-family:'Orbitron';font-size:1.02rem;letter-spacing:2px;
+ background:linear-gradient(135deg,rgba(95,242,255,.22),rgba(255,119,221,.22));border:2px solid var(--cy);color:#eaf9ff;
+ box-shadow:0 0 30px rgba(95,242,255,.5),inset 0 0 20px rgba(255,119,221,.16)}
+.foot{text-align:center;margin-top:14px;color:#8fb3cc;font-weight:700;font-size:1rem}
+.mask{position:fixed;inset:0;z-index:60;display:none;place-items:center;padding:16px;background:rgba(3,6,16,.88);backdrop-filter:blur(6px)}
+.mask.on{display:grid}
+.box{max-width:460px;width:100%;padding:24px;border-radius:18px;text-align:center;
+ background:linear-gradient(160deg,rgba(14,22,46,.97),rgba(7,12,28,.99));border:1.5px solid var(--cy);box-shadow:0 0 44px rgba(95,242,255,.4)}
+.box h2{font-family:'Orbitron';font-size:1.16rem;letter-spacing:1px;color:var(--cy)}
+.box p{margin-top:8px;font-weight:700;line-height:1.7;color:#c7e2f5}
+.box input{width:100%;margin-top:12px;padding:12px 15px;border-radius:11px;font-size:1.06rem;font-weight:700;
+ background:rgba(4,9,22,.9);border:1.5px solid rgba(95,242,255,.45);color:#e7f6ff}
+.box input.er{border-color:#ff5f7a}
+.warn{display:none;margin-top:8px;color:#ff8095;font-weight:800}.warn.on{display:block}
+.go,.rtb{margin-top:14px;padding:12px 24px;border-radius:11px;cursor:pointer;font-family:'Orbitron';font-size:.88rem;letter-spacing:1px;
+ background:linear-gradient(135deg,rgba(183,255,106,.2),rgba(95,242,255,.2));border:1.5px solid var(--lm);color:#eaffd8;box-shadow:0 0 20px rgba(183,255,106,.35)}
+.chest{font-size:3.2rem}.big{font-family:'Orbitron';font-size:1.85rem;color:var(--lm);margin-top:8px;text-shadow:0 0 18px rgba(183,255,106,.65)}
+.gif{width:100%;max-width:320px;border-radius:12px;margin-top:10px;border:1.5px solid var(--cy)}
+.cf{position:fixed;top:-12px;width:10px;height:10px;z-index:80;pointer-events:none}
+@media(max-width:640px){h1{font-size:1.2rem}.qt{font-size:1.05rem}#circ{height:40vh}.ltr{grid-template-columns:repeat(4,1fr);gap:7px}}
+</style>
+</head>
+<body>
+<div class="beam"></div><div class="beam b2"></div><div class="scan"></div>
+<svg id="circ" viewBox="0 0 1200 420" preserveAspectRatio="none" aria-hidden="true">
+ <defs><linearGradient id="fd" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#5ff2ff" stop-opacity="0"/><stop offset="1" stop-color="#5ff2ff" stop-opacity=".6"/></linearGradient>
+  <linearGradient id="fp" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#ff77dd" stop-opacity="0"/><stop offset="1" stop-color="#ff77dd" stop-opacity=".5"/></linearGradient></defs>
+ <g stroke="url(#fd)" stroke-width="1.3" fill="none">
+  <path d="M0 70 H1200 M0 130 H1200 M0 200 H1200 M0 285 H1200 M0 380 H1200"/>
+  <path d="M600 20 V420 M470 20 L290 420 M730 20 L910 420 M360 20 L40 420 M840 20 L1160 420 M535 20 L470 420 M665 20 L730 420"/>
+ </g>
+ <g stroke="url(#fp)" stroke-width="1.6" fill="none">
+  <path d="M60 300 h120 v-52 h96 v40 h140"/><path d="M1140 320 h-130 v-46 h-90 v38 h-120"/>
+  <path d="M300 380 h90 v-40 h70"/><path d="M900 386 h-88 v-38 h-72"/>
+ </g>
+ <g fill="#5ff2ff"><circle cx="180" cy="248" r="4"/><circle cx="276" cy="288" r="4"/><circle cx="416" cy="288" r="4"/>
+  <circle cx="1010" cy="274" r="4"/><circle cx="920" cy="312" r="4"/><circle cx="800" cy="312" r="4"/>
+  <circle cx="390" cy="340" r="3.5"/><circle cx="460" cy="340" r="3.5"/><circle cx="812" cy="348" r="3.5"/></g>
+ <g fill="none" stroke="#b7ff6a" stroke-width="1.4" opacity=".7">
+  <path d="M150 120 l26 -15 26 15 v30 l-26 15 -26 -15 Z"/><path d="M1000 100 l26 -15 26 15 v30 l-26 15 -26 -15 Z"/>
+  <path d="M560 60 l22 -13 22 13 v26 l-22 13 -22 -13 Z"/></g>
+</svg>
+
+<div class="wrap">
+<div class="tick neo"><span class="tg">&#9672; MS.AI // LỜI NHẮN</span> &nbsp;&middot;&nbsp; <span id="msRot">Đang tải dữ liệu…</span></div>
+<header class="neo">
+ <h1>🛰️ TEST FOR UNIT 8 · <span>TOURISM</span><br>PHẦN V &middot; VI &middot; VII &middot; X</h1>
+ <p class="sub"><b>40 lõi dữ liệu cần giải mã</b> · V Chia dạng từ (10) &nbsp;·&nbsp; VI Tìm &amp; sửa lỗi sai (10) &nbsp;·&nbsp; VII Hoàn thành hội thoại (10) &nbsp;·&nbsp; X Viết lại câu (10)<br>Nạp đủ 40 lõi năng lượng là mở khoá toàn hệ thống!</p>
+ <span class="tag">&#9700; Giáo viên tạo: <b>MS Chí Nên</b> &nbsp;·&nbsp; &#9742;&#65039; <b>0852639652</b> — khoá tiếng Anh <b>lớp 1 &rarr; 12</b>: web luyện tập giải chi tiết từng câu, ngân hàng đề thi xịn xò &#9702;</span>
+ <div class="hud"><span class="pill">&#9889; LÕI: <span id="sc">0</span>/<span id="tt">0</span></span>
+  <span class="route"><i id="rt"></i></span><span class="pill" id="md">&#9672;</span></div>
+</header>
+<div id="quiz"></div>
+<div class="subw"><button class="sbtn" onclick="openName()">&#9654; KHỞI CHẠY GIẢI MÃ</button></div>
+<div class="foot">// system by MS Chí Nên &middot; &#9742;&#65039; 0852639652 //</div>
+</div>
+
+<div class="mask" id="nm"><div class="box">
+ <div class="chest">🧭</div><h2>THUỶ THỦ TÊN GÌ?</h2>
+ <p>Ghi tên lên bản đồ để Ms ghi công khám phá nhé!</p>
+ <input id="nin" placeholder="Ví dụ: Nguyễn Văn A..." maxlength="50" autocomplete="off">
+ <div class="warn" id="nwr">⚠️ Con chưa ghi tên lên bản đồ kìa!</div>
+ <button class="go" onclick="doSubmit()">Mở rương 🔓</button>
+</div></div>
+
+<div class="mask" id="rm"><div class="box">
+ <div class="chest" id="rIc">💎</div>
+ <h2 id="rG"></h2>
+ <div class="big" id="rS"></div>
+ <p id="rT" style="font-weight:900;color:#8c2f10"></p>
+ <img class="gif" id="rI" alt="">
+ <p id="rM"></p>
+ <button class="rtb" onclick="location.reload()">🔄 Ra khơi lại</button>
+</div></div>
+
+<script>
+/* SAO LAP LANH + HAT NANG LUONG */
+(function(){for(var i=0;i<90;i++){var s=document.createElement('div');s.className='st'+(i%9===0?' big':'');
+  var z=(i%9===0?3.2:1.6)+Math.random()*2;s.style.width=s.style.height=z+'px';
+  s.style.left=(Math.random()*99)+'vw';s.style.top=(Math.random()*98)+'vh';
+  s.style.animationDuration=(1.6+Math.random()*3.2).toFixed(2)+'s';
+  s.style.animationDelay=(-Math.random()*4).toFixed(2)+'s';document.body.appendChild(s)}
+ var C=['#5ff2ff','#ff77dd','#b7ff6a','#a98cff','#ffd166'];
+ for(var j=0;j<22;j++){var d=document.createElement('div');d.className='orb';
+  var w=4+Math.random()*6;d.style.width=d.style.height=w+'px';d.style.background=C[j%5];
+  d.style.boxShadow='0 0 14px '+C[j%5];d.style.left=(Math.random()*98)+'vw';d.style.bottom='-5vh';
+  d.style.animationDuration=(10+Math.random()*10).toFixed(1)+'s';
+  d.style.animationDelay=(-Math.random()*18).toFixed(1)+'s';document.body.appendChild(d)}})();
+const MSROT=[
+ '&#9672; Ms để bảng này ở đây suốt bài, vì Ms sợ con quên mất mình đang học vì điều gì. Câu nào chưa hiểu, con dừng lại tra cho bằng được rồi hãy làm tiếp — <b>đoán bừa thì điểm có đẹp cũng chẳng phải của con</b>.',
+ '🧬 Khu V: xác định <b>từ loại</b> của chỗ trống trước, rồi mới chọn dạng. Câu mang nghĩa phủ định thì nhớ tiền tố <b>in- / un-</b> (<i>inaccessible</i>).',
+ '🛠️ Khu VI: con bấm <b>chữ cái A/B/C/D</b> rồi gõ từ ĐÚNG — phải đúng cả hai mới ghi điểm. Ba lỗi kinh điển: <b>The number of + động từ số ít</b> · <b>suggest sb to do</b> · <b>ten-days trip</b>.',
+ '💬 Khu VII: luôn đọc <b>lời đáp của Linh</b> trước — <i>Of course not</i> ➜ câu hỏi Yes/No; liệt kê nhiều nơi ➜ <i>Which cities…?</i>',
+ '🔁 Khu X: con được <b>gõ tiếp phần còn lại</b> hoặc <b>gõ lại cả câu</b>. Nhớ: <b>unless</b> + mệnh đề khẳng định · <b>worth + V-ing</b> · <b>despite + danh từ</b> (không có <i>of</i>).',
+ '📖 Phần giải thích là chỗ Ms ngồi viết lâu nhất. Con đọc đủ cả bốn bước nhé, <b>kể cả câu đã làm đúng</b> — hiểu vì sao phương án kia sai mới là thứ theo con vào phòng thi.',
+ '☎️ Con và phụ huynh muốn học cùng <b>MS Chí Nên</b> thì gọi <b>0852639652</b> nhé — khoá tiếng Anh <b>từ lớp 1 đến lớp 12</b>, web luyện tập giải chi tiết từng câu và ngân hàng đề thi cực xịn.'
+];
+let msI=0;const msEl=document.getElementById('msRot');
+if(msEl){msEl.innerHTML=MSROT[0];setInterval(function(){msI=(msI+1)%MSROT.length;
+ msEl.style.opacity=0;setTimeout(function(){msEl.innerHTML=MSROT[msI];msEl.style.opacity=1;},280);},4200);}
+</script>
+<script>
+/* ══ ÂM THANH &amp; HIỆU ỨNG ══ */
+let AC=null;
+function ac(){if(!AC){try{AC=new (window.AudioContext||window.webkitAudioContext)()}catch(e){}}if(AC&&AC.state==='suspended')AC.resume();return AC}
+function ding(){const c=ac();if(!c)return;const n=c.currentTime;[880,1174.7,1567.98].forEach((f,i)=>{const o=c.createOscillator(),g=c.createGain();o.type='sine';o.frequency.value=f;o.connect(g);g.connect(c.destination);const t=n+i*.1;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.2,t+.03);g.gain.exponentialRampToValueAtTime(.001,t+.5);o.start(t);o.stop(t+.55)})}
+function buzz(){const c=ac();if(!c)return;const n=c.currentTime;[[311.1,0],[261.6,.16],[207.6,.32]].forEach(p=>{const o=c.createOscillator(),g=c.createGain();o.type='square';o.frequency.value=p[0];o.connect(g);g.connect(c.destination);const t=n+p[1];g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.11,t+.02);g.gain.exponentialRampToValueAtTime(.001,t+.16);o.start(t);o.stop(t+.18)})}
+function clk(){var c=ac();if(!c)return;var o=c.createOscillator(),g=c.createGain();o.type='square';o.frequency.value=1180;o.connect(g);g.connect(c.destination);var t=c.currentTime;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.07,t+.008);g.gain.exponentialRampToValueAtTime(.001,t+.07);o.start(t);o.stop(t+.08)}
+function coins(){const cs=['#ffd76b','#e8a33d','#f6e3ba','#8c2f10','#0e6b7a'];
+ for(let i=0;i<46;i++){const d=document.createElement('div');d.className='cf';d.style.left=Math.random()*100+'vw';
+  d.style.background=cs[i%cs.length];d.style.borderRadius=i%2?'50%':'3px';document.body.appendChild(d);
+  const fa=900+Math.random()*900,dx=(Math.random()-.5)*240;
+  d.animate([{transform:'translate(0,0) rotate(0)',opacity:1},{transform:'translate('+dx+'px,'+(innerHeight+40)+'px) rotate('+(Math.random()*720)+'deg)',opacity:.9}],{duration:fa,easing:'cubic-bezier(.3,.7,.5,1)'});
+  setTimeout(()=>d.remove(),fa)}}
+
+/* ══ DỰNG ĐỀ ══ */
+const ITEMS=[],SEC={};
+function sec(id,ic,title,desc){SEC[id]=[ic,title,desc]}
+function mcq(s,n,q,correct,opts,ex){ITEMS.push({t:'m',s,n,q,correct,opts,ex})}
+function fil(s,n,q,accept,ex,ph){ITEMS.push({t:'f',s,n,q,accept,ex,ph:ph||'Gõ từ trong khung…'})}
+function LN(a,b,ok){return "<div class='ln'>"+(ok?'✅ ':'• ')+a+" "+b+"</div>"}
+function EX4(key,s1,s2,s3,s4){return "<div class='kbx'>🔑 ĐÁP ÁN: "+key+"</div>"+
+ "<div class='stp'><span class='l'>BƯỚC 1 · TỪ &amp; NGHĨA</span><br>"+s1+"</div>"+
+ "<div class='stp'><span class='l'>BƯỚC 2 · TRÍCH ĐỦ CÁC PHƯƠNG ÁN</span><div class='lines'>"+s2+"</div></div>"+
+ "<div class='stp'><span class='l'>BƯỚC 3 · TẠI SAO ĐÚNG</span><br><span class='gr'>Quy tắc:</span> "+s3+"</div>"+
+ "<div class='stp'><span class='l'>BƯỚC 4 · BẪY / LỖI HAY GẶP</span><br><span class='rd'>Chú ý:</span> "+s4+"</div>"}
+/* ST: tự dựng 2–3 phương án chia âm tiết từ danh sách âm tiết */
+function ST(s,n,w,ipa,vi,parts,ci,rule,trap){
+ const opts=parts.map((_,i)=>parts.map((p,j)=>j===i?p.toUpperCase():p).join('-'));
+ let cells='';opts.forEach((o,i)=>{cells+=LN("<span class='pw'>"+o+"</span>","<span class='wt'>nhấn âm tiết "+(i+1)+"</span> ➔ "+(i===ci?"<span class='gr'>ĐÚNG — đọc /"+ipa+"/</span>":"<span class='rd'>sai trọng âm</span>"),i===ci)});
+ const s1="<span class='pw'>"+w+"</span> <span class='ph'>/"+ipa+"/</span> ➔ Dịch: <span class='pm'>"+vi+"</span> &nbsp;·&nbsp; <span class='wt'>"+parts.length+" âm tiết</span>";
+ mcq(s,n,'🔊 Từ <b>'+w+'</b> — chọn cách chia trọng âm ĐÚNG:',opts[ci],opts,EX4(opts[ci]+" — /"+ipa+"/",s1,cells,rule,trap))}
+/* FB: câu điền từ trong khung */
+function FB(s,n,q,ans,ipa,parts,ci,aVi,sVi,near,why,trap){
+ const mark=parts.map((p,j)=>j===ci?p.toUpperCase():p).join('-');
+ let cells=LN("<span class='pw'>"+ans+"</span> <span class='ph'>/"+ipa+"/</span>","<span class='wt'>"+mark+" · nhấn âm tiết "+(ci+1)+"</span> ➔ Dịch: <span class='gr'>"+aVi+"</span>",1);
+ near.forEach(x=>{cells+=LN("<span class='pw'>"+x[0]+"</span>","➔ Dịch: <span class='pm'>"+x[1]+"</span> — "+x[2])});
+ fil(s,n,q,[ans],EX4(ans+" &nbsp;·&nbsp; "+mark+" &nbsp;·&nbsp; /"+ipa+"/",
+  "<b>Câu hoàn chỉnh:</b> "+q.replace(/______+/,'<span class="pw">'+ans+'</span>')+"<br><b>Dịch:</b> <span class='pm'>"+sVi+"</span>",cells,why,trap))}
+</script>
+<script>
+function fil(s,n,q,accept,ex,ph,pre){ITEMS.push({t:'f',s,n,q,accept,ex,ph:ph||'Gõ đáp án…',pre:pre})}
+function fxq(s,n,q,letter,ans,accept,ex){ITEMS.push({t:'x',s,n,q,letter,ans,accept,ex})}
+function O(en,vi,ok){return LN("<span class='pw'>"+en+"</span>","➔ <span class='"+(ok?'gr':'pm')+"'>"+vi+"</span>",ok)}
+function MQ(s,n,q,ci,opts,dich,why,wrong){var c='';opts.forEach(function(o,i){c+=O(o[0],o[1],i===ci)});
+ mcq(s,n,q,opts[ci][0],opts.map(function(o){return o[0]}),EX4(opts[ci][0],dich,c,why,wrong))}
+function WF(s,n,q,ans,acc,dich,cells,why,wrong){
+ fil(s,n,q,acc,EX4(ans,"<b>Câu hoàn chỉnh:</b> "+q.replace(/_{3,}/,"<span class='pw'>"+ans+"</span>")+"<br><b>Dịch:</b> <span class='pm'>"+dich+"</span>",cells,why,wrong),'Gõ dạng đúng của từ…')}
+function RW(s,n,q,ans,acc,dich,cells,why,wrong,pre){
+ fil(s,n,q,acc,EX4(ans,"<b>Câu hoàn chỉnh:</b> <span class='pw'>"+ans+"</span><br><b>Dịch:</b> <span class='pm'>"+dich+"</span>",cells,why,wrong),'Gõ tiếp phần còn lại (hoặc cả câu)…',pre)}
+function FX(s,n,q,letter,ans,acc,dich,cells,why,wrong){
+ fxq(s,n,q,letter,ans,acc,EX4(letter+' ➜ '+ans,"<b>Câu đã sửa:</b> "+dich,cells,why,wrong))}
+
+sec('V1','🧬','KHU V — Chia dạng đúng của từ (10 câu)','Hai bước: (1) chỗ trống cần <b>danh từ · động từ · tính từ · trạng từ</b>; (2) nếu là danh từ thì chỉ <b>người</b> hay chỉ <b>việc</b>. Câu mang nghĩa phủ định thì nhớ tiền tố <b>in- / un-</b>.');
+WF('V1',1,'These tours usually combine jungle trekking and cave ______. <b>(explore)</b>','exploration',['exploration'],'Các tour này thường kết hợp đi bộ xuyên rừng và khám phá hang động.',
+ LN("<span class='pw'>exploration</span>","<span class='wt'>n.</span> ➔ <span class='gr'>việc khám phá, cuộc thám hiểm</span>",1)+LN("<span class='pw'>explore (v) · explorer (n: người) · exploratory (adj)</span>","<span class='wt'>họ từ</span> ➔ các dạng còn lại",0),
+ 'Đứng song song với danh từ <i>jungle trekking</i> qua <b>and</b> ➜ cần DANH TỪ chỉ hoạt động.','<i>explorer</i> chỉ người nên sai nghĩa; <i>explore</i> là động từ.');
+WF('V1',2,'They&rsquo;re looking for a travel ______ to take care of their trip to Africa. <b>(agent)</b>','agency',['agency','agent'],'Họ đang tìm một đại lý lữ hành để lo chuyến đi châu Phi.',
+ LN("<span class='pw'>agency</span>","<span class='wt'>n.</span> ➔ <span class='gr'>đại lý, hãng (tổ chức) — đáp án của sách</span>",1)+LN("<span class='pw'>agent</span>","<span class='wt'>n.</span> ➔ nhân viên đại lý (người) — Ms cũng chấm đúng",1),
+ 'Đơn vị <b>lo trọn chuyến đi</b> là <b>travel agency</b>; mạo từ <b>a</b> báo danh từ số ít.','<i>agential</i> là tính từ hiếm gặp, không dùng ở đây.');
+WF('V1',3,'Spending the summer holidays in the UK isn&rsquo;t very ______ as it often rains a lot. <b>(appeal)</b>','appealing',['appealing'],'Nghỉ hè ở Anh không hấp dẫn lắm vì trời hay mưa nhiều.',
+ LN("<span class='pw'>appealing</span>","<span class='wt'>adj (-ing)</span> ➔ <span class='gr'>hấp dẫn — tả sự việc</span>",1)+LN("<span class='pw'>appealed (-ed) · appeal (v/n) · appealingly (adv)</span>","<span class='wt'>họ từ</span> ➔ các dạng còn lại",0),
+ 'Sau <b>isn&rsquo;t very</b> cần TÍNH TỪ; chủ thể là <b>việc đi nghỉ</b> ➜ đuôi <b>-ING</b>.','<i>appealed</i> tả người bị tác động; <i>appealingly</i> là trạng từ.');
+WF('V1',4,'The guest house was on the side of the cliff, with ______ views of the ocean below. <b>(breath)</b>','breathtaking',['breathtaking'],'Nhà khách nằm bên vách đá, có tầm nhìn ngoạn mục xuống đại dương phía dưới.',
+ LN("<span class='pw'>breathtaking</span>","<span class='wt'>adj</span> ➔ <span class='gr'>đẹp đến nghẹt thở</span>",1)+LN("<span class='pw'>breath (n) · breathe (v) · breathless (adj: hụt hơi)</span>","<span class='wt'>họ từ</span> ➔ các dạng còn lại",0),
+ 'Trước danh từ <b>views</b> cần tính từ tả vẻ đẹp ➜ <b>breathtaking views</b>.','<i>breathless</i> tả người hụt hơi — sai nghĩa hoàn toàn.');
+WF('V1',5,'The Taj Mahal is a ______ building which is visited by millions of tourists every year. <b>(magnificence)</b>','magnificent',['magnificent'],'Taj Mahal là một toà nhà tráng lệ được hàng triệu du khách ghé thăm mỗi năm.',
+ LN("<span class='pw'>magnificent</span>","<span class='wt'>adj</span> ➔ <span class='gr'>tráng lệ, nguy nga</span>",1)+LN("<span class='pw'>magnificence (n) · magnificently (adv)</span>","<span class='wt'>họ từ</span> ➔ các dạng còn lại",0),
+ 'Đứng giữa mạo từ <b>a</b> và danh từ <b>building</b> ➜ phải là TÍNH TỪ.','Giữ nguyên <i>magnificence</i> (danh từ) là lỗi hay gặp nhất câu này.');
+WF('V1',6,'As the capital of Morbihan, Vannes attracts large numbers of ______. <b>(travel)</b>','travellers',['travellers','travelers'],'Là thủ phủ của Morbihan, Vannes thu hút rất nhiều du khách.',
+ LN("<span class='pw'>travellers</span>","<span class='wt'>n (pl)</span> ➔ <span class='gr'>du khách — Anh-Mỹ: travelers</span>",1)+LN("<span class='pw'>travel (v/n) · travelling (n/adj)</span>","<span class='wt'>họ từ</span> ➔ không đếm được nên không đi với numbers of",0),
+ 'Sau <b>large numbers of</b> cần danh từ ĐẾM ĐƯỢC số nhiều chỉ NGƯỜI.','Quên <b>-s</b> hoặc viết <i>travelling</i> là mất điểm.');
+WF('V1',7,'His parents paid for his hotel ______ when he travelled to Japan. <b>(accommodate)</b>','accommodation',['accommodation'],'Bố mẹ cậu ấy trả tiền chỗ ở khách sạn khi cậu đi Nhật.',
+ LN("<span class='pw'>accommodation</span>","<span class='wt'>n.</span> ➔ <span class='gr'>chỗ ở, việc lưu trú</span>",1)+LN("<span class='pw'>accommodate (v) · accommodating (adj: sẵn lòng giúp)</span>","<span class='wt'>họ từ</span> ➔ các dạng còn lại",0),
+ 'Sau <b>paid for his hotel</b> cần DANH TỪ chỉ dịch vụ lưu trú.','<i>accommodating</i> tả tính cách con người — sai nghĩa.');
+WF('V1',8,'Some areas of the park are ______ by car from November through May due to snow. <b>(access)</b>','inaccessible',['inaccessible'],'Một số khu trong công viên không thể tới được bằng ô tô từ tháng Mười Một tới tháng Năm vì tuyết.',
+ LN("<span class='pw'>inaccessible</span>","<span class='wt'>adj phủ định</span> ➔ <span class='gr'>không thể tiếp cận</span>",1)+LN("<span class='pw'>access (n/v) · accessible (adj) · accessibility (n)</span>","<span class='wt'>họ từ</span> ➔ các dạng còn lại",0),
+ 'Từ khoá <b>due to snow</b> cho biết nghĩa PHỦ ĐỊNH ➜ thêm tiền tố <b>in-</b>.','Viết <i>accessible</i> là ngược nghĩa — bẫy lớn nhất của câu này.');
+WF('V1',9,'World-famous for football, Barcelona is one of the top sports ______ destinations in the world. <b>(tour)</b>','tourist',['tourist'],'Nổi tiếng thế giới về bóng đá, Barcelona là một trong những điểm đến du lịch thể thao hàng đầu.',
+ LN("<span class='pw'>tourist</span>","<span class='wt'>n dùng như adj</span> ➔ <span class='gr'>sports tourist destinations — đáp án của sách</span>",1)+LN("<span class='pw'>tour (n/v) · tourism (n) · touristy (adj: đông khách, hơi tiêu cực)</span>","<span class='wt'>họ từ</span> ➔ các dạng còn lại",0),
+ 'Trước danh từ <b>destinations</b> dùng danh từ <b>tourist</b> làm định ngữ ➜ <i>sports tourist destinations</i>.','<i>touristy</i> mang sắc thái tiêu cực; <i>tour</i> không ghép thành cụm này.');
+WF('V1',10,'On the first day of school, the children chatted ______ to their friends about their summer vacations. <b>(excite)</b>','excitedly',['excitedly'],'Ngày đầu tới trường, lũ trẻ trò chuyện đầy hào hứng với bạn bè về kỳ nghỉ hè.',
+ LN("<span class='pw'>excitedly</span>","<span class='wt'>adv</span> ➔ <span class='gr'>một cách hào hứng</span>",1)+LN("<span class='pw'>excite (v) · excited (adj tả người) · exciting (adj tả việc)</span>","<span class='wt'>họ từ</span> ➔ các dạng còn lại",0),
+ 'Từ cần điền bổ nghĩa cho động từ <b>chatted</b> ➜ phải là TRẠNG TỪ.','<i>excited · exciting</i> là tính từ nên không bổ nghĩa cho động từ.');
+
+sec('V2','🛠️','KHU VI — Tìm phần gạch chân SAI &amp; sửa lại (10 câu)','Con bấm vào <b>chữ cái A / B / C / D</b> ở phần bị sai, ô gõ sẽ hiện ra — rồi gõ <b>từ / cụm ĐÚNG</b> để thay thế. Phải đúng <b>cả chữ cái và từ sửa</b> mới được điểm.');
+FX('V2',1,'<u>The Amazon</u><sup>A</sup> is still the <u>more extensive</u><sup>B</sup> rainforest <u>on earth</u><sup>C</sup> despite <u>illegal logging</u><sup>D</sup>.','B','most extensive',['most extensive','the most extensive'],'The Amazon is still the <b>most extensive</b> rainforest on earth despite illegal logging. <br><b>Dịch:</b> <span class="pm">Amazon vẫn là khu rừng nhiệt đới rộng lớn nhất trên trái đất dù bị khai thác gỗ trái phép.</span>',
+ LN("<span class='rd'>more extensive</span>","<span class='wt'>sai</span> ➔ so sánh HƠN nhưng câu lại có mạo từ <b>the</b> và ý “nhất”",0)+LN("<span class='pw'>most extensive</span>","<span class='wt'>đúng</span> ➔ <span class='gr'>so sánh NHẤT: the + most + adj dài</span>",1),
+ 'Có <b>the</b> đứng trước và ý nghĩa “rộng lớn nhất” ➜ dùng <b>so sánh nhất: the most extensive</b>.','A, C, D đều đúng: <i>The Amazon</i> là tên riêng, <i>on earth</i> là cụm cố định, <i>illegal logging</i> đúng ngữ pháp.');
+FX('V2',2,'<u>The number</u><sup>A</sup> of foreign tourists <u>to Vietnam</u><sup>B</sup> <u>have increased</u><sup>C</sup> <u>relatively quickly</u><sup>D</sup> during the past years.','C','has increased',['has increased'],'The number of foreign tourists to Vietnam <b>has increased</b> relatively quickly during the past years. <br><b>Dịch:</b> <span class="pm">Số lượng khách nước ngoài tới Việt Nam đã tăng khá nhanh trong những năm qua.</span>',
+ LN("<span class='rd'>have increased</span>","<span class='wt'>sai</span> ➔ chia theo <i>tourists</i> — nhưng chủ ngữ thật là <b>The number</b>",0)+LN("<span class='pw'>has increased</span>","<span class='wt'>đúng</span> ➔ <span class='gr'>The number of + N (pl) + động từ SỐ ÍT</span>",1),
+ 'Chủ ngữ chính là <b>The number</b> (số ít) ➜ <b>has increased</b>.','Nhớ cặp: <b>The number of</b> + động từ số ít ≠ <b>A number of</b> + động từ số nhiều.');
+FX('V2',3,'She suggested <u>him to go</u><sup>A</sup> to France and visit <u>the Eiffel Tower</u><sup>B</sup> <u>instead of</u><sup>C</sup> Italy <u>this summer</u><sup>D</sup>.','A','he go',['he go','he should go','that he go','that he should go'],'She suggested <b>he go</b> to France and visit the Eiffel Tower instead of Italy this summer. <br><b>Dịch:</b> <span class="pm">Cô ấy đề nghị cậu ta đi Pháp và thăm tháp Eiffel thay vì đi Ý vào hè này.</span>',
+ LN("<span class='rd'>suggested him to go</span>","<span class='wt'>sai</span> ➔ <b>suggest</b> KHÔNG dùng với <i>sb to V</i>",0)+LN("<span class='pw'>suggest (that) + S + V nguyên thể / should + V</span>","<span class='wt'>đúng</span> ➔ <span class='gr'>he go · he should go</span>",1)+LN("<span class='pw'>suggest + V-ing</span>","<span class='wt'>cách khác</span> ➔ suggested going to France",0),
+ 'Sau <b>suggest</b> chỉ dùng <b>(that) + S + V nguyên thể / should + V</b> hoặc <b>V-ing</b>.','Ba phần còn lại đều đúng; lỗi <i>suggest sb to do</i> là lỗi kinh điển của đề thi.');
+FX('V2',4,'He refreshed his <u>daily life</u><sup>A</sup> by going <u>on</u><sup>B</sup> a <u>ten-days</u><sup>C</sup> trip from the North <u>to</u><sup>D</sup> the South of Vietnam.','C','ten-day',['ten-day','a ten-day'],'He refreshed his daily life by going on a <b>ten-day</b> trip from the North to the South of Vietnam. <br><b>Dịch:</b> <span class="pm">Anh ấy làm mới cuộc sống thường ngày bằng chuyến đi mười ngày từ Bắc vào Nam Việt Nam.</span>',
+ LN("<span class='rd'>ten-days trip</span>","<span class='wt'>sai</span> ➔ tính từ ghép <b>không</b> thêm -s",0)+LN("<span class='pw'>ten-day trip</span>","<span class='wt'>đúng</span> ➔ <span class='gr'>số + danh từ số ít + gạch nối = tính từ ghép</span>",1),
+ 'Khi làm <b>tính từ ghép</b> đứng trước danh từ, phần danh từ giữ dạng <b>số ít</b>: <i>a ten-day trip · a five-star hotel</i>.','<i>go on a trip</i> ở B là đúng; A và D cũng đúng.');
+FX('V2',5,'Samir works for <u>an</u><sup>A</sup> Egyptian company <u>who</u><sup>B</sup> specializes <u>in</u><sup>C</sup> <u>information technology</u><sup>D</sup>.','B','which',['which','that'],'Samir works for an Egyptian company <b>which</b> specializes in information technology. <br><b>Dịch:</b> <span class="pm">Samir làm việc cho một công ty Ai Cập chuyên về công nghệ thông tin.</span>',
+ LN("<span class='rd'>who</span>","<span class='wt'>sai</span> ➔ <i>who</i> chỉ dùng cho NGƯỜI",0)+LN("<span class='pw'>which / that</span>","<span class='wt'>đúng</span> ➔ <span class='gr'>company là tổ chức ➜ coi như VẬT</span>",1),
+ '<b>a company</b> là vật/tổ chức ➜ dùng <b>which</b> (hoặc <b>that</b>) làm chủ ngữ.','<i>an Egyptian</i> đúng vì <i>Egyptian</i> mở đầu bằng nguyên âm; <i>specialize in</i> là cụm cố định.');
+FX('V2',6,'Mia asked the <u>travel agency</u><sup>A</sup> to <u>work out</u><sup>B</sup> a <u>detail itinerary</u><sup>C</sup> for her trip <u>to America</u><sup>D</sup>.','C','detailed itinerary',['detailed itinerary','detailed','a detailed itinerary'],'Mia asked the travel agency to work out a <b>detailed itinerary</b> for her trip to America. <br><b>Dịch:</b> <span class="pm">Mia nhờ đại lý lữ hành lên một lộ trình chi tiết cho chuyến đi Mỹ của cô.</span>',
+ LN("<span class='rd'>detail itinerary</span>","<span class='wt'>sai</span> ➔ <i>detail</i> là DANH TỪ, không bổ nghĩa được cho danh từ khác ở đây",0)+LN("<span class='pw'>detailed itinerary</span>","<span class='wt'>đúng</span> ➔ <span class='gr'>detailed (adj) = chi tiết</span>",1),
+ 'Trước danh từ <b>itinerary</b> cần TÍNH TỪ ➜ <b>detailed</b>.','<i>work out</i> ở B đúng nghĩa “vạch ra, lên kế hoạch”.');
+FX('V2',7,'Vietnam is <u>a country</u><sup>A</sup> <u>which</u><sup>B</sup> landscapes and history <u>have attracted</u><sup>C</sup> <u>millions</u><sup>D</sup> of tourists.','B','whose',['whose'],'Vietnam is a country <b>whose</b> landscapes and history have attracted millions of tourists. <br><b>Dịch:</b> <span class="pm">Việt Nam là một đất nước mà phong cảnh và lịch sử của nó đã thu hút hàng triệu du khách.</span>',
+ LN("<span class='rd'>which</span>","<span class='wt'>sai</span> ➔ sau <i>which</i> phải là động từ, ở đây lại là <b>danh từ</b> landscapes",0)+LN("<span class='pw'>whose</span>","<span class='wt'>đúng</span> ➔ <span class='gr'>chỉ SỞ HỮU — sau whose luôn có danh từ</span>",1),
+ 'Ngay sau chỗ đó là <b>danh từ landscapes and history</b> thuộc về đất nước ➜ <b>whose</b>.','<i>have attracted</i> ở C đúng vì chủ ngữ là hai danh từ (số nhiều).');
+FX('V2',8,'Tourism can be <u>a source</u><sup>A</sup> <u>of</u><sup>B</sup> problems, especially if it <u>is not</u><sup>C</sup> managed <u>correct</u><sup>D</sup>.','D','correctly',['correctly'],'Tourism can be a source of problems, especially if it is not managed <b>correctly</b>. <br><b>Dịch:</b> <span class="pm">Du lịch có thể là nguồn gốc của nhiều vấn đề, đặc biệt nếu không được quản lý đúng cách.</span>',
+ LN("<span class='rd'>correct</span>","<span class='wt'>sai</span> ➔ tính từ không bổ nghĩa được cho động từ <i>managed</i>",0)+LN("<span class='pw'>correctly</span>","<span class='wt'>đúng</span> ➔ <span class='gr'>trạng từ — bổ nghĩa cho động từ</span>",1),
+ 'Bổ nghĩa cho <b>động từ managed</b> ➜ phải dùng TRẠNG TỪ <b>correctly</b>.','<i>a source of</i> ở A–B là cụm cố định; <i>is not managed</i> ở C đúng dạng bị động.');
+FX('V2',9,'<u>It&rsquo;s always</u><sup>A</sup> a good idea <u>to book</u><sup>B</sup> a hotel room <u>advance</u><sup>C</sup>, especially <u>in peak season</u><sup>D</sup>.','C','in advance',['in advance'],'It&rsquo;s always a good idea to book a hotel room <b>in advance</b>, especially in peak season. <br><b>Dịch:</b> <span class="pm">Đặt phòng khách sạn trước luôn là ý hay, nhất là vào mùa cao điểm.</span>',
+ LN("<span class='rd'>advance</span>","<span class='wt'>sai</span> ➔ thiếu giới từ <b>in</b>",0)+LN("<span class='pw'>in advance</span>","<span class='wt'>đúng</span> ➔ <span class='gr'>cụm cố định = trước, sớm</span>",1),
+ 'Cụm cố định là <b>book sth in advance</b> = đặt trước.','<i>in peak season</i> ở D là cụm đúng; <i>It&rsquo;s always a good idea to V</i> cũng đúng.');
+FX('V2',10,'<u>Founded</u><sup>A</sup> by a local man in 1991, Son Doong Cave became <u>known worldwide</u><sup>B</sup> in 2009 when it <u>was explored</u><sup>C</sup> by members <u>of BCRA</u><sup>D</sup>.','A','Found',['found','discovered'],'<b>Found</b> by a local man in 1991, Son Doong Cave became known worldwide in 2009 when it was explored by members of BCRA. <br><b>Dịch:</b> <span class="pm">Được một người dân địa phương tìm ra năm 1991, hang Sơn Đoòng trở nên nổi tiếng thế giới năm 2009 khi được các thành viên BCRA khám phá.</span>',
+ LN("<span class='rd'>Founded</span>","<span class='wt'>sai</span> ➔ <b>found (v) = thành lập</b> — hang động không ai “thành lập”",0)+LN("<span class='pw'>Found</span>","<span class='wt'>đúng</span> ➔ <span class='gr'>V3 của find = được tìm ra (Ms cũng chấm Discovered)</span>",1),
+ 'Hang được <b>tìm ra</b> ➜ dùng <b>Found</b> (find–found–found), không phải <i>Founded</i> (found–founded–founded = thành lập).','B, C, D đều đúng: <i>become known worldwide</i>, <i>was explored</i> (bị động), <i>members of BCRA</i>.');
+
+sec('V3','💬','KHU VII — Hoàn thành hội thoại (10 câu)','Hội thoại giữa <b>Wendy</b> và <b>Linh</b> về chuyến đi Nhật. Con đọc <b>lời đáp của Linh ngay bên dưới</b> rồi mới chọn câu hỏi của Wendy — lời đáp chính là chìa khoá.');
+MQ('V3',1,'<b>Wendy:</b> ______<br><b>Linh:</b> I went to Japan.',0,[['G. Where did you go on your last holiday?','Kỳ nghỉ vừa rồi bạn đi đâu? — hỏi NƠI ĐI'],['A. Which cities did you visit?','Bạn đã tới những thành phố nào? — hỏi thành phố cụ thể'],['C. Have you been to South Korea?','Bạn từng tới Hàn Quốc chưa? — câu hỏi Yes/No'],['E. What countries would you like to visit in the future?','Sau này bạn muốn tới nước nào? — hỏi tương lai']],
+ '<b>Dịch:</b> <span class="pm">— Kỳ nghỉ vừa rồi bạn đi đâu? — Mình đi Nhật.</span>',
+ 'Lời đáp <b>I went to Japan</b> nêu <b>nơi đã đi</b> ➜ câu hỏi phải là <b>Where did you go…?</b>','Câu A hỏi các thành phố (dùng ở câu 5); C là Yes/No; E hỏi về tương lai.');
+MQ('V3',2,'<b>Wendy:</b> ______<br><b>Linh:</b> I went there with my family. We booked a package tour.',0,[['J. Wow, that&rsquo;s great! Who did you go with?','Ồ tuyệt! Bạn đi với ai? — hỏi NGƯỜI cùng đi'],['H. Sounds good! How long did you stay in Japan?','Bạn ở Nhật bao lâu? — hỏi thời gian'],['D. Is one week enough to travel the country?','Một tuần đủ để đi hết đất nước đó không?'],['I. Which city do you like best?','Bạn thích thành phố nào nhất?']],
+ '<b>Dịch:</b> <span class="pm">— Ồ tuyệt! Bạn đi với ai? — Mình đi cùng gia đình. Bọn mình đặt tour trọn gói.</span>',
+ 'Lời đáp <b>with my family</b> ➜ câu hỏi <b>Who did you go with?</b>','H hỏi thời gian, D hỏi Yes/No, I hỏi thành phố yêu thích — không khớp “with my family”.');
+MQ('V3',3,'<b>Wendy:</b> ______<br><b>Linh:</b> We stayed there for a week.',0,[['H. Sounds good! How long did you stay in Japan?','Bạn ở Nhật bao lâu? — hỏi KHOẢNG THỜI GIAN'],['G. Where did you go on your last holiday?','Kỳ nghỉ vừa rồi bạn đi đâu?'],['A. Which cities did you visit?','Bạn tới những thành phố nào?'],['B. Really? A lot of people prefer Korean food.','Thật à? Nhiều người thích đồ Hàn hơn.']],
+ '<b>Dịch:</b> <span class="pm">— Nghe hay đấy! Bạn ở Nhật bao lâu? — Bọn mình ở đó một tuần.</span>',
+ 'Lời đáp <b>for a week</b> là khoảng thời gian ➜ <b>How long…?</b>','G hỏi nơi, A hỏi thành phố, B là lời nhận xét về đồ ăn.');
+MQ('V3',4,'<b>Wendy:</b> ______<br><b>Linh:</b> Of course not. We just visited some cities in Japan.',0,[['D. Is one week enough to travel the country?','Một tuần có đủ để đi hết cả nước không? — câu hỏi Yes/No'],['A. Which cities did you visit?','Bạn tới những thành phố nào?'],['I. Which city do you like best?','Bạn thích thành phố nào nhất?'],['E. What countries would you like to visit in the future?','Sau này bạn muốn tới nước nào?']],
+ '<b>Dịch:</b> <span class="pm">— Một tuần có đủ để đi hết cả nước không? — Tất nhiên là không. Bọn mình chỉ tới vài thành phố ở Nhật.</span>',
+ 'Lời đáp mở đầu bằng <b>Of course not</b> ➜ câu trước phải là <b>câu hỏi Yes/No</b> (<i>Is…?</i>).','A, I, E đều là câu hỏi Wh- nên không thể đáp bằng “Of course not”.');
+MQ('V3',5,'<b>Wendy:</b> ______<br><b>Linh:</b> We went to Kyoto, Tokyo, Mt. Fuji and Osaka.',0,[['A. Which cities did you visit?','Bạn tới những thành phố nào? — hỏi DANH SÁCH nơi đã tới'],['I. Which city do you like best?','Bạn thích thành phố nào nhất? — chỉ chọn một'],['G. Where did you go on your last holiday?','Kỳ nghỉ vừa rồi bạn đi đâu?'],['H. Sounds good! How long did you stay in Japan?','Bạn ở Nhật bao lâu?']],
+ '<b>Dịch:</b> <span class="pm">— Bạn đã tới những thành phố nào? — Bọn mình tới Kyoto, Tokyo, núi Phú Sĩ và Osaka.</span>',
+ 'Lời đáp liệt kê <b>nhiều thành phố</b> ➜ câu hỏi số nhiều <b>Which cities…?</b>','I chỉ hỏi một thành phố yêu thích (dùng ở câu 6); G đã dùng ở câu 1.');
+MQ('V3',6,'<b>Wendy:</b> ______<br><b>Linh:</b> Kyoto. Because I love nature and enjoy the history of Japan.',0,[['I. Which city do you like best?','Bạn thích thành phố nào nhất? — chọn MỘT + nêu lý do'],['A. Which cities did you visit?','Bạn tới những thành phố nào? — hỏi danh sách'],['D. Is one week enough to travel the country?','Một tuần có đủ không?'],['F. Which one do you like more, Japanese or Korean cuisine?','Bạn thích món Nhật hay Hàn hơn?']],
+ '<b>Dịch:</b> <span class="pm">— Bạn thích thành phố nào nhất? — Kyoto. Vì mình yêu thiên nhiên và thích lịch sử Nhật Bản.</span>',
+ 'Lời đáp nêu <b>một thành phố + lý do</b> ➜ câu hỏi <b>Which city do you like best?</b>','A hỏi cả danh sách; F hỏi về món ăn; D là câu hỏi Yes/No.');
+MQ('V3',7,'<b>Wendy:</b> ______<br><b>Linh:</b> Yes, I went to Seoul in March.',0,[['C. Have you been to South Korea?','Bạn từng tới Hàn Quốc chưa? — câu hỏi Yes/No về Hàn Quốc'],['E. What countries would you like to visit in the future?','Sau này bạn muốn tới nước nào?'],['B. Really? A lot of people prefer Korean food.','Thật à? Nhiều người thích đồ Hàn hơn.'],['G. Where did you go on your last holiday?','Kỳ nghỉ vừa rồi bạn đi đâu?']],
+ '<b>Dịch:</b> <span class="pm">— Bạn từng tới Hàn Quốc chưa? — Có, mình tới Seoul vào tháng Ba.</span>',
+ 'Lời đáp mở đầu bằng <b>Yes</b> và nhắc <b>Seoul</b> ➜ câu hỏi Yes/No về <b>South Korea</b>.','E hỏi tương lai; B là lời nhận xét; G hỏi nơi của kỳ nghỉ vừa rồi.');
+MQ('V3',8,'<b>Wendy:</b> ______<br><b>Linh:</b> Of course, Japanese food.',0,[['F. Which one do you like more, Japanese or Korean cuisine?','Bạn thích món Nhật hay Hàn hơn? — hỏi CHỌN MỘT trong hai'],['B. Really? A lot of people prefer Korean food.','Thật à? Nhiều người thích đồ Hàn hơn. — là lời nhận xét sau khi đã biết lựa chọn'],['C. Have you been to South Korea?','Bạn từng tới Hàn Quốc chưa?'],['I. Which city do you like best?','Bạn thích thành phố nào nhất?']],
+ '<b>Dịch:</b> <span class="pm">— Bạn thích món Nhật hay món Hàn hơn? — Tất nhiên là món Nhật.</span>',
+ 'Lời đáp chọn <b>Japanese food</b> ➜ câu hỏi so sánh hai lựa chọn <b>Japanese or Korean cuisine?</b>','B là câu tiếp theo sau khi Linh đã chọn (dùng ở câu 9).');
+MQ('V3',9,'<b>Wendy:</b> ______<br><b>Linh:</b> Korean food is too spicy to me. I think Japanese food is more delicious.',0,[['B. Really? A lot of people prefer Korean food.','Thật à? Nhiều người lại thích đồ Hàn hơn. — nhận xét khiến Linh giải thích lý do'],['F. Which one do you like more, Japanese or Korean cuisine?','Bạn thích món nào hơn? — đã hỏi ở câu 8'],['E. What countries would you like to visit in the future?','Sau này bạn muốn tới nước nào?'],['D. Is one week enough to travel the country?','Một tuần có đủ không?']],
+ '<b>Dịch:</b> <span class="pm">— Thật à? Nhiều người lại thích đồ Hàn hơn. — Đồ Hàn cay quá với mình. Mình thấy đồ Nhật ngon hơn.</span>',
+ 'Linh đang <b>giải thích lý do</b> vì sao chọn đồ Nhật ➜ câu trước phải là lời <b>nhận xét ngạc nhiên</b> về việc nhiều người thích đồ Hàn.','F đã dùng ở câu 8; E và D lệch chủ đề đồ ăn.');
+MQ('V3',10,'<b>Wendy:</b> ______<br><b>Linh:</b> I want to go to some countries in Europe, such as Italy, German, the Netherlands and France.',0,[['E. What countries would you like to visit in the future?','Sau này bạn muốn tới những nước nào? — hỏi KẾ HOẠCH tương lai'],['A. Which cities did you visit?','Bạn đã tới những thành phố nào? — hỏi quá khứ'],['C. Have you been to South Korea?','Bạn từng tới Hàn Quốc chưa?'],['G. Where did you go on your last holiday?','Kỳ nghỉ vừa rồi bạn đi đâu? — hỏi quá khứ']],
+ '<b>Dịch:</b> <span class="pm">— Sau này bạn muốn tới những nước nào? — Mình muốn tới vài nước châu Âu như Ý, Đức, Hà Lan và Pháp.</span>',
+ 'Lời đáp <b>I want to go…</b> nói về <b>mong muốn tương lai</b> ➜ câu hỏi <b>would you like to visit in the future?</b>','A, C, G đều hỏi về chuyện đã xảy ra nên không khớp với “I want to go”.');
+
+sec('V4','🔁','KHU X — Viết lại câu bằng từ trong ngoặc (10 câu)','Ms giữ đúng <b>từ gợi ý đầu câu</b> như trong sách. Con có thể <b>gõ tiếp phần còn lại</b> hoặc <b>gõ lại cả câu</b> — kiểu nào Ms cũng chấm điểm. Bỏ qua hoa thường và dấu câu.');
+RW('V4',1,'The ticket price I got from the agent was different from that on the airlines website. <b>(AS)</b>','The ticket price I got from the agent was not the same as that on the airlines website.',['The ticket price I got from the agent was not the same as that on the airlines website.','the same as that on the airlines website.','the same as that on the airlines website'],'Giá vé tôi lấy từ đại lý không giống giá trên website của hãng bay.',
+ LN("<span class='pw'>be different from</span>","<span class='wt'>gốc</span> ➔ khác với",0)+LN("<span class='pw'>NOT the same AS</span>","<span class='wt'>đích</span> ➔ <span class='gr'>không giống như — dùng với AS</span>",1),
+ '<b>different from</b> ↔ <b>not the same as</b>; từ khoá <b>AS</b> báo đúng cấu trúc này.','Đừng viết <i>not the same from</i> hay <i>not different as</i> — giới từ đi liền với từ vựng.','The ticket price I got from the agent was not');
+RW('V4',2,'Dennis has visited Son Doong Cave once before. <b>(SECOND)</b>','This is the second time Dennis has visited Son Doong Cave.',['This is the second time Dennis has visited Son Doong Cave.','the second time Dennis has visited Son Doong Cave.','the second time Dennis has visited Son Doong Cave'],'Đây là lần thứ hai Dennis tới hang Sơn Đoòng.',
+ LN("<span class='pw'>This is the second time + S + have/has + V3</span>","<span class='wt'>cấu trúc</span> ➔ <span class='gr'>đây là lần thứ hai ai làm gì</span>",1)+LN("<span class='pw'>once before</span>","<span class='wt'>gốc</span> ➔ đã một lần trước đó ➜ lần này là lần thứ hai",0),
+ 'Đã đi <b>một lần trước đó</b> ➜ lần này là <b>lần thứ hai</b>; sau <i>the second time</i> dùng <b>hiện tại hoàn thành</b>.','Đừng viết <i>the second time Dennis visited</i> — sau <b>the … time</b> phải là thì hoàn thành.','This is');
+RW('V4',3,'It&rsquo;s a pity I can&rsquo;t visit the Eiffel Tower in Paris. <b>(WISH)</b>','I wish I could visit the Eiffel Tower in Paris.',['I wish I could visit the Eiffel Tower in Paris.','wish I could visit the Eiffel Tower in Paris.','wish I could visit the Eiffel Tower in Paris'],'Tôi ước mình có thể tới thăm tháp Eiffel ở Paris.',
+ LN("<span class='pw'>I wish + S + could + V</span>","<span class='wt'>cấu trúc</span> ➔ <span class='gr'>ước điều không thực hiện được ở hiện tại</span>",1)+LN("<span class='pw'>It&rsquo;s a pity + S + can&rsquo;t V</span>","<span class='wt'>gốc</span> ➔ tiếc là không thể làm gì",0),
+ 'Câu ước trái hiện tại: <i>can&rsquo;t visit</i> ➜ <b>wish I could visit</b> (lùi một bậc).','Đừng viết <i>I wish I can visit</i> — sau <b>wish</b> phải lùi thì.','I');
+RW('V4',4,'The information we received from our tour guide was so confusing that I didn&rsquo;t know when we departed to Hanoi. <b>(SUCH)</b>','Our tour guide gave us such confusing information that I didn&rsquo;t know when we departed to Hanoi.',["Our tour guide gave us such confusing information that I didn't know when we departed to Hanoi.","us such confusing information that I didn't know when we departed to Hanoi.","us such confusing information that I did not know when we departed to Hanoi."],'Hướng dẫn viên đưa cho chúng tôi những thông tin lộn xộn đến mức tôi không biết khi nào chúng tôi khởi hành đi Hà Nội.',
+ LN("<span class='pw'>so + adj + that</span>","<span class='wt'>gốc</span> ➔ … đến mức mà",0)+LN("<span class='pw'>such + adj + N (không đếm được) + that</span>","<span class='wt'>đích</span> ➔ <span class='gr'>such confusing information that…</span>",1),
+ '<b>such</b> đi với <b>tính từ + danh từ</b>; <i>information</i> KHÔNG đếm được nên <b>không</b> có mạo từ <i>a</i>.','Đừng viết <i>such a confusing information</i> — đây là bẫy mạo từ với danh từ không đếm được.','Our tour guide gave');
+RW('V4',5,'Don&rsquo;t waste your time explaining yourself to people who really don&rsquo;t want to understand. <b>(WORTH)</b>','It&rsquo;s not worth explaining yourself to people who really don&rsquo;t want to understand.',["It's not worth explaining yourself to people who really don't want to understand.","not worth explaining yourself to people who really don't want to understand.","It is not worth explaining yourself to people who really do not want to understand."],'Không đáng để giải thích bản thân với những người thực sự không muốn hiểu.',
+ LN("<span class='pw'>It&rsquo;s (not) worth + V-ing</span>","<span class='wt'>cấu trúc</span> ➔ <span class='gr'>(không) đáng để làm gì</span>",1)+LN("<span class='pw'>Don&rsquo;t waste your time + V-ing</span>","<span class='wt'>gốc</span> ➔ đừng mất thời gian làm gì",0),
+ 'Sau <b>worth</b> luôn là <b>V-ing</b> ➜ <b>It&rsquo;s not worth explaining…</b>','Đừng viết <i>worth to explain</i>; cũng đừng thêm lại <i>wasting your time</i> vì key của sách rút gọn thành <b>explaining</b>.','It&rsquo;s');
+RW('V4',6,'&ldquo;Is it necessary to ask for permission before exploring Son Doong Cave?&rdquo; <b>(IF)</b>','The tourists asked if it was necessary to ask for permission before exploring Son Doong Cave.',['The tourists asked if it was necessary to ask for permission before exploring Son Doong Cave.','if it was necessary to ask for permission before exploring Son Doong Cave.','if it was necessary to ask for permission before exploring Son Doong Cave'],'Các du khách hỏi liệu có cần xin phép trước khi khám phá hang Sơn Đoòng không.',
+ LN("<span class='pw'>asked IF + S + V (lùi thì)</span>","<span class='wt'>cấu trúc</span> ➔ <span class='gr'>tường thuật câu hỏi Yes/No</span>",1)+LN("<span class='pw'>Is it necessary ➜ if it WAS necessary</span>","<span class='wt'>lùi thì</span> ➔ is ➜ was",0),
+ 'Tường thuật câu hỏi Yes/No dùng <b>if / whether</b> + <b>bỏ đảo ngữ</b> + <b>lùi thì</b>.','Đừng giữ dạng đảo <i>asked if was it necessary</i>; cũng đừng để dấu <b>?</b> ở cuối.','The tourists asked');
+RW('V4',7,'If you don&rsquo;t buy a package tour, you will have to book your own plane ticket. <b>(UNLESS)</b>','You will have to book your own plane ticket unless you buy a package tour.',['You will have to book your own plane ticket unless you buy a package tour.','will have to book your own plane ticket unless you buy a package tour.','Unless you buy a package tour, you will have to book your own plane ticket.'],'Bạn sẽ phải tự đặt vé máy bay trừ khi bạn mua tour trọn gói.',
+ LN("<span class='pw'>unless = if … not</span>","<span class='wt'>quy tắc</span> ➔ <span class='gr'>sau unless dùng mệnh đề KHẲNG ĐỊNH</span>",1)+LN("<span class='pw'>If you don&rsquo;t buy ➜ unless you buy</span>","<span class='wt'>chuyển đổi</span> ➔ bỏ <i>don&rsquo;t</i>",0),
+ '<b>unless</b> đã mang nghĩa phủ định ➜ mệnh đề sau nó phải <b>khẳng định</b>: <i>unless you buy</i>.','Đừng viết <i>unless you don&rsquo;t buy</i> — phủ định hai lần là lỗi nặng.','You');
+RW('V4',8,'My best friend suggested I spend the summer in Italy. <b>(ADVISED)</b>','My best friend advised me to spend the summer in Italy.',['My best friend advised me to spend the summer in Italy.','advised me to spend the summer in Italy.','advised me to spend the summer in Italy'],'Bạn thân tôi khuyên tôi nên nghỉ hè ở Ý.',
+ LN("<span class='pw'>advise sb TO V</span>","<span class='wt'>cấu trúc</span> ➔ <span class='gr'>khuyên ai làm gì</span>",1)+LN("<span class='pw'>suggest (that) S + V</span>","<span class='wt'>gốc</span> ➔ đề nghị ai làm gì — KHÔNG dùng sb to V",0),
+ '<b>advise</b> đi với <b>sb + to V</b> ➜ <i>advised me to spend</i>.','Nhớ khác biệt: <b>suggest (that) he go</b> nhưng <b>advise him to go</b>.','My best friend');
+RW('V4',9,'Nick is our tour guide; he is talking to other foreign travellers over there. <b>(WHO)</b>','Nick, who is our tour guide, is talking to other foreign travellers over there.',['Nick, who is our tour guide, is talking to other foreign travellers over there.','who is our tour guide, is talking to other foreign travellers over there.','Nick, who is talking to other foreign travellers over there, is our tour guide.','who is talking to other foreign travellers over there, is our tour guide.'],'Nick, hướng dẫn viên của chúng tôi, đang nói chuyện với mấy du khách nước ngoài ở kia.',
+ LN("<span class='pw'>Tên riêng + , who … ,</span>","<span class='wt'>quy tắc</span> ➔ <span class='gr'>mệnh đề KHÔNG xác định — bắt buộc hai dấu phẩy</span>",1)+LN("<span class='pw'>không dùng that</span>","<span class='wt'>lưu ý</span> ➔ sau dấu phẩy cấm dùng that",0),
+ 'Danh từ là <b>tên riêng Nick</b> ➜ mệnh đề quan hệ có <b>hai dấu phẩy</b>; key của sách nhận <b>cả hai cách</b> đảo vế.','Đừng dùng <i>that</i> sau dấu phẩy; đừng quên dấu phẩy thứ hai.','Nick,');
+RW('V4',10,'The weather was beautiful but we didn&rsquo;t go on a picnic. <b>(DESPITE)</b>','We didn&rsquo;t go on a picnic despite the beautiful weather.',["We didn't go on a picnic despite the beautiful weather.","didn't go on a picnic despite the beautiful weather.","We did not go on a picnic despite the beautiful weather.","Despite the beautiful weather, we didn't go on a picnic."],'Dù thời tiết rất đẹp, chúng tôi vẫn không đi dã ngoại.',
+ LN("<span class='pw'>despite + N / V-ing</span>","<span class='wt'>quy tắc</span> ➔ <span class='gr'>KHÔNG có “of”, KHÔNG đi với mệnh đề</span>",1)+LN("<span class='pw'>the weather was beautiful ➜ the beautiful weather</span>","<span class='wt'>chuyển đổi</span> ➔ mệnh đề ➜ cụm danh từ",0),
+ '<b>despite</b> chỉ đi với <b>danh từ / V-ing</b> ➜ đổi mệnh đề thành cụm danh từ <b>the beautiful weather</b>.','Không có <s>despite of</s>; cũng đừng viết <i>despite the weather was beautiful</i>.','We');
+</script>
+
+<script>
+/* ══ RENDER HẢI TRÌNH ══ */
+const TOTAL=ITEMS.length;let score=0,answered=0;const done={},maps={},sel={};
+function norm(s){return (s||'').toLowerCase().replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim()}
+function shf(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function bump(){document.getElementById('sc').textContent=score;
+ document.getElementById('rt').style.width=(answered/TOTAL*100)+'%';
+ const p=answered?score/answered:1;
+ document.getElementById('md').textContent=p>=.9?'🏆':p>=.7?'💎':p>=.5?'🪙':'🧭'}
+const host=document.getElementById('quiz');let last='';
+ITEMS.forEach((m,qi)=>{
+ if(m.s!==last){last=m.s;const s=SEC[m.s];
+  const h=document.createElement('div');h.className='leg neo';
+  h.innerHTML='<div class="lt">'+s[0]+' '+s[1]+'</div><div class="ld">'+s[2]+'</div>';host.appendChild(h)}
+ const gid='g'+qi,c=document.createElement('div');c.className='card neo';
+ if(m.t==='m'){const so=shf(m.opts);maps[gid]=so;
+  c.innerHTML='<div class="qh"><div class="qn">'+m.n+'</div><div class="qt">'+m.q+'</div></div>'+
+   '<div class="opts" id="o_'+gid+'">'+so.map((o,i)=>'<div class="opt" onclick="pick(\''+gid+'\','+i+')">'+o+'</div>').join('')+'</div>'+
+   '<div class="exp" id="e_'+gid+'">'+m.ex+'</div>';
+ }else if(m.t==='x'){
+  c.innerHTML='<div class="qh"><div class="qn">'+m.n+'</div><div class="qt">'+m.q+'</div></div>'+
+   '<div class="ltr" id="l_'+gid+'">'+['A','B','C','D'].map(function(L){return '<button class="lb" data-l="'+L+'" onclick="pickL(\''+gid+'\',\''+L+'\')">'+L+'</button>'}).join('')+'</div>'+
+   '<div class="frow" id="f_'+gid+'" style="display:none"><input class="tin" id="i_'+gid+'" placeholder="Gõ từ / cụm ĐÚNG để thay thế…" autocomplete="off" spellcheck="false">'+
+   '<button class="ck" onclick="chkX(\''+gid+'\')">&#9654; SỬA LỖI</button></div>'+
+   '<div class="exp" id="e_'+gid+'">'+m.ex+'</div>';
+ }else{
+  c.innerHTML='<div class="qh"><div class="qn">'+m.n+'</div><div class="qt">'+m.q+'</div></div>'+
+   '<div class="frow">'+(m.pre?'<span class="stem">'+m.pre+'</span>':'')+'<input class="tin" id="i_'+gid+'" placeholder="'+m.ph+'" autocomplete="off" spellcheck="false">'+
+   '<button class="ck" onclick="chk(\''+gid+'\')">⚔️ GIẢI MÃ</button></div>'+
+   '<div class="exp" id="e_'+gid+'">'+m.ex+'</div>';
+ }
+ host.appendChild(c);
+ if(m.t==='f'){setTimeout(function(){const el=document.getElementById('i_'+gid);
+  if(el)el.addEventListener('keydown',e=>{if(e.key==='Enter')chk(gid)})},0)}
+});
+document.getElementById('tt').textContent=TOTAL;bump();
+function pick(gid,i){
+ if(done[gid])return;clk();done[gid]=true;answered++;
+ const m=ITEMS[+gid.slice(1)],box=document.getElementById('o_'+gid),ok=maps[gid][i]===m.correct;
+ [...box.children].forEach((el,j)=>{el.classList.add('lk');
+  if(maps[gid][j]===m.correct)el.classList.add('rt');else if(j===i)el.classList.add('wr');else el.classList.add('dim')});
+ if(ok){score++;ding();coins()}else{box.children[i].classList.add('shk');buzz()}
+ document.getElementById('e_'+gid).classList.add('on');bump()}
+function chk(gid){
+ if(done[gid])return;clk();
+ const m=ITEMS[+gid.slice(1)],inp=document.getElementById('i_'+gid),v=norm(inp.value);
+ if(!v){inp.classList.add('shk');setTimeout(()=>inp.classList.remove('shk'),430);return}
+ done[gid]=true;answered++;
+ var L=m.accept.map(norm),cd=[v];
+ if(m.pre){var pn=norm(m.pre);cd.push(norm(pn+' '+v));if(v.indexOf(pn)===0)cd.push(v.slice(pn.length).trim())}
+ var ok=cd.some(function(x){return L.indexOf(x)>-1});
+ inp.disabled=true;inp.classList.add(ok?'ok':'bad');
+ if(ok){score++;ding();coins()}else{buzz();inp.classList.add('shk');setTimeout(()=>inp.classList.remove('shk'),430)}
+ document.getElementById('e_'+gid).classList.add('on');bump()}
+/* ══ MỞ RƯƠNG ══ */
+function openName(){document.getElementById('nm').classList.add('on');setTimeout(()=>document.getElementById('nin').focus(),160)}
+function doSubmit(){
+ const inp=document.getElementById('nin'),wr=document.getElementById('nwr'),nm=inp.value.trim();
+ if(!nm){inp.classList.add('er');wr.classList.add('on');setTimeout(()=>inp.classList.remove('er'),460);return}
+ wr.classList.remove('on');document.getElementById('nm').classList.remove('on');
+ const p=score/TOTAL,ten=(p*10).toFixed(2);let g,ms,gif,ic;
+ if(score===TOTAL){ic='👑';g='RƯƠNG VÀNG LÀ CỦA '+nm+'!';ms='Đúng TOÀN BỘ '+TOTAL+' chặng — thuyền trưởng thực thụ! 🏴‍☠️';gif='https://media.giphy.com/media/g9582DNuQppxC/giphy.gif'}
+ else if(p>=.8){ic='💎';g='KHO BÁU MỞ RỒI, '+nm+'!';ms='Rất giỏi! Con xem lại vài chặng còn sai rồi ra khơi lần nữa nhé.';gif='https://media.giphy.com/media/11sBLVxNs7v6WA/giphy.gif'}
+ else if(p>=.6){ic='🪙';g='TÌM ĐƯỢC KHÁ NHIỀU VÀNG, '+nm+'!';ms='Ổn rồi! Đọc kỹ bốn bước giải thích ở những chặng sai là con lên hạng ngay.';gif='https://media.giphy.com/media/11sBLVxNs7v6WA/giphy.gif'}
+ else{ic='🧭';g='CỐ LÊN NÀO, '+nm+'!';ms='Chưa mở được rương đâu. Con đọc lại hai quy tắc -ic và -ious rồi ra khơi lại nhé! 📚';gif='https://media.giphy.com/media/d2lcHJTG5Tscg/giphy.gif'}
+ document.getElementById('rIc').textContent=ic;
+ document.getElementById('rG').textContent=g;
+ document.getElementById('rS').textContent=score+' / '+TOTAL;
+ document.getElementById('rT').textContent='🎓 Quy đổi: '+ten+' / 10 điểm';
+ document.getElementById('rI').src=gif;
+ document.getElementById('rM').textContent=ms;
+ document.getElementById('rm').classList.add('on');
+ if(p>=.6){coins();ding()}}
+
+function pickL(gid,L){if(done[gid])return;clk();sel[gid]=L;
+ var box=document.getElementById('l_'+gid);
+ Array.prototype.forEach.call(box.children,function(b){b.classList.toggle('on',b.getAttribute('data-l')===L)});
+ var f=document.getElementById('f_'+gid);f.style.display='flex';document.getElementById('i_'+gid).focus()}
+function chkX(gid){if(done[gid])return;clk();
+ var m=ITEMS[+gid.slice(1)],inp=document.getElementById('i_'+gid),v=norm(inp.value);
+ if(!sel[gid]||!v){inp.classList.add('shk');setTimeout(function(){inp.classList.remove('shk')},430);return}
+ done[gid]=true;answered++;
+ var ok=(sel[gid]===m.letter)&&m.accept.map(norm).indexOf(v)>-1;
+ inp.disabled=true;inp.classList.add(ok?'ok':'bad');
+ var box=document.getElementById('l_'+gid);
+ Array.prototype.forEach.call(box.children,function(b){b.disabled=true;b.classList.add('lk');
+  var L=b.getAttribute('data-l');
+  if(L===m.letter)b.classList.add('rt');else if(L===sel[gid])b.classList.add('wr')});
+ if(ok){score++;ding();coins()}else{buzz()}
+ document.getElementById('e_'+gid).classList.add('on');bump()}
+</script>
+<script>/*devclean*/(function(){
+var ZW=/[\u00AD\u034F\u061C\u115F\u1160\u17B4\u17B5\u180E\u200B-\u200F\u202A-\u202E\u2060-\u206F\uFEFF]/g,
+    SP=/[\u00A0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\t]/g,
+    AP=/[\u2018\u2019\u201A\u201B\u2032\u2035\u02B9\u02BB\u02BC\u02BD\u02C8\u0060\u00B4\uFF07]/g,
+    DQ=/[\u201C\u201D\u201E\u201F\u2033\u2036\u00AB\u00BB\uFF02]/g,
+    DS=/[\u2010\u2011\u2012\u2212\uFE63\uFF0D]/g;
+function clean(v){if(!v)return v;var s=String(v);try{s=s.normalize('NFKC')}catch(e){}
+  return s.replace(ZW,'').replace(SP,' ').replace(AP,"'").replace(DQ,'"').replace(DS,'-').replace(/[\u0300-\u036f]/g,'').replace(/ {2,}/g,' ');}
+window.__devclean=clean;
+function fix(skip){var L=document.querySelectorAll('input:not([type]),input[type=text],input[type=search],textarea');
+  for(var i=0;i<L.length;i++){var el=L[i];if(el===skip||el.readOnly||el.disabled)continue;var v=el.value,c=clean(v);if(c!==v)el.value=c;}}
+['pointerdown','mousedown','touchstart','click','change','focusout'].forEach(function(t){document.addEventListener(t,function(e){fix(t==='focusout'||t==='change'?null:e.target)},true)});
+document.addEventListener('keydown',function(e){if(e.key==='Enter'||e.keyCode===13)fix(null)},true);
+})();</script>
+<style>/*namegate*/#ngOv{position:fixed;inset:0;z-index:99999;display:none;align-items:center;justify-content:center;background:rgba(15,23,42,.55);padding:16px}
+#ngOv.show{display:flex}#ngBox{width:min(420px,100%);background:#fff;border-radius:24px;padding:24px 22px;box-shadow:0 20px 50px rgba(0,0,0,.3);text-align:center;font-family:inherit;border:4px solid #C4B5FD}
+#ngBox h3{margin:0 0 6px;font-size:1.35rem;color:#5B21B6}#ngBox p{margin:0 0 14px;color:#475569;line-height:1.5}
+#ngName{width:100%;box-sizing:border-box;font:700 1.1rem inherit;padding:12px 14px;border-radius:14px;border:3px solid #DDD6FE;outline:none;text-align:center}
+#ngName:focus{border-color:#8B5CF6}#ngErr{color:#E11D48;font-weight:800;min-height:1.4em;margin:6px 0}
+#ngBox button{border:0;border-radius:999px;padding:12px 26px;font:900 1.05rem inherit;color:#fff;cursor:pointer;background:linear-gradient(135deg,#8B5CF6,#EC4899);box-shadow:0 4px 0 rgba(0,0,0,.18)}
+#ngBox .ngx{background:#E2E8F0;color:#334155;margin-left:6px}.ngTag{display:block;margin:4px 0 8px;padding:8px 12px;border-radius:14px;background:#F5F3FF;border:2px dashed #C4B5FD;font-weight:800;color:#4C1D95;line-height:1.55}
+#ngClock{position:fixed;left:10px;bottom:10px;z-index:9990;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.92);border:2px solid #C4B5FD;font:800 .9rem inherit;color:#5B21B6;box-shadow:0 4px 12px rgba(0,0,0,.12);pointer-events:none}</style>
+<div id="ngClock">⏱ 00:00</div>
+<div id="ngOv"><div id="ngBox"><h3>✍️ Nhập họ và tên của con</h3><p>Cô cần biết tên con để chấm bài. Con nhập <b>đầy đủ họ tên</b> rồi bấm <b>Nộp bài</b> nhé!</p>
+<input id="ngName" placeholder="VD: Nguyễn Minh Anh" autocomplete="off" maxlength="40"><div id="ngErr"></div>
+<button type="button" id="ngOk">🚀 Nộp bài</button><button type="button" class="ngx" id="ngCancel">Làm tiếp</button></div></div>
+<script>/*namegate*/(function(){
+var T0=Date.now(),TEND=0,clk=document.getElementById('ngClock');
+function mmss(ms){var s=Math.floor(ms/1000),m=Math.floor(s/60);s%=60;return (m<10?'0':'')+m+':'+(s<10?'0':'')+s;}
+function dur(ms){var s=Math.floor(ms/1000),m=Math.floor(s/60);s%=60;return (m?m+' phút ':'')+s+' giây';}
+setInterval(function(){if(!TEND&&clk)clk.textContent='⏱ '+mmss(Date.now()-T0);},1000);
+function clean(s){s=(s||'');try{s=s.normalize('NFC')}catch(e){}return s.replace(/[​-‏⁠﻿]/g,'').replace(/\s+/g,' ').trim();}
+function full(v){return v.length>=4&&v.split(' ').length>=2&&/\p{L}/u.test(v);}
+function stamp(){var d=new Date(),p=function(n){return(n<10?'0':'')+n};return p(d.getHours())+':'+p(d.getMinutes())+' · '+p(d.getDate())+'/'+p(d.getMonth()+1)+'/'+d.getFullYear();}
+function tagHTML(who){if(!TEND)TEND=Date.now();if(clk)clk.textContent='⏱ '+mmss(TEND-T0)+' ✔';
+  return '👤 '+who.replace(/[<>&]/g,'')+'<br>⏱ Làm bài trong <b>'+dur(TEND-T0)+'</b><br><small>⏰ Nộp lúc '+stamp()+' · '+document.title.split('|')[0].trim().replace(/[<>&]/g,'')+'</small>';}
+function putTag(anchor,who,before){if(!anchor)return;var t=document.getElementById('ngTag');if(!t){t=document.createElement('div');t.id='ngTag';t.className='ngTag';
+  if(before)anchor.parentNode.insertBefore(t,anchor);else anchor.appendChild(t);}t.innerHTML=tagHTML(who);}
+window.__ngTag=putTag;window.__ngFull=full;window.__ngClean=clean;
+var orig=window.showFinal;
+if(typeof orig==='function'&&document.getElementById('resOv')){
+  var ov=document.getElementById('ngOv'),inp=document.getElementById('ngName'),err=document.getElementById('ngErr'),who='';
+  var run=function(){orig();putTag(document.getElementById('resNote'),who,true);};
+  window.showFinal=function(){if(who){run();return;}ov.classList.add('show');err.textContent='';setTimeout(function(){inp.focus()},50);};
+  var ok=function(){var v=clean(inp.value);if(!full(v)){err.textContent='⚠️ Con nhập đầy đủ họ và tên nhé (ít nhất 2 chữ).';inp.focus();return;}who=v;ov.classList.remove('show');run();};
+  document.getElementById('ngOk').onclick=ok;document.getElementById('ngCancel').onclick=function(){ov.classList.remove('show')};
+  inp.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();ok();}});
+}
+var ds=window.doSubmit,nin=document.getElementById('nin');
+if(typeof ds==='function'&&nin){
+  window.doSubmit=function(){var v=clean(nin.value);var wr=document.getElementById('nwr');
+    if(v&&!full(v)){nin.classList.add('er');if(wr){wr.textContent='⚠️ Con ghi đầy đủ họ và tên nhé (ít nhất 2 chữ)!';wr.classList.add('on');}setTimeout(function(){nin.classList.remove('er')},460);return;}
+    nin.value=v;ds.apply(this,arguments);if(!v)return;
+    var rm=document.getElementById('rm');var box=rm&&rm.querySelector('.box');if(box){var big=box.querySelector('.big')||box.firstElementChild;putTag(big&&big.nextSibling?big.nextSibling:box.lastChild,v,true);}};
+}
+})();</script>
+<script>/*attempts*/(function(){
+var KEY='att:'+decodeURIComponent(location.pathname),done=false;
+function load(){try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){return []}}
+function save(a){try{localStorage.setItem(KEY,JSON.stringify(a.slice(-20)))}catch(e){}}
+function fmt(d){var p=function(n){return(n<10?'0':'')+n};return p(d.getDate())+'/'+p(d.getMonth()+1);}
+function durOf(tag){var m=(tag.textContent||'').match(/Làm bài trong\s*((?:\d+\s*phút\s*)?\d+\s*giây)/);return m?m[1].replace(/\s+/g,' '):'';}
+function score(){var a=document.getElementById('resScore');if(a)return a.textContent.replace(/\s+/g,'');
+  a=document.getElementById('rS');if(a)return a.textContent.replace(/\s+/g,'');
+  a=document.getElementById('rSc');var b=document.getElementById('rTt');if(a)return a.textContent.trim()+'/'+(b?b.textContent.trim():'?');return '?';}
+function add(tag){
+  if(tag.querySelector('.ngAtt'))return;
+  var a=load();
+  if(!done){done=true;a.push({s:score(),t:Date.now(),d:durOf(tag)});save(a);}
+  var k=a.length,prev=a.slice(Math.max(0,k-6),k-1);
+  var d=document.createElement('div');d.className='ngAtt';
+  d.style.cssText='display:block;margin-top:6px;padding-top:6px;border-top:2px dashed #DDD6FE';
+  d.innerHTML='🔁 <b>Lần nộp thứ '+k+'</b> trên máy này'+(prev.length?'<br><small>'+prev.map(function(x,i){return 'Lần '+(k-prev.length+i)+': <b>'+x.s+'</b>'+(x.d?' · ⏱ làm trong <b>'+x.d+'</b>':'')+' · '+fmt(new Date(x.t))}).join('<br>')+'</small>':'');
+  tag.appendChild(d);
+}
+function check(){var t=document.getElementById('ngTag')||document.querySelector('#rn .ngTag');if(t&&t.textContent.trim())add(t);}
+new MutationObserver(check).observe(document.body,{childList:true,subtree:true,characterData:true});
+})();</script>
+<style id="ms-chi-nen-unlock-style">
+#passwordModal, #password-modal, #pwModal, #pw-modal, #pw-overlay,
+#lockModal, #passModal, #authModal, #auth-modal, #lockOverlay,
+#start-overlay, #intro-overlay, #start-screen,
+.password-modal, .lock-modal, .lock-overlay {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    z-index: -9999 !important;
+}
+</style>
+<script>
+// Remove password lock completely - direct quiz access
+(function() {
+    var initDone = false;
+    var renderCheckDone = false;
+
+    function hideEl(el, hard) {
+        if (!el) return;
+        if (hard) {
+            el.style.setProperty('display', 'none', 'important');
+            el.style.setProperty('visibility', 'hidden', 'important');
+            el.style.setProperty('opacity', '0', 'important');
+            el.style.setProperty('pointer-events', 'none', 'important');
+            el.style.setProperty('z-index', '-9999', 'important');
+        } else {
+            el.style.display = 'none';
+        }
+        el.classList.remove('active', 'show', 'open', 'visible', 'flex');
+    }
+
+    function hasRenderedQuiz() {
+        var containers = document.querySelectorAll(
+            '#quiz-container, #quizContainer, #questions-container, #questionPane, #quiz, #questions, #quiz-body, #questions-wrapper, #quiz-list, #quizList, #exercise-container, #app-container .split-container'
+        );
+        for (var i = 0; i < containers.length; i++) {
+            if (containers[i].querySelectorAll('button, input, select, textarea, .question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .question, .option-btn, .opt-btn, .ans-btn').length > 0) {
+                return true;
+            }
+        }
+        if (document.querySelectorAll('.question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .option-btn, .opt-btn, .ans-btn, .choice-btn').length > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    function ensureQuizRendered() {
+        if (renderCheckDone) return;
+        renderCheckDone = true;
+        if (hasRenderedQuiz()) return;
+
+        if (!hasRenderedQuiz() && typeof buildQuiz === 'function') { try { buildQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof initQuiz === 'function') { try { initQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderApp === 'function') { try { renderApp(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuiz === 'function') { try { renderQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuestions === 'function') { try { renderQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAllQuestions === 'function') { try { renderAllQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAll === 'function') { try { renderAll(); } catch(e){} }
+    }
+
+    function unlockNow() {
+        var pwIds = [
+            'passwordModal', 'password-modal', 'pwModal', 'pw-modal', 'pw-overlay',
+            'lockModal', 'passModal', 'authModal', 'auth-modal', 'lockOverlay',
+            'start-overlay', 'intro-overlay', 'start-screen'
+        ];
+        pwIds.forEach(function(id) {
+            hideEl(document.getElementById(id), true);
+        });
+
+        var modalEls = document.querySelectorAll('.password-modal, .lock-modal, .lock-overlay, #lockOverlay, #auth-modal');
+        modalEls.forEach(function(el) {
+            if (el.id !== 'resultModal' && el.id !== 'result-modal' && el.id !== 'scoreModal') {
+                hideEl(el, true);
+            }
+        });
+
+        ['nameModal', 'name-modal', 'nameInputModal'].forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) hideEl(el, false);
+        });
+
+        var qo = document.getElementById('quiz-overlay');
+        if (qo && (typeof isStarted === 'undefined' || !isStarted)) {
+            qo.style.display = 'none';
+        }
+
+        var mainIds = [
+            'mainContent', 'main-content', 'mainHeader', 'main-header',
+            'app-container', 'app', 'quizApp', 'quiz-wrapper', 'quizContainer', 'quiz-container', 'reading-content'
+        ];
+        mainIds.forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) {
+                el.classList.remove('hidden', 'blur', 'blurred', 'locked');
+                if (el.style.display === 'none') {
+                    el.style.removeProperty('display');
+                }
+                if (window.getComputedStyle(el).display === 'none') {
+                    var hasPane = el.querySelector('.pane, .left-pane, .right-pane, .split-container, .left-panel, .right-panel');
+                    if (id === 'main-content' || id.toLowerCase().includes('header') || el.classList.contains('main-container') || hasPane) {
+                        el.style.setProperty('display', 'flex', 'important');
+                    } else {
+                        el.style.setProperty('display', 'block', 'important');
+                    }
+                }
+            }
+        });
+
+        var qs = document.getElementById('quiz-screen');
+        if (qs) {
+            qs.classList.remove('hidden');
+            if (qs.classList.contains('flex-col')) {
+                qs.classList.add('flex');
+                qs.style.display = 'flex';
+            } else {
+                qs.style.display = 'block';
+            }
+        }
+
+        if (!initDone) {
+            initDone = true;
+
+            if (document.getElementById('start-overlay') && typeof startGame === 'function') {
+                var sn = document.getElementById('student-name') || document.getElementById('studentName');
+                if (sn && !sn.value.trim()) sn.value = 'Học sinh';
+            }
+            if (document.getElementById('name-modal') && typeof startQuiz === 'function') {
+                var sn2 = document.getElementById('student-name');
+                if (sn2 && !sn2.value.trim()) sn2.value = 'Học sinh';
+            }
+
+            if (typeof startQuiz === 'function' && (typeof isStarted === 'undefined' || !isStarted)) { try { startQuiz(); } catch(e){} }
+            if (typeof startGame === 'function') { try { startGame(); } catch(e){} }
+            if (typeof startTest === 'function') { try { startTest(); } catch(e){} }
+            if (typeof startApp === 'function') { try { startApp(); } catch(e){} }
+            if (typeof buildStarfield === 'function') { try { buildStarfield(); } catch(e){} }
+            if (typeof spawnFloats === 'function') { try { spawnFloats(); } catch(e){} }
+            if (typeof spawnFloaters === 'function') { try { spawnFloaters(); } catch(e){} }
+            if (typeof createFloatingBubbles === 'function') { try { createFloatingBubbles(); } catch(e){} }
+            if (typeof initAudio === 'function') { try { initAudio(); } catch(e){} }
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', unlockNow);
+    } else {
+        unlockNow();
+    }
+    if (document.readyState === 'complete') {
+        setTimeout(ensureQuizRendered, 150);
+    } else {
+        window.addEventListener('load', function() {
+            setTimeout(unlockNow, 20);
+            setTimeout(ensureQuizRendered, 150);
+            setTimeout(unlockNow, 300);
+            setTimeout(unlockNow, 700);
+        });
+    }
+    setTimeout(unlockNow, 50);
+    setTimeout(unlockNow, 200);
+    setTimeout(unlockNow, 600);
+    setTimeout(unlockNow, 1100);
+})();
+</script>
+</body>
+</html>

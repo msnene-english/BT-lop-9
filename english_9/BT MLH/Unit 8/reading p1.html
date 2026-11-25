@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 8: Tourism — Reading D.I + D.II | MS Chí Nên</title>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+/* THEME: CYBERPUNK / NEON FUTURE TECH */
+:root{--bg1:#05060f;--bg2:#0d0221;--panel:#0a0f24;--panel2:#0d1330;
+  --cyan:#00e5ff;--cyanSoft:#7cf9ff;--pink:#ff2ee6;--pinkSoft:#ff9de2;--purple:#9b5cff;--ink:#dff7ff;
+  --correct:#00ffab;--correctbg:rgba(0,255,171,.12);--wrong:#ff4d6d;--wrongbg:rgba(255,77,109,.14);}
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:18px}
+body{font-family:'M PLUS Rounded 1c',sans-serif;color:var(--ink);min-height:100vh;position:relative;overflow-x:hidden;padding-bottom:60px;
+  background:
+    radial-gradient(ellipse 60% 40% at 50% -6%,rgba(255,46,230,.28),transparent 60%),
+    radial-gradient(ellipse 50% 35% at 85% 8%,rgba(0,229,255,.22),transparent 60%),
+    repeating-linear-gradient(90deg,rgba(0,229,255,.05) 0 1px,transparent 1px 46px),
+    repeating-linear-gradient(0deg,rgba(255,46,230,.04) 0 1px,transparent 1px 46px),
+    linear-gradient(180deg,var(--bg2) 0%,var(--bg1) 60%);
+  background-attachment:fixed}
+.scan{position:fixed;left:0;width:100%;height:110px;z-index:0;pointer-events:none;
+  background:linear-gradient(180deg,transparent,rgba(0,229,255,.09),transparent);
+  animation:scanMove 6s linear infinite}
+@keyframes scanMove{0%{top:-15%}100%{top:105%}}
+.orb{position:fixed;border-radius:50%;filter:blur(30px);z-index:0;opacity:.5;animation:drift ease-in-out infinite}
+@keyframes drift{0%,100%{transform:translate(0,0)}50%{transform:translate(24px,-30px)}}
+#stars span{position:fixed;border-radius:50%;background:#eafcff;z-index:0;animation:twinkle ease-in-out infinite}
+@keyframes twinkle{0%,100%{opacity:.15;transform:scale(.7)}50%{opacity:1;transform:scale(1.3)}}
+.wrap{position:relative;z-index:2;max-width:1420px;margin:0 auto;padding:16px 18px 40px}
+header{background:linear-gradient(180deg,var(--panel) 0%,var(--panel2) 100%);border-radius:16px;padding:18px 26px;text-align:center;margin-bottom:14px;
+  box-shadow:0 0 0 1px rgba(0,229,255,.5),0 0 30px rgba(0,229,255,.25),0 0 50px rgba(255,46,230,.12);border:1px solid rgba(255,46,230,.4)}
+header h1{font-family:'M PLUS Rounded 1c';font-weight:900;font-size:1.85rem;letter-spacing:1px;
+  background:linear-gradient(90deg,var(--cyan),var(--pinkSoft));-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 0 18px rgba(0,229,255,.35)}
+header .teacher{font-weight:600;color:var(--cyanSoft);margin-top:5px;letter-spacing:.5px}
+header .promo{font-weight:700;color:var(--pinkSoft);margin-top:6px;font-size:.88rem}
+.note{max-width:1050px;margin:0 auto 16px;background:var(--panel);border:1px solid rgba(0,229,255,.4);border-radius:14px;
+  padding:11px 18px;font-weight:600;color:var(--cyanSoft);text-align:center;font-size:.9rem;line-height:1.7;box-shadow:0 0 18px rgba(0,229,255,.12)}
+.scorebar{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:8px}
+.chip{background:var(--panel);border-radius:10px;padding:7px 16px;font-family:'M PLUS Rounded 1c';font-weight:700;font-size:.85rem;color:var(--cyanSoft);
+  box-shadow:0 0 0 1px rgba(0,229,255,.35),0 0 14px rgba(0,229,255,.15)}
+.chip b{color:var(--pinkSoft);font-weight:900}
+.bar{height:11px;background:var(--panel);border-radius:8px;overflow:hidden;max-width:480px;margin:0 auto 18px;box-shadow:0 0 0 1px rgba(0,229,255,.3)}
+.bar span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--pink),var(--purple),var(--cyan));transition:width .4s;box-shadow:0 0 12px var(--cyan)}
+.section{background:var(--panel);border-radius:16px;box-shadow:0 0 0 1px rgba(155,92,255,.35),0 14px 34px rgba(0,0,0,.55);margin-bottom:22px;overflow:hidden}
+.sec-head{padding:14px 22px;font-family:'M PLUS Rounded 1c';font-weight:800;font-size:1.08rem;letter-spacing:.5px;color:var(--cyanSoft);
+  background:linear-gradient(90deg,#0d1a3a,#1a0d33);border-bottom:1px solid rgba(0,229,255,.35)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.lp,.rp{padding:18px 22px;max-height:700px;overflow-y:auto}
+.lp{border-right:1px solid rgba(0,229,255,.2)}
+.lp::-webkit-scrollbar,.rp::-webkit-scrollbar{width:8px}
+.lp::-webkit-scrollbar-thumb,.rp::-webkit-scrollbar-thumb{background:var(--purple);border-radius:8px}
+.pblock{background:#0b1130;border:1px solid rgba(0,229,255,.22);border-left:3px solid var(--pink);border-radius:10px;padding:13px 16px;margin-bottom:13px}
+.pblock p{font-size:1rem;line-height:1.85;color:var(--ink)}
+.bk{display:inline-block;min-width:28px;text-align:center;font-family:'M PLUS Rounded 1c';font-weight:800;color:#04121a;background:var(--cyan);
+  border-radius:5px;padding:1px 7px;margin:0 2px;font-size:.82rem;box-shadow:0 0 10px rgba(0,229,255,.6)}
+.tbtn{margin-top:8px;cursor:pointer;font-family:'M PLUS Rounded 1c';font-weight:700;border:1px solid var(--cyan);color:var(--cyan);background:rgba(0,229,255,.08);
+  padding:6px 16px;border-radius:20px;font-size:.78rem;letter-spacing:.5px;transition:.15s}
+.tbtn:hover{background:rgba(0,229,255,.2);box-shadow:0 0 14px rgba(0,229,255,.4)}
+.trans{display:none;margin-top:9px;padding:11px 14px;background:#141033;border-left:3px solid var(--purple);border-radius:0 10px 10px 0;font-size:.94rem;line-height:1.8;color:#e8dcff}
+.trans.show{display:block;animation:fade .3s}
+@keyframes fade{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.trans b{color:var(--pinkSoft)}
+.gloss{background:#0d1533;border:1px solid rgba(255,46,230,.3);border-radius:12px;padding:12px 15px;margin-top:6px}
+.gloss .gt{font-family:'M PLUS Rounded 1c';font-weight:700;color:var(--pinkSoft);margin-bottom:8px;font-size:.9rem}
+table.gtb{width:100%;border-collapse:collapse;font-size:.86rem}
+table.gtb th{background:rgba(0,229,255,.15);color:var(--cyanSoft);padding:7px 9px;text-align:left;font-family:'M PLUS Rounded 1c';font-size:.7rem}
+table.gtb td{padding:6px 9px;border-bottom:1px solid rgba(255,255,255,.06);color:var(--ink)}
+table.gtb td:first-child{font-weight:700;color:var(--pinkSoft)}
+table.gtb td:nth-child(2){color:#a9c7ff;font-style:italic;font-size:.78rem;white-space:nowrap}
+.subhead{font-family:'M PLUS Rounded 1c';font-weight:800;font-size:.86rem;letter-spacing:.5px;color:var(--pinkSoft);
+  padding:8px 14px;margin:0 0 12px;border:1px solid rgba(255,46,230,.4);border-radius:8px;background:rgba(255,46,230,.08)}
+.rp .subhead:not(:first-child){margin-top:8px}
+.qh{font-weight:700;font-size:.94rem;margin-bottom:10px;line-height:1.6;color:var(--ink)}
+.qh .num{display:inline-block;width:28px;height:28px;line-height:28px;text-align:center;border-radius:6px;
+  background:linear-gradient(135deg,var(--pink),var(--purple));color:#fff;font-family:'M PLUS Rounded 1c';margin-right:7px;font-size:.78rem;box-shadow:0 0 10px rgba(255,46,230,.5)}
+.qblock{background:#0b1130;border:1px solid rgba(0,229,255,.18);border-radius:12px;padding:14px 16px;margin-bottom:14px}
+.opt{display:block;width:100%;text-align:left;cursor:pointer;margin:7px 0;padding:11px 14px;border:1px solid rgba(255,255,255,.16);
+  border-radius:9px;background:#0d1330;font-family:'M PLUS Rounded 1c';font-weight:600;font-size:.96rem;color:var(--ink);transition:.15s}
+.opt:hover:not(:disabled){border-color:var(--cyan);background:rgba(0,229,255,.08);box-shadow:0 0 12px rgba(0,229,255,.25);transform:translateX(3px)}
+.opt:disabled{cursor:default}
+.opt.correct{background:var(--correctbg);border-color:var(--correct);color:#a6ffde;box-shadow:0 0 14px rgba(0,255,171,.35)}
+.opt.wrong{background:var(--wrongbg);border-color:var(--wrong);color:#ffc2ce;animation:shk .4s}
+@keyframes shk{10%,90%{transform:translateX(-2px)}20%,80%{transform:translateX(4px)}30%,50%,70%{transform:translateX(-6px)}40%,60%{transform:translateX(6px)}}
+.exp{display:none;margin-top:11px;background:#0e0f2b;border:1px solid var(--pink);border-radius:10px;padding:12px 15px;font-size:.88rem;line-height:1.8}
+.exp.on{display:block;animation:fade .3s}
+.exp .badge{display:inline-block;background:var(--correct);color:#04241a;font-family:'M PLUS Rounded 1c';border-radius:8px;padding:2px 12px;margin-bottom:7px;font-size:.76rem;font-weight:800}
+.exp .badge.bad{background:var(--wrong);color:#2b0510}
+.exp .step{margin-top:7px;color:var(--ink)}
+.exp .slab{font-family:'M PLUS Rounded 1c';font-weight:700;color:var(--cyanSoft);font-size:.78rem}
+.exp .obox{background:#0b1130;border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:6px 10px;margin:5px 0;display:flex;flex-wrap:wrap;gap:4px 8px}
+.exp ul{margin:5px 0 0;padding-left:18px}
+.exp li{margin-bottom:5px}
+.p-word{font-weight:800;color:var(--purple)}
+.p-mean{color:#a9c7ff;font-weight:700}
+.pos{display:inline-block;font-weight:800;font-size:.6rem;padding:1px 7px;border-radius:6px;text-transform:uppercase;margin-right:2px}
+.pos-n{background:rgba(0,229,255,.18);color:var(--cyanSoft)}
+.pos-v{background:rgba(255,77,109,.2);color:#ff9fb0}
+.pos-adj{background:rgba(155,92,255,.22);color:#cbb2ff}
+.pos-adv{background:rgba(0,255,171,.16);color:#8dffce}
+.pos-det{background:rgba(255,46,230,.18);color:var(--pinkSoft)}
+.pos-phr{background:rgba(255,255,255,.1);color:#dfe8ff}
+.pos-def{background:rgba(255,255,255,.08);color:#c9d4ff}
+.pos-tf{background:rgba(0,255,171,.16);color:#8dffce}
+.hl-green{color:var(--correct);font-weight:800}
+.hl-red{color:var(--wrong);font-weight:800}
+.quote{background:#141033;border-left:3px solid var(--purple);border-radius:0 10px 10px 0;padding:9px 12px;margin-top:7px;font-size:.85rem;line-height:1.75;color:#e8dcff}
+.quote b{color:var(--pinkSoft)}
+.submit-wrap{text-align:center;margin:20px 0}
+.bsub{font-family:'M PLUS Rounded 1c';font-weight:800;font-size:1rem;color:#04121a;border:none;border-radius:26px;padding:15px 34px;cursor:pointer;letter-spacing:.5px;
+  background:linear-gradient(90deg,var(--cyan),var(--pinkSoft));box-shadow:0 0 24px rgba(0,229,255,.5),0 0 40px rgba(255,46,230,.25)}
+.ov{display:none;position:fixed;inset:0;z-index:999;background:rgba(2,3,10,.78);backdrop-filter:blur(5px);align-items:center;justify-content:center;padding:16px}
+.ov.on{display:flex}
+.mb{background:var(--panel);border-radius:16px;padding:26px 28px;max-width:440px;width:100%;text-align:center;box-shadow:0 0 0 1px rgba(0,229,255,.5),0 0 50px rgba(255,46,230,.25);max-height:92vh;overflow-y:auto}
+.mb h2{font-family:'M PLUS Rounded 1c';color:var(--pinkSoft);font-size:1.15rem;margin-bottom:12px;letter-spacing:.5px}
+.mb input{width:100%;font-family:'M PLUS Rounded 1c';font-size:1rem;font-weight:700;padding:11px 14px;border:1px solid var(--cyan);border-radius:10px;text-align:center;outline:none;margin-bottom:8px;background:#0b1130;color:var(--ink)}
+.mb .err{color:var(--wrong);font-weight:700;font-size:.85rem;display:none;margin-bottom:8px}
+.mb .err.show{display:block}
+.mb button{cursor:pointer;font-family:'M PLUS Rounded 1c';font-weight:700;border:none;color:#04121a;border-radius:20px;padding:10px 24px;background:linear-gradient(90deg,var(--cyan),var(--purple));font-size:.88rem;margin-top:4px}
+.mb .close{background:#3a3f5c;color:#dfe8ff}
+.gif{width:160px;margin:11px auto;display:block;border-radius:12px;border:2px solid var(--cyan)}
+.rscore{font-family:'M PLUS Rounded 1c';font-size:2.1rem;color:var(--cyanSoft);text-shadow:0 0 16px rgba(0,229,255,.5)}
+.r10{font-family:'M PLUS Rounded 1c';font-size:1.05rem;color:var(--pinkSoft)}
+.rcmt{margin:11px 0;padding:11px 14px;background:#141033;border:1px solid rgba(155,92,255,.4);border-radius:12px;font-size:.88rem;line-height:1.7;color:var(--ink)}
+@media(max-width:860px){.split{grid-template-columns:1fr}.lp{border-right:none;border-bottom:1px solid rgba(0,229,255,.2)}}
+</style>
+</head>
+<body>
+<div class="scan"></div>
+<div class="orb" style="top:6%;left:8%;width:180px;height:180px;background:radial-gradient(circle,rgba(0,229,255,.5),transparent 70%);animation-duration:9s"></div>
+<div class="orb" style="top:12%;right:6%;width:220px;height:220px;background:radial-gradient(circle,rgba(255,46,230,.4),transparent 70%);animation-duration:11s;animation-delay:-3s"></div>
+<div id="stars"></div>
+
+<div class="wrap">
+<header>
+  <h1>&lt;/&gt; UNIT 8: TOURISM — READING D.I + D.II</h1>
+  <div class="teacher">Giáo viên tạo: MS Chí Nên</div>
+  <div class="promo">📞 0936 322 809 — Đăng ký khoá học tiếng Anh lớp 1 → lớp 12, trải nghiệm web giải chi tiết đỉnh cao!</div>
+</header>
+
+<div class="note">⚡ Nhắc nhở có tâm từ MS Chí Nên: Mục A dùng CHUNG một bộ 8 từ (word bank) cho cả đoạn — mỗi từ chỉ dùng đúng 1 lần. Mục C là câu Đúng/Sai (True/False) dựa trên đoạn văn mở rộng. Đọc kỹ toàn đoạn trước khi chọn nhé, hệ thống đang online... 🛰️</div>
+
+<div class="scorebar">
+  <div class="chip">✅ ĐÚNG: <b id="cCorrect">0</b>/27</div>
+  <div class="chip">📝 ĐÃ LÀM: <b id="cDone">0</b>/27</div>
+</div>
+<div class="bar"><span id="barFill"></span></div>
+
+<!-- ============== A. D.I — WORD BANK CLOZE ============== -->
+<div class="section">
+  <div class="sec-head">🧩 D.I — Complete the Passage (Câu 1–8)</div>
+  <div class="split">
+    <div class="lp">
+      <div class="pblock"><p>Almost all people like to spend their holidays travelling. They travel to see other countries and continents, modern cities and the <span class="bk">1</span> of ancient towns, they travel to enjoy <span class="bk">2</span> places, or just for a change of scene. City dwellers usually like a quiet holiday by the sea, or in the mountains, with nothing to do but walk and bathe and <span class="bk">3</span> in the sun.</p>
+        <button class="tbtn" onclick="tg('v1',this)">▶ XEM BẢN DỊCH</button>
+        <div class="trans" id="v1">Hầu như tất cả mọi người đều thích dành kỳ nghỉ của mình để đi du lịch. Họ đi để ngắm nhìn những đất nước và châu lục khác, những thành phố hiện đại và những <b>tàn tích</b> của các thị trấn cổ, họ đi để tận hưởng những nơi <b>nên thơ</b>, hoặc chỉ đơn giản là để thay đổi không khí. Người dân thành phố thường thích một kỳ nghỉ yên tĩnh bên bờ biển, hoặc trên núi, không có việc gì để làm ngoài đi bộ, tắm biển và <b>phơi nắng thư giãn</b>.</div>
+      </div>
+      <div class="pblock"><p>Most people enjoy going <span class="bk">4</span> for their holidays, and having the opportunity to stay in an interesting city. If you speak <span class="bk">5</span> languages, you can make new friends, and get home some interesting souvenirs as presents! But before you can do that, you have to reach your destination, and that is often a problem! If you fly, then you may find that your flight has been <span class="bk">6</span>.</p>
+        <button class="tbtn" onclick="tg('v2',this)">▶ XEM BẢN DỊCH</button>
+        <div class="trans" id="v2">Hầu hết mọi người đều thích đi <b>nước ngoài</b> trong kỳ nghỉ của mình, và có cơ hội ở lại một thành phố thú vị. Nếu bạn nói được các <b>ngoại ngữ</b>, bạn có thể kết bạn mới, và mang về nhà những món quà lưu niệm thú vị! Nhưng trước khi làm được điều đó, bạn phải đến được điểm đến của mình, và đó thường là một vấn đề! Nếu bạn đi máy bay, bạn có thể thấy chuyến bay của mình bị <b>hoãn</b>.</div>
+      </div>
+      <div class="pblock"><p>Journeys by train can also be difficult, since trains are often crowded in summer so you may have to <span class="bk">7</span> a seat in advance. <span class="bk">8</span> way you travel, you can have problems with your luggage, and it is often difficult to find good accommodation. Apart from this, you might not be able to afford the fare!</p>
+        <button class="tbtn" onclick="tg('v3',this)">▶ XEM BẢN DỊCH</button>
+        <div class="trans" id="v3">Các chuyến đi bằng tàu hỏa cũng có thể khó khăn, vì tàu thường đông đúc vào mùa hè nên bạn có thể phải <b>đặt trước</b> một chỗ ngồi. <b>Dù bạn đi</b> bằng cách nào, bạn cũng có thể gặp vấn đề với hành lý, và thường khó tìm được chỗ ở tốt. Ngoài ra, bạn có thể không đủ khả năng chi trả tiền vé!</div>
+      </div>
+      <div class="gloss"><div class="gt">📖 Word Bank (dùng đúng 1 lần)</div>
+        <table class="gtb"><tr><th>Từ</th><th>Loại</th><th>Nghĩa</th></tr>
+          <tr><td>picturesque</td><td>adj</td><td>nên thơ, đẹp như tranh</td></tr>
+          <tr><td>delayed</td><td>adj</td><td>bị hoãn, bị trì hoãn</td></tr>
+          <tr><td>foreign</td><td>adj</td><td>ngoại quốc, nước ngoài</td></tr>
+          <tr><td>ruins</td><td>n</td><td>tàn tích</td></tr>
+          <tr><td>whichever</td><td>det</td><td>dù là...nào, bất cứ...nào</td></tr>
+          <tr><td>reserve</td><td>v</td><td>đặt trước</td></tr>
+          <tr><td>laze</td><td>v</td><td>phơi nắng thư giãn, lười biếng</td></tr>
+          <tr><td>abroad</td><td>adv</td><td>ở nước ngoài</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="rp" id="secA"></div>
+  </div>
+</div>
+
+<!-- ============== B+C+D. D.II — TOURISM TODAY (gộp 1 bài đọc, 3 mục câu hỏi) ============== -->
+<div class="section">
+  <div class="sec-head">🌐 D.II — Tourism Today (Câu 9–27)</div>
+  <div class="split">
+    <div class="lp">
+      <div class="pblock"><p>People travel all over the world and attend a lot of interesting places. The effect of travelling of large amount of people sometimes is incredible. Here are some examples of it.</p>
+        <button class="tbtn" onclick="tg('v4',this)">▶ XEM BẢN DỊCH</button>
+        <div class="trans" id="v4">Người ta đi du lịch khắp thế giới và ghé thăm rất nhiều địa điểm thú vị. Tác động của việc một lượng lớn người đi du lịch đôi khi thật đáng kinh ngạc. Dưới đây là một số ví dụ về điều đó.</div>
+      </div>
+      <div class="pblock"><p>Large number of people coming to one place once at a time can have less comfortable <b>accommodation</b> as it was in Scotland where only 40% of tourists were offered hotels.</p>
+        <button class="tbtn" onclick="tg('v5',this)">▶ XEM BẢN DỊCH</button>
+        <div class="trans" id="v5">Một số lượng lớn người đến cùng một nơi cùng một lúc có thể khiến <b>chỗ ở</b> kém thoải mái hơn, như đã từng xảy ra ở Scotland, nơi chỉ 40% du khách được cung cấp khách sạn.</div>
+      </div>
+      <div class="pblock"><p>Tourism is one of the principal contributions of pollution in the Mediterranean Sea and as the number of people increase, the problem worsen. Several laws and initiatives have been implemented in order to protect the Mediterranean Sea from further <b>degradation</b>.</p>
+        <button class="tbtn" onclick="tg('v6',this)">▶ XEM BẢN DỊCH</button>
+        <div class="trans" id="v6">Du lịch là một trong những nguyên nhân chính gây ô nhiễm ở Biển Địa Trung Hải, và khi số lượng người tăng lên, vấn đề càng trở nên tồi tệ hơn. Nhiều luật lệ và <b>sáng kiến</b> đã được <b>thực hiện</b> nhằm bảo vệ Biển Địa Trung Hải khỏi sự <b>suy thoái</b> thêm.</div>
+      </div>
+      <div class="pblock"><p>The rapid tourism development of Bali has had a great effect on its natural environment, affecting water resources, increasing pollution and localized flooding, as well as putting pressure on the island's <b>infrastructure</b>.</p>
+        <button class="tbtn" onclick="tg('v7',this)">▶ XEM BẢN DỊCH</button>
+        <div class="trans" id="v7">Sự phát triển du lịch nhanh chóng của Bali đã có tác động lớn đến môi trường tự nhiên của hòn đảo, ảnh hưởng đến nguồn nước, làm tăng ô nhiễm và lũ lụt cục bộ, cũng như gây áp lực lên <b>cơ sở hạ tầng</b> của đảo.</div>
+      </div>
+      <div class="pblock"><p>In Cancun, Mexico, tourism has extensively damaged the <b>lagoon</b>, <b>obliterated</b> sand dunes, led to the <b>extinction</b> of varying species of animals and fish, and destroyed the <b>rainforest</b> which surrounds the island. It was only twenty years after it was developed, that the government of Mexico decided to limit projects along the coast to prevent further damage to the island's environment.</p>
+        <button class="tbtn" onclick="tg('v8',this)">▶ XEM BẢN DỊCH</button>
+        <div class="trans" id="v8">Ở Cancun, Mexico, du lịch đã gây thiệt hại nặng nề cho <b>đầm phá</b>, <b>phá hủy hoàn toàn</b> các cồn cát, dẫn đến sự <b>tuyệt chủng</b> của nhiều loài động vật và cá khác nhau, và phá hủy khu <b>rừng nhiệt đới</b> bao quanh hòn đảo. Chỉ sau 20 năm kể từ khi được phát triển, chính phủ Mexico mới quyết định hạn chế các dự án dọc bờ biển để ngăn ngừa thiệt hại thêm cho môi trường của hòn đảo.</div>
+      </div>
+      <div class="pblock"><p>In Trinidad and Tobago there are shortages of water due to the <b>overpopulation</b> of tourists on the island. The most damaging effect of tourism has been the destruction of <b>coral reefs</b>, as they are <b>harvested</b> for sale to tourists and destroyed by tourists stepping on them as they enter the water.</p>
+        <button class="tbtn" onclick="tg('v9',this)">▶ XEM BẢN DỊCH</button>
+        <div class="trans" id="v9">Ở Trinidad và Tobago, có tình trạng thiếu nước do <b>tình trạng quá tải</b> du khách trên đảo. Tác động gây hại nhất của du lịch là sự phá hủy các <b>rạn san hô</b>, do chúng bị <b>thu hoạch</b> để bán cho khách du lịch và bị du khách giẫm đạp khi bước xuống nước.</div>
+      </div>
+      <div class="gloss"><div class="gt">📖 Từ vựng (câu 9–27)</div>
+        <table class="gtb"><tr><th>Từ</th><th>Loại</th><th>Nghĩa</th></tr>
+          <tr><td>degradation</td><td>n</td><td>sự suy thoái</td></tr>
+          <tr><td>infrastructure</td><td>n</td><td>cơ sở hạ tầng</td></tr>
+          <tr><td>lagoon</td><td>n</td><td>đầm phá</td></tr>
+          <tr><td>obliterate</td><td>v</td><td>phá hủy hoàn toàn</td></tr>
+          <tr><td>initiative</td><td>n</td><td>sáng kiến</td></tr>
+          <tr><td>implement</td><td>v</td><td>thực hiện, thi hành</td></tr>
+          <tr><td>harvest</td><td>v</td><td>thu hoạch</td></tr>
+          <tr><td>extinction</td><td>n</td><td>sự tuyệt chủng</td></tr>
+          <tr><td>overpopulation</td><td>n</td><td>tình trạng quá tải dân số</td></tr>
+          <tr><td>coral reef</td><td>n</td><td>rạn san hô</td></tr>
+          <tr><td>rainforest</td><td>n</td><td>rừng nhiệt đới</td></tr>
+          <tr><td>accommodation</td><td>n</td><td>chỗ ở</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="rp">
+      <div class="subhead">🔤 Mục A — Match the Word with its Definition (Câu 9–16)</div>
+      <div id="secB"></div>
+      <div class="subhead">⚙️ Mục B — True or False (Câu 17–24)</div>
+      <div id="secC"></div>
+      <div class="subhead">🎯 Mục C — Choose the Correct Answer (Câu 25–27)</div>
+      <div id="secD"></div>
+    </div>
+  </div>
+</div>
+
+<div class="submit-wrap"><button class="bsub" onclick="askName()">▶ SUBMIT // TÍNH ĐIỂM</button></div>
+</div>
+
+<div class="ov" id="nameModal"><div class="mb">
+  <h2>🖊️ NHẬP TÊN ĐỂ NỘP BÀI</h2>
+  <input id="nameInput" placeholder="Họ và tên học sinh..." onkeydown="if(event.key==='Enter')okName()">
+  <div class="err" id="nameErr">⚠️ Em chưa nhập tên! Bắt buộc phải có tên mới nộp được bài nha.</div>
+  <button onclick="okName()">✅ XÁC NHẬN &amp; CHẤM ĐIỂM</button>
+</div></div>
+
+<div class="ov" id="scoreModal"><div class="mb">
+  <div id="mEmoji" style="font-size:3.2rem">🏆</div>
+  <h2 id="mTitle">KẾT QUẢ</h2>
+  <div id="mName" style="font-weight:700;color:var(--cyanSoft)"></div>
+  <img class="gif" id="mGif" src="" alt="" onerror="this.style.display='none'">
+  <div class="rscore" id="mScore">0/27</div>
+  <div class="r10" id="mScore10">0.00 / 10</div>
+  <div class="rcmt" id="mComment"></div>
+  <button class="close" onclick="document.getElementById('scoreModal').classList.remove('on')">📚 XEM LẠI BÀI</button>
+  <button onclick="location.reload()">🔄 LÀM LẠI</button>
+</div></div>
+
+<script>
+(function(){var h='';for(var i=0;i<26;i++){var sz=(Math.random()*2+1).toFixed(1);var left=(Math.random()*100).toFixed(1);var top=(Math.random()*100).toFixed(1);var dur=(Math.random()*2.5+2).toFixed(1);var del=(Math.random()*4).toFixed(1);h+='<span style="left:'+left+'%;top:'+top+'%;width:'+sz+'px;height:'+sz+'px;animation-duration:'+dur+'s;animation-delay:-'+del+'s"></span>';}document.getElementById('stars').innerHTML=h;})();
+function tg(id,btn){const el=document.getElementById(id);el.classList.toggle('show');
+  btn.textContent=el.classList.contains('show')?'▲ ẨN BẢN DỊCH':'▶ XEM BẢN DỊCH';click2();}
+var AC;function ac(){if(!AC)AC=new (window.AudioContext||window.webkitAudioContext)();return AC;}
+function ding(){try{var c=ac();[[880,0],[1320,.09],[1760,.19]].forEach(function(p){var o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.type='sine';o.frequency.value=p[0];var t=c.currentTime+p[1];g.gain.setValueAtTime(.25,t);g.gain.exponentialRampToValueAtTime(.001,t+.3);o.start(t);o.stop(t+.3);});}catch(e){}}
+function buzz(){try{var c=ac();[[330,0],[220,.15]].forEach(function(p){var o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.type='square';o.frequency.value=p[0];var t=c.currentTime+p[1];g.gain.setValueAtTime(.2,t);g.gain.exponentialRampToValueAtTime(.001,t+.2);o.start(t);o.stop(t+.2);});}catch(e){}}
+function click2(){try{var c=ac(),o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.type='square';o.frequency.value=1500;var t=c.currentTime;g.gain.setValueAtTime(.12,t);g.gain.exponentialRampToValueAtTime(.001,t+.06);o.start(t);o.stop(t+.06);}catch(e){}}
+function W(word,pos,mean){return '<div class="obox"><span class="pos pos-'+pos+'">'+pos+'</span><span class="p-word">'+word+'</span><span class="p-mean">— '+mean+'</span></div>';}
+
+var QD=[
+{n:1,lb:'1',s:'A',q:'1. ...modern cities and the <b>(1)</b> of ancient towns...',
+ o:["ruins","picturesque","abroad","whichever"],a:"ruins",
+ e:{tr:'Dịch: "...những thành phố hiện đại và ___ của các thị trấn cổ..."',
+ op:W('ruins','n','tàn tích')+W('picturesque','adj','nên thơ')+W('abroad','adv','ở nước ngoài')+W('whichever','det','dù là...nào'),
+ ok:'Đáp án đúng là <span class="hl-green">ruins</span>. Chỗ trống đứng sau "the" và trước "of ancient towns" cần DANH TỪ chỉ vật thể cụ thể — "the ruins of ancient towns" (tàn tích của các thị trấn cổ) là cụm quen thuộc khi nói về du lịch khám phá lịch sử.',
+ ev:'"...modern cities and the ruins of ancient towns..." 👉 "...những thành phố hiện đại và tàn tích của các thị trấn cổ..."',
+ no:'<ul><li><span class="hl-red">picturesque</span> — là tính từ, không thể đứng sau "the" làm danh từ trung tâm của cụm "the ___ of ancient towns".</li><li><span class="hl-red">abroad</span> — là trạng từ, không đứng ở vị trí danh từ này.</li><li><span class="hl-red">whichever</span> — là từ hạn định, không mang nghĩa vật thể cụ thể để đi với "of ancient towns".</li></ul>'}},
+{n:2,lb:'2',s:'A',q:'2. ...they travel to enjoy <b>(2)</b> places...',
+ o:["picturesque","foreign","delayed","reserve"],a:"picturesque",
+ e:{tr:'Dịch: "...họ đi để tận hưởng những nơi ___..."',
+ op:W('picturesque','adj','nên thơ')+W('foreign','adj','ngoại quốc')+W('delayed','adj','bị hoãn')+W('reserve','v','đặt trước'),
+ ok:'Đáp án đúng là <span class="hl-green">picturesque</span>. Chỗ trống đứng trước danh từ "places" cần TÍNH TỪ miêu tả — "picturesque places" (những nơi nên thơ/đẹp như tranh) khớp ngữ cảnh mô tả điểm đến hấp dẫn.',
+ ev:'"...they travel to enjoy picturesque places..." 👉 "...họ đi để tận hưởng những nơi nên thơ..."',
+ no:'<ul><li><span class="hl-red">foreign</span> — tuy cũng là tính từ nhưng nghĩa "ngoại quốc" đã được nhắc riêng ở câu khác (foreign languages), lặp lại ở đây không hợp mạch ý "enjoy" cảnh đẹp.</li><li><span class="hl-red">delayed</span> — nghĩa "bị hoãn", hoàn toàn không phù hợp để mô tả một nơi bạn "enjoy" (tận hưởng).</li><li><span class="hl-red">reserve</span> — là động từ, sai từ loại khi đứng trước danh từ "places".</li></ul>'}},
+{n:3,lb:'3',s:'A',q:'3. ...with nothing to do but walk and bathe and <b>(3)</b> in the sun.',
+ o:["laze","reserve","ruins","delayed"],a:"laze",
+ e:{tr:'Dịch: "...không có việc gì để làm ngoài đi bộ, tắm biển và ___ dưới ánh nắng."',
+ op:W('laze','v','phơi nắng thư giãn')+W('reserve','v','đặt trước')+W('ruins','n','tàn tích')+W('delayed','adj','bị hoãn'),
+ ok:'Đáp án đúng là <span class="hl-green">laze</span>. Chỗ trống đứng song song với "walk and bathe" (đều là động từ nguyên mẫu) và đi với "in the sun" — "laze in the sun" (phơi nắng thư giãn) là cụm cố định rất phổ biến.',
+ ev:'"...with nothing to do but walk and bathe and laze in the sun." 👉 "...không có việc gì để làm ngoài đi bộ, tắm biển và phơi nắng thư giãn."',
+ no:'<ul><li><span class="hl-red">reserve</span> — nghĩa "đặt trước", không tự nhiên khi đi với "in the sun".</li><li><span class="hl-red">ruins</span> — là danh từ, sai từ loại ở vị trí cần động từ song song với "walk, bathe".</li><li><span class="hl-red">delayed</span> — là tính từ/động từ quá khứ, không khớp cấu trúc song song "walk and bathe and ___".</li></ul>'}},
+{n:4,lb:'4',s:'A',q:'4. Most people enjoy going <b>(4)</b> for their holidays...',
+ o:["abroad","whichever","picturesque","foreign"],a:"abroad",
+ e:{tr:'Dịch: "Hầu hết mọi người thích đi ___ trong kỳ nghỉ của mình..."',
+ op:W('abroad','adv','ở nước ngoài')+W('whichever','det','dù là...nào')+W('picturesque','adj','nên thơ')+W('foreign','adj','ngoại quốc'),
+ ok:'Đáp án đúng là <span class="hl-green">abroad</span>. Cụm động từ cố định <b>"go abroad"</b> nghĩa "đi ra nước ngoài" — đây là TRẠNG TỪ đứng sau động từ "going", không cần giới từ đi kèm.',
+ ev:'"Most people enjoy going abroad for their holidays..." 👉 "Hầu hết mọi người thích đi nước ngoài trong kỳ nghỉ của mình..."',
+ no:'<ul><li><span class="hl-red">whichever</span> — không tạo thành cụm có nghĩa với "going ___ for their holidays".</li><li><span class="hl-red">picturesque</span> — là tính từ, cần đi với danh từ, không thể đứng sau "going" theo cách này.</li><li><span class="hl-red">foreign</span> — là tính từ, cũng cần danh từ đi kèm (như "foreign countries"), không thể đứng một mình sau "going".</li></ul>'}},
+{n:5,lb:'5',s:'A',q:'5. If you speak <b>(5)</b> languages, you can make new friends...',
+ o:["foreign","abroad","ruins","laze"],a:"foreign",
+ e:{tr:'Dịch: "Nếu bạn nói được các ___ ngôn ngữ, bạn có thể kết bạn mới..."',
+ op:W('foreign','adj','ngoại quốc')+W('abroad','adv','ở nước ngoài')+W('ruins','n','tàn tích')+W('laze','v','phơi nắng thư giãn'),
+ ok:'Đáp án đúng là <span class="hl-green">foreign</span>. Chỗ trống đứng trước danh từ "languages" cần TÍNH TỪ — "foreign languages" (ngoại ngữ) là cụm cố định chuẩn.',
+ ev:'"If you speak foreign languages, you can make new friends..." 👉 "Nếu bạn nói được các ngoại ngữ, bạn có thể kết bạn mới..."',
+ no:'<ul><li><span class="hl-red">abroad</span> — là trạng từ, không thể bổ nghĩa trực tiếp cho danh từ "languages".</li><li><span class="hl-red">ruins</span> — là danh từ, hai danh từ không ghép tự nhiên thành "ruins languages" có nghĩa.</li><li><span class="hl-red">laze</span> — là động từ, sai hoàn toàn từ loại và nghĩa ở vị trí tính từ này.</li></ul>'}},
+{n:6,lb:'6',s:'A',q:'6. ...you may find that your flight has been <b>(6)</b>.',
+ o:["delayed","reserve","picturesque","whichever"],a:"delayed",
+ e:{tr:'Dịch: "...bạn có thể thấy chuyến bay của mình đã bị ___."',
+ op:W('delayed','adj','bị hoãn')+W('reserve','v','đặt trước')+W('picturesque','adj','nên thơ')+W('whichever','det','dù là...nào'),
+ ok:'Đáp án đúng là <span class="hl-green">delayed</span>. Cấu trúc bị động "has been + V3/-ed" cần dạng phân từ hai — "has been delayed" (đã bị hoãn) đúng ngữ pháp và nghĩa khi nói về chuyến bay trễ giờ.',
+ ev:'"...you may find that your flight has been delayed." 👉 "...bạn có thể thấy chuyến bay của mình đã bị hoãn."',
+ no:'<ul><li><span class="hl-red">reserve</span> — là động từ nguyên mẫu, không khớp cấu trúc bị động "has been ___".</li><li><span class="hl-red">picturesque</span> — nghĩa "nên thơ", hoàn toàn không hợp lý khi mô tả một chuyến bay.</li><li><span class="hl-red">whichever</span> — không mang nghĩa hành động bị động, sai hoàn toàn ngữ cảnh.</li></ul>'}},
+{n:7,lb:'7',s:'A',q:'7. ...you may have to <b>(7)</b> a seat in advance.',
+ o:["reserve","laze","foreign","ruins"],a:"reserve",
+ e:{tr:'Dịch: "...bạn có thể phải ___ một chỗ ngồi trước."',
+ op:W('reserve','v','đặt trước')+W('laze','v','phơi nắng thư giãn')+W('foreign','adj','ngoại quốc')+W('ruins','n','tàn tích'),
+ ok:'Đáp án đúng là <span class="hl-green">reserve</span>. Chỗ trống đứng sau "have to" cần ĐỘNG TỪ NGUYÊN MẪU, và "reserve a seat" (đặt trước một chỗ ngồi) là cụm cố định chuẩn khi nói về đặt vé tàu/xe.',
+ ev:'"...trains are often crowded in summer so you may have to reserve a seat in advance." 👉 "...tàu thường đông đúc vào mùa hè nên bạn có thể phải đặt trước một chỗ ngồi."',
+ no:'<ul><li><span class="hl-red">laze</span> — tuy cũng là động từ nhưng nghĩa "phơi nắng thư giãn", không hợp với "a seat in advance".</li><li><span class="hl-red">foreign</span> — là tính từ, sai từ loại ở vị trí cần động từ sau "have to".</li><li><span class="hl-red">ruins</span> — là danh từ, cũng sai từ loại hoàn toàn ở vị trí này.</li></ul>'}},
+{n:8,lb:'8',s:'A',q:'8. <b>(8)</b> way you travel, you can have problems with your luggage...',
+ o:["Whichever","Delayed","Abroad","Picturesque"],a:"Whichever",
+ e:{tr:'Dịch: "___ cách bạn đi du lịch, bạn cũng có thể gặp vấn đề với hành lý..."',
+ op:W('Whichever','det','dù là...nào')+W('Delayed','adj','bị hoãn')+W('Abroad','adv','ở nước ngoài')+W('Picturesque','adj','nên thơ'),
+ ok:'Đáp án đúng là <span class="hl-green">Whichever</span>. Cấu trúc <b>"whichever + N, S + V"</b> nghĩa "dù là...nào" đứng đầu câu để nhấn mạnh KHÔNG PHÂN BIỆT cách di chuyển nào — đây là từ hạn định đứng trước danh từ "way".',
+ ev:'"Whichever way you travel, you can have problems with your luggage..." 👉 "Dù bạn đi bằng cách nào, bạn cũng có thể gặp vấn đề với hành lý..."',
+ no:'<ul><li><span class="hl-red">Delayed</span> — là tính từ mang nghĩa "bị hoãn", không tạo được cấu trúc nhượng bộ "dù là...nào" ở đầu câu.</li><li><span class="hl-red">Abroad</span> — là trạng từ, không thể đứng trước danh từ "way" để bổ nghĩa.</li><li><span class="hl-red">Picturesque</span> — nghĩa "nên thơ", hoàn toàn không phù hợp ngữ cảnh và ngữ pháp ở vị trí đầu câu này.</li></ul>'}},
+{n:9,lb:'1',s:'B',q:'9. What does "degradation" mean?',
+ o:["the process of changing into a worse condition","a new plan for dealing with a particular problem","collect plants, animals, or things that can be eaten or used","a situation in which something stops existing"],a:"the process of changing into a worse condition",
+ e:{tr:'Dịch: "Từ \'degradation\' (sự suy thoái) có nghĩa là gì?"',
+ op:W('the process of changing into a worse condition','def','quá trình chuyển biến sang tình trạng tệ hơn')+W('a new plan for dealing with a particular problem','def','một kế hoạch mới để giải quyết vấn đề cụ thể')+W('collect plants, animals, or things that can be eaten or used','def','thu thập cây/động vật/vật để ăn hoặc sử dụng')+W('a situation in which something stops existing','def','tình trạng khi thứ gì đó ngừng tồn tại'),
+ ok:'Đáp án đúng là <span class="hl-green">the process of changing into a worse condition</span>. "Degradation" là DANH TỪ chỉ QUÁ TRÌNH suy thoái/xuống cấp — đúng như bài đọc nhắc đến "protect the Mediterranean Sea from further degradation" (bảo vệ biển khỏi suy thoái thêm).',
+ ev:'"Several laws and initiatives have been implemented in order to protect the Mediterranean Sea from further degradation." 👉 "...nhằm bảo vệ Biển Địa Trung Hải khỏi sự suy thoái thêm."',
+ no:'<ul><li><span class="hl-red">a new plan for dealing with...</span> — đây là định nghĩa của "initiative" (sáng kiến), không phải "degradation".</li><li><span class="hl-red">collect plants, animals...</span> — đây là định nghĩa của "harvest" (thu hoạch), khác hoàn toàn nghĩa.</li><li><span class="hl-red">a situation in which something stops existing</span> — đây là định nghĩa của "extinction" (tuyệt chủng), không phải "degradation".</li></ul>'}},
+{n:10,lb:'2',s:'B',q:'10. What does "infrastructure" mean?',
+ o:["the basic systems and services, such as buildings, transport and power supplies","destroy completely","an area of sea water separated from the sea by rocks or sand","make an idea, plan, or law start to be used"],a:"the basic systems and services, such as buildings, transport and power supplies",
+ e:{tr:'Dịch: "Từ \'infrastructure\' (cơ sở hạ tầng) có nghĩa là gì?"',
+ op:W('the basic systems and services, such as buildings, transport and power supplies','def','các hệ thống/dịch vụ cơ bản như tòa nhà, giao thông, điện')+W('destroy completely','def','phá hủy hoàn toàn')+W('an area of sea water separated from the sea by rocks or sand','def','vùng nước biển bị ngăn cách bởi đá/cát')+W('make an idea, plan, or law start to be used','def','đưa một ý tưởng/kế hoạch/luật vào áp dụng'),
+ ok:'Đáp án đúng là <span class="hl-green">the basic systems and services, such as buildings, transport and power supplies</span>. Bài đọc dùng "infrastructure" khi nói về áp lực lên các HỆ THỐNG CƠ BẢN của đảo Bali (giao thông, điện, tòa nhà...).',
+ ev:'"...as well as putting pressure on the island\'s infrastructure." 👉 "...cũng như gây áp lực lên cơ sở hạ tầng của đảo."',
+ no:'<ul><li><span class="hl-red">destroy completely</span> — đây là định nghĩa của "obliterate", không phải "infrastructure".</li><li><span class="hl-red">an area of sea water...</span> — đây là định nghĩa của "lagoon" (đầm phá).</li><li><span class="hl-red">make an idea, plan, or law...</span> — đây là định nghĩa của "implement" (thực hiện).</li></ul>'}},
+{n:11,lb:'3',s:'B',q:'11. What does "lagoon" mean?',
+ o:["an area of sea water separated from the sea by rocks or sand","a situation in which something stops existing","the process of changing into a worse condition","collect plants, animals, or things that can be eaten or used"],a:"an area of sea water separated from the sea by rocks or sand",
+ e:{tr:'Dịch: "Từ \'lagoon\' (đầm phá) có nghĩa là gì?"',
+ op:W('an area of sea water separated from the sea by rocks or sand','def','vùng nước biển bị ngăn cách bởi đá/cát')+W('a situation in which something stops existing','def','tình trạng khi thứ gì đó ngừng tồn tại')+W('the process of changing into a worse condition','def','quá trình chuyển biến sang tình trạng tệ hơn')+W('collect plants, animals, or things that can be eaten or used','def','thu thập cây/động vật/vật để ăn hoặc sử dụng'),
+ ok:'Đáp án đúng là <span class="hl-green">an area of sea water separated from the sea by rocks or sand</span>. Bài đọc nói tourism đã "damaged the lagoon" ở Cancun — "lagoon" là vùng nước lặng được ngăn cách khỏi biển lớn bởi đá hoặc cồn cát.',
+ ev:'"...tourism has extensively damaged the lagoon, obliterated sand dunes..." 👉 "...du lịch đã gây thiệt hại nặng nề cho đầm phá, phá hủy hoàn toàn các cồn cát..."',
+ no:'<ul><li><span class="hl-red">a situation in which something stops existing</span> — đây là định nghĩa của "extinction", không phải "lagoon".</li><li><span class="hl-red">the process of changing into a worse condition</span> — đây là định nghĩa của "degradation".</li><li><span class="hl-red">collect plants, animals...</span> — đây là định nghĩa của "harvest".</li></ul>'}},
+{n:12,lb:'4',s:'B',q:'12. What does "obliterate" mean?',
+ o:["destroy completely","a new plan for dealing with a particular problem","make an idea, plan, or law start to be used","the basic systems and services, such as buildings, transport and power supplies"],a:"destroy completely",
+ e:{tr:'Dịch: "Từ \'obliterate\' (phá hủy hoàn toàn) có nghĩa là gì?"',
+ op:W('destroy completely','def','phá hủy hoàn toàn')+W('a new plan for dealing with a particular problem','def','một kế hoạch mới để giải quyết vấn đề cụ thể')+W('make an idea, plan, or law start to be used','def','đưa một ý tưởng/kế hoạch/luật vào áp dụng')+W('the basic systems and services, such as buildings, transport and power supplies','def','các hệ thống/dịch vụ cơ bản'),
+ ok:'Đáp án đúng là <span class="hl-green">destroy completely</span>. Bài đọc dùng "obliterated sand dunes" (phá hủy hoàn toàn các cồn cát) khi nói về thiệt hại của du lịch tại Cancun — đúng nghĩa "phá hủy hoàn toàn/xóa sổ".',
+ ev:'"...tourism has extensively damaged the lagoon, obliterated sand dunes..." 👉 "...du lịch đã... phá hủy hoàn toàn các cồn cát..."',
+ no:'<ul><li><span class="hl-red">a new plan for dealing with...</span> — đây là định nghĩa của "initiative", không phải "obliterate".</li><li><span class="hl-red">make an idea, plan, or law...</span> — đây là định nghĩa của "implement".</li><li><span class="hl-red">the basic systems and services...</span> — đây là định nghĩa của "infrastructure".</li></ul>'}},
+{n:13,lb:'5',s:'B',q:'13. What does "initiative" mean?',
+ o:["a new plan for dealing with a particular problem","destroy completely","collect plants, animals, or things that can be eaten or used","an area of sea water separated from the sea by rocks or sand"],a:"a new plan for dealing with a particular problem",
+ e:{tr:'Dịch: "Từ \'initiative\' (sáng kiến) có nghĩa là gì?"',
+ op:W('a new plan for dealing with a particular problem','def','một kế hoạch mới để giải quyết vấn đề cụ thể')+W('destroy completely','def','phá hủy hoàn toàn')+W('collect plants, animals, or things that can be eaten or used','def','thu thập cây/động vật/vật để ăn hoặc sử dụng')+W('an area of sea water separated from the sea by rocks or sand','def','vùng nước biển bị ngăn cách bởi đá/cát'),
+ ok:'Đáp án đúng là <span class="hl-green">a new plan for dealing with a particular problem</span>. Bài đọc nói "several laws and initiatives have been implemented" (nhiều luật lệ và sáng kiến đã được thực hiện) — "initiative" là một KẾ HOẠCH MỚI nhằm giải quyết vấn đề cụ thể.',
+ ev:'"Several laws and initiatives have been implemented in order to protect the Mediterranean Sea..." 👉 "Nhiều luật lệ và sáng kiến đã được thực hiện nhằm bảo vệ Biển Địa Trung Hải..."',
+ no:'<ul><li><span class="hl-red">destroy completely</span> — đây là định nghĩa của "obliterate", trái nghĩa hoàn toàn với "initiative".</li><li><span class="hl-red">collect plants, animals...</span> — đây là định nghĩa của "harvest".</li><li><span class="hl-red">an area of sea water...</span> — đây là định nghĩa của "lagoon".</li></ul>'}},
+{n:14,lb:'6',s:'B',q:'14. What does "implement" mean?',
+ o:["make an idea, plan, or law start to be used","a situation in which something stops existing","destroy completely","a new plan for dealing with a particular problem"],a:"make an idea, plan, or law start to be used",
+ e:{tr:'Dịch: "Từ \'implement\' (thực hiện) có nghĩa là gì?"',
+ op:W('make an idea, plan, or law start to be used','def','đưa một ý tưởng/kế hoạch/luật vào áp dụng')+W('a situation in which something stops existing','def','tình trạng khi thứ gì đó ngừng tồn tại')+W('destroy completely','def','phá hủy hoàn toàn')+W('a new plan for dealing with a particular problem','def','một kế hoạch mới để giải quyết vấn đề cụ thể'),
+ ok:'Đáp án đúng là <span class="hl-green">make an idea, plan, or law start to be used</span>. "Implement" là ĐỘNG TỪ nghĩa "thi hành/thực hiện" — khớp với "laws and initiatives have been implemented" (luật lệ và sáng kiến đã được thực hiện).',
+ ev:'"Several laws and initiatives have been implemented in order to protect the Mediterranean Sea..." 👉 "Nhiều luật lệ và sáng kiến đã được thực hiện..."',
+ no:'<ul><li><span class="hl-red">a situation in which something stops existing</span> — đây là định nghĩa của "extinction", không phải "implement".</li><li><span class="hl-red">destroy completely</span> — đây là định nghĩa của "obliterate".</li><li><span class="hl-red">a new plan for dealing with...</span> — đây là định nghĩa của "initiative" (danh từ), khác với "implement" (động từ).</li></ul>'}},
+{n:15,lb:'7',s:'B',q:'15. What does "harvest" mean?',
+ o:["collect plants, animals, or things that can be eaten or used","the process of changing into a worse condition","the basic systems and services, such as buildings, transport and power supplies","a situation in which something stops existing"],a:"collect plants, animals, or things that can be eaten or used",
+ e:{tr:'Dịch: "Từ \'harvest\' (thu hoạch) có nghĩa là gì?"',
+ op:W('collect plants, animals, or things that can be eaten or used','def','thu thập cây/động vật/vật để ăn hoặc sử dụng')+W('the process of changing into a worse condition','def','quá trình chuyển biến sang tình trạng tệ hơn')+W('the basic systems and services, such as buildings, transport and power supplies','def','các hệ thống/dịch vụ cơ bản')+W('a situation in which something stops existing','def','tình trạng khi thứ gì đó ngừng tồn tại'),
+ ok:'Đáp án đúng là <span class="hl-green">collect plants, animals, or things that can be eaten or used</span>. Bài đọc nói san hô "are harvested for sale to tourists" (bị thu hoạch để bán cho du khách) — đúng nghĩa "thu hái/thu hoạch để sử dụng".',
+ ev:'"...the destruction of coral reefs, as they are harvested for sale to tourists..." 👉 "...sự phá hủy các rạn san hô, do chúng bị thu hoạch để bán cho khách du lịch..."',
+ no:'<ul><li><span class="hl-red">the process of changing into a worse condition</span> — đây là định nghĩa của "degradation", không phải "harvest".</li><li><span class="hl-red">the basic systems and services...</span> — đây là định nghĩa của "infrastructure".</li><li><span class="hl-red">a situation in which something stops existing</span> — đây là định nghĩa của "extinction".</li></ul>'}},
+{n:16,lb:'8',s:'B',q:'16. What does "extinction" mean?',
+ o:["a situation in which something stops existing","an area of sea water separated from the sea by rocks or sand","make an idea, plan, or law start to be used","collect plants, animals, or things that can be eaten or used"],a:"a situation in which something stops existing",
+ e:{tr:'Dịch: "Từ \'extinction\' (sự tuyệt chủng) có nghĩa là gì?"',
+ op:W('a situation in which something stops existing','def','tình trạng khi thứ gì đó ngừng tồn tại')+W('an area of sea water separated from the sea by rocks or sand','def','vùng nước biển bị ngăn cách bởi đá/cát')+W('make an idea, plan, or law start to be used','def','đưa một ý tưởng/kế hoạch/luật vào áp dụng')+W('collect plants, animals, or things that can be eaten or used','def','thu thập cây/động vật/vật để ăn hoặc sử dụng'),
+ ok:'Đáp án đúng là <span class="hl-green">a situation in which something stops existing</span>. Bài đọc nói du lịch "led to the extinction of varying species of animals and fish" (dẫn đến sự tuyệt chủng của nhiều loài) — đúng nghĩa "tình trạng ngừng tồn tại vĩnh viễn".',
+ ev:'"...led to the extinction of varying species of animals and fish..." 👉 "...dẫn đến sự tuyệt chủng của nhiều loài động vật và cá khác nhau..."',
+ no:'<ul><li><span class="hl-red">an area of sea water...</span> — đây là định nghĩa của "lagoon", không phải "extinction".</li><li><span class="hl-red">make an idea, plan, or law...</span> — đây là định nghĩa của "implement".</li><li><span class="hl-red">collect plants, animals...</span> — đây là định nghĩa của "harvest".</li></ul>'}},
+{n:17,lb:'1',s:'C',q:'17. The effect of tourism is only positive.',
+ o:["True","False"],a:"False",
+ e:{tr:'Dịch: "Tác động của du lịch chỉ mang tính tích cực."',
+ op:W('True','tf','đúng')+W('False','tf','sai'),
+ ok:'Đáp án đúng là <span class="hl-green">False</span>. Toàn bộ bài đọc liệt kê hàng loạt tác động TIÊU CỰC của du lịch (ô nhiễm, phá hủy san hô, tuyệt chủng động vật, thiếu nước...) — hoàn toàn KHÔNG chỉ tích cực.',
+ ev:'Cả 4 đoạn ví dụ (Scotland, Mediterranean Sea, Bali, Cancun, Trinidad and Tobago) đều mô tả hậu quả TIÊU CỰC của du lịch, mâu thuẫn với câu "only positive".',
+ no:'<ul><li>Bài đọc mở đầu bằng "The effect of travelling of large amount of people sometimes is incredible" rồi liệt kê TOÀN các ví dụ về thiệt hại — không hề nói tác động là "only positive".</li></ul>'}},
+{n:18,lb:'2',s:'C',q:'18. Mass tourism can cause housing shortages.',
+ o:["True","False"],a:"True",
+ e:{tr:'Dịch: "Du lịch đại chúng có thể gây ra tình trạng thiếu chỗ ở."',
+ op:W('True','tf','đúng')+W('False','tf','sai'),
+ ok:'Đáp án đúng là <span class="hl-green">True</span>. Bài đọc nêu ví dụ ở Scotland: một lượng lớn khách đến cùng lúc khiến chỗ ở kém thoải mái, chỉ 40% du khách được cung cấp khách sạn — chứng tỏ tình trạng thiếu hụt chỗ ở khi có quá đông khách.',
+ ev:'"Large number of people coming to one place once at a time can have less comfortable accommodation as it was in Scotland where only 40% of tourists were offered hotels." 👉 "...chỉ 40% du khách được cung cấp khách sạn."',
+ no:'<ul><li>Không có — thông tin về Scotland xác nhận đúng ý này: lượng khách quá đông dẫn tới thiếu chỗ ở đầy đủ tiện nghi.</li></ul>'}},
+{n:19,lb:'3',s:'C',q:'19. Tourism is largely responsible for pollution of the Mediterranean Sea.',
+ o:["True","False"],a:"True",
+ e:{tr:'Dịch: "Du lịch chịu trách nhiệm phần lớn cho sự ô nhiễm ở Biển Địa Trung Hải."',
+ op:W('True','tf','đúng')+W('False','tf','sai'),
+ ok:'Đáp án đúng là <span class="hl-green">True</span>. Bài đọc nói rõ du lịch là "one of the principal contributions" (một trong những đóng góp chính) gây ô nhiễm biển Địa Trung Hải.',
+ ev:'"Tourism is one of the principal contributions of pollution in the Mediterranean Sea..." 👉 "Du lịch là một trong những nguyên nhân chính gây ô nhiễm ở Biển Địa Trung Hải..."',
+ no:'<ul><li>Không có — thông tin trong bài xác nhận trực tiếp mối liên hệ giữa du lịch và ô nhiễm biển Địa Trung Hải.</li></ul>'}},
+{n:20,lb:'4',s:'C',q:'20. Tourism promotes conservation of wildlife and natural resources such as rainforests.',
+ o:["True","False"],a:"False",
+ e:{tr:'Dịch: "Du lịch thúc đẩy việc bảo tồn động vật hoang dã và tài nguyên thiên nhiên như rừng nhiệt đới."',
+ op:W('True','tf','đúng')+W('False','tf','sai'),
+ ok:'Đáp án đúng là <span class="hl-green">False</span>. Bài đọc mô tả du lịch ở Cancun đã PHÁ HỦY rừng nhiệt đới và gây tuyệt chủng nhiều loài — hoàn toàn TRÁI NGƯỢC với việc "thúc đẩy bảo tồn".',
+ ev:'"...led to the extinction of varying species of animals and fish, and destroyed the rainforest which surrounds the island." 👉 "...dẫn đến sự tuyệt chủng của nhiều loài... và phá hủy khu rừng nhiệt đới bao quanh hòn đảo."',
+ no:'<ul><li>Toàn bộ bài đọc chỉ liệt kê thiệt hại (phá rừng, tuyệt chủng, phá san hô) — không có đoạn nào nói du lịch "thúc đẩy bảo tồn".</li></ul>'}},
+{n:21,lb:'5',s:'C',q:'21. Bali\'s rapid tourism development has had a negative impact on its natural environment.',
+ o:["True","False"],a:"True",
+ e:{tr:'Dịch: "Sự phát triển du lịch nhanh chóng của Bali đã có tác động tiêu cực đến môi trường tự nhiên của nó."',
+ op:W('True','tf','đúng')+W('False','tf','sai'),
+ ok:'Đáp án đúng là <span class="hl-green">True</span>. Bài đọc nói trực tiếp: sự phát triển du lịch nhanh của Bali "has had a great effect on its natural environment" theo hướng tiêu cực (ô nhiễm, lũ lụt, áp lực hạ tầng).',
+ ev:'"The rapid tourism development of Bali has had a great effect on its natural environment, affecting water resources, increasing pollution and localized flooding..." 👉 "...ảnh hưởng đến nguồn nước, làm tăng ô nhiễm và lũ lụt cục bộ..."',
+ no:'<ul><li>Không có — câu này khớp trực tiếp với thông tin trong bài về Bali.</li></ul>'}},
+{n:22,lb:'6',s:'C',q:'22. Tourism made little damage in Cancun because the government of Mexico put a limit on projects along the coast.',
+ o:["True","False"],a:"False",
+ e:{tr:'Dịch: "Du lịch gây ra rất ít thiệt hại ở Cancun bởi vì chính phủ Mexico đã hạn chế các dự án dọc bờ biển."',
+ op:W('True','tf','đúng')+W('False','tf','sai'),
+ ok:'Đáp án đúng là <span class="hl-green">False</span>. Bài đọc nói du lịch đã gây thiệt hại NẶNG NỀ ở Cancun (phá đầm phá, cồn cát, tuyệt chủng, phá rừng) TRƯỚC KHI chính phủ hạn chế dự án — và việc hạn chế chỉ xảy ra sau 20 năm, không có nghĩa là thiệt hại "little" (ít).',
+ ev:'"...tourism has extensively damaged the lagoon, obliterated sand dunes, led to the extinction of varying species of animals and fish, and destroyed the rainforest..." 👉 Mức độ thiệt hại được mô tả là "extensively" (rộng khắp/nặng nề), không phải "little".',
+ no:'<ul><li>Bài đọc dùng từ "extensively damaged" (thiệt hại rộng khắp), hoàn toàn trái ngược với "made little damage" trong câu hỏi.</li></ul>'}},
+{n:23,lb:'7',s:'C',q:'23. Overpopulation of tourists leads to the lack of fresh water resources in Trinidad and Tobago.',
+ o:["True","False"],a:"True",
+ e:{tr:'Dịch: "Tình trạng quá tải du khách dẫn đến thiếu hụt nguồn nước sạch ở Trinidad và Tobago."',
+ op:W('True','tf','đúng')+W('False','tf','sai'),
+ ok:'Đáp án đúng là <span class="hl-green">True</span>. Bài đọc nói rõ: "there are shortages of water due to the overpopulation of tourists on the island" (thiếu nước do quá tải du khách) — khớp hoàn toàn với câu hỏi.',
+ ev:'"In Trinidad and Tobago there are shortages of water due to the overpopulation of tourists on the island." 👉 "Ở Trinidad và Tobago, có tình trạng thiếu nước do tình trạng quá tải du khách trên đảo."',
+ no:'<ul><li>Không có — câu này trích gần như nguyên văn thông tin trong bài đọc.</li></ul>'}},
+{n:24,lb:'8',s:'C',q:'24. The destruction of coral reefs is mostly caused by tourists collecting coral for souvenirs.',
+ o:["True","False"],a:"False",
+ e:{tr:'Dịch: "Sự phá hủy các rạn san hô chủ yếu là do du khách thu thập san hô làm quà lưu niệm."',
+ op:W('True','tf','đúng')+W('False','tf','sai'),
+ ok:'Đáp án đúng là <span class="hl-green">False</span>. Bài đọc nêu HAI nguyên nhân: san hô bị "harvested for sale to tourists" (thu hoạch để BÁN cho du khách, không phải du khách tự thu thập) VÀ bị "destroyed by tourists stepping on them" (du khách giẫm đạp khi xuống nước) — không nói riêng về việc du khách "thu thập san hô làm quà lưu niệm".',
+ ev:'"...the destruction of coral reefs, as they are harvested for sale to tourists and destroyed by tourists stepping on them as they enter the water." 👉 Nguyên nhân là bị THU HOẠCH ĐỂ BÁN và bị GIẪM ĐẠP, không phải do du khách tự "collect for souvenirs".',
+ no:'<ul><li>Câu hỏi diễn đạt SAI nguyên nhân — bài đọc nói người khác thu hoạch san hô để bán, và du khách vô tình giẫm phải, chứ không phải du khách chủ động thu thập làm quà lưu niệm.</li></ul>'}},
+{n:25,lb:'1',s:'D',q:'25. To protect the Mediterranean Sea from further degradation, ______.',
+ o:["the number of tourists have to increase","a number of laws and plans have been put into action","several rules and campaigns will worsen","the further degradation should be implemented"],a:"a number of laws and plans have been put into action",
+ e:{tr:'Dịch: "Để bảo vệ Biển Địa Trung Hải khỏi sự suy thoái thêm, ______."',
+ op:W('the number of tourists have to increase','phr','số lượng du khách phải tăng lên')+W('a number of laws and plans have been put into action','phr','một số luật lệ và kế hoạch đã được đưa vào thực hiện')+W('several rules and campaigns will worsen','phr','một số quy định và chiến dịch sẽ tệ hơn')+W('the further degradation should be implemented','phr','sự suy thoái thêm nên được thực hiện'),
+ ok:'Đáp án đúng là <span class="hl-green">a number of laws and plans have been put into action</span>. Bài đọc nói "several laws and initiatives have been implemented" — nghĩa là NHIỀU LUẬT LỆ VÀ KẾ HOẠCH đã được đưa vào thực hiện để bảo vệ biển.',
+ ev:'"Several laws and initiatives have been implemented in order to protect the Mediterranean Sea from further degradation." 👉 "Nhiều luật lệ và sáng kiến đã được thực hiện nhằm bảo vệ Biển Địa Trung Hải khỏi sự suy thoái thêm."',
+ no:'<ul><li><span class="hl-red">the number of tourists have to increase</span> — TRÁI NGƯỢC hoàn toàn với mục tiêu bảo vệ môi trường.</li><li><span class="hl-red">several rules and campaigns will worsen</span> — không có ý này trong bài, và "worsen" (tệ hơn) không hợp lý ở đây.</li><li><span class="hl-red">the further degradation should be implemented</span> — vô lý về nghĩa: không ai "thực hiện" sự suy thoái, đây là lỗi ghép từ sai ngữ cảnh.</li></ul>'}},
+{n:26,lb:'2',s:'D',q:'26. What problem is Bali facing?',
+ o:["Pollution and flooding","Extinction of animals","Destruction of rainforest","Lack of water resources"],a:"Pollution and flooding",
+ e:{tr:'Dịch: "Bali đang gặp phải vấn đề gì?"',
+ op:W('Pollution and flooding','phr','ô nhiễm và lũ lụt')+W('Extinction of animals','phr','tuyệt chủng động vật')+W('Destruction of rainforest','phr','phá hủy rừng nhiệt đới')+W('Lack of water resources','phr','thiếu nguồn nước'),
+ ok:'Đáp án đúng là <span class="hl-green">Pollution and flooding</span>. Bài đọc nói rõ về Bali: "increasing pollution and localized flooding" (ô nhiễm gia tăng và lũ lụt cục bộ) là vấn đề CHÍNH được nhắc đến.',
+ ev:'"...affecting water resources, increasing pollution and localized flooding, as well as putting pressure on the island\'s infrastructure." 👉 "...làm tăng ô nhiễm và lũ lụt cục bộ..."',
+ no:'<ul><li><span class="hl-red">Extinction of animals</span> — đây là vấn đề được nhắc đến ở đoạn về CANCUN, không phải Bali.</li><li><span class="hl-red">Destruction of rainforest</span> — cũng là vấn đề của CANCUN, không phải Bali.</li><li><span class="hl-red">Lack of water resources</span> — đây là vấn đề của TRINIDAD AND TOBAGO, không phải Bali (Bali chỉ nói "affecting water resources" chung chung, không phải "lack of").</li></ul>'}},
+{n:27,lb:'3',s:'D',q:'27. Why did the government of Mexico decide to limit projects along the coast of Cancun?',
+ o:["To develop the island after 20 years.","To remove lagoon and sand dunes.","To completely stop tourism from going to the island.","To prevent further harm to the environment."],a:"To prevent further harm to the environment.",
+ e:{tr:'Dịch: "Tại sao chính phủ Mexico quyết định hạn chế các dự án dọc bờ biển Cancun?"',
+ op:W('To develop the island after 20 years.','phr','để phát triển đảo sau 20 năm')+W('To remove lagoon and sand dunes.','phr','để loại bỏ đầm phá và cồn cát')+W('To completely stop tourism from going to the island.','phr','để ngăn hoàn toàn du lịch tới đảo')+W('To prevent further harm to the environment.','phr','để ngăn ngừa thiệt hại thêm cho môi trường'),
+ ok:'Đáp án đúng là <span class="hl-green">To prevent further harm to the environment.</span> Bài đọc nói rõ chính phủ hạn chế dự án "to prevent further damage to the island\'s environment" (để ngăn ngừa thiệt hại thêm cho môi trường đảo).',
+ ev:'"...that the government of Mexico decided to limit projects along the coast to prevent further damage to the island\'s environment." 👉 "...chính phủ Mexico mới quyết định hạn chế các dự án dọc bờ biển để ngăn ngừa thiệt hại thêm cho môi trường của hòn đảo."',
+ no:'<ul><li><span class="hl-red">To develop the island after 20 years.</span> — "20 years" chỉ là MỐC THỜI GIAN khi quyết định được đưa ra, không phải LÝ DO của quyết định.</li><li><span class="hl-red">To remove lagoon and sand dunes.</span> — TRÁI NGƯỢC: đầm phá và cồn cát đã bị PHÁ HỦY bởi du lịch, chính phủ hành động để BẢO VỆ chứ không phải loại bỏ chúng.</li><li><span class="hl-red">To completely stop tourism from going to the island.</span> — bài đọc chỉ nói "limit" (hạn chế) dự án, không nói "hoàn toàn ngăn chặn" du lịch.</li></ul>'}}
+];
+
+var TOTAL=QD.length,PICK={};
+function render(){
+  ["A","B","C","D"].forEach(function(s){
+    var host=document.getElementById('sec'+s);host.innerHTML='';
+    QD.filter(function(q){return q.s===s;}).forEach(function(q){
+      var h='<div class="qh"><span class="num">'+q.lb+'</span>'+q.q+'</div>';
+      shuffleOpts(q.o).forEach(function(v){h+='<button class="opt" data-n="'+q.n+'" data-v="'+esc(v)+'" onclick="pick('+q.n+',this)">'+esc(v)+'</button>';});
+      h+='<div class="exp" id="e_'+q.n+'"></div>';
+      var d=document.createElement('div');d.className='qblock';d.innerHTML=h;host.appendChild(d);
+    });
+  });
+  prog();
+}
+function shuffleOpts(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t;}return a;}
+function esc(s){return s.replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');}
+function pick(n,btn){
+  if(PICK[n])return;
+  click2();
+  PICK[n]=btn.getAttribute('data-v');
+  var q=QD.filter(function(x){return x.n===n;})[0];
+  var bs=document.querySelectorAll('.opt[data-n="'+n+'"]');
+  for(var i=0;i<bs.length;i++)bs[i].disabled=true;
+  if(PICK[n]===q.a){btn.classList.add('correct');ding();}
+  else{btn.classList.add('wrong');buzz();for(var j=0;j<bs.length;j++){if(bs[j].getAttribute('data-v')===q.a)bs[j].classList.add('correct');}}
+  showExp(n,q);prog();
+}
+function showExp(n,q){
+  var ok=PICK[n]===q.a,b=document.getElementById('e_'+n);
+  b.innerHTML='<div class="badge'+(ok?'':' bad')+'">'+(ok?'✅ CHÍNH XÁC!':'❌ CHƯA ĐÚNG – Đáp án đúng: '+q.a)+'</div>'
+   +'<div class="step"><span class="slab">① Dịch:</span> '+q.e.tr+'</div>'
+   +'<div class="step"><span class="slab">② Các phương án &amp; nghĩa:</span>'+q.e.op+'</div>'
+   +'<div class="step"><span class="slab">③ Vì sao đúng:</span> '+q.e.ok+(q.e.ev?'<div class="quote">🔍 <b>Dẫn chứng:</b> '+q.e.ev+'</div>':'')+'</div>'
+   +(q.e.no?'<div class="step"><span class="slab">④ Vì sao các phương án khác sai:</span> '+q.e.no+'</div>':'');
+  b.classList.add('on');
+}
+function prog(){var d=Object.keys(PICK).length,c=0;for(var k in PICK){var q=QD.filter(function(x){return x.n==k;})[0];if(PICK[k]===q.a)c++;}
+  document.getElementById('cDone').textContent=d;document.getElementById('cCorrect').textContent=c;
+  document.getElementById('barFill').style.width=(d/TOTAL*100)+'%';}
+function askName(){click2();document.getElementById('nameErr').classList.remove('show');document.getElementById('nameModal').classList.add('on');}
+function okName(){
+  var v=document.getElementById('nameInput').value.trim();
+  if(!v){document.getElementById('nameErr').classList.add('show');return;}
+  document.getElementById('nameModal').classList.remove('on');grade(v);
+}
+function grade(sname){
+  QD.forEach(function(q){
+    if(!PICK[q.n]){
+      PICK[q.n]='__';
+      var bs=document.querySelectorAll('.opt[data-n="'+q.n+'"]');
+      for(var i=0;i<bs.length;i++){bs[i].disabled=true;if(bs[i].getAttribute('data-v')===q.a)bs[i].classList.add('correct');}
+      showExp(q.n,q);
+    }
+  });
+  prog();
+  var cor=QD.filter(function(q){return PICK[q.n]===q.a;}).length;
+  var pct=cor/TOTAL,d10=(cor/TOTAL*10).toFixed(2),em,ti,cm,gif;
+  if(pct===1){em='🏆';ti='XUẤT SẮC — HACKER HẠNG S!';cm='Tuyệt đối hoàn hảo '+cor+'/'+TOTAL+'! MS Chí Nên rất tự hào về em! ⚡';gif='https://media.giphy.com/media/3ohhwytHcusSCXXOUg/giphy.gif';}
+  else if(pct>=.6){em='👏';ti='LÀM TỐT LẮM!';cm='Em đạt '+cor+'/'+TOTAL+' – đã vượt qua rồi! Đọc kỹ phần giải thích những câu sai nhé. 🛰️';gif='https://media.giphy.com/media/l4pTfx2qLszoacZRS/giphy.gif';}
+  else{em='😭';ti='CỐ LÊN NHÉ!';cm='Em mới đạt '+cor+'/'+TOTAL+'. Đừng buồn nha! Đọc kỹ đoạn văn rồi làm lại — MS Chí Nên tin em sẽ tiến bộ nhanh. 🔋';gif='https://media.giphy.com/media/d2lcHJTG5Tscg/giphy.gif';}
+  document.getElementById('mEmoji').textContent=em;
+  document.getElementById('mTitle').textContent=ti;
+  document.getElementById('mName').textContent='🎓 Học sinh: '+sname;
+  var g=document.getElementById('mGif');g.style.display='';g.src=gif;
+  document.getElementById('mScore').textContent=cor+'/'+TOTAL;
+  document.getElementById('mScore10').textContent='Điểm hệ 10: '+d10+' / 10';
+  document.getElementById('mComment').textContent=cm;
+  document.getElementById('scoreModal').classList.add('on');
+}
+render();
+</script>
+<script>/*devclean*/(function(){
+var ZW=/[\u00AD\u034F\u061C\u115F\u1160\u17B4\u17B5\u180E\u200B-\u200F\u202A-\u202E\u2060-\u206F\uFEFF]/g,
+    SP=/[\u00A0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\t]/g,
+    AP=/[\u2018\u2019\u201A\u201B\u2032\u2035\u02B9\u02BB\u02BC\u02BD\u02C8\u0060\u00B4\uFF07]/g,
+    DQ=/[\u201C\u201D\u201E\u201F\u2033\u2036\u00AB\u00BB\uFF02]/g,
+    DS=/[\u2010\u2011\u2012\u2212\uFE63\uFF0D]/g;
+function clean(v){if(!v)return v;var s=String(v);try{s=s.normalize('NFKC')}catch(e){}
+  return s.replace(ZW,'').replace(SP,' ').replace(AP,"'").replace(DQ,'"').replace(DS,'-').replace(/[\u0300-\u036f]/g,'').replace(/ {2,}/g,' ');}
+window.__devclean=clean;
+function fix(skip){var L=document.querySelectorAll('input:not([type]),input[type=text],input[type=search],textarea');
+  for(var i=0;i<L.length;i++){var el=L[i];if(el===skip||el.readOnly||el.disabled)continue;var v=el.value,c=clean(v);if(c!==v)el.value=c;}}
+['pointerdown','mousedown','touchstart','click','change','focusout'].forEach(function(t){document.addEventListener(t,function(e){fix(t==='focusout'||t==='change'?null:e.target)},true)});
+document.addEventListener('keydown',function(e){if(e.key==='Enter'||e.keyCode===13)fix(null)},true);
+})();</script>
+<style id="ms-chi-nen-unlock-style">
+#passwordModal, #password-modal, #pwModal, #pw-modal, #pw-overlay,
+#lockModal, #passModal, #authModal, #auth-modal, #lockOverlay,
+#start-overlay, #intro-overlay, #start-screen,
+.password-modal, .lock-modal, .lock-overlay {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    z-index: -9999 !important;
+}
+</style>
+<script>
+// Remove password lock completely - direct quiz access
+(function() {
+    var initDone = false;
+    var renderCheckDone = false;
+
+    function hideEl(el, hard) {
+        if (!el) return;
+        if (hard) {
+            el.style.setProperty('display', 'none', 'important');
+            el.style.setProperty('visibility', 'hidden', 'important');
+            el.style.setProperty('opacity', '0', 'important');
+            el.style.setProperty('pointer-events', 'none', 'important');
+            el.style.setProperty('z-index', '-9999', 'important');
+        } else {
+            el.style.display = 'none';
+        }
+        el.classList.remove('active', 'show', 'open', 'visible', 'flex');
+    }
+
+    function hasRenderedQuiz() {
+        var containers = document.querySelectorAll(
+            '#quiz-container, #quizContainer, #questions-container, #questionPane, #quiz, #questions, #quiz-body, #questions-wrapper, #quiz-list, #quizList, #exercise-container, #app-container .split-container'
+        );
+        for (var i = 0; i < containers.length; i++) {
+            if (containers[i].querySelectorAll('button, input, select, textarea, .question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .question, .option-btn, .opt-btn, .ans-btn').length > 0) {
+                return true;
+            }
+        }
+        if (document.querySelectorAll('.question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .option-btn, .opt-btn, .ans-btn, .choice-btn').length > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    function ensureQuizRendered() {
+        if (renderCheckDone) return;
+        renderCheckDone = true;
+        if (hasRenderedQuiz()) return;
+
+        if (!hasRenderedQuiz() && typeof buildQuiz === 'function') { try { buildQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof initQuiz === 'function') { try { initQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderApp === 'function') { try { renderApp(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuiz === 'function') { try { renderQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuestions === 'function') { try { renderQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAllQuestions === 'function') { try { renderAllQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAll === 'function') { try { renderAll(); } catch(e){} }
+    }
+
+    function unlockNow() {
+        var pwIds = [
+            'passwordModal', 'password-modal', 'pwModal', 'pw-modal', 'pw-overlay',
+            'lockModal', 'passModal', 'authModal', 'auth-modal', 'lockOverlay',
+            'start-overlay', 'intro-overlay', 'start-screen'
+        ];
+        pwIds.forEach(function(id) {
+            hideEl(document.getElementById(id), true);
+        });
+
+        var modalEls = document.querySelectorAll('.password-modal, .lock-modal, .lock-overlay, #lockOverlay, #auth-modal');
+        modalEls.forEach(function(el) {
+            if (el.id !== 'resultModal' && el.id !== 'result-modal' && el.id !== 'scoreModal') {
+                hideEl(el, true);
+            }
+        });
+
+        ['nameModal', 'name-modal', 'nameInputModal'].forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) hideEl(el, false);
+        });
+
+        var qo = document.getElementById('quiz-overlay');
+        if (qo && (typeof isStarted === 'undefined' || !isStarted)) {
+            qo.style.display = 'none';
+        }
+
+        var mainIds = [
+            'mainContent', 'main-content', 'mainHeader', 'main-header',
+            'app-container', 'app', 'quizApp', 'quiz-wrapper', 'quizContainer', 'quiz-container', 'reading-content'
+        ];
+        mainIds.forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) {
+                el.classList.remove('hidden', 'blur', 'blurred', 'locked');
+                if (el.style.display === 'none') {
+                    el.style.removeProperty('display');
+                }
+                if (window.getComputedStyle(el).display === 'none') {
+                    var hasPane = el.querySelector('.pane, .left-pane, .right-pane, .split-container, .left-panel, .right-panel');
+                    if (id === 'main-content' || id.toLowerCase().includes('header') || el.classList.contains('main-container') || hasPane) {
+                        el.style.setProperty('display', 'flex', 'important');
+                    } else {
+                        el.style.setProperty('display', 'block', 'important');
+                    }
+                }
+            }
+        });
+
+        var qs = document.getElementById('quiz-screen');
+        if (qs) {
+            qs.classList.remove('hidden');
+            if (qs.classList.contains('flex-col')) {
+                qs.classList.add('flex');
+                qs.style.display = 'flex';
+            } else {
+                qs.style.display = 'block';
+            }
+        }
+
+        if (!initDone) {
+            initDone = true;
+
+            if (document.getElementById('start-overlay') && typeof startGame === 'function') {
+                var sn = document.getElementById('student-name') || document.getElementById('studentName');
+                if (sn && !sn.value.trim()) sn.value = 'Học sinh';
+            }
+            if (document.getElementById('name-modal') && typeof startQuiz === 'function') {
+                var sn2 = document.getElementById('student-name');
+                if (sn2 && !sn2.value.trim()) sn2.value = 'Học sinh';
+            }
+
+            if (typeof startQuiz === 'function' && (typeof isStarted === 'undefined' || !isStarted)) { try { startQuiz(); } catch(e){} }
+            if (typeof startGame === 'function') { try { startGame(); } catch(e){} }
+            if (typeof startTest === 'function') { try { startTest(); } catch(e){} }
+            if (typeof startApp === 'function') { try { startApp(); } catch(e){} }
+            if (typeof buildStarfield === 'function') { try { buildStarfield(); } catch(e){} }
+            if (typeof spawnFloats === 'function') { try { spawnFloats(); } catch(e){} }
+            if (typeof spawnFloaters === 'function') { try { spawnFloaters(); } catch(e){} }
+            if (typeof createFloatingBubbles === 'function') { try { createFloatingBubbles(); } catch(e){} }
+            if (typeof initAudio === 'function') { try { initAudio(); } catch(e){} }
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', unlockNow);
+    } else {
+        unlockNow();
+    }
+    if (document.readyState === 'complete') {
+        setTimeout(ensureQuizRendered, 150);
+    } else {
+        window.addEventListener('load', function() {
+            setTimeout(unlockNow, 20);
+            setTimeout(ensureQuizRendered, 150);
+            setTimeout(unlockNow, 300);
+            setTimeout(unlockNow, 700);
+        });
+    }
+    setTimeout(unlockNow, 50);
+    setTimeout(unlockNow, 200);
+    setTimeout(unlockNow, 600);
+    setTimeout(unlockNow, 1100);
+})();
+</script>
+</body>
+</html>

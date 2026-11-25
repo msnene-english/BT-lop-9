@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 8: Tourism — Exercise 4 (Homestay · Ecotourism · Angkor Wat) | MS Chí Nên</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* THEME: ENCHANTED STORYBOOK — trang sách cổ, lông ngỗng, nến, dấu trang */
+:root{--paper:#f8efd9;--paper2:#efe0ba;--paper3:#e3cd94;--ink:#3b2415;--gold:#c9962b;--maroon:#7a1f2b;
+  --leaf:#2f6b45;--night:#241608;
+  --correct:#1fa565;--correctbg:#d9f2e3;--wrong:#b23a3a;--wrongbg:#f6dcdc;}
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:18px}
+body{font-family:'Lora',serif;color:var(--ink);min-height:100vh;position:relative;overflow-x:hidden;padding-bottom:60px;
+  background:radial-gradient(ellipse at 50% -10%,#6b4423 0%,var(--night) 46%),linear-gradient(180deg,var(--night) 0%,#3a2412 100%);
+  background-attachment:fixed}
+.glow{position:fixed;top:4%;left:50%;transform:translateX(-50%);width:340px;height:180px;z-index:0;
+  background:radial-gradient(ellipse,rgba(255,214,120,.35),transparent 70%);filter:blur(6px)}
+.candle{position:fixed;bottom:2%;z-index:1;font-size:2.2rem;animation:flicker 2.4s ease-in-out infinite}
+@keyframes flicker{0%,100%{opacity:.85;transform:scale(1)}50%{opacity:1;transform:scale(1.08)}}
+.quill{position:fixed;z-index:1;font-size:1.8rem;opacity:.9;animation:quillWrite 6s ease-in-out infinite}
+@keyframes quillWrite{0%,100%{transform:rotate(-14deg) translateY(0)}50%{transform:rotate(4deg) translateY(-6px)}}
+.page{position:fixed;z-index:1;font-size:1.5rem;opacity:.85;animation:pageFloat linear infinite}
+@keyframes pageFloat{0%{transform:translateY(0) rotate(0deg);opacity:.85}100%{transform:translateY(-100vh) rotate(340deg);opacity:0}}
+.spark{position:fixed;border-radius:50%;background:var(--gold);z-index:1;animation:twinkle ease-in-out infinite}
+@keyframes twinkle{0%,100%{opacity:.15;transform:scale(.7)}50%{opacity:1;transform:scale(1.3)}}
+.wrap{position:relative;z-index:2;max-width:1420px;margin:0 auto;padding:16px 18px 40px}
+header{background:linear-gradient(180deg,var(--paper) 0%,var(--paper2) 100%);border-radius:6px 22px 6px 22px;padding:20px 28px;text-align:center;margin-bottom:14px;
+  box-shadow:0 16px 34px rgba(0,0,0,.5),inset 0 0 0 2px var(--gold);border:3px double var(--maroon)}
+header h1{font-family:'Playfair Display';font-weight:800;font-size:2.05rem;color:var(--maroon);letter-spacing:.5px}
+header .teacher{font-weight:600;color:var(--ink);margin-top:5px;font-style:italic}
+header .promo{font-weight:700;color:#8a2f1f;margin-top:6px;font-size:.88rem}
+.note{max-width:1050px;margin:0 auto 16px;background:var(--paper);border:2px dashed var(--gold);border-radius:14px;
+  padding:11px 18px;font-weight:600;color:#5a3a12;text-align:center;font-size:.9rem;line-height:1.7;box-shadow:0 8px 18px rgba(0,0,0,.35)}
+.scorebar{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:8px}
+.chip{background:var(--paper);border-radius:10px;padding:7px 16px;font-family:'Playfair Display';font-weight:700;font-size:.95rem;color:var(--maroon);box-shadow:0 4px 12px rgba(0,0,0,.4)}
+.chip b{color:var(--leaf);font-weight:900}
+.bar{height:11px;background:var(--paper);border-radius:8px;overflow:hidden;max-width:480px;margin:0 auto 18px;box-shadow:0 4px 12px rgba(0,0,0,.4)}
+.bar span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--maroon),var(--gold),var(--leaf));transition:width .4s}
+.section{background:var(--paper);border-radius:8px 26px 8px 26px;box-shadow:0 14px 32px rgba(0,0,0,.45);margin-bottom:22px;overflow:hidden;border:1px solid rgba(0,0,0,.15)}
+.sec-head{padding:15px 24px;font-family:'Playfair Display';font-weight:700;font-size:1.28rem;color:var(--maroon);background:linear-gradient(90deg,#f1e2b8,#e9d19a);border-bottom:2px double var(--gold)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.lp,.rp{padding:18px 22px;max-height:700px;overflow-y:auto}
+.lp{border-right:2px dashed rgba(0,0,0,.18);background:repeating-linear-gradient(180deg,transparent,transparent 27px,rgba(122,31,43,.05) 28px)}
+.lp::-webkit-scrollbar,.rp::-webkit-scrollbar{width:8px}
+.lp::-webkit-scrollbar-thumb,.rp::-webkit-scrollbar-thumb{background:var(--maroon);border-radius:8px}
+.pblock{background:#fffdf6;border:2px solid rgba(0,0,0,.1);border-left:5px solid var(--maroon);border-radius:4px 12px 4px 12px;padding:13px 16px;margin-bottom:13px;box-shadow:0 3px 8px rgba(0,0,0,.08)}
+.pblock p{font-size:1rem;line-height:1.9}
+.bk{display:inline-block;min-width:30px;text-align:center;font-family:'Playfair Display';font-weight:700;color:#fff;background:var(--maroon);
+  border-radius:5px;padding:1px 8px;margin:0 2px;font-size:.9rem}
+.tbtn{margin-top:8px;cursor:pointer;font-family:'Playfair Display';font-weight:700;border:none;color:#fff;background:linear-gradient(90deg,var(--gold),var(--maroon));
+  padding:6px 16px;border-radius:20px;font-size:.85rem}
+.trans{display:none;margin-top:9px;padding:11px 14px;background:#f3ead0;border-left:4px solid var(--leaf);border-radius:0 10px 10px 0;font-size:.94rem;line-height:1.8}
+.trans.show{display:block;animation:fade .3s}
+@keyframes fade{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.trans b{color:var(--maroon)}
+.gloss{background:#f6ecc9;border:2px dashed var(--gold);border-radius:12px;padding:12px 15px;margin-top:6px}
+.gloss .gt{font-family:'Playfair Display';font-weight:700;color:#5a3a12;margin-bottom:8px}
+table.gtb{width:100%;border-collapse:collapse;font-size:.86rem}
+table.gtb th{background:var(--maroon);color:#fff;padding:7px 9px;text-align:left;font-family:'Playfair Display';font-size:.76rem}
+table.gtb td{padding:6px 9px;border-bottom:1px solid rgba(0,0,0,.1)}
+table.gtb td:first-child{font-weight:700;color:var(--maroon)}
+table.gtb td:nth-child(2){color:#5a3a12;font-style:italic;font-size:.8rem;white-space:nowrap}
+.qh{font-weight:700;font-size:.96rem;margin-bottom:10px;line-height:1.6}
+.qh .num{display:inline-block;width:30px;height:30px;line-height:30px;text-align:center;border-radius:50%;
+  background:linear-gradient(135deg,var(--maroon),var(--leaf));color:#fff;font-family:'Playfair Display';margin-right:7px;font-size:.9rem}
+.qblock{background:#fffdf6;border:2px solid rgba(0,0,0,.1);border-radius:4px 14px 4px 14px;padding:14px 16px;margin-bottom:14px;box-shadow:0 3px 8px rgba(0,0,0,.08)}
+.opt{display:block;width:100%;text-align:left;cursor:pointer;margin:7px 0;padding:11px 14px;border:2px solid rgba(0,0,0,.16);
+  border-radius:10px;background:#fff;font-family:'Lora';font-weight:600;font-size:.94rem;color:var(--ink);transition:.15s}
+.opt:hover:not(:disabled){border-color:var(--maroon);background:#f6ecc9;transform:translateX(3px)}
+.opt:disabled{cursor:default}
+.opt.correct{background:var(--correctbg);border-color:var(--correct);color:#0d5c33}
+.opt.wrong{background:var(--wrongbg);border-color:var(--wrong);color:#7a1f1f;animation:shk .4s}
+@keyframes shk{10%,90%{transform:translateX(-2px)}20%,80%{transform:translateX(4px)}30%,50%,70%{transform:translateX(-6px)}40%,60%{transform:translateX(6px)}}
+.exp{display:none;margin-top:11px;background:#f6ecd6;border:2px solid var(--maroon);border-radius:10px;padding:12px 15px;font-size:.88rem;line-height:1.8}
+.exp.on{display:block;animation:fade .3s}
+.exp .badge{display:inline-block;background:var(--correct);color:#fff;font-family:'Playfair Display';border-radius:10px;padding:2px 12px;margin-bottom:7px;font-size:.82rem}
+.exp .badge.bad{background:var(--wrong)}
+.exp .step{margin-top:7px}
+.exp .slab{font-family:'Playfair Display';font-weight:700;color:var(--maroon);font-size:.86rem}
+.exp .obox{background:#fff;border-radius:8px;padding:6px 10px;margin:5px 0;display:flex;flex-wrap:wrap;gap:4px 8px}
+.exp ul{margin:5px 0 0;padding-left:18px}
+.exp li{margin-bottom:5px}
+.p-word{font-weight:800;color:var(--leaf)}
+.p-mean{color:#5a3a12;font-weight:700}
+.pos{display:inline-block;font-weight:800;font-size:.64rem;padding:1px 7px;border-radius:8px;text-transform:uppercase;margin-right:2px}
+.pos-n{background:#d0ebff;color:#1c6fb0}
+.pos-v{background:#ffe0d6;color:#c0392b}
+.pos-adj{background:#efd9ff;color:#7a3fc9}
+.pos-adv{background:#c9f2e6;color:#0b8a63}
+.pos-phr{background:#e6dcc0;color:#6b4a12}
+.hl-green{color:var(--correct);font-weight:800}
+.hl-red{color:var(--wrong);font-weight:800}
+.quote{background:#f3ead0;border-left:4px solid var(--leaf);border-radius:0 10px 10px 0;padding:9px 12px;margin-top:7px;font-size:.85rem;line-height:1.75;color:#2f4a2f}
+.quote b{color:var(--maroon)}
+.submit-wrap{text-align:center;margin:20px 0}
+.bsub{font-family:'Playfair Display';font-weight:700;font-size:1.1rem;color:#fff;border:none;border-radius:28px;padding:14px 32px;cursor:pointer;
+  background:linear-gradient(90deg,var(--maroon),var(--leaf));box-shadow:0 10px 22px rgba(122,31,43,.5)}
+.ov{display:none;position:fixed;inset:0;z-index:999;background:rgba(20,10,4,.65);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:16px}
+.ov.on{display:flex}
+.mb{background:var(--paper);border-radius:8px 26px 8px 26px;padding:26px 28px;max-width:440px;width:100%;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.5);max-height:92vh;overflow-y:auto;border:3px double var(--maroon)}
+.mb h2{font-family:'Playfair Display';color:var(--maroon);font-size:1.3rem;margin-bottom:12px}
+.mb input{width:100%;font-family:'Lora';font-size:1rem;font-weight:600;padding:11px 14px;border:2px solid var(--maroon);border-radius:12px;text-align:center;outline:none;margin-bottom:8px}
+.mb .err{color:var(--wrong);font-weight:700;font-size:.85rem;display:none;margin-bottom:8px}
+.mb .err.show{display:block}
+.mb button{cursor:pointer;font-family:'Playfair Display';font-weight:700;border:none;color:#fff;border-radius:20px;padding:10px 24px;background:linear-gradient(90deg,var(--leaf),var(--maroon));font-size:.98rem;margin-top:4px}
+.mb .close{background:#8a7860}
+.gif{width:160px;margin:11px auto;display:block;border-radius:12px;border:3px solid var(--gold)}
+.rscore{font-family:'Playfair Display';font-size:2.3rem;color:var(--maroon)}
+.r10{font-family:'Playfair Display';font-size:1.15rem;color:var(--leaf)}
+.rcmt{margin:11px 0;padding:11px 14px;background:#f6ecc9;border:2px dashed var(--gold);border-radius:12px;font-size:.88rem;line-height:1.7}
+@media(max-width:860px){.split{grid-template-columns:1fr}.lp{border-right:none;border-bottom:2px dashed rgba(0,0,0,.18)}}
+</style>
+</head>
+<body>
+<div class="glow"></div>
+<span class="spark" style="top:8%;left:18%;width:3px;height:3px;animation-duration:2.6s"></span>
+<span class="spark" style="top:12%;left:38%;width:2px;height:2px;animation-duration:3.2s;animation-delay:-1s"></span>
+<span class="spark" style="top:6%;left:62%;width:3px;height:3px;animation-duration:2.8s;animation-delay:-2s"></span>
+<span class="spark" style="top:15%;left:80%;width:2px;height:2px;animation-duration:3.6s;animation-delay:-.6s"></span>
+<span class="page" style="left:6%;animation-duration:13s;animation-delay:-2s">📄</span>
+<span class="page" style="left:30%;animation-duration:17s;animation-delay:-7s">📜</span>
+<span class="page" style="left:68%;animation-duration:15s;animation-delay:-4s">📄</span>
+<span class="page" style="left:90%;animation-duration:19s;animation-delay:-10s">🍂</span>
+<span class="quill" style="left:4%;bottom:14%">🪶</span>
+<span class="quill" style="right:5%;bottom:20%;animation-delay:-3s">🪶</span>
+<span class="candle" style="left:8%">🕯️</span>
+<span class="candle" style="right:9%;animation-delay:-1.2s">🕯️</span>
+
+<div class="wrap">
+<header>
+  <h1>📖 Unit 8: Tourism — Exercise 4</h1>
+  <div class="teacher">Giáo viên tạo: MS Chí Nên</div>
+  <div class="promo">📞 0936 322 809 — Đăng ký khoá học tiếng Anh lớp 1 → lớp 12, trải nghiệm web giải chi tiết đỉnh cao!</div>
+</header>
+
+<div class="note">🪶 Nhắc nhở có tâm từ MS Chí Nên: bài 1 là đọc hiểu, bài 2 &amp; 3 là dạng "chọn câu điền vào chỗ trống" — 4 lựa chọn A-D dùng CHUNG cho cả đoạn văn, mỗi chỗ trống chỉ có 1 đáp án đúng, đọc kỹ mạch văn trước-sau để nối câu cho hợp lý nhé! 🕯️</div>
+
+<div class="scorebar">
+  <div class="chip">✅ Đúng: <b id="cCorrect">0</b>/13</div>
+  <div class="chip">📝 Đã làm: <b id="cDone">0</b>/13</div>
+</div>
+<div class="bar"><span id="barFill"></span></div>
+
+<!-- ============== A. HOMESTAY TOURISM ============== -->
+<div class="section">
+  <div class="sec-head">🏡 Homestay Tourism (Câu 1–5)</div>
+  <div class="split">
+    <div class="lp">
+      <div class="pblock"><p>Homestay is a type of tourism where travellers stay with local families in their homes. It offers both benefits and drawbacks.</p>
+        <button class="tbtn" onclick="tg('v1',this)">🔊 Xem bản dịch</button>
+        <div class="trans" id="v1">Homestay là một loại hình du lịch trong đó du khách ở cùng với các gia đình địa phương tại nhà của họ. Nó mang lại cả lợi ích và hạn chế.</div>
+      </div>
+      <div class="pblock"><p>One benefit of homestay is the opportunity to experience local culture firsthand. Travellers can learn about traditional customs, taste authentic homemade food, and engage in daily activities with the host family. It provides a deeper understanding of the local way of life.<br><br>
+      Another advantage is the chance to establish connections and make new friends. Staying with a host family allows for personal interactions and cultural exchange, fostering cross-cultural understanding and friendship.</p>
+        <button class="tbtn" onclick="tg('v2',this)">🔊 Xem bản dịch</button>
+        <div class="trans" id="v2">Một lợi ích của homestay là cơ hội trải nghiệm văn hóa địa phương một cách trực tiếp. Du khách có thể tìm hiểu về phong tục truyền thống, nếm thử các món ăn nhà làm chính gốc, và tham gia vào các hoạt động hàng ngày cùng gia đình chủ nhà. Nó mang lại sự hiểu biết sâu sắc hơn về lối sống địa phương.<br><br>
+        Một lợi thế khác là cơ hội thiết lập các mối quan hệ và kết bạn mới. Ở cùng một gia đình chủ nhà cho phép có những tương tác cá nhân và trao đổi văn hóa, nuôi dưỡng sự hiểu biết và tình bạn giữa các nền văn hóa.</div>
+      </div>
+      <div class="pblock"><p>However, there are also some drawbacks to consider. One downside is the potential lack of privacy. Sharing living spaces with the host family means less personal space and limited privacy compared to staying in a hotel. Communication may also be a challenge if there are language barriers. It can be difficult to fully communicate and express needs and preferences without a common language. Additionally, homestays may have different levels of comfort and amenities compared to hotels. Facilities may be basic, and travellers need to adapt to the host family's lifestyle and routines.</p>
+        <button class="tbtn" onclick="tg('v3',this)">🔊 Xem bản dịch</button>
+        <div class="trans" id="v3">Tuy nhiên, cũng có một số hạn chế cần cân nhắc. Một nhược điểm là khả năng thiếu sự riêng tư. Chia sẻ không gian sống với gia đình chủ nhà đồng nghĩa với việc ít không gian cá nhân và riêng tư hơn so với ở khách sạn. Giao tiếp cũng có thể là một thách thức nếu có rào cản ngôn ngữ. Sẽ khó để giao tiếp và bày tỏ đầy đủ nhu cầu, sở thích nếu không có ngôn ngữ chung. Ngoài ra, homestay có thể có mức độ tiện nghi khác so với khách sạn. Cơ sở vật chất có thể đơn giản, và du khách cần thích nghi với lối sống và thói quen của gia đình chủ nhà.</div>
+      </div>
+      <div class="pblock"><p>In conclusion, homestay tourism offers unique cultural experiences and the chance to connect with locals. While there may be challenges such as privacy and communication, it can be a rewarding way to <b>immerse</b> oneself in the local community and create lasting memories.</p>
+        <button class="tbtn" onclick="tg('v4',this)">🔊 Xem bản dịch</button>
+        <div class="trans" id="v4">Tóm lại, du lịch homestay mang đến những trải nghiệm văn hóa độc đáo và cơ hội kết nối với người dân địa phương. Dù có thể gặp một số thách thức như sự riêng tư và giao tiếp, đây vẫn có thể là một cách tuyệt vời để <b>hòa mình</b> vào cộng đồng địa phương và tạo nên những kỷ niệm đáng nhớ.</div>
+      </div>
+      <div class="gloss"><div class="gt">📖 Từ vựng</div>
+        <table class="gtb"><tr><th>Từ</th><th>Loại</th><th>Nghĩa</th></tr>
+          <tr><td>drawback</td><td>n</td><td>hạn chế, nhược điểm</td></tr>
+          <tr><td>firsthand</td><td>adv</td><td>trực tiếp</td></tr>
+          <tr><td>host family</td><td>n</td><td>gia đình chủ nhà</td></tr>
+          <tr><td>foster</td><td>v</td><td>nuôi dưỡng, thúc đẩy</td></tr>
+          <tr><td>privacy</td><td>n</td><td>sự riêng tư</td></tr>
+          <tr><td>amenities</td><td>n</td><td>tiện nghi</td></tr>
+          <tr><td>immerse</td><td>v</td><td>hòa mình, đắm chìm</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="rp" id="secA"></div>
+  </div>
+</div>
+
+<!-- ============== B. PROBLEMS WITH ECOTOURISM ============== -->
+<div class="section">
+  <div class="sec-head">🌿 Problems with Ecotourism (Câu 6–9)</div>
+  <div class="split">
+    <div class="lp">
+      <div class="pblock"><p><span class="bk">6</span>, it may also hurt local people and wildlife in certain cases. When tourists visit nature spots and interact with wild animals and nature <span class="bk">7</span>. In addition, many remote areas require some travelling by car or by plane, which again consumes energy and increases CO₂ emissions in the air.</p>
+        <button class="tbtn" onclick="tg('v5',this)">🔊 Xem bản dịch</button>
+        <div class="trans" id="v5">___, điều này cũng có thể gây hại cho người dân địa phương và động vật hoang dã trong một số trường hợp. Khi du khách ghé thăm các địa điểm thiên nhiên và tương tác với động vật hoang dã và thiên nhiên, ___. Ngoài ra, nhiều khu vực hẻo lánh đòi hỏi phải di chuyển bằng ô tô hoặc máy bay, điều này lại tiêu tốn năng lượng và làm tăng lượng khí thải CO₂ vào không khí.</div>
+      </div>
+      <div class="pblock"><p><span class="bk">8</span>, because many local hotels may be owned by international companies and their profits may not stay in the community. Besides, <span class="bk">9</span>, making life more expensive for local people.</p>
+        <button class="tbtn" onclick="tg('v6',this)">🔊 Xem bản dịch</button>
+        <div class="trans" id="v6">___, bởi vì nhiều khách sạn địa phương có thể thuộc sở hữu của các công ty quốc tế và lợi nhuận của họ có thể không ở lại trong cộng đồng. Bên cạnh đó, ___, khiến cuộc sống trở nên đắt đỏ hơn đối với người dân địa phương.</div>
+      </div>
+      <div class="gloss"><div class="gt">📖 Từ vựng &amp; 4 câu lựa chọn dùng chung</div>
+        <table class="gtb"><tr><th>Từ</th><th>Loại</th><th>Nghĩa</th></tr>
+          <tr><td>wildlife</td><td>n</td><td>động vật hoang dã</td></tr>
+          <tr><td>remote area</td><td>n</td><td>khu vực hẻo lánh</td></tr>
+          <tr><td>emission</td><td>n</td><td>khí thải</td></tr>
+          <tr><td>cost of living</td><td>n</td><td>chi phí sinh hoạt</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="rp" id="secB"></div>
+  </div>
+</div>
+
+<!-- ============== C. ANGKOR WAT ============== -->
+<div class="section">
+  <div class="sec-head">🛕 Angkor Wat (Câu 10–13)</div>
+  <div class="split">
+    <div class="lp">
+      <div class="pblock"><p>Angkor Wat, a UNESCO World Heritage Site, <span class="bk">10</span>. Located in Siem Reap, Cambodia, this magnificent temple complex was built by the Khmer Empire during the 12th century. <span class="bk">11</span> and is renowned for its intricate carvings, towering spires, and serene atmosphere.</p>
+        <button class="tbtn" onclick="tg('v7',this)">🔊 Xem bản dịch</button>
+        <div class="trans" id="v7">Angkor Wat, một Di sản Thế giới được UNESCO công nhận, ___. Nằm ở Siem Reap, Campuchia, quần thể đền đài tráng lệ này được xây dựng bởi Đế chế Khmer vào thế kỷ 12. ___ và nổi tiếng với những họa tiết chạm khắc tinh xảo, những đỉnh tháp cao vút, và bầu không khí thanh bình.</div>
+      </div>
+      <div class="pblock"><p>Beyond Angkor Wat, the Angkor Archaeological Park encompasses numerous other temples, each with its unique architectural style and historical significance. Bayon Temple, known for its enigmatic smiling faces, and Ta Prohm, <span class="bk">12</span>.</p>
+        <button class="tbtn" onclick="tg('v8',this)">🔊 Xem bản dịch</button>
+        <div class="trans" id="v8">Bên ngoài Angkor Wat, Công viên Khảo cổ Angkor bao gồm vô số ngôi đền khác, mỗi ngôi đền có phong cách kiến trúc và ý nghĩa lịch sử riêng. Đền Bayon, nổi tiếng với những khuôn mặt cười bí ẩn, và Ta Prohm, ___.</div>
+      </div>
+      <div class="pblock"><p>Siem Reap itself offers a crowded town atmosphere with busy night markets, delicious local cuisine, and traditional performances like Apsara dance shows. <span class="bk">13</span>.</p>
+        <button class="tbtn" onclick="tg('v9',this)">🔊 Xem bản dịch</button>
+        <div class="trans" id="v9">Bản thân Siem Reap mang đến một không khí thị trấn nhộn nhịp với các khu chợ đêm sầm uất, ẩm thực địa phương ngon miệng, và các buổi biểu diễn truyền thống như múa Apsara. ___.</div>
+      </div>
+      <div class="gloss"><div class="gt">📖 Từ vựng</div>
+        <table class="gtb"><tr><th>Từ</th><th>Loại</th><th>Nghĩa</th></tr>
+          <tr><td>temple complex</td><td>n</td><td>quần thể đền đài</td></tr>
+          <tr><td>Khmer Empire</td><td>n</td><td>Đế chế Khmer</td></tr>
+          <tr><td>renowned for</td><td>adj.phr</td><td>nổi tiếng vì</td></tr>
+          <tr><td>intricate carving</td><td>n</td><td>họa tiết chạm khắc tinh xảo</td></tr>
+          <tr><td>spire</td><td>n</td><td>đỉnh tháp</td></tr>
+          <tr><td>enigmatic</td><td>adj</td><td>bí ẩn</td></tr>
+          <tr><td>entwined</td><td>adj</td><td>quấn chặt, đan xen</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="rp" id="secC"></div>
+  </div>
+</div>
+
+<div class="submit-wrap"><button class="bsub" onclick="askName()">🎯 Nộp bài tính điểm &amp; xem kết quả</button></div>
+</div>
+
+<div class="ov" id="nameModal"><div class="mb">
+  <h2>🖊️ Nhập tên để nộp bài</h2>
+  <input id="nameInput" placeholder="Họ và tên học sinh..." onkeydown="if(event.key==='Enter')okName()">
+  <div class="err" id="nameErr">⚠️ Em chưa nhập tên! Bắt buộc phải có tên mới nộp được bài nha.</div>
+  <button onclick="okName()">✅ Xác nhận &amp; chấm điểm</button>
+</div></div>
+
+<div class="ov" id="scoreModal"><div class="mb">
+  <div id="mEmoji" style="font-size:3.2rem">🏆</div>
+  <h2 id="mTitle">KẾT QUẢ</h2>
+  <div id="mName" style="font-weight:700;color:var(--maroon)"></div>
+  <img class="gif" id="mGif" src="" alt="" onerror="this.style.display='none'">
+  <div class="rscore" id="mScore">0/13</div>
+  <div class="r10" id="mScore10">0.00 / 10</div>
+  <div class="rcmt" id="mComment"></div>
+  <button class="close" onclick="document.getElementById('scoreModal').classList.remove('on')">📚 Xem lại bài</button>
+  <button onclick="location.reload()">🔄 Làm lại</button>
+</div></div>
+
+<script>
+function tg(id,btn){const el=document.getElementById(id);el.classList.toggle('show');
+  btn.textContent=el.classList.contains('show')?'🔼 Ẩn bản dịch':'🔊 Xem bản dịch';}
+var AC;function ac(){if(!AC)AC=new (window.AudioContext||window.webkitAudioContext)();return AC;}
+function ding(){try{var c=ac();[[880,0],[1320,.09],[1760,.19]].forEach(function(p){var o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.type='sine';o.frequency.value=p[0];var t=c.currentTime+p[1];g.gain.setValueAtTime(.25,t);g.gain.exponentialRampToValueAtTime(.001,t+.3);o.start(t);o.stop(t+.3);});}catch(e){}}
+function buzz(){try{var c=ac();[[330,0],[220,.15]].forEach(function(p){var o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.type='square';o.frequency.value=p[0];var t=c.currentTime+p[1];g.gain.setValueAtTime(.2,t);g.gain.exponentialRampToValueAtTime(.001,t+.2);o.start(t);o.stop(t+.2);});}catch(e){}}
+function W(word,pos,mean){return '<div class="obox"><span class="pos pos-'+pos+'">'+pos+'</span><span class="p-word">'+word+'</span><span class="p-mean">— '+mean+'</span></div>';}
+
+var QD=[
+{n:1,lb:'1',s:'A',q:'1. What is the main focus of the text?',
+ o:["The advantages and disadvantages of homestay tourism","The cultural experiences offered by homestay tourism","The challenges of communication in homestay tourism","The different levels of comfort in homestay accommodation"],a:"The advantages and disadvantages of homestay tourism",
+ e:{tr:'Dịch: "Trọng tâm chính của bài đọc là gì?"',
+ op:W('The advantages and disadvantages of homestay tourism','phr','ưu điểm và nhược điểm của du lịch homestay')+W('The cultural experiences offered by homestay tourism','phr','trải nghiệm văn hóa mà homestay mang lại')+W('The challenges of communication in homestay tourism','phr','thách thức giao tiếp trong homestay')+W('The different levels of comfort in homestay accommodation','phr','các mức độ tiện nghi khác nhau trong homestay'),
+ ok:'Đáp án đúng là <span class="hl-green">The advantages and disadvantages of homestay tourism</span>. Toàn bài đọc trình bày cân bằng cả HAI mặt: "It offers both benefits and drawbacks" ngay câu đầu, rồi lần lượt nêu lợi ích (2 đoạn) và hạn chế (1 đoạn) — đây là bố cục "ưu và nhược điểm" điển hình.',
+ ev:'"Homestay is a type of tourism where travellers stay with local families in their homes. It offers both benefits and drawbacks." 👉 "Homestay là một loại hình du lịch... Nó mang lại cả lợi ích và hạn chế."',
+ no:'<ul><li><span class="hl-red">The cultural experiences offered by homestay tourism</span> — đây chỉ là MỘT PHẦN nội dung (phần lợi ích), không bao quát cả bài.</li><li><span class="hl-red">The challenges of communication in homestay tourism</span> — đây cũng chỉ là MỘT CHI TIẾT nhỏ trong phần hạn chế, không phải trọng tâm toàn bài.</li><li><span class="hl-red">The different levels of comfort in homestay accommodation</span> — cũng chỉ là một ý nhỏ, không phải ý chính bao quát.</li></ul>'}},
+{n:2,lb:'2',s:'A',q:'2. What are some activities that travellers can engage in during a homestay?',
+ o:["Enjoying luxurious amenities and facilities with other tourists.","Learning about traditional customs and tasting authentic homemade food.","Experiencing complete privacy and personal space.","Changing the host family's lifestyle and routines."],a:"Learning about traditional customs and tasting authentic homemade food.",
+ e:{tr:'Dịch: "Một số hoạt động mà du khách có thể tham gia trong một chuyến homestay là gì?"',
+ op:W('Enjoying luxurious amenities and facilities with other tourists.','phr','tận hưởng tiện nghi sang trọng cùng du khách khác')+W('Learning about traditional customs and tasting authentic homemade food.','phr','tìm hiểu phong tục truyền thống và nếm món ăn nhà làm')+W('Experiencing complete privacy and personal space.','phr','trải nghiệm sự riêng tư hoàn toàn')+W("Changing the host family's lifestyle and routines.",'phr','thay đổi lối sống của gia đình chủ nhà'),
+ ok:'Đáp án đúng là <span class="hl-green">Learning about traditional customs and tasting authentic homemade food.</span> Bài đọc liệt kê trực tiếp các hoạt động này ở đoạn nói về lợi ích của homestay.',
+ ev:'"Travellers can learn about traditional customs, taste authentic homemade food, and engage in daily activities with the host family." 👉 "Du khách có thể tìm hiểu về phong tục truyền thống, nếm thử các món ăn nhà làm chính gốc..."',
+ no:'<ul><li><span class="hl-red">Enjoying luxurious amenities...</span> — bài đọc nói homestay thường có tiện nghi CƠ BẢN (basic), không phải sang trọng.</li><li><span class="hl-red">Experiencing complete privacy...</span> — TRÁI NGƯỢC với bài đọc, vốn nói homestay có "potential lack of privacy" (khả năng THIẾU riêng tư).</li><li><span class="hl-red">Changing the host family\'s lifestyle...</span> — SAI CHIỀU: bài đọc nói DU KHÁCH phải thích nghi với lối sống của gia đình chủ nhà, không phải ngược lại.</li></ul>'}},
+{n:3,lb:'3',s:'A',q:'3. What does the pronoun "It" refer to (in "It provides a deeper understanding of the local way of life")?',
+ o:["Working as a host","Personal interactions","Cultural exchange","Homestay tourism"],a:"Homestay tourism",
+ e:{tr:'Dịch: "Đại từ \'It\' trong câu \'It provides a deeper understanding...\' thay thế cho từ/cụm nào?"',
+ op:W('Working as a host','n','việc làm chủ nhà')+W('Personal interactions','n','sự tương tác cá nhân')+W('Cultural exchange','n','sự trao đổi văn hóa')+W('Homestay tourism','n','du lịch homestay'),
+ ok:'Đáp án đúng là <span class="hl-green">Homestay tourism</span>. Xét cả đoạn văn: chủ đề xuyên suốt là "homestay" — câu trước nói về việc du khách trải nghiệm văn hóa QUA homestay, nên "It" chỉ về chính hoạt động homestay đang được mô tả, không phải một danh từ cụ thể vừa nhắc ngay trước đó.',
+ ev:'"One benefit of homestay is the opportunity to experience local culture firsthand... It provides a deeper understanding of the local way of life." 👉 Chủ đề toàn đoạn là "homestay" — "It" chỉ về homestay tourism nói chung.',
+ no:'<ul><li><span class="hl-red">Working as a host</span> — cụm này KHÔNG xuất hiện trong bài đọc.</li><li><span class="hl-red">Personal interactions</span> — cụm này chỉ xuất hiện ở ĐOẠN SAU (advantage thứ hai), không liên quan tới câu chứa "It" này.</li><li><span class="hl-red">Cultural exchange</span> — cũng thuộc về đoạn sau, không phải điều "It" đang thay thế ở đây.</li></ul>'}},
+{n:4,lb:'4',s:'A',q:'4. What is one drawback mentioned in the text regarding homestay accommodation?',
+ o:["The ease of communication without any language barriers.","The availability of luxurious amenities and facilities.","The potential lack of privacy due to sharing living spaces.","The opportunity to fully express needs and preferences."],a:"The potential lack of privacy due to sharing living spaces.",
+ e:{tr:'Dịch: "Một hạn chế được nhắc đến trong bài về chỗ ở homestay là gì?"',
+ op:W('The ease of communication without any language barriers.','phr','giao tiếp dễ dàng, không rào cản ngôn ngữ')+W('The availability of luxurious amenities and facilities.','phr','có sẵn tiện nghi sang trọng')+W('The potential lack of privacy due to sharing living spaces.','phr','khả năng thiếu riêng tư do chia sẻ không gian sống')+W('The opportunity to fully express needs and preferences.','phr','cơ hội bày tỏ đầy đủ nhu cầu, sở thích'),
+ ok:'Đáp án đúng là <span class="hl-green">The potential lack of privacy due to sharing living spaces.</span> Bài đọc nêu rõ đây là "one downside" (một nhược điểm) đầu tiên được liệt kê trong đoạn nói về hạn chế.',
+ ev:'"One downside is the potential lack of privacy. Sharing living spaces with the host family means less personal space and limited privacy compared to staying in a hotel." 👉 "Một nhược điểm là khả năng thiếu sự riêng tư..."',
+ no:'<ul><li><span class="hl-red">The ease of communication...</span> — TRÁI NGƯỢC: bài đọc nói giao tiếp "may be a challenge if there are language barriers" (có thể là thách thức nếu có rào cản ngôn ngữ).</li><li><span class="hl-red">The availability of luxurious amenities...</span> — TRÁI NGƯỢC: bài đọc nói tiện nghi có thể "basic" (cơ bản/đơn giản), không phải sang trọng.</li><li><span class="hl-red">The opportunity to fully express needs...</span> — TRÁI NGƯỢC: bài đọc nói việc bày tỏ nhu cầu "can be difficult" (có thể khó khăn) nếu không có ngôn ngữ chung.</li></ul>'}},
+{n:5,lb:'5',s:'A',q:'5. What does "immerse" mean in the context of the text?',
+ o:["become familiar with","get involved completely in","get used to","become attracted by"],a:"get involved completely in",
+ e:{tr:'Dịch: "Từ \'immerse\' trong bài đọc có nghĩa gần nhất là gì?"',
+ op:W('become familiar with','v phr','trở nên quen thuộc với')+W('get involved completely in','v phr','hòa mình/tham gia hoàn toàn vào')+W('get used to','v phr','quen với')+W('become attracted by','v phr','bị thu hút bởi'),
+ ok:'Đáp án đúng là <span class="hl-green">get involved completely in</span>. "Immerse oneself in" là cụm cố định nghĩa "hòa mình hoàn toàn/đắm chìm vào" một điều gì đó — sát nghĩa nhất là "tham gia/hòa mình hoàn toàn vào".',
+ ev:'"...it can be a rewarding way to immerse oneself in the local community and create lasting memories." 👉 "...đây có thể là một cách tuyệt vời để hòa mình vào cộng đồng địa phương..."',
+ no:'<ul><li><span class="hl-red">become familiar with</span> — nghĩa "trở nên quen thuộc", nhẹ hơn "immerse" (chỉ mức độ biết, chưa phải hòa mình hoàn toàn).</li><li><span class="hl-red">get used to</span> — nghĩa "quen với, thích nghi", khác với "hòa mình sâu sắc vào".</li><li><span class="hl-red">become attracted by</span> — nghĩa "bị thu hút bởi", không diễn tả hành động CHỦ ĐỘNG hòa mình như "immerse".</li></ul>'}},
+{n:6,lb:'1',s:'B',q:'6. Which sentence best fits blank (1)?<br><i>"(1)______, it may also hurt local people and wildlife in certain cases."</i>',
+ o:["Ecotourism may not benefit the local economy","they may damage or destroy their natural habitats","tourism may increase the cost of living in a certain area","While ecotourism is often seen as the best way to reduce our negative impact on the environment"],a:"While ecotourism is often seen as the best way to reduce our negative impact on the environment",
+ e:{tr:'Dịch câu gốc: "___, du lịch sinh thái cũng có thể gây hại cho người dân địa phương và động vật hoang dã trong một số trường hợp."',
+ op:W('Ecotourism may not benefit the local economy','phr','du lịch sinh thái có thể không mang lại lợi ích cho kinh tế địa phương')+W('they may damage or destroy their natural habitats','phr','chúng có thể làm hư hại/phá hủy môi trường sống tự nhiên')+W('tourism may increase the cost of living in a certain area','phr','du lịch có thể làm tăng chi phí sinh hoạt ở một khu vực')+W('While ecotourism is often seen as the best way to reduce our negative impact on the environment','phr','mặc dù du lịch sinh thái thường được xem là cách tốt nhất để giảm tác động tiêu cực tới môi trường'),
+ ok:'Đáp án đúng là <span class="hl-green">While ecotourism is often seen as the best way to reduce our negative impact on the environment</span>. Câu này bắt đầu bằng "While" tạo mệnh đề TƯƠNG PHẢN hợp lý với "it may also hurt..." (nhưng nó CŨNG có thể gây hại) — đúng cấu trúc nhượng bộ mở đầu đoạn văn.',
+ ev:'"While ecotourism is often seen as the best way to reduce our negative impact on the environment, it may also hurt local people and wildlife in certain cases." 👉 Cấu trúc "While A, B" thể hiện sự tương phản.',
+ no:'<ul><li><span class="hl-red">Ecotourism may not benefit the local economy</span> — câu này phù hợp hơn cho chỗ trống khác (blank 3), không mở đầu tương phản với "it may also hurt".</li><li><span class="hl-red">they may damage or destroy their natural habitats</span> — không đứng đầu câu logic, thiếu chủ ngữ "While" để tạo tương phản; phù hợp hơn cho blank khác.</li><li><span class="hl-red">tourism may increase the cost of living in a certain area</span> — không tạo được mối liên hệ tương phản với câu sau ở vị trí này.</li></ul>'}},
+{n:7,lb:'2',s:'B',q:'7. Which sentence best fits blank (2)?<br><i>"When tourists visit nature spots and interact with wild animals and nature (2)______."</i>',
+ o:["Ecotourism may not benefit the local economy","they may damage or destroy their natural habitats","tourism may increase the cost of living in a certain area","While ecotourism is often seen as the best way to reduce our negative impact on the environment"],a:"they may damage or destroy their natural habitats",
+ e:{tr:'Dịch câu gốc: "Khi du khách ghé thăm các địa điểm thiên nhiên và tương tác với động vật hoang dã cùng thiên nhiên, ___."',
+ op:W('Ecotourism may not benefit the local economy','phr','du lịch sinh thái có thể không mang lại lợi ích cho kinh tế địa phương')+W('they may damage or destroy their natural habitats','phr','chúng có thể làm hư hại/phá hủy môi trường sống tự nhiên')+W('tourism may increase the cost of living in a certain area','phr','du lịch có thể làm tăng chi phí sinh hoạt ở một khu vực')+W('While ecotourism is often seen as the best way to reduce our negative impact on the environment','phr','mặc dù du lịch sinh thái thường được xem là cách tốt nhất để giảm tác động tiêu cực tới môi trường'),
+ ok:'Đáp án đúng là <span class="hl-green">they may damage or destroy their natural habitats</span>. Mệnh đề "When tourists visit... and interact with wild animals" cần một KẾT QUẢ trực tiếp — "they" (chỉ động vật/thiên nhiên) "có thể bị hư hại môi trường sống" là hệ quả logic của việc con người tương tác/can thiệp.',
+ ev:'"When tourists visit nature spots and interact with wild animals and nature, they may damage or destroy their natural habitats." 👉 "Khi du khách... tương tác với động vật hoang dã và thiên nhiên, chúng có thể làm hư hại môi trường sống tự nhiên của chúng."',
+ no:'<ul><li><span class="hl-red">Ecotourism may not benefit the local economy</span> — nói về KINH TẾ, không liên quan đến hệ quả của việc "tương tác với động vật hoang dã".</li><li><span class="hl-red">tourism may increase the cost of living...</span> — nói về CHI PHÍ SINH HOẠT, không phải hệ quả sinh thái của việc tương tác động vật.</li><li><span class="hl-red">While ecotourism is often seen as...</span> — câu này đã được dùng cho blank (1), không lặp lại và cũng không khớp ngữ pháp (không có "While" ở giữa câu này).</li></ul>'}},
+{n:8,lb:'3',s:'B',q:'8. Which sentence best fits blank (3)?<br><i>"(3)______, because many local hotels may be owned by international companies and their profits may not stay in the community."</i>',
+ o:["Ecotourism may not benefit the local economy","they may damage or destroy their natural habitats","tourism may increase the cost of living in a certain area","While ecotourism is often seen as the best way to reduce our negative impact on the environment"],a:"Ecotourism may not benefit the local economy",
+ e:{tr:'Dịch câu gốc: "___, bởi vì nhiều khách sạn địa phương có thể thuộc sở hữu của các công ty quốc tế và lợi nhuận của họ có thể không ở lại trong cộng đồng."',
+ op:W('Ecotourism may not benefit the local economy','phr','du lịch sinh thái có thể không mang lại lợi ích cho kinh tế địa phương')+W('they may damage or destroy their natural habitats','phr','chúng có thể làm hư hại/phá hủy môi trường sống tự nhiên')+W('tourism may increase the cost of living in a certain area','phr','du lịch có thể làm tăng chi phí sinh hoạt ở một khu vực')+W('While ecotourism is often seen as the best way to reduce our negative impact on the environment','phr','mặc dù du lịch sinh thái thường được xem là cách tốt nhất để giảm tác động tiêu cực tới môi trường'),
+ ok:'Đáp án đúng là <span class="hl-green">Ecotourism may not benefit the local economy</span>. Mệnh đề "because" theo sau giải thích LÝ DO tại sao kinh tế địa phương KHÔNG được hưởng lợi (vì lợi nhuận chảy về công ty quốc tế) — khớp hoàn hảo với ý "not benefit the local economy".',
+ ev:'"Ecotourism may not benefit the local economy, because many local hotels may be owned by international companies and their profits may not stay in the community." 👉 "Du lịch sinh thái có thể không mang lại lợi ích cho kinh tế địa phương, bởi vì..."',
+ no:'<ul><li><span class="hl-red">they may damage or destroy their natural habitats</span> — nói về MÔI TRƯỜNG SỐNG động vật, không liên quan đến "lợi nhuận khách sạn ở lại cộng đồng".</li><li><span class="hl-red">tourism may increase the cost of living...</span> — nói về CHI PHÍ SINH HOẠT tăng, không phải lý do giải thích bằng mệnh đề "because" này.</li><li><span class="hl-red">While ecotourism is often seen as...</span> — đã dùng cho blank (1), và về ngữ pháp không nối được với mệnh đề "because" theo sau.</li></ul>'}},
+{n:9,lb:'4',s:'B',q:'9. Which sentence best fits blank (4)?<br><i>"Besides, (4)______, making life more expensive for local people."</i>',
+ o:["Ecotourism may not benefit the local economy","they may damage or destroy their natural habitats","tourism may increase the cost of living in a certain area","While ecotourism is often seen as the best way to reduce our negative impact on the environment"],a:"tourism may increase the cost of living in a certain area",
+ e:{tr:'Dịch câu gốc: "Bên cạnh đó, ___, khiến cuộc sống trở nên đắt đỏ hơn đối với người dân địa phương."',
+ op:W('Ecotourism may not benefit the local economy','phr','du lịch sinh thái có thể không mang lại lợi ích cho kinh tế địa phương')+W('they may damage or destroy their natural habitats','phr','chúng có thể làm hư hại/phá hủy môi trường sống tự nhiên')+W('tourism may increase the cost of living in a certain area','phr','du lịch có thể làm tăng chi phí sinh hoạt ở một khu vực')+W('While ecotourism is often seen as the best way to reduce our negative impact on the environment','phr','mặc dù du lịch sinh thái thường được xem là cách tốt nhất để giảm tác động tiêu cực tới môi trường'),
+ ok:'Đáp án đúng là <span class="hl-green">tourism may increase the cost of living in a certain area</span>. Cụm phân từ "making life more expensive" (khiến cuộc sống đắt đỏ hơn) theo sau chính là HỆ QUẢ trực tiếp của việc "chi phí sinh hoạt tăng" — hai vế khớp logic hoàn hảo.',
+ ev:'"Besides, tourism may increase the cost of living in a certain area, making life more expensive for local people." 👉 "Bên cạnh đó, du lịch có thể làm tăng chi phí sinh hoạt ở một khu vực, khiến cuộc sống trở nên đắt đỏ hơn."',
+ no:'<ul><li><span class="hl-red">Ecotourism may not benefit the local economy</span> — đã dùng cho blank (3), và không tạo được hệ quả "making life more expensive" một cách trực tiếp bằng câu về chi phí sinh hoạt.</li><li><span class="hl-red">they may damage or destroy their natural habitats</span> — đã dùng cho blank (2), nói về môi trường sống, không dẫn tới hệ quả "cuộc sống đắt đỏ hơn".</li><li><span class="hl-red">While ecotourism is often seen as...</span> — đã dùng cho blank (1), và về ngữ pháp/ngữ nghĩa không phù hợp sau "Besides,".</li></ul>'}},
+{n:10,lb:'1',s:'C',q:'10. Which sentence best fits blank (1)?<br><i>"Angkor Wat, a UNESCO World Heritage Site, (1)______."</i>',
+ o:["Angkor Wat is dedicated to the Hindu god Vishnu","where trees have become entwined with the ruins, are popular destinations for visitors","Tourists can also visit nearby villages to experience Cambodian rural life and learn about handicrafts","is the largest religious monument in the world"],a:"is the largest religious monument in the world",
+ e:{tr:'Dịch câu gốc: "Angkor Wat, một Di sản Thế giới được UNESCO công nhận, ___."',
+ op:W('Angkor Wat is dedicated to the Hindu god Vishnu','phr','Angkor Wat được dành để thờ thần Vishnu Ấn Độ giáo')+W('where trees have become entwined with the ruins, are popular destinations for visitors','phr','nơi cây cối quấn chặt vào tàn tích, là điểm đến phổ biến')+W('Tourists can also visit nearby villages to experience Cambodian rural life and learn about handicrafts','phr','du khách cũng có thể ghé làng gần đó trải nghiệm đời sống nông thôn')+W('is the largest religious monument in the world','phr','là công trình tôn giáo lớn nhất thế giới'),
+ ok:'Đáp án đúng là <span class="hl-green">is the largest religious monument in the world</span>. Chỗ trống nằm ngay sau chủ ngữ "Angkor Wat, a UNESCO World Heritage Site," cần một ĐỘNG TỪ VỊ NGỮ hoàn chỉnh câu — "is the largest religious monument..." khớp ngữ pháp và là thông tin nổi bật thường mở đầu giới thiệu về Angkor Wat.',
+ ev:'"Angkor Wat, a UNESCO World Heritage Site, is the largest religious monument in the world." 👉 "Angkor Wat, một Di sản Thế giới UNESCO, là công trình tôn giáo lớn nhất thế giới."',
+ no:'<ul><li><span class="hl-red">Angkor Wat is dedicated to the Hindu god Vishnu</span> — có chủ ngữ "Angkor Wat" TRÙNG LẶP với chủ ngữ đã có trong câu, gây lỗi ngữ pháp khi ghép vào.</li><li><span class="hl-red">where trees have become entwined...</span> — bắt đầu bằng "where", không phải vị ngữ hoàn chỉnh cho câu này, phù hợp hơn với ngữ cảnh khác (Ta Prohm).</li><li><span class="hl-red">Tourists can also visit nearby villages...</span> — là câu ĐỘC LẬP có chủ ngữ riêng, không nối được trực tiếp làm vị ngữ cho "Angkor Wat...".</li></ul>'}},
+{n:11,lb:'2',s:'C',q:'11. Which sentence best fits blank (2)?<br><i>"...this magnificent temple complex was built by the Khmer Empire during the 12th century. (2)______ and is renowned for its intricate carvings, towering spires, and serene atmosphere."</i>',
+ o:["Angkor Wat is dedicated to the Hindu god Vishnu","where trees have become entwined with the ruins, are popular destinations for visitors","Tourists can also visit nearby villages to experience Cambodian rural life and learn about handicrafts","is the largest religious monument in the world"],a:"Angkor Wat is dedicated to the Hindu god Vishnu",
+ e:{tr:'Dịch câu gốc: "...quần thể đền đài tráng lệ này được xây dựng bởi Đế chế Khmer vào thế kỷ 12. ___ và nổi tiếng với những họa tiết chạm khắc tinh xảo, những đỉnh tháp cao vút, và bầu không khí thanh bình."',
+ op:W('Angkor Wat is dedicated to the Hindu god Vishnu','phr','Angkor Wat được dành để thờ thần Vishnu Ấn Độ giáo')+W('where trees have become entwined with the ruins, are popular destinations for visitors','phr','nơi cây cối quấn chặt vào tàn tích, là điểm đến phổ biến')+W('Tourists can also visit nearby villages to experience Cambodian rural life and learn about handicrafts','phr','du khách cũng có thể ghé làng gần đó trải nghiệm đời sống nông thôn')+W('is the largest religious monument in the world','phr','là công trình tôn giáo lớn nhất thế giới'),
+ ok:'Đáp án đúng là <span class="hl-green">Angkor Wat is dedicated to the Hindu god Vishnu</span>. Câu này đứng ĐỘC LẬP (có chủ ngữ "Angkor Wat" riêng) và nối với vế sau bằng "and is renowned for..." — cung cấp thêm thông tin lịch sử/tôn giáo về ngôi đền trước khi mô tả kiến trúc.',
+ ev:'"...this magnificent temple complex was built by the Khmer Empire during the 12th century. Angkor Wat is dedicated to the Hindu god Vishnu and is renowned for its intricate carvings..." 👉 Câu độc lập ghép nối tự nhiên với "and is renowned for".',
+ no:'<ul><li><span class="hl-red">is the largest religious monument in the world</span> — đã dùng cho blank (1), và thiếu chủ ngữ nên không thể đứng độc lập ở vị trí này.</li><li><span class="hl-red">where trees have become entwined...</span> — bắt đầu bằng "where" phụ thuộc, không thể đứng đầu câu độc lập như vị trí này yêu cầu.</li><li><span class="hl-red">Tourists can also visit nearby villages...</span> — nội dung về LÀNG GẦN ĐÓ không liên quan đến việc mô tả chính Angkor Wat ở đoạn này.</li></ul>'}},
+{n:12,lb:'3',s:'C',q:'12. Which sentence best fits blank (3)?<br><i>"Bayon Temple, known for its enigmatic smiling faces, and Ta Prohm, (3)______."</i>',
+ o:["Angkor Wat is dedicated to the Hindu god Vishnu","where trees have become entwined with the ruins, are popular destinations for visitors","Tourists can also visit nearby villages to experience Cambodian rural life and learn about handicrafts","is the largest religious monument in the world"],a:"where trees have become entwined with the ruins, are popular destinations for visitors",
+ e:{tr:'Dịch câu gốc: "Đền Bayon, nổi tiếng với những khuôn mặt cười bí ẩn, và Ta Prohm, ___."',
+ op:W('Angkor Wat is dedicated to the Hindu god Vishnu','phr','Angkor Wat được dành để thờ thần Vishnu Ấn Độ giáo')+W('where trees have become entwined with the ruins, are popular destinations for visitors','phr','nơi cây cối quấn chặt vào tàn tích, là điểm đến phổ biến')+W('Tourists can also visit nearby villages to experience Cambodian rural life and learn about handicrafts','phr','du khách cũng có thể ghé làng gần đó trải nghiệm đời sống nông thôn')+W('is the largest religious monument in the world','phr','là công trình tôn giáo lớn nhất thế giới'),
+ ok:'Đáp án đúng là <span class="hl-green">where trees have become entwined with the ruins, are popular destinations for visitors</span>. Mệnh đề "where trees have become entwined with the ruins" mô tả CHÍNH XÁC đặc điểm nổi tiếng của đền Ta Prohm (cây cổ thụ mọc xuyên qua di tích), và "are popular destinations" (số nhiều) khớp ngữ pháp với 2 chủ ngữ "Bayon Temple... and Ta Prohm".',
+ ev:'"Bayon Temple, known for its enigmatic smiling faces, and Ta Prohm, where trees have become entwined with the ruins, are popular destinations for visitors." 👉 Cả hai đền đều "are popular destinations" — số nhiều khớp với hai chủ ngữ.',
+ no:'<ul><li><span class="hl-red">Angkor Wat is dedicated to...</span> — đã dùng cho blank (2), và không liên quan đến đặc điểm riêng của Ta Prohm.</li><li><span class="hl-red">Tourists can also visit nearby villages...</span> — nội dung về LÀNG GẦN ĐÓ, không mô tả đặc điểm của đền Ta Prohm.</li><li><span class="hl-red">is the largest religious monument...</span> — đã dùng cho blank (1); ngoài ra động từ số ít "is" không khớp với hai chủ ngữ ghép "Bayon Temple... and Ta Prohm".</li></ul>'}},
+{n:13,lb:'4',s:'C',q:'13. Which sentence best fits blank (4)?<br><i>"Siem Reap itself offers a crowded town atmosphere with busy night markets, delicious local cuisine, and traditional performances like Apsara dance shows. (4)______."</i>',
+ o:["Angkor Wat is dedicated to the Hindu god Vishnu","where trees have become entwined with the ruins, are popular destinations for visitors","Tourists can also visit nearby villages to experience Cambodian rural life and learn about handicrafts","is the largest religious monument in the world"],a:"Tourists can also visit nearby villages to experience Cambodian rural life and learn about handicrafts",
+ e:{tr:'Dịch câu gốc: "Bản thân Siem Reap mang đến không khí thị trấn nhộn nhịp với chợ đêm sầm uất, ẩm thực địa phương ngon miệng, và các buổi biểu diễn truyền thống như múa Apsara. ___."',
+ op:W('Angkor Wat is dedicated to the Hindu god Vishnu','phr','Angkor Wat được dành để thờ thần Vishnu Ấn Độ giáo')+W('where trees have become entwined with the ruins, are popular destinations for visitors','phr','nơi cây cối quấn chặt vào tàn tích, là điểm đến phổ biến')+W('Tourists can also visit nearby villages to experience Cambodian rural life and learn about handicrafts','phr','du khách cũng có thể ghé làng gần đó trải nghiệm đời sống nông thôn')+W('is the largest religious monument in the world','phr','là công trình tôn giáo lớn nhất thế giới'),
+ ok:'Đáp án đúng là <span class="hl-green">Tourists can also visit nearby villages to experience Cambodian rural life and learn about handicrafts</span>. Từ "also" (cũng) liên kết mạch lạc với câu trước vừa liệt kê các hoạt động ở Siem Reap (chợ đêm, ẩm thực, múa) — câu này bổ sung THÊM một hoạt động khác (thăm làng gần đó), đúng vai trò câu kết đoạn giới thiệu điểm đến.',
+ ev:'"...traditional performances like Apsara dance shows. Tourists can also visit nearby villages to experience Cambodian rural life and learn about handicrafts." 👉 "Du khách cũng có thể ghé thăm các ngôi làng gần đó..."',
+ no:'<ul><li><span class="hl-red">Angkor Wat is dedicated to...</span> — đã dùng cho blank (2), và không liên quan đến chủ đề Siem Reap ở đoạn này.</li><li><span class="hl-red">where trees have become entwined...</span> — đã dùng cho blank (3), mô tả đền Ta Prohm, không phải về thị trấn Siem Reap.</li><li><span class="hl-red">is the largest religious monument...</span> — đã dùng cho blank (1), và thiếu chủ ngữ nên không thể đứng độc lập ở vị trí kết đoạn này.</li></ul>'}}
+];
+
+var TOTAL=QD.length,PICK={};
+function render(){
+  ["A","B","C"].forEach(function(s){
+    var host=document.getElementById('sec'+s);host.innerHTML='';
+    QD.filter(function(q){return q.s===s;}).forEach(function(q){
+      var h='<div class="qh"><span class="num">'+q.lb+'</span>'+q.q+'</div>';
+      shuffleOpts(q.o).forEach(function(v){h+='<button class="opt" data-n="'+q.n+'" data-v="'+esc(v)+'" onclick="pick('+q.n+',this)">'+esc(v)+'</button>';});
+      h+='<div class="exp" id="e_'+q.n+'"></div>';
+      var d=document.createElement('div');d.className='qblock';d.innerHTML=h;host.appendChild(d);
+    });
+  });
+  prog();
+}
+function shuffleOpts(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t;}return a;}
+function esc(s){return s.replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');}
+function pick(n,btn){
+  if(PICK[n])return;
+  PICK[n]=btn.getAttribute('data-v');
+  var q=QD.filter(function(x){return x.n===n;})[0];
+  var bs=document.querySelectorAll('.opt[data-n="'+n+'"]');
+  for(var i=0;i<bs.length;i++)bs[i].disabled=true;
+  if(PICK[n]===q.a){btn.classList.add('correct');ding();}
+  else{btn.classList.add('wrong');buzz();for(var j=0;j<bs.length;j++){if(bs[j].getAttribute('data-v')===q.a)bs[j].classList.add('correct');}}
+  showExp(n,q);prog();
+}
+function showExp(n,q){
+  var ok=PICK[n]===q.a,b=document.getElementById('e_'+n);
+  b.innerHTML='<div class="badge'+(ok?'':' bad')+'">'+(ok?'✅ CHÍNH XÁC!':'❌ CHƯA ĐÚNG – Đáp án đúng: '+q.a)+'</div>'
+   +'<div class="step"><span class="slab">① Dịch:</span> '+q.e.tr+'</div>'
+   +'<div class="step"><span class="slab">② Các phương án &amp; nghĩa:</span>'+q.e.op+'</div>'
+   +'<div class="step"><span class="slab">③ Vì sao đúng:</span> '+q.e.ok+(q.e.ev?'<div class="quote">🔍 <b>Dẫn chứng:</b> '+q.e.ev+'</div>':'')+'</div>'
+   +(q.e.no?'<div class="step"><span class="slab">④ Vì sao các phương án khác sai:</span> '+q.e.no+'</div>':'');
+  b.classList.add('on');
+}
+function prog(){var d=Object.keys(PICK).length,c=0;for(var k in PICK){var q=QD.filter(function(x){return x.n==k;})[0];if(PICK[k]===q.a)c++;}
+  document.getElementById('cDone').textContent=d;document.getElementById('cCorrect').textContent=c;
+  document.getElementById('barFill').style.width=(d/TOTAL*100)+'%';}
+function askName(){document.getElementById('nameErr').classList.remove('show');document.getElementById('nameModal').classList.add('on');}
+function okName(){
+  var v=document.getElementById('nameInput').value.trim();
+  if(!v){document.getElementById('nameErr').classList.add('show');return;}
+  document.getElementById('nameModal').classList.remove('on');grade(v);
+}
+function grade(sname){
+  QD.forEach(function(q){
+    if(!PICK[q.n]){
+      PICK[q.n]='__';
+      var bs=document.querySelectorAll('.opt[data-n="'+q.n+'"]');
+      for(var i=0;i<bs.length;i++){bs[i].disabled=true;if(bs[i].getAttribute('data-v')===q.a)bs[i].classList.add('correct');}
+      showExp(q.n,q);
+    }
+  });
+  prog();
+  var cor=QD.filter(function(q){return PICK[q.n]===q.a;}).length;
+  var pct=cor/TOTAL,d10=(cor/TOTAL*10).toFixed(2),em,ti,cm,gif;
+  if(pct===1){em='🏆';ti='XUẤT SẮC — HỌC GIẢ THÔNG THÁI!';cm='Tuyệt đối hoàn hảo '+cor+'/'+TOTAL+'! MS Chí Nên rất tự hào về em! 🪶';gif='https://media.giphy.com/media/3ohhwytHcusSCXXOUg/giphy.gif';}
+  else if(pct>=.6){em='👏';ti='LÀM TỐT LẮM!';cm='Em đạt '+cor+'/'+TOTAL+' – đã vượt qua rồi! Đọc kỹ phần giải thích những câu sai nhé. 📖';gif='https://media.giphy.com/media/l4pTfx2qLszoacZRS/giphy.gif';}
+  else{em='😭';ti='CỐ LÊN NHÉ!';cm='Em mới đạt '+cor+'/'+TOTAL+'. Đừng buồn nha! Đọc kỹ đoạn văn rồi làm lại — MS Chí Nên tin em sẽ tiến bộ nhanh. 🕯️';gif='https://media.giphy.com/media/d2lcHJTG5Tscg/giphy.gif';}
+  document.getElementById('mEmoji').textContent=em;
+  document.getElementById('mTitle').textContent=ti;
+  document.getElementById('mName').textContent='🎓 Học sinh: '+sname;
+  var g=document.getElementById('mGif');g.style.display='';g.src=gif;
+  document.getElementById('mScore').textContent=cor+'/'+TOTAL;
+  document.getElementById('mScore10').textContent='Điểm hệ 10: '+d10+' / 10';
+  document.getElementById('mComment').textContent=cm;
+  document.getElementById('scoreModal').classList.add('on');
+}
+render();
+</script>
+<script>/*devclean*/(function(){
+var ZW=/[\u00AD\u034F\u061C\u115F\u1160\u17B4\u17B5\u180E\u200B-\u200F\u202A-\u202E\u2060-\u206F\uFEFF]/g,
+    SP=/[\u00A0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\t]/g,
+    AP=/[\u2018\u2019\u201A\u201B\u2032\u2035\u02B9\u02BB\u02BC\u02BD\u02C8\u0060\u00B4\uFF07]/g,
+    DQ=/[\u201C\u201D\u201E\u201F\u2033\u2036\u00AB\u00BB\uFF02]/g,
+    DS=/[\u2010\u2011\u2012\u2212\uFE63\uFF0D]/g;
+function clean(v){if(!v)return v;var s=String(v);try{s=s.normalize('NFKC')}catch(e){}
+  return s.replace(ZW,'').replace(SP,' ').replace(AP,"'").replace(DQ,'"').replace(DS,'-').replace(/[\u0300-\u036f]/g,'').replace(/ {2,}/g,' ');}
+window.__devclean=clean;
+function fix(skip){var L=document.querySelectorAll('input:not([type]),input[type=text],input[type=search],textarea');
+  for(var i=0;i<L.length;i++){var el=L[i];if(el===skip||el.readOnly||el.disabled)continue;var v=el.value,c=clean(v);if(c!==v)el.value=c;}}
+['pointerdown','mousedown','touchstart','click','change','focusout'].forEach(function(t){document.addEventListener(t,function(e){fix(t==='focusout'||t==='change'?null:e.target)},true)});
+document.addEventListener('keydown',function(e){if(e.key==='Enter'||e.keyCode===13)fix(null)},true);
+})();</script>
+<style id="ms-chi-nen-unlock-style">
+#passwordModal, #password-modal, #pwModal, #pw-modal, #pw-overlay,
+#lockModal, #passModal, #authModal, #auth-modal, #lockOverlay,
+#start-overlay, #intro-overlay, #start-screen,
+.password-modal, .lock-modal, .lock-overlay {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    z-index: -9999 !important;
+}
+</style>
+<script>
+// Remove password lock completely - direct quiz access
+(function() {
+    var initDone = false;
+    var renderCheckDone = false;
+
+    function hideEl(el, hard) {
+        if (!el) return;
+        if (hard) {
+            el.style.setProperty('display', 'none', 'important');
+            el.style.setProperty('visibility', 'hidden', 'important');
+            el.style.setProperty('opacity', '0', 'important');
+            el.style.setProperty('pointer-events', 'none', 'important');
+            el.style.setProperty('z-index', '-9999', 'important');
+        } else {
+            el.style.display = 'none';
+        }
+        el.classList.remove('active', 'show', 'open', 'visible', 'flex');
+    }
+
+    function hasRenderedQuiz() {
+        var containers = document.querySelectorAll(
+            '#quiz-container, #quizContainer, #questions-container, #questionPane, #quiz, #questions, #quiz-body, #questions-wrapper, #quiz-list, #quizList, #exercise-container, #app-container .split-container'
+        );
+        for (var i = 0; i < containers.length; i++) {
+            if (containers[i].querySelectorAll('button, input, select, textarea, .question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .question, .option-btn, .opt-btn, .ans-btn').length > 0) {
+                return true;
+            }
+        }
+        if (document.querySelectorAll('.question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .option-btn, .opt-btn, .ans-btn, .choice-btn').length > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    function ensureQuizRendered() {
+        if (renderCheckDone) return;
+        renderCheckDone = true;
+        if (hasRenderedQuiz()) return;
+
+        if (!hasRenderedQuiz() && typeof buildQuiz === 'function') { try { buildQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof initQuiz === 'function') { try { initQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderApp === 'function') { try { renderApp(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuiz === 'function') { try { renderQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuestions === 'function') { try { renderQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAllQuestions === 'function') { try { renderAllQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAll === 'function') { try { renderAll(); } catch(e){} }
+    }
+
+    function unlockNow() {
+        var pwIds = [
+            'passwordModal', 'password-modal', 'pwModal', 'pw-modal', 'pw-overlay',
+            'lockModal', 'passModal', 'authModal', 'auth-modal', 'lockOverlay',
+            'start-overlay', 'intro-overlay', 'start-screen'
+        ];
+        pwIds.forEach(function(id) {
+            hideEl(document.getElementById(id), true);
+        });
+
+        var modalEls = document.querySelectorAll('.password-modal, .lock-modal, .lock-overlay, #lockOverlay, #auth-modal');
+        modalEls.forEach(function(el) {
+            if (el.id !== 'resultModal' && el.id !== 'result-modal' && el.id !== 'scoreModal') {
+                hideEl(el, true);
+            }
+        });
+
+        ['nameModal', 'name-modal', 'nameInputModal'].forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) hideEl(el, false);
+        });
+
+        var qo = document.getElementById('quiz-overlay');
+        if (qo && (typeof isStarted === 'undefined' || !isStarted)) {
+            qo.style.display = 'none';
+        }
+
+        var mainIds = [
+            'mainContent', 'main-content', 'mainHeader', 'main-header',
+            'app-container', 'app', 'quizApp', 'quiz-wrapper', 'quizContainer', 'quiz-container', 'reading-content'
+        ];
+        mainIds.forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) {
+                el.classList.remove('hidden', 'blur', 'blurred', 'locked');
+                if (el.style.display === 'none') {
+                    el.style.removeProperty('display');
+                }
+                if (window.getComputedStyle(el).display === 'none') {
+                    var hasPane = el.querySelector('.pane, .left-pane, .right-pane, .split-container, .left-panel, .right-panel');
+                    if (id === 'main-content' || id.toLowerCase().includes('header') || el.classList.contains('main-container') || hasPane) {
+                        el.style.setProperty('display', 'flex', 'important');
+                    } else {
+                        el.style.setProperty('display', 'block', 'important');
+                    }
+                }
+            }
+        });
+
+        var qs = document.getElementById('quiz-screen');
+        if (qs) {
+            qs.classList.remove('hidden');
+            if (qs.classList.contains('flex-col')) {
+                qs.classList.add('flex');
+                qs.style.display = 'flex';
+            } else {
+                qs.style.display = 'block';
+            }
+        }
+
+        if (!initDone) {
+            initDone = true;
+
+            if (document.getElementById('start-overlay') && typeof startGame === 'function') {
+                var sn = document.getElementById('student-name') || document.getElementById('studentName');
+                if (sn && !sn.value.trim()) sn.value = 'Học sinh';
+            }
+            if (document.getElementById('name-modal') && typeof startQuiz === 'function') {
+                var sn2 = document.getElementById('student-name');
+                if (sn2 && !sn2.value.trim()) sn2.value = 'Học sinh';
+            }
+
+            if (typeof startQuiz === 'function' && (typeof isStarted === 'undefined' || !isStarted)) { try { startQuiz(); } catch(e){} }
+            if (typeof startGame === 'function') { try { startGame(); } catch(e){} }
+            if (typeof startTest === 'function') { try { startTest(); } catch(e){} }
+            if (typeof startApp === 'function') { try { startApp(); } catch(e){} }
+            if (typeof buildStarfield === 'function') { try { buildStarfield(); } catch(e){} }
+            if (typeof spawnFloats === 'function') { try { spawnFloats(); } catch(e){} }
+            if (typeof spawnFloaters === 'function') { try { spawnFloaters(); } catch(e){} }
+            if (typeof createFloatingBubbles === 'function') { try { createFloatingBubbles(); } catch(e){} }
+            if (typeof initAudio === 'function') { try { initAudio(); } catch(e){} }
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', unlockNow);
+    } else {
+        unlockNow();
+    }
+    if (document.readyState === 'complete') {
+        setTimeout(ensureQuizRendered, 150);
+    } else {
+        window.addEventListener('load', function() {
+            setTimeout(unlockNow, 20);
+            setTimeout(ensureQuizRendered, 150);
+            setTimeout(unlockNow, 300);
+            setTimeout(unlockNow, 700);
+        });
+    }
+    setTimeout(unlockNow, 50);
+    setTimeout(unlockNow, 200);
+    setTimeout(unlockNow, 600);
+    setTimeout(unlockNow, 1100);
+})();
+</script>
+</body>
+</html>

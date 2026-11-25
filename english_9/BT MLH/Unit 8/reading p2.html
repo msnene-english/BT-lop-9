@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 8: Tourism — Test VIII + IX | MS Chí Nên</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* THEME: AURORA NIGHT — cực quang huyền ảo, sao đêm, trăng mờ */
+:root{--night1:#050a1f;--night2:#0a1030;--night3:#140b3a;
+  --aurora1:#6df7c7;--aurora2:#57d8ff;--aurora3:#c58bff;--moon:#fef6d8;--ink:#eaf1ff;
+  --panel:#0c1330;--panel2:#141c44;--gold:#ffd27a;
+  --correct:#57f0a0;--correctbg:rgba(87,240,160,.14);--wrong:#ff6b81;--wrongbg:rgba(255,107,129,.16);}
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:18px}
+body{font-family:'Baloo 2',sans-serif;font-weight:500;color:var(--ink);min-height:100vh;position:relative;overflow-x:hidden;padding-bottom:60px;
+  background:linear-gradient(180deg,var(--night3) 0%,var(--night2) 45%,var(--night1) 100%);background-attachment:fixed}
+.moon{position:fixed;top:5%;right:10%;width:90px;height:90px;border-radius:50%;z-index:0;background:radial-gradient(circle at 35% 35%,#fffef2,var(--moon));
+  box-shadow:0 0 60px 26px rgba(254,246,216,.35);opacity:.9}
+.aurora{position:fixed;left:-10%;width:120%;height:46vh;top:0;z-index:0;filter:blur(22px);opacity:.55;mix-blend-mode:screen;
+  animation:auroraMove ease-in-out infinite}
+.a1{background:linear-gradient(100deg,transparent,var(--aurora1),transparent 70%);height:38vh;top:2%;animation-duration:9s}
+.a2{background:linear-gradient(100deg,transparent 10%,var(--aurora2),transparent 80%);height:42vh;top:8%;animation-duration:12s;animation-delay:-3s}
+.a3{background:linear-gradient(100deg,transparent 20%,var(--aurora3),transparent);height:34vh;top:0;animation-duration:14s;animation-delay:-6s}
+@keyframes auroraMove{0%,100%{transform:translateX(-4%) skewY(-2deg)}50%{transform:translateX(4%) skewY(2deg)}}
+#stars span{position:fixed;border-radius:50%;background:#fff;z-index:0;animation:twinkle ease-in-out infinite}
+@keyframes twinkle{0%,100%{opacity:.15;transform:scale(.6)}50%{opacity:1;transform:scale(1.25)}}
+.wrap{position:relative;z-index:2;max-width:1420px;margin:0 auto;padding:16px 18px 40px}
+header{background:linear-gradient(180deg,var(--panel) 0%,var(--panel2) 100%);border-radius:22px;padding:18px 26px;text-align:center;margin-bottom:14px;
+  box-shadow:0 0 0 1px rgba(87,216,255,.35),0 16px 34px rgba(0,0,0,.5)}
+header h1{font-weight:800;font-size:2rem;letter-spacing:.5px;
+  background:linear-gradient(90deg,var(--aurora1),var(--aurora2),var(--aurora3));-webkit-background-clip:text;background-clip:text;color:transparent}
+header .teacher{font-weight:600;color:var(--aurora2);margin-top:5px}
+header .promo{font-weight:700;color:var(--gold);margin-top:6px;font-size:.88rem}
+.note{max-width:1050px;margin:0 auto 16px;background:var(--panel);border:1px solid rgba(197,139,255,.4);border-radius:16px;
+  padding:11px 18px;font-weight:600;color:#cfe0ff;text-align:center;font-size:.9rem;line-height:1.7}
+.scorebar{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:8px}
+.chip{background:var(--panel);border-radius:12px;padding:7px 16px;font-weight:700;font-size:.92rem;color:var(--aurora2);box-shadow:0 4px 12px rgba(0,0,0,.4)}
+.chip b{color:var(--gold);font-weight:800}
+.bar{height:11px;background:var(--panel);border-radius:8px;overflow:hidden;max-width:480px;margin:0 auto 18px;box-shadow:0 4px 12px rgba(0,0,0,.4)}
+.bar span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--aurora1),var(--aurora2),var(--aurora3));transition:width .4s}
+.section{background:var(--panel);border-radius:20px;box-shadow:0 14px 32px rgba(0,0,0,.5);margin-bottom:22px;overflow:hidden;border:1px solid rgba(87,216,255,.18)}
+.sec-head{padding:14px 22px;font-weight:700;font-size:1.18rem;color:var(--aurora2);background:linear-gradient(90deg,#141c44,#1c1450);border-bottom:1px solid rgba(197,139,255,.3)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.lp,.rp{padding:18px 22px;max-height:700px;overflow-y:auto}
+.lp{border-right:1px solid rgba(197,139,255,.2)}
+.lp::-webkit-scrollbar,.rp::-webkit-scrollbar{width:8px}
+.lp::-webkit-scrollbar-thumb,.rp::-webkit-scrollbar-thumb{background:var(--aurora3);border-radius:8px}
+.pblock{background:#0e1638;border:1px solid rgba(87,216,255,.2);border-left:4px solid var(--aurora3);border-radius:14px;padding:13px 16px;margin-bottom:13px}
+.pblock p{font-size:1.02rem;line-height:1.9;color:var(--ink)}
+.bk{display:inline-block;min-width:28px;text-align:center;font-weight:800;color:#04121a;background:var(--aurora1);
+  border-radius:8px;padding:1px 8px;margin:0 2px;font-size:.86rem}
+.tbtn{margin-top:8px;cursor:pointer;font-weight:700;border:none;color:#04121a;background:linear-gradient(90deg,var(--gold),var(--aurora2));
+  padding:6px 16px;border-radius:20px;font-size:.85rem}
+.trans{display:none;margin-top:9px;padding:11px 14px;background:#161244;border-left:4px solid var(--aurora2);border-radius:0 10px 10px 0;font-size:.96rem;line-height:1.85;color:#e6ecff}
+.trans.show{display:block;animation:fade .3s}
+@keyframes fade{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.trans b{color:var(--gold)}
+.gloss{background:#12163a;border:1px solid rgba(255,210,122,.35);border-radius:14px;padding:12px 15px;margin-top:6px}
+.gloss .gt{font-weight:700;color:var(--gold);margin-bottom:8px}
+table.gtb{width:100%;border-collapse:collapse;font-size:.88rem}
+table.gtb th{background:rgba(87,216,255,.16);color:var(--aurora2);padding:7px 9px;text-align:left;font-size:.76rem}
+table.gtb td{padding:6px 9px;border-bottom:1px solid rgba(255,255,255,.07);color:var(--ink)}
+table.gtb td:first-child{font-weight:700;color:var(--gold)}
+table.gtb td:nth-child(2){color:#a9c7ff;font-style:italic;font-size:.8rem;white-space:nowrap}
+.qh{font-weight:700;font-size:.98rem;margin-bottom:10px;line-height:1.65;color:var(--ink)}
+.qh .num{display:inline-block;width:30px;height:30px;line-height:30px;text-align:center;border-radius:50%;
+  background:linear-gradient(135deg,var(--aurora3),var(--aurora2));color:#04121a;margin-right:7px;font-size:.9rem;font-weight:800}
+.qblock{background:#0e1638;border:1px solid rgba(87,216,255,.18);border-radius:14px;padding:14px 16px;margin-bottom:14px}
+.opt{display:block;width:100%;text-align:left;cursor:pointer;margin:7px 0;padding:11px 14px;border:1px solid rgba(255,255,255,.18);
+  border-radius:12px;background:#121a44;font-weight:600;font-size:.98rem;color:var(--ink);transition:.15s}
+.opt:hover:not(:disabled){border-color:var(--aurora2);background:#182050;transform:translateX(3px)}
+.opt:disabled{cursor:default}
+.opt.correct{background:var(--correctbg);border-color:var(--correct);color:#baffdc}
+.opt.wrong{background:var(--wrongbg);border-color:var(--wrong);color:#ffc3cd;animation:shk .4s}
+@keyframes shk{10%,90%{transform:translateX(-2px)}20%,80%{transform:translateX(4px)}30%,50%,70%{transform:translateX(-6px)}40%,60%{transform:translateX(6px)}}
+.exp{display:none;margin-top:11px;background:#101a3f;border:1px solid var(--aurora3);border-radius:12px;padding:12px 15px;font-size:.9rem;line-height:1.85}
+.exp.on{display:block;animation:fade .3s}
+.exp .badge{display:inline-block;background:var(--correct);color:#04241a;border-radius:10px;padding:2px 12px;margin-bottom:7px;font-size:.82rem;font-weight:800}
+.exp .badge.bad{background:var(--wrong);color:#2b0510}
+.exp .step{margin-top:7px;color:var(--ink)}
+.exp .slab{font-weight:700;color:var(--aurora2);font-size:.88rem}
+.exp .obox{background:#0e1638;border-radius:8px;padding:6px 10px;margin:5px 0;display:flex;flex-wrap:wrap;gap:4px 8px}
+.exp ul{margin:5px 0 0;padding-left:18px}
+.exp li{margin-bottom:5px}
+.p-word{font-weight:800;color:var(--gold)}
+.p-mean{color:#a9c7ff;font-weight:700}
+.pos{display:inline-block;font-weight:800;font-size:.66rem;padding:1px 7px;border-radius:8px;text-transform:uppercase;margin-right:2px}
+.pos-n{background:rgba(87,216,255,.2);color:var(--aurora2)}
+.pos-v{background:rgba(255,107,129,.2);color:#ff9fb0}
+.pos-adj{background:rgba(197,139,255,.24);color:#dcc4ff}
+.pos-adv{background:rgba(109,247,199,.2);color:#a4ffdf}
+.pos-prep{background:rgba(255,210,122,.22);color:var(--gold)}
+.pos-pron{background:rgba(255,255,255,.14);color:#e6ecff}
+.pos-phr{background:rgba(255,255,255,.1);color:#dfe8ff}
+.hl-green{color:var(--correct);font-weight:800}
+.hl-red{color:var(--wrong);font-weight:800}
+.quote{background:#161244;border-left:4px solid var(--aurora2);border-radius:0 10px 10px 0;padding:9px 12px;margin-top:7px;font-size:.87rem;line-height:1.8;color:#e6ecff}
+.quote b{color:var(--gold)}
+.submit-wrap{text-align:center;margin:20px 0}
+.bsub{font-weight:800;font-size:1.1rem;color:#04121a;border:none;border-radius:28px;padding:14px 32px;cursor:pointer;
+  background:linear-gradient(90deg,var(--aurora1),var(--aurora2),var(--aurora3));box-shadow:0 10px 26px rgba(87,216,255,.4)}
+.ov{display:none;position:fixed;inset:0;z-index:999;background:rgba(3,4,14,.75);backdrop-filter:blur(5px);align-items:center;justify-content:center;padding:16px}
+.ov.on{display:flex}
+.mb{background:var(--panel);border-radius:22px;padding:26px 28px;max-width:440px;width:100%;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.5);max-height:92vh;overflow-y:auto;border:1px solid rgba(197,139,255,.4)}
+.mb h2{color:var(--aurora2);font-size:1.28rem;margin-bottom:12px;font-weight:800}
+.mb input{width:100%;font-family:'Baloo 2';font-size:1rem;font-weight:600;padding:11px 14px;border:1px solid var(--aurora2);border-radius:14px;text-align:center;outline:none;margin-bottom:8px;background:#0e1638;color:var(--ink)}
+.mb .err{color:var(--wrong);font-weight:700;font-size:.85rem;display:none;margin-bottom:8px}
+.mb .err.show{display:block}
+.mb button{cursor:pointer;font-weight:700;border:none;color:#04121a;border-radius:20px;padding:10px 24px;background:linear-gradient(90deg,var(--aurora2),var(--aurora3));font-size:.98rem;margin-top:4px}
+.mb .close{background:#3a3f5c;color:#dfe8ff}
+.gif{width:160px;margin:11px auto;display:block;border-radius:12px;border:2px solid var(--gold)}
+.rscore{font-size:2.3rem;color:var(--aurora2);font-weight:800}
+.r10{font-size:1.15rem;color:var(--gold);font-weight:700}
+.rcmt{margin:11px 0;padding:11px 14px;background:#161244;border:1px solid rgba(255,210,122,.35);border-radius:12px;font-size:.9rem;line-height:1.75}
+@media(max-width:860px){.split{grid-template-columns:1fr}.lp{border-right:none;border-bottom:1px solid rgba(197,139,255,.2)}}
+</style>
+</head>
+<body>
+<div class="aurora a1"></div><div class="aurora a2"></div><div class="aurora a3"></div>
+<div class="moon"></div>
+<div id="stars"></div>
+
+<div class="wrap">
+<header>
+  <h1>🌌 Unit 8: Tourism — Test for Unit 8</h1>
+  <div class="teacher">Giáo viên tạo: MS Chí Nên</div>
+  <div class="promo">📞 0936 322 809 — Đăng ký khoá học tiếng Anh lớp 1 → lớp 12, trải nghiệm web giải chi tiết đỉnh cao!</div>
+</header>
+
+<div class="note">✨ Nhắc nhở có tâm từ MS Chí Nên: Mục VIII là điền từ vào đoạn văn Space Tourism, mục IX là đọc hiểu về Ecotourism — đọc kỹ cả đoạn trước khi chọn, đừng đoán mò nhé. Chúc cả lớp lạc vào vùng trời cực quang kiến thức thật lung linh 🌠</div>
+
+<div class="scorebar">
+  <div class="chip">✅ ĐÚNG: <b id="cCorrect">0</b>/15</div>
+  <div class="chip">📝 ĐÃ LÀM: <b id="cDone">0</b>/15</div>
+</div>
+<div class="bar"><span id="barFill"></span></div>
+
+<!-- ============== VIII. SPACE TOURISM ============== -->
+<div class="section">
+  <div class="sec-head">🚀 VIII — Space Tourism (Câu 1–8)</div>
+  <div class="split">
+    <div class="lp">
+      <div class="pblock"><p>Make your reservations now. The space tourism industry is <span class="bk">1</span> open for business, and tickets are going for a mere $20 million for a one-week stay in space. Despite <span class="bk">2</span> from NASA, Russia made American businessman Dennis Tito the world's first space tourist. Tito flew into space aboard a Russian Soyuz <span class="bk">3</span> that arrived at the International Space Station (ISS) on April 30, 2001. The second space tourist, South African businessman Mark Shuttleworth, took <span class="bk">4</span> aboard the Russian Soyuz on April 25, 2002, also bound for the ISS. Greg Olsen, an American businessman, became tourist number three to the ISS on October 1, 2005.</p>
+        <button class="tbtn" onclick="tg('v1',this)">🔊 Xem bản dịch</button>
+        <div class="trans" id="v1">Hãy đặt chỗ ngay bây giờ. Ngành du lịch vũ trụ hiện đã <b>chính thức</b> mở cửa hoạt động, và vé đang được bán với giá chỉ khoảng 20 triệu đô la cho một tuần lưu trú trong vũ trụ. Bất chấp <b>sự do dự</b> từ NASA, Nga đã đưa doanh nhân người Mỹ Dennis Tito trở thành du khách vũ trụ đầu tiên trên thế giới. Tito đã bay vào vũ trụ trên <b>tên lửa</b> Soyuz của Nga, cập bến Trạm Vũ trụ Quốc tế (ISS) vào ngày 30/4/2001. Du khách vũ trụ thứ hai, doanh nhân người Nam Phi Mark Shuttleworth, đã <b>cất cánh</b> trên tàu Soyuz của Nga vào ngày 25/4/2002, cũng hướng tới ISS. Greg Olsen, một doanh nhân người Mỹ, trở thành du khách thứ ba đến ISS vào ngày 1/10/2005.</div>
+      </div>
+      <div class="pblock"><p>On September 18, 2006, Anousheh Ansari, a telecommunications entrepreneur, became the first female space tourist and the fourth space tourist <span class="bk">5</span>. She was also the first person of Iranian descent to make <span class="bk">6</span> into space. Charles Simonyi, a software architect, became the fifth space tourist on April 7, 2007.</p>
+        <button class="tbtn" onclick="tg('v2',this)">🔊 Xem bản dịch</button>
+        <div class="trans" id="v2">Vào ngày 18/9/2006, Anousheh Ansari, một doanh nhân trong ngành viễn thông, trở thành nữ du khách vũ trụ đầu tiên và là du khách vũ trụ thứ tư <b>nói chung</b>. Bà cũng là người gốc Iran đầu tiên <b>đặt chân</b> vào vũ trụ. Charles Simonyi, một kiến trúc sư phần mềm, trở thành du khách vũ trụ thứ năm vào ngày 7/4/2007.</div>
+      </div>
+      <div class="pblock"><p>These trips are the beginning of <span class="bk">7</span> could be a lucrative 21st century industry. There are already several space tourism companies planning to build suborbital vehicles and orbital cities within the next two decades. These companies have <span class="bk">8</span> millions, believing that the space tourism industry is on the verge of taking off.</p>
+        <button class="tbtn" onclick="tg('v3',this)">🔊 Xem bản dịch</button>
+        <div class="trans" id="v3">Những chuyến đi này chỉ là khởi đầu của những gì có thể trở thành một ngành công nghiệp sinh lời trong thế kỷ 21. Đã có một số công ty du lịch vũ trụ lên kế hoạch xây dựng phương tiện bay dưới quỹ đạo và các thành phố quỹ đạo trong hai thập kỷ tới. Các công ty này đã <b>đầu tư</b> hàng triệu đô la, tin rằng ngành du lịch vũ trụ đang trên đà cất cánh.</div>
+      </div>
+      <div class="gloss"><div class="gt">📖 Từ vựng</div>
+        <table class="gtb"><tr><th>Từ</th><th>Loại</th><th>Nghĩa</th></tr>
+          <tr><td>reservation</td><td>n</td><td>sự đặt chỗ</td></tr>
+          <tr><td>reluctance</td><td>n</td><td>sự do dự</td></tr>
+          <tr><td>entrepreneur</td><td>n</td><td>doanh nhân</td></tr>
+          <tr><td>descent</td><td>n</td><td>dòng dõi, gốc gác</td></tr>
+          <tr><td>suborbital</td><td>adj</td><td>dưới quỹ đạo</td></tr>
+          <tr><td>lucrative</td><td>adj</td><td>sinh lời, có lãi</td></tr>
+          <tr><td>on the verge of</td><td>phr</td><td>sắp sửa, bên bờ</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="rp" id="secA"></div>
+  </div>
+</div>
+
+<!-- ============== IX. ECOTOURISM ============== -->
+<div class="section">
+  <div class="sec-head">🌿 IX — Ecotourism: See the World While Saving It (Câu 9–15)</div>
+  <div class="split">
+    <div class="lp">
+      <div class="pblock"><p>Imagine a vacation in a place of amazing natural beauty. Picture yourself relaxing on a clean beach in Belize. Picture yourself exploring the desert on a camel in Dubai. Or picture yourself following lions and zebras in Kenya. Now imagine that you are enjoying these experiences and helping to preserve the environment. You are protecting wildlife and supporting local communities. Is this too good to be true? No! These vacations are part of a growing trend in the travel industry. The trend is called <b>ecotourism</b>.</p>
+        <button class="tbtn" onclick="tg('v4',this)">🔊 Xem bản dịch</button>
+        <div class="trans" id="v4">Hãy tưởng tượng một kỳ nghỉ tại một nơi có vẻ đẹp tự nhiên tuyệt vời. Hãy hình dung bạn đang thư giãn trên một bãi biển sạch đẹp ở Belize. Hãy hình dung bạn đang khám phá sa mạc trên lưng lạc đà ở Dubai. Hoặc hình dung bạn đang theo dõi sư tử và ngựa vằn ở Kenya. Giờ hãy tưởng tượng rằng bạn đang tận hưởng những trải nghiệm này và đồng thời giúp <b>bảo vệ môi trường</b>. Bạn đang bảo vệ <b>động vật hoang dã</b> và hỗ trợ các cộng đồng địa phương. Điều này nghe có vẻ quá tốt để là sự thật? Không! Những kỳ nghỉ này là một phần của xu hướng đang phát triển trong ngành du lịch. Xu hướng đó được gọi là <b>du lịch sinh thái</b>.</div>
+      </div>
+      <div class="pblock"><p>Ecotourism was not common before the 1990s. It is now a <b>multi-billion</b> dollar industry. But what is ecotourism? These are some of its characteristics: it means travel to natural, often far away, places — these are often <b>protected areas</b> where development is limited; ecotourism destinations focus on recycling, water conservation, and using <b>renewable energy</b> sources; it builds environmental awareness — visitors explore an area and learn about it; it provides an economic reason to save the environment and raises money to help protect it; it creates financial opportunities and jobs for the local people.</p>
+        <button class="tbtn" onclick="tg('v5',this)">🔊 Xem bản dịch</button>
+        <div class="trans" id="v5">Du lịch sinh thái không phổ biến trước những năm 1990. Hiện nay nó đã trở thành một ngành công nghiệp trị giá <b>hàng tỷ đô la</b>. Nhưng du lịch sinh thái là gì? Đây là một số đặc điểm của nó: nó có nghĩa là đi du lịch đến những nơi tự nhiên, thường ở xa — đây thường là những <b>khu vực được bảo vệ</b>, nơi việc phát triển bị hạn chế; các điểm đến du lịch sinh thái chú trọng vào việc tái chế, bảo tồn nguồn nước, và sử dụng các <b>nguồn năng lượng tái tạo</b>; nó xây dựng nhận thức về môi trường — du khách khám phá một khu vực và tìm hiểu về nó; nó cung cấp một lý do kinh tế để bảo vệ môi trường và gây quỹ để giúp bảo vệ môi trường; nó tạo ra cơ hội tài chính và việc làm cho người dân địa phương.</div>
+      </div>
+      <div class="pblock"><p>Costa Rica was one of the first success stories. Costa Rica once had the highest rate of <b>deforestation</b> in Latin America. However, since ecotourism, there has been a major reduction in deforestation. Now, more than a quarter of Costa Rica's land is protected from development. Costa Rica is now the world's top ecotourism destination. This small country of four million people has about 1.5 million visitors per year!</p>
+        <button class="tbtn" onclick="tg('v6',this)">🔊 Xem bản dịch</button>
+        <div class="trans" id="v6">Costa Rica là một trong những câu chuyện thành công đầu tiên. Costa Rica từng có tỷ lệ <b>phá rừng</b> cao nhất ở Mỹ Latinh. Tuy nhiên, kể từ khi có du lịch sinh thái, đã có sự giảm mạnh về nạn phá rừng. Hiện nay, hơn một phần tư diện tích đất của Costa Rica được bảo vệ khỏi việc phát triển. Costa Rica hiện là điểm đến du lịch sinh thái hàng đầu thế giới. Đất nước nhỏ bé này với bốn triệu dân đón khoảng 1,5 triệu lượt khách mỗi năm!</div>
+      </div>
+      <div class="pblock"><p>Ecotourism is very important to preserving the land in Costa Rica. This is true for other ecotourism sites around the world. Ecotourism provides visitors with a special vacation too. These vacations are unforgettable and educational. Ecotourism is basically <b>a win-win situation</b>. It is good for both the tourists and the countries they visit.</p>
+        <button class="tbtn" onclick="tg('v7',this)">🔊 Xem bản dịch</button>
+        <div class="trans" id="v7">Du lịch sinh thái rất quan trọng đối với việc bảo tồn đất đai ở Costa Rica. Điều này cũng đúng với các điểm du lịch sinh thái khác trên khắp thế giới. Du lịch sinh thái cũng mang đến cho du khách một kỳ nghỉ đặc biệt. Những kỳ nghỉ này vừa khó quên vừa mang tính giáo dục. Về cơ bản, du lịch sinh thái là <b>một tình huống đôi bên cùng có lợi</b>. Nó tốt cho cả du khách và những quốc gia mà họ ghé thăm.</div>
+      </div>
+      <div class="gloss"><div class="gt">📖 Từ vựng</div>
+        <table class="gtb"><tr><th>Từ</th><th>Loại</th><th>Nghĩa</th></tr>
+          <tr><td>preserve</td><td>v</td><td>bảo tồn</td></tr>
+          <tr><td>wildlife</td><td>n</td><td>động vật hoang dã</td></tr>
+          <tr><td>deforestation</td><td>n</td><td>nạn phá rừng</td></tr>
+          <tr><td>renewable energy</td><td>n</td><td>năng lượng tái tạo</td></tr>
+          <tr><td>protected area</td><td>n</td><td>khu vực được bảo vệ</td></tr>
+          <tr><td>win-win situation</td><td>n</td><td>tình huống đôi bên cùng có lợi</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="rp" id="secB"></div>
+  </div>
+</div>
+
+<div class="submit-wrap"><button class="bsub" onclick="askName()">🎯 Nộp bài tính điểm &amp; xem kết quả</button></div>
+</div>
+
+<div class="ov" id="nameModal"><div class="mb">
+  <h2>🖊️ Nhập tên để nộp bài</h2>
+  <input id="nameInput" placeholder="Họ và tên học sinh..." onkeydown="if(event.key==='Enter')okName()">
+  <div class="err" id="nameErr">⚠️ Em chưa nhập tên! Bắt buộc phải có tên mới nộp được bài nha.</div>
+  <button onclick="okName()">✅ Xác nhận &amp; chấm điểm</button>
+</div></div>
+
+<div class="ov" id="scoreModal"><div class="mb">
+  <div id="mEmoji" style="font-size:3.2rem">🏆</div>
+  <h2 id="mTitle">KẾT QUẢ</h2>
+  <div id="mName" style="font-weight:700;color:var(--aurora2)"></div>
+  <img class="gif" id="mGif" src="" alt="" onerror="this.style.display='none'">
+  <div class="rscore" id="mScore">0/15</div>
+  <div class="r10" id="mScore10">0.00 / 10</div>
+  <div class="rcmt" id="mComment"></div>
+  <button class="close" onclick="document.getElementById('scoreModal').classList.remove('on')">📚 Xem lại bài</button>
+  <button onclick="location.reload()">🔄 Làm lại</button>
+</div></div>
+
+<script>
+(function(){var h='';for(var i=0;i<24;i++){var sz=(Math.random()*2+1).toFixed(1);var left=(Math.random()*100).toFixed(1);var top=(Math.random()*55).toFixed(1);var dur=(Math.random()*2.5+2).toFixed(1);var del=(Math.random()*4).toFixed(1);h+='<span style="left:'+left+'%;top:'+top+'%;width:'+sz+'px;height:'+sz+'px;animation-duration:'+dur+'s;animation-delay:-'+del+'s"></span>';}document.getElementById('stars').innerHTML=h;})();
+function tg(id,btn){const el=document.getElementById(id);el.classList.toggle('show');
+  btn.textContent=el.classList.contains('show')?'🔼 Ẩn bản dịch':'🔊 Xem bản dịch';}
+var AC;function ac(){if(!AC)AC=new (window.AudioContext||window.webkitAudioContext)();return AC;}
+function ding(){try{var c=ac();[[880,0],[1320,.09],[1760,.19]].forEach(function(p){var o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.type='sine';o.frequency.value=p[0];var t=c.currentTime+p[1];g.gain.setValueAtTime(.25,t);g.gain.exponentialRampToValueAtTime(.001,t+.3);o.start(t);o.stop(t+.3);});}catch(e){}}
+function buzz(){try{var c=ac();[[330,0],[220,.15]].forEach(function(p){var o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.type='square';o.frequency.value=p[0];var t=c.currentTime+p[1];g.gain.setValueAtTime(.2,t);g.gain.exponentialRampToValueAtTime(.001,t+.2);o.start(t);o.stop(t+.2);});}catch(e){}}
+function W(word,pos,mean){return '<div class="obox"><span class="pos pos-'+pos+'">'+pos+'</span><span class="p-word">'+word+'</span><span class="p-mean">— '+mean+'</span></div>';}
+
+var QD=[
+{n:1,lb:'1',s:'A',q:'1. The space tourism industry is <b>(1)</b> open for business.',
+ o:["officially","immediately","formally","definitely"],a:"officially",
+ e:{tr:'Dịch: "Ngành du lịch vũ trụ hiện ___ mở cửa hoạt động."',
+ op:W('officially','adv','chính thức')+W('immediately','adv','ngay lập tức')+W('formally','adv','một cách trang trọng/chính thức thủ tục')+W('definitely','adv','chắc chắn'),
+ ok:'Đáp án đúng là <span class="hl-green">officially</span>. "Officially open" nghĩa "chính thức mở cửa" — diễn đạt chuẩn khi một ngành công nghiệp/dịch vụ bắt đầu hoạt động một cách hợp pháp, được công nhận.',
+ ev:'"The space tourism industry is officially open for business." 👉 "Ngành du lịch vũ trụ hiện đã chính thức mở cửa hoạt động."',
+ no:'<ul><li><span class="hl-red">immediately</span> — nghĩa "ngay lập tức", nhấn mạnh về THỜI GIAN chứ không phải TÍNH CHÍNH THỨC của việc mở cửa.</li><li><span class="hl-red">formally</span> — thường dùng cho nghi thức/thủ tục trang trọng (formal event), ít tự nhiên hơn khi nói về một ngành công nghiệp mở cửa kinh doanh.</li><li><span class="hl-red">definitely</span> — nghĩa "chắc chắn", diễn tả mức độ tin tưởng, không phù hợp ngữ cảnh thông báo mở cửa.</li></ul>'}},
+{n:2,lb:'2',s:'A',q:'2. Despite <b>(2)</b> from NASA, Russia made Dennis Tito the world\'s first space tourist.',
+ o:["reluctance","acceptance","insistence","decision"],a:"reluctance",
+ e:{tr:'Dịch: "Bất chấp ___ từ NASA, Nga đã đưa Dennis Tito trở thành du khách vũ trụ đầu tiên trên thế giới."',
+ op:W('reluctance','n','sự do dự, miễn cưỡng')+W('acceptance','n','sự chấp nhận')+W('insistence','n','sự khăng khăng')+W('decision','n','quyết định'),
+ ok:'Đáp án đúng là <span class="hl-green">reluctance</span>. "Despite" (bất chấp) mở đầu một mệnh đề TƯƠNG PHẢN — NASA không muốn/do dự (reluctance) nhưng Nga vẫn tiến hành, tạo ra sự đối lập hợp lý về nghĩa.',
+ ev:'"Despite reluctance from NASA, Russia made American businessman Dennis Tito the world\'s first space tourist." 👉 "Bất chấp sự do dự từ NASA, Nga đã đưa doanh nhân người Mỹ Dennis Tito trở thành du khách vũ trụ đầu tiên trên thế giới."',
+ no:'<ul><li><span class="hl-red">acceptance</span> — nghĩa "sự chấp nhận", TRÁI NGƯỢC với "despite" (nếu NASA chấp nhận thì không cần từ "despite" mang nghĩa tương phản).</li><li><span class="hl-red">insistence</span> — nghĩa "sự khăng khăng đòi hỏi", không hợp logic vì NASA không phải bên khăng khăng đòi thực hiện việc này.</li><li><span class="hl-red">decision</span> — nghĩa "quyết định", quá trung tính, không tạo được sắc thái phản đối cần thiết để đi với "despite".</li></ul>'}},
+{n:3,lb:'3',s:'A',q:'3. Tito flew into space aboard a Russian Soyuz <b>(3)</b>.',
+ o:["rocket","launcher","satellite","missile"],a:"rocket",
+ e:{tr:'Dịch: "Tito đã bay vào vũ trụ trên ___ Soyuz của Nga."',
+ op:W('rocket','n','tên lửa')+W('launcher','n','bệ phóng')+W('satellite','n','vệ tinh')+W('missile','n','tên lửa quân sự/đạn đạo'),
+ ok:'Đáp án đúng là <span class="hl-green">rocket</span>. "Soyuz rocket" (tên lửa Soyuz) là PHƯƠNG TIỆN chở người bay vào vũ trụ — đúng với việc Tito "flew into space aboard" (bay vào vũ trụ trên).',
+ ev:'"Tito flew into space aboard a Russian Soyuz rocket that arrived at the ISS." 👉 "Tito đã bay vào vũ trụ trên tên lửa Soyuz của Nga, cập bến ISS."',
+ no:'<ul><li><span class="hl-red">launcher</span> — là BỆ PHÓNG (thiết bị phóng tên lửa từ mặt đất), không phải phương tiện con người NGỒI TRÊN để bay.</li><li><span class="hl-red">satellite</span> — là VỆ TINH, không chở người, sai hoàn toàn về chức năng.</li><li><span class="hl-red">missile</span> — là tên lửa QUÂN SỰ/đạn đạo, không dùng để chở người du lịch vũ trụ.</li></ul>'}},
+{n:4,lb:'4',s:'A',q:'4. Mark Shuttleworth took <b>(4)</b> aboard the Russian Soyuz.',
+ o:["off","in","on","over"],a:"off",
+ e:{tr:'Dịch: "Mark Shuttleworth đã ___ trên tàu Soyuz của Nga."',
+ op:W('off','prep','đi, rời khỏi')+W('in','prep','trong')+W('on','prep','trên')+W('over','prep','trên, hơn'),
+ ok:'Đáp án đúng là <span class="hl-green">off</span>. Cụm động từ cố định <b>"take off"</b> nghĩa "cất cánh" — đúng ngữ cảnh khi nói về việc bay vào vũ trụ trên tàu Soyuz.',
+ ev:'"Mark Shuttleworth took off aboard the Russian Soyuz on April 25, 2002." 👉 "Mark Shuttleworth đã cất cánh trên tàu Soyuz của Nga vào ngày 25/4/2002."',
+ no:'<ul><li><span class="hl-red">in</span> — "take in" nghĩa "hấp thụ/lừa gạt", sai hoàn toàn ngữ cảnh.</li><li><span class="hl-red">on</span> — không tạo thành cụm động từ cố định với "take" mang nghĩa "cất cánh".</li><li><span class="hl-red">over</span> — "take over" nghĩa "tiếp quản", không liên quan đến việc cất cánh.</li></ul>'}},
+{n:5,lb:'5',s:'A',q:'5. Anousheh Ansari became the fourth space tourist <b>(5)</b>.',
+ o:["overall","thoroughly","general","together"],a:"overall",
+ e:{tr:'Dịch: "Anousheh Ansari trở thành du khách vũ trụ thứ tư ___."',
+ op:W('overall','adv','nói chung')+W('thoroughly','adv','triệt để, kỹ lưỡng')+W('general','adj','chung, tổng quát')+W('together','adv','cùng nhau'),
+ ok:'Đáp án đúng là <span class="hl-green">overall</span>. Từ này đứng cuối câu bổ nghĩa cho toàn bộ mệnh đề với nghĩa "nói chung/tính chung" — phù hợp khi liệt kê thứ tự TỔNG THỂ các du khách vũ trụ (bao gồm cả nam lẫn nữ), không chỉ riêng nữ giới.',
+ ev:'"...became the first female space tourist and the fourth space tourist overall." 👉 "...trở thành nữ du khách vũ trụ đầu tiên và là du khách vũ trụ thứ tư nói chung."',
+ no:'<ul><li><span class="hl-red">thoroughly</span> — nghĩa "kỹ lưỡng, triệt để", không hợp khi nói về thứ tự đếm số.</li><li><span class="hl-red">general</span> — là TÍNH TỪ, không thể đứng một mình cuối câu bổ nghĩa cho động từ theo cách này.</li><li><span class="hl-red">together</span> — nghĩa "cùng nhau", không tạo được ý "tính theo tổng thể" cần thiết ở đây.</li></ul>'}},
+{n:6,lb:'6',s:'A',q:'6. She was also the first person of Iranian descent to make <b>(6)</b> into space.',
+ o:["it","her","way","sense"],a:"it",
+ e:{tr:'Dịch: "Bà cũng là người gốc Iran đầu tiên ___ vào vũ trụ."',
+ op:W('it','pron','đại từ trung tính')+W('her','pron','cô ấy (tân ngữ)')+W('way','n','con đường, cách thức')+W('sense','n','cảm giác, ý nghĩa'),
+ ok:'Đáp án đúng là <span class="hl-green">it</span>. Cụm động từ cố định <b>"make it"</b> nghĩa "thành công đạt được điều gì đó" — "make it into space" nghĩa "đặt chân thành công vào vũ trụ".',
+ ev:'"She was also the first person of Iranian descent to make it into space." 👉 "Bà cũng là người gốc Iran đầu tiên đặt chân vào vũ trụ."',
+ no:'<ul><li><span class="hl-red">her</span> — không tạo thành cụm cố định có nghĩa với "make ___ into space".</li><li><span class="hl-red">way</span> — "make way" nghĩa "nhường đường/dọn đường", không phù hợp ngữ cảnh du hành vũ trụ này.</li><li><span class="hl-red">sense</span> — "make sense" nghĩa "hợp lý, có nghĩa", hoàn toàn khác nghĩa cần diễn đạt.</li></ul>'}},
+{n:7,lb:'7',s:'A',q:'7. These trips are the beginning of <b>(7)</b> could be a lucrative 21st century industry.',
+ o:["what","when","which","how"],a:"what",
+ e:{tr:'Dịch: "Những chuyến đi này là khởi đầu của ___ có thể trở thành một ngành công nghiệp sinh lời trong thế kỷ 21."',
+ op:W('what','pron','cái mà, điều mà')+W('when','conj','khi nào')+W('which','pron','cái nào (đại từ quan hệ)')+W('how','adv','như thế nào'),
+ ok:'Đáp án đúng là <span class="hl-green">what</span>. Cấu trúc <b>"the beginning of what could be..."</b> dùng "what" như một ĐẠI TỪ DANH TỪ HÓA (nominal relative pronoun) nghĩa "cái mà/điều mà" — thay thế cho "the thing that", đúng ngữ pháp và ý nghĩa "khởi đầu của [điều] có thể trở thành...".',
+ ev:'"These trips are the beginning of what could be a lucrative 21st century industry." 👉 "Những chuyến đi này chỉ là khởi đầu của những gì có thể trở thành một ngành công nghiệp sinh lời trong thế kỷ 21."',
+ no:'<ul><li><span class="hl-red">when</span> — là liên từ chỉ THỜI GIAN, không tạo được cụm danh từ sau giới từ "of" ở đây.</li><li><span class="hl-red">which</span> — cần có danh từ đứng trước để "which" làm đại từ quan hệ, nhưng ở đây không có danh từ nào phù hợp đứng trước.</li><li><span class="hl-red">how</span> — chỉ CÁCH THỨC, không tạo nghĩa hợp lý khi đi với "the beginning of ___ could be an industry".</li></ul>'}},
+{n:8,lb:'8',s:'A',q:'8. These companies have <b>(8)</b> millions, believing space tourism is on the verge of taking off.',
+ o:["invested","invented","raised","paid"],a:"invested",
+ e:{tr:'Dịch: "Các công ty này đã ___ hàng triệu đô la, tin rằng ngành du lịch vũ trụ đang trên đà cất cánh."',
+ op:W('invested','v','đã đầu tư')+W('invented','v','đã phát minh')+W('raised','v','đã huy động (vốn)')+W('paid','v','đã trả (tiền)'),
+ ok:'Đáp án đúng là <span class="hl-green">invested</span>. "Invest millions" nghĩa "đầu tư hàng triệu đô la" — đúng ngữ cảnh khi các công ty bỏ vốn để phát triển ngành du lịch vũ trụ với kỳ vọng sinh lời trong tương lai.',
+ ev:'"These companies have invested millions, believing that the space tourism industry is on the verge of taking off." 👉 "Các công ty này đã đầu tư hàng triệu đô la, tin rằng ngành du lịch vũ trụ đang trên đà cất cánh."',
+ no:'<ul><li><span class="hl-red">invented</span> — nghĩa "phát minh ra", không phù hợp khi nói về việc bỏ TIỀN vào một ngành công nghiệp.</li><li><span class="hl-red">raised</span> — "raise money" nghĩa "huy động vốn TỪ người khác", trong khi câu này nói các công ty tự BỎ TIỀN RA (invest), khác chiều hành động.</li><li><span class="hl-red">paid</span> — "pay millions" thường mang nghĩa TRẢ TIỀN cho một khoản chi phí cụ thể, không diễn tả đúng hành động "đầu tư" với kỳ vọng sinh lời dài hạn.</li></ul>'}},
+{n:9,lb:'1',s:'B',q:'9. What is the passage mainly about?',
+ o:["The rise of ecotourism in Costa Rica.","Ecotourism and its positive effects.","The impact of ecotourism on the environment.","How to develop ecotourism."],a:"Ecotourism and its positive effects.",
+ e:{tr:'Dịch: "Bài đọc chủ yếu nói về điều gì?"',
+ op:W('The rise of ecotourism in Costa Rica.','phr','sự trỗi dậy của du lịch sinh thái ở Costa Rica')+W('Ecotourism and its positive effects.','phr','du lịch sinh thái và những tác động tích cực của nó')+W('The impact of ecotourism on the environment.','phr','tác động của du lịch sinh thái lên môi trường')+W('How to develop ecotourism.','phr','cách phát triển du lịch sinh thái'),
+ ok:'Đáp án đúng là <span class="hl-green">Ecotourism and its positive effects.</span> Toàn bài định nghĩa ecotourism, liệt kê đặc điểm/lợi ích của nó, rồi dùng Costa Rica làm VÍ DỤ minh họa — chủ đề bao quát là "du lịch sinh thái VÀ tác động tích cực" chứ không chỉ giới hạn ở Costa Rica hay môi trường.',
+ ev:'Cả bài đọc trình bày định nghĩa, đặc điểm, và ví dụ thành công của ecotourism (Costa Rica) — nhấn mạnh các LỢI ÍCH: bảo tồn, tạo việc làm, "win-win situation".',
+ no:'<ul><li><span class="hl-red">The rise of ecotourism in Costa Rica.</span> — Costa Rica chỉ là VÍ DỤ MINH HỌA ở một đoạn, không phải chủ đề bao quát toàn bài.</li><li><span class="hl-red">The impact of ecotourism on the environment.</span> — chỉ là MỘT KHÍA CẠNH (bảo tồn môi trường), không bao quát cả lợi ích kinh tế/xã hội được nhắc đến.</li><li><span class="hl-red">How to develop ecotourism.</span> — bài đọc KHÔNG hướng dẫn cách phát triển, chỉ mô tả và giải thích nó.</li></ul>'}},
+{n:10,lb:'2',s:'B',q:'10. What is not the purpose of ecotourism?',
+ o:["To conserve the natural environment.","To promote the environmental awareness of visitors.","To attract more tourists to protected natural areas.","To provide financial benefits for local communities."],a:"To attract more tourists to protected natural areas.",
+ e:{tr:'Dịch: "Điều gì KHÔNG PHẢI là mục đích của du lịch sinh thái?"',
+ op:W('To conserve the natural environment.','phr','bảo tồn môi trường tự nhiên')+W('To promote the environmental awareness of visitors.','phr','nâng cao nhận thức môi trường của du khách')+W('To attract more tourists to protected natural areas.','phr','thu hút thêm du khách đến khu bảo tồn')+W('To provide financial benefits for local communities.','phr','mang lại lợi ích tài chính cho cộng đồng địa phương'),
+ ok:'Đáp án đúng là <span class="hl-green">To attract more tourists to protected natural areas.</span> Bài đọc không hề nhắc đến mục đích "thu hút NHIỀU du khách hơn" — ngược lại, ecotourism nhấn mạnh phát triển CÓ GIỚI HẠN (development is limited) để bảo vệ khu vực, không phải tối đa hóa lượng khách.',
+ ev:'"It means travel to natural, often far away, places. These are often protected areas where development is limited." 👉 Mục tiêu là BẢO VỆ, không phải thu hút đông đảo du khách.',
+ no:'<ul><li><span class="hl-red">To conserve the natural environment.</span> — ĐÚNG là mục đích, khớp với "helping to preserve the environment" và các đặc điểm được liệt kê.</li><li><span class="hl-red">To promote the environmental awareness of visitors.</span> — ĐÚNG là mục đích, khớp trực tiếp với "It builds environmental awareness".</li><li><span class="hl-red">To provide financial benefits for local communities.</span> — ĐÚNG là mục đích, khớp với "It creates financial opportunities and jobs for the local people".</li></ul>'}},
+{n:11,lb:'3',s:'B',q:'11. Which of the following statements is not true about ecotourism?',
+ o:["It first came onto the scene in the early 1990s.","It can mean travel to far off places of great natural beauty.","It contributes to conservation of the natural resources.","It is big business, generating millions of dollars annually."],a:"It is big business, generating millions of dollars annually.",
+ e:{tr:'Dịch: "Câu nào sau đây KHÔNG ĐÚNG về du lịch sinh thái?"',
+ op:W('It first came onto the scene in the early 1990s.','phr','nó bắt đầu xuất hiện vào đầu những năm 1990')+W('It can mean travel to far off places of great natural beauty.','phr','nó có thể là đi đến những nơi xa có vẻ đẹp tự nhiên')+W('It contributes to conservation of the natural resources.','phr','nó góp phần bảo tồn tài nguyên thiên nhiên')+W('It is big business, generating millions of dollars annually.','phr','nó là ngành kinh doanh lớn, tạo ra hàng triệu đô la mỗi năm'),
+ ok:'Đáp án đúng là <span class="hl-green">It is big business, generating millions of dollars annually.</span> Bài đọc nói ecotourism là ngành công nghiệp trị giá "multi-billion dollar" (HÀNG TỶ đô la), không phải chỉ "millions" (hàng triệu) — câu này ĐÁNH GIÁ THẤP quy mô thực tế được nêu trong bài, nên KHÔNG chính xác.',
+ ev:'"It is now a multi-billion dollar industry." 👉 "Hiện nay nó đã trở thành một ngành công nghiệp trị giá hàng TỶ đô la" — không phải chỉ "millions" như câu hỏi nêu.',
+ no:'<ul><li><span class="hl-red">It first came onto the scene in the early 1990s.</span> — ĐÚNG, khớp với "Ecotourism was not common before the 1990s".</li><li><span class="hl-red">It can mean travel to far off places of great natural beauty.</span> — ĐÚNG, khớp với "travel to natural, often far away, places".</li><li><span class="hl-red">It contributes to conservation of the natural resources.</span> — ĐÚNG, khớp với các đặc điểm bảo tồn được liệt kê trong bài.</li></ul>'}},
+{n:12,lb:'4',s:'B',q:'12. Which of the following statements is not true about Costa Rica?',
+ o:["Costa Rica was very successful in embracing ecotourism.","Costa Rica experienced the world's highest deforestation rate.","Costa Rica is a small country with a population of 4 million.","Costa Rica is known worldwide as a top spot for ecological tourism."],a:"Costa Rica experienced the world's highest deforestation rate.",
+ e:{tr:'Dịch: "Câu nào sau đây KHÔNG ĐÚNG về Costa Rica?"',
+ op:W('Costa Rica was very successful in embracing ecotourism.','phr','Costa Rica đã rất thành công khi áp dụng du lịch sinh thái')+W("Costa Rica experienced the world's highest deforestation rate.",'phr','Costa Rica từng có tỷ lệ phá rừng cao nhất thế giới')+W('Costa Rica is a small country with a population of 4 million.','phr','Costa Rica là quốc gia nhỏ với 4 triệu dân')+W('Costa Rica is known worldwide as a top spot for ecological tourism.','phr','Costa Rica nổi tiếng toàn cầu là điểm du lịch sinh thái hàng đầu'),
+ ok:'Đáp án đúng là <span class="hl-green">Costa Rica experienced the world\'s highest deforestation rate.</span> Bài đọc chỉ nói Costa Rica có tỷ lệ phá rừng cao nhất ở LATIN AMERICA (khu vực), KHÔNG PHẢI cao nhất THẾ GIỚI — câu này đã phóng đại phạm vi so với thông tin gốc.',
+ ev:'"Costa Rica once had the highest rate of deforestation in Latin America." 👉 "Costa Rica từng có tỷ lệ phá rừng cao nhất ở Mỹ Latinh" (không phải "thế giới").',
+ no:'<ul><li><span class="hl-red">Costa Rica was very successful in embracing ecotourism.</span> — ĐÚNG, khớp với "Costa Rica was one of the first success stories".</li><li><span class="hl-red">Costa Rica is a small country with a population of 4 million.</span> — ĐÚNG, khớp với "This small country of four million people".</li><li><span class="hl-red">Costa Rica is known worldwide as a top spot for ecological tourism.</span> — ĐÚNG, khớp với "Costa Rica is now the world\'s top ecotourism destination".</li></ul>'}},
+{n:13,lb:'5',s:'B',q:'13. What is the meaning of "a win-win situation"?',
+ o:["A situation in which everyone benefits.","A situation in which there is no chance of success.","A situation in which something unpleasant could happen.","A situation in which people achieve success after a lot of difficulties."],a:"A situation in which everyone benefits.",
+ e:{tr:'Dịch: "\'A win-win situation\' (tình huống đôi bên cùng có lợi) có nghĩa là gì?"',
+ op:W('A situation in which everyone benefits.','phr','tình huống mà mọi người đều được lợi')+W('A situation in which there is no chance of success.','phr','tình huống không có cơ hội thành công')+W('A situation in which something unpleasant could happen.','phr','tình huống mà điều khó chịu có thể xảy ra')+W('A situation in which people achieve success after a lot of difficulties.','phr','tình huống người ta thành công sau nhiều khó khăn'),
+ ok:'Đáp án đúng là <span class="hl-green">A situation in which everyone benefits.</span> "Win-win" nghĩa đen là "thắng-thắng" (cả hai bên đều thắng) — bài đọc giải thích ngay sau đó: "It is good for both the tourists and the countries they visit" (tốt cho CẢ HAI bên).',
+ ev:'"Ecotourism is basically a win-win situation. It is good for both the tourists and the countries they visit." 👉 "...là một tình huống đôi bên cùng có lợi. Nó tốt cho cả du khách và những quốc gia mà họ ghé thăm."',
+ no:'<ul><li><span class="hl-red">A situation in which there is no chance of success.</span> — TRÁI NGƯỢC hoàn toàn nghĩa "win-win" (chiến thắng), không phải "không có cơ hội".</li><li><span class="hl-red">A situation in which something unpleasant could happen.</span> — "win-win" mang nghĩa TÍCH CỰC, không liên quan đến điều khó chịu/tiêu cực.</li><li><span class="hl-red">A situation in which people achieve success after a lot of difficulties.</span> — "win-win" không nhấn mạnh yếu tố "khó khăn" trước khi thành công, mà nhấn mạnh CẢ HAI BÊN cùng có lợi ngay từ đầu.</li></ul>'}},
+{n:14,lb:'6',s:'B',q:'14. According to the passage, ecotourism in Costa Rica ______.',
+ o:["has helped diminish deforestation in the country","prevents farmland from being converted to other uses","contributed to land development of the country","will encourage ecotourists to come to the country"],a:"has helped diminish deforestation in the country",
+ e:{tr:'Dịch: "Theo bài đọc, du lịch sinh thái ở Costa Rica ______."',
+ op:W('has helped diminish deforestation in the country','phr','đã giúp giảm nạn phá rừng trong nước')+W('prevents farmland from being converted to other uses','phr','ngăn đất nông nghiệp bị chuyển đổi mục đích khác')+W('contributed to land development of the country','phr','góp phần vào việc phát triển đất đai của đất nước')+W('will encourage ecotourists to come to the country','phr','sẽ khuyến khích khách du lịch sinh thái đến đất nước'),
+ ok:'Đáp án đúng là <span class="hl-green">has helped diminish deforestation in the country</span>. Bài đọc nói rõ "there has been a major reduction in deforestation" (đã có sự giảm mạnh về nạn phá rừng) kể từ khi có du lịch sinh thái — khớp với "diminish deforestation" (làm giảm nạn phá rừng).',
+ ev:'"However, since ecotourism, there has been a major reduction in deforestation." 👉 "Tuy nhiên, kể từ khi có du lịch sinh thái, đã có sự giảm mạnh về nạn phá rừng."',
+ no:'<ul><li><span class="hl-red">prevents farmland from being converted...</span> — bài đọc KHÔNG nhắc đến "đất nông nghiệp", chỉ nói về việc BẢO VỆ đất khỏi PHÁT TRIỂN nói chung.</li><li><span class="hl-red">contributed to land development of the country</span> — TRÁI NGƯỢC: ecotourism giúp BẢO VỆ đất KHỎI phát triển (protected from development), không phải THÚC ĐẨY phát triển.</li><li><span class="hl-red">will encourage ecotourists to come to the country</span> — đây là dự đoán TƯƠNG LAI, trong khi bài đọc mô tả KẾT QUẢ ĐÃ XẢY RA (has been a reduction) ở HIỆN TẠI HOÀN THÀNH.</li></ul>'}},
+{n:15,lb:'7',s:'B',q:'15. It can be inferred from the passage that ecotourism ______.',
+ o:["can earn a lot of money and do a lot of harm to nature","aims to boost visits to natural protected areas","offers tourists an enjoyable holiday while conserving the environment","is more damaging than helpful to wildlife"],a:"offers tourists an enjoyable holiday while conserving the environment",
+ e:{tr:'Dịch: "Có thể suy luận từ bài đọc rằng du lịch sinh thái ______."',
+ op:W('can earn a lot of money and do a lot of harm to nature','phr','có thể kiếm nhiều tiền và gây hại lớn cho thiên nhiên')+W('aims to boost visits to natural protected areas','phr','nhằm tăng lượt ghé thăm các khu bảo tồn tự nhiên')+W('offers tourists an enjoyable holiday while conserving the environment','phr','mang đến kỳ nghỉ thú vị cho du khách trong khi bảo tồn môi trường')+W('is more damaging than helpful to wildlife','phr','gây hại nhiều hơn là có ích cho động vật hoang dã'),
+ ok:'Đáp án đúng là <span class="hl-green">offers tourists an enjoyable holiday while conserving the environment</span>. Đây chính là bản chất "win-win situation" được nhấn mạnh xuyên suốt bài — du khách có kỳ nghỉ "unforgettable and educational" TRONG KHI môi trường vẫn được bảo tồn.',
+ ev:'"Ecotourism provides visitors with a special vacation too. These vacations are unforgettable and educational. Ecotourism is basically a win-win situation." 👉 Vừa là kỳ nghỉ đặc biệt, vừa bảo tồn môi trường — đúng bản chất "đôi bên cùng có lợi".',
+ no:'<ul><li><span class="hl-red">can earn a lot of money and do a lot of harm to nature</span> — TRÁI NGƯỢC: bài đọc nhấn mạnh ecotourism GIÚP BẢO TỒN, không gây hại cho thiên nhiên.</li><li><span class="hl-red">aims to boost visits to natural protected areas</span> — không phải mục tiêu chính; bài đọc nhấn mạnh PHÁT TRIỂN CÓ GIỚI HẠN (development is limited), không phải tăng tối đa lượt khách.</li><li><span class="hl-red">is more damaging than helpful to wildlife</span> — TRÁI NGƯỢC hoàn toàn với thông điệp "win-win" và các lợi ích bảo tồn được nêu xuyên suốt bài.</li></ul>'}}
+];
+
+var TOTAL=QD.length,PICK={};
+function render(){
+  ["A","B"].forEach(function(s){
+    var host=document.getElementById('sec'+s);host.innerHTML='';
+    QD.filter(function(q){return q.s===s;}).forEach(function(q){
+      var h='<div class="qh"><span class="num">'+q.lb+'</span>'+q.q+'</div>';
+      shuffleOpts(q.o).forEach(function(v){h+='<button class="opt" data-n="'+q.n+'" data-v="'+esc(v)+'" onclick="pick('+q.n+',this)">'+esc(v)+'</button>';});
+      h+='<div class="exp" id="e_'+q.n+'"></div>';
+      var d=document.createElement('div');d.className='qblock';d.innerHTML=h;host.appendChild(d);
+    });
+  });
+  prog();
+}
+function shuffleOpts(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t;}return a;}
+function esc(s){return s.replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');}
+function pick(n,btn){
+  if(PICK[n])return;
+  PICK[n]=btn.getAttribute('data-v');
+  var q=QD.filter(function(x){return x.n===n;})[0];
+  var bs=document.querySelectorAll('.opt[data-n="'+n+'"]');
+  for(var i=0;i<bs.length;i++)bs[i].disabled=true;
+  if(PICK[n]===q.a){btn.classList.add('correct');ding();}
+  else{btn.classList.add('wrong');buzz();for(var j=0;j<bs.length;j++){if(bs[j].getAttribute('data-v')===q.a)bs[j].classList.add('correct');}}
+  showExp(n,q);prog();
+}
+function showExp(n,q){
+  var ok=PICK[n]===q.a,b=document.getElementById('e_'+n);
+  b.innerHTML='<div class="badge'+(ok?'':' bad')+'">'+(ok?'✅ CHÍNH XÁC!':'❌ CHƯA ĐÚNG – Đáp án đúng: '+q.a)+'</div>'
+   +'<div class="step"><span class="slab">① Dịch:</span> '+q.e.tr+'</div>'
+   +'<div class="step"><span class="slab">② Các phương án &amp; nghĩa:</span>'+q.e.op+'</div>'
+   +'<div class="step"><span class="slab">③ Vì sao đúng:</span> '+q.e.ok+(q.e.ev?'<div class="quote">🔍 <b>Dẫn chứng:</b> '+q.e.ev+'</div>':'')+'</div>'
+   +(q.e.no?'<div class="step"><span class="slab">④ Vì sao các phương án khác sai:</span> '+q.e.no+'</div>':'');
+  b.classList.add('on');
+}
+function prog(){var d=Object.keys(PICK).length,c=0;for(var k in PICK){var q=QD.filter(function(x){return x.n==k;})[0];if(PICK[k]===q.a)c++;}
+  document.getElementById('cDone').textContent=d;document.getElementById('cCorrect').textContent=c;
+  document.getElementById('barFill').style.width=(d/TOTAL*100)+'%';}
+function askName(){document.getElementById('nameErr').classList.remove('show');document.getElementById('nameModal').classList.add('on');}
+function okName(){
+  var v=document.getElementById('nameInput').value.trim();
+  if(!v){document.getElementById('nameErr').classList.add('show');return;}
+  document.getElementById('nameModal').classList.remove('on');grade(v);
+}
+function grade(sname){
+  QD.forEach(function(q){
+    if(!PICK[q.n]){
+      PICK[q.n]='__';
+      var bs=document.querySelectorAll('.opt[data-n="'+q.n+'"]');
+      for(var i=0;i<bs.length;i++){bs[i].disabled=true;if(bs[i].getAttribute('data-v')===q.a)bs[i].classList.add('correct');}
+      showExp(q.n,q);
+    }
+  });
+  prog();
+  var cor=QD.filter(function(q){return PICK[q.n]===q.a;}).length;
+  var pct=cor/TOTAL,d10=(cor/TOTAL*10).toFixed(2),em,ti,cm,gif;
+  if(pct===1){em='🏆';ti='XUẤT SẮC — NGÔI SAO CỰC QUANG!';cm='Tuyệt đối hoàn hảo '+cor+'/'+TOTAL+'! MS Chí Nên rất tự hào về em! 🌌';gif='https://media.giphy.com/media/3ohhwytHcusSCXXOUg/giphy.gif';}
+  else if(pct>=.6){em='👏';ti='LÀM TỐT LẮM!';cm='Em đạt '+cor+'/'+TOTAL+' – đã vượt qua rồi! Đọc kỹ phần giải thích những câu sai nhé. 🌠';gif='https://media.giphy.com/media/l4pTfx2qLszoacZRS/giphy.gif';}
+  else{em='😭';ti='CỐ LÊN NHÉ!';cm='Em mới đạt '+cor+'/'+TOTAL+'. Đừng buồn nha! Đọc kỹ đoạn văn rồi làm lại — MS Chí Nên tin em sẽ tiến bộ nhanh. 🌙';gif='https://media.giphy.com/media/d2lcHJTG5Tscg/giphy.gif';}
+  document.getElementById('mEmoji').textContent=em;
+  document.getElementById('mTitle').textContent=ti;
+  document.getElementById('mName').textContent='🎓 Học sinh: '+sname;
+  var g=document.getElementById('mGif');g.style.display='';g.src=gif;
+  document.getElementById('mScore').textContent=cor+'/'+TOTAL;
+  document.getElementById('mScore10').textContent='Điểm hệ 10: '+d10+' / 10';
+  document.getElementById('mComment').textContent=cm;
+  document.getElementById('scoreModal').classList.add('on');
+}
+render();
+</script>
+<script>/*devclean*/(function(){
+var ZW=/[\u00AD\u034F\u061C\u115F\u1160\u17B4\u17B5\u180E\u200B-\u200F\u202A-\u202E\u2060-\u206F\uFEFF]/g,
+    SP=/[\u00A0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\t]/g,
+    AP=/[\u2018\u2019\u201A\u201B\u2032\u2035\u02B9\u02BB\u02BC\u02BD\u02C8\u0060\u00B4\uFF07]/g,
+    DQ=/[\u201C\u201D\u201E\u201F\u2033\u2036\u00AB\u00BB\uFF02]/g,
+    DS=/[\u2010\u2011\u2012\u2212\uFE63\uFF0D]/g;
+function clean(v){if(!v)return v;var s=String(v);try{s=s.normalize('NFKC')}catch(e){}
+  return s.replace(ZW,'').replace(SP,' ').replace(AP,"'").replace(DQ,'"').replace(DS,'-').replace(/[\u0300-\u036f]/g,'').replace(/ {2,}/g,' ');}
+window.__devclean=clean;
+function fix(skip){var L=document.querySelectorAll('input:not([type]),input[type=text],input[type=search],textarea');
+  for(var i=0;i<L.length;i++){var el=L[i];if(el===skip||el.readOnly||el.disabled)continue;var v=el.value,c=clean(v);if(c!==v)el.value=c;}}
+['pointerdown','mousedown','touchstart','click','change','focusout'].forEach(function(t){document.addEventListener(t,function(e){fix(t==='focusout'||t==='change'?null:e.target)},true)});
+document.addEventListener('keydown',function(e){if(e.key==='Enter'||e.keyCode===13)fix(null)},true);
+})();</script>
+<style id="ms-chi-nen-unlock-style">
+#passwordModal, #password-modal, #pwModal, #pw-modal, #pw-overlay,
+#lockModal, #passModal, #authModal, #auth-modal, #lockOverlay,
+#start-overlay, #intro-overlay, #start-screen,
+.password-modal, .lock-modal, .lock-overlay {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    z-index: -9999 !important;
+}
+</style>
+<script>
+// Remove password lock completely - direct quiz access
+(function() {
+    var initDone = false;
+    var renderCheckDone = false;
+
+    function hideEl(el, hard) {
+        if (!el) return;
+        if (hard) {
+            el.style.setProperty('display', 'none', 'important');
+            el.style.setProperty('visibility', 'hidden', 'important');
+            el.style.setProperty('opacity', '0', 'important');
+            el.style.setProperty('pointer-events', 'none', 'important');
+            el.style.setProperty('z-index', '-9999', 'important');
+        } else {
+            el.style.display = 'none';
+        }
+        el.classList.remove('active', 'show', 'open', 'visible', 'flex');
+    }
+
+    function hasRenderedQuiz() {
+        var containers = document.querySelectorAll(
+            '#quiz-container, #quizContainer, #questions-container, #questionPane, #quiz, #questions, #quiz-body, #questions-wrapper, #quiz-list, #quizList, #exercise-container, #app-container .split-container'
+        );
+        for (var i = 0; i < containers.length; i++) {
+            if (containers[i].querySelectorAll('button, input, select, textarea, .question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .question, .option-btn, .opt-btn, .ans-btn').length > 0) {
+                return true;
+            }
+        }
+        if (document.querySelectorAll('.question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .option-btn, .opt-btn, .ans-btn, .choice-btn').length > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    function ensureQuizRendered() {
+        if (renderCheckDone) return;
+        renderCheckDone = true;
+        if (hasRenderedQuiz()) return;
+
+        if (!hasRenderedQuiz() && typeof buildQuiz === 'function') { try { buildQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof initQuiz === 'function') { try { initQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderApp === 'function') { try { renderApp(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuiz === 'function') { try { renderQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuestions === 'function') { try { renderQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAllQuestions === 'function') { try { renderAllQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAll === 'function') { try { renderAll(); } catch(e){} }
+    }
+
+    function unlockNow() {
+        var pwIds = [
+            'passwordModal', 'password-modal', 'pwModal', 'pw-modal', 'pw-overlay',
+            'lockModal', 'passModal', 'authModal', 'auth-modal', 'lockOverlay',
+            'start-overlay', 'intro-overlay', 'start-screen'
+        ];
+        pwIds.forEach(function(id) {
+            hideEl(document.getElementById(id), true);
+        });
+
+        var modalEls = document.querySelectorAll('.password-modal, .lock-modal, .lock-overlay, #lockOverlay, #auth-modal');
+        modalEls.forEach(function(el) {
+            if (el.id !== 'resultModal' && el.id !== 'result-modal' && el.id !== 'scoreModal') {
+                hideEl(el, true);
+            }
+        });
+
+        ['nameModal', 'name-modal', 'nameInputModal'].forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) hideEl(el, false);
+        });
+
+        var qo = document.getElementById('quiz-overlay');
+        if (qo && (typeof isStarted === 'undefined' || !isStarted)) {
+            qo.style.display = 'none';
+        }
+
+        var mainIds = [
+            'mainContent', 'main-content', 'mainHeader', 'main-header',
+            'app-container', 'app', 'quizApp', 'quiz-wrapper', 'quizContainer', 'quiz-container', 'reading-content'
+        ];
+        mainIds.forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) {
+                el.classList.remove('hidden', 'blur', 'blurred', 'locked');
+                if (el.style.display === 'none') {
+                    el.style.removeProperty('display');
+                }
+                if (window.getComputedStyle(el).display === 'none') {
+                    var hasPane = el.querySelector('.pane, .left-pane, .right-pane, .split-container, .left-panel, .right-panel');
+                    if (id === 'main-content' || id.toLowerCase().includes('header') || el.classList.contains('main-container') || hasPane) {
+                        el.style.setProperty('display', 'flex', 'important');
+                    } else {
+                        el.style.setProperty('display', 'block', 'important');
+                    }
+                }
+            }
+        });
+
+        var qs = document.getElementById('quiz-screen');
+        if (qs) {
+            qs.classList.remove('hidden');
+            if (qs.classList.contains('flex-col')) {
+                qs.classList.add('flex');
+                qs.style.display = 'flex';
+            } else {
+                qs.style.display = 'block';
+            }
+        }
+
+        if (!initDone) {
+            initDone = true;
+
+            if (document.getElementById('start-overlay') && typeof startGame === 'function') {
+                var sn = document.getElementById('student-name') || document.getElementById('studentName');
+                if (sn && !sn.value.trim()) sn.value = 'Học sinh';
+            }
+            if (document.getElementById('name-modal') && typeof startQuiz === 'function') {
+                var sn2 = document.getElementById('student-name');
+                if (sn2 && !sn2.value.trim()) sn2.value = 'Học sinh';
+            }
+
+            if (typeof startQuiz === 'function' && (typeof isStarted === 'undefined' || !isStarted)) { try { startQuiz(); } catch(e){} }
+            if (typeof startGame === 'function') { try { startGame(); } catch(e){} }
+            if (typeof startTest === 'function') { try { startTest(); } catch(e){} }
+            if (typeof startApp === 'function') { try { startApp(); } catch(e){} }
+            if (typeof buildStarfield === 'function') { try { buildStarfield(); } catch(e){} }
+            if (typeof spawnFloats === 'function') { try { spawnFloats(); } catch(e){} }
+            if (typeof spawnFloaters === 'function') { try { spawnFloaters(); } catch(e){} }
+            if (typeof createFloatingBubbles === 'function') { try { createFloatingBubbles(); } catch(e){} }
+            if (typeof initAudio === 'function') { try { initAudio(); } catch(e){} }
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', unlockNow);
+    } else {
+        unlockNow();
+    }
+    if (document.readyState === 'complete') {
+        setTimeout(ensureQuizRendered, 150);
+    } else {
+        window.addEventListener('load', function() {
+            setTimeout(unlockNow, 20);
+            setTimeout(ensureQuizRendered, 150);
+            setTimeout(unlockNow, 300);
+            setTimeout(unlockNow, 700);
+        });
+    }
+    setTimeout(unlockNow, 50);
+    setTimeout(unlockNow, 200);
+    setTimeout(unlockNow, 600);
+    setTimeout(unlockNow, 1100);
+})();
+</script>
+</body>
+</html>

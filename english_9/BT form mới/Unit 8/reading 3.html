@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 8: Tourism — Exercise 3 (Visit Malaysia) | MS Chí Nên</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Mulish:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* THEME: CORAL REEF ADVENTURE — rạn san hô, cá nhiệt đới */
+:root{--sea1:#00d1c1;--sea2:#00a3b0;--sea3:#036c8a;--sea4:#013f5c;
+  --sand:#fffaf0;--ink:#0d3b45;--gold:#ffb703;--coral:#ff6b5b;--purple:#8e44ad;--leaf:#0f9b5e;
+  --correct:#1fa565;--correctbg:#d6f6e3;--wrong:#e6455c;--wrongbg:#ffe0e4;}
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:18px}
+body{font-family:'Mulish',sans-serif;color:var(--ink);min-height:100vh;position:relative;overflow-x:hidden;padding-bottom:60px;
+  background:linear-gradient(180deg,#bff0ea 0%,var(--sea1) 24%,var(--sea2) 52%,var(--sea3) 78%,var(--sea4) 100%)}
+.ray{position:fixed;top:0;left:50%;width:220%;height:60%;z-index:0;transform:translateX(-50%);opacity:.25;
+  background:repeating-conic-gradient(from 0deg at 50% 0%,#fff 0deg 4deg,transparent 4deg 14deg);animation:rayMove 9s linear infinite}
+@keyframes rayMove{0%{opacity:.15}50%{opacity:.32}100%{opacity:.15}}
+.fish{position:fixed;z-index:1;font-size:1.6rem;opacity:.92;animation:swim linear infinite}
+@keyframes swim{from{transform:translateX(-12vw) translateY(0)}to{transform:translateX(112vw) translateY(-10px)}}
+.turtle{position:fixed;bottom:22%;z-index:1;font-size:2.2rem;animation:swimSlow 20s linear infinite}
+@keyframes swimSlow{from{transform:translateX(-12vw)}to{transform:translateX(112vw)}}
+.coral{position:fixed;bottom:0;z-index:1;font-size:4.2rem;filter:drop-shadow(0 4px 6px rgba(0,0,0,.2))}
+.coral.l{left:-1%}
+.coral.r{right:-1%}
+.starfish{position:fixed;bottom:3%;z-index:1;font-size:1.6rem;animation:spin 8s linear infinite}
+@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+.crab2{position:fixed;bottom:6px;z-index:2;font-size:1.6rem;animation:crabWalk 13s linear infinite}
+@keyframes crabWalk{0%{transform:translateX(-8vw) scaleX(1)}48%{transform:translateX(104vw) scaleX(1)}50%{transform:translateX(104vw) scaleX(-1)}98%{transform:translateX(-8vw) scaleX(-1)}100%{transform:translateX(-8vw) scaleX(1)}}
+.squid{position:fixed;z-index:1;font-size:1.7rem;opacity:.9;animation:squidJet linear infinite}
+@keyframes squidJet{0%{transform:translate(-12vw,0) rotate(-6deg)}50%{transform:translate(50vw,-16px) rotate(6deg)}100%{transform:translate(112vw,0) rotate(-6deg)}}
+.octo{position:fixed;bottom:10%;z-index:1;font-size:2rem;animation:sway2 4.5s ease-in-out infinite}
+@keyframes sway2{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-10px) rotate(5deg)}}
+.bubble{position:fixed;bottom:2%;border-radius:50%;background:rgba(255,255,255,.55);z-index:1;animation:bubbleUp linear infinite}
+@keyframes bubbleUp{0%{transform:translateY(0);opacity:.75}90%{opacity:.5}100%{transform:translateY(-48vh);opacity:0}}
+.wave{position:fixed;bottom:0;left:0;width:100%;height:56px;z-index:1;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 60'%3E%3Cpath d='M0 32 Q50 4 100 32 T200 32 V60 H0 Z' fill='%2300a3b0'/%3E%3C/svg%3E");
+  background-repeat:repeat-x;background-size:200px 56px;animation:waveScroll 7s linear infinite}
+.wave2{position:fixed;bottom:-6px;left:0;width:100%;height:50px;z-index:1;opacity:.85;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 60'%3E%3Cpath d='M0 34 Q50 8 100 34 T200 34 V60 H0 Z' fill='%23036c8a'/%3E%3C/svg%3E");
+  background-repeat:repeat-x;background-size:160px 50px;animation:waveScroll 4.5s linear infinite reverse}
+@keyframes waveScroll{from{background-position-x:0}to{background-position-x:-200px}}
+.wrap{position:relative;z-index:2;max-width:1420px;margin:0 auto;padding:16px 18px 40px}
+header{background:var(--sand);border-radius:22px;padding:17px 26px;text-align:center;margin-bottom:14px;
+  box-shadow:0 12px 30px rgba(0,0,0,.2);border:3px dashed var(--coral)}
+header h1{font-family:'Fredoka';font-weight:700;font-size:2rem;color:var(--sea4)}
+header .teacher{font-weight:700;color:var(--sea3);margin-top:4px}
+header .promo{font-weight:800;color:#c0392b;margin-top:6px;font-size:.9rem}
+.note{max-width:1050px;margin:0 auto 16px;background:var(--sand);border:2px dashed var(--gold);border-radius:16px;
+  padding:11px 18px;font-weight:700;color:#7a4a1a;text-align:center;font-size:.9rem;line-height:1.7}
+.scorebar{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:8px}
+.chip{background:var(--sand);border-radius:12px;padding:7px 16px;font-family:'Fredoka';font-weight:600;font-size:.95rem;color:var(--sea4);box-shadow:0 4px 12px rgba(0,0,0,.16)}
+.chip b{color:var(--coral);font-weight:900}
+.bar{height:11px;background:var(--sand);border-radius:8px;overflow:hidden;max-width:480px;margin:0 auto 18px;box-shadow:0 4px 12px rgba(0,0,0,.16)}
+.bar span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--coral),var(--gold),var(--sea1));transition:width .4s}
+.section{background:var(--sand);border-radius:20px;box-shadow:0 10px 28px rgba(0,0,0,.2);margin-bottom:22px;overflow:hidden;border:1px solid rgba(0,0,0,.06)}
+.sec-head{padding:14px 22px;font-family:'Fredoka';font-weight:600;font-size:1.2rem;color:var(--sea4);background:linear-gradient(90deg,#d7f7f3,#ffe3cf)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.lp,.rp{padding:18px 22px;max-height:700px;overflow-y:auto}
+.lp{border-right:2px dashed rgba(0,0,0,.12)}
+.lp::-webkit-scrollbar,.rp::-webkit-scrollbar{width:8px}
+.lp::-webkit-scrollbar-thumb,.rp::-webkit-scrollbar-thumb{background:var(--sea3);border-radius:8px}
+.pblock{background:#fff;border:2px solid rgba(0,0,0,.08);border-left:5px solid var(--sea3);border-radius:14px;padding:13px 16px;margin-bottom:13px}
+.pblock p{font-size:1rem;line-height:1.9}
+.tbtn{margin-top:8px;cursor:pointer;font-family:'Fredoka';font-weight:600;border:none;color:#fff;background:linear-gradient(90deg,var(--gold),var(--coral));
+  padding:6px 16px;border-radius:20px;font-size:.85rem}
+.trans{display:none;margin-top:9px;padding:11px 14px;background:#e6fbf8;border-left:4px solid var(--sea3);border-radius:0 10px 10px 0;font-size:.94rem;line-height:1.8}
+.trans.show{display:block;animation:fade .3s}
+@keyframes fade{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.trans b{color:var(--coral)}
+.gloss{background:#fff8e8;border:2px dashed var(--gold);border-radius:14px;padding:12px 15px;margin-top:6px}
+.gloss .gt{font-family:'Fredoka';font-weight:600;color:#7a4a1a;margin-bottom:8px}
+table.gtb{width:100%;border-collapse:collapse;font-size:.86rem}
+table.gtb th{background:var(--sea3);color:#fff;padding:7px 9px;text-align:left;font-family:'Fredoka';font-size:.76rem}
+table.gtb td{padding:6px 9px;border-bottom:1px solid rgba(0,0,0,.08)}
+table.gtb td:first-child{font-weight:700;color:var(--coral)}
+table.gtb td:nth-child(2){color:#7a4a1a;font-style:italic;font-size:.8rem;white-space:nowrap}
+.qh{font-weight:700;font-size:.96rem;margin-bottom:10px;line-height:1.6}
+.qh .num{display:inline-block;width:30px;height:30px;line-height:30px;text-align:center;border-radius:50%;
+  background:linear-gradient(135deg,var(--coral),var(--purple));color:#fff;font-family:'Fredoka';margin-right:7px;font-size:.9rem}
+.qblock{background:#fff;border:2px solid rgba(0,0,0,.08);border-radius:14px;padding:14px 16px;margin-bottom:14px}
+.opt{display:block;width:100%;text-align:left;cursor:pointer;margin:7px 0;padding:11px 14px;border:2px solid rgba(0,0,0,.14);
+  border-radius:12px;background:#fff;font-weight:700;font-size:.94rem;color:var(--ink);transition:.15s}
+.opt:hover:not(:disabled){border-color:var(--sea3);background:#e6fbf8;transform:translateX(3px)}
+.opt:disabled{cursor:default}
+.opt.correct{background:var(--correctbg);border-color:var(--correct);color:#0d5c33}
+.opt.wrong{background:var(--wrongbg);border-color:var(--wrong);color:#8a1620;animation:shk .4s}
+@keyframes shk{10%,90%{transform:translateX(-2px)}20%,80%{transform:translateX(4px)}30%,50%,70%{transform:translateX(-6px)}40%,60%{transform:translateX(6px)}}
+.exp{display:none;margin-top:11px;background:#fff2ea;border:2px solid var(--coral);border-radius:12px;padding:12px 15px;font-size:.88rem;line-height:1.8}
+.exp.on{display:block;animation:fade .3s}
+.exp .badge{display:inline-block;background:var(--correct);color:#fff;font-family:'Fredoka';border-radius:10px;padding:2px 12px;margin-bottom:7px;font-size:.82rem}
+.exp .badge.bad{background:var(--wrong)}
+.exp .step{margin-top:7px}
+.exp .slab{font-family:'Fredoka';font-weight:600;color:var(--sea3);font-size:.86rem}
+.exp .obox{background:#fff;border-radius:8px;padding:6px 10px;margin:5px 0;display:flex;flex-wrap:wrap;gap:4px 8px}
+.exp ul{margin:5px 0 0;padding-left:18px}
+.exp li{margin-bottom:5px}
+.p-word{font-weight:800;color:var(--purple)}
+.p-mean{color:#7a4a1a;font-weight:700}
+.pos{display:inline-block;font-weight:800;font-size:.64rem;padding:1px 7px;border-radius:8px;text-transform:uppercase;margin-right:2px}
+.pos-n{background:#d0ebff;color:#1c6fb0}
+.pos-v{background:#ffe0d6;color:#c0392b}
+.pos-adj{background:#efd9ff;color:#7a3fc9}
+.pos-adv{background:#c9f2e6;color:#0b8a63}
+.pos-prep{background:#ffdcea;color:#c2255c}
+.pos-phr{background:#dcefc9;color:#4a7a1f}
+.hl-green{color:var(--correct);font-weight:800}
+.hl-red{color:var(--wrong);font-weight:800}
+.quote{background:#e6fbf8;border-left:4px solid var(--sea3);border-radius:0 10px 10px 0;padding:9px 12px;margin-top:7px;font-size:.85rem;line-height:1.75;color:#0d4f3d}
+.quote b{color:var(--coral)}
+.submit-wrap{text-align:center;margin:20px 0}
+.bsub{font-family:'Fredoka';font-weight:600;font-size:1.1rem;color:#fff;border:none;border-radius:28px;padding:14px 32px;cursor:pointer;
+  background:linear-gradient(90deg,var(--coral),var(--purple));box-shadow:0 10px 22px rgba(255,107,91,.42)}
+.ov{display:none;position:fixed;inset:0;z-index:999;background:rgba(1,20,25,.55);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:16px}
+.ov.on{display:flex}
+.mb{background:var(--sand);border-radius:22px;padding:26px 28px;max-width:440px;width:100%;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.4);max-height:92vh;overflow-y:auto;border:3px dashed var(--coral)}
+.mb h2{font-family:'Fredoka';color:var(--coral);font-size:1.3rem;margin-bottom:12px}
+.mb input{width:100%;font-family:inherit;font-size:1rem;font-weight:700;padding:11px 14px;border:2px solid var(--sea3);border-radius:14px;text-align:center;outline:none;margin-bottom:8px}
+.mb .err{color:var(--wrong);font-weight:700;font-size:.85rem;display:none;margin-bottom:8px}
+.mb .err.show{display:block}
+.mb button{cursor:pointer;font-family:'Fredoka';font-weight:600;border:none;color:#fff;border-radius:20px;padding:10px 24px;background:linear-gradient(90deg,var(--sea3),var(--purple));font-size:.98rem;margin-top:4px}
+.mb .close{background:#999}
+.gif{width:160px;margin:11px auto;display:block;border-radius:12px;border:3px solid var(--gold)}
+.rscore{font-family:'Fredoka';font-size:2.3rem;color:var(--coral)}
+.r10{font-family:'Fredoka';font-size:1.15rem;color:var(--sea3)}
+.rcmt{margin:11px 0;padding:11px 14px;background:#fff8e8;border:2px dashed var(--gold);border-radius:12px;font-size:.88rem;line-height:1.7}
+@media(max-width:860px){.split{grid-template-columns:1fr}.lp{border-right:none;border-bottom:2px dashed rgba(0,0,0,.12)}.coral{font-size:2.4rem}}
+</style>
+</head>
+<body>
+<div class="ray"></div>
+<span class="fish" style="top:14%;animation-duration:14s">🐠</span>
+<span class="fish" style="top:22%;animation-duration:19s;animation-delay:-5s">🐟</span>
+<span class="fish" style="top:9%;animation-duration:17s;animation-delay:-9s">🐡</span>
+<span class="fish" style="top:31%;animation-duration:16s;animation-delay:-3s">🐠</span>
+<span class="fish" style="top:26%;animation-duration:21s;animation-delay:-12s">🐟</span>
+<span class="turtle" style="animation-delay:-6s">🐢</span>
+<span class="squid" style="top:12%;animation-duration:18s;animation-delay:-4s">🦑</span>
+<span class="squid" style="top:28%;animation-duration:23s;animation-delay:-10s">🦑</span>
+<span class="octo" style="left:4%;animation-delay:-1s">🐙</span>
+<span class="octo" style="right:5%;animation-delay:-2.5s">🐙</span>
+<div class="coral l">🪸</div><div class="coral r">🪸</div>
+<span class="starfish" style="left:9%;animation-delay:-2s">🐚</span>
+<span class="starfish" style="right:11%;animation-delay:-5s">⭐</span>
+<span class="crab2" style="animation-delay:-7s">🦀</span>
+<span class="crab2" style="animation-delay:-2s">🦀</span>
+<div id="bubbles"></div>
+<div class="wave2"></div><div class="wave"></div>
+
+<div class="wrap">
+<header>
+  <h1>🐠 Unit 8: Tourism — Exercise 3</h1>
+  <div class="teacher">Giáo viên tạo: MS Chí Nên</div>
+  <div class="promo">📞 0936 322 809 — Đăng ký khoá học tiếng Anh lớp 1 → lớp 12, trải nghiệm web giải chi tiết đỉnh cao!</div>
+</header>
+
+<div class="note">🪸 Nhắc nhở có tâm từ MS Chí Nên: cả 2 bài đọc hiểu này (KHÔNG phải điền từ) — hãy đọc kỹ từng đoạn trước khi trả lời, tìm đúng câu/ý chứa thông tin thay vì đoán nhé! Chúc cả lớp lặn sâu vào rạn san hô kiến thức thật vui 🐢</div>
+
+<div class="scorebar">
+  <div class="chip">✅ Đúng: <b id="cCorrect">0</b>/10</div>
+  <div class="chip">📝 Đã làm: <b id="cDone">0</b>/10</div>
+</div>
+<div class="bar"><span id="barFill"></span></div>
+
+<!-- ============== VISIT MALAYSIA ============== -->
+<div class="section">
+  <div class="sec-head">🇲🇾 Visit Malaysia (Câu 1–5)</div>
+  <div class="split">
+    <div class="lp">
+      <div class="pblock"><p>Dreaming of a Southeast Asian adventure? Look no further than Malaysia! This beautiful country offers something for everyone, from bustling cities to beautiful beaches and lush rainforests.<br><br>
+      Planning a trip to Malaysia is easy. Many tourist agencies offer packaged tours, which can take care of everything for you, including flights, a 5-day hotel stay, and even some activities. This is a great option, especially for first-time visitors.</p>
+        <button class="tbtn" onclick="tg('v1',this)">🔊 Xem bản dịch</button>
+        <div class="trans" id="v1">Đang mơ về một chuyến phiêu lưu Đông Nam Á? Đừng tìm đâu xa ngoài Malaysia! Đất nước xinh đẹp này có mọi thứ dành cho tất cả mọi người, từ những thành phố nhộn nhịp đến những bãi biển tuyệt đẹp và rừng nhiệt đới xanh tươi.<br><br>
+        Lên kế hoạch cho chuyến đi tới Malaysia rất dễ dàng. Nhiều công ty du lịch cung cấp các tour trọn gói, lo liệu mọi thứ cho bạn, bao gồm vé máy bay, 5 ngày ở khách sạn, và cả một số hoạt động. Đây là lựa chọn tuyệt vời, đặc biệt cho những người lần đầu đến đây.</div>
+      </div>
+      <div class="pblock"><p>The best time to visit depends on what you want to experience. Peak season (July and August) brings hot, sunny weather, perfect for relaxing on the beach. If you prefer cooler temperatures and fewer crowds, aim for shoulder seasons (April, May, September, and October).</p>
+        <button class="tbtn" onclick="tg('v2',this)">🔊 Xem bản dịch</button>
+        <div class="trans" id="v2">Thời điểm tốt nhất để đi phụ thuộc vào điều bạn muốn trải nghiệm. Mùa cao điểm (tháng 7 và tháng 8) mang đến thời tiết nóng, nắng, hoàn hảo để thư giãn trên bãi biển. Nếu bạn thích nhiệt độ mát hơn và ít đông đúc hơn, hãy nhắm tới mùa thấp điểm (tháng 4, 5, 9 và 10).</div>
+      </div>
+      <div class="pblock"><p>Malaysia is a melting pot of cultures, with a strong Malay influence. Be sure to try the delicious cuisine – think fragrant curries, satay skewers, and fluffy roti bread. There are countless things to do in Malaysia. Hike through the world's oldest rainforest in Taman Negara National Park, climb Mount Kinabalu (the highest mountain in Southeast Asia!), or explore the historical city of Malacca. For some retail therapy, head to Kuala Lumpur's many shopping malls or browse the night markets for souvenirs.<br><br>
+      Getting around Malaysia is easy and affordable. Taxis, buses, and trains all connect major cities and towns. Prices can vary depending on the season and the type of experience you are looking for. But you can find excellent value for money, especially if you book your trip in advance using a travel agency brochure or website.</p>
+        <button class="tbtn" onclick="tg('v3',this)">🔊 Xem bản dịch</button>
+        <div class="trans" id="v3">Malaysia là một nồi lẩu văn hóa, với ảnh hưởng mạnh mẽ từ người Mã Lai. Hãy chắc chắn thử ẩm thực ngon miệng ở đây – nào là cà ri thơm lừng, xiên satay, và bánh mì roti mềm xốp. Có vô số điều để làm ở Malaysia. Đi bộ đường dài qua khu rừng nhiệt đới lâu đời nhất thế giới tại Vườn quốc gia Taman Negara, leo núi Kinabalu (ngọn núi cao nhất Đông Nam Á!), hoặc khám phá thành phố lịch sử Malacca. Để mua sắm thỏa thích, hãy đến các trung tâm thương mại ở Kuala Lumpur hoặc dạo chợ đêm tìm quà lưu niệm.<br><br>
+        Di chuyển quanh Malaysia rất dễ dàng và tiết kiệm. Taxi, xe buýt và tàu hỏa đều kết nối các thành phố và thị trấn lớn. Giá cả có thể thay đổi tùy mùa và loại trải nghiệm bạn tìm kiếm. Nhưng bạn vẫn có thể tìm được mức giá hời, đặc biệt nếu đặt trước bằng brochure hoặc website của công ty du lịch.</div>
+      </div>
+      <div class="gloss"><div class="gt">📖 Từ vựng</div>
+        <table class="gtb"><tr><th>Từ</th><th>Loại</th><th>Nghĩa</th></tr>
+          <tr><td>bustling</td><td>adj</td><td>nhộn nhịp</td></tr>
+          <tr><td>lush</td><td>adj</td><td>xanh tươi, sum suê</td></tr>
+          <tr><td>melting pot</td><td>n</td><td>nơi hòa trộn văn hóa</td></tr>
+          <tr><td>retail therapy</td><td>n</td><td>mua sắm giải khuây</td></tr>
+          <tr><td>affordable</td><td>adj</td><td>giá cả phải chăng</td></tr>
+          <tr><td>brochure</td><td>n</td><td>tờ rơi quảng cáo</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="rp" id="secA"></div>
+  </div>
+</div>
+
+<!-- ============== WHAT IS SPORTS TOURISM? ============== -->
+<div class="section">
+  <div class="sec-head">🏆 What is Sports Tourism? (Câu 6–10)</div>
+  <div class="split">
+    <div class="lp">
+      <div class="pblock"><p>Sports tourism is travelling from one region, country, state, etc. to engage or participate in a sports-related activity. Sports tourism combines the passion for sports with the desire to experience new experiences or destinations.</p>
+        <button class="tbtn" onclick="tg('v4',this)">🔊 Xem bản dịch</button>
+        <div class="trans" id="v4">Du lịch thể thao là việc di chuyển từ một vùng, quốc gia, tiểu bang, v.v. để tham gia hoặc trải nghiệm một hoạt động liên quan đến thể thao. Du lịch thể thao kết hợp niềm đam mê thể thao với mong muốn trải nghiệm những điều mới mẻ hoặc những điểm đến mới.</div>
+      </div>
+      <div class="pblock"><p>While sports tourism has not always been extremely popular, it is definitely on the rise. A recent report estimates the value of the global sports tourism market was $587.87 billion in 2022. The industry is expected to grow at a rate of 17.5% through 2030. The popularity of events like the Olympic Games, the NBA, and the FIFA World Cup have contributed to this growth. While these events have economic short-term benefits for an area, they can be a catalyst for longer-term tourism development opportunities.</p>
+        <button class="tbtn" onclick="tg('v5',this)">🔊 Xem bản dịch</button>
+        <div class="trans" id="v5">Mặc dù du lịch thể thao không phải lúc nào cũng cực kỳ phổ biến, nhưng nó chắc chắn đang trên đà phát triển. Một báo cáo gần đây ước tính giá trị thị trường du lịch thể thao toàn cầu là 587,87 tỷ đô la vào năm 2022. Ngành này dự kiến sẽ tăng trưởng với tốc độ 17,5% cho tới năm 2030. Sự phổ biến của các sự kiện như Thế vận hội Olympic, giải NBA, và World Cup FIFA đã góp phần vào sự tăng trưởng này. Trong khi các sự kiện này mang lại lợi ích kinh tế ngắn hạn cho một khu vực, chúng cũng có thể là chất xúc tác cho các cơ hội phát triển du lịch dài hạn hơn.</div>
+      </div>
+      <div class="pblock"><p>In 2004, the World Tourism Organisation (WTO) and the International Olympic Committee (IOC) issued a joint statement that illustrates the strong dynamic between sports and tourism: "Tourism and sports are interrelated and complementary. Sport – as a professional, amateur or leisure activity – involves a considerable amount of travelling to play and compete in different destinations and countries. Major sporting events, such as the Olympic Games, football and rugby championships and auto racing have become <b>powerful tourism attractions</b> in themselves – making a very positive contribution to the tourism image of the host destination."</p>
+        <button class="tbtn" onclick="tg('v6',this)">🔊 Xem bản dịch</button>
+        <div class="trans" id="v6">Năm 2004, Tổ chức Du lịch Thế giới (WTO) và Ủy ban Olympic Quốc tế (IOC) đã ra một tuyên bố chung minh họa mối liên hệ mật thiết giữa thể thao và du lịch: "Du lịch và thể thao có mối liên hệ qua lại và bổ trợ lẫn nhau. Thể thao — dù ở cấp độ chuyên nghiệp, nghiệp dư hay giải trí — đều liên quan đến một lượng lớn việc di chuyển để thi đấu và cạnh tranh ở các điểm đến và quốc gia khác nhau. Các sự kiện thể thao lớn, như Thế vận hội Olympic, các giải vô địch bóng đá và bóng bầu dục, và đua xe ô tô, đã trở thành <b>những điểm thu hút du lịch mạnh mẽ</b> — đóng góp rất tích cực vào hình ảnh du lịch của điểm đến chủ nhà."</div>
+      </div>
+      <div class="gloss"><div class="gt">📖 Từ vựng</div>
+        <table class="gtb"><tr><th>Từ</th><th>Loại</th><th>Nghĩa</th></tr>
+          <tr><td>engage in</td><td>phr</td><td>tham gia vào</td></tr>
+          <tr><td>on the rise</td><td>phr</td><td>đang tăng lên</td></tr>
+          <tr><td>estimate</td><td>v</td><td>ước tính</td></tr>
+          <tr><td>catalyst</td><td>n</td><td>chất xúc tác</td></tr>
+          <tr><td>interrelated</td><td>adj</td><td>có liên hệ qua lại</td></tr>
+          <tr><td>complementary</td><td>adj</td><td>bổ trợ lẫn nhau</td></tr>
+          <tr><td>host destination</td><td>n</td><td>điểm đến chủ nhà</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="rp" id="secB"></div>
+  </div>
+</div>
+
+<div class="submit-wrap"><button class="bsub" onclick="askName()">🎯 Nộp bài tính điểm &amp; xem kết quả</button></div>
+</div>
+
+<div class="ov" id="nameModal"><div class="mb">
+  <h2>🖊️ Nhập tên để nộp bài</h2>
+  <input id="nameInput" placeholder="Họ và tên học sinh..." onkeydown="if(event.key==='Enter')okName()">
+  <div class="err" id="nameErr">⚠️ Em chưa nhập tên! Bắt buộc phải có tên mới nộp được bài nha.</div>
+  <button onclick="okName()">✅ Xác nhận &amp; chấm điểm</button>
+</div></div>
+
+<div class="ov" id="scoreModal"><div class="mb">
+  <div id="mEmoji" style="font-size:3.2rem">🏆</div>
+  <h2 id="mTitle">KẾT QUẢ</h2>
+  <div id="mName" style="font-weight:700;color:var(--sea3)"></div>
+  <img class="gif" id="mGif" src="" alt="" onerror="this.style.display='none'">
+  <div class="rscore" id="mScore">0/10</div>
+  <div class="r10" id="mScore10">0.00 / 10</div>
+  <div class="rcmt" id="mComment"></div>
+  <button class="close" onclick="document.getElementById('scoreModal').classList.remove('on')">📚 Xem lại bài</button>
+  <button onclick="location.reload()">🔄 Làm lại</button>
+</div></div>
+
+<script>
+function tg(id,btn){const el=document.getElementById(id);el.classList.toggle('show');
+  btn.textContent=el.classList.contains('show')?'🔼 Ẩn bản dịch':'🔊 Xem bản dịch';}
+var AC;function ac(){if(!AC)AC=new (window.AudioContext||window.webkitAudioContext)();return AC;}
+function ding(){try{var c=ac();[[880,0],[1320,.09],[1760,.19]].forEach(function(p){var o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.type='sine';o.frequency.value=p[0];var t=c.currentTime+p[1];g.gain.setValueAtTime(.25,t);g.gain.exponentialRampToValueAtTime(.001,t+.3);o.start(t);o.stop(t+.3);});}catch(e){}}
+function buzz(){try{var c=ac();[[330,0],[220,.15]].forEach(function(p){var o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.type='square';o.frequency.value=p[0];var t=c.currentTime+p[1];g.gain.setValueAtTime(.2,t);g.gain.exponentialRampToValueAtTime(.001,t+.2);o.start(t);o.stop(t+.2);});}catch(e){}}
+function W(word,pos,mean){return '<div class="obox"><span class="pos pos-'+pos+'">'+pos+'</span><span class="p-word">'+word+'</span><span class="p-mean">— '+mean+'</span></div>';}
+
+var QD=[
+{n:1,lb:'1',s:'A',q:'1. What can travellers get from packaged tours offered by tourist agencies in Malaysia?',
+ o:["Only flight tickets","Flights, hotel stay, and some activities","Only hotel booking","A visa on arrival"],a:"Flights, hotel stay, and some activities",
+ e:{tr:'Dịch: "Du khách có thể nhận được gì từ các tour trọn gói do các công ty du lịch ở Malaysia cung cấp?"',
+ op:W('Only flight tickets','phr','chỉ vé máy bay')+W('Flights, hotel stay, and some activities','phr','vé máy bay, ở khách sạn và một số hoạt động')+W('Only hotel booking','phr','chỉ đặt phòng khách sạn')+W('A visa on arrival','phr','thị thực nhập cảnh tại chỗ'),
+ ok:'Đáp án đúng là <span class="hl-green">Flights, hotel stay, and some activities</span>. Bài đọc nói rõ tour trọn gói lo liệu MỌI THỨ bao gồm vé máy bay, 5 ngày ở khách sạn và cả một số hoạt động.',
+ ev:'"Many tourist agencies offer packaged tours, which can take care of everything for you, including flights, a 5-day hotel stay, and even some activities." 👉 "Nhiều công ty du lịch cung cấp các tour trọn gói, lo liệu mọi thứ cho bạn, bao gồm vé máy bay, 5 ngày ở khách sạn, và cả một số hoạt động."',
+ no:'<ul><li><span class="hl-red">Only flight tickets</span> — bài đọc nói tour bao gồm NHIỀU thứ hơn chỉ vé máy bay.</li><li><span class="hl-red">Only hotel booking</span> — cũng chỉ là MỘT PHẦN, không phải toàn bộ những gì tour cung cấp.</li><li><span class="hl-red">A visa on arrival</span> — thông tin này KHÔNG được nhắc đến trong bài đọc.</li></ul>'}},
+{n:2,lb:'2',s:'A',q:'2. According to the passage, when should visitors go to Malaysia if they prefer fewer crowds?',
+ o:["July and August","December and January","Shoulder seasons like April or October","Only during festivals"],a:"Shoulder seasons like April or October",
+ e:{tr:'Dịch: "Theo bài đọc, du khách nên đến Malaysia khi nào nếu họ muốn ít đông đúc hơn?"',
+ op:W('July and August','phr','tháng 7 và 8')+W('December and January','phr','tháng 12 và 1')+W('Shoulder seasons like April or October','phr','mùa thấp điểm như tháng 4 hoặc 10')+W('Only during festivals','phr','chỉ vào dịp lễ hội'),
+ ok:'Đáp án đúng là <span class="hl-green">Shoulder seasons like April or October</span>. Bài đọc nói rõ nếu thích mát hơn và ít đông đúc thì nên nhắm tới mùa thấp điểm (tháng 4, 5, 9, 10).',
+ ev:'"If you prefer cooler temperatures and fewer crowds, aim for shoulder seasons (April, May, September, and October)." 👉 "Nếu bạn thích nhiệt độ mát hơn và ít đông đúc hơn, hãy nhắm tới mùa thấp điểm (tháng 4, 5, 9 và 10)."',
+ no:'<ul><li><span class="hl-red">July and August</span> — đây là MÙA CAO ĐIỂM, đông đúc nhất, ngược với yêu cầu câu hỏi.</li><li><span class="hl-red">December and January</span> — bài đọc KHÔNG nhắc đến hai tháng này.</li><li><span class="hl-red">Only during festivals</span> — thông tin này không xuất hiện trong bài đọc.</li></ul>'}},
+{n:3,lb:'3',s:'A',q:'3. Which food is mentioned as part of Malaysian cuisine?',
+ o:["Sushi and ramen","Curries, satay skewers, and roti bread","Pizza and pasta","Tacos and burritos"],a:"Curries, satay skewers, and roti bread",
+ e:{tr:'Dịch: "Món ăn nào được nhắc đến như một phần của ẩm thực Malaysia?"',
+ op:W('Sushi and ramen','phr','sushi và ramen')+W('Curries, satay skewers, and roti bread','phr','cà ri, xiên satay và bánh roti')+W('Pizza and pasta','phr','pizza và pasta')+W('Tacos and burritos','phr','tacos và burritos'),
+ ok:'Đáp án đúng là <span class="hl-green">Curries, satay skewers, and roti bread</span>. Bài đọc liệt kê rõ các món ăn đặc trưng của ẩm thực Malaysia gồm cà ri thơm, xiên satay, và bánh roti mềm xốp.',
+ ev:'"Be sure to try the delicious cuisine – think fragrant curries, satay skewers, and fluffy roti bread." 👉 "Hãy chắc chắn thử ẩm thực ngon miệng – nào là cà ri thơm lừng, xiên satay, và bánh mì roti mềm xốp."',
+ no:'<ul><li><span class="hl-red">Sushi and ramen</span> — đây là món ăn Nhật Bản, không được nhắc trong bài.</li><li><span class="hl-red">Pizza and pasta</span> — đây là món ăn Ý, không liên quan đến ẩm thực Malaysia trong bài.</li><li><span class="hl-red">Tacos and burritos</span> — đây là món ăn Mexico, hoàn toàn không xuất hiện trong bài đọc.</li></ul>'}},
+{n:4,lb:'4',s:'A',q:'4. What is Mount Kinabalu known for, according to the passage?',
+ o:["The oldest rainforest in the world","The highest mountain in Southeast Asia","A famous shopping mall","A historical city"],a:"The highest mountain in Southeast Asia",
+ e:{tr:'Dịch: "Theo bài đọc, núi Kinabalu nổi tiếng vì điều gì?"',
+ op:W('The oldest rainforest in the world','phr','khu rừng nhiệt đới lâu đời nhất thế giới')+W('The highest mountain in Southeast Asia','phr','ngọn núi cao nhất Đông Nam Á')+W('A famous shopping mall','phr','trung tâm thương mại nổi tiếng')+W('A historical city','phr','thành phố lịch sử'),
+ ok:'Đáp án đúng là <span class="hl-green">The highest mountain in Southeast Asia</span>. Bài đọc ghi rõ leo núi Kinabalu — được chú thích ngay là "ngọn núi cao nhất Đông Nam Á".',
+ ev:'"...climb Mount Kinabalu (the highest mountain in Southeast Asia!)..." 👉 "...leo núi Kinabalu (ngọn núi cao nhất Đông Nam Á!)..."',
+ no:'<ul><li><span class="hl-red">The oldest rainforest in the world</span> — đây là đặc điểm của Vườn quốc gia Taman Negara, KHÔNG phải Mount Kinabalu.</li><li><span class="hl-red">A famous shopping mall</span> — đây là mô tả về Kuala Lumpur, không liên quan đến ngọn núi.</li><li><span class="hl-red">A historical city</span> — đây là mô tả về Malacca, không phải Mount Kinabalu.</li></ul>'}},
+{n:5,lb:'5',s:'A',q:'5. How can travellers get the best value for money when travelling around Malaysia?',
+ o:["By avoiding public transport","By booking in advance using a travel agency brochure or website","By only travelling at night","By staying in one city only"],a:"By booking in advance using a travel agency brochure or website",
+ e:{tr:'Dịch: "Du khách có thể có được giá trị tốt nhất cho số tiền bỏ ra khi di chuyển quanh Malaysia bằng cách nào?"',
+ op:W('By avoiding public transport','phr','bằng cách tránh phương tiện công cộng')+W('By booking in advance using a travel agency brochure or website','phr','bằng cách đặt trước qua brochure hoặc website công ty du lịch')+W('By only travelling at night','phr','bằng cách chỉ đi vào ban đêm')+W('By staying in one city only','phr','bằng cách chỉ ở một thành phố'),
+ ok:'Đáp án đúng là <span class="hl-green">By booking in advance using a travel agency brochure or website</span>. Bài đọc nói rõ có thể tìm được mức giá hời, đặc biệt nếu đặt trước bằng brochure hoặc website của công ty du lịch.',
+ ev:'"But you can find excellent value for money, especially if you book your trip in advance using a travel agency brochure or website." 👉 "Nhưng bạn vẫn có thể tìm được mức giá hời, đặc biệt nếu đặt trước bằng brochure hoặc website của công ty du lịch."',
+ no:'<ul><li><span class="hl-red">By avoiding public transport</span> — bài đọc thực ra nói taxi, xe buýt, tàu hỏa đều tiện lợi và kết nối tốt, không khuyên tránh.</li><li><span class="hl-red">By only travelling at night</span> — thông tin này không được nhắc đến trong bài đọc.</li><li><span class="hl-red">By staying in one city only</span> — bài đọc khuyến khích khám phá NHIỀU nơi (Taman Negara, Kinabalu, Malacca, Kuala Lumpur), không phải ở một chỗ.</li></ul>'}},
+{n:6,lb:'6',s:'B',q:'6. Sports tourism is the combination of ______.',
+ o:["the love for nature and the passion for new experiences","the passion for new destinations and the desire for new experiences","the love for sports and the desire for new experiences","the love for new experiences and the passion for new destinations"],a:"the love for sports and the desire for new experiences",
+ e:{tr:'Dịch: "Du lịch thể thao là sự kết hợp của ______."',
+ op:W('the love for nature and the passion for new experiences','phr','tình yêu thiên nhiên và niềm đam mê trải nghiệm mới')+W('the passion for new destinations and the desire for new experiences','phr','niềm đam mê điểm đến mới và mong muốn trải nghiệm mới')+W('the love for sports and the desire for new experiences','phr','tình yêu thể thao và mong muốn trải nghiệm mới')+W('the love for new experiences and the passion for new destinations','phr','tình yêu trải nghiệm mới và niềm đam mê điểm đến mới'),
+ ok:'Đáp án đúng là <span class="hl-green">the love for sports and the desire for new experiences</span>. Câu đầu bài đọc định nghĩa rõ ràng "sports tourism combines the passion for sports with the desire to experience new experiences or destinations" — tức là kết hợp giữa THỂ THAO và MONG MUỐN trải nghiệm mới.',
+ ev:'"Sports tourism combines the passion for sports with the desire to experience new experiences or destinations." 👉 "Du lịch thể thao kết hợp niềm đam mê thể thao với mong muốn trải nghiệm những điều mới mẻ hoặc những điểm đến mới."',
+ no:'<ul><li><span class="hl-red">the love for nature...</span> — bài đọc nói về THỂ THAO, không phải THIÊN NHIÊN.</li><li><span class="hl-red">the passion for new destinations and the desire for new experiences</span> — thiếu yếu tố cốt lõi là "thể thao" (sports), chỉ có 2 vế đều nói về trải nghiệm/điểm đến.</li><li><span class="hl-red">the love for new experiences and the passion for new destinations</span> — cũng thiếu yếu tố "thể thao" (sports) là từ khóa chính của định nghĩa.</li></ul>'}},
+{n:7,lb:'7',s:'B',q:'7. Sports tourism is becoming increasingly popular due to ______.',
+ o:["the global sports tourism market of $587.87 billion","the increasing popularity of sports events","the growth rate of 17.5% through 2030","economic short-term and long-term benefits"],a:"the increasing popularity of sports events",
+ e:{tr:'Dịch: "Du lịch thể thao ngày càng phổ biến là nhờ ______."',
+ op:W('the global sports tourism market of $587.87 billion','phr','thị trường du lịch thể thao toàn cầu trị giá 587,87 tỷ đô')+W('the increasing popularity of sports events','phr','sự phổ biến ngày càng tăng của các sự kiện thể thao')+W('the growth rate of 17.5% through 2030','phr','tốc độ tăng trưởng 17,5% tới năm 2030')+W('economic short-term and long-term benefits','phr','lợi ích kinh tế ngắn hạn và dài hạn'),
+ ok:'Đáp án đúng là <span class="hl-green">the increasing popularity of sports events</span>. Bài đọc nêu rõ nguyên nhân: "The popularity of events like the Olympic Games, the NBA, and the FIFA World Cup have contributed to this growth" — tức là do các sự kiện thể thao ngày càng phổ biến.',
+ ev:'"The popularity of events like the Olympic Games, the NBA, and the FIFA World Cup have contributed to this growth." 👉 "Sự phổ biến của các sự kiện như Thế vận hội, NBA, và World Cup FIFA đã góp phần vào sự tăng trưởng này."',
+ no:'<ul><li><span class="hl-red">the global sports tourism market of $587.87 billion</span> — đây là KẾT QUẢ/con số thống kê, không phải NGUYÊN NHÂN gây ra sự phổ biến.</li><li><span class="hl-red">the growth rate of 17.5% through 2030</span> — đây cũng là một con số DỰ BÁO, không phải lý do giải thích sự phổ biến.</li><li><span class="hl-red">economic short-term and long-term benefits</span> — đây là HỆ QUẢ của các sự kiện thể thao, không phải nguyên nhân khiến du lịch thể thao phổ biến hơn.</li></ul>'}},
+{n:8,lb:'8',s:'B',q:'8. What is illustrated in the 2004 joint statement?',
+ o:["WTO and the IOC are dynamic.","Tourism and sports are unrelated but supplementary.","Tourism and sports are one and the same.","Tourism and sports are interrelated and complementary."],a:"Tourism and sports are interrelated and complementary.",
+ e:{tr:'Dịch: "Điều gì được thể hiện trong tuyên bố chung năm 2004?"',
+ op:W('WTO and the IOC are dynamic.','phr','WTO và IOC năng động')+W('Tourism and sports are unrelated but supplementary.','phr','du lịch và thể thao không liên quan nhưng bổ trợ nhau')+W('Tourism and sports are one and the same.','phr','du lịch và thể thao là một và giống hệt nhau')+W('Tourism and sports are interrelated and complementary.','phr','du lịch và thể thao có liên hệ qua lại và bổ trợ lẫn nhau'),
+ ok:'Đáp án đúng là <span class="hl-green">Tourism and sports are interrelated and complementary.</span> Tuyên bố chung năm 2004 mở đầu chính xác bằng câu này: "Tourism and sports are interrelated and complementary."',
+ ev:'"Tourism and sports are interrelated and complementary." 👉 "Du lịch và thể thao có mối liên hệ qua lại và bổ trợ lẫn nhau."',
+ no:'<ul><li><span class="hl-red">WTO and the IOC are dynamic.</span> — bài đọc nói về mối quan hệ "dynamic" GIỮA thể thao và du lịch, không phải nói hai tổ chức này "năng động".</li><li><span class="hl-red">Tourism and sports are unrelated but supplementary.</span> — sai vì bài đọc nói chúng "interrelated" (CÓ liên quan), không phải "unrelated" (không liên quan).</li><li><span class="hl-red">Tourism and sports are one and the same.</span> — bài đọc không nói chúng là MỘT, mà nói chúng liên hệ và bổ trợ nhau — đây là hai khái niệm khác nhau.</li></ul>'}},
+{n:9,lb:'9',s:'B',q:'9. Major sporting events do not include ______, according to the passage.',
+ o:["horse racing","football championships","rugby championships","auto racing"],a:"horse racing",
+ e:{tr:'Dịch: "Các sự kiện thể thao lớn KHÔNG bao gồm ______, theo bài đọc."',
+ op:W('horse racing','phr','đua ngựa')+W('football championships','phr','giải vô địch bóng đá')+W('rugby championships','phr','giải vô địch bóng bầu dục')+W('auto racing','phr','đua xe ô tô'),
+ ok:'Đáp án đúng là <span class="hl-green">horse racing</span>. Bài đọc chỉ liệt kê "the Olympic Games, football and rugby championships and auto racing" — KHÔNG hề nhắc đến đua ngựa.',
+ ev:'"Major sporting events, such as the Olympic Games, football and rugby championships and auto racing have become powerful tourism attractions..." 👉 Danh sách chỉ gồm Olympic, bóng đá, bóng bầu dục, đua xe — không có đua ngựa.',
+ no:'<ul><li><span class="hl-red">football championships</span> — CÓ được nhắc đến trực tiếp trong danh sách của bài đọc.</li><li><span class="hl-red">rugby championships</span> — CÓ được nhắc đến trực tiếp trong danh sách của bài đọc.</li><li><span class="hl-red">auto racing</span> — CÓ được nhắc đến trực tiếp trong danh sách của bài đọc.</li></ul>'}},
+{n:10,lb:'10',s:'B',q:'10. What is meant by powerful tourism attractions?',
+ o:["The destinations are economic powers.","The host destinations are rich.","The host nations are enhanced with a tourism image.","The hosts have a very positive contribution."],a:"The host nations are enhanced with a tourism image.",
+ e:{tr:'Dịch: "Cụm \'powerful tourism attractions\' (những điểm thu hút du lịch mạnh mẽ) có nghĩa là gì?"',
+ op:W('The destinations are economic powers.','phr','các điểm đến là cường quốc kinh tế')+W('The host destinations are rich.','phr','các điểm đến chủ nhà giàu có')+W('The host nations are enhanced with a tourism image.','phr','các quốc gia chủ nhà được nâng cao hình ảnh du lịch')+W('The hosts have a very positive contribution.','phr','các nước chủ nhà có đóng góp rất tích cực'),
+ ok:'Đáp án đúng là <span class="hl-green">The host nations are enhanced with a tourism image.</span> Cụm từ này được giải thích ngay sau đó trong bài: các sự kiện thể thao lớn "making a very positive contribution to the tourism image of the host destination" — tức là hình ảnh du lịch của nước chủ nhà được nâng cao/cải thiện.',
+ ev:'"...have become powerful tourism attractions in themselves – making a very positive contribution to the tourism image of the host destination." 👉 "...đã trở thành những điểm thu hút du lịch mạnh mẽ — đóng góp rất tích cực vào hình ảnh du lịch của điểm đến chủ nhà."',
+ no:'<ul><li><span class="hl-red">The destinations are economic powers.</span> — bài đọc nói về HÌNH ẢNH DU LỊCH, không phải sức mạnh KINH TẾ của điểm đến.</li><li><span class="hl-red">The host destinations are rich.</span> — bài đọc không đề cập đến sự GIÀU CÓ của điểm đến chủ nhà.</li><li><span class="hl-red">The hosts have a very positive contribution.</span> — đây là diễn đạt GẦN ĐÚNG nhưng SAI CHỦ NGỮ: chính các SỰ KIỆN mới "có đóng góp tích cực", không phải bản thân "các nước chủ nhà" là chủ thể đóng góp.</li></ul>'}}
+];
+
+var TOTAL=QD.length,PICK={};
+function render(){
+  ["A","B"].forEach(function(s){
+    var host=document.getElementById('sec'+s);host.innerHTML='';
+    QD.filter(function(q){return q.s===s;}).forEach(function(q){
+      var h='<div class="qh"><span class="num">'+q.lb+'</span>'+q.q+'</div>';
+      shuffleOpts(q.o).forEach(function(v){h+='<button class="opt" data-n="'+q.n+'" data-v="'+esc(v)+'" onclick="pick('+q.n+',this)">'+esc(v)+'</button>';});
+      h+='<div class="exp" id="e_'+q.n+'"></div>';
+      var d=document.createElement('div');d.className='qblock';d.innerHTML=h;host.appendChild(d);
+    });
+  });
+  prog();
+}
+function shuffleOpts(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t;}return a;}
+function esc(s){return s.replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');}
+function pick(n,btn){
+  if(PICK[n])return;
+  PICK[n]=btn.getAttribute('data-v');
+  var q=QD.filter(function(x){return x.n===n;})[0];
+  var bs=document.querySelectorAll('.opt[data-n="'+n+'"]');
+  for(var i=0;i<bs.length;i++)bs[i].disabled=true;
+  if(PICK[n]===q.a){btn.classList.add('correct');ding();}
+  else{btn.classList.add('wrong');buzz();for(var j=0;j<bs.length;j++){if(bs[j].getAttribute('data-v')===q.a)bs[j].classList.add('correct');}}
+  showExp(n,q);prog();
+}
+function showExp(n,q){
+  var ok=PICK[n]===q.a,b=document.getElementById('e_'+n);
+  b.innerHTML='<div class="badge'+(ok?'':' bad')+'">'+(ok?'✅ CHÍNH XÁC!':'❌ CHƯA ĐÚNG – Đáp án đúng: '+q.a)+'</div>'
+   +'<div class="step"><span class="slab">① Dịch:</span> '+q.e.tr+'</div>'
+   +'<div class="step"><span class="slab">② Các phương án &amp; nghĩa:</span>'+q.e.op+'</div>'
+   +'<div class="step"><span class="slab">③ Vì sao đúng:</span> '+q.e.ok+(q.e.ev?'<div class="quote">🔍 <b>Dẫn chứng:</b> '+q.e.ev+'</div>':'')+'</div>'
+   +(q.e.no?'<div class="step"><span class="slab">④ Vì sao các phương án khác sai:</span> '+q.e.no+'</div>':'');
+  b.classList.add('on');
+}
+function prog(){var d=Object.keys(PICK).length,c=0;for(var k in PICK){var q=QD.filter(function(x){return x.n==k;})[0];if(PICK[k]===q.a)c++;}
+  document.getElementById('cDone').textContent=d;document.getElementById('cCorrect').textContent=c;
+  document.getElementById('barFill').style.width=(d/TOTAL*100)+'%';}
+function askName(){document.getElementById('nameErr').classList.remove('show');document.getElementById('nameModal').classList.add('on');}
+function okName(){
+  var v=document.getElementById('nameInput').value.trim();
+  if(!v){document.getElementById('nameErr').classList.add('show');return;}
+  document.getElementById('nameModal').classList.remove('on');grade(v);
+}
+function grade(sname){
+  QD.forEach(function(q){
+    if(!PICK[q.n]){
+      PICK[q.n]='__';
+      var bs=document.querySelectorAll('.opt[data-n="'+q.n+'"]');
+      for(var i=0;i<bs.length;i++){bs[i].disabled=true;if(bs[i].getAttribute('data-v')===q.a)bs[i].classList.add('correct');}
+      showExp(q.n,q);
+    }
+  });
+  prog();
+  var cor=QD.filter(function(q){return PICK[q.n]===q.a;}).length;
+  var pct=cor/TOTAL,d10=(cor/TOTAL*10).toFixed(2),em,ti,cm,gif;
+  if(pct===1){em='🏆';ti='XUẤT SẮC — THỢ LẶN VÀNG!';cm='Tuyệt đối hoàn hảo '+cor+'/'+TOTAL+'! MS Chí Nên rất tự hào về em! 🐚';gif='https://media.giphy.com/media/3ohhwytHcusSCXXOUg/giphy.gif';}
+  else if(pct>=.6){em='👏';ti='LÀM TỐT LẮM!';cm='Em đạt '+cor+'/'+TOTAL+' – đã vượt qua rồi! Đọc kỹ phần giải thích những câu sai nhé. 🐠';gif='https://media.giphy.com/media/l4pTfx2qLszoacZRS/giphy.gif';}
+  else{em='😭';ti='CỐ LÊN NHÉ!';cm='Em mới đạt '+cor+'/'+TOTAL+'. Đừng buồn nha! Đọc kỹ đoạn văn rồi làm lại — MS Chí Nên tin em sẽ tiến bộ nhanh. 🐢';gif='https://media.giphy.com/media/d2lcHJTG5Tscg/giphy.gif';}
+  document.getElementById('mEmoji').textContent=em;
+  document.getElementById('mTitle').textContent=ti;
+  document.getElementById('mName').textContent='🎓 Học sinh: '+sname;
+  var g=document.getElementById('mGif');g.style.display='';g.src=gif;
+  document.getElementById('mScore').textContent=cor+'/'+TOTAL;
+  document.getElementById('mScore10').textContent='Điểm hệ 10: '+d10+' / 10';
+  document.getElementById('mComment').textContent=cm;
+  document.getElementById('scoreModal').classList.add('on');
+}
+render();
+</script>
+<script>/*devclean*/(function(){
+var ZW=/[\u00AD\u034F\u061C\u115F\u1160\u17B4\u17B5\u180E\u200B-\u200F\u202A-\u202E\u2060-\u206F\uFEFF]/g,
+    SP=/[\u00A0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\t]/g,
+    AP=/[\u2018\u2019\u201A\u201B\u2032\u2035\u02B9\u02BB\u02BC\u02BD\u02C8\u0060\u00B4\uFF07]/g,
+    DQ=/[\u201C\u201D\u201E\u201F\u2033\u2036\u00AB\u00BB\uFF02]/g,
+    DS=/[\u2010\u2011\u2012\u2212\uFE63\uFF0D]/g;
+function clean(v){if(!v)return v;var s=String(v);try{s=s.normalize('NFKC')}catch(e){}
+  return s.replace(ZW,'').replace(SP,' ').replace(AP,"'").replace(DQ,'"').replace(DS,'-').replace(/[\u0300-\u036f]/g,'').replace(/ {2,}/g,' ');}
+window.__devclean=clean;
+function fix(skip){var L=document.querySelectorAll('input:not([type]),input[type=text],input[type=search],textarea');
+  for(var i=0;i<L.length;i++){var el=L[i];if(el===skip||el.readOnly||el.disabled)continue;var v=el.value,c=clean(v);if(c!==v)el.value=c;}}
+['pointerdown','mousedown','touchstart','click','change','focusout'].forEach(function(t){document.addEventListener(t,function(e){fix(t==='focusout'||t==='change'?null:e.target)},true)});
+document.addEventListener('keydown',function(e){if(e.key==='Enter'||e.keyCode===13)fix(null)},true);
+})();</script>
+<style id="ms-chi-nen-unlock-style">
+#passwordModal, #password-modal, #pwModal, #pw-modal, #pw-overlay,
+#lockModal, #passModal, #authModal, #auth-modal, #lockOverlay,
+#start-overlay, #intro-overlay, #start-screen,
+.password-modal, .lock-modal, .lock-overlay {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    z-index: -9999 !important;
+}
+</style>
+<script>
+// Remove password lock completely - direct quiz access
+(function() {
+    var initDone = false;
+    var renderCheckDone = false;
+
+    function hideEl(el, hard) {
+        if (!el) return;
+        if (hard) {
+            el.style.setProperty('display', 'none', 'important');
+            el.style.setProperty('visibility', 'hidden', 'important');
+            el.style.setProperty('opacity', '0', 'important');
+            el.style.setProperty('pointer-events', 'none', 'important');
+            el.style.setProperty('z-index', '-9999', 'important');
+        } else {
+            el.style.display = 'none';
+        }
+        el.classList.remove('active', 'show', 'open', 'visible', 'flex');
+    }
+
+    function hasRenderedQuiz() {
+        var containers = document.querySelectorAll(
+            '#quiz-container, #quizContainer, #questions-container, #questionPane, #quiz, #questions, #quiz-body, #questions-wrapper, #quiz-list, #quizList, #exercise-container, #app-container .split-container'
+        );
+        for (var i = 0; i < containers.length; i++) {
+            if (containers[i].querySelectorAll('button, input, select, textarea, .question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .question, .option-btn, .opt-btn, .ans-btn').length > 0) {
+                return true;
+            }
+        }
+        if (document.querySelectorAll('.question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .option-btn, .opt-btn, .ans-btn, .choice-btn').length > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    function ensureQuizRendered() {
+        if (renderCheckDone) return;
+        renderCheckDone = true;
+        if (hasRenderedQuiz()) return;
+
+        if (!hasRenderedQuiz() && typeof buildQuiz === 'function') { try { buildQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof initQuiz === 'function') { try { initQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderApp === 'function') { try { renderApp(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuiz === 'function') { try { renderQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuestions === 'function') { try { renderQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAllQuestions === 'function') { try { renderAllQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAll === 'function') { try { renderAll(); } catch(e){} }
+    }
+
+    function unlockNow() {
+        var pwIds = [
+            'passwordModal', 'password-modal', 'pwModal', 'pw-modal', 'pw-overlay',
+            'lockModal', 'passModal', 'authModal', 'auth-modal', 'lockOverlay',
+            'start-overlay', 'intro-overlay', 'start-screen'
+        ];
+        pwIds.forEach(function(id) {
+            hideEl(document.getElementById(id), true);
+        });
+
+        var modalEls = document.querySelectorAll('.password-modal, .lock-modal, .lock-overlay, #lockOverlay, #auth-modal');
+        modalEls.forEach(function(el) {
+            if (el.id !== 'resultModal' && el.id !== 'result-modal' && el.id !== 'scoreModal') {
+                hideEl(el, true);
+            }
+        });
+
+        ['nameModal', 'name-modal', 'nameInputModal'].forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) hideEl(el, false);
+        });
+
+        var qo = document.getElementById('quiz-overlay');
+        if (qo && (typeof isStarted === 'undefined' || !isStarted)) {
+            qo.style.display = 'none';
+        }
+
+        var mainIds = [
+            'mainContent', 'main-content', 'mainHeader', 'main-header',
+            'app-container', 'app', 'quizApp', 'quiz-wrapper', 'quizContainer', 'quiz-container', 'reading-content'
+        ];
+        mainIds.forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) {
+                el.classList.remove('hidden', 'blur', 'blurred', 'locked');
+                if (el.style.display === 'none') {
+                    el.style.removeProperty('display');
+                }
+                if (window.getComputedStyle(el).display === 'none') {
+                    var hasPane = el.querySelector('.pane, .left-pane, .right-pane, .split-container, .left-panel, .right-panel');
+                    if (id === 'main-content' || id.toLowerCase().includes('header') || el.classList.contains('main-container') || hasPane) {
+                        el.style.setProperty('display', 'flex', 'important');
+                    } else {
+                        el.style.setProperty('display', 'block', 'important');
+                    }
+                }
+            }
+        });
+
+        var qs = document.getElementById('quiz-screen');
+        if (qs) {
+            qs.classList.remove('hidden');
+            if (qs.classList.contains('flex-col')) {
+                qs.classList.add('flex');
+                qs.style.display = 'flex';
+            } else {
+                qs.style.display = 'block';
+            }
+        }
+
+        if (!initDone) {
+            initDone = true;
+
+            if (document.getElementById('start-overlay') && typeof startGame === 'function') {
+                var sn = document.getElementById('student-name') || document.getElementById('studentName');
+                if (sn && !sn.value.trim()) sn.value = 'Học sinh';
+            }
+            if (document.getElementById('name-modal') && typeof startQuiz === 'function') {
+                var sn2 = document.getElementById('student-name');
+                if (sn2 && !sn2.value.trim()) sn2.value = 'Học sinh';
+            }
+
+            if (typeof startQuiz === 'function' && (typeof isStarted === 'undefined' || !isStarted)) { try { startQuiz(); } catch(e){} }
+            if (typeof startGame === 'function') { try { startGame(); } catch(e){} }
+            if (typeof startTest === 'function') { try { startTest(); } catch(e){} }
+            if (typeof startApp === 'function') { try { startApp(); } catch(e){} }
+            if (typeof buildStarfield === 'function') { try { buildStarfield(); } catch(e){} }
+            if (typeof spawnFloats === 'function') { try { spawnFloats(); } catch(e){} }
+            if (typeof spawnFloaters === 'function') { try { spawnFloaters(); } catch(e){} }
+            if (typeof createFloatingBubbles === 'function') { try { createFloatingBubbles(); } catch(e){} }
+            if (typeof initAudio === 'function') { try { initAudio(); } catch(e){} }
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', unlockNow);
+    } else {
+        unlockNow();
+    }
+    if (document.readyState === 'complete') {
+        setTimeout(ensureQuizRendered, 150);
+    } else {
+        window.addEventListener('load', function() {
+            setTimeout(unlockNow, 20);
+            setTimeout(ensureQuizRendered, 150);
+            setTimeout(unlockNow, 300);
+            setTimeout(unlockNow, 700);
+        });
+    }
+    setTimeout(unlockNow, 50);
+    setTimeout(unlockNow, 200);
+    setTimeout(unlockNow, 600);
+    setTimeout(unlockNow, 1100);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 8: Tourism — Exercise 2 (Space Tourism &amp; Thailand) | MS Chí Nên</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+/* THEME: TWILIGHT LAGOON — hoàng hôn tím, đèn lồng, sao đêm */
+:root{--sky1:#2d1b4e;--sky2:#6a3f8f;--sky3:#c2569c;--sky4:#ff9a5a;--lag1:#0f9b8e;--lag2:#0a6b73;--lag3:#063f4a;
+  --sand:#fff6ea;--ink:#2a1f42;--gold:#ffd166;--coral:#ff6f61;--star:#ffe89a;
+  --correct:#1fa565;--correctbg:#d6f6e3;--wrong:#e6455c;--wrongbg:#ffe0e4;}
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:18px}
+body{font-family:'Quicksand',sans-serif;color:var(--ink);min-height:100vh;position:relative;overflow-x:hidden;padding-bottom:60px;
+  background:linear-gradient(180deg,var(--sky1) 0%,var(--sky2) 28%,var(--sky3) 48%,var(--sky4) 62%,var(--lag1) 76%,var(--lag2) 90%,var(--lag3) 100%)}
+.moon{position:fixed;top:5%;right:9%;width:78px;height:78px;border-radius:50%;z-index:0;background:radial-gradient(circle at 35% 35%,#fffef2,var(--star));box-shadow:0 0 60px 24px rgba(255,232,154,.55);animation:glow 4s ease-in-out infinite alternate}
+@keyframes glow{from{opacity:.75}to{opacity:1}}
+.star{position:fixed;border-radius:50%;background:#fff;z-index:0;animation:twinkle ease-in-out infinite}
+@keyframes twinkle{0%,100%{opacity:.2}50%{opacity:1}}
+.lantern{position:fixed;bottom:-6%;z-index:1;font-size:1.9rem;opacity:.92;animation:floatUp linear infinite}
+@keyframes floatUp{0%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-52vh) rotate(4deg)}100%{transform:translateY(-104vh) rotate(-4deg)}}
+.jelly{position:fixed;bottom:4%;z-index:1;font-size:2rem;opacity:.85;animation:sway 5s ease-in-out infinite}
+@keyframes sway{0%,100%{transform:rotate(-6deg) translateY(0)}50%{transform:rotate(6deg) translateY(-8px)}}
+.wave{position:fixed;bottom:0;left:0;width:100%;height:56px;z-index:1;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 60'%3E%3Cpath d='M0 32 Q50 4 100 32 T200 32 V60 H0 Z' fill='%230a6b73'/%3E%3C/svg%3E");
+  background-repeat:repeat-x;background-size:200px 56px;animation:waveScroll 7s linear infinite}
+.wave2{position:fixed;bottom:-6px;left:0;width:100%;height:50px;z-index:1;opacity:.85;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 60'%3E%3Cpath d='M0 34 Q50 8 100 34 T200 34 V60 H0 Z' fill='%23063f4a'/%3E%3C/svg%3E");
+  background-repeat:repeat-x;background-size:160px 50px;animation:waveScroll 4.5s linear infinite reverse}
+@keyframes waveScroll{from{background-position-x:0}to{background-position-x:-200px}}
+.wrap{position:relative;z-index:2;max-width:1420px;margin:0 auto;padding:16px 18px 40px}
+header{background:var(--sand);border-radius:22px;padding:17px 26px;text-align:center;margin-bottom:14px;
+  box-shadow:0 12px 30px rgba(0,0,0,.25);border:3px dashed var(--sky3)}
+header h1{font-family:'Baloo 2';font-weight:800;font-size:2rem;color:var(--lag3)}
+header .teacher{font-weight:700;color:var(--lag2);margin-top:4px}
+header .promo{font-weight:800;color:#c0392b;margin-top:6px;font-size:.9rem}
+.note{max-width:1050px;margin:0 auto 16px;background:var(--sand);border:2px dashed var(--gold);border-radius:16px;
+  padding:11px 18px;font-weight:700;color:#7a4a1a;text-align:center;font-size:.9rem;line-height:1.7}
+.scorebar{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:8px}
+.chip{background:var(--sand);border-radius:12px;padding:7px 16px;font-family:'Baloo 2';font-weight:700;font-size:.95rem;color:var(--lag3);box-shadow:0 4px 12px rgba(0,0,0,.18)}
+.chip b{color:var(--coral);font-weight:900}
+.bar{height:11px;background:var(--sand);border-radius:8px;overflow:hidden;max-width:480px;margin:0 auto 18px;box-shadow:0 4px 12px rgba(0,0,0,.18)}
+.bar span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--coral),var(--gold),var(--lag1));transition:width .4s}
+.section{background:var(--sand);border-radius:20px;box-shadow:0 10px 28px rgba(0,0,0,.25);margin-bottom:22px;overflow:hidden;border:1px solid rgba(0,0,0,.06)}
+.sec-head{padding:14px 22px;font-family:'Baloo 2';font-weight:700;font-size:1.2rem;color:var(--lag3);background:linear-gradient(90deg,#ffe3d0,#f4d4ee)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.lp,.rp{padding:18px 22px;max-height:700px;overflow-y:auto}
+.lp{border-right:2px dashed rgba(0,0,0,.12)}
+.lp::-webkit-scrollbar,.rp::-webkit-scrollbar{width:8px}
+.lp::-webkit-scrollbar-thumb,.rp::-webkit-scrollbar-thumb{background:var(--lag2);border-radius:8px}
+.pblock{background:#fff;border:2px solid rgba(0,0,0,.08);border-left:5px solid var(--sky3);border-radius:14px;padding:13px 16px;margin-bottom:13px}
+.pblock p{font-size:1rem;line-height:1.9}
+.bk{display:inline-block;min-width:30px;text-align:center;font-family:'Baloo 2';font-weight:700;color:#fff;background:var(--coral);
+  border-radius:8px;padding:1px 8px;margin:0 2px;font-size:.9rem}
+.tbtn{margin-top:8px;cursor:pointer;font-family:'Baloo 2';font-weight:700;border:none;color:#fff;background:linear-gradient(90deg,var(--gold),var(--coral));
+  padding:6px 16px;border-radius:20px;font-size:.85rem}
+.trans{display:none;margin-top:9px;padding:11px 14px;background:#f3ecff;border-left:4px solid var(--sky3);border-radius:0 10px 10px 0;font-size:.94rem;line-height:1.8}
+.trans.show{display:block;animation:fade .3s}
+@keyframes fade{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.trans b{color:var(--coral)}
+.gloss{background:#fff8e8;border:2px dashed var(--gold);border-radius:14px;padding:12px 15px;margin-top:6px}
+.gloss .gt{font-family:'Baloo 2';font-weight:700;color:#7a4a1a;margin-bottom:8px}
+table.gtb{width:100%;border-collapse:collapse;font-size:.86rem}
+table.gtb th{background:var(--lag2);color:#fff;padding:7px 9px;text-align:left;font-family:'Baloo 2';font-size:.76rem}
+table.gtb td{padding:6px 9px;border-bottom:1px solid rgba(0,0,0,.08)}
+table.gtb td:first-child{font-weight:700;color:var(--coral)}
+table.gtb td:nth-child(2){color:#7a4a1a;font-style:italic;font-size:.8rem;white-space:nowrap}
+.qh{font-weight:700;font-size:.96rem;margin-bottom:10px;line-height:1.6}
+.qh .num{display:inline-block;width:30px;height:30px;line-height:30px;text-align:center;border-radius:50%;
+  background:linear-gradient(135deg,var(--coral),var(--sky2));color:#fff;font-family:'Baloo 2';margin-right:7px;font-size:.9rem}
+.qblock{background:#fff;border:2px solid rgba(0,0,0,.08);border-radius:14px;padding:14px 16px;margin-bottom:14px}
+.opt{display:block;width:100%;text-align:left;cursor:pointer;margin:7px 0;padding:11px 14px;border:2px solid rgba(0,0,0,.14);
+  border-radius:12px;background:#fff;font-weight:700;font-size:.94rem;color:var(--ink);transition:.15s}
+.opt:hover:not(:disabled){border-color:var(--sky3);background:#f3ecff;transform:translateX(3px)}
+.opt:disabled{cursor:default}
+.opt.correct{background:var(--correctbg);border-color:var(--correct);color:#0d5c33}
+.opt.wrong{background:var(--wrongbg);border-color:var(--wrong);color:#8a1620;animation:shk .4s}
+@keyframes shk{10%,90%{transform:translateX(-2px)}20%,80%{transform:translateX(4px)}30%,50%,70%{transform:translateX(-6px)}40%,60%{transform:translateX(6px)}}
+.exp{display:none;margin-top:11px;background:#fff2ea;border:2px solid var(--coral);border-radius:12px;padding:12px 15px;font-size:.88rem;line-height:1.8}
+.exp.on{display:block;animation:fade .3s}
+.exp .badge{display:inline-block;background:var(--correct);color:#fff;font-family:'Baloo 2';border-radius:10px;padding:2px 12px;margin-bottom:7px;font-size:.82rem}
+.exp .badge.bad{background:var(--wrong)}
+.exp .step{margin-top:7px}
+.exp .slab{font-family:'Baloo 2';font-weight:700;color:var(--sky2);font-size:.86rem}
+.exp .obox{background:#fff;border-radius:8px;padding:6px 10px;margin:5px 0;display:flex;flex-wrap:wrap;gap:4px 8px}
+.exp ul{margin:5px 0 0;padding-left:18px}
+.exp li{margin-bottom:5px}
+.p-word{font-weight:800;color:var(--sky2)}
+.p-mean{color:#7a4a1a;font-weight:700}
+.pos{display:inline-block;font-weight:800;font-size:.64rem;padding:1px 7px;border-radius:8px;text-transform:uppercase;margin-right:2px}
+.pos-n{background:#d0ebff;color:#1c6fb0}
+.pos-v{background:#ffe0d6;color:#c0392b}
+.pos-adj{background:#efd9ff;color:#7a3fc9}
+.pos-adv{background:#c9f2e6;color:#0b8a63}
+.pos-prep{background:#ffdcea;color:#c2255c}
+.pos-art{background:#f1e6cf;color:#8a6a1a}
+.pos-phr{background:#dcefc9;color:#4a7a1f}
+.hl-green{color:var(--correct);font-weight:800}
+.hl-red{color:var(--wrong);font-weight:800}
+.quote{background:#f3ecff;border-left:4px solid var(--sky3);border-radius:0 10px 10px 0;padding:9px 12px;margin-top:7px;font-size:.85rem;line-height:1.75;color:#3a1f5c}
+.quote b{color:var(--coral)}
+.submit-wrap{text-align:center;margin:20px 0}
+.bsub{font-family:'Baloo 2';font-weight:700;font-size:1.1rem;color:#fff;border:none;border-radius:28px;padding:14px 32px;cursor:pointer;
+  background:linear-gradient(90deg,var(--coral),var(--sky2));box-shadow:0 10px 22px rgba(106,63,143,.42)}
+.ov{display:none;position:fixed;inset:0;z-index:999;background:rgba(20,10,40,.6);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:16px}
+.ov.on{display:flex}
+.mb{background:var(--sand);border-radius:22px;padding:26px 28px;max-width:440px;width:100%;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.4);max-height:92vh;overflow-y:auto;border:3px dashed var(--coral)}
+.mb h2{font-family:'Baloo 2';color:var(--coral);font-size:1.3rem;margin-bottom:12px}
+.mb input{width:100%;font-family:inherit;font-size:1rem;font-weight:700;padding:11px 14px;border:2px solid var(--sky3);border-radius:14px;text-align:center;outline:none;margin-bottom:8px}
+.mb .err{color:var(--wrong);font-weight:700;font-size:.85rem;display:none;margin-bottom:8px}
+.mb .err.show{display:block}
+.mb button{cursor:pointer;font-family:'Baloo 2';font-weight:700;border:none;color:#fff;border-radius:20px;padding:10px 24px;background:linear-gradient(90deg,var(--lag2),var(--sky2));font-size:.98rem;margin-top:4px}
+.mb .close{background:#999}
+.gif{width:160px;margin:11px auto;display:block;border-radius:12px;border:3px solid var(--gold)}
+.rscore{font-family:'Baloo 2';font-size:2.3rem;color:var(--coral)}
+.r10{font-family:'Baloo 2';font-size:1.15rem;color:var(--sky2)}
+.rcmt{margin:11px 0;padding:11px 14px;background:#fff8e8;border:2px dashed var(--gold);border-radius:12px;font-size:.88rem;line-height:1.7}
+@media(max-width:860px){.split{grid-template-columns:1fr}.lp{border-right:none;border-bottom:2px dashed rgba(0,0,0,.12)}}
+</style>
+</head>
+<body>
+<div class="moon"></div>
+<span class="star" style="top:9%;left:15%;width:3px;height:3px;animation-duration:2.4s"></span>
+<span class="star" style="top:14%;left:32%;width:2px;height:2px;animation-duration:3.1s;animation-delay:-1s"></span>
+<span class="star" style="top:7%;left:55%;width:3px;height:3px;animation-duration:2.8s;animation-delay:-2s"></span>
+<span class="star" style="top:19%;left:72%;width:2px;height:2px;animation-duration:3.6s;animation-delay:-.5s"></span>
+<span class="star" style="top:5%;left:88%;width:2px;height:2px;animation-duration:2.2s;animation-delay:-1.5s"></span>
+<span class="lantern" style="left:8%;animation-duration:15s">🏮</span>
+<span class="lantern" style="left:26%;animation-duration:19s;animation-delay:-6s">🏮</span>
+<span class="lantern" style="left:70%;animation-duration:17s;animation-delay:-3s">🏮</span>
+<span class="lantern" style="left:88%;animation-duration:21s;animation-delay:-9s">🏮</span>
+<span class="jelly" style="left:12%;animation-delay:-1s">🎐</span>
+<span class="jelly" style="right:10%;animation-delay:-3s">🎐</span>
+<div class="wave2"></div><div class="wave"></div>
+
+<div class="wrap">
+<header>
+  <h1>🌌 Unit 8: Tourism — Exercise 2</h1>
+  <div class="teacher">Giáo viên tạo: MS Chí Nên</div>
+  <div class="promo">📞 0936 322 809 — Đăng ký khoá học tiếng Anh lớp 1 → lớp 12, trải nghiệm web giải chi tiết đỉnh cao!</div>
+</header>
+
+<div class="note">🏮 Nhắc nhở có tâm từ MS Chí Nên: hai bài đọc này rất khác nhau về văn phong — một bài trang trọng như tin tức (Space Tourism), một bài thân mật như thư tay (A Letter from Thailand). Hãy đọc kỹ để cảm nhận đúng "giọng văn" trước khi chọn đáp án nhé! 🌠</div>
+
+<div class="scorebar">
+  <div class="chip">✅ Đúng: <b id="cCorrect">0</b>/10</div>
+  <div class="chip">📝 Đã làm: <b id="cDone">0</b>/10</div>
+</div>
+<div class="bar"><span id="barFill"></span></div>
+
+<!-- ============== A. SPACE TOURISM ============== -->
+<div class="section">
+  <div class="sec-head">🚀 Space Tourism (Câu 1–5)</div>
+  <div class="split">
+    <div class="lp">
+      <div class="pblock"><p>Make your reservations now. The space tourism industry is <span class="bk">1</span> open for business, and tickets are going for a mere $20 million for a one-week stay in space. Despite reluctance from NASA, Russia made American businessman Dennis Tito the world's first space tourist. Tito flew into space aboard a Russian Soyuz <span class="bk">2</span> that arrived at the International Space Station (ISS) on April 30, 2001. The second space tourist, South African businessman Mark Shuttleworth, took <span class="bk">3</span> aboard the Russian Soyuz on April 25, 2002, also bound for the ISS. Greg Olsen, an American businessman, became tourist number three to the ISS on October 1, 2005.</p>
+        <button class="tbtn" onclick="tg('v1',this)">🔊 Xem bản dịch</button>
+        <div class="trans" id="v1">Hãy đặt chỗ ngay bây giờ. Ngành du lịch vũ trụ hiện đã <b>chính thức</b> mở cửa hoạt động, và vé đang được bán với giá chỉ khoảng 20 triệu đô la cho một tuần lưu trú trong vũ trụ. Bất chấp sự do dự từ NASA, Nga đã đưa doanh nhân người Mỹ Dennis Tito trở thành du khách vũ trụ đầu tiên trên thế giới. Tito đã bay vào vũ trụ trên <b>tên lửa</b> Soyuz của Nga, cập bến Trạm Vũ trụ Quốc tế (ISS) vào ngày 30/4/2001. Du khách vũ trụ thứ hai, doanh nhân người Nam Phi Mark Shuttleworth, đã <b>cất cánh</b> trên tàu Soyuz của Nga vào ngày 25/4/2002, cũng hướng tới ISS. Greg Olsen, một doanh nhân người Mỹ, trở thành du khách thứ ba đến ISS vào ngày 1/10/2005.</div>
+      </div>
+      <div class="pblock"><p>On September 18, 2006, Anousheh Ansari, a telecommunications entrepreneur, became the first female space tourist and the fourth space tourist <span class="bk">4</span>. She was also the first person of Iranian descent to make it into space. Charles Simonyi, a software architect, became the fifth space tourist on April 7, 2007.<br><br>
+      These trips are the beginning of what could be a lucrative 21st century industry. There are already several space tourism companies planning to build suborbital vehicles and orbital cities within the next two decades. These companies have <span class="bk">5</span> millions, believing that the space tourism industry is on the verge of taking off.</p>
+        <button class="tbtn" onclick="tg('v2',this)">🔊 Xem bản dịch</button>
+        <div class="trans" id="v2">Vào ngày 18/9/2006, Anousheh Ansari, một doanh nhân trong ngành viễn thông, trở thành nữ du khách vũ trụ đầu tiên và là du khách vũ trụ thứ tư <b>nói chung</b>. Bà cũng là người gốc Iran đầu tiên bay vào vũ trụ. Charles Simonyi, một kiến trúc sư phần mềm, trở thành du khách vũ trụ thứ năm vào ngày 7/4/2007.<br><br>
+        Những chuyến đi này chỉ là khởi đầu của một ngành công nghiệp có thể mang lại lợi nhuận lớn trong thế kỷ 21. Đã có một số công ty du lịch vũ trụ lên kế hoạch xây dựng phương tiện bay dưới quỹ đạo và các thành phố quỹ đạo trong hai thập kỷ tới. Các công ty này đã <b>đầu tư</b> hàng triệu đô la, tin rằng ngành du lịch vũ trụ đang trên đà cất cánh.</div>
+      </div>
+      <div class="gloss"><div class="gt">📖 Từ vựng</div>
+        <table class="gtb"><tr><th>Từ</th><th>Loại</th><th>Nghĩa</th></tr>
+          <tr><td>reservation</td><td>n</td><td>sự đặt chỗ</td></tr>
+          <tr><td>reluctance</td><td>n</td><td>sự do dự</td></tr>
+          <tr><td>aboard</td><td>adv</td><td>trên (tàu/xe)</td></tr>
+          <tr><td>bound for</td><td>adj.phr</td><td>hướng tới</td></tr>
+          <tr><td>entrepreneur</td><td>n</td><td>doanh nhân</td></tr>
+          <tr><td>lucrative</td><td>adj</td><td>sinh lời, có lãi</td></tr>
+          <tr><td>on the verge of</td><td>phr</td><td>sắp sửa, bên bờ</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="rp" id="secA"></div>
+  </div>
+</div>
+
+<!-- ============== B. A LETTER FROM THAILAND ============== -->
+<div class="section">
+  <div class="sec-head">✉️ A Letter from Thailand (Câu 6–10)</div>
+  <div class="split">
+    <div class="lp">
+      <div class="pblock"><p>Dear Laura,<br>
+      I hope you're doing well. I wanted to share with you all about my recent <span class="bk">6</span> holiday to Thailand with my family because we wanted to arrange everything by ourselves. It was also our first international holiday in a foreign country, and it was fantastic!<br><br>
+      During our stay in Bangkok, my family and I booked a room at the Ambassador hotel. It was a lovely place, and we had a really good time there.</p>
+        <button class="tbtn" onclick="tg('v3',this)">🔊 Xem bản dịch</button>
+        <div class="trans" id="v3">Laura thân mến,<br>
+        Mình hy vọng bạn vẫn ổn. Mình muốn kể cho bạn nghe về kỳ nghỉ <b>tự túc</b> gần đây của gia đình mình tới Thái Lan, vì cả nhà muốn tự sắp xếp mọi thứ. Đây cũng là kỳ nghỉ quốc tế đầu tiên của gia đình mình ở nước ngoài, và nó thật tuyệt vời!<br><br>
+        Trong thời gian ở Bangkok, gia đình mình đặt phòng tại khách sạn Ambassador. Đó là một nơi rất đẹp, và bọn mình đã có khoảng thời gian rất vui ở đó.</div>
+      </div>
+      <div class="pblock"><p>One of the highlights of the trip was the <span class="bk">7</span>. I had the opportunity to try different mouthwatering Thai dishes. The flavours were so unique and delicious!<br><br>
+      We also <span class="bk">8</span> various temples and pagodas in Bangkok. The intricate designs and peaceful atmosphere made it a memorable experience.</p>
+        <button class="tbtn" onclick="tg('v4',this)">🔊 Xem bản dịch</button>
+        <div class="trans" id="v4">Một trong những điểm nhấn của chuyến đi là <b>ẩm thực</b>. Mình có cơ hội thử nhiều món ăn Thái hấp dẫn khác nhau. Hương vị thật độc đáo và ngon miệng!<br><br>
+        Bọn mình cũng <b>khám phá</b> nhiều ngôi đền và chùa tháp ở Bangkok. Những họa tiết tinh xảo và không khí yên bình khiến đó trở thành một trải nghiệm đáng nhớ.</div>
+      </div>
+      <div class="pblock"><p>Moreover, we managed to visit Ayutthaya, the <span class="bk">9</span> city of Thailand. It was like stepping back in time, seeing the ancient ruins and learning about the rich history of the place.<br><br>
+      Thailand is truly a must-go <span class="bk">10</span>. There is still so much more to explore, and I can't wait to come back for another adventure. Take care, and let's catch up soon!<br>
+      Best regards, Tam</p>
+        <button class="tbtn" onclick="tg('v5',this)">🔊 Xem bản dịch</button>
+        <div class="trans" id="v5">Hơn nữa, bọn mình còn ghé thăm Ayutthaya, thành phố <b>cổ</b> của Thái Lan. Cảm giác như quay ngược thời gian, được chiêm ngưỡng những tàn tích cổ xưa và tìm hiểu về lịch sử phong phú của nơi đây.<br><br>
+        Thái Lan thực sự là một <b>điểm đến</b> phải tới. Vẫn còn rất nhiều điều để khám phá, và mình không thể chờ được để quay lại cho một cuộc phiêu lưu khác. Giữ gìn sức khỏe nhé, hẹn sớm gặp lại!<br>
+        Thân mến, Tam</div>
+      </div>
+      <div class="gloss"><div class="gt">📖 Từ vựng</div>
+        <table class="gtb"><tr><th>Từ</th><th>Loại</th><th>Nghĩa</th></tr>
+          <tr><td>arrange</td><td>v</td><td>sắp xếp</td></tr>
+          <tr><td>mouthwatering</td><td>adj</td><td>hấp dẫn (món ăn)</td></tr>
+          <tr><td>intricate</td><td>adj</td><td>tinh xảo, phức tạp</td></tr>
+          <tr><td>atmosphere</td><td>n</td><td>không khí, bầu không khí</td></tr>
+          <tr><td>ruins</td><td>n</td><td>tàn tích</td></tr>
+          <tr><td>must-go</td><td>adj</td><td>phải đến</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="rp" id="secB"></div>
+  </div>
+</div>
+
+<div class="submit-wrap"><button class="bsub" onclick="askName()">🎯 Nộp bài tính điểm &amp; xem kết quả</button></div>
+</div>
+
+<div class="ov" id="nameModal"><div class="mb">
+  <h2>🖊️ Nhập tên để nộp bài</h2>
+  <input id="nameInput" placeholder="Họ và tên học sinh..." onkeydown="if(event.key==='Enter')okName()">
+  <div class="err" id="nameErr">⚠️ Em chưa nhập tên! Bắt buộc phải có tên mới nộp được bài nha.</div>
+  <button onclick="okName()">✅ Xác nhận &amp; chấm điểm</button>
+</div></div>
+
+<div class="ov" id="scoreModal"><div class="mb">
+  <div id="mEmoji" style="font-size:3.2rem">🏆</div>
+  <h2 id="mTitle">KẾT QUẢ</h2>
+  <div id="mName" style="font-weight:700;color:var(--lag2)"></div>
+  <img class="gif" id="mGif" src="" alt="" onerror="this.style.display='none'">
+  <div class="rscore" id="mScore">0/10</div>
+  <div class="r10" id="mScore10">0.00 / 10</div>
+  <div class="rcmt" id="mComment"></div>
+  <button class="close" onclick="document.getElementById('scoreModal').classList.remove('on')">📚 Xem lại bài</button>
+  <button onclick="location.reload()">🔄 Làm lại</button>
+</div></div>
+
+<script>
+function tg(id,btn){const el=document.getElementById(id);el.classList.toggle('show');
+  btn.textContent=el.classList.contains('show')?'🔼 Ẩn bản dịch':'🔊 Xem bản dịch';}
+var AC;function ac(){if(!AC)AC=new (window.AudioContext||window.webkitAudioContext)();return AC;}
+function ding(){try{var c=ac();[[880,0],[1320,.09],[1760,.19]].forEach(function(p){var o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.type='sine';o.frequency.value=p[0];var t=c.currentTime+p[1];g.gain.setValueAtTime(.25,t);g.gain.exponentialRampToValueAtTime(.001,t+.3);o.start(t);o.stop(t+.3);});}catch(e){}}
+function buzz(){try{var c=ac();[[330,0],[220,.15]].forEach(function(p){var o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.type='square';o.frequency.value=p[0];var t=c.currentTime+p[1];g.gain.setValueAtTime(.2,t);g.gain.exponentialRampToValueAtTime(.001,t+.2);o.start(t);o.stop(t+.2);});}catch(e){}}
+function W(word,pos,mean){return '<div class="obox"><span class="pos pos-'+pos+'">'+pos+'</span><span class="p-word">'+word+'</span><span class="p-mean">— '+mean+'</span></div>';}
+
+var QD=[
+{n:1,lb:'1',s:'A',q:'1. The space tourism industry is <b>(1)</b> open for business.',
+ o:["officially","office","official","officiate"],a:"officially",
+ e:{tr:'Dịch: "Ngành du lịch vũ trụ hiện ___ mở cửa hoạt động."',
+ op:W('officially','adv','chính thức (trạng từ)')+W('office','n','văn phòng')+W('official','adj','chính thức (tính từ)')+W('officiate','v','chủ trì (nghi lễ)'),
+ ok:'Đáp án đúng là <span class="hl-green">officially</span>. Chỗ trống đứng giữa "is" và tính từ "open", cần TRẠNG TỪ bổ nghĩa cho tính từ "open" — "officially open" nghĩa "chính thức mở cửa".',
+ ev:'"The space tourism industry is <b>officially</b> open for business." 👉 "Ngành du lịch vũ trụ hiện đã chính thức mở cửa hoạt động."',
+ no:'<ul><li><span class="hl-red">office</span> — là danh từ (văn phòng), không đứng trước tính từ "open".</li><li><span class="hl-red">official</span> — là tính từ, không thể bổ nghĩa cho tính từ khác ("open").</li><li><span class="hl-red">officiate</span> — là động từ (chủ trì nghi lễ), sai từ loại và sai nghĩa hoàn toàn.</li></ul>'}},
+{n:2,lb:'2',s:'A',q:'2. Tito flew into space aboard a Russian Soyuz <b>(2)</b>.',
+ o:["rocking","rock","rocket","rocketed"],a:"rocket",
+ e:{tr:'Dịch: "Tito đã bay vào vũ trụ trên ___ Soyuz của Nga."',
+ op:W('rocking','v','đang lắc lư')+W('rock','n','đá / nhạc rock')+W('rocket','n','tên lửa')+W('rocketed','v','đã tăng vọt'),
+ ok:'Đáp án đúng là <span class="hl-green">rocket</span>. Chỗ trống đứng sau tính từ sở hữu cách "Soyuz" cần DANH TỪ chỉ phương tiện bay vào vũ trụ — "Soyuz rocket" (tên lửa Soyuz).',
+ ev:'"Tito flew into space aboard a Russian Soyuz <b>rocket</b> that arrived at the ISS." 👉 "Tito đã bay vào vũ trụ trên tên lửa Soyuz của Nga, cập bến ISS."',
+ no:'<ul><li><span class="hl-red">rocking</span> — là V-ing (đang lắc lư), sai nghĩa và sai vị trí ngữ pháp.</li><li><span class="hl-red">rock</span> — nghĩa "đá/nhạc rock", không liên quan đến phương tiện bay.</li><li><span class="hl-red">rocketed</span> — là động từ quá khứ (đã tăng vọt), không phải danh từ chỉ phương tiện.</li></ul>'}},
+{n:3,lb:'3',s:'A',q:'3. Mark Shuttleworth took <b>(3)</b> aboard the Russian Soyuz.',
+ o:["off","up","in","out"],a:"off",
+ e:{tr:'Dịch: "Mark Shuttleworth đã ___ trên tàu Soyuz của Nga."',
+ op:W('off','prep','đi, rời khỏi')+W('up','prep','lên')+W('in','prep','trong')+W('out','prep','ra ngoài'),
+ ok:'Đáp án đúng là <span class="hl-green">off</span>. Cụm động từ cố định <b>"take off"</b> nghĩa "cất cánh" — đúng ngữ cảnh nói về việc bay vào vũ trụ trên tàu Soyuz.',
+ ev:'"Mark Shuttleworth took <b>off</b> aboard the Russian Soyuz on April 25, 2002." 👉 "Mark Shuttleworth đã cất cánh trên tàu Soyuz của Nga vào ngày 25/4/2002."',
+ no:'<ul><li><span class="hl-red">up</span> — không tạo thành cụm động từ cố định với "take" mang nghĩa "cất cánh".</li><li><span class="hl-red">in</span> — "take in" nghĩa "hấp thụ/lừa gạt", sai hoàn toàn ngữ cảnh.</li><li><span class="hl-red">out</span> — "take out" nghĩa "đưa ra ngoài/mời đi chơi", không phù hợp.</li></ul>'}},
+{n:4,lb:'4',s:'A',q:'4. Anousheh Ansari became the fourth space tourist <b>(4)</b>.',
+ o:["overalls","overall","overly","over"],a:"overall",
+ e:{tr:'Dịch: "Anousheh Ansari trở thành du khách vũ trụ thứ tư ___."',
+ op:W('overalls','n','quần yếm (số nhiều)')+W('overall','adv','nói chung')+W('overly','adv','quá mức')+W('over','prep','trên, hơn'),
+ ok:'Đáp án đúng là <span class="hl-green">overall</span>. Từ này đứng cuối câu bổ nghĩa cho toàn bộ mệnh đề với nghĩa "nói chung/tính chung" — phù hợp khi liệt kê thứ tự các du khách vũ trụ.',
+ ev:'"Anousheh Ansari became the first female space tourist and the fourth space tourist <b>overall</b>." 👉 "Bà trở thành nữ du khách vũ trụ đầu tiên và là du khách vũ trụ thứ tư nói chung."',
+ no:'<ul><li><span class="hl-red">overalls</span> — là danh từ (quần yếm), hoàn toàn sai nghĩa trong ngữ cảnh này.</li><li><span class="hl-red">overly</span> — nghĩa "quá mức" (overly excited), không phù hợp khi nói về thứ tự.</li><li><span class="hl-red">over</span> — là giới từ (trên/hơn), cần có tân ngữ theo sau, không đứng một mình cuối câu với nghĩa này.</li></ul>'}},
+{n:5,lb:'5',s:'A',q:'5. These companies have <b>(5)</b> millions, believing space tourism is on the verge of taking off.',
+ o:["invest","invests","invested","investment"],a:"invested",
+ e:{tr:'Dịch: "Các công ty này đã ___ hàng triệu đô la, tin rằng ngành du lịch vũ trụ đang trên đà cất cánh."',
+ op:W('invest','v','đầu tư (nguyên mẫu)')+W('invests','v','đầu tư (ngôi 3 số ít)')+W('invested','v','đã đầu tư')+W('investment','n','khoản đầu tư'),
+ ok:'Đáp án đúng là <span class="hl-green">invested</span>. Cấu trúc thì hiện tại hoàn thành "have + V3/-ed" cần động từ ở dạng phân từ hai — "have invested" (đã đầu tư).',
+ ev:'"These companies have <b>invested</b> millions, believing that the space tourism industry is on the verge of taking off." 👉 "Các công ty này đã đầu tư hàng triệu đô la, tin rằng ngành du lịch vũ trụ đang trên đà cất cánh."',
+ no:'<ul><li><span class="hl-red">invest</span> — là dạng nguyên mẫu, không khớp với cấu trúc "have + V3".</li><li><span class="hl-red">invests</span> — là dạng chia ngôi 3 số ít hiện tại đơn, không dùng sau "have".</li><li><span class="hl-red">investment</span> — là danh từ, không thể đứng sau trợ động từ "have" để tạo thì hoàn thành.</li></ul>'}},
+{n:6,lb:'6',s:'B',q:'6. I wanted to share with you all about my recent <b>(6)</b> holiday to Thailand.',
+ o:["self-guided","self-guiding","self-guide","self-guides"],a:"self-guided",
+ e:{tr:'Dịch: "Mình muốn kể cho bạn nghe về kỳ nghỉ ___ gần đây của mình tới Thái Lan."',
+ op:W('self-guided','adj','tự túc, tự hướng dẫn')+W('self-guiding','v','đang tự hướng dẫn')+W('self-guide','n','sách tự hướng dẫn')+W('self-guides','n','các sách tự hướng dẫn'),
+ ok:'Đáp án đúng là <span class="hl-green">self-guided</span>. Chỗ trống đứng trước danh từ "holiday" cần TÍNH TỪ ghép mang nghĩa bị động "tự sắp xếp/tự túc" — "self-guided holiday" (kỳ nghỉ tự túc).',
+ ev:'"I wanted to share with you all about my recent <b>self-guided</b> holiday to Thailand with my family." 👉 "Mình muốn kể cho bạn nghe về kỳ nghỉ tự túc gần đây của gia đình mình tới Thái Lan."',
+ no:'<ul><li><span class="hl-red">self-guiding</span> — dạng V-ing mang nghĩa chủ động, không tự nhiên để bổ nghĩa cho "holiday".</li><li><span class="hl-red">self-guide</span> — là danh từ (sách hướng dẫn), sai từ loại khi đứng trước danh từ khác.</li><li><span class="hl-red">self-guides</span> — là danh từ số nhiều, cũng sai từ loại như trên.</li></ul>'}},
+{n:7,lb:'7',s:'B',q:'7. One of the highlights of the trip was the <b>(7)</b>.',
+ o:["cuisine","cuisines","culinary","culinarily"],a:"cuisine",
+ e:{tr:'Dịch: "Một trong những điểm nhấn của chuyến đi là ___."',
+ op:W('cuisine','n','ẩm thực (không đếm được)')+W('cuisines','n','các nền ẩm thực')+W('culinary','adj','thuộc về ẩm thực')+W('culinarily','adv','về mặt ẩm thực'),
+ ok:'Đáp án đúng là <span class="hl-green">cuisine</span>. Chỗ trống đứng sau mạo từ "the", đóng vai trò chủ ngữ bổ ngữ (danh từ không đếm được) — "the cuisine" (nền ẩm thực nói chung).',
+ ev:'"One of the highlights of the trip was the <b>cuisine</b>. I had the opportunity to try different mouthwatering Thai dishes." 👉 "Một trong những điểm nhấn của chuyến đi là ẩm thực. Mình có cơ hội thử nhiều món ăn Thái hấp dẫn."',
+ no:'<ul><li><span class="hl-red">cuisines</span> — "cuisine" khi nói chung về ẩm thực một quốc gia là danh từ không đếm được, không thêm "s".</li><li><span class="hl-red">culinary</span> — là tính từ, cần có danh từ đi kèm, không thể đứng một mình làm bổ ngữ.</li><li><span class="hl-red">culinarily</span> — là trạng từ, không thể làm bổ ngữ cho động từ "was".</li></ul>'}},
+{n:8,lb:'8',s:'B',q:'8. We also <b>(8)</b> various temples and pagodas in Bangkok.',
+ o:["explore","explored","exploring","exploration"],a:"explored",
+ e:{tr:'Dịch: "Bọn mình cũng ___ nhiều ngôi đền và chùa tháp ở Bangkok."',
+ op:W('explore','v','khám phá (nguyên mẫu)')+W('explored','v','đã khám phá')+W('exploring','v','đang khám phá')+W('exploration','n','sự khám phá'),
+ ok:'Đáp án đúng là <span class="hl-green">explored</span>. Câu kể lại chuyến đi đã qua, cần ĐỘNG TỪ chia ở thì QUÁ KHỨ ĐƠN sau chủ ngữ "We" — khớp với các động từ quá khứ khác trong đoạn thư ("booked", "visited").',
+ ev:'"We also <b>explored</b> various temples and pagodas in Bangkok." 👉 "Bọn mình cũng khám phá nhiều ngôi đền và chùa tháp ở Bangkok."',
+ no:'<ul><li><span class="hl-red">explore</span> — là dạng nguyên mẫu/hiện tại, không khớp thì quá khứ của toàn đoạn thư.</li><li><span class="hl-red">exploring</span> — là V-ing, cần trợ động từ "were" đứng trước mới đúng cấu trúc, ở đây thiếu.</li><li><span class="hl-red">exploration</span> — là danh từ, không thể đứng làm động từ chính của câu sau chủ ngữ "We".</li></ul>'}},
+{n:9,lb:'9',s:'B',q:'9. We managed to visit Ayutthaya, the <b>(9)</b> city of Thailand.',
+ o:["ancient","anciently","ancients","ancient-ness"],a:"ancient",
+ e:{tr:'Dịch: "Bọn mình còn ghé thăm Ayutthaya, thành phố ___ của Thái Lan."',
+ op:W('ancient','adj','cổ, cổ xưa')+W('anciently','adv','một cách cổ xưa')+W('ancients','n','những người cổ đại')+W('ancient-ness','n','tính cổ xưa (không tồn tại)'),
+ ok:'Đáp án đúng là <span class="hl-green">ancient</span>. Chỗ trống đứng giữa "the" và danh từ "city", cần TÍNH TỪ bổ nghĩa — "the ancient city" (thành phố cổ).',
+ ev:'"We managed to visit Ayutthaya, the <b>ancient</b> city of Thailand. It was like stepping back in time." 👉 "Bọn mình còn ghé thăm Ayutthaya, thành phố cổ của Thái Lan. Cảm giác như quay ngược thời gian."',
+ no:'<ul><li><span class="hl-red">anciently</span> — là trạng từ, không thể đứng trước danh từ "city".</li><li><span class="hl-red">ancients</span> — là danh từ chỉ người (những người cổ đại), sai từ loại và sai nghĩa.</li><li><span class="hl-red">ancient-ness</span> — không phải từ tiếng Anh chuẩn, không tồn tại ở dạng này.</li></ul>'}},
+{n:10,lb:'10',s:'B',q:'10. Thailand is truly a must-go <b>(10)</b>.',
+ o:["destine","destination","destined","destiny"],a:"destination",
+ e:{tr:'Dịch: "Thái Lan thực sự là một ___ phải tới."',
+ op:W('destine','v','định trước (hiếm dùng)')+W('destination','n','điểm đến')+W('destined','adj','được định sẵn')+W('destiny','n','số phận'),
+ ok:'Đáp án đúng là <span class="hl-green">destination</span>. Chỗ trống đứng sau cụm tính từ ghép "must-go" bổ nghĩa, cần DANH TỪ để hoàn chỉnh cụm danh từ "a must-go destination" (một điểm đến phải tới).',
+ ev:'"Thailand is truly a must-go <b>destination</b>. There is still so much more to explore." 👉 "Thái Lan thực sự là một điểm đến phải tới. Vẫn còn rất nhiều điều để khám phá."',
+ no:'<ul><li><span class="hl-red">destine</span> — là động từ hiếm dùng (định trước), sai từ loại ở vị trí danh từ.</li><li><span class="hl-red">destined</span> — là tính từ (được định sẵn), không tạo nghĩa đúng khi ghép với "must-go".</li><li><span class="hl-red">destiny</span> — là danh từ nhưng nghĩa "số phận", không phù hợp ngữ cảnh du lịch.</li></ul>'}}
+];
+
+var TOTAL=QD.length,PICK={};
+function render(){
+  ["A","B"].forEach(function(s){
+    var host=document.getElementById('sec'+s);host.innerHTML='';
+    QD.filter(function(q){return q.s===s;}).forEach(function(q){
+      var h='<div class="qh"><span class="num">'+q.lb+'</span>'+q.q+'</div>';
+      shuffleOpts(q.o).forEach(function(v){h+='<button class="opt" data-n="'+q.n+'" data-v="'+esc(v)+'" onclick="pick('+q.n+',this)">'+esc(v)+'</button>';});
+      h+='<div class="exp" id="e_'+q.n+'"></div>';
+      var d=document.createElement('div');d.className='qblock';d.innerHTML=h;host.appendChild(d);
+    });
+  });
+  prog();
+}
+function shuffleOpts(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t;}return a;}
+function esc(s){return s.replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');}
+function pick(n,btn){
+  if(PICK[n])return;
+  PICK[n]=btn.getAttribute('data-v');
+  var q=QD.filter(function(x){return x.n===n;})[0];
+  var bs=document.querySelectorAll('.opt[data-n="'+n+'"]');
+  for(var i=0;i<bs.length;i++)bs[i].disabled=true;
+  if(PICK[n]===q.a){btn.classList.add('correct');ding();}
+  else{btn.classList.add('wrong');buzz();for(var j=0;j<bs.length;j++){if(bs[j].getAttribute('data-v')===q.a)bs[j].classList.add('correct');}}
+  showExp(n,q);prog();
+}
+function showExp(n,q){
+  var ok=PICK[n]===q.a,b=document.getElementById('e_'+n);
+  b.innerHTML='<div class="badge'+(ok?'':' bad')+'">'+(ok?'✅ CHÍNH XÁC!':'❌ CHƯA ĐÚNG – Đáp án đúng: '+q.a)+'</div>'
+   +'<div class="step"><span class="slab">① Dịch:</span> '+q.e.tr+'</div>'
+   +'<div class="step"><span class="slab">② Các phương án &amp; nghĩa:</span>'+q.e.op+'</div>'
+   +'<div class="step"><span class="slab">③ Vì sao đúng:</span> '+q.e.ok+(q.e.ev?'<div class="quote">🔍 <b>Dẫn chứng:</b> '+q.e.ev+'</div>':'')+'</div>'
+   +(q.e.no?'<div class="step"><span class="slab">④ Vì sao các phương án khác sai:</span> '+q.e.no+'</div>':'');
+  b.classList.add('on');
+}
+function prog(){var d=Object.keys(PICK).length,c=0;for(var k in PICK){var q=QD.filter(function(x){return x.n==k;})[0];if(PICK[k]===q.a)c++;}
+  document.getElementById('cDone').textContent=d;document.getElementById('cCorrect').textContent=c;
+  document.getElementById('barFill').style.width=(d/TOTAL*100)+'%';}
+function askName(){document.getElementById('nameErr').classList.remove('show');document.getElementById('nameModal').classList.add('on');}
+function okName(){
+  var v=document.getElementById('nameInput').value.trim();
+  if(!v){document.getElementById('nameErr').classList.add('show');return;}
+  document.getElementById('nameModal').classList.remove('on');grade(v);
+}
+function grade(sname){
+  QD.forEach(function(q){
+    if(!PICK[q.n]){
+      PICK[q.n]='__';
+      var bs=document.querySelectorAll('.opt[data-n="'+q.n+'"]');
+      for(var i=0;i<bs.length;i++){bs[i].disabled=true;if(bs[i].getAttribute('data-v')===q.a)bs[i].classList.add('correct');}
+      showExp(q.n,q);
+    }
+  });
+  prog();
+  var cor=QD.filter(function(q){return PICK[q.n]===q.a;}).length;
+  var pct=cor/TOTAL,d10=(cor/TOTAL*10).toFixed(2),em,ti,cm,gif;
+  if(pct===1){em='🏆';ti='XUẤT SẮC — NGÔI SAO CỦA MS!';cm='Tuyệt đối hoàn hảo '+cor+'/'+TOTAL+'! MS Chí Nên rất tự hào về em! 🏮';gif='https://media.giphy.com/media/3ohhwytHcusSCXXOUg/giphy.gif';}
+  else if(pct>=.6){em='👏';ti='LÀM TỐT LẮM!';cm='Em đạt '+cor+'/'+TOTAL+' – đã vượt qua rồi! Đọc kỹ phần giải thích những câu sai nhé. 🌙';gif='https://media.giphy.com/media/l4pTfx2qLszoacZRS/giphy.gif';}
+  else{em='😭';ti='CỐ LÊN NHÉ!';cm='Em mới đạt '+cor+'/'+TOTAL+'. Đừng buồn nha! Đọc kỹ đoạn văn rồi làm lại — MS Chí Nên tin em sẽ tiến bộ nhanh. ✨';gif='https://media.giphy.com/media/d2lcHJTG5Tscg/giphy.gif';}
+  document.getElementById('mEmoji').textContent=em;
+  document.getElementById('mTitle').textContent=ti;
+  document.getElementById('mName').textContent='🎓 Học sinh: '+sname;
+  var g=document.getElementById('mGif');g.style.display='';g.src=gif;
+  document.getElementById('mScore').textContent=cor+'/'+TOTAL;
+  document.getElementById('mScore10').textContent='Điểm hệ 10: '+d10+' / 10';
+  document.getElementById('mComment').textContent=cm;
+  document.getElementById('scoreModal').classList.add('on');
+}
+render();
+</script>
+<script>/*devclean*/(function(){
+var ZW=/[\u00AD\u034F\u061C\u115F\u1160\u17B4\u17B5\u180E\u200B-\u200F\u202A-\u202E\u2060-\u206F\uFEFF]/g,
+    SP=/[\u00A0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\t]/g,
+    AP=/[\u2018\u2019\u201A\u201B\u2032\u2035\u02B9\u02BB\u02BC\u02BD\u02C8\u0060\u00B4\uFF07]/g,
+    DQ=/[\u201C\u201D\u201E\u201F\u2033\u2036\u00AB\u00BB\uFF02]/g,
+    DS=/[\u2010\u2011\u2012\u2212\uFE63\uFF0D]/g;
+function clean(v){if(!v)return v;var s=String(v);try{s=s.normalize('NFKC')}catch(e){}
+  return s.replace(ZW,'').replace(SP,' ').replace(AP,"'").replace(DQ,'"').replace(DS,'-').replace(/[\u0300-\u036f]/g,'').replace(/ {2,}/g,' ');}
+window.__devclean=clean;
+function fix(skip){var L=document.querySelectorAll('input:not([type]),input[type=text],input[type=search],textarea');
+  for(var i=0;i<L.length;i++){var el=L[i];if(el===skip||el.readOnly||el.disabled)continue;var v=el.value,c=clean(v);if(c!==v)el.value=c;}}
+['pointerdown','mousedown','touchstart','click','change','focusout'].forEach(function(t){document.addEventListener(t,function(e){fix(t==='focusout'||t==='change'?null:e.target)},true)});
+document.addEventListener('keydown',function(e){if(e.key==='Enter'||e.keyCode===13)fix(null)},true);
+})();</script>
+<style id="ms-chi-nen-unlock-style">
+#passwordModal, #password-modal, #pwModal, #pw-modal, #pw-overlay,
+#lockModal, #passModal, #authModal, #auth-modal, #lockOverlay,
+#start-overlay, #intro-overlay, #start-screen,
+.password-modal, .lock-modal, .lock-overlay {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    z-index: -9999 !important;
+}
+</style>
+<script>
+// Remove password lock completely - direct quiz access
+(function() {
+    var initDone = false;
+    var renderCheckDone = false;
+
+    function hideEl(el, hard) {
+        if (!el) return;
+        if (hard) {
+            el.style.setProperty('display', 'none', 'important');
+            el.style.setProperty('visibility', 'hidden', 'important');
+            el.style.setProperty('opacity', '0', 'important');
+            el.style.setProperty('pointer-events', 'none', 'important');
+            el.style.setProperty('z-index', '-9999', 'important');
+        } else {
+            el.style.display = 'none';
+        }
+        el.classList.remove('active', 'show', 'open', 'visible', 'flex');
+    }
+
+    function hasRenderedQuiz() {
+        var containers = document.querySelectorAll(
+            '#quiz-container, #quizContainer, #questions-container, #questionPane, #quiz, #questions, #quiz-body, #questions-wrapper, #quiz-list, #quizList, #exercise-container, #app-container .split-container'
+        );
+        for (var i = 0; i < containers.length; i++) {
+            if (containers[i].querySelectorAll('button, input, select, textarea, .question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .question, .option-btn, .opt-btn, .ans-btn').length > 0) {
+                return true;
+            }
+        }
+        if (document.querySelectorAll('.question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .option-btn, .opt-btn, .ans-btn, .choice-btn').length > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    function ensureQuizRendered() {
+        if (renderCheckDone) return;
+        renderCheckDone = true;
+        if (hasRenderedQuiz()) return;
+
+        if (!hasRenderedQuiz() && typeof buildQuiz === 'function') { try { buildQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof initQuiz === 'function') { try { initQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderApp === 'function') { try { renderApp(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuiz === 'function') { try { renderQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuestions === 'function') { try { renderQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAllQuestions === 'function') { try { renderAllQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAll === 'function') { try { renderAll(); } catch(e){} }
+    }
+
+    function unlockNow() {
+        var pwIds = [
+            'passwordModal', 'password-modal', 'pwModal', 'pw-modal', 'pw-overlay',
+            'lockModal', 'passModal', 'authModal', 'auth-modal', 'lockOverlay',
+            'start-overlay', 'intro-overlay', 'start-screen'
+        ];
+        pwIds.forEach(function(id) {
+            hideEl(document.getElementById(id), true);
+        });
+
+        var modalEls = document.querySelectorAll('.password-modal, .lock-modal, .lock-overlay, #lockOverlay, #auth-modal');
+        modalEls.forEach(function(el) {
+            if (el.id !== 'resultModal' && el.id !== 'result-modal' && el.id !== 'scoreModal') {
+                hideEl(el, true);
+            }
+        });
+
+        ['nameModal', 'name-modal', 'nameInputModal'].forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) hideEl(el, false);
+        });
+
+        var qo = document.getElementById('quiz-overlay');
+        if (qo && (typeof isStarted === 'undefined' || !isStarted)) {
+            qo.style.display = 'none';
+        }
+
+        var mainIds = [
+            'mainContent', 'main-content', 'mainHeader', 'main-header',
+            'app-container', 'app', 'quizApp', 'quiz-wrapper', 'quizContainer', 'quiz-container', 'reading-content'
+        ];
+        mainIds.forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) {
+                el.classList.remove('hidden', 'blur', 'blurred', 'locked');
+                if (el.style.display === 'none') {
+                    el.style.removeProperty('display');
+                }
+                if (window.getComputedStyle(el).display === 'none') {
+                    var hasPane = el.querySelector('.pane, .left-pane, .right-pane, .split-container, .left-panel, .right-panel');
+                    if (id === 'main-content' || id.toLowerCase().includes('header') || el.classList.contains('main-container') || hasPane) {
+                        el.style.setProperty('display', 'flex', 'important');
+                    } else {
+                        el.style.setProperty('display', 'block', 'important');
+                    }
+                }
+            }
+        });
+
+        var qs = document.getElementById('quiz-screen');
+        if (qs) {
+            qs.classList.remove('hidden');
+            if (qs.classList.contains('flex-col')) {
+                qs.classList.add('flex');
+                qs.style.display = 'flex';
+            } else {
+                qs.style.display = 'block';
+            }
+        }
+
+        if (!initDone) {
+            initDone = true;
+
+            if (document.getElementById('start-overlay') && typeof startGame === 'function') {
+                var sn = document.getElementById('student-name') || document.getElementById('studentName');
+                if (sn && !sn.value.trim()) sn.value = 'Học sinh';
+            }
+            if (document.getElementById('name-modal') && typeof startQuiz === 'function') {
+                var sn2 = document.getElementById('student-name');
+                if (sn2 && !sn2.value.trim()) sn2.value = 'Học sinh';
+            }
+
+            if (typeof startQuiz === 'function' && (typeof isStarted === 'undefined' || !isStarted)) { try { startQuiz(); } catch(e){} }
+            if (typeof startGame === 'function') { try { startGame(); } catch(e){} }
+            if (typeof startTest === 'function') { try { startTest(); } catch(e){} }
+            if (typeof startApp === 'function') { try { startApp(); } catch(e){} }
+            if (typeof buildStarfield === 'function') { try { buildStarfield(); } catch(e){} }
+            if (typeof spawnFloats === 'function') { try { spawnFloats(); } catch(e){} }
+            if (typeof spawnFloaters === 'function') { try { spawnFloaters(); } catch(e){} }
+            if (typeof createFloatingBubbles === 'function') { try { createFloatingBubbles(); } catch(e){} }
+            if (typeof initAudio === 'function') { try { initAudio(); } catch(e){} }
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', unlockNow);
+    } else {
+        unlockNow();
+    }
+    if (document.readyState === 'complete') {
+        setTimeout(ensureQuizRendered, 150);
+    } else {
+        window.addEventListener('load', function() {
+            setTimeout(unlockNow, 20);
+            setTimeout(ensureQuizRendered, 150);
+            setTimeout(unlockNow, 300);
+            setTimeout(unlockNow, 700);
+        });
+    }
+    setTimeout(unlockNow, 50);
+    setTimeout(unlockNow, 200);
+    setTimeout(unlockNow, 600);
+    setTimeout(unlockNow, 1100);
+})();
+</script>
+</body>
+</html>
