@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Phonetics Challenge - MS Chí Nên</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-purple: #8854C0;
+            --primary-teal: #00C9A7;
+            --correct-green: #00D26A;
+            --wrong-red: #FF4757;
+            --bg-pastel: #F3F0FF;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: var(--bg-pastel);
+            background-image: radial-gradient(#8854C0 1.5px, transparent 1.5px), radial-gradient(#8854C0 1.5px, #F3F0FF 1.5px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+            color: #4b5563;
+        }
+
+        .card-shadow {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 3D Button Styles */
+        .btn-3d {
+            transition: all 0.1s;
+            border-bottom: 5px solid rgba(0, 0, 0, 0.15);
+            transform: translateY(0);
+        }
+
+        .btn-3d:active {
+            transform: translateY(3px);
+            border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-option {
+            background-color: white;
+            border: 2px solid #E5E7EB;
+            border-bottom: 5px solid #E5E7EB;
+            color: #374151;
+            transition: all 0.2s;
+        }
+
+        .btn-option:hover:not(:disabled) {
+            transform: translateY(-2px);
+            border-color: var(--primary-purple);
+            color: var(--primary-purple);
+            background-color: #F3E8FF;
+        }
+
+        .btn-option.correct {
+            background-color: var(--correct-green);
+            color: white;
+            border-color: #00A855;
+            border-bottom-color: #008542;
+        }
+
+        .btn-option.wrong {
+            background-color: var(--wrong-red);
+            color: white;
+            border-color: #D63031;
+            border-bottom-color: #B82526;
+        }
+
+        /* Animations */
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-8px) rotate(-2deg); }
+            75% { transform: translateX(8px) rotate(2deg); }
+        }
+
+        .shake-element {
+            animation: shake 0.4s ease-in-out;
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .explanation-box {
+            animation: popIn 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #C4B5FD;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #8854C0;
+        }
+
+        u {
+            text-decoration: none;
+            border-bottom: 3px solid var(--primary-purple);
+            padding-bottom: 1px;
+            font-weight: 800;
+        }
+    </style>
+</head>
+<body class="min-h-screen pb-20">
+
+    <!-- Header -->
+    <header class="bg-white shadow-lg sticky top-0 z-50 border-b-4 border-purple-200">
+        <div class="max-w-4xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center text-2xl border-2 border-purple-500 text-purple-600">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold text-gray-800 leading-tight">MS Chí Nên</h1>
+                    <p class="text-xs text-purple-600 font-bold tracking-wider uppercase">English Phonetics Quiz</p>
+                </div>
+            </div>
+            <div class="bg-teal-100 px-4 py-2 rounded-2xl border-2 border-teal-400 text-teal-700 font-bold flex items-center gap-2">
+                <i class="fa-solid fa-star text-yellow-500"></i>
+                <span id="score-display">0</span> / <span id="total-display">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="quiz-container" class="max-w-3xl mx-auto px-4 py-8 space-y-8">
+        <!-- Questions will be injected here by JS -->
+    </main>
+
+    <!-- Floating Submit Button -->
+    <div class="fixed bottom-6 right-6 z-40">
+        <button onclick="finishQuiz()" class="btn-3d bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 px-8 rounded-full shadow-2xl flex items-center gap-3 text-lg animate-bounce">
+            <i class="fa-solid fa-flag-checkered"></i>
+            NỘP BÀI & XEM ĐIỂM
+        </button>
+    </div>
+
+    <!-- Result Modal -->
+    <div id="result-modal" class="fixed inset-0 bg-black bg-opacity-50 z-[60] hidden flex items-center justify-center p-4 backdrop-blur-sm">
+        <div class="bg-white rounded-3xl p-8 max-w-md w-full text-center card-shadow border-4 border-purple-200 transform scale-95 transition-transform duration-300">
+            <div class="mb-6">
+                <img src="https://cdn-icons-png.flaticon.com/512/742/742751.png" alt="Trophy" class="w-24 h-24 mx-auto drop-shadow-lg">
+            </div>
+            <h2 class="text-3xl font-extrabold text-purple-700 mb-2">Tổng Kết!</h2>
+            <p id="feedback-text" class="text-gray-600 mb-6 font-semibold">Bạn đã làm rất tốt!</p>
+            
+            <div class="grid grid-cols-2 gap-4 mb-8">
+                <div class="bg-green-100 p-4 rounded-xl border-2 border-green-400">
+                    <p class="text-green-700 text-sm font-bold uppercase">Đúng</p>
+                    <p id="modal-score" class="text-3xl font-black text-green-600">0</p>
+                </div>
+                <div class="bg-red-100 p-4 rounded-xl border-2 border-red-400">
+                    <p class="text-red-700 text-sm font-bold uppercase">Sai</p>
+                    <p id="modal-wrong" class="text-3xl font-black text-red-600">0</p>
+                </div>
+            </div>
+
+            <button onclick="location.reload()" class="w-full btn-3d bg-teal-500 hover:bg-teal-600 text-white font-bold py-3 px-6 rounded-xl text-lg">
+                <i class="fa-solid fa-rotate-right mr-2"></i> Làm lại bài
+            </button>
+        </div>
+    </div>
+
+    <!-- Audio Effects -->
+    <audio id="sound-correct" src="https://assets.mixkit.co/active_storage/sfx/2000/2000-preview.mp3"></audio>
+    <audio id="sound-wrong" src="https://assets.mixkit.co/active_storage/sfx/2003/2003-preview.mp3"></audio>
+    <audio id="sound-finish" src="https://assets.mixkit.co/active_storage/sfx/1435/1435-preview.mp3"></audio>
+
+    <script>
+        // --- DATA SOURCE ---
+        const quizData = {
+          "questions": [
+            {
+              "questionNumber": 1,
+              "question": "Mark the letter A, B, C, or D to indicate the word whose underlined part differs from the other three in pronunciation (Focus: 'c').\nA. cave\nB. canyon\nC. coast\nD. circle",
+              "imageUrl": null,
+              "answerOptions": [
+                {
+                  "text": "circle",
+                  "rationale": "**Dịch & Loại từ:**\n- A. cave (n): hang động\n- B. canyon (n): hẻm núi\n- C. coast (n): bờ biển\n- D. circle (n): vòng tròn\n\n**Giải thích chi tiết:**\n- A. cave /keɪv/ (âm /k/)\n- B. canyon /ˈkænjən/ (âm /k/)\n- C. coast /kəʊst/ (âm /k/)\n- D. circle /ˈsɜːkl/ (âm /s/)\n\n=> Đáp án D phát âm là /s/, các từ còn lại phát âm là /k/.",
+                  "isCorrect": true
+                },
+                { "text": "cave", "isCorrect": false },
+                { "text": "canyon", "isCorrect": false },
+                { "text": "coast", "isCorrect": false }
+              ],
+              "hint": "Pay attention to the letter 'c'. Is it a hard 'c' /k/ or a soft 'c' /s/?"
+            },
+            {
+              "questionNumber": 2,
+              "question": "Mark the letter A, B, C, or D to indicate the word whose underlined part differs from the other three in pronunciation (Focus: ending sound/vowel).\nA. river\nB. water\nC. wonder\nD. heritage",
+              "answerOptions": [
+                {
+                  "text": "heritage",
+                  "rationale": "**Dịch & Loại từ:**\n- A. river (n): dòng sông\n- B. water (n): nước\n- C. wonder (n): kỳ quan\n- D. heritage (n): di sản\n\n**Giải thích chi tiết:**\nCâu này kiểm tra phần đuôi từ.\n- A. river /ˈrɪvər/ (đuôi /ər/)\n- B. water /ˈwɔːtər/ (đuôi /ər/)\n- C. wonder /ˈwʌndər/ (đuôi /ər/)\n- D. heritage /ˈherɪtɪdʒ/ (đuôi /ɪdʒ/)\n\n=> Đáp án D có phần đuôi phát âm khác biệt hoàn toàn so với 3 từ còn lại.",
+                  "isCorrect": true
+                },
+                { "text": "river", "isCorrect": false },
+                { "text": "water", "isCorrect": false },
+                { "text": "wonder", "isCorrect": false }
+              ],
+              "hint": "Look at the ending of each word. Three words end with the same 'er' sound."
+            },
+            {
+              "questionNumber": 3,
+              "question": "Mark the letter A, B, C, or D to indicate the word whose underlined part differs from the other three in pronunciation (Focus: 'g').\nA. ground\nB. green\nC. grass\nD. geography",
+              "answerOptions": [
+                {
+                  "text": "geography",
+                  "rationale": "**Dịch & Loại từ:**\n- A. ground (n): mặt đất\n- B. green (adj/n): màu xanh lá\n- C. grass (n): cỏ\n- D. geography (n): địa lý\n\n**Giải thích chi tiết:**\n- A. ground /ɡraʊnd/ (âm /ɡ/ - g cứng)\n- B. green /ɡriːn/ (âm /ɡ/ - g cứng)\n- C. grass /ɡrɑːs/ (âm /ɡ/ - g cứng)\n- D. geography /dʒiˈɒɡrəfi/ (âm /dʒ/ - g mềm, giống âm 'j')\n\n=> Đáp án D phát âm là /dʒ/.",
+                  "isCorrect": true
+                },
+                { "text": "ground", "isCorrect": false },
+                { "text": "green", "isCorrect": false },
+                { "text": "grass", "isCorrect": false }
+              ],
+              "hint": "Is the 'g' sound hard like in 'go' or soft like in 'giant'?"
+            },
+            {
+              "questionNumber": 4,
+              "question": "Mark the letter A, B, C, or D to indicate the word whose underlined part differs from the other three in pronunciation (Focus: 'c').\nA. volcano\nB. ocean\nC. coral\nD. tropical",
+              "answerOptions": [
+                {
+                  "text": "ocean",
+                  "rationale": "**Dịch & Loại từ:**\n- A. volcano (n): núi lửa\n- B. ocean (n): đại dương\n- C. coral (n): san hô\n- D. tropical (adj): thuộc nhiệt đới\n\n**Giải thích chi tiết:**\n- A. volcano /vɒlˈkeɪnəʊ/ (âm /k/)\n- B. ocean /ˈəʊʃn/ (âm /ʃ/ - giống âm 's' nặng)\n- C. coral /ˈkɒrəl/ (âm /k/)\n- D. tropical /ˈtrɒpɪkl/ (âm /k/)\n\n=> Đáp án B phát âm là /ʃ/.",
+                  "isCorrect": true
+                },
+                { "text": "volcano", "isCorrect": false },
+                { "text": "coral", "isCorrect": false },
+                { "text": "tropical", "isCorrect": false }
+              ],
+              "hint": "Check the sound of 'c'. In one word, it sounds like 'sh' /ʃ/."
+            },
+            {
+              "questionNumber": 5,
+              "question": "Mark the letter A, B, C, or D to indicate the word whose underlined part differs from the other three in pronunciation (Focus: 's').\nA. island\nB. forest\nC. fossil\nD. waterfalls",
+              "answerOptions": [
+                {
+                  "text": "island",
+                  "rationale": "**Dịch & Loại từ:**\n- A. island (n): hòn đảo\n- B. forest (n): rừng\n- C. fossil (n): hóa thạch\n- D. waterfalls (n): thác nước (số nhiều)\n\n**Giải thích chi tiết:**\n- A. island /ˈaɪlənd/ (âm 's' bị câm - silent s)\n- B. forest /ˈfɒrɪst/ (âm /s/)\n- C. fossil /ˈfɒsl/ (âm /s/)\n- D. waterfalls /ˈwɔːtəfɔːlz/ (âm cuối là /z/, nhưng âm 's' trong island đặc biệt nhất vì nó câm hoàn toàn).\n\n=> Đáp án A là khác biệt nhất vì chữ 's' không được phát âm.",
+                  "isCorrect": true
+                },
+                { "text": "forest", "isCorrect": false },
+                { "text": "fossil", "isCorrect": false },
+                { "text": "waterfalls", "isCorrect": false }
+              ],
+              "hint": "In one of these words, the 's' is silent (not pronounced at all)."
+            },
+            {
+              "questionNumber": 6,
+              "question": "Mark the letter A, B, C, or D to indicate the word whose underlined part differs from the other three in pronunciation (Focus: 'th').\nA. thunder\nB. earth\nC. thousand\nD. weather",
+              "answerOptions": [
+                {
+                  "text": "weather",
+                  "rationale": "**Dịch & Loại từ:**\n- A. thunder (n): sấm sét\n- B. earth (n): trái đất\n- C. thousand (number): một nghìn\n- D. weather (n): thời tiết\n\n**Giải thích chi tiết:**\n- A. thunder /ˈθʌndər/ (âm /θ/ - th vô thanh)\n- B. earth /ɜːθ/ (âm /θ/ - th vô thanh)\n- C. thousand /ˈθaʊznd/ (âm /θ/ - th vô thanh)\n- D. weather /ˈweðər/ (âm /ð/ - th hữu thanh, giống 'đ' nhưng rung cổ họng)\n\n=> Đáp án D phát âm là /ð/.",
+                  "isCorrect": true
+                },
+                { "text": "thunder", "isCorrect": false },
+                { "text": "earth", "isCorrect": false },
+                { "text": "thousand", "isCorrect": false }
+              ],
+              "hint": "Identify the voiced 'th' /ð/ (vibrates throat) vs unvoiced 'th' /θ/."
+            },
+            {
+              "questionNumber": 7,
+              "question": "Mark the letter A, B, C, or D to indicate the word whose underlined part differs from the other three in pronunciation (Focus: 'a').\nA. lake\nB. waterfall\nC. nature\nD. wave",
+              "answerOptions": [
+                {
+                  "text": "waterfall",
+                  "rationale": "**Dịch & Loại từ:**\n- A. lake (n): hồ nước\n- B. waterfall (n): thác nước\n- C. nature (n): thiên nhiên\n- D. wave (n): con sóng\n\n**Giải thích chi tiết:**\n- A. lake /leɪk/ (âm /eɪ/)\n- B. waterfall /ˈwɔːtəfɔːl/ (âm /ɔː/ - o tròn miệng)\n- C. nature /ˈneɪtʃər/ (âm /eɪ/)\n- D. wave /weɪv/ (âm /eɪ/)\n\n=> Đáp án B phát âm là /ɔː/.",
+                  "isCorrect": true
+                },
+                { "text": "lake", "isCorrect": false },
+                { "text": "nature", "isCorrect": false },
+                { "text": "wave", "isCorrect": false }
+              ],
+              "hint": "Listen to the vowel sound 'a'. Which one is not /eɪ/?"
+            },
+            {
+              "questionNumber": 8,
+              "question": "Mark the letter A, B, C, or D to indicate the word whose underlined part differs from the other three in pronunciation (Focus: 'ea').\nA. sea\nB. beach\nC. reach\nD. break",
+              "answerOptions": [
+                {
+                  "text": "break",
+                  "rationale": "**Dịch & Loại từ:**\n- A. sea (n): biển\n- B. beach (n): bãi biển\n- C. reach (v): với tới/đến nơi\n- D. break (v/n): làm vỡ/giờ nghỉ\n\n**Giải thích chi tiết:**\n- A. sea /siː/ (âm /iː/ - y dài)\n- B. beach /biːtʃ/ (âm /iː/)\n- C. reach /riːtʃ/ (âm /iː/)\n- D. break /breɪk/ (âm /eɪ/)\n\n=> Đáp án D phát âm là /eɪ/.",
+                  "isCorrect": true
+                },
+                { "text": "sea", "isCorrect": false },
+                { "text": "beach", "isCorrect": false },
+                { "text": "reach", "isCorrect": false }
+              ],
+              "hint": "Most of these 'ea' words sound like /iː/ (long e). One sounds like /eɪ/."
+            },
+            {
+              "questionNumber": 9,
+              "question": "Mark the letter A, B, C, or D to indicate the word whose underlined part differs from the other three in pronunciation (Focus: 'ou').\nA. cloud\nB. mountain\nC. south\nD. young",
+              "answerOptions": [
+                {
+                  "text": "young",
+                  "rationale": "**Dịch & Loại từ:**\n- A. cloud (n): đám mây\n- B. mountain (n): ngọn núi\n- C. south (n): phía nam\n- D. young (adj): trẻ\n\n**Giải thích chi tiết:**\n- A. cloud /klaʊd/ (âm /aʊ/)\n- B. mountain /ˈmaʊntɪn/ (âm /aʊ/)\n- C. south /saʊθ/ (âm /aʊ/)\n- D. young /jʌŋ/ (âm /ʌ/ - âm á)\n\n=> Đáp án D phát âm là /ʌ/.",
+                  "isCorrect": true
+                },
+                { "text": "cloud", "isCorrect": false },
+                { "text": "mountain", "isCorrect": false },
+                { "text": "south", "isCorrect": false }
+              ],
+              "hint": "Which word has the 'ou' sound pronounced as /ʌ/ (like in 'sun')?"
+            },
+            {
+              "questionNumber": 10,
+              "question": "Mark the letter A, B, C, or D to indicate the word whose underlined part differs from the other three in pronunciation (Focus: 'ch').\nA. beach\nB. channel\nC. archipelago\nD. charming",
+              "answerOptions": [
+                {
+                  "text": "archipelago",
+                  "rationale": "**Dịch & Loại từ:**\n- A. beach (n): bãi biển\n- B. channel (n): kênh đào/kênh\n- C. archipelago (n): quần đảo\n- D. charming (adj): quyến rũ/thu hút\n\n**Giải thích chi tiết:**\n- A. beach /biːtʃ/ (âm /tʃ/ - ch nhẹ)\n- B. channel /ˈtʃænl/ (âm /tʃ/)\n- C. archipelago /ˌɑːkɪˈpeləɡəʊ/ (âm /k/)\n- D. charming /ˈtʃɑːmɪŋ/ (âm /tʃ/)\n\n=> Đáp án C phát âm là /k/.",
+                  "isCorrect": true
+                },
+                { "text": "beach", "isCorrect": false },
+                { "text": "channel", "isCorrect": false },
+                { "text": "charming", "isCorrect": false }
+              ],
+              "hint": "One word has 'ch' pronounced as /k/."
+            },
+            {
+              "questionNumber": 11,
+              "question": "Mark the letter A, B, C, or D to indicate the word that differs from the other three in the position of primary stress.\nA. desert\nB. island\nC. volcano\nD. canyon",
+              "answerOptions": [
+                {
+                  "text": "volcano",
+                  "rationale": "**Dịch & Loại từ:**\n- A. desert (n): sa mạc\n- B. island (n): hòn đảo\n- C. volcano (n): núi lửa\n- D. canyon (n): hẻm núi\n\n**Giải thích chi tiết:**\n- A. desert /ˈdezət/ (trọng âm 1)\n- B. island /ˈaɪlənd/ (trọng âm 1)\n- C. volcano /vɒlˈkeɪnəʊ/ (trọng âm 2)\n- D. canyon /ˈkænjən/ (trọng âm 1)\n\n=> Đáp án C trọng âm rơi vào âm tiết thứ 2.",
+                  "isCorrect": true
+                },
+                { "text": "desert", "isCorrect": false },
+                { "text": "island", "isCorrect": false },
+                { "text": "canyon", "isCorrect": false }
+              ],
+              "hint": "Three words are stressed on the 1st syllable, one is on the 2nd."
+            },
+            {
+              "questionNumber": 12,
+              "question": "Mark the letter A, B, C, or D to indicate the word that differs from the other three in the position of primary stress.\nA. waterfall\nB. glacier\nC. coral\nD. lagoon",
+              "answerOptions": [
+                {
+                  "text": "lagoon",
+                  "rationale": "**Dịch & Loại từ:**\n- A. waterfall (n): thác nước\n- B. glacier (n): sông băng\n- C. coral (n): san hô\n- D. lagoon (n): phá/đầm nước mặn\n\n**Giải thích chi tiết:**\n- A. waterfall /ˈwɔːtəfɔːl/ (trọng âm 1)\n- B. glacier /ˈɡlæsiər/ (trọng âm 1)\n- C. coral /ˈkɒrəl/ (trọng âm 1)\n- D. lagoon /ləˈɡuːn/ (trọng âm 2)\n\n=> Đáp án D trọng âm rơi vào âm tiết thứ 2.",
+                  "isCorrect": true
+                },
+                { "text": "waterfall", "isCorrect": false },
+                { "text": "glacier", "isCorrect": false },
+                { "text": "coral", "isCorrect": false }
+              ],
+              "hint": "The word ending in 'oon' typically takes the stress."
+            },
+            {
+              "questionNumber": 13,
+              "question": "Mark the letter A, B, C, or D to indicate the word that differs from the other three in the position of primary stress.\nA. erosion\nB. valley\nC. forest\nD. mountain",
+              "answerOptions": [
+                {
+                  "text": "erosion",
+                  "rationale": "**Dịch & Loại từ:**\n- A. erosion (n): sự xói mòn\n- B. valley (n): thung lũng\n- C. forest (n): rừng\n- D. mountain (n): núi\n\n**Giải thích chi tiết:**\n- A. erosion /ɪˈrəʊʒn/ (trọng âm 2 - quy tắc đuôi -sion nhấn trước nó)\n- B. valley /ˈvæli/ (trọng âm 1)\n- C. forest /ˈfɒrɪst/ (trọng âm 1)\n- D. mountain /ˈmaʊntɪn/ (trọng âm 1)\n\n=> Đáp án A trọng âm rơi vào âm tiết thứ 2.",
+                  "isCorrect": true
+                },
+                { "text": "valley", "isCorrect": false },
+                { "text": "forest", "isCorrect": false },
+                { "text": "mountain", "isCorrect": false }
+              ],
+              "hint": "Words ending in '-sion' usually have the stress on the syllable immediately before it."
+            },
+            {
+              "questionNumber": 14,
+              "question": "Mark the letter A, B, C, or D to indicate the word that differs from the other three in the position of primary stress.\nA. nature\nB. safari\nC. wonder\nD. climate",
+              "answerOptions": [
+                {
+                  "text": "safari",
+                  "rationale": "**Dịch & Loại từ:**\n- A. nature (n): thiên nhiên\n- B. safari (n): chuyến đi dã ngoại quan sát động vật\n- C. wonder (n): kỳ quan\n- D. climate (n): khí hậu\n\n**Giải thích chi tiết:**\n- A. nature /ˈneɪtʃər/ (trọng âm 1)\n- B. safari /səˈfɑːri/ (trọng âm 2)\n- C. wonder /ˈwʌndər/ (trọng âm 1)\n- D. climate /ˈklaɪmət/ (trọng âm 1)\n\n=> Đáp án B trọng âm rơi vào âm tiết thứ 2.",
+                  "isCorrect": true
+                },
+                { "text": "nature", "isCorrect": false },
+                { "text": "wonder", "isCorrect": false },
+                { "text": "climate", "isCorrect": false }
+              ],
+              "hint": "'Safari' sounds like sa-FA-ri."
+            },
+            {
+              "questionNumber": 15,
+              "question": "Mark the letter A, B, C, or D to indicate the word that differs from the other three in the position of primary stress.\nA. ocean\nB. jungle\nC. oasis\nD. cavern",
+              "answerOptions": [
+                {
+                  "text": "oasis",
+                  "rationale": "**Dịch & Loại từ:**\n- A. ocean (n): đại dương\n- B. jungle (n): rừng nhiệt đới\n- C. oasis (n): ốc đảo\n- D. cavern (n): hang lớn\n\n**Giải thích chi tiết:**\n- A. ocean /ˈəʊʃn/ (trọng âm 1)\n- B. jungle /ˈdʒʌŋɡl/ (trọng âm 1)\n- C. oasis /əʊˈeɪsɪs/ (trọng âm 2)\n- D. cavern /ˈkævən/ (trọng âm 1)\n\n=> Đáp án C trọng âm rơi vào âm tiết thứ 2.",
+                  "isCorrect": true
+                },
+                { "text": "ocean", "isCorrect": false },
+                { "text": "jungle", "isCorrect": false },
+                { "text": "cavern", "isCorrect": false }
+              ],
+              "hint": "Oasis is stressed on the second syllable: o-A-sis."
+            },
+            {
+              "questionNumber": 16,
+              "question": "Mark the letter A, B, C, or D to indicate the word that differs from the other three in the position of primary stress.\nA. horizon\nB. summit\nC. crater\nD. landscape",
+              "answerOptions": [
+                {
+                  "text": "horizon",
+                  "rationale": "**Dịch & Loại từ:**\n- A. horizon (n): đường chân trời\n- B. summit (n): đỉnh núi\n- C. crater (n): miệng núi lửa\n- D. landscape (n): phong cảnh\n\n**Giải thích chi tiết:**\n- A. horizon /həˈraɪzn/ (trọng âm 2)\n- B. summit /ˈsʌmɪt/ (trọng âm 1)\n- C. crater /ˈkreɪtər/ (trọng âm 1)\n- D. landscape /ˈlændskeɪp/ (trọng âm 1)\n\n=> Đáp án A trọng âm rơi vào âm tiết thứ 2.",
+                  "isCorrect": true
+                },
+                { "text": "summit", "isCorrect": false },
+                { "text": "crater", "isCorrect": false },
+                { "text": "landscape", "isCorrect": false }
+              ],
+              "hint": "Horizon is pronounced /həˈraɪzn/."
+            },
+            {
+              "questionNumber": 17,
+              "question": "Mark the letter A, B, C, or D to indicate the word that differs from the other three in the position of primary stress.\nA. natural\nB. tropical\nC. amazing\nD. beautiful",
+              "answerOptions": [
+                {
+                  "text": "amazing",
+                  "rationale": "**Dịch & Loại từ:**\n- A. natural (adj): thuộc tự nhiên\n- B. tropical (adj): thuộc nhiệt đới\n- C. amazing (adj): kinh ngạc/tuyệt vời\n- D. beautiful (adj): xinh đẹp\n\n**Giải thích chi tiết:**\n- A. natural /ˈnætʃrəl/ (trọng âm 1)\n- B. tropical /ˈtrɒpɪkl/ (trọng âm 1)\n- C. amazing /əˈmeɪzɪŋ/ (trọng âm 2)\n- D. beautiful /ˈbjuːtɪfl/ (trọng âm 1)\n\n=> Đáp án C trọng âm rơi vào âm tiết thứ 2.",
+                  "isCorrect": true
+                },
+                { "text": "natural", "isCorrect": false },
+                { "text": "tropical", "isCorrect": false },
+                { "text": "beautiful", "isCorrect": false }
+              ],
+              "hint": "Listen for the rhythm. Which word starts with a weak sound /ə/?"
+            },
+            {
+              "questionNumber": 18,
+              "question": "Mark the letter A, B, C, or D to indicate the word that differs from the other three in the position of primary stress.\nA. meadow\nB. bamboo\nC. coastline\nD. wildlife",
+              "answerOptions": [
+                {
+                  "text": "bamboo",
+                  "rationale": "**Dịch & Loại từ:**\n- A. meadow (n): đồng cỏ\n- B. bamboo (n): cây tre\n- C. coastline (n): đường bờ biển\n- D. wildlife (n): cuộc sống hoang dã\n\n**Giải thích chi tiết:**\n- A. meadow /ˈmedəʊ/ (trọng âm 1)\n- B. bamboo /ˌbæmˈbuː/ (trọng âm 2)\n- C. coastline /ˈkəʊstlaɪn/ (trọng âm 1)\n- D. wildlife /ˈwaɪldlaɪf/ (trọng âm 1)\n\n=> Đáp án B trọng âm rơi vào âm tiết thứ 2.",
+                  "isCorrect": true
+                },
+                { "text": "meadow", "isCorrect": false },
+                { "text": "coastline", "isCorrect": false },
+                { "text": "wildlife", "isCorrect": false }
+              ],
+              "hint": "Words ending in 'oo' often take the stress on that syllable."
+            },
+            {
+              "questionNumber": 19,
+              "question": "Mark the letter A, B, C, or D to indicate the word that differs from the other three in the position of primary stress.\nA. explore\nB. protect\nC. enjoy\nD. travel",
+              "answerOptions": [
+                {
+                  "text": "travel",
+                  "rationale": "**Dịch & Loại từ:**\n- A. explore (v): khám phá\n- B. protect (v): bảo vệ\n- C. enjoy (v): thưởng thức/tận hưởng\n- D. travel (v): du lịch\n\n**Giải thích chi tiết:**\n- A. explore /ɪkˈsplɔːr/ (trọng âm 2 - động từ 2 âm tiết thường nhấn âm 2)\n- B. protect /prəˈtekt/ (trọng âm 2)\n- C. enjoy /ɪnˈdʒɔɪ/ (trọng âm 2)\n- D. travel /ˈtrævl/ (trọng âm 1 - ngoại lệ của động từ 2 âm tiết)\n\n=> Đáp án D trọng âm rơi vào âm tiết thứ 1.",
+                  "isCorrect": true
+                },
+                { "text": "explore", "isCorrect": false },
+                { "text": "protect", "isCorrect": false },
+                { "text": "enjoy", "isCorrect": false }
+              ],
+              "hint": "Most 2-syllable verbs are stressed on the 2nd syllable, but 'travel' is an exception."
+            },
+            {
+              "questionNumber": 20,
+              "question": "Mark the letter A, B, C, or D to indicate the word that differs from the other three in the position of primary stress.\nA. waterway\nB. rainforest\nC. adventure\nD. ecosystem",
+              "answerOptions": [
+                {
+                  "text": "adventure",
+                  "rationale": "**Dịch & Loại từ:**\n- A. waterway (n): đường thủy\n- B. rainforest (n): rừng mưa nhiệt đới\n- C. adventure (n): cuộc phiêu lưu\n- D. ecosystem (n): hệ sinh thái\n\n**Giải thích chi tiết:**\n- A. waterway /ˈwɔːtəweɪ/ (trọng âm 1 - danh từ ghép thường nhấn từ đầu)\n- B. rainforest /ˈreɪnfɒrɪst/ (trọng âm 1 - danh từ ghép)\n- C. adventure /ədˈventʃər/ (trọng âm 2)\n- D. ecosystem /ˈiːkəʊsɪstəm/ (trọng âm 1)\n\n=> Đáp án C trọng âm rơi vào âm tiết thứ 2.",
+                  "isCorrect": true
+                },
+                { "text": "waterway", "isCorrect": false },
+                { "text": "rainforest", "isCorrect": false },
+                { "text": "ecosystem", "isCorrect": false }
+              ],
+              "hint": "Compound nouns (like waterway, rainforest) usually have stress on the first part."
+            }
+          ]
+        };
+
+        // --- STATE MANAGEMENT ---
+        let currentScore = 0;
+        let answeredCount = 0;
+        const totalQuestions = quizData.questions.length;
+        const container = document.getElementById('quiz-container');
+
+        // --- UTILS ---
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        // Parse markdown-like syntax in text
+        function parseText(text) {
+            if (!text) return "";
+            // Bold
+            let html = text.replace(/\*\*(.*?)\*\*/g, '<strong class="text-purple-700">$1</strong>');
+            // New lines
+            html = html.replace(/\n/g, '<br>');
+            return html;
+        }
+
+        // Helper to underline target sound if Focus is mentioned
+        function formatOptionText(text, questionText) {
+            // Extract content inside Focus: '...'
+            const focusMatch = questionText.match(/Focus:\s*['"](.+?)['"]/i);
+            if (focusMatch && focusMatch[1]) {
+                const target = focusMatch[1];
+                // Careful regex to replace only the first occurrence or specific patterns if possible
+                // For simplicity and safety in phonetics, we might just display text normally
+                // OR try to replace the target string
+                // But for things like "ea" or "th", simple replace works well enough for display
+                try {
+                    // Create a regex that finds the target string
+                    const regex = new RegExp(`(${target})`, 'i'); 
+                    // Note: This replaces the first match. Pronunciation quizzes usually focus on the highlighted part.
+                    // However, sometimes it replaces the wrong part if the letter appears twice.
+                    // Given constraints, I will replace ALL occurrences to be safe or just the first. 
+                    // Let's replace the first one as is standard in multiple choice text.
+                    return text.replace(regex, '<u>$1</u>');
+                } catch(e) {
+                    return text;
+                }
+            }
+            // Fallback for Stress questions or if no focus found
+            return text;
+        }
+
+        // --- INITIALIZATION ---
+        function initQuiz() {
+            // Shuffle questions
+            const questions = shuffleArray([...quizData.questions]);
+            document.getElementById('total-display').innerText = totalQuestions;
+
+            questions.forEach((q, index) => {
+                const card = createQuestionCard(q, index + 1);
+                container.appendChild(card);
+            });
+        }
+
+        // --- RENDER CARD ---
+        function createQuestionCard(q, index) {
+            const card = document.createElement('div');
+            card.className = "bg-white rounded-3xl p-6 md:p-8 card-shadow border border-gray-100 relative overflow-hidden group";
+            
+            // Decorative Number
+            const numberBadge = document.createElement('div');
+            numberBadge.className = "absolute -top-4 -left-4 w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center text-white font-black text-2xl shadow-lg transform group-hover:scale-110 transition-transform z-10";
+            numberBadge.innerText = index;
+            card.appendChild(numberBadge);
+
+            // Question Text
+            const questionText = document.createElement('h3');
+            questionText.className = "text-xl md:text-2xl font-bold text-gray-800 mb-6 pl-8 leading-relaxed";
+            // Highlight the "Focus" part in the question title
+            const highlightedTitle = q.question.replace(/\(Focus:.*?\)/, (match) => `<span class="text-purple-600 bg-purple-100 px-2 py-1 rounded-lg text-base align-middle ml-2">${match}</span>`);
+            // Handle new lines in question text (like A. B. C. D. listing removal)
+            // We want to remove the static A. B. C. D. lines from the question text string if they exist, 
+            // because we are rendering buttons.
+            const cleanQuestionText = highlightedTitle.split('\n')[0]; // Take only the instruction line
+            questionText.innerHTML = cleanQuestionText;
+            card.appendChild(questionText);
+
+            // Options Container (Grid)
+            const optionsGrid = document.createElement('div');
+            optionsGrid.className = "grid grid-cols-1 md:grid-cols-2 gap-4 mb-6";
+
+            // Find correct answer object to extract rationale later
+            const correctAnswerObj = q.answerOptions.find(opt => opt.isCorrect);
+            const explanationHTML = parseText(correctAnswerObj.rationale);
+
+            // Shuffle Options logic needs to preserve mapping to original data
+            // We clone options to shuffle
+            let displayOptions = [...q.answerOptions];
+            // Don't shuffle for this specific type if A,B,C,D order matters strictly, 
+            // but for Gamification, shuffling position is better.
+            displayOptions = shuffleArray(displayOptions);
+
+            displayOptions.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.className = "btn-3d btn-option py-4 px-6 rounded-2xl text-lg font-bold text-left relative overflow-hidden";
+                
+                // Store correctness for easy retrieval later
+                btn.dataset.isCorrect = opt.isCorrect;
+
+                // Format text with underline if needed
+                const formattedText = formatOptionText(opt.text, q.question);
+                btn.innerHTML = `<span class="z-10 relative">${formattedText}</span>`;
+
+                btn.onclick = () => handleAnswer(btn, opt, card, optionsGrid, explanationHTML, q.hint);
+                optionsGrid.appendChild(btn);
+            });
+            card.appendChild(optionsGrid);
+
+            // Explanation Area (Hidden initially)
+            const explainBox = document.createElement('div');
+            explainBox.className = "hidden explanation-box bg-purple-50 border-2 border-purple-200 rounded-2xl p-6 text-gray-700 mt-4";
+            explainBox.innerHTML = `
+                <div class="flex items-center gap-2 mb-3 text-purple-700 font-bold uppercase tracking-wider text-sm border-b pb-2 border-purple-200">
+                    <i class="fa-solid fa-chalkboard-user"></i> Giải thích chi tiết của MS Chí Nên
+                </div>
+                <div class="prose prose-purple max-w-none text-base leading-relaxed">
+                    ${explanationHTML}
+                </div>
+            `;
+            if (q.hint) {
+                const hintDiv = document.createElement('div');
+                hintDiv.className = "mt-3 text-sm text-teal-600 font-semibold italic";
+                hintDiv.innerHTML = `<i class="fa-regular fa-lightbulb mr-1"></i> Mẹo: ${q.hint}`;
+                explainBox.querySelector('.prose').appendChild(hintDiv);
+            }
+            card.appendChild(explainBox);
+
+            return card;
+        }
+
+        // --- HANDLE ANSWER ---
+        function handleAnswer(btn, optionObj, cardElement, gridElement, explanationHTML, hint) {
+            // Prevent multiple clicks
+            const allBtns = gridElement.querySelectorAll('button');
+            allBtns.forEach(b => {
+                b.disabled = true;
+                b.classList.add('opacity-70', 'cursor-not-allowed');
+            });
+            btn.classList.remove('opacity-70');
+
+            const explainBox = cardElement.querySelector('.explanation-box');
+            explainBox.classList.remove('hidden');
+
+            answeredCount++;
+            
+            if (optionObj.isCorrect) {
+                // CORRECT
+                btn.classList.add('correct');
+                btn.innerHTML += ` <i class="fa-solid fa-check-circle float-right text-2xl"></i>`;
+                currentScore++;
+                updateScoreDisplay();
+                playSound('correct');
+                triggerConfetti(btn);
+            } else {
+                // WRONG
+                btn.classList.add('wrong', 'shake-element');
+                btn.innerHTML += ` <i class="fa-solid fa-circle-xmark float-right text-2xl"></i>`;
+                playSound('wrong');
+                
+                // Highlight the correct one automatically so user knows
+                allBtns.forEach(b => {
+                    if (b.dataset.isCorrect === 'true') {
+                        b.classList.add('correct');
+                        b.classList.remove('opacity-70'); // Make it clear
+                        if (!b.innerHTML.includes('fa-check-circle')) {
+                            b.innerHTML += ` <i class="fa-solid fa-check-circle float-right text-2xl"></i>`;
+                        }
+                    }
+                });
+            }
+        }
+
+        function updateScoreDisplay() {
+            const scoreEl = document.getElementById('score-display');
+            scoreEl.innerText = currentScore;
+            scoreEl.classList.add('scale-150', 'text-teal-600');
+            setTimeout(() => scoreEl.classList.remove('scale-150', 'text-teal-600'), 200);
+        }
+
+        // --- AUDIO ---
+        function playSound(type) {
+            const audioMap = {
+                'correct': document.getElementById('sound-correct'),
+                'wrong': document.getElementById('sound-wrong'),
+                'finish': document.getElementById('sound-finish')
+            };
+            const audio = audioMap[type];
+            if (audio) {
+                audio.currentTime = 0;
+                audio.play().catch(e => console.log("Audio autoplay prevented"));
+            }
+        }
+
+        // --- EFFECTS ---
+        function triggerConfetti(element) {
+            const rect = element.getBoundingClientRect();
+            // Normalized coordinates
+            const x = (rect.left + rect.width / 2) / window.innerWidth;
+            const y = (rect.top + rect.height / 2) / window.innerHeight;
+
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { x: x, y: y },
+                colors: ['#8854C0', '#00C9A7', '#FFEB3B']
+            });
+        }
+
+        // --- FINISH ---
+        function finishQuiz() {
+            const modal = document.getElementById('result-modal');
+            const feedbackText = document.getElementById('feedback-text');
+            const scoreText = document.getElementById('modal-score');
+            const wrongText = document.getElementById('modal-wrong');
+
+            scoreText.innerText = currentScore;
+            wrongText.innerText = totalQuestions - currentScore;
+
+            // Feedback Logic
+            const percentage = (currentScore / totalQuestions) * 100;
+            if (percentage === 100) {
+                feedbackText.innerText = "Xuất sắc! Bạn là thiên tài ngữ âm! 🏆";
+                playSound('finish');
+                confetti({ particleCount: 500, spread: 100, origin: { y: 0.6 } });
+            } else if (percentage >= 80) {
+                feedbackText.innerText = "Giỏi lắm! Chỉ một chút nữa là hoàn hảo! 🌟";
+                playSound('finish');
+            } else if (percentage >= 50) {
+                feedbackText.innerText = "Cố gắng lên! Ôn lại phần giải thích nhé! 💪";
+            } else {
+                feedbackText.innerText = "Đừng nản chí! Hãy đọc kỹ giải thích và làm lại nào! 🌱";
+            }
+
+            modal.classList.remove('hidden');
+        }
+
+        // Start
+        initQuiz();
+
+    </script>
+<style id="ms-chi-nen-unlock-style">
+#passwordModal, #password-modal, #pwModal, #pw-modal, #pw-overlay,
+#lockModal, #passModal, #authModal, #auth-modal, #lockOverlay,
+#start-overlay, #intro-overlay, #start-screen,
+.password-modal, .lock-modal, .lock-overlay {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    z-index: -9999 !important;
+}
+</style>
+<script>
+// Remove password lock completely - direct quiz access
+(function() {
+    var initDone = false;
+    var renderCheckDone = false;
+
+    function hideEl(el, hard) {
+        if (!el) return;
+        if (hard) {
+            el.style.setProperty('display', 'none', 'important');
+            el.style.setProperty('visibility', 'hidden', 'important');
+            el.style.setProperty('opacity', '0', 'important');
+            el.style.setProperty('pointer-events', 'none', 'important');
+            el.style.setProperty('z-index', '-9999', 'important');
+        } else {
+            el.style.display = 'none';
+        }
+        el.classList.remove('active', 'show', 'open', 'visible', 'flex');
+    }
+
+    function hasRenderedQuiz() {
+        var containers = document.querySelectorAll(
+            '#quiz-container, #quizContainer, #questions-container, #questionPane, #quiz, #questions, #quiz-body, #questions-wrapper, #quiz-list, #quizList, #exercise-container, #app-container .split-container'
+        );
+        for (var i = 0; i < containers.length; i++) {
+            if (containers[i].querySelectorAll('button, input, select, textarea, .question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .question, .option-btn, .opt-btn, .ans-btn').length > 0) {
+                return true;
+            }
+        }
+        if (document.querySelectorAll('.question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .option-btn, .opt-btn, .ans-btn, .choice-btn').length > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    function ensureQuizRendered() {
+        if (renderCheckDone) return;
+        renderCheckDone = true;
+        if (hasRenderedQuiz()) return;
+
+        if (!hasRenderedQuiz() && typeof buildQuiz === 'function') { try { buildQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof initQuiz === 'function') { try { initQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderApp === 'function') { try { renderApp(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuiz === 'function') { try { renderQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuestions === 'function') { try { renderQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAllQuestions === 'function') { try { renderAllQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAll === 'function') { try { renderAll(); } catch(e){} }
+    }
+
+    function unlockNow() {
+        var pwIds = [
+            'passwordModal', 'password-modal', 'pwModal', 'pw-modal', 'pw-overlay',
+            'lockModal', 'passModal', 'authModal', 'auth-modal', 'lockOverlay',
+            'start-overlay', 'intro-overlay', 'start-screen'
+        ];
+        pwIds.forEach(function(id) {
+            hideEl(document.getElementById(id), true);
+        });
+
+        var modalEls = document.querySelectorAll('.password-modal, .lock-modal, .lock-overlay, #lockOverlay, #auth-modal');
+        modalEls.forEach(function(el) {
+            if (el.id !== 'resultModal' && el.id !== 'result-modal' && el.id !== 'scoreModal') {
+                hideEl(el, true);
+            }
+        });
+
+        ['nameModal', 'name-modal', 'nameInputModal'].forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) hideEl(el, false);
+        });
+
+        var qo = document.getElementById('quiz-overlay');
+        if (qo && (typeof isStarted === 'undefined' || !isStarted)) {
+            qo.style.display = 'none';
+        }
+
+        var mainIds = [
+            'mainContent', 'main-content', 'mainHeader', 'main-header',
+            'app-container', 'app', 'quizApp', 'quiz-wrapper', 'quizContainer', 'quiz-container', 'reading-content'
+        ];
+        mainIds.forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) {
+                el.classList.remove('hidden', 'blur', 'blurred', 'locked');
+                if (el.style.display === 'none') {
+                    el.style.removeProperty('display');
+                }
+                if (window.getComputedStyle(el).display === 'none') {
+                    var hasPane = el.querySelector('.pane, .left-pane, .right-pane, .split-container, .left-panel, .right-panel');
+                    if (id === 'main-content' || id.toLowerCase().includes('header') || el.classList.contains('main-container') || hasPane) {
+                        el.style.setProperty('display', 'flex', 'important');
+                    } else {
+                        el.style.setProperty('display', 'block', 'important');
+                    }
+                }
+            }
+        });
+
+        var qs = document.getElementById('quiz-screen');
+        if (qs) {
+            qs.classList.remove('hidden');
+            if (qs.classList.contains('flex-col')) {
+                qs.classList.add('flex');
+                qs.style.display = 'flex';
+            } else {
+                qs.style.display = 'block';
+            }
+        }
+
+        if (!initDone) {
+            initDone = true;
+
+            if (document.getElementById('start-overlay') && typeof startGame === 'function') {
+                var sn = document.getElementById('student-name') || document.getElementById('studentName');
+                if (sn && !sn.value.trim()) sn.value = 'Học sinh';
+            }
+            if (document.getElementById('name-modal') && typeof startQuiz === 'function') {
+                var sn2 = document.getElementById('student-name');
+                if (sn2 && !sn2.value.trim()) sn2.value = 'Học sinh';
+            }
+
+            if (typeof startQuiz === 'function' && (typeof isStarted === 'undefined' || !isStarted)) { try { startQuiz(); } catch(e){} }
+            if (typeof startGame === 'function') { try { startGame(); } catch(e){} }
+            if (typeof startTest === 'function') { try { startTest(); } catch(e){} }
+            if (typeof startApp === 'function') { try { startApp(); } catch(e){} }
+            if (typeof buildStarfield === 'function') { try { buildStarfield(); } catch(e){} }
+            if (typeof spawnFloats === 'function') { try { spawnFloats(); } catch(e){} }
+            if (typeof spawnFloaters === 'function') { try { spawnFloaters(); } catch(e){} }
+            if (typeof createFloatingBubbles === 'function') { try { createFloatingBubbles(); } catch(e){} }
+            if (typeof initAudio === 'function') { try { initAudio(); } catch(e){} }
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', unlockNow);
+    } else {
+        unlockNow();
+    }
+    if (document.readyState === 'complete') {
+        setTimeout(ensureQuizRendered, 150);
+    } else {
+        window.addEventListener('load', function() {
+            setTimeout(unlockNow, 20);
+            setTimeout(ensureQuizRendered, 150);
+            setTimeout(unlockNow, 300);
+            setTimeout(unlockNow, 700);
+        });
+    }
+    setTimeout(unlockNow, 50);
+    setTimeout(unlockNow, 200);
+    setTimeout(unlockNow, 600);
+    setTimeout(unlockNow, 1100);
+})();
+</script>
+</body>
+</html>

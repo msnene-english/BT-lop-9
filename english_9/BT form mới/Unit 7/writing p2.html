@@ -1,0 +1,1398 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🏝️ E9 UNIT 7 · WRITING p2 — Câu gián tiếp — MS Chí Nên</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0E0B1A;--card:#171331;--ink:#F3EEFF;--gold:#FFC53D;--red:#FF4D5E;--cyan:#3EE0E0;
+  --violet:#A77BFF;--pink:#FF6FC8;--dim:#9E94C4;--good:#2BD98A;--bad:#FF5C72;--dark:#07050F}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito',sans-serif;color:var(--ink);min-height:100vh;overflow-x:hidden;background:var(--bg)}
+/* MÀU LOANG + LUỒNG ĐÈN CHIẾU */
+.lo,.lo2,.lo3{position:fixed;inset:-25%;z-index:0;pointer-events:none}
+.lo{filter:blur(58px);opacity:.55;
+  background:radial-gradient(30% 24% at 14% 16%,rgba(255,197,61,.45),transparent 66%),
+   radial-gradient(32% 25% at 86% 20%,rgba(167,123,255,.5),transparent 66%),
+   radial-gradient(30% 22% at 76% 78%,rgba(62,224,224,.4),transparent 66%),
+   radial-gradient(28% 22% at 18% 82%,rgba(255,111,200,.45),transparent 66%);
+  animation:l1 34s ease-in-out infinite alternate}
+.lo2{filter:blur(76px);opacity:.4;
+  background:radial-gradient(26% 20% at 50% 42%,rgba(255,77,94,.4),transparent 68%),
+   radial-gradient(24% 18% at 8% 56%,rgba(167,123,255,.4),transparent 68%);
+  animation:l2 42s ease-in-out infinite alternate}
+.lo3{filter:blur(90px);opacity:.3;
+  background:radial-gradient(40% 30% at 60% 8%,rgba(62,224,224,.4),transparent 70%),
+   radial-gradient(38% 28% at 34% 96%,rgba(255,197,61,.35),transparent 70%);
+  animation:l3 50s ease-in-out infinite alternate}
+@keyframes l1{from{transform:translate3d(-4%,-2%,0) scale(1)}to{transform:translate3d(4%,3%,0) scale(1.16)}}
+@keyframes l2{from{transform:translate3d(3%,2%,0) scale(1.1)}to{transform:translate3d(-3%,-3%,0) scale(1)}}
+@keyframes l3{from{transform:translate3d(0,3%,0) scale(1.05)}to{transform:translate3d(2%,-3%,0) scale(1.18)}}
+.beam{position:fixed;top:-10%;left:50%;width:70vw;height:130vh;z-index:0;pointer-events:none;
+  transform:translateX(-50%);opacity:.14;
+  background:conic-gradient(from 175deg at 50% 0%,transparent 0deg,#fff 6deg,transparent 12deg,
+   transparent 20deg,#fff 26deg,transparent 32deg);animation:sweep 9s ease-in-out infinite alternate}
+@keyframes sweep{from{transform:translateX(-50%) rotate(-4deg)}to{transform:translateX(-50%) rotate(4deg)}}
+/* ĐỒ RẠP PHIM BAY */
+.fly{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.fl1{position:absolute;bottom:-60px;animation:rise linear infinite}
+.fl1 i{display:block;animation:sway ease-in-out infinite alternate;font-style:normal;line-height:1}
+@keyframes rise{0%{transform:translateY(0);opacity:0}8%{opacity:.9}88%{opacity:.7}
+  100%{transform:translateY(-118vh);opacity:0}}
+@keyframes sway{from{transform:translateX(-16px) rotate(-14deg)}to{transform:translateX(16px) rotate(14deg)}}
+.mfilm{width:var(--w);height:calc(var(--w)*1.15);background:#14101F;border-radius:2px;position:relative;
+  box-shadow:0 0 0 1px rgba(255,255,255,.18),0 2px 8px rgba(0,0,0,.5)}
+.mfilm::before,.mfilm::after{content:'';position:absolute;top:8%;bottom:8%;width:16%;
+  background:repeating-linear-gradient(180deg,var(--c) 0 3px,transparent 3px 8px)}
+.mfilm::before{left:6%}.mfilm::after{right:6%}
+.wrap{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:18px 15px 80px}
+h1,h2,.pill,.qn,.sbtn,.ck{font-family:'Cinzel',cursive;font-weight:400;letter-spacing:.5px}
+/* BẢNG HIỆU MARQUEE */
+.mq{position:relative;padding:30px 26px 24px;margin:12px 0 20px;text-align:center;border-radius:10px;
+  background:linear-gradient(180deg,#241C4A,#140F2C);border:3px solid var(--gold);
+  box-shadow:0 0 0 6px rgba(255,197,61,.12),0 18px 44px rgba(0,0,0,.6),inset 0 0 60px rgba(255,197,61,.08)}
+.mq::before,.mq::after{content:'';position:absolute;left:14px;right:14px;height:10px;
+  background:radial-gradient(circle,var(--gold) 3.4px,transparent 3.8px) 0 0/22px 10px;
+  animation:blink 1.4s steps(2) infinite}
+.mq::before{top:7px}.mq::after{bottom:7px;animation-delay:.7s}
+@keyframes blink{0%{opacity:1}50%{opacity:.35}100%{opacity:1}}
+.mq h1{font-size:clamp(19px,4.5vw,31px);line-height:1.45;color:var(--gold);
+  text-shadow:0 0 18px rgba(255,197,61,.5)}
+.mq h1 span{color:var(--cyan)}
+.mq .by{display:inline-block;margin-top:11px;font-size:.92rem;font-weight:800;color:var(--dark);
+  background:var(--cyan);padding:3px 15px;border-radius:999px}
+.mq p{font-size:.85rem;font-weight:700;color:var(--dim);margin-top:11px;line-height:1.75}
+.mq p b{color:var(--pink)}
+.sb{position:sticky;top:8px;z-index:9;display:flex;align-items:center;gap:11px;padding:9px 16px;
+  margin-bottom:18px;border-radius:8px;background:rgba(23,19,49,.95);backdrop-filter:blur(10px);
+  border:2px solid rgba(255,197,61,.35);box-shadow:0 6px 18px rgba(0,0,0,.5)}
+.sb b{font-family:'Cinzel';font-size:1.05rem;color:var(--gold)}
+.tr{flex:1;height:12px;background:rgba(255,255,255,.1);border-radius:6px;overflow:hidden}
+.fb{height:100%;width:0;transition:width .45s;background:linear-gradient(90deg,var(--gold),var(--pink),var(--cyan))}
+/* PHẦN = DẢI PHIM */
+.sec{position:relative;padding:20px 22px 18px;margin-bottom:26px;border-radius:6px;background:var(--card);
+  border:1px solid rgba(255,255,255,.1);box-shadow:0 12px 30px rgba(0,0,0,.45)}
+.sec::before,.sec::after{content:'';position:absolute;top:0;bottom:0;width:14px;
+  background:repeating-linear-gradient(180deg,rgba(255,255,255,.82) 0 9px,transparent 9px 22px);opacity:.32}
+.sec::before{left:4px}.sec::after{right:4px}
+.st{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:5px}
+.pill{color:var(--dark);padding:4px 14px;font-size:.76rem;border-radius:4px}
+.st h2{font-size:.9rem;color:var(--ink)}
+.si{font-size:.87rem;font-weight:700;color:var(--dim);font-style:italic;margin:5px 0 13px;line-height:1.7}
+.q{position:relative;background:#1E1940;border:1px solid rgba(255,255,255,.12);border-radius:5px;
+  padding:14px 14px 13px;margin-bottom:14px;box-shadow:0 5px 16px rgba(0,0,0,.4)}
+.q.shk{animation:shk .42s}
+@keyframes shk{0%,100%{transform:translateX(0)}25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
+.qn{display:inline-block;color:var(--dark);min-width:31px;text-align:center;padding:1px 7px;margin-right:8px;
+  font-size:.72rem;background:var(--gold);border-radius:3px}
+.qt{font-weight:700;font-size:1rem;line-height:1.9}
+.qt u,.cue u{background:rgba(255,197,61,.28);color:var(--gold);text-decoration:underline;
+  text-decoration-thickness:3px;text-underline-offset:2px;text-decoration-color:var(--gold);
+  padding:0 2px;margin:0 -1px;font-weight:900;border-radius:2px}
+.qt i{color:var(--cyan);font-style:italic}
+.cue{background:rgba(255,255,255,.05);border-left:5px solid var(--pink);border-radius:0 5px 5px 0;
+  padding:9px 13px;margin-top:9px;font-weight:800;font-size:1.01rem;line-height:1.85}
+.hintt{display:inline-block;background:rgba(62,224,224,.15);border:2px solid var(--cyan);color:var(--cyan);
+  padding:0 10px;font-weight:900;font-size:.9rem;margin-left:6px;border-radius:3px}
+.segs{margin-top:11px;font-weight:700;font-size:1.02rem;line-height:2.5;padding:10px 13px;
+  background:rgba(0,0,0,.28);border:2px dashed rgba(255,197,61,.45);border-radius:5px}
+.sg{display:inline-block;border:2px solid rgba(255,255,255,.22);background:#241E4E;border-radius:4px;
+  padding:2px 9px;margin:0 2px;cursor:pointer;transition:.14s}
+.sg b{display:inline-block;background:var(--violet);color:var(--dark);font-size:.66rem;padding:0 5px;
+  margin-right:5px;vertical-align:1px;border-radius:2px}
+.sg:hover:not(.dn){background:#2E2660;border-color:var(--gold)}
+.sg.pick{background:#3A2F6E;border-color:var(--gold);box-shadow:0 0 0 3px rgba(255,197,61,.22)}
+.sg.ok{background:rgba(43,217,138,.2);border-color:var(--good)}
+.sg.no{background:rgba(255,92,114,.2);border-color:var(--bad)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.cp{background:#241E4E;border:2px solid var(--violet);border-radius:999px;padding:6px 13px;font-weight:800;
+  font-size:.96rem;cursor:pointer;color:#D6C6FF;transition:.14s}
+.cp:hover:not(.gone){transform:translateY(-2px);background:#2F2766}
+.cp.gone{opacity:.28;pointer-events:none;text-decoration:line-through}
+.built{margin-top:10px;min-height:46px;background:rgba(0,0,0,.28);border:2px dashed var(--gold);
+  border-radius:5px;padding:10px 13px;font-weight:800;font-size:1.02rem;line-height:1.7}
+.built.ok{border-style:solid;border-color:var(--good);background:rgba(43,217,138,.14)}
+.built.no{border-style:solid;border-color:var(--bad);background:rgba(255,92,114,.14)}
+.built .ph{color:#6E6499;font-weight:700;font-style:italic}
+.acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.fr{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:11px}
+.ti{flex:1 1 100%;background:#120E28;border:2px solid rgba(255,255,255,.2);border-radius:5px;
+  padding:10px 13px;font-family:'Nunito';font-size:1rem;font-weight:800;color:var(--ink);outline:none}
+.ti::placeholder{color:#6E6499;font-weight:700;font-style:italic}
+.ti:focus{border-color:var(--gold);box-shadow:0 0 0 4px rgba(255,197,61,.14)}
+.ti.ok{border-color:var(--good);background:rgba(43,217,138,.12)}
+.ti.no{border-color:var(--bad);background:rgba(255,92,114,.12)}
+.ti.sm{flex:1 1 auto;min-width:170px}
+.og{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:12px}
+.og.c1{grid-template-columns:1fr}
+.og.r4{grid-template-columns:repeat(4,1fr);gap:8px}
+.og.r4 .ob{padding:12px 4px;font-size:1.04rem;letter-spacing:.3px}
+@media(max-width:560px){.og{grid-template-columns:1fr}.og.r4{grid-template-columns:1fr 1fr}}
+.ob{background:#241E4E;border:2px solid rgba(255,255,255,.16);border-radius:5px;padding:10px 12px;
+  font-family:'Nunito';font-size:.96rem;font-weight:800;cursor:pointer;text-align:center;line-height:1.5;
+  color:var(--ink);transition:.15s}
+.ob:hover:not(.dn){transform:translateY(-2px);background:#2F2766;border-color:var(--gold)}
+.ob.ok{background:rgba(43,217,138,.2);border-color:var(--good);color:#9BFFD0}
+.ob.no{background:rgba(255,92,114,.2);border-color:var(--bad);color:#FFC0C9}
+.ob.dim{opacity:.38}
+.ob u,.op4 u,.wr u,.stp u{background:rgba(255,197,61,.3);color:var(--gold);text-decoration:underline;
+  text-decoration-thickness:3px;text-underline-offset:2px;text-decoration-color:var(--gold);
+  font-weight:900;padding:0 3px;margin:0 -1px;border-radius:2px}
+.ck{background:var(--red);color:#fff;border:none;border-radius:4px;padding:9px 18px;font-size:.8rem;
+  cursor:pointer;box-shadow:0 4px 12px rgba(255,77,94,.35)}
+.ck.gh{background:transparent;color:var(--red);border:2px solid var(--red);box-shadow:none}
+.ck:hover:not(:disabled){transform:translateY(-2px)}
+.ck:disabled{opacity:.4;cursor:default}
+.ex{display:none;margin-top:12px;background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.12);
+  border-radius:5px;padding:13px;font-size:.94rem;line-height:1.82}
+.ex.show{display:block}
+.kb{background:rgba(43,217,138,.16);border:2px solid var(--good);border-radius:4px;padding:8px 12px;
+  margin-bottom:9px;font-weight:900;color:#9BFFD0;line-height:1.72}
+.stp{background:rgba(255,255,255,.045);border:1px solid rgba(255,197,61,.25);border-radius:4px;
+  padding:8px 12px;margin-bottom:8px;line-height:1.82}
+.stp .l{display:inline-block;background:var(--violet);color:var(--dark);padding:1px 10px;font-size:.66rem;
+  margin-bottom:5px;font-family:'Cinzel';border-radius:3px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:6px 0}
+@media(max-width:600px){.g2{grid-template-columns:1fr}}
+.g2>div,.op4{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:4px;
+  padding:6px 10px;line-height:1.7;font-weight:700}
+.op4{margin-bottom:6px}
+.op4 b{color:var(--cyan)}
+.op4.rt{background:rgba(43,217,138,.16);border-color:var(--good)}
+.op4.rt b{color:#9BFFD0}
+.wr{background:rgba(255,92,114,.13);border:1px solid rgba(255,92,114,.4);border-radius:4px;padding:6px 10px;
+  margin-top:6px;line-height:1.75;font-weight:700}
+.wr b{color:#FFB3BE}
+.ipa{font-family:'Courier New',monospace;background:rgba(62,224,224,.14);color:var(--cyan);padding:0 6px;
+  border-radius:3px;font-weight:900}
+.w{color:#8FD0FF;font-weight:800}.m{color:#FFCE7A;font-weight:700}.g{color:#7BFFC0;font-weight:900}
+.t{background:rgba(167,123,255,.25);color:#DCCBFF;padding:1px 7px;border-radius:999px;font-size:.78em;
+  font-weight:800;margin:0 4px}
+.pg{background:linear-gradient(transparent 56%,rgba(255,197,61,.3) 56%);font-weight:800}
+.eg{display:inline-block;background:rgba(255,111,200,.14);border:2px solid var(--pink);border-radius:999px;
+  padding:1px 11px;font-weight:800;color:#FFB6E3;margin:3px 4px 0 0;font-size:.88rem}
+.sub{text-align:center;margin-top:22px}
+.sbtn{background:var(--gold);color:var(--dark);border:none;border-radius:6px;padding:15px 38px;
+  font-size:1rem;cursor:pointer;box-shadow:0 8px 22px rgba(255,197,61,.35)}
+.sbtn:hover{transform:translateY(-3px)}
+.ov{position:fixed;inset:0;background:rgba(5,3,12,.85);z-index:99;display:none;align-items:center;
+  justify-content:center;padding:16px;overflow-y:auto;backdrop-filter:blur(6px)}
+.ov.on{display:flex}
+.mb{background:linear-gradient(180deg,#241C4A,#140F2C);border:3px solid var(--gold);border-radius:10px;
+  box-shadow:0 16px 44px rgba(0,0,0,.7);padding:26px 22px;width:430px;max-width:96%;text-align:center;
+  max-height:92vh;overflow-y:auto}
+.mb h2{font-size:1.02rem;color:var(--gold);margin-bottom:11px}
+.mb input{width:100%;padding:12px;border:2px solid rgba(255,255,255,.2);border-radius:5px;
+  background:#120E28;color:var(--ink);font-family:'Nunito';font-weight:800;font-size:1rem;
+  text-align:center;outline:none;margin-bottom:11px}
+.mb input.er{border-color:var(--bad);animation:shk .42s}
+.mb .em{color:var(--bad);font-weight:800;font-size:.86rem;display:none;margin-bottom:9px}
+.mb .gr{font-family:'Cinzel';font-size:1rem;color:var(--pink);line-height:1.5;margin-bottom:6px}
+.mb .rs{font-family:'Cinzel';font-size:2.1rem;color:var(--gold)}
+.mb .rt2{font-weight:900;color:var(--cyan);font-size:1.04rem;margin:4px 0 7px}
+.mb .rm{font-weight:700;font-size:.92rem;line-height:1.72;margin-bottom:11px;color:var(--dim)}
+.mb img{width:100%;max-width:250px;border-radius:6px;margin:11px auto;display:block}
+.cf{position:fixed;top:-12px;width:9px;height:14px;z-index:110;pointer-events:none;border-radius:2px}
+@keyframes fall{to{transform:translateY(105vh) rotate(700deg);opacity:.2}}
+
+/* ── NHAN BUOC 1/2/3/4: chu TRANG tren nen tim gradient cho noi ── */
+.stp .l{background:linear-gradient(135deg,#7C3AED,#C026D3)!important;color:#fff!important;
+  text-shadow:0 1px 2px rgba(0,0,0,.4);letter-spacing:.4px;padding:2px 12px;border-radius:999px;
+  box-shadow:0 2px 6px rgba(124,58,237,.35)}
+
+/* NEN GIAY SANG - dung chung 2 theme Unit 9 */
+:root{--ink:#33415C;--dim:#7C8BA6;--good:#0E8F5E;--bad:#DE3B54;--dark:#33415C}
+body{color:var(--ink)}
+.beam{display:none}
+.sb{background:rgba(255,255,255,.95);border-color:#DCE6F5;box-shadow:0 4px 14px rgba(90,110,150,.16)}
+.tr{background:rgba(90,110,150,.14)}
+.sec{border:2px solid #E2EAF7;box-shadow:0 8px 22px rgba(90,110,150,.14)}
+.st h2{color:var(--ink)}.si{color:var(--dim)}
+.q{border:2px solid #E6EDF9;box-shadow:0 4px 12px rgba(90,110,150,.12)}
+.qt i{color:#1E8E9B}
+.cue{background:#FFF7EC;color:#8A4B12}
+.hintt{background:#EAF9F3;border-color:#0E8F5E;color:#0E6A47}
+.stem{display:inline-block;background:#fff;border-bottom:2px dashed #F0A93D;padding:0 6px;
+  font-weight:900;color:#C2410C}
+.flex{margin-top:9px;background:#EAF9F3;border:1px dashed #0E8F5E;border-radius:6px;padding:6px 11px;
+  font-size:.88rem;font-weight:700;color:#0E6A47;line-height:1.7}
+.segs{background:#FFFDF3;border-color:#F0C674}
+.sg{background:#fff;border-color:#D3DEF0}
+.sg:hover:not(.dn){background:#F2F7FF}
+.sg.pick{background:#FFF3D6;border-color:#F0A93D;box-shadow:0 0 0 3px rgba(240,169,61,.22)}
+.sg.ok{background:#E7F8F0;border-color:var(--good)}
+.sg.no{background:#FDECEF;border-color:var(--bad)}
+.cp{background:#fff;color:#5B45C8;border-color:#C9BCFF}
+.cp:hover:not(.gone){background:#F6F2FF}
+.built{background:#FFFDF3;border-color:#F0C674;color:var(--ink)}
+.built.ok{background:#E7F8F0}.built.no{background:#FDECEF}
+.built .ph{color:#AEBBD1}
+.ti{background:#fff;border-color:#D3DEF0;color:var(--ink)}
+.ti::placeholder{color:#AEBBD1}
+.ti.ok{background:#E7F8F0}.ti.no{background:#FDECEF}
+.ob{background:#fff;color:var(--ink);border-color:#D8E3F4;box-shadow:0 2px 6px rgba(90,110,150,.12)}
+.ob.ok{background:#E7F8F0;border-color:var(--good);color:#0B6B47}
+.ob.no{background:#FDECEF;border-color:var(--bad);color:#98202F}
+.ex{background:#FFFDF7;border-color:#E8EEF8}
+.kb{background:#E7F8F0;border-color:var(--good);color:#0B6B47}
+.stp{background:#F8FAFF;border-color:#E3EAF7}
+.g2>div,.op4{background:#fff;border-color:#E5EBF6}
+.op4.rt{background:#E7F8F0;border-color:var(--good)}
+.op4.rt b{color:#0B6B47}
+.wr{background:#FDECEF;border-color:#F6C3CC}.wr b{color:#98202F}
+.ipa{background:#EEF4FF;color:#2F5AA8}
+.w{color:#2F5AA8}.m{color:#9A5A12}.g{color:#0E8F5E}
+.t{background:#EFE7FF;color:#5B45C8}
+.eg{background:#fff}
+.mb{background:#fff;color:var(--ink);border-radius:16px}
+.mb input{background:#fff;color:var(--ink);border-color:#D3DEF0}
+.mb .rm{color:var(--dim)}
+.qt u,.cue u,.ob u,.op4 u,.wr u,.stp u{background:#FFE08A;color:#8A3A00;
+  text-decoration-color:#E2622A;border-radius:3px}
+
+/* THEME TOPO MAP - ban do dia hinh, duong dong muc */
+:root{--ink:#22352F;--dim:#6E8279;--good:#0E7A55;--bad:#C8412C;--dark:#22352F;--card:#FBFDFA;
+  --gold:#C98A2B;--red:#D2553F;--cyan:#0E8A8A;--violet:#4B6BB5;--pink:#7FB069}
+body{color:var(--ink);background-color:#EDF4EF;background-attachment:fixed}
+/* duong dong muc toa tu 2 tam */
+body::before{content:'';position:fixed;inset:-10%;z-index:0;pointer-events:none;opacity:.55;
+  background:
+   repeating-radial-gradient(circle at 22% 26%,transparent 0 20px,rgba(14,138,138,.16) 20px 22px),
+   repeating-radial-gradient(circle at 78% 72%,transparent 0 26px,rgba(201,138,43,.15) 26px 28px),
+   repeating-radial-gradient(circle at 52% 4%,transparent 0 34px,rgba(75,107,181,.1) 34px 36px);
+  animation:drift 30s ease-in-out infinite alternate}
+@keyframes drift{from{transform:translate(-10px,-6px)}to{transform:translate(10px,6px)}}
+/* luoi toa do + vach chia */
+body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.4;
+  background:
+   repeating-linear-gradient(90deg,rgba(34,53,47,.09) 0 1px,transparent 1px 72px),
+   repeating-linear-gradient(0deg,rgba(34,53,47,.09) 0 1px,transparent 1px 72px)}
+.beam{display:none}
+/* ky hieu nui bay len */
+.mfilm{width:var(--w);height:calc(var(--w)*.86);background:var(--c);opacity:.85;
+  clip-path:polygon(50% 0,100% 100%,0 100%);filter:drop-shadow(0 2px 4px rgba(30,60,50,.3))}
+.mfilm::before,.mfilm::after{display:none}
+/* header = to ban do co vien kep + vach chia le */
+.mq{background:var(--card);border:2px solid #0E8A8A;border-radius:6px;
+  box-shadow:0 0 0 5px rgba(14,138,138,.1),0 12px 30px rgba(30,60,50,.16);
+  background-image:repeating-linear-gradient(90deg,rgba(14,138,138,.06) 0 1px,transparent 1px 26px),
+   repeating-linear-gradient(0deg,rgba(14,138,138,.06) 0 1px,transparent 1px 26px)}
+.mq::before{content:'';position:absolute;left:12px;right:12px;top:12px;bottom:12px;height:auto;
+  animation:none;opacity:.75;background:none;border:1px dashed rgba(201,138,43,.75);border-radius:3px}
+.mq::after{content:'N';position:absolute;top:8px;right:14px;left:auto;bottom:auto;width:auto;height:auto;
+  animation:none;opacity:1;background:none;font-family:'Nunito';font-weight:900;font-size:.72rem;
+  color:#0E8A8A;letter-spacing:1px}
+.mq h1{color:#12463C;text-shadow:none;letter-spacing:1.5px}
+.mq h1 span{color:var(--red)}
+.mq .by{background:#0E8A8A;color:#fff}
+.mq p{color:#5D7168}
+.mq p b{color:var(--red)}
+.sb{background:rgba(251,253,250,.96)!important;border:2px solid #0E8A8A!important;border-radius:6px;
+  box-shadow:0 4px 14px rgba(30,60,50,.14)!important}
+.sb b{color:#12463C}
+.tr{background:#DDEAE1!important;border-radius:999px}
+.fl{background:linear-gradient(90deg,#0E8A8A,#C98A2B,#7FB069)!important}
+/* moi phan = o ban do co thanh chu giai */
+.sec{background:var(--card)!important;border:2px solid #CFE0D6!important;border-radius:6px;
+  box-shadow:0 8px 22px rgba(30,60,50,.13)!important;padding-top:14px}
+.sec::before{display:block;content:'';position:absolute;left:0;right:0;top:0;height:5px;width:auto;
+  opacity:.95;border-radius:5px 5px 0 0;
+  background:linear-gradient(90deg,#0E8A8A 0 25%,#C98A2B 25% 50%,#4B6BB5 50% 75%,#7FB069 75%)}
+.sec::after{display:none}
+.st{border-bottom:2px dashed #D8E5DC;padding-bottom:8px;margin-bottom:6px}
+.st h2{color:#12463C!important}
+.pill{border-radius:4px;color:#fff;letter-spacing:1px}
+.si{color:#6E8279!important}
+.q{background:#fff!important;border:2px solid #DCE9E1!important;border-radius:5px;
+  box-shadow:0 5px 14px rgba(30,60,50,.1)!important}
+.qt,.qt b{color:var(--ink)}
+.qn{background:#0E8A8A!important;color:#fff!important;border-radius:4px}
+.ob{background:#F8FBF8!important;border:2px solid #BFD8C9!important;border-radius:5px;color:var(--ink)}
+.ob:hover:not(.dn){background:#EAF4EE!important;border-color:#0E8A8A!important}
+.og .ob.ok,.ob.ok{background:#E4F6EC!important;border-color:var(--good)!important;color:#0B5C3F!important}
+.og .ob.no,.ob.no{background:#FCEAE6!important;border-color:var(--bad)!important;color:#8E2A1A!important}
+.ti{background:#fff!important;border:2px solid #BFD8C9!important;border-radius:5px}
+.ck{background:linear-gradient(135deg,#0E8A8A,#12463C);color:#fff;border-radius:5px}
+.segs{background:#F1F7F3!important;border-left:4px solid #0E8A8A!important;border-radius:0 6px 6px 0}
+.sg{background:#fff!important;border:2px solid #7FB069!important;border-radius:5px}
+.cp{background:#fff!important;border:2px solid #4B6BB5!important;border-radius:5px;color:#2F4A8A}
+.built,.cue{background:#FEF8EC!important;border:2px dashed #C98A2B!important;border-radius:5px;color:#7A5410}
+.ex{background:#FCFEFC!important;border:1.5px solid #DFEAE3!important;border-radius:5px}
+.rem{background:rgba(251,253,250,.97)!important;border-top:3px solid #0E8A8A!important;color:var(--ink)}
+.rem .rt{color:#4C6157!important}
+.rem .rc{background:#C98A2B!important;color:#fff!important}
+.mb{background:var(--card)!important;border:3px solid #0E8A8A!important;border-radius:8px;color:var(--ink)}
+.sgcap{color:#5D7168}
+.dlg{background:#fff!important;border:2px dashed #BFD8C9!important}
+.dlg>span{background:#0E8A8A!important}
+
+/* THANH NHAC NHO GHIM CO DINH (day trang) */
+.wrap{padding-bottom:120px}
+.rem{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;align-items:center;gap:10px;
+  padding:9px 14px;font-weight:800;font-size:.9rem;
+  background:var(--card);border-top:3px solid var(--gold);
+  box-shadow:0 -6px 22px rgba(0,0,0,.28);backdrop-filter:blur(8px)}
+.rem .rt{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--ink)}
+.rem .rc{background:var(--gold);color:var(--dark);border-radius:999px;padding:2px 12px;font-weight:900;
+  white-space:nowrap}
+.rem .rc.done{background:var(--good);color:#fff}
+.rem button{border:none;border-radius:999px;padding:7px 14px;font-family:'Nunito';font-weight:900;
+  font-size:.86rem;cursor:pointer;white-space:nowrap;background:var(--cyan);color:var(--dark)}
+.rem button.gox{background:var(--red);color:#fff}
+.rem button:hover{transform:translateY(-2px)}
+.q.flash{animation:fl 1.1s ease-out 2}
+@keyframes fl{0%,100%{box-shadow:0 0 0 0 rgba(245,165,36,0)}50%{box-shadow:0 0 0 5px rgba(245,165,36,.55)}}
+@media(max-width:620px){.rem .rt{display:none}.rem{gap:8px;justify-content:space-between}}
+
+/* ══ BẢNG NHẮN CỦA MS — ghim cố định ở ĐẦU trang ══ */
+.msnote{position:fixed;top:0;left:0;right:0;z-index:60;color:#fff;
+  background:linear-gradient(100deg,#6D28D9 0%,#DB2777 52%,#F59E0B 100%);
+  box-shadow:0 6px 20px rgba(60,20,90,.35);border-bottom:4px solid #FDE047}
+.msnote .row{display:flex;align-items:center;gap:10px;padding:7px 14px;max-width:1020px;margin:0 auto}
+.msnote .tag{background:#FDE047;color:#4C1D95;font-weight:900;border-radius:999px;padding:3px 13px;
+  font-size:.82rem;white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,.25);flex:none}
+.msnote .txt{flex:1;min-width:0;font-weight:700;font-size:.88rem;line-height:1.5;
+  max-height:3em;overflow:hidden;text-shadow:0 1px 2px rgba(0,0,0,.25)}
+.msnote .mb2{background:rgba(255,255,255,.22);border:2px solid #fff;color:#fff;border-radius:999px;
+  padding:4px 13px;font-family:'Nunito';font-weight:900;font-size:.8rem;cursor:pointer;
+  white-space:nowrap;flex:none}
+.msnote .mb2:hover{background:rgba(255,255,255,.36)}
+.msnote .full{display:none;max-width:1020px;margin:0 auto;padding:2px 14px 12px;
+  max-height:46vh;overflow-y:auto}
+.msnote.open .full{display:block}
+.msnote.open .txt{display:none}
+.msnote .full p{background:rgba(255,255,255,.16);border-left:5px solid #FDE047;
+  border-radius:0 10px 10px 0;padding:8px 12px;margin-bottom:8px;font-weight:700;font-size:.91rem;
+  line-height:1.75;text-shadow:0 1px 2px rgba(0,0,0,.25)}
+.msnote .full p b{color:#FDE047}
+@media(max-width:620px){.msnote .txt{font-size:.8rem;max-height:3.4em}
+  .msnote .tag{font-size:.74rem;padding:2px 9px}.msnote .mb2{font-size:.74rem;padding:3px 10px}}
+
+/* ══ FORMAT GIẢI THÍCH 4 BƯỚC ══ */
+.ex-h{display:inline-block;background:linear-gradient(135deg,#6D28D9,#DB2777);color:#fff;
+  font-weight:900;font-size:.74rem;letter-spacing:.6px;padding:3px 14px;border-radius:999px;
+  margin:13px 0 7px;text-shadow:0 1px 2px rgba(0,0,0,.35);box-shadow:0 2px 7px rgba(109,40,217,.32)}
+.ex>.ex-h:first-child{margin-top:2px}
+.ex-q{background:#FFF8E6;border-left:5px solid #F59E0B;border-radius:0 9px 9px 0;padding:8px 13px;
+  font-weight:800;color:#7C4A03;line-height:1.85}
+.ex-t{padding:1px 2px 8px;line-height:1.9}
+.ex-o{list-style:none;margin:0 0 4px;padding:0}
+.ex-o li{position:relative;background:#F7F9FF;border:2px solid #E4EBF8;border-radius:10px;
+  padding:7px 12px 7px 32px;margin-bottom:6px;line-height:1.85;font-weight:600;text-align:left}
+.ex-o li::before{content:'○';position:absolute;left:11px;top:6px;font-weight:900;color:#9FB0CC}
+.ex-o li.rt{background:#EAFBF2;border-color:#16A34A;box-shadow:0 0 0 3px rgba(22,163,74,.14)}
+.ex-o li.rt::before{content:'✔';color:#16A34A}
+.p-word{color:#1D4ED8;font-weight:900;background:#E8F0FF;padding:0 5px;border-radius:5px}
+.p-phonetic{font-family:'Courier New',monospace;color:#6D28D9;background:#F2EAFF;padding:0 5px;
+  border-radius:5px;font-weight:800}
+.p-mean{color:#9A5A12;font-weight:800;background:#FFF4DE;padding:0 5px;border-radius:5px}
+.p-grammar{color:#0B6E86;font-weight:900;background:#E2F8FC;padding:0 6px;border-radius:5px;
+  border:1px dashed #22C3D6}
+.hl-green{background:linear-gradient(135deg,#15803D,#22C55E);color:#fff;font-weight:900;
+  padding:1px 10px;border-radius:999px;text-shadow:0 1px 2px rgba(0,0,0,.3)}
+.hl-red{background:linear-gradient(135deg,#DC2626,#F97316);color:#fff;font-weight:900;
+  padding:1px 10px;border-radius:999px;text-shadow:0 1px 2px rgba(0,0,0,.3)}
+.ex-q u,.ex-o u,.ex-t u{background:#FFE08A;color:#8A3A00;text-decoration-color:#E2622A;border-radius:3px}
+/* hội thoại xếp thứ tự */
+.dlg{background:#fff;border:2px dashed #C7D3EA;border-radius:11px;padding:10px 13px;margin-top:10px;
+  font-weight:700;line-height:2.1;font-size:.98rem;text-align:left}
+.dlg>span{display:inline-block;background:#6C63FF;color:#fff;font-weight:900;width:23px;height:23px;
+  line-height:23px;text-align:center;border-radius:50%;margin-right:8px;font-size:.8rem;
+  font-family:'Nunito';vertical-align:middle}
+
+/* ══ BIỂN BÁO / BẢNG THÔNG BÁO SVG ══ */
+.signbox{display:flex;flex-direction:column;align-items:center;gap:8px;margin:12px 0 4px}
+.signbox svg{width:120px;height:120px;filter:drop-shadow(0 4px 9px rgba(20,30,50,.28))}
+.signbox.wide svg{width:236px;height:172px}
+.sgcap{font-size:.86rem;font-weight:800;font-style:italic;text-align:center;opacity:.85;line-height:1.6}
+
+
+/* ══ TÁCH MÀU ANH – VIỆT cho phần dịch của bài sắp xếp ══ */
+.trp{display:flex;gap:9px;align-items:flex-start;background:#F6F9FF;border:1px solid #DCE6F8;
+  border-left:5px solid #4F46E5;border-radius:0 10px 10px 0;padding:7px 11px;margin:6px 0}
+.trl{flex:none;background:linear-gradient(135deg,#4F46E5,#7C3AED);color:#fff;font-weight:900;
+  min-width:25px;height:25px;line-height:25px;text-align:center;border-radius:50%;font-size:.78rem;
+  font-family:'Nunito';box-shadow:0 2px 6px rgba(79,70,229,.35)}
+.trb{flex:1;min-width:0}
+.tren{color:#0F3D9E;font-weight:800;line-height:1.78;background:#fff;border-radius:6px;padding:2px 7px}
+.trvi{color:#8A4B00;font-weight:700;line-height:1.78;background:#FFF3DC;border-left:3px solid #F59E0B;
+  border-radius:0 7px 7px 0;padding:3px 9px;margin-top:5px}
+.trvi::before{content:'🇻🇳 ';font-weight:900}
+.ex-t2{color:#7A4A00;font-weight:800;line-height:1.85;margin:6px 0 2px}
+/* nghĩa từng thẻ từ */
+.glw{display:inline-block;background:#EAF1FF;color:#0F3D9E;font-weight:800;border-radius:5px;
+  padding:0 6px;margin:2px 0}
+.glv{display:inline-block;background:#FFF3DC;color:#8A4B00;font-weight:700;border-radius:5px;
+  padding:0 6px;margin:2px 7px 2px 0}
+
+/* ══════════ THEME “HOÀNG HÔN RỪNG XANH” — u7 mlh e8 p6 ══════════ */
+.rem{display:none!important}
+.fr.hid{display:none!important}
+.wrap{padding-bottom:34px}
+body{color:#2A1B12!important;
+  background:linear-gradient(120deg,#FFE3B0,#FFC48A,#FF9E7A,#F5A9A0,#C9E4A6,#FFE3B0)!important;
+  background-size:400% 400%!important;background-attachment:fixed!important;
+  animation:sunflow 30s ease infinite!important}
+@keyframes sunflow{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+body::before{content:''!important;position:fixed!important;inset:-12%!important;z-index:0!important;
+  pointer-events:none!important;opacity:.85!important;filter:blur(30px)!important;
+  background:
+   radial-gradient(24% 20% at 78% 14%,rgba(255,236,180,.95),transparent 68%),
+   radial-gradient(30% 24% at 14% 20%,rgba(255,255,255,.7),transparent 70%),
+   radial-gradient(34% 26% at 70% 86%,rgba(160,214,140,.5),transparent 72%),
+   radial-gradient(26% 20% at 18% 84%,rgba(255,180,150,.5),transparent 72%)!important;
+  animation:sunglow 22s ease-in-out infinite alternate!important}
+@keyframes sunglow{0%{transform:translate3d(0,0,0) scale(1)}100%{transform:translate3d(0,-20px,0) scale(1.06)}}
+body::after{display:none!important}
+.lo,.lo2,.lo3,.beam{display:none!important}
+/* ── ĐẦU TRANG ── */
+.mq{background:linear-gradient(165deg,#FFFDF6,#FFF1DC)!important;border:3px solid #E8763A!important;
+  border-radius:22px!important;box-shadow:0 16px 38px rgba(140,70,30,.22)!important}
+.mq h1{color:#8C3A12!important}
+.mq h1 span{color:#1F7A4D!important}
+.mq .by{background:#FFF0D6!important;border:2px solid #E8763A!important;color:#8C3A12!important;
+  border-radius:999px!important;padding:7px 15px!important}
+.mq p{color:#5A4432!important}
+/* ── THANH ĐIỂM ── */
+.sb{background:#FFFDF6!important;border:2.5px solid #E8763A!important;border-radius:16px!important;
+  color:#2A1B12!important;box-shadow:0 8px 20px rgba(140,70,30,.18)!important}
+.sb b{color:#8C3A12!important}
+.tr{background:#F3E2CC!important}
+.fb{background:linear-gradient(90deg,#E8763A,#1F7A4D)!important}
+/* ── PHẦN & CÂU ── */
+.sec{background:#FFFDF6!important;border:2.5px solid #F0C08F!important;border-radius:20px!important;
+  box-shadow:0 12px 28px rgba(140,70,30,.16)!important}
+.sec::before,.sec::after{display:none!important}
+.pill{color:#FFFDF6!important;background:#8C3A12!important;border-radius:999px!important;font-weight:900!important}
+.st{border-bottom:2px solid #F3D9B8!important}
+.st h2{color:#8C3A12!important}
+.si{color:#6B5340!important}
+.q{background:#FFF8EA!important;border:2px solid #F0C08F!important;border-radius:15px!important;
+  box-shadow:0 5px 14px rgba(140,70,30,.12)!important}
+.qn{background:#E8763A!important;color:#FFFDF6!important;border-radius:999px!important}
+.qt{color:#2A1B12!important}
+.qt b,.qt strong{color:#8C3A12!important}
+.qt i,.qt em{color:#1F7A4D!important}
+.qt u{color:#2A1B12!important;text-decoration-color:#E8763A!important}
+/* ── ĐÁP ÁN ── */
+.ob{background:#FFFDF6!important;border:2.5px solid #F0C08F!important;border-radius:15px!important;
+  color:#2A1B12!important;box-shadow:0 4px 0 #E9CBA6!important;transition:.15s!important}
+.ob:hover{transform:translateY(-2px) scale(1.02)!important;border-color:#E8763A!important;background:#FFF3E0!important}
+.ob.ok{background:#E4F8EC!important;border-color:#00A85A!important;color:#0B5C36!important}
+.ob.no{background:#FDE8EA!important;border-color:#E8344E!important;color:#8C1622!important}
+/* ── Ô GÕ & NÚT ── */
+.ti{background:#FFFDF6!important;border:2.5px solid #F0C08F!important;border-radius:13px!important;color:#2A1B12!important}
+.ti::placeholder{color:#B39B7C!important}
+.ti:focus{border-color:#E8763A!important;box-shadow:0 0 0 4px rgba(232,118,58,.16)!important}
+.ti.ok{background:#E4F8EC!important;border-color:#00A85A!important}
+.ti.no{background:#FDE8EA!important;border-color:#E8344E!important}
+.ck,.sbtn{background:linear-gradient(135deg,#E8763A,#F2A63B)!important;color:#FFFDF6!important;
+  border:none!important;border-radius:999px!important;font-weight:900!important;
+  box-shadow:0 6px 16px rgba(232,118,58,.32)!important}
+.ck:hover,.sbtn:hover{transform:translateY(-2px)!important}
+/* ── TÌM LỖI ── */
+.segs{background:#FFF8EA!important;border:2px solid #F0C08F!important;border-left:6px solid #E8763A!important;
+  border-radius:0 16px 16px 0!important;color:#2A1B12!important}
+.sg{background:#FFFDF6!important;border:2px solid #F0C08F!important;border-radius:12px!important;color:#2A1B12!important}
+.sg b{background:#E8763A!important;color:#FFFDF6!important}
+.sg.pick{background:#FFEBD3!important;border-color:#E8763A!important;box-shadow:0 0 0 3px rgba(232,118,58,.2)!important}
+.sg.ok{background:#E4F8EC!important;border-color:#00A85A!important}
+.sg.no{background:#FDE8EA!important;border-color:#E8344E!important}
+/* ── GIẢI THÍCH ── */
+.ex{background:#FFFDF6!important;border:2px solid #F0C08F!important;border-radius:15px!important;color:#2A1B12!important}
+.ex b,.ex strong{color:#8C3A12!important}
+.ex i,.ex em{color:#1F7A4D!important}
+.kb{background:linear-gradient(135deg,#1F7A4D,#3FA96B)!important;color:#FFFDF6!important;
+  border-radius:999px!important;font-weight:900!important}
+.stp{background:#FFF8EA!important;border:1.5px solid #F3D9B8!important;border-radius:13px!important;color:#2A1B12!important}
+.stp .l{background:#E8763A!important;color:#FFFDF6!important;border-radius:999px!important}
+.stp b,.stp strong{color:#8C3A12!important}
+.op4,.g2>div{background:#FFFDF6!important;border:1.5px solid #F0C08F!important;border-radius:11px!important;color:#2A1B12!important}
+.op4.rt{background:#E4F8EC!important;border-color:#00A85A!important}
+.op4 b{color:#8C3A12!important}
+.op4.rt b{color:#0B6B47!important}
+.op4 .m,.g2 .m,.m,.p-mean{color:#9A4B04!important}
+.wr{background:#FDE8EA!important;border-left:4px solid #E8344E!important;border-radius:0 11px 11px 0!important;color:#7A1520!important}
+.wr b{color:#98202F!important}
+.pg{color:#3E2C1E!important}
+.w,.p-word{color:#1D4ED8!important}
+.g,.p-grammar{color:#7A2FB0!important}
+.t,.pos{background:#F3E2CC!important;color:#5A4432!important;border-radius:6px!important}
+.hl-green{color:#0B7A45!important}
+.hl-red{color:#B3182B!important}
+.pre{margin-top:9px;padding:10px 13px;border-left:5px solid #E8763A;border-radius:0 12px 12px 0;
+  background:#FFF0D6;color:#8C3A12;font-weight:900;font-size:1rem;line-height:1.7}
+/* ── BẢNG NHẮN GHIM ── */
+.msnote{background:linear-gradient(100deg,#8C3A12,#E8763A,#1F7A4D)!important;
+  border-bottom:3px solid #FFE3B0!important;color:#FFFDF6!important}
+.msnote .tag{background:#FFE3B0!important;color:#8C3A12!important}
+.msnote .mb2{background:rgba(255,255,255,.24)!important;color:#FFFDF6!important}
+.msnote .full{background:#FFFDF6!important;color:#2A1B12!important}
+.msnote .full p{border-left:4px solid #E8763A!important;background:#FFF3E0!important}
+.msnote .full p b,.msnote .full b{color:#8C3A12!important}
+/* ── MODAL ── */
+.ov{background:rgba(60,30,12,.82)!important}
+.mb{background:linear-gradient(165deg,#FFFDF6,#FFF1DC)!important;border:3px solid #E8763A!important;
+  border-radius:22px!important;color:#2A1B12!important}
+.mb h2,.mb .gr{color:#8C3A12!important}
+.mb .rs{color:#1F7A4D!important}
+.mb input{background:#FFFDF6!important;border:2.5px solid #F0C08F!important;color:#2A1B12!important}
+.thr{background:#FFFDF6!important;border:2px solid #F0C08F!important;border-radius:14px;padding:13px 15px;margin-top:10px;color:#2A1B12;font-weight:700;line-height:1.85}
+.thr h4{color:#8C3A12;font-size:.98rem;margin:10px 0 5px}
+.thr h4:first-child{margin-top:0}
+.thr b{color:#8C3A12}
+.thr i{color:#1F7A4D}
+.thr code{background:#FFF0D6;color:#8C3A12;padding:1px 6px;border-radius:5px;font-weight:900}
+.thr ul{margin:4px 0 4px 20px}
+.thr li{margin-bottom:3px}
+.thr table{width:100%;border-collapse:collapse;margin:5px 0;font-size:.93rem}
+.thr td,.thr th{border:1px solid #F0C08F;padding:5px 8px;text-align:left}
+.thr th{background:#FFF0D6;color:#8C3A12}
+.warnbox{background:#FFF0D6;border-left:6px solid #E8763A;border-radius:0 12px 12px 0;padding:11px 14px;margin-top:10px;color:#8C3A12;font-weight:800;line-height:1.8}
+</style>
+<style>/*scn*/.zmv .wk{position:absolute;left:0;animation:zmvW linear infinite}.zmv .wk.rv{animation-name:zmvW2}.zmv .wk svg{display:block}.zmv .flp{display:inline-block;transform:scaleX(-1)}@keyframes zmvW{from{transform:translateX(-22vw)}to{transform:translateX(112vw)}}@keyframes zmvW2{from{transform:translateX(112vw)}to{transform:translateX(-22vw)}}
+.zmv .l1{animation:zmvLg .5s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:50% 0}.zmv .l2{animation:zmvLg .5s ease-in-out infinite alternate-reverse;transform-box:fill-box;transform-origin:50% 0}@keyframes zmvLg{from{transform:rotate(-12deg)}to{transform:rotate(12deg)}}
+.zmv{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;background:linear-gradient(180deg,#38BDF8 0%,#7DD3FC 30%,#E0F2FE 50%,#5EEAD4 56%,#2DD4BF 72%,#0891B2 100%)}
+.zmv svg.scene{position:absolute;inset:0;width:100%;height:100%}
+.zmv .dol{position:absolute;left:0;animation:zmvDx linear infinite}.zmv .dol .dj{display:block;animation:zmvDj 2.6s ease-in-out infinite}
+@keyframes zmvDx{from{transform:translateX(-15vw)}to{transform:translateX(112vw)}}
+@keyframes zmvDj{0%{transform:translateY(30px) rotate(-38deg);opacity:0}12%{opacity:1}50%{transform:translateY(-90px) rotate(0)}88%{opacity:1}100%{transform:translateY(30px) rotate(38deg);opacity:0}}
+.zmv .bb{animation:zmvBuf .5s ease-in-out infinite alternate}@keyframes zmvBuf{from{transform:translateY(0)}to{transform:translateY(-2.5px)}}
+.zmv .boy{animation:zmvBoy 1s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:50% 100%}@keyframes zmvBoy{from{transform:rotate(-2.5deg)}to{transform:rotate(2.5deg)}}
+.zmv .tl{animation:zmvTl .7s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:100% 0}@keyframes zmvTl{from{transform:rotate(-12deg)}to{transform:rotate(12deg)}}
+.zmv .hd{animation:zmvHd .8s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:0 100%}@keyframes zmvHd{from{transform:rotate(-3deg)}to{transform:rotate(4deg)}}
+.zmv .nt{animation:zmvNt 2.1s ease-out infinite}@keyframes zmvNt{0%{transform:translate(0,0);opacity:0}25%{opacity:1}100%{transform:translate(26px,-38px) rotate(18deg);opacity:0}}
+.zmv .arm{animation:zmvArm .5s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:50% 0}@keyframes zmvArm{from{transform:rotate(-22deg)}to{transform:rotate(22deg)}}
+.zmv .arm2{animation:zmvArm .5s ease-in-out infinite alternate-reverse;transform-box:fill-box;transform-origin:50% 0}
+.zmv .whl{animation:zmvWhl 1s linear infinite;transform-box:fill-box;transform-origin:center}@keyframes zmvWhl{to{transform:rotate(360deg)}}
+.zmv .flap2{animation:zmvFlp .4s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:0 0}@keyframes zmvFlp{from{transform:skewX(-8deg)}to{transform:skewX(10deg)}}
+.zmv .pole{animation:zmvPole .5s ease-in-out infinite alternate}@keyframes zmvPole{from{transform:translateY(0)}to{transform:translateY(-3px)}}
+.zmv .bsk{animation:zmvBsk .5s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:50% 0}@keyframes zmvBsk{from{transform:rotate(-6deg)}to{transform:rotate(6deg)}}
+.zmv .sk{animation:zmvSk 1.2s ease-in-out infinite;transform-box:fill-box;transform-origin:20% 10%}@keyframes zmvSk{0%,100%{transform:rotate(-10deg)}50%{transform:rotate(40deg)}}
+.zmv .kite{animation:zmvKite 3s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:50% 100%}@keyframes zmvKite{from{transform:rotate(-10deg) translateY(0)}to{transform:rotate(10deg) translateY(-14px)}}
+.zmv .kt{animation:zmvKt 1s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:50% 0}@keyframes zmvKt{from{transform:skewX(-14deg)}to{transform:skewX(14deg)}}
+.zmv .wav{animation:zmvWav 3s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:50% 100%}@keyframes zmvWav{from{transform:skewX(-6deg)}to{transform:skewX(6deg)}}
+.zmv .fog{animation:zmvFog 60s linear infinite}@keyframes zmvFog{from{transform:translateX(-500px)}to{transform:translateX(500px)}}
+.zmv .puff{animation:zmvPf 1.6s ease-out infinite;transform-box:fill-box;transform-origin:center}@keyframes zmvPf{0%{transform:translate(0,0) scale(.5);opacity:.95}100%{transform:translate(-40px,-50px) scale(1.8);opacity:0}}
+.zmv .sw{animation:zmvSwg 2.4s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:50% 0}@keyframes zmvSwg{from{transform:rotate(-16deg)}to{transform:rotate(16deg)}}
+.zmv .win{animation:zmvWn 3s ease-in-out infinite alternate}@keyframes zmvWn{from{opacity:.6}to{opacity:1}}
+.zmv .cl{animation:zmvCl 80s linear infinite}@keyframes zmvCl{from{transform:translateX(-300px)}to{transform:translateX(1500px)}}
+.zmv .flap{animation:zmvFp .35s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:50% 100%}@keyframes zmvFp{from{transform:scaleY(1)}to{transform:scaleY(-.6)}}
+.zmv .bw{animation:zmvBw .22s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:center}@keyframes zmvBw{from{transform:scaleX(1)}to{transform:scaleX(.3)}}
+.zmv .lf{animation:zmvLf 3s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:0 100%}@keyframes zmvLf{from{transform:rotate(-6deg)}to{transform:rotate(6deg)}}
+.zmv .lt{animation:zmvLt 3.4s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:50% 100%}@keyframes zmvLt{from{transform:rotate(-6deg)}to{transform:rotate(6deg)}}
+.zmv .rip{animation:zmvRp 4s ease-in-out infinite alternate}@keyframes zmvRp{from{transform:translateX(-16px);opacity:.35}to{transform:translateX(16px);opacity:.85}}
+.zmv .sunr{animation:zmvSr 40s linear infinite;transform-box:fill-box;transform-origin:center}@keyframes zmvSr{to{transform:rotate(360deg)}}
+.zmv .fly{position:absolute;bottom:-40px;animation:zmvUp linear infinite}.zmv .fly>svg{display:block;animation:zmvZz 2.4s ease-in-out infinite alternate}@keyframes zmvUp{to{transform:translateY(-118vh)}}@keyframes zmvZz{from{transform:translateX(-40px) rotate(-10deg)}to{transform:translateX(40px) rotate(10deg)}}
+.zmv .fj{position:absolute;animation:zmvFj 3.6s ease-in-out infinite}@keyframes zmvFj{0%,55%{transform:translate(0,0) rotate(-50deg);opacity:0}60%{opacity:1}78%{transform:translate(50px,-70px) rotate(0)}95%{transform:translate(100px,0) rotate(50deg);opacity:1}100%{opacity:0}}
+.zmv .bob{animation:zmvBb 1.8s ease-in-out infinite alternate}@keyframes zmvBb{from{transform:translateY(0) rotate(-2deg)}to{transform:translateY(-5px) rotate(2deg)}}
+.zmv .smk{animation:zmvSm 4s ease-out infinite;transform-box:fill-box;transform-origin:center}@keyframes zmvSm{0%{transform:translateY(0) scale(.6);opacity:0}30%{opacity:.8}100%{transform:translateY(-80px) scale(1.5);opacity:0}}
+.zmv .tw{animation:zmvTw ease-in-out infinite alternate}@keyframes zmvTw{from{opacity:.15}to{opacity:1}}
+.zmv .glow{animation:zmvGl 2.6s ease-in-out infinite alternate}@keyframes zmvGl{from{opacity:.45}to{opacity:1}}
+.zmv .ff{position:absolute;animation:zmvFf ease-in-out infinite alternate}@keyframes zmvFf{0%{transform:translate(0,0);opacity:.2}50%{opacity:1}100%{transform:translate(60px,-80px);opacity:.3}}
+.zmv .hop{animation:zmvHop .6s ease-in-out infinite}@keyframes zmvHop{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+.zmv .blink{animation:zmvBl 4s infinite;transform-box:fill-box;transform-origin:center}@keyframes zmvBl{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
+.zmv .wisp{animation:zmvWs 3s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:50% 100%}@keyframes zmvWs{from{transform:translateY(0) scale(.9);opacity:.6}to{transform:translateY(-20px) scale(1.1);opacity:1}}
+.zmv .flw{animation:zmvFlw .3s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:50% 100%}@keyframes zmvFlw{from{transform:scaleY(1)}to{transform:scaleY(-.5)}}
+.zmv .stream{stroke-dasharray:22 10;animation:zmvStr .6s linear infinite}@keyframes zmvStr{to{stroke-dashoffset:-32}}
+.zmv .flag{animation:zmvFlag .5s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:0 50%}@keyframes zmvFlag{from{transform:skewY(-6deg)}to{transform:skewY(6deg)}}
+.zmv .float{animation:zmvFlt 6s ease-in-out infinite alternate}@keyframes zmvFlt{from{transform:translateY(0)}to{transform:translateY(-16px)}}
+.zmv .vine{animation:zmvVn 3s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:50% 0}@keyframes zmvVn{from{transform:rotate(-5deg)}to{transform:rotate(5deg)}}
+.zmv .frog{animation:zmvFr 3s ease-in-out infinite;transform-box:fill-box;transform-origin:50% 100%}@keyframes zmvFr{0%,70%,100%{transform:translateY(0)}80%{transform:translateY(-24px)}90%{transform:translateY(0) scaleY(.9)}}
+.zmv .tlR{animation:zmvTR 8s steps(1) infinite}@keyframes zmvTR{0%{opacity:1}45%,100%{opacity:.15}}
+.zmv .tlY{animation:zmvTY 8s steps(1) infinite}@keyframes zmvTY{0%,44%{opacity:.15}45%,55%{opacity:1}56%,100%{opacity:.15}}
+.zmv .tlG{animation:zmvTG 8s steps(1) infinite}@keyframes zmvTG{0%,55%{opacity:.15}56%,100%{opacity:1}}
+.zmv .flash{animation:zmvFl .5s steps(1) infinite}@keyframes zmvFl{0%{fill:#EF4444}50%{fill:#3B82F6}}
+.zmv .bounce{animation:zmvBo 1.4s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:50% 100%}@keyframes zmvBo{from{transform:translateY(0) rotate(-3deg)}to{transform:translateY(-8px) rotate(3deg)}}
+.zmv .rot{animation:zmvRot .25s linear infinite;transform-box:fill-box;transform-origin:center}@keyframes zmvRot{from{transform:scaleX(1)}50%{transform:scaleX(.1)}to{transform:scaleX(1)}}
+.zmv .radar{animation:zmvRad 3s linear infinite;transform-box:fill-box;transform-origin:50% 100%}@keyframes zmvRad{to{transform:rotate(360deg)}}
+.zmv .hand{animation:zmvHand 6s linear infinite;transform-box:fill-box;transform-origin:50% 100%}@keyframes zmvHand{to{transform:rotate(360deg)}}
+.zmv .hand2{animation:zmvHand 72s linear infinite;transform-box:fill-box;transform-origin:50% 100%}
+.zmv .wave{animation:zmvWv .6s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:10% 90%}@keyframes zmvWv{from{transform:rotate(-30deg)}to{transform:rotate(25deg)}}
+.zmv .sock{animation:zmvSock 1.2s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:0 50%}@keyframes zmvSock{from{transform:skewY(-8deg) scaleX(.9)}to{transform:skewY(6deg) scaleX(1.05)}}
+.zmv .tko{position:absolute;animation:zmvTko 16s linear infinite}@keyframes zmvTko{0%{transform:translate(-30vw,0) rotate(0)}40%{transform:translate(30vw,0) rotate(0)}100%{transform:translate(120vw,-55vh) rotate(-14deg)}}
+.zmv .ldg{position:absolute;animation:zmvLdg 22s linear infinite}@keyframes zmvLdg{0%{transform:translate(120vw,-50vh) rotate(-8deg)}60%{transform:translate(50vw,0) rotate(0)}100%{transform:translate(-30vw,0) rotate(0)}}
+.zmv .leaf{position:absolute;top:-40px;animation:zmvLfall linear infinite}.zmv .leaf>svg{display:block;animation:zmvLsw 2.8s ease-in-out infinite alternate}
+@keyframes zmvLfall{to{transform:translateY(118vh)}}@keyframes zmvLsw{from{transform:translateX(-36px) rotate(0)}to{transform:translateX(36px) rotate(220deg)}}
+.zmv .rain{position:absolute;inset:-10% 0 0 0;background-image:repeating-linear-gradient(105deg,rgba(255,255,255,.0) 0 14px,rgba(255,255,255,.35) 14px 15px,rgba(255,255,255,0) 15px 34px);animation:zmvRain .5s linear infinite;opacity:.55}
+@keyframes zmvRain{from{background-position:0 0}to{background-position:-60px 160px}}
+.zmv .cab{position:absolute;animation:zmvCab linear infinite}@keyframes zmvCab{from{transform:translate(-12vw,8vh)}to{transform:translate(108vw,-62vh)}}
+.zmv .cab>svg{display:block;animation:zmvCsw 2s ease-in-out infinite alternate;transform-origin:50% 0}@keyframes zmvCsw{from{transform:rotate(-3deg)}to{transform:rotate(3deg)}}
+.zmv .crane{animation:zmvCrn 6s ease-in-out infinite alternate}@keyframes zmvCrn{from{transform:translateX(-40px)}to{transform:translateX(40px)}}
+.zmv .hook{animation:zmvHk 6s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:50% 0}@keyframes zmvHk{0%{transform:scaleY(.6)}50%{transform:scaleY(1.2)}100%{transform:scaleY(.7)}}
+.zmv .beam{animation:zmvBm 4s linear infinite;transform-box:fill-box;transform-origin:0 50%}@keyframes zmvBm{0%,100%{transform:scaleX(1);opacity:.55}50%{transform:scaleX(-1);opacity:.25}}
+.zmv .refl{animation:zmvRf 3s ease-in-out infinite alternate}@keyframes zmvRf{from{opacity:.25;transform:scaleY(.96)}to{opacity:.55;transform:scaleY(1.04)}}
+.zmv .neon{animation:zmvNeo 2.4s steps(1) infinite}@keyframes zmvNeo{0%,80%,90%,100%{opacity:1}85%{opacity:.35}}
+@media (prefers-reduced-motion:reduce){.zmv *{animation:none!important}}
+.lo,.lo2,.lo3,.beam,.fly{display:none!important}body{background:#BAE6FD!important}.wrap{position:relative!important;z-index:2!important}.mq,.sec{box-shadow:0 14px 34px rgba(0,0,0,.18)!important}.sec{background:rgba(255,255,255,.96)!important}.ex .hx b.qe0{color:#DB2777!important}.ex .hx b.qe1{color:#2563EB!important}.ex .hx b.qe2{color:#16A34A!important}.ex .hx b.qe3{color:#EA580C!important}.ex .hx b.qe4{color:#7C3AED!important}.ex .hx b.qe5{color:#0E7490!important}.cbw{margin-top:12px;padding:10px 14px;border-radius:14px;border-left:5px solid #FACC15;background:#FFFBEB;color:#3b2f1a;line-height:1.6;font-weight:700;font-size:.92rem;text-align:left}
+.cbw .cbl{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}.cbw a{display:inline-flex;align-items:center;gap:5px;padding:6px 14px;border-radius:99px;font-size:.95rem;font-weight:900;text-decoration:none;color:#fff!important;border:3px solid #fff;
+ background:linear-gradient(90deg,#F43F5E,#F59E0B,#22C55E,#06B6D4,#8B5CF6,#EC4899,#F43F5E);background-size:300% 100%;animation:cbRain 3.5s linear infinite,cbBob 1.6s ease-in-out infinite alternate;box-shadow:0 4px 0 rgba(0,0,0,.18),0 0 12px rgba(236,72,153,.5);text-shadow:0 1px 2px rgba(0,0,0,.35)}
+.cbw a:hover{transform:scale(1.08) rotate(-2deg)}@keyframes cbRain{to{background-position:300% 0}}@keyframes cbBob{to{transform:translateY(-3px)}}
+.promo{display:flex;gap:14px;align-items:center;margin:14px 0 20px;padding:16px 18px;border-radius:20px;color:#FFFFFF;text-align:left;
+ background:linear-gradient(120deg,#DB2777,#7C3AED 45%,#0EA5E9);border:3px solid #FFFFFF;box-shadow:0 12px 28px rgba(124,58,237,.35);position:relative;z-index:3}
+.promo .pph{flex:0 0 auto;width:54px;height:54px;border-radius:50%;background:rgba(255,255,255,.22);display:flex;align-items:center;justify-content:center;font-size:1.6rem;animation:promoRing 1.4s ease-in-out infinite}
+@keyframes promoRing{0%,60%,100%{transform:rotate(0)}70%{transform:rotate(-14deg)}80%{transform:rotate(14deg)}90%{transform:rotate(-8deg)}}
+.promo .pt{font-weight:900;font-size:1.02rem;line-height:1.45;letter-spacing:.3px;font-family:'Nunito',sans-serif}
+.promo .ptel{display:inline-block;margin:6px 0;background:#FFFFFF;color:#DB2777!important;font-weight:900;font-size:1.2rem;padding:3px 16px;border-radius:999px;text-decoration:none;font-family:'Nunito',sans-serif;box-shadow:0 3px 0 rgba(0,0,0,.15)}
+.promo .pd{font-weight:700;font-size:.92rem;line-height:1.6;font-family:'Nunito',sans-serif}
+@media(max-width:520px){.promo{flex-direction:column;text-align:center}}
+.pg.pgx{background:none!important;display:block;line-height:2.05}
+.hx{padding:3px 4px;border-radius:5px;-webkit-box-decoration-break:clone;box-decoration-break:clone;color:#1F2937}
+.hx0{background:#FFF3B0}.hx1{background:#D6ECFF}.hx2{background:#FFDDEE}.hx3{background:#DDF7D0}.hx4{background:#EBDFFF}.hx5{background:#FFE4CC}
+.qe0{color:#DB2777!important}.qe1{color:#2563EB!important}.qe2{color:#16A34A!important}.qe3{color:#EA580C!important}.qe4{color:#7C3AED!important}.qe5{color:#0E7490!important}
+.rdf{background:#F0F9FF;border:2px solid #7DD3FC;border-radius:14px;padding:10px 12px;margin:8px 0;color:#1F2937;font-weight:700}
+.rdr{display:flex;gap:10px;align-items:flex-start;padding:8px 10px;margin-top:7px;border-radius:12px;border-left:6px solid}
+.rdr.r0{background:#FFF3B0;border-color:#F59E0B}.rdr.r1{background:#D6ECFF;border-color:#3B82F6}.rdr.r2{background:#FFDDEE;border-color:#EC4899}
+.rdr.r3{background:#DDF7D0;border-color:#22C55E}.rdr.r4{background:#EBDFFF;border-color:#8B5CF6}.rdr.r5{background:#FFE4CC;border-color:#F97316}
+.rdn{flex:0 0 auto;min-width:28px;height:28px;border-radius:50%;background:#FFFFFF;display:inline-flex;align-items:center;justify-content:center;font-weight:900;color:#1F2937;box-shadow:0 2px 0 rgba(0,0,0,.12)}
+.rdl{flex:0 0 auto;font-weight:900;color:#FFFFFF;background:#1F2937;border-radius:7px;padding:2px 8px;height:24px;line-height:20px;margin-top:2px}
+.rdt{flex:1}.rde{color:#1E3A8A;font-weight:800;line-height:1.6}.rdv{color:#9A3412;font-weight:700;line-height:1.6;margin-top:2px}
+.spk{color:#BE185D}
+
+.smc{position:fixed;left:0;z-index:1;pointer-events:none;animation:smcDrift linear infinite}
+.smc .smi{animation:smcBob 3.2s ease-in-out infinite alternate}.smc .smb{animation:smcBlink 4s infinite;transform-box:fill-box;transform-origin:center}
+@keyframes smcDrift{from{transform:translateX(-22vw)}to{transform:translateX(112vw)}}@keyframes smcBob{from{transform:translateY(0) rotate(-2deg)}to{transform:translateY(-12px) rotate(2deg)}}
+@keyframes smcBlink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
+@media(prefers-reduced-motion:reduce){.smc,.smc *{animation:none!important}}</style>
+</head>
+<body>
+<div class="zmv" aria-hidden="true"><svg class="scene" viewBox="0 0 1300 900" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><g transform="translate(1150 110)"><g class="sunr"><path d="M0 0 L140 -10 L140 10 Z" fill="#FEF08A" opacity=".5"/><path d="M0 0 L133 44 L125 62 Z" fill="#FEF08A" opacity=".5"/><path d="M0 0 L106 92 L92 106 Z" fill="#FEF08A" opacity=".5"/><path d="M0 0 L62 125 L44 133 Z" fill="#FEF08A" opacity=".5"/><path d="M0 0 L10 140 L-10 140 Z" fill="#FEF08A" opacity=".5"/><path d="M0 0 L-44 133 L-62 125 Z" fill="#FEF08A" opacity=".5"/><path d="M0 0 L-92 106 L-106 92 Z" fill="#FEF08A" opacity=".5"/><path d="M0 0 L-125 62 L-133 44 Z" fill="#FEF08A" opacity=".5"/><path d="M0 0 L-140 10 L-140 -10 Z" fill="#FEF08A" opacity=".5"/><path d="M0 0 L-133 -44 L-125 -62 Z" fill="#FEF08A" opacity=".5"/><path d="M0 0 L-106 -92 L-92 -106 Z" fill="#FEF08A" opacity=".5"/><path d="M0 0 L-62 -125 L-44 -133 Z" fill="#FEF08A" opacity=".5"/><path d="M0 0 L-10 -140 L10 -140 Z" fill="#FEF08A" opacity=".5"/><path d="M0 0 L44 -133 L62 -125 Z" fill="#FEF08A" opacity=".5"/><path d="M0 0 L92 -106 L106 -92 Z" fill="#FEF08A" opacity=".5"/><path d="M0 0 L125 -62 L133 -44 Z" fill="#FEF08A" opacity=".5"/></g><circle r="54" fill="#FDE047"/></g><g class="cl" style="animation-delay:-0s"><g transform="translate(220 110) scale(1)"><ellipse cx="0" cy="0" rx="70" ry="22" fill="#fff"/><circle cx="-24" cy="-14" r="24" fill="#fff"/><circle cx="16" cy="-22" r="30" fill="#fff"/></g></g><g class="cl" style="animation-delay:-30s"><g transform="translate(640 70) scale(0.8)"><ellipse cx="0" cy="0" rx="70" ry="22" fill="#fff"/><circle cx="-24" cy="-14" r="24" fill="#fff"/><circle cx="16" cy="-22" r="30" fill="#fff"/></g></g><g class="cl" style="animation-delay:-55s"><g transform="translate(940 180) scale(0.9)"><ellipse cx="0" cy="0" rx="70" ry="22" fill="#fff"/><circle cx="-24" cy="-14" r="24" fill="#fff"/><circle cx="16" cy="-22" r="30" fill="#fff"/></g></g><defs><linearGradient id="zmvL" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#99F6E4"/><stop offset=".5" stop-color="#2DD4BF"/><stop offset="1" stop-color="#0E7490"/></linearGradient></defs><rect x="-20" y="500" width="1340" height="400" fill="url(#zmvL)"/><rect class="rip" style="animation-delay:-3.6s" x="367" y="610" width="54" height="3" rx="2" fill="#F0FDFA"/><rect class="rip" style="animation-delay:-1.4s" x="1123" y="578" width="31" height="3" rx="2" fill="#F0FDFA"/><rect class="rip" style="animation-delay:-2.8s" x="836" y="720" width="94" height="3" rx="2" fill="#F0FDFA"/><rect class="rip" style="animation-delay:-1.1s" x="341" y="626" width="88" height="3" rx="2" fill="#F0FDFA"/><rect class="rip" style="animation-delay:-1.1s" x="208" y="780" width="90" height="3" rx="2" fill="#F0FDFA"/><rect class="rip" style="animation-delay:-4.0s" x="1267" y="822" width="76" height="3" rx="2" fill="#F0FDFA"/><rect class="rip" style="animation-delay:-0.1s" x="881" y="512" width="54" height="3" rx="2" fill="#F0FDFA"/><rect class="rip" style="animation-delay:-3.9s" x="869" y="763" width="41" height="3" rx="2" fill="#F0FDFA"/><rect class="rip" style="animation-delay:-1.2s" x="358" y="620" width="67" height="3" rx="2" fill="#F0FDFA"/><rect class="rip" style="animation-delay:-0.2s" x="846" y="776" width="76" height="3" rx="2" fill="#F0FDFA"/><rect class="rip" style="animation-delay:-2.4s" x="530" y="753" width="83" height="3" rx="2" fill="#F0FDFA"/><rect class="rip" style="animation-delay:-3.4s" x="124" y="707" width="51" height="3" rx="2" fill="#F0FDFA"/><rect class="rip" style="animation-delay:-3.6s" x="965" y="557" width="42" height="3" rx="2" fill="#F0FDFA"/><rect class="rip" style="animation-delay:-1.2s" x="1227" y="859" width="63" height="3" rx="2" fill="#F0FDFA"/><rect class="rip" style="animation-delay:-0.1s" x="860" y="682" width="50" height="3" rx="2" fill="#F0FDFA"/><rect class="rip" style="animation-delay:-3.3s" x="697" y="707" width="30" height="3" rx="2" fill="#F0FDFA"/><rect class="rip" style="animation-delay:-3.5s" x="1008" y="770" width="85" height="3" rx="2" fill="#F0FDFA"/><rect class="rip" style="animation-delay:-1.4s" x="110" y="800" width="63" height="3" rx="2" fill="#F0FDFA"/><rect class="rip" style="animation-delay:-2.4s" x="1142" y="665" width="99" height="3" rx="2" fill="#F0FDFA"/><rect class="rip" style="animation-delay:-2.6s" x="441" y="865" width="36" height="3" rx="2" fill="#F0FDFA"/><rect class="rip" style="animation-delay:-0.1s" x="4" y="744" width="82" height="3" rx="2" fill="#F0FDFA"/><rect class="rip" style="animation-delay:-2.8s" x="1050" y="690" width="50" height="3" rx="2" fill="#F0FDFA"/><rect class="rip" style="animation-delay:-3.0s" x="1048" y="615" width="42" height="3" rx="2" fill="#F0FDFA"/><rect class="rip" style="animation-delay:-1.5s" x="1070" y="656" width="81" height="3" rx="2" fill="#F0FDFA"/><rect class="rip" style="animation-delay:-0.6s" x="1234" y="735" width="48" height="3" rx="2" fill="#F0FDFA"/><rect class="rip" style="animation-delay:-3.2s" x="173" y="856" width="84" height="3" rx="2" fill="#F0FDFA"/><rect class="rip" style="animation-delay:-2.0s" x="731" y="645" width="92" height="3" rx="2" fill="#F0FDFA"/><rect class="rip" style="animation-delay:-0.7s" x="966" y="649" width="82" height="3" rx="2" fill="#F0FDFA"/><rect class="rip" style="animation-delay:-1.0s" x="229" y="797" width="72" height="3" rx="2" fill="#F0FDFA"/><rect class="rip" style="animation-delay:-2.4s" x="1084" y="554" width="45" height="3" rx="2" fill="#F0FDFA"/><rect class="rip" style="animation-delay:-2.1s" x="613" y="695" width="72" height="3" rx="2" fill="#F0FDFA"/><rect class="rip" style="animation-delay:-3.1s" x="1046" y="726" width="79" height="3" rx="2" fill="#F0FDFA"/><rect class="rip" style="animation-delay:-2.3s" x="143" y="742" width="82" height="3" rx="2" fill="#F0FDFA"/><rect class="rip" style="animation-delay:-2.7s" x="277" y="663" width="83" height="3" rx="2" fill="#F0FDFA"/><rect class="rip" style="animation-delay:-0.2s" x="83" y="640" width="56" height="3" rx="2" fill="#F0FDFA"/><rect class="rip" style="animation-delay:-0.3s" x="279" y="701" width="44" height="3" rx="2" fill="#F0FDFA"/><rect class="rip" style="animation-delay:-2.3s" x="759" y="530" width="65" height="3" rx="2" fill="#F0FDFA"/><rect class="rip" style="animation-delay:-2.7s" x="217" y="674" width="37" height="3" rx="2" fill="#F0FDFA"/><rect class="rip" style="animation-delay:-3.1s" x="1014" y="787" width="83" height="3" rx="2" fill="#F0FDFA"/><rect class="rip" style="animation-delay:-2.8s" x="1172" y="712" width="43" height="3" rx="2" fill="#F0FDFA"/><ellipse cx="260" cy="520" rx="220" ry="34" fill="#FDE68A"/><ellipse cx="260" cy="514" rx="180" ry="22" fill="#FEF3C7"/><g transform="translate(180 516) scale(0.7 0.7)"><path d="M0 0 Q-8 -120 10 -240" stroke="#78350F" stroke-width="14" fill="none"/><g class="lf" style="animation-delay:-0.8s"><path d="M10 -240 Q-50.0 -250.0 -110 -200 Q-62.0 -220.0 10 -236 Z" fill="#15803D"/></g><g class="lf" style="animation-delay:-1.4s"><path d="M10 -240 Q-35.0 -290.0 -80 -280 Q-44.0 -252.0 10 -236 Z" fill="#16A34A"/></g><g class="lf" style="animation-delay:-0.9s"><path d="M10 -240 Q65.0 -255.0 120 -210 Q76.0 -224.0 10 -236 Z" fill="#15803D"/></g><g class="lf" style="animation-delay:-0.5s"><path d="M10 -240 Q55.0 -295.0 100 -290 Q64.0 -256.0 10 -236 Z" fill="#22C55E"/></g><g class="lf" style="animation-delay:-0.6s"><path d="M10 -240 Q10.0 -325.0 10 -350 Q10.0 -280.0 10 -236 Z" fill="#16A34A"/></g><circle cx="6" cy="-232" r="7" fill="#65A30D"/><circle cx="16" cy="-228" r="7" fill="#65A30D"/></g><g transform="translate(300 516) scale(-0.85 0.85)"><path d="M0 0 Q-8 -120 10 -240" stroke="#78350F" stroke-width="14" fill="none"/><g class="lf" style="animation-delay:-0.5s"><path d="M10 -240 Q-50.0 -250.0 -110 -200 Q-62.0 -220.0 10 -236 Z" fill="#15803D"/></g><g class="lf" style="animation-delay:-2.4s"><path d="M10 -240 Q-35.0 -290.0 -80 -280 Q-44.0 -252.0 10 -236 Z" fill="#16A34A"/></g><g class="lf" style="animation-delay:-0.9s"><path d="M10 -240 Q65.0 -255.0 120 -210 Q76.0 -224.0 10 -236 Z" fill="#15803D"/></g><g class="lf" style="animation-delay:-2.7s"><path d="M10 -240 Q55.0 -295.0 100 -290 Q64.0 -256.0 10 -236 Z" fill="#22C55E"/></g><g class="lf" style="animation-delay:-0.8s"><path d="M10 -240 Q10.0 -325.0 10 -350 Q10.0 -280.0 10 -236 Z" fill="#16A34A"/></g><circle cx="6" cy="-232" r="7" fill="#65A30D"/><circle cx="16" cy="-228" r="7" fill="#65A30D"/></g><g transform="translate(380 518) scale(0.6 0.6)"><path d="M0 0 Q-8 -120 10 -240" stroke="#78350F" stroke-width="14" fill="none"/><g class="lf" style="animation-delay:-1.3s"><path d="M10 -240 Q-50.0 -250.0 -110 -200 Q-62.0 -220.0 10 -236 Z" fill="#15803D"/></g><g class="lf" style="animation-delay:-0.8s"><path d="M10 -240 Q-35.0 -290.0 -80 -280 Q-44.0 -252.0 10 -236 Z" fill="#16A34A"/></g><g class="lf" style="animation-delay:-2.5s"><path d="M10 -240 Q65.0 -255.0 120 -210 Q76.0 -224.0 10 -236 Z" fill="#15803D"/></g><g class="lf" style="animation-delay:-1.4s"><path d="M10 -240 Q55.0 -295.0 100 -290 Q64.0 -256.0 10 -236 Z" fill="#22C55E"/></g><g class="lf" style="animation-delay:-1.0s"><path d="M10 -240 Q10.0 -325.0 10 -350 Q10.0 -280.0 10 -236 Z" fill="#16A34A"/></g><circle cx="6" cy="-232" r="7" fill="#65A30D"/><circle cx="16" cy="-228" r="7" fill="#65A30D"/></g><g transform="translate(130 512) scale(0.5)"><g class="wav" style="animation-delay:-1.5s"><ellipse cx="0" cy="-14" rx="44" ry="20" fill="#22C55E"/><ellipse cx="-24" cy="-22" rx="22" ry="14" fill="#16A34A"/><ellipse cx="26" cy="-22" rx="22" ry="14" fill="#15803D"/><g transform="translate(4 -11)"><circle r="6" fill="#A78BFA"/><circle r="2.4" fill="#FDE047"/></g><g transform="translate(18 -35)"><circle r="6" fill="#A78BFA"/><circle r="2.4" fill="#FDE047"/></g><g transform="translate(40 -31)"><circle r="6" fill="#A78BFA"/><circle r="2.4" fill="#FDE047"/></g><g transform="translate(21 -14)"><circle r="6" fill="#FACC15"/><circle r="2.4" fill="#FDE047"/></g><g transform="translate(-35 -18)"><circle r="6" fill="#A78BFA"/><circle r="2.4" fill="#FDE047"/></g><g transform="translate(-32 -26)"><circle r="6" fill="#A78BFA"/><circle r="2.4" fill="#FDE047"/></g><g transform="translate(37 -11)"><circle r="6" fill="#FACC15"/><circle r="2.4" fill="#FDE047"/></g><g transform="translate(21 -36)"><circle r="6" fill="#A78BFA"/><circle r="2.4" fill="#FDE047"/></g><g transform="translate(-10 -10)"><circle r="6" fill="#F472B6"/><circle r="2.4" fill="#FDE047"/></g></g></g><g transform="translate(240 512) scale(0.5)"><g class="wav" style="animation-delay:-2.4s"><ellipse cx="0" cy="-14" rx="44" ry="20" fill="#22C55E"/><ellipse cx="-24" cy="-22" rx="22" ry="14" fill="#16A34A"/><ellipse cx="26" cy="-22" rx="22" ry="14" fill="#15803D"/><g transform="translate(-29 -34)"><circle r="6" fill="#FFFFFF"/><circle r="2.4" fill="#FDE047"/></g><g transform="translate(-29 -22)"><circle r="6" fill="#A78BFA"/><circle r="2.4" fill="#FDE047"/></g><g transform="translate(-38 -26)"><circle r="6" fill="#FFFFFF"/><circle r="2.4" fill="#FDE047"/></g><g transform="translate(-22 -9)"><circle r="6" fill="#FB7185"/><circle r="2.4" fill="#FDE047"/></g><g transform="translate(-3 -12)"><circle r="6" fill="#A78BFA"/><circle r="2.4" fill="#FDE047"/></g><g transform="translate(10 -21)"><circle r="6" fill="#A78BFA"/><circle r="2.4" fill="#FDE047"/></g><g transform="translate(-20 -30)"><circle r="6" fill="#FACC15"/><circle r="2.4" fill="#FDE047"/></g><g transform="translate(-24 -25)"><circle r="6" fill="#FFFFFF"/><circle r="2.4" fill="#FDE047"/></g><g transform="translate(-37 -27)"><circle r="6" fill="#FACC15"/><circle r="2.4" fill="#FDE047"/></g></g></g><g transform="translate(340 512) scale(0.5)"><g class="wav" style="animation-delay:-2.9s"><ellipse cx="0" cy="-14" rx="44" ry="20" fill="#22C55E"/><ellipse cx="-24" cy="-22" rx="22" ry="14" fill="#16A34A"/><ellipse cx="26" cy="-22" rx="22" ry="14" fill="#15803D"/><g transform="translate(-38 -18)"><circle r="6" fill="#FB7185"/><circle r="2.4" fill="#FDE047"/></g><g transform="translate(-17 -14)"><circle r="6" fill="#FACC15"/><circle r="2.4" fill="#FDE047"/></g><g transform="translate(-7 -21)"><circle r="6" fill="#F472B6"/><circle r="2.4" fill="#FDE047"/></g><g transform="translate(-3 -17)"><circle r="6" fill="#FACC15"/><circle r="2.4" fill="#FDE047"/></g><g transform="translate(-35 -27)"><circle r="6" fill="#FB7185"/><circle r="2.4" fill="#FDE047"/></g><g transform="translate(20 -32)"><circle r="6" fill="#FACC15"/><circle r="2.4" fill="#FDE047"/></g><g transform="translate(-8 -24)"><circle r="6" fill="#FFFFFF"/><circle r="2.4" fill="#FDE047"/></g><g transform="translate(34 -34)"><circle r="6" fill="#A78BFA"/><circle r="2.4" fill="#FDE047"/></g><g transform="translate(1 -17)"><circle r="6" fill="#FFFFFF"/><circle r="2.4" fill="#FDE047"/></g></g></g><path d="M620 560 L1260 560" stroke="#92400E" stroke-width="10"/><rect x="620" y="560" width="4" height="40" fill="#78350F"/><rect x="660" y="560" width="4" height="40" fill="#78350F"/><rect x="700" y="560" width="4" height="40" fill="#78350F"/><rect x="740" y="560" width="4" height="40" fill="#78350F"/><rect x="780" y="560" width="4" height="40" fill="#78350F"/><rect x="820" y="560" width="4" height="40" fill="#78350F"/><rect x="860" y="560" width="4" height="40" fill="#78350F"/><rect x="900" y="560" width="4" height="40" fill="#78350F"/><rect x="940" y="560" width="4" height="40" fill="#78350F"/><rect x="980" y="560" width="4" height="40" fill="#78350F"/><rect x="1020" y="560" width="4" height="40" fill="#78350F"/><rect x="1060" y="560" width="4" height="40" fill="#78350F"/><rect x="1100" y="560" width="4" height="40" fill="#78350F"/><rect x="1140" y="560" width="4" height="40" fill="#78350F"/><rect x="1180" y="560" width="4" height="40" fill="#78350F"/><rect x="1220" y="560" width="4" height="40" fill="#78350F"/><g transform="translate(700 560) scale(0.8)"><rect x="-40" y="-10" width="5" height="40" fill="#78350F"/><rect x="-14" y="-10" width="5" height="40" fill="#78350F"/><rect x="10" y="-10" width="5" height="40" fill="#78350F"/><rect x="34" y="-10" width="5" height="40" fill="#78350F"/><rect x="-48" y="-14" width="96" height="8" fill="#92400E"/><rect x="-38" y="-56" width="76" height="42" fill="#FEF3C7"/><path d="M-50 -52 Q0 -100 50 -52 Z" fill="#D97706"/><path d="M-50 -52 Q0 -92 50 -52" stroke="#B45309" stroke-width="3" fill="none"/><rect x="-26" y="-44" width="16" height="16" fill="#7DD3FC"/><rect x="8" y="-44" width="18" height="30" fill="#78350F"/><ellipse class="refl" cx="0" cy="40" rx="50" ry="6" fill="#FFFFFF" opacity=".35"/></g><g transform="translate(820 560) scale(0.85)"><rect x="-40" y="-10" width="5" height="40" fill="#78350F"/><rect x="-14" y="-10" width="5" height="40" fill="#78350F"/><rect x="10" y="-10" width="5" height="40" fill="#78350F"/><rect x="34" y="-10" width="5" height="40" fill="#78350F"/><rect x="-48" y="-14" width="96" height="8" fill="#92400E"/><rect x="-38" y="-56" width="76" height="42" fill="#FEF3C7"/><path d="M-50 -52 Q0 -100 50 -52 Z" fill="#D97706"/><path d="M-50 -52 Q0 -92 50 -52" stroke="#B45309" stroke-width="3" fill="none"/><rect x="-26" y="-44" width="16" height="16" fill="#7DD3FC"/><rect x="8" y="-44" width="18" height="30" fill="#78350F"/><ellipse class="refl" cx="0" cy="40" rx="50" ry="6" fill="#FFFFFF" opacity=".35"/></g><g transform="translate(940 560) scale(0.9)"><rect x="-40" y="-10" width="5" height="40" fill="#78350F"/><rect x="-14" y="-10" width="5" height="40" fill="#78350F"/><rect x="10" y="-10" width="5" height="40" fill="#78350F"/><rect x="34" y="-10" width="5" height="40" fill="#78350F"/><rect x="-48" y="-14" width="96" height="8" fill="#92400E"/><rect x="-38" y="-56" width="76" height="42" fill="#FEF3C7"/><path d="M-50 -52 Q0 -100 50 -52 Z" fill="#D97706"/><path d="M-50 -52 Q0 -92 50 -52" stroke="#B45309" stroke-width="3" fill="none"/><rect x="-26" y="-44" width="16" height="16" fill="#7DD3FC"/><rect x="8" y="-44" width="18" height="30" fill="#78350F"/><ellipse class="refl" cx="0" cy="40" rx="50" ry="6" fill="#FFFFFF" opacity=".35"/></g><g transform="translate(1060 560) scale(0.85)"><rect x="-40" y="-10" width="5" height="40" fill="#78350F"/><rect x="-14" y="-10" width="5" height="40" fill="#78350F"/><rect x="10" y="-10" width="5" height="40" fill="#78350F"/><rect x="34" y="-10" width="5" height="40" fill="#78350F"/><rect x="-48" y="-14" width="96" height="8" fill="#92400E"/><rect x="-38" y="-56" width="76" height="42" fill="#FEF3C7"/><path d="M-50 -52 Q0 -100 50 -52 Z" fill="#D97706"/><path d="M-50 -52 Q0 -92 50 -52" stroke="#B45309" stroke-width="3" fill="none"/><rect x="-26" y="-44" width="16" height="16" fill="#7DD3FC"/><rect x="8" y="-44" width="18" height="30" fill="#78350F"/><ellipse class="refl" cx="0" cy="40" rx="50" ry="6" fill="#FFFFFF" opacity=".35"/></g><g transform="translate(1180 560) scale(0.8)"><rect x="-40" y="-10" width="5" height="40" fill="#78350F"/><rect x="-14" y="-10" width="5" height="40" fill="#78350F"/><rect x="10" y="-10" width="5" height="40" fill="#78350F"/><rect x="34" y="-10" width="5" height="40" fill="#78350F"/><rect x="-48" y="-14" width="96" height="8" fill="#92400E"/><rect x="-38" y="-56" width="76" height="42" fill="#FEF3C7"/><path d="M-50 -52 Q0 -100 50 -52 Z" fill="#D97706"/><path d="M-50 -52 Q0 -92 50 -52" stroke="#B45309" stroke-width="3" fill="none"/><rect x="-26" y="-44" width="16" height="16" fill="#7DD3FC"/><rect x="8" y="-44" width="18" height="30" fill="#78350F"/><ellipse class="refl" cx="0" cy="40" rx="50" ry="6" fill="#FFFFFF" opacity=".35"/></g></svg><div class="wk" style="bottom:calc((900px - 640px) * max(100vw / 1300px, 100vh / 900px));animation-duration:50s;animation-delay:-0s"><svg viewBox="-50 -90 100 100" style="width:110px"><g class="bob"><path d="M-40 -8 L40 -8 L30 6 L-30 6 Z" fill="#FFFFFF"/><path d="M0 -8 L0 -84" stroke="#78350F" stroke-width="3"/><path d="M2 -82 Q40 -40 32 -12 L2 -12 Z" fill="#F43F5E"/><path d="M-2 -70 Q-30 -40 -26 -12 L-2 -12 Z" fill="#FFFFFF" opacity=".95"/></g></svg></div><div class="wk rv" style="bottom:calc((900px - 600px) * max(100vw / 1300px, 100vh / 900px));animation-duration:64s;animation-delay:-20s"><span class="flp"><svg viewBox="-50 -90 100 100" style="width:80px"><g class="bob"><path d="M-40 -8 L40 -8 L30 6 L-30 6 Z" fill="#FFFFFF"/><path d="M0 -8 L0 -84" stroke="#78350F" stroke-width="3"/><path d="M2 -82 Q40 -40 32 -12 L2 -12 Z" fill="#FACC15"/><path d="M-2 -70 Q-30 -40 -26 -12 L-2 -12 Z" fill="#FFFFFF" opacity=".95"/></g></svg></span></div><div class="wk" style="bottom:calc((900px - 840px) * max(100vw / 1300px, 100vh / 900px));animation-duration:44s;animation-delay:-10s"><svg viewBox="-60 -34 120 64" style="width:130px"><g class="fb"><g class="fl1"><ellipse cx="-22" cy="16" rx="16" ry="7" fill="#65A30D" transform="rotate(30 -22 16)"/></g><g class="fl2"><ellipse cx="22" cy="18" rx="16" ry="7" fill="#65A30D" transform="rotate(-30 22 18)"/></g><ellipse cx="0" cy="0" rx="36" ry="24" fill="#15803D"/><path d="M-24 -6 L-10 -18 L10 -18 L24 -6 L14 12 L-14 12 Z" fill="#22C55E" stroke="#14532D" stroke-width="2"/><path d="M-10 -18 L0 -2 L10 -18 M0 -2 L-14 12 M0 -2 L14 12" stroke="#14532D" stroke-width="2" fill="none"/><ellipse cx="44" cy="-4" rx="14" ry="11" fill="#84CC16"/><circle cx="48" cy="-8" r="3" fill="#0F172A"/><circle cx="49" cy="-9" r="1" fill="#fff"/><path d="M50 0 Q54 2 57 -1" stroke="#0F172A" stroke-width="1.6" fill="none"/><g class="fl1"><ellipse cx="22" cy="-18" rx="16" ry="7" fill="#84CC16" transform="rotate(-25 22 -18)"/></g><g class="fl2"><ellipse cx="-22" cy="-16" rx="14" ry="6" fill="#84CC16" transform="rotate(25 -22 -16)"/></g></g></svg></div><div class="wk rv" style="bottom:calc((900px - 860px) * max(100vw / 1300px, 100vh / 900px));animation-duration:30s;animation-delay:-4s"><span class="flp"><svg viewBox="-46 -26 92 52" style="width:70px"><g class="fb"><path class="ft" d="M-30 0 L-46 -16 L-42 0 L-46 16 Z" fill="#FEF08A"/><ellipse cx="0" cy="0" rx="32" ry="18" fill="#FACC15"/><path d="M-8 -17 Q4 -28 16 -16" fill="#FEF08A"/><path d="M-14 -15 Q-8 0 -14 15 M-2 -17 Q4 0 -2 17" stroke="#fff" stroke-width="4" fill="none" opacity=".55"/><circle cx="18" cy="-4" r="6" fill="#fff"/><circle cx="19.5" cy="-4" r="3.4" fill="#0F172A"/><circle cx="20.6" cy="-5.4" r="1.2" fill="#fff"/><path d="M26 6 Q30 8 32 4" stroke="#0F172A" stroke-width="1.8" fill="none"/></g></svg></span></div><div class="wk" style="bottom:calc((900px - 880px) * max(100vw / 1300px, 100vh / 900px));animation-duration:26s;animation-delay:-14s"><svg viewBox="-46 -26 92 52" style="width:60px"><g class="fb"><path class="ft" d="M-30 0 L-46 -16 L-42 0 L-46 16 Z" fill="#F9A8D4"/><ellipse cx="0" cy="0" rx="32" ry="18" fill="#EC4899"/><path d="M-8 -17 Q4 -28 16 -16" fill="#F9A8D4"/><path d="M-14 -15 Q-8 0 -14 15 M-2 -17 Q4 0 -2 17" stroke="#fff" stroke-width="4" fill="none" opacity=".55"/><circle cx="18" cy="-4" r="6" fill="#fff"/><circle cx="19.5" cy="-4" r="3.4" fill="#0F172A"/><circle cx="20.6" cy="-5.4" r="1.2" fill="#fff"/><path d="M26 6 Q30 8 32 4" stroke="#0F172A" stroke-width="1.8" fill="none"/></g></svg></div><div class="wk" style="bottom:calc((900px - 760px) * max(100vw / 1300px, 100vh / 900px));animation-duration:40s;animation-delay:-24s"><svg viewBox="-70 -60 140 70" style="width:130px"><g class="bob"><path d="M-66 -2 Q0 12 66 -2 Q0 -10 -66 -2 Z" fill="#EF4444"/><ellipse cx="0" cy="-4" rx="14" ry="4" fill="#1F2937"/><rect x="-7" y="-34" width="14" height="28" rx="5" fill="#FACC15"/><circle cx="0" cy="-42" r="9" fill="#F5C9A0"/><path d="M-10 -46 Q0 -56 10 -46 Z" fill="#2563EB"/><g class="sk"><path d="M-40 -6 L40 -40" stroke="#78350F" stroke-width="4"/><ellipse cx="-42" cy="-4" rx="8" ry="4" fill="#F97316" transform="rotate(-25 -42 -4)"/><ellipse cx="42" cy="-41" rx="8" ry="4" fill="#F97316" transform="rotate(-25 42 -41)"/></g></g></svg></div><div class="wk" style="bottom:80vh;animation-duration:30s;animation-delay:-4s"><svg viewBox="-34 -14 68 28" style="width:80px"><g class="flap"><path d="M-32 0 Q-16 -16 0 0 Q16 -16 32 0" stroke="#FFFFFF" stroke-width="5" fill="none" stroke-linecap="round"/></g><ellipse cx="0" cy="2" rx="6" ry="4" fill="#FFFFFF"/><path d="M5 1 L14 3 L5 5 Z" fill="#F59E0B"/></svg></div><div class="wk rv" style="bottom:86vh;animation-duration:40s;animation-delay:-16s"><span class="flp"><svg viewBox="-34 -14 68 28" style="width:64px"><g class="flap"><path d="M-32 0 Q-16 -16 0 0 Q16 -16 32 0" stroke="#FFFFFF" stroke-width="5" fill="none" stroke-linecap="round"/></g><ellipse cx="0" cy="2" rx="6" ry="4" fill="#FFFFFF"/><path d="M5 1 L14 3 L5 5 Z" fill="#F59E0B"/></svg></span></div><div class="dol" style="bottom:calc((900px - 700px) * max(100vw / 1300px, 100vh / 900px));animation-duration:24s;animation-delay:-0s"><span class="dj" style="animation-delay:-0s"><svg viewBox="-60 -30 120 60" style="width:110px"><path d="M-48 4 L-60 -10 L-56 4 L-60 18 Z" fill="#0EA5E9"/><path d="M-50 4 Q-30 -22 14 -16 Q40 -12 52 0 Q56 4 48 6 Q20 14 -20 12 Q-40 10 -50 4 Z" fill="#0EA5E9"/><path d="M-6 -16 L4 -30 L10 -15 Z" fill="#0EA5E9"/><path d="M-30 10 Q0 18 46 6" stroke="#E0F2FE" stroke-width="5" fill="none"/><circle cx="30" cy="-6" r="3" fill="#0F172A"/><circle cx="31" cy="-7" r="1" fill="#fff"/><path d="M44 2 Q48 4 50 2" stroke="#0F172A" stroke-width="1.6" fill="none"/></svg></span></div><div class="dol" style="bottom:calc((900px - 700px) * max(100vw / 1300px, 100vh / 900px));animation-duration:24s;animation-delay:-1s"><span class="dj" style="animation-delay:-0.5s"><svg viewBox="-60 -30 120 60" style="width:86px"><path d="M-48 4 L-60 -10 L-56 4 L-60 18 Z" fill="#38BDF8"/><path d="M-50 4 Q-30 -22 14 -16 Q40 -12 52 0 Q56 4 48 6 Q20 14 -20 12 Q-40 10 -50 4 Z" fill="#38BDF8"/><path d="M-6 -16 L4 -30 L10 -15 Z" fill="#38BDF8"/><path d="M-30 10 Q0 18 46 6" stroke="#E0F2FE" stroke-width="5" fill="none"/><circle cx="30" cy="-6" r="3" fill="#0F172A"/><circle cx="31" cy="-7" r="1" fill="#fff"/><path d="M44 2 Q48 4 50 2" stroke="#0F172A" stroke-width="1.6" fill="none"/></svg></span></div><div class="dol" style="bottom:calc((900px - 760px) * max(100vw / 1300px, 100vh / 900px));animation-duration:32s;animation-delay:-14s"><span class="dj" style="animation-delay:-1.2s"><svg viewBox="-60 -30 120 60" style="width:100px"><path d="M-48 4 L-60 -10 L-56 4 L-60 18 Z" fill="#0284C7"/><path d="M-50 4 Q-30 -22 14 -16 Q40 -12 52 0 Q56 4 48 6 Q20 14 -20 12 Q-40 10 -50 4 Z" fill="#0284C7"/><path d="M-6 -16 L4 -30 L10 -15 Z" fill="#0284C7"/><path d="M-30 10 Q0 18 46 6" stroke="#E0F2FE" stroke-width="5" fill="none"/><circle cx="30" cy="-6" r="3" fill="#0F172A"/><circle cx="31" cy="-7" r="1" fill="#fff"/><path d="M44 2 Q48 4 50 2" stroke="#0F172A" stroke-width="1.6" fill="none"/></svg></span></div><div class="smc" style="top:6vh;animation-duration:70s;animation-delay:-0s"><div class="smi"><svg viewBox="-80 -52 160 92" style="width:150px;overflow:visible"><g style="filter:drop-shadow(0 6px 6px rgba(0,0,0,.12))"><path d="M-58 30 Q-80 30 -78 8 Q-76 -12 -54 -12 Q-50 -42 -18 -40 Q0 -58 26 -40 Q56 -44 58 -14 Q80 -12 78 10 Q76 30 56 30 Z" fill="#FBCFE8" stroke="#F472B6" stroke-width="3"/><path d="M-44 -18 Q-36 -32 -20 -32" stroke="#FFFFFF" stroke-width="6" fill="none" stroke-linecap="round" opacity=".8"/></g><g class="smb"><ellipse cx="-16" cy="-6" rx="4.4" ry="5.6" fill="#1F2937"/><ellipse cx="16" cy="-6" rx="4.4" ry="5.6" fill="#1F2937"/><circle cx="-14.6" cy="-8" r="1.7" fill="#fff"/><circle cx="17.4" cy="-8" r="1.7" fill="#fff"/></g><ellipse cx="-30" cy="6" rx="8" ry="5" fill="#FB7185" opacity=".55"/><ellipse cx="30" cy="6" rx="8" ry="5" fill="#FB7185" opacity=".55"/><path d="M-12 8 Q0 20 12 8" stroke="#1F2937" stroke-width="3.4" fill="none" stroke-linecap="round"/></svg></div></div><div class="smc" style="top:16vh;animation-duration:90s;animation-delay:-40s"><div class="smi"><svg viewBox="-80 -52 160 92" style="width:110px;overflow:visible"><g style="filter:drop-shadow(0 6px 6px rgba(0,0,0,.12))"><path d="M-58 30 Q-80 30 -78 8 Q-76 -12 -54 -12 Q-50 -42 -18 -40 Q0 -58 26 -40 Q56 -44 58 -14 Q80 -12 78 10 Q76 30 56 30 Z" fill="#BAE6FD" stroke="#38BDF8" stroke-width="3"/><path d="M-44 -18 Q-36 -32 -20 -32" stroke="#FFFFFF" stroke-width="6" fill="none" stroke-linecap="round" opacity=".8"/></g><path d="M-21 -5 Q-16 -11 -11 -5 M11 -5 Q16 -11 21 -5" stroke="#1F2937" stroke-width="3.4" fill="none" stroke-linecap="round"/><ellipse cx="-30" cy="6" rx="8" ry="5" fill="#FB7185" opacity=".55"/><ellipse cx="30" cy="6" rx="8" ry="5" fill="#FB7185" opacity=".55"/><path d="M-10 8 Q0 18 10 8 Z" fill="#9F1239"/><path d="M-6 12 Q0 16 6 12" stroke="#FB7185" stroke-width="3" fill="none"/></svg></div></div><div class="smc" style="top:30vh;animation-duration:80s;animation-delay:-20s"><div class="smi"><svg viewBox="-80 -52 160 92" style="width:130px;overflow:visible"><g style="filter:drop-shadow(0 6px 6px rgba(0,0,0,.12))"><path d="M-58 30 Q-80 30 -78 8 Q-76 -12 -54 -12 Q-50 -42 -18 -40 Q0 -58 26 -40 Q56 -44 58 -14 Q80 -12 78 10 Q76 30 56 30 Z" fill="#FEF08A" stroke="#FACC15" stroke-width="3"/><path d="M-44 -18 Q-36 -32 -20 -32" stroke="#FFFFFF" stroke-width="6" fill="none" stroke-linecap="round" opacity=".8"/></g><g class="smb"><ellipse cx="-16" cy="-6" rx="4.4" ry="5.6" fill="#1F2937"/><ellipse cx="16" cy="-6" rx="4.4" ry="5.6" fill="#1F2937"/><circle cx="-14.6" cy="-8" r="1.7" fill="#fff"/><circle cx="17.4" cy="-8" r="1.7" fill="#fff"/></g><ellipse cx="-30" cy="6" rx="8" ry="5" fill="#FB7185" opacity=".55"/><ellipse cx="30" cy="6" rx="8" ry="5" fill="#FB7185" opacity=".55"/><ellipse cx="0" cy="11" rx="5" ry="6" fill="#9F1239"/></svg></div></div><div class="smc" style="top:44vh;animation-duration:100s;animation-delay:-60s"><div class="smi"><svg viewBox="-80 -52 160 92" style="width:96px;overflow:visible"><g style="filter:drop-shadow(0 6px 6px rgba(0,0,0,.12))"><path d="M-58 30 Q-80 30 -78 8 Q-76 -12 -54 -12 Q-50 -42 -18 -40 Q0 -58 26 -40 Q56 -44 58 -14 Q80 -12 78 10 Q76 30 56 30 Z" fill="#DDD6FE" stroke="#A78BFA" stroke-width="3"/><path d="M-44 -18 Q-36 -32 -20 -32" stroke="#FFFFFF" stroke-width="6" fill="none" stroke-linecap="round" opacity=".8"/></g><g class="smb"><ellipse cx="-16" cy="-6" rx="4.4" ry="5.6" fill="#1F2937"/><ellipse cx="16" cy="-6" rx="4.4" ry="5.6" fill="#1F2937"/><circle cx="-14.6" cy="-8" r="1.7" fill="#fff"/><circle cx="17.4" cy="-8" r="1.7" fill="#fff"/></g><ellipse cx="-30" cy="6" rx="8" ry="5" fill="#FB7185" opacity=".55"/><ellipse cx="30" cy="6" rx="8" ry="5" fill="#FB7185" opacity=".55"/><path d="M-12 8 Q0 20 12 8" stroke="#1F2937" stroke-width="3.4" fill="none" stroke-linecap="round"/></svg></div></div><div class="smc" style="top:10vh;animation-duration:110s;animation-delay:-75s"><div class="smi"><svg viewBox="-80 -52 160 92" style="width:90px;overflow:visible"><g style="filter:drop-shadow(0 6px 6px rgba(0,0,0,.12))"><path d="M-58 30 Q-80 30 -78 8 Q-76 -12 -54 -12 Q-50 -42 -18 -40 Q0 -58 26 -40 Q56 -44 58 -14 Q80 -12 78 10 Q76 30 56 30 Z" fill="#BBF7D0" stroke="#4ADE80" stroke-width="3"/><path d="M-44 -18 Q-36 -32 -20 -32" stroke="#FFFFFF" stroke-width="6" fill="none" stroke-linecap="round" opacity=".8"/></g><path d="M-21 -5 Q-16 -11 -11 -5 M11 -5 Q16 -11 21 -5" stroke="#1F2937" stroke-width="3.4" fill="none" stroke-linecap="round"/><ellipse cx="-30" cy="6" rx="8" ry="5" fill="#FB7185" opacity=".55"/><ellipse cx="30" cy="6" rx="8" ry="5" fill="#FB7185" opacity=".55"/><path d="M-10 8 Q0 18 10 8 Z" fill="#9F1239"/><path d="M-6 12 Q0 16 6 12" stroke="#FB7185" stroke-width="3" fill="none"/></svg></div></div><div class="smc" style="top:24vh;animation-duration:75s;animation-delay:-10s"><div class="smi"><svg viewBox="-80 -52 160 92" style="width:120px;overflow:visible"><g style="filter:drop-shadow(0 6px 6px rgba(0,0,0,.12))"><path d="M-58 30 Q-80 30 -78 8 Q-76 -12 -54 -12 Q-50 -42 -18 -40 Q0 -58 26 -40 Q56 -44 58 -14 Q80 -12 78 10 Q76 30 56 30 Z" fill="#FED7AA" stroke="#FB923C" stroke-width="3"/><path d="M-44 -18 Q-36 -32 -20 -32" stroke="#FFFFFF" stroke-width="6" fill="none" stroke-linecap="round" opacity=".8"/></g><g class="smb"><ellipse cx="-16" cy="-6" rx="4.4" ry="5.6" fill="#1F2937"/><ellipse cx="16" cy="-6" rx="4.4" ry="5.6" fill="#1F2937"/><circle cx="-14.6" cy="-8" r="1.7" fill="#fff"/><circle cx="17.4" cy="-8" r="1.7" fill="#fff"/></g><ellipse cx="-30" cy="6" rx="8" ry="5" fill="#FB7185" opacity=".55"/><ellipse cx="30" cy="6" rx="8" ry="5" fill="#FB7185" opacity=".55"/><ellipse cx="0" cy="11" rx="5" ry="6" fill="#9F1239"/></svg></div></div><div class="smc" style="top:38vh;animation-duration:95s;animation-delay:-50s"><div class="smi"><svg viewBox="-80 -52 160 92" style="width:104px;overflow:visible"><g style="filter:drop-shadow(0 6px 6px rgba(0,0,0,.12))"><path d="M-58 30 Q-80 30 -78 8 Q-76 -12 -54 -12 Q-50 -42 -18 -40 Q0 -58 26 -40 Q56 -44 58 -14 Q80 -12 78 10 Q76 30 56 30 Z" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="3"/><path d="M-44 -18 Q-36 -32 -20 -32" stroke="#FFFFFF" stroke-width="6" fill="none" stroke-linecap="round" opacity=".8"/></g><g class="smb"><ellipse cx="-16" cy="-6" rx="4.4" ry="5.6" fill="#1F2937"/><ellipse cx="16" cy="-6" rx="4.4" ry="5.6" fill="#1F2937"/><circle cx="-14.6" cy="-8" r="1.7" fill="#fff"/><circle cx="17.4" cy="-8" r="1.7" fill="#fff"/></g><ellipse cx="-30" cy="6" rx="8" ry="5" fill="#FB7185" opacity=".55"/><ellipse cx="30" cy="6" rx="8" ry="5" fill="#FB7185" opacity=".55"/><path d="M-12 8 Q0 20 12 8" stroke="#1F2937" stroke-width="3.4" fill="none" stroke-linecap="round"/></svg></div></div></div>
+<div class="lo"></div><div class="lo2"></div><div class="lo3"></div><div class="beam"></div>
+<div class="fly" id="fly"></div>
+<div class="msnote" id="msNote">
+  <div class="row">
+    <span class="tag">📌 Ms nhắn</span>
+    <span class="txt" id="msTxt"></span>
+    <button class="mb2" id="msBtn" onclick="msToggle()">▾ Đọc hết</button>
+  </div>
+  <div class="full">
+    <p>🌅 Chào con! Trang này là <b>phần TỰ LUẬN của Unit 7 — Natural Wonders</b>: con tự gõ trọn câu,
+    không có A/B/C/D để đoán. Nghe hơi khó nhưng đây chính là phần rèn tay viết chắc nhất.
+    <b>Một câu con hiểu tới gốc còn hơn mười câu con khoanh may mắn.</b></p>
+    <p>📚 Ms đã để <b>bảng tóm tắt lý thuyết Câu gián tiếp</b> ngay đầu trang — ba bước đổi ngôi, lùi thì,
+    đổi mốc thời gian. Con đọc lại một lượt rồi hãy làm, đừng làm chay.</p>
+    <p>⚠️ Và ghi nhớ giúp Ms điều này: <b>câu trần thuật CÓ nêu người nghe thì dùng “told + sb”</b>,
+    đừng viết <i>said sb</i> hay <i>said to sb</i> nữa. <i>said</i> chỉ dùng khi KHÔNG nêu người nghe.</p>
+    <p>✍️ <b>Ms chấm điểm thông minh</b>: có <i>that</i> hay không, có dấu phẩy dấu chấm hay không,
+    gõ <i>if</i> hay <i>whether</i>, <i>travelling</i> hay <i>traveling</i>, viết hoa hay viết thường — máy vẫn nhận.
+    Con gõ phần còn lại hoặc gõ trọn cả câu đều được tính điểm. Cứ tự nhiên viết, đừng sợ mất điểm oan.</p>
+    <p>🕯️ Mỗi câu Ms viết đủ <b>4 bước</b>: đáp án &amp; bản dịch, bảng từ khoá – cấu trúc, tại sao đúng, và lỗi hay gặp.
+    Con đọc cả những câu đã làm đúng — <b>hiểu được cái bẫy mới là thứ theo con vào phòng thi.</b></p>
+    <p>💛 Con mở vở ra chép lại bảng lùi thì và các mốc thời gian giúp Ms: <b>bạn nào chịu ghi, bạn ấy đi xa.</b><br>
+    ☎️ Con và phụ huynh muốn học cùng MS Chí Nên thì đăng ký <b>khoá học tiếng Anh chất lượng</b> qua số
+    <b>0852639652</b> — vào lớp Ms là được luyện trên <b>web làm bài tập đỉnh cao</b> như trang này.</p>
+  </div>
+</div>
+<div class="wrap">
+<div class="promo"><div class="pph">📞</div><div><div class="pt">ĐĂNG KÝ KHOÁ HỌC TIẾNG ANH LỚP 1 → 12 cùng MS Chí Nên —</div><a class="ptel" href="tel:0852639652">☎️ 0852639652</a><div class="pd">✨ Trải nghiệm hệ thống bài tập web độc lạ · chấm tự động · giải chi tiết siêu đẹp · học vui, hiểu sâu, nhớ lâu!</div></div></div>
+  <div class="mq">
+    <h1>🏝️ E9 UNIT 7 · <span>NATURAL WONDERS</span><br>WRITING p2 — Câu gián tiếp</h1>
+    <div class="by">🌿 Giáo viên tạo: MS Chí Nên &nbsp;·&nbsp; ☎️ Số điện thoại <b>0852639652</b> để đăng ký khoá học tiếng Anh chất lượng — trải nghiệm web làm bài tập đỉnh cao</div>
+    <p><b>25 câu tự luận</b> · Exercise 2: Viết lại câu — Câu gián tiếp (Reported Speech)<br><i>(Có bảng tóm tắt lý thuyết ở đầu trang để con ôn lại trước khi làm)</i></p>
+  </div>
+  <div class="sb">🎟️ <b><span id="sc">0</span>/<span id="tt">0</span></b>
+    <div class="tr"><div class="fb" id="fbb"></div></div><span id="md" style="font-size:1.3rem">💪</span></div>
+  <div id="app"></div>
+  <div class="sub"><button class="sbtn" onclick="openName()">🎥 NỘP BÀI</button></div>
+<div class="promo"><div class="pph">📞</div><div><div class="pt">ĐĂNG KÝ KHOÁ HỌC TIẾNG ANH LỚP 1 → 12 cùng MS Chí Nên —</div><a class="ptel" href="tel:0852639652">☎️ 0852639652</a><div class="pd">✨ Trải nghiệm hệ thống bài tập web độc lạ · chấm tự động · giải chi tiết siêu đẹp · học vui, hiểu sâu, nhớ lâu!</div></div></div>
+</div>
+<div class="rem">
+  <span class="rt" id="remTip">💡 Đọc kỹ từ hỏi trước khi chọn đáp án nhé!</span>
+  <span class="rc" id="remCnt">Còn 0 câu</span>
+  <button onclick="goUndone()">⤴ Câu chưa làm</button>
+  <button class="gox" onclick="openName()">Nộp bài</button>
+</div>
+<div class="ov" id="nOv"><div class="mb"><h2>✍️ Nhập tên của con</h2>
+  <input id="nIn" placeholder="Ví dụ: Nguyễn Văn A..." maxlength="50" onkeydown="if(event.key==='Enter')showResult()">
+  <div class="em" id="nEr">⚠️ Con chưa nhập tên kìa!</div>
+  <button class="sbtn" style="width:100%;font-size:.9rem;padding:12px" onclick="showResult()">🚀 Xem kết quả</button></div></div>
+<div class="ov" id="rOv"><div class="mb"><div class="gr" id="rG"></div>
+  <div class="rs" id="rS"></div><div class="rt2" id="rT"></div><img id="rI" alt=""><div class="rm" id="rM"></div>
+  <button class="sbtn" style="width:100%;font-size:.9rem;padding:12px" onclick="location.reload()">🔄 Làm lại</button></div></div>
+
+<script>
+(function(){
+ const L=document.getElementById('fly');
+ const E=['🗺️','⛰️','🧭','🏔️','🌋','🪨','🌿','📐','⭐','🗿'];
+ const C=['#0E8A8A','#C98A2B','#D2553F','#4B6BB5','#7FB069'];
+ for(let i=0;i<24;i++){
+  const d=document.createElement('div');d.className='fl1';const inner=document.createElement('i');
+  if(i%3===2){const m=document.createElement('div');m.className='mfilm';
+   m.style.setProperty('--w',(16+Math.random()*12).toFixed(0)+'px');
+   m.style.setProperty('--c',C[i%C.length]);inner.appendChild(m);}
+  else{inner.textContent=E[i%E.length];inner.style.fontSize=(15+Math.random()*15).toFixed(0)+'px';}
+  d.style.left=(Math.random()*95)+'%';
+  d.style.animationDuration=(15+Math.random()*14).toFixed(1)+'s';
+  d.style.animationDelay=(-Math.random()*28).toFixed(1)+'s';
+  inner.style.animationDuration=(2.4+Math.random()*3).toFixed(1)+'s';
+  d.appendChild(inner);L.appendChild(d);
+ }
+})();
+let AC;function ac(){if(!AC)AC=new (window.AudioContext||window.webkitAudioContext)();if(AC.state==='suspended')AC.resume();return AC}
+function ding(){try{const c=ac(),n=c.currentTime;[523,659,784,1047].forEach((f,i)=>{const o=c.createOscillator(),g=c.createGain();
+ o.type='triangle';o.frequency.value=f;o.connect(g);g.connect(c.destination);const t=n+i*.09;
+ g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.2,t+.03);g.gain.exponentialRampToValueAtTime(.001,t+.44);
+ o.start(t);o.stop(t+.47)})}catch(e){}}
+function buzz(){try{const c=ac(),n=c.currentTime;[300,235,180].forEach((f,i)=>{const o=c.createOscillator(),g=c.createGain();
+ o.type='square';o.frequency.value=f;o.connect(g);g.connect(c.destination);const t=n+i*.12;
+ g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.11,t+.02);g.gain.exponentialRampToValueAtTime(.001,t+.17);
+ o.start(t);o.stop(t+.19)})}catch(e){}}
+document.addEventListener('click',()=>{try{ac()}catch(e){}},{once:true});
+function confetti(){const c=['#FFC53D','#FF4D5E','#3EE0E0','#A77BFF','#FF6FC8'];
+ for(let i=0;i<30;i++){const d=document.createElement('div');d.className='cf';d.style.background=c[i%c.length];
+  d.style.left=(Math.random()*100)+'vw';d.style.animation='fall '+(1.4+Math.random()*1.3)+'s linear forwards';
+  d.style.animationDelay=(Math.random()*.3)+'s';document.body.appendChild(d);setTimeout(()=>d.remove(),3200)}}
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function norm(s){return (s||'').toLowerCase().replace(/[’'`´]/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim()}
+function esc(s){return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}
+function okAns(accept,v){const A=(accept||[]).map(norm).filter(Boolean);if(!v)return false;if(A.indexOf(v)>-1)return true;return A.some(a=>a.length>10&&new RegExp('(^|\\s)'+esc(a)+'(\\s|$)').test(v))}
+function comb(p){let o=[''];p.forEach(x=>{const n=[];o.forEach(a=>x.forEach(b=>n.push((a+' '+b).trim())));o=n});
+ return o.map(s=>s.replace(/\s+/g,' ').trim())}
+</script>
+
+<script>
+const Q=[];
+function mcq(sec,num,q,correct,opts,ex,cls){Q.push({t:'mcq',sec,num,q,correct,opts,ex,cls:cls||''})}
+function fil(sec,num,q,correct,accept,ex,ph,sm){Q.push({t:'fill',sec,num,q,correct,accept,ex,ph:ph||'Gõ đáp án...',sm:sm})}
+function ord(sec,num,words,correct,accept,ex){Q.push({t:'ord',sec,num,words,correct,accept,ex,end:'.'})}
+function fxq(sec,num,pre,parts,letter,corr,accept,ex){Q.push({t:'fix',sec,num,pre,parts,letter,corr,accept,ex})}
+function W(w,ty,m){return "<div><span class='w'>"+w+"</span><span class='t'>"+ty+"</span>= <span class='m'>"+m+"</span></div>"}
+function G(w,ty,m){return "<div><span class='g'>"+w+"</span><span class='t'>"+ty+"</span>= <span class='m'>"+m+"</span></div>"}
+function OPS(a){return a.map(r=>'<div class="op4'+(r[2]?' rt':'')+'"><b>'+(r[2]?'✔ ':'')+r[0]+
+ '</b> <span class="m">➔ '+r[1]+'</span></div>').join('')}
+function WR(o,why){return '<div class="wr"><b>✗ '+o+'</b> — '+why+'</div>'}
+function M4(key,de,opts,why,wrong){
+ return '<div class="kb">✅ Đáp án: '+key+'</div>'+
+  '<div class="stp"><span class="l">BƯỚC 1 · DỊCH ĐỀ BÀI</span><br>'+de+'</div>'+
+  '<div class="stp"><span class="l">BƯỚC 2 · NGUYÊN VĂN &amp; DỊCH 4 ĐÁP ÁN</span>'+opts+'</div>'+
+  '<div class="stp"><span class="l">BƯỚC 3 · TẠI SAO ĐÚNG</span><br><span class="pg">'+why+'</span></div>'+
+  '<div class="stp"><span class="l">BƯỚC 4 · TẠI SAO CÁC ĐÁP ÁN KIA SAI</span>'+wrong+'</div>'}
+function F4(key,de,cells,why,trap,alt){
+ return '<div class="kb">✅ Đáp án: '+key+'</div>'+
+  '<div class="stp"><span class="l">BƯỚC 1 · DỊCH CÂU</span><br>'+de+'</div>'+
+  '<div class="stp"><span class="l">BƯỚC 2 · PHÂN TÍCH TỪ KHOÁ</span><div class="g2">'+cells+'</div></div>'+
+  '<div class="stp"><span class="l">BƯỚC 3 · TẠI SAO ĐÚNG</span><br><span class="pg">'+why+'</span></div>'+
+  '<div class="stp"><span class="l">BƯỚC 4 · BẪY / LỖI HAY GẶP</span><br><span class="pg">'+trap+'</span></div>'+
+  (alt?'<div class="op4">🔁 <b>Cô cũng nhận:</b> <span class="m">'+alt+'</span></div>':'')}
+
+/* ══════ BỘ DỰNG GIẢI THÍCH THEO 4 BƯỚC ══════ */
+function O5(en,vi,right){return '<li'+(right?' class="rt"':'')+'><span class="p-word">'+en+
+ '</span> ➔ Dịch: <span class="p-mean">'+vi+'</span></li>'}
+function P5(deEn,deVi,opts,rightEn,why,wrong){
+ return '<div class="ex-h">① Đề bài</div><div class="ex-q">'+deEn+'</div>'+
+  '<div class="ex-h">② Dịch đề bài</div><div class="ex-t"><span class="p-mean">'+deVi+'</span></div>'+
+  '<div class="ex-h">③ Các đáp án</div><ul class="ex-o">'+opts+'</ul>'+
+  '<div class="ex-h">④ Giải thích chi tiết</div>'+
+  '<div class="ex-t"><span class="hl-green">Tại sao đúng:</span> Đáp án đúng là '+
+  '<span class="p-word">'+rightEn+'</span>. '+why+'</div>'+
+  '<div class="ex-t"><span class="hl-red">Tại sao sai:</span> '+wrong+'</div>'}
+function P5F(deEn,deVi,keys,rightEn,why,wrong){
+ return '<div class="ex-h">① Đề bài</div><div class="ex-q">'+deEn+'</div>'+
+  '<div class="ex-h">② Dịch đề bài</div><div class="ex-t"><span class="p-mean">'+deVi+'</span></div>'+
+  '<div class="ex-h">③ Từ khoá &amp; cấu trúc</div><ul class="ex-o">'+keys+'</ul>'+
+  '<div class="ex-h">④ Giải thích chi tiết</div>'+
+  '<div class="ex-t"><span class="hl-green">Tại sao đúng:</span> Đáp án đúng là '+
+  '<span class="p-word">'+rightEn+'</span>. '+why+'</div>'+
+  '<div class="ex-t"><span class="hl-red">Lỗi hay gặp:</span> '+wrong+'</div>'}
+function K5(en,vi){return '<li><span class="p-grammar">'+en+'</span> ➔ <span class="p-mean">'+vi+'</span></li>'}
+
+/* ═════ S1 — EXERCISE 1: VIẾT CÂU TỪ TỪ GỢI Ý (10 câu) ═════ */
+fil('S1',1,'The Grand Canyon / be / majestic wonder / carved / the Colorado River / the US.','The Grand Canyon is a majestic wonder carved by the Colorado River in the US.',['The Grand Canyon is a majestic wonder carved by the Colorado River in the US'],F4('The Grand Canyon is a majestic wonder carved by the Colorado River in the US.','Grand Canyon là một kỳ quan hùng vĩ được dòng sông Colorado khắc tạo nên ở nước Mỹ.',W('majestic','adj','hùng vĩ')+W('carve','v','khắc, tạo hình')+G('N + V3 + by + O','','rút gọn mệnh đề quan hệ BỊ ĐỘNG')+G('in + tên nước','prep','ở, tại'),'Thêm mạo từ <b>a</b> trước <i>majestic wonder</i>; <b>carved by the Colorado River</b> là mệnh đề quan hệ rút gọn dạng bị động (= <i>which was carved by…</i>); cuối cùng thêm giới từ <b>in</b> trước <i>the US</i>.','Đừng viết <i>carved the Colorado River</i> (thiếu <b>by</b> ➔ thành nghĩa “khắc dòng sông”). Cũng đừng bỏ mạo từ <b>a</b>.','hoa/thường, dấu chấm tuỳ ý'),'Gõ cả câu...');
+fil('S1',2,'They / said / they / climb / the mountain peak / to watch / sunrise / the morning after.','They said that they would climb to the mountain peak to watch the sunrise the morning after.',['They said that they would climb to the mountain peak to watch the sunrise the morning after','They said they would climb to the mountain peak to watch the sunrise the morning after'],F4('They said (that) they would climb to the mountain peak to watch the sunrise the morning after.','Họ nói rằng họ sẽ leo lên đỉnh núi để ngắm bình minh vào sáng hôm sau.',W('peak','n','đỉnh núi')+W('sunrise','n','bình minh')+G('S + said (that) + S + would + V','','câu gián tiếp — LÙI THÌ')+G('will ➔ would','','quy tắc lùi thì'),'Động từ tường thuật <b>said</b> ở quá khứ ➔ phải <b>lùi thì</b>: <i>will climb</i> ➜ <b>would climb</b>. Thêm <b>to</b> (<i>climb to the peak</i>) và <b>the</b> trước <i>sunrise</i>. Chữ <b>that</b> có thể bỏ.','Đừng viết <i>they will climb</i> — sau <b>said</b> bắt buộc lùi thì. Ms nhận cả câu có và không có <b>that</b>.','có that hay không đều được'),'Gõ cả câu...');
+fil('S1',3,'what / be / the things / we / should / not miss / once / we / come / Hue City?','What are the things we should not miss once we come to Hue City?',['What are the things we should not miss once we come to Hue City'],F4('What are the things we should not miss once we come to Hue City?','Những điều chúng ta không nên bỏ qua khi tới thành phố Huế là gì?',W('miss','v','bỏ lỡ, bỏ qua')+W('once','conj','một khi, khi mà')+G('What + are + N?','','câu hỏi với to be')+G('come TO + nơi','prep','tới đâu'),'Chủ ngữ <b>the things</b> số nhiều ➔ dùng <b>are</b>. Mệnh đề quan hệ <i>(that) we should not miss</i> lược bỏ <b>that</b>. Mệnh đề <b>once</b> chia hiện tại đơn và cần giới từ <b>to</b>: <i>come to Hue City</i>.','Đừng viết <i>What is the things…</i> hay <i>come Hue City</i> (thiếu <b>to</b>). Mệnh đề sau <b>once</b> KHÔNG dùng <i>will</i>.','có dấu hỏi hay không đều được'),'Gõ cả câu...');
+fil('S1',4,'I / suggest / travel / motorbike / as / you / can / see / lot / beautiful scenery / along / street.','I suggest traveling by motorbike as you can see a lot of beautiful scenery along the street.',['I suggest traveling by motorbike as you can see a lot of beautiful scenery along the street','I suggest travelling by motorbike as you can see a lot of beautiful scenery along the street'],F4('I suggest traveling by motorbike as you can see a lot of beautiful scenery along the street.','Tôi khuyên nên đi bằng xe máy vì bạn có thể ngắm rất nhiều phong cảnh đẹp dọc đường.',W('suggest + V-ing','collocation','đề nghị/khuyên làm gì')+W('scenery','n, không đếm được','phong cảnh')+G('by + phương tiện','prep','bằng (xe máy, xe bus…)')+G('a lot of + N','quantifier','rất nhiều'),'Sau <b>suggest</b> phải là <b>V-ing</b> ➔ <i>suggest traveling</i>. Phương tiện dùng <b>by motorbike</b> (không mạo từ). <b>a lot of</b> + <i>scenery</i> (danh từ không đếm được, không thêm -s).','Đừng viết <i>suggest to travel</i> — lỗi rất phổ biến. Cũng đừng viết <i>sceneries</i>. Ms nhận cả <b>traveling</b> (Mỹ) và <b>travelling</b> (Anh).','traveling hay travelling đều được'),'Gõ cả câu...');
+fil('S1',5,'Crater Lake / stand / as / one / most iconic / natural wonders / the United States.','Crater Lake stands as one of the most iconic natural wonders of the United States.',['Crater Lake stands as one of the most iconic natural wonders of the United States'],F4('Crater Lake stands as one of the most iconic natural wonders of the United States.','Hồ Crater được xem là một trong những kỳ quan thiên nhiên tiêu biểu nhất của nước Mỹ.',W('stand as','v.phr','được coi là, đứng vào vị trí')+W('iconic','adj','tiêu biểu, mang tính biểu tượng')+G('one of the + most + adj + N (số nhiều)','','một trong những… nhất')+G('of + tên nước','prep','của'),'Chủ ngữ số ít ➔ <b>stands</b> (thêm -s). Cấu trúc <b>one of the most + tính từ + danh từ SỐ NHIỀU</b> ➔ <i>natural wonders</i>. Nối với tên nước bằng <b>of</b>.','Đừng quên <b>-s</b> ở <i>stands</i> và <b>of</b> trong <i>one OF the most…</i>. Danh từ sau cụm này luôn ở số nhiều.','hoa/thường, dấu chấm tuỳ ý'),'Gõ cả câu...');
+fil('S1',6,'The tour guide / explained / Niagara Falls / harbor / wide diversity / wildlife / its surrounding habitats.','The tour guide explained that Niagara Falls harbored a wide diversity of wildlife in its surrounding habitats.',['The tour guide explained that Niagara Falls harbored a wide diversity of wildlife in its surrounding habitats','The tour guide explained Niagara Falls harbored a wide diversity of wildlife in its surrounding habitats','The tour guide explained that Niagara Falls harboured a wide diversity of wildlife in its surrounding habitats'],F4('The tour guide explained (that) Niagara Falls harbored a wide diversity of wildlife in its surrounding habitats.','Hướng dẫn viên giải thích rằng thác Niagara là nơi trú ngụ của rất nhiều loài động vật hoang dã trong các môi trường sống xung quanh.',W('harbor/harbour','v','là nơi trú ngụ của')+W('diversity','n','sự đa dạng')+W('surrounding','adj','xung quanh')+G('S + explained (that) + S + V (lùi thì)','','tường thuật gián tiếp'),'<b>explained</b> ở quá khứ ➔ động từ mệnh đề sau <b>lùi thì</b>: <i>harbors</i> ➜ <b>harbored</b>. Thêm <b>a … of</b> (<i>a wide diversity of wildlife</i>) và giới từ <b>in</b> trước <i>its surrounding habitats</i>.','Đừng để <i>harbors</i> ở hiện tại. Ms nhận cả cách viết <b>harbored</b> (Mỹ) và <b>harboured</b> (Anh), có hoặc không có <b>that</b>.','harbored/harboured, có that hay không đều được'),'Gõ cả câu...');
+fil('S1',7,'it / be / claim / that / Ma Pi Leng / be / one / most / dangerous / pass / Vietnam.','It is claimed that Ma Pi Leng is one of the most dangerous passes in Vietnam.',['It is claimed that Ma Pi Leng is one of the most dangerous passes in Vietnam'],F4('It is claimed that Ma Pi Leng is one of the most dangerous passes in Vietnam.','Người ta cho rằng Mã Pí Lèng là một trong những con đèo nguy hiểm nhất Việt Nam.',W('claim','v','tuyên bố, cho rằng')+W('pass','n','con đèo')+G('It is + V3 + that + S + V','','câu BỊ ĐỘNG với chủ ngữ giả It')+G('one of the most + adj + N số nhiều','','một trong những… nhất'),'Cấu trúc bị động phổ biến: <b>It is claimed that…</b> = người ta cho rằng… Sau đó dùng <b>one of the most dangerous passes</b> — danh từ phải ở <b>số nhiều</b> (<i>pass ➜ passes</i>), thêm <b>in</b> trước <i>Vietnam</i>.','Đừng viết <i>It is claim</i> (thiếu V3) hay <i>one of the most dangerous pass</i> (thiếu -es).','hoa/thường, dấu chấm tuỳ ý'),'Gõ cả câu...');
+fil('S1',8,'locate / Ninh Binh, / Trang An Landscape Complex / know / its scenic landscape / boat cave tours.','Located in Ninh Binh, Trang An Landscape Complex is known for its scenic landscape and boat cave tours.',['Located in Ninh Binh, Trang An Landscape Complex is known for its scenic landscape and boat cave tours','Located in Ninh Binh Trang An Landscape Complex is known for its scenic landscape and boat cave tours'],F4('Located in Ninh Binh, Trang An Landscape Complex is known for its scenic landscape and boat cave tours.','Nằm ở Ninh Bình, Quần thể Danh thắng Tràng An được biết đến với phong cảnh nên thơ và các tour thuyền xuyên hang.',W('be located in','v.phr','nằm ở')+W('scenic','adj','nên thơ, có phong cảnh đẹp')+G('Located in …, S + V','','rút gọn mệnh đề trạng ngữ BỊ ĐỘNG')+G('be known for sth','collocation','được biết đến vì/với cái gì'),'Mở đầu bằng <b>Located in Ninh Binh</b> — dạng rút gọn của <i>Which is located in Ninh Binh</i> (bỏ chủ ngữ và <i>be</i>, giữ V3). Vị ngữ dùng cụm cố định <b>be known FOR sth</b>, rồi nối hai tân ngữ bằng <b>and</b>.','Đừng viết <i>Locating in Ninh Binh</i> — chủ ngữ là bên BỊ định vị nên dùng V3 <b>Located</b>. Và nhớ giới từ <b>for</b>: <i>known FOR</i>, không phải <i>known as</i> ở đây.','có dấu phẩy hay không đều được'),'Gõ cả câu...');
+fil('S1',9,'there / be / growing / recognition / the ethnic groups / Central Highlands / need / more / support.','There is a growing recognition that the ethnic groups in the Central Highlands need more support.',['There is a growing recognition that the ethnic groups in the Central Highlands need more support'],F4('There is a growing recognition that the ethnic groups in the Central Highlands need more support.','Ngày càng có nhiều sự công nhận rằng các nhóm dân tộc ở Tây Nguyên cần được hỗ trợ nhiều hơn.',W('recognition','n','sự công nhận')+W('ethnic group','n.phr','nhóm dân tộc')+W('the Central Highlands','n.phr','Tây Nguyên')+G('There is + a + N + that + S + V','','mệnh đề đồng cách bổ nghĩa cho danh từ'),'Chủ ngữ <b>a growing recognition</b> số ít ➔ <b>There is</b>. Mệnh đề <b>that…</b> giải thích nội dung của <i>recognition</i>. Thêm <b>in</b> trước <i>the Central Highlands</i>; chủ ngữ <i>the ethnic groups</i> số nhiều ➔ <b>need</b> không thêm -s.','Đừng viết <i>There are a growing recognition</i>. Cũng đừng bỏ <b>that</b> — ở đây <b>that</b> là bắt buộc vì nó mở đầu mệnh đề giải thích.','hoa/thường, dấu chấm tuỳ ý'),'Gõ cả câu...');
+fil('S1',10,'her teacher / suggest / she / study / harder / so / she / can / get into / good university.','Her teacher suggests she should study harder so she can get into a good university.',['Her teacher suggests she should study harder so she can get into a good university','Her teacher suggests she study harder so she can get into a good university','Her teacher suggests that she should study harder so she can get into a good university'],F4('Her teacher suggests she (should) study harder so she can get into a good university.','Cô giáo khuyên cô ấy nên học chăm hơn để có thể vào được một trường đại học tốt.',W('suggest that S (should) V','structure','đề nghị ai nên làm gì')+W('get into','phr.v','đỗ vào, vào được')+G('so + S + can + V','conj','để mà, nên'),'Cấu trúc thứ hai của <b>suggest</b>: <b>suggest (that) + S + (should) + V nguyên thể</b>. Chủ ngữ <i>Her teacher</i> số ít ➔ <b>suggests</b>. Thêm mạo từ <b>a</b> trước <i>good university</i>.','Đừng viết <i>suggests she studies</i> — sau <b>suggest that</b> động từ giữ dạng NGUYÊN THỂ (dạng giả định). Ms nhận cả có và không có <b>should</b>/<b>that</b>.','có should/that hay không đều được'),'Gõ cả câu...');
+
+/* ═════ S2 — EXERCISE 2: VIẾT LẠI CÂU — CÂU GIÁN TIẾP (25 câu) ═════ */
+fil('S2',1,'“Is the Sahara Desert hot all year round?” Laura asked me.<div class="pre">➔ Laura wondered ______</div>','if the Sahara Desert was hot all year round',['if the Sahara Desert was hot all year round','whether the Sahara Desert was hot all year round','Laura wondered if the Sahara Desert was hot all year round','Laura wondered whether the Sahara Desert was hot all year round'],F4('Laura wondered if / whether the Sahara Desert was hot all year round.','Laura hỏi rằng liệu sa mạc Sahara có nóng suốt cả năm hay không.',W('all year round','adv.phr','suốt cả năm')+G('S + wondered + if/whether + S + V (lùi thì)','','câu hỏi Yes/No gián tiếp')+G('is ➔ was','','lùi thì hiện tại đơn ➔ quá khứ đơn'),'Câu hỏi <b>Yes/No</b> ➔ chuyển thành <b>if / whether</b>, bỏ dấu hỏi, đưa động từ về sau chủ ngữ và <b>lùi thì</b>: <i>is</i> ➜ <b>was</b>.','Bản in trong sách thiếu chữ <b>if</b> — đó là lỗi in. Câu hỏi Yes/No gián tiếp BẮT BUỘC có <b>if</b> hoặc <b>whether</b>. Cũng đừng giữ trật tự đảo <i>was the Sahara Desert hot</i>.','gõ if hay whether đều được; gõ phần còn lại hay cả câu đều được'),'Gõ phần còn lại HOẶC cả câu...');
+fil('S2',2,'“Will the project help protect the biodiversity of the island?” Minh wondered.<div class="pre">➔ Minh wondered ______</div>','if the project would help protect the biodiversity of the island',['if the project would help protect the biodiversity of the island','whether the project would help protect the biodiversity of the island','Minh wondered if the project would help protect the biodiversity of the island','Minh wondered whether the project would help protect the biodiversity of the island'],F4('Minh wondered if / whether the project would help protect the biodiversity of the island.','Minh tự hỏi liệu dự án có giúp bảo vệ sự đa dạng sinh học của hòn đảo hay không.',W('biodiversity','n','sự đa dạng sinh học')+G('will ➔ would','','quy tắc lùi thì')+G('help + V (nguyên thể)','','giúp làm gì'),'Câu hỏi Yes/No ➔ dùng <b>if / whether</b>; <b>will</b> lùi thành <b>would</b>. Sau <i>help</i> giữ động từ nguyên thể <i>protect</i>.','Đừng để nguyên <i>will help</i>. Và đừng đảo <i>would the project help</i> — trong câu gián tiếp trật tự luôn là <b>S + V</b>.','gõ if hay whether đều được'),'Gõ phần còn lại HOẶC cả câu...');
+fil('S2',3,'“Are Ron and his family travelling to Ha Long Bay?” Peter asked me.<div class="pre">➔ Peter wanted to know ______</div>','if Ron and his family were travelling to Ha Long Bay',['if Ron and his family were travelling to Ha Long Bay','whether Ron and his family were travelling to Ha Long Bay','if Ron and his family were traveling to Ha Long Bay','Peter wanted to know if Ron and his family were travelling to Ha Long Bay'],F4('Peter wanted to know if / whether Ron and his family were travelling to Ha Long Bay.','Peter muốn biết liệu Ron và gia đình anh ấy có đang đi Vịnh Hạ Long hay không.',W('travel to','v.phr','đi tới, du lịch tới')+G('are + V-ing ➔ were + V-ing','','hiện tại tiếp diễn ➔ quá khứ tiếp diễn')+G('wanted to know + if/whether','','một cách nói khác của asked'),'Hiện tại tiếp diễn lùi thành <b>quá khứ tiếp diễn</b>: <i>are travelling</i> ➜ <b>were travelling</b>. Chủ ngữ <i>Ron and his family</i> số nhiều nên dùng <b>were</b>.','Đừng viết <i>was travelling</i>. Ms nhận cả <b>travelling</b> (Anh) và <b>traveling</b> (Mỹ).','travelling hay traveling đều được'),'Gõ phần còn lại HOẶC cả câu...');
+fil('S2',4,'Minh asked the tour guide if there was any local restaurant nearby.<div class="pre">➔ “______” Minh asked the tour guide.</div>','Are there any local restaurants near here?',['Are there any local restaurants near here','Are there any local restaurant near here','Is there any local restaurant near here'],F4('“Are there any local restaurants near here?” Minh asked the tour guide.','“Ở gần đây có nhà hàng địa phương nào không?” Minh hỏi hướng dẫn viên.',W('nearby','adv','ở gần đây')+G('was ➔ are','','ĐẢO NGƯỢC: gián tiếp ➔ trực tiếp thì TIẾN thì')+G('there ➔ near here','','đổi mốc nơi chốn ngược lại'),'Đây là chiều <b>ngược</b>: từ gián tiếp về trực tiếp ➔ <b>tiến thì</b> (<i>was</i> ➜ <b>are</b>), bỏ <b>if</b>, đảo trật tự thành câu hỏi và đổi <i>nearby</i> ➜ <b>near here</b>.','Đừng giữ <i>was</i> hay chữ <i>if</i> trong câu trực tiếp. Bản in dùng <i>restaurant</i> số ít — Ms nhận cả hai, nhưng viết <b>restaurants</b> sau <i>any</i> thì tự nhiên hơn.','gõ số ít hay số nhiều, có dấu hỏi hay không đều được'),'Gõ câu trực tiếp...');
+fil('S2',5,'Kate wanted to know if I would participate in the Natural Wonders competition.<div class="pre">➔ “______” Kate asked me.</div>','Will you participate in the Natural Wonders competition?',['Will you participate in the Natural Wonders competition'],F4('“Will you participate in the Natural Wonders competition?” Kate asked me.','“Bạn sẽ tham gia cuộc thi Kỳ quan Thiên nhiên không?” Kate hỏi tôi.',W('participate in','v.phr','tham gia vào')+G('would ➔ will','','tiến thì khi về câu trực tiếp')+G('I ➔ you','','đổi ngôi ngược lại'),'Chiều ngược: <b>would</b> ➜ <b>will</b>, và đại từ <b>I</b> (trong lời tường thuật) ➜ <b>you</b> (vì Kate đang nói với “tôi”). Đảo <b>Will</b> lên đầu thành câu hỏi.','Đừng giữ <i>would</i> hay <i>I</i>. Khi đổi ngôi, hãy tự hỏi “ai đang nói với ai” rồi mới chọn đại từ.','có dấu hỏi hay không đều được'),'Gõ câu trực tiếp...');
+fil('S2',6,'“Will you come to Sa Pa this summer with me?” May asked Hoa.<div class="pre">➔ May asked Hoa ______</div>','if she would come to Sa Pa that summer with her',['if she would come to Sa Pa that summer with her','whether she would come to Sa Pa that summer with her','if she would come to Sa Pa this summer with her','May asked Hoa if she would come to Sa Pa that summer with her'],F4('May asked Hoa if / whether she would come to Sa Pa that summer with her.','May hỏi Hoa rằng liệu bạn ấy có đi Sa Pa cùng mình vào mùa hè đó không.',W('come to','v.phr','tới, đến')+G('you ➔ she / me ➔ her','','đổi NGÔI theo người nghe')+G('this ➔ that','','đổi mốc thời gian'),'Ba bước đủ: <b>đổi ngôi</b> (<i>you</i> ➜ <b>she</b> vì người nghe là Hoa; <i>me</i> ➜ <b>her</b> vì người nói là May), <b>lùi thì</b> (<i>will</i> ➜ <b>would</b>), <b>đổi mốc thời gian</b> (<i>this summer</i> ➜ <b>that summer</b>).','Rất nhiều bạn quên đổi <i>me</i> ➜ <b>her</b>. Bản in giữ <i>this summer</i> nên Ms nhận cả hai, nhưng <b>that summer</b> mới đúng chuẩn.','this/that summer đều được'),'Gõ phần còn lại HOẶC cả câu...');
+fil('S2',7,'The Nile River is the longest river in the world.<div class="pre">➔ No river in the world ______</div>','is longer than the Nile River',['is longer than the Nile River','No river in the world is longer than the Nile River'],F4('No river in the world is longer than the Nile River.','Không có dòng sông nào trên thế giới dài hơn sông Nile.',W('long – longer – the longest','adj','dài – dài hơn – dài nhất')+G('the + adj-est = No + N + adj-er + than','','so sánh NHẤT ⇄ so sánh HƠN phủ định'),'Cặp chuyển đổi cố định: <b>A is the + adj-est</b> = <b>No + danh từ + is + adj-er + than A</b>. Vậy <i>the longest</i> ➜ <b>is longer than the Nile River</b>.','Đừng viết <i>is the longest than</i> — sau <b>than</b> luôn là so sánh HƠN. Chủ ngữ <i>No river</i> được coi là số ít nên dùng <b>is</b>.','hoa/thường, dấu chấm tuỳ ý'),'Gõ phần còn lại HOẶC cả câu...');
+fil('S2',8,'Visiting the natural wonders in the world is Mr. Peterson’s interest.<div class="pre">➔ Mr. Peterson ______</div>','is interested in visiting the natural wonders in the world',['is interested in visiting the natural wonders in the world','Mr Peterson is interested in visiting the natural wonders in the world','Mr. Peterson is interested in visiting the natural wonders in the world'],F4('Mr. Peterson is interested in visiting the natural wonders in the world.','Ông Peterson thích thăm các kỳ quan thiên nhiên trên thế giới.',W('interest','n','sự hứng thú, điều quan tâm')+W('be interested in + V-ing','collocation','hứng thú với việc gì')+G('sth is sb’s interest = sb is interested in sth','','danh từ ⇄ tính từ'),'Đổi danh từ <b>interest</b> thành cụm tính từ <b>be interested in</b>. Sau giới từ <b>in</b> phải là <b>V-ing</b> ➔ <i>visiting</i>.','Đừng viết <i>is interested to visit</i> — sau <b>in</b> bắt buộc là V-ing. Cũng phân biệt <b>interested</b> (người cảm thấy) với <i>interesting</i> (vật gây hứng thú).','có dấu chấm sau Mr hay không đều được'),'Gõ phần còn lại HOẶC cả câu...');
+fil('S2',9,'It is disappointing that we won’t visit the Grand Canyon.<div class="pre">➔ We are ______</div>','disappointed not to visit the Grand Canyon',['disappointed not to visit the Grand Canyon','disappointed that we won’t visit the Grand Canyon','We are disappointed not to visit the Grand Canyon','We are disappointed that we won’t visit the Grand Canyon'],F4('We are disappointed not to visit the Grand Canyon. / We are disappointed that we won’t visit the Grand Canyon.','Chúng tôi thất vọng vì sẽ không được tới thăm Grand Canyon.',W('disappointing','adj','gây thất vọng (vật)')+W('disappointed','adj','cảm thấy thất vọng (người)')+G('It is + adj-ing + that … = S + be + adj-ed …','','đổi chủ ngữ giả thành chủ ngữ người'),'Chuyển từ chủ ngữ giả <b>It</b> sang chủ ngữ người <b>We</b> ➔ tính từ phải đổi từ <b>-ing</b> sang <b>-ed</b>: <i>disappointing</i> ➜ <b>disappointed</b>. Sau đó dùng <b>not to V</b> hoặc giữ mệnh đề <b>that…</b>.','Đừng viết <i>We are disappointing</i> — như vậy nghĩa là “chúng tôi làm người khác thất vọng”. Ms nhận cả hai cách diễn đạt.','gõ “not to visit…” hay “that we won’t visit…” đều được'),'Gõ phần còn lại HOẶC cả câu...');
+fil('S2',10,'“Would you like a cup of coffee?” said Lan.<div class="pre">➔ Lan asked me ______</div>','if I would like a cup of coffee',['if I would like a cup of coffee','whether I would like a cup of coffee','Lan asked me if I would like a cup of coffee','Lan asked me whether I would like a cup of coffee'],F4('Lan asked me if / whether I would like a cup of coffee.','Lan hỏi tôi rằng tôi có muốn một tách cà phê không.',W('Would you like…?','structure','mời mọc lịch sự')+G('S + asked + O + if/whether + S + V','','câu hỏi Yes/No gián tiếp')+G('you ➔ I','','đổi ngôi'),'Câu hỏi Yes/No ➔ thêm <b>if / whether</b>, đổi ngôi <i>you</i> ➜ <b>I</b>. Riêng <b>would</b> trong lời mời thì <b>giữ nguyên</b> vì nó vốn đã là dạng lùi thì.','Bản in trong sách thiếu chữ <b>if</b> — đó là lỗi in, con nhớ phải có <b>if/whether</b>. Và đừng đổi <i>would</i> thành <i>will</i>.','gõ if hay whether đều được'),'Gõ phần còn lại HOẶC cả câu...');
+fil('S2',11,'“Where are you going for your summer holiday?”<div class="pre">➔ Jimmy asked me ______</div>','where I was going for my summer holiday',['where I was going for my summer holiday','Jimmy asked me where I was going for my summer holiday'],F4('Jimmy asked me where I was going for my summer holiday.','Jimmy hỏi tôi rằng tôi sẽ đi đâu vào kỳ nghỉ hè.',W('summer holiday','n.phr','kỳ nghỉ hè')+G('S + asked + O + wh-word + S + V (lùi thì)','','câu hỏi Wh- gián tiếp')+G('your ➔ my','','đổi tính từ sở hữu'),'Câu hỏi <b>Wh-</b> ➔ giữ nguyên từ hỏi <b>where</b> làm từ nối, rồi viết theo trật tự <b>S + V</b> (không đảo). Lùi thì <i>are going</i> ➜ <b>was going</b>, đổi <i>you</i> ➜ <b>I</b> và <i>your</i> ➜ <b>my</b>.','Đừng giữ trật tự đảo <i>where was I going</i>, và đừng thêm <b>if</b> — câu hỏi Wh- KHÔNG dùng if.','hoa/thường, dấu chấm tuỳ ý'),'Gõ phần còn lại HOẶC cả câu...');
+fil('S2',12,'“The hiking trip today allows you to observe some signature birds of the park.”<div class="pre">➔ The tour guide told the hikers ______</div>','that the hiking trip that day allowed them to observe some signature birds of the park',['that the hiking trip that day allowed them to observe some signature birds of the park','the hiking trip that day allowed them to observe some signature birds of the park','The tour guide told the hikers that the hiking trip that day allowed them to observe some signature birds of the park'],F4('The tour guide told the hikers that the hiking trip that day allowed them to observe some signature birds of the park.','Hướng dẫn viên nói với nhóm đi bộ rằng chuyến đi hôm đó cho phép họ quan sát một số loài chim đặc trưng của công viên.',W('signature','adj','đặc trưng, tiêu biểu')+W('allow sb to V','collocation','cho phép ai làm gì')+G('S + told + O + that + S + V (lùi thì)','','câu TRẦN THUẬT có người nghe')+G('today ➔ that day; you ➔ them','','đổi mốc thời gian và ngôi'),'Đây là <b>câu trần thuật</b> và <b>có người nghe</b> (<i>the hikers</i>) ➔ dùng <b>told + O + that</b>. Lùi thì <i>allows</i> ➜ <b>allowed</b>, đổi <i>today</i> ➜ <b>that day</b>, <i>you</i> ➜ <b>them</b>.','Ghi nhớ quy tắc Ms nhấn mạnh: có người nghe thì dùng <b>told sb</b>, đừng viết <i>said the hikers</i>. Nếu muốn dùng <i>said</i> thì phải viết <b>said TO the hikers</b> — nhưng <b>told</b> mới là cách chuẩn và gọn.','có that hay không đều được'),'Gõ phần còn lại HOẶC cả câu...');
+fil('S2',13,'“When can I register for the scuba diving tour?”<div class="pre">➔ Brian asked the tour operator ______</div>','when he could register for the scuba diving tour',['when he could register for the scuba diving tour','Brian asked the tour operator when he could register for the scuba diving tour'],F4('Brian asked the tour operator when he could register for the scuba diving tour.','Brian hỏi người điều hành tour rằng khi nào anh ấy có thể đăng ký tour lặn biển.',W('register for','v.phr','đăng ký')+W('scuba diving','n.phr','lặn biển có bình khí')+G('can ➔ could','','quy tắc lùi thì')+G('I ➔ he','','đổi ngôi theo người nói'),'Câu hỏi <b>Wh-</b> ➔ giữ <b>when</b>, viết theo trật tự <b>S + V</b>. Lùi <b>can</b> ➜ <b>could</b> và đổi <i>I</i> ➜ <b>he</b> (vì người nói là Brian).','Đừng viết <i>when could he register</i> (vẫn còn đảo) hay giữ <i>can</i>.','hoa/thường, dấu chấm tuỳ ý'),'Gõ phần còn lại HOẶC cả câu...');
+fil('S2',14,'“Is it possible that the Grand Canyon may have formed 5 to 6 million years ago?”<div class="pre">➔ Joana wondered ______</div>','if it was possible that the Grand Canyon might have formed 5 to 6 million years before',['if it was possible that the Grand Canyon might have formed 5 to 6 million years before','whether it was possible that the Grand Canyon might have formed 5 to 6 million years before','Joana wondered if it was possible that the Grand Canyon might have formed 5 to 6 million years before'],F4('Joana wondered if / whether it was possible that the Grand Canyon might have formed 5 to 6 million years before.','Joana tự hỏi liệu có khả năng Grand Canyon đã hình thành từ 5 đến 6 triệu năm trước hay không.',W('form','v','hình thành')+G('may ➔ might','','quy tắc lùi thì')+G('ago ➔ before','','đổi mốc thời gian'),'Ba thay đổi cần nhớ: thêm <b>if/whether</b>, lùi <i>is</i> ➜ <b>was</b> và <i>may</i> ➜ <b>might</b>, đổi <b>ago</b> ➜ <b>before</b>.','Đừng giữ <i>ago</i> — trong câu gián tiếp nó luôn đổi thành <b>before</b>. Và <i>may have formed</i> phải lùi thành <b>might have formed</b>.','gõ if hay whether đều được'),'Gõ phần còn lại HOẶC cả câu...');
+fil('S2',15,'“I hope I can climb Mount Kilimanjaro with other explorers next year.”<div class="pre">➔ Annie said ______</div>','that she hoped she could climb Mount Kilimanjaro with other explorers the following year',['that she hoped she could climb Mount Kilimanjaro with other explorers the following year','she hoped she could climb Mount Kilimanjaro with other explorers the following year','that she hoped she could climb Mount Kilimanjaro with other explorers the next year','Annie said that she hoped she could climb Mount Kilimanjaro with other explorers the following year'],F4('Annie said (that) she hoped she could climb Mount Kilimanjaro with other explorers the following year.','Annie nói rằng cô ấy hy vọng có thể leo núi Kilimanjaro cùng các nhà thám hiểm khác vào năm sau.',W('explorer','n','nhà thám hiểm')+G('I ➔ she; can ➔ could','','đổi ngôi và lùi thì')+G('next year ➔ the following year / the next year','','đổi mốc thời gian'),'Câu trần thuật <b>không nêu người nghe</b> ➔ dùng <b>said (that)</b>. Đổi ngôi <i>I</i> ➜ <b>she</b>, lùi thì <i>hope</i> ➜ <b>hoped</b> và <i>can</i> ➜ <b>could</b>, đổi <b>next year</b> ➜ <b>the following year</b>.','Bản in ghi “the year after the following year” — đó là lỗi in, mốc đúng chỉ là <b>the following year</b> (hoặc <i>the next year</i>). Nếu có người nghe thì phải đổi <i>said</i> thành <b>told sb</b>.','gõ the following year hay the next year đều được'),'Gõ phần còn lại HOẶC cả câu...');
+fil('S2',16,'“Do you know that Mount Everest is the highest mountain in the world?”<div class="pre">➔ My sister asked me ______</div>','if I knew that Mount Everest was the highest mountain in the world',['if I knew that Mount Everest was the highest mountain in the world','whether I knew that Mount Everest was the highest mountain in the world','My sister asked me if I knew that Mount Everest was the highest mountain in the world'],F4('My sister asked me if / whether I knew that Mount Everest was the highest mountain in the world.','Chị tôi hỏi tôi rằng tôi có biết Everest là ngọn núi cao nhất thế giới không.',W('the highest','adj, so sánh nhất','cao nhất')+G('Do you know…? ➔ if I knew…','','bỏ trợ động từ do, lùi thì')+G('is ➔ was','','lùi cả mệnh đề bên trong'),'Bỏ trợ động từ <b>do</b>, thêm <b>if/whether</b>, lùi <i>know</i> ➜ <b>knew</b>. Mệnh đề bên trong cũng lùi: <i>is</i> ➜ <b>was</b>.','Đừng viết <i>if I did know</i> (còn giữ trợ động từ) hay để nguyên <i>is</i>. Dù đây là một sự thật hiển nhiên, đề vẫn yêu cầu lùi thì.','gõ if hay whether đều được'),'Gõ phần còn lại HOẶC cả câu...');
+fil('S2',17,'“What activities can we do at Giang Dien Waterfall next week?”<div class="pre">➔ The students wanted to know ______</div>','what activities they could do at Giang Dien Waterfall the following week',['what activities they could do at Giang Dien Waterfall the following week','what activities they could do at Giang Dien Waterfall the week after','The students wanted to know what activities they could do at Giang Dien Waterfall the following week'],F4('The students wanted to know what activities they could do at Giang Dien Waterfall the following week.','Các học sinh muốn biết tuần sau các em có thể làm những hoạt động gì ở thác Giang Điền.',W('activity','n','hoạt động')+G('wh-word + S + V','','câu hỏi Wh- gián tiếp, KHÔNG đảo')+G('next week ➔ the following week / the week after','','đổi mốc thời gian'),'Giữ nguyên cụm hỏi <b>what activities</b> làm từ nối, rồi viết <b>S + V</b>. Lùi <i>can</i> ➜ <b>could</b>, đổi ngôi <i>we</i> ➜ <b>they</b>, đổi <b>next week</b> ➜ <b>the following week</b>.','Đừng viết <i>what activities could they do</i> — câu gián tiếp không đảo. Ms nhận cả <i>the following week</i> và <i>the week after</i>.','hai mốc thời gian đều được'),'Gõ phần còn lại HOẶC cả câu...');
+fil('S2',18,'“These tourists might not follow the trails and get lost yesterday.”<div class="pre">➔ The police explained ______</div>','that those tourists might not have followed the trails and got lost the day before',['that those tourists might not have followed the trails and got lost the day before','those tourists might not have followed the trails and got lost the day before','that those tourists might not follow the trails and get lost the day before','The police explained that those tourists might not have followed the trails and got lost the day before'],F4('The police explained that those tourists might not have followed the trails and got lost the day before.','Cảnh sát giải thích rằng những du khách đó có lẽ đã không đi theo đường mòn và bị lạc vào hôm trước.',W('trail','n','đường mòn')+W('get lost','v.phr','bị lạc')+G('these ➔ those','','đổi từ chỉ định')+G('yesterday ➔ the day before / the previous day','','đổi mốc thời gian'),'Ba việc phải làm: đổi <b>these</b> ➜ <b>those</b>, đổi <b>yesterday</b> ➜ <b>the day before</b>, và vì nói về việc đã xảy ra nên dùng <b>might not have + V3</b>.','Bản in giữ <i>might not follow … and get lost</i>; Ms nhận cả hai, nhưng <b>might not have followed</b> mới diễn tả đúng phỏng đoán về QUÁ KHỨ.','cả hai dạng động từ đều được'),'Gõ phần còn lại HOẶC cả câu...');
+fil('S2',19,'“Does the Pink Beach on Komodo Island offer snorkelling and diving spots?”<div class="pre">➔ She wondered ______</div>','if the Pink Beach on Komodo Island offered snorkelling and diving spots',['if the Pink Beach on Komodo Island offered snorkelling and diving spots','whether the Pink Beach on Komodo Island offered snorkelling and diving spots','if the Pink Beach on Komodo Island offered snorkeling and diving spots','She wondered if the Pink Beach on Komodo Island offered snorkelling and diving spots'],F4('She wondered if / whether the Pink Beach on Komodo Island offered snorkelling and diving spots.','Cô ấy tự hỏi liệu bãi biển Hồng trên đảo Komodo có các điểm lặn ống thở và lặn biển hay không.',W('snorkelling','n','lặn ống thở')+W('spot','n','điểm, chỗ')+G('Does + S + V? ➔ if + S + V-ed','','bỏ does, lùi thì'),'Bỏ trợ động từ <b>Does</b>, thêm <b>if/whether</b>, và chuyển động từ chính sang <b>quá khứ đơn</b>: <i>offer</i> ➜ <b>offered</b>.','Đừng viết <i>if the Pink Beach offers</i> (chưa lùi thì) hay <i>did offer</i>. Ms nhận cả <b>snorkelling</b> (Anh) và <b>snorkeling</b> (Mỹ).','snorkelling hay snorkeling đều được'),'Gõ phần còn lại HOẶC cả câu...');
+fil('S2',20,'“Who is responsible for the damage of the ancient tree in front of the village?”<div class="pre">➔ One tourist asked ______</div>','who was responsible for the damage of the ancient tree in front of the village',['who was responsible for the damage of the ancient tree in front of the village','One tourist asked who was responsible for the damage of the ancient tree in front of the village'],F4('One tourist asked who was responsible for the damage of the ancient tree in front of the village.','Một du khách hỏi ai là người chịu trách nhiệm về việc cây cổ thụ trước làng bị hư hại.',W('be responsible for','collocation','chịu trách nhiệm về')+W('ancient','adj','cổ, cổ xưa')+G('Who + V (Who làm CHỦ NGỮ)','','giữ nguyên trật tự, chỉ lùi thì'),'Ở đây <b>Who</b> chính là <b>chủ ngữ</b> nên trật tự không đổi, chỉ cần <b>lùi thì</b>: <i>is</i> ➜ <b>was</b>.','Đừng thêm <b>if</b> — đây là câu hỏi Wh-. Cũng đừng viết <i>who he was responsible</i>: khi <b>Who</b> làm chủ ngữ thì không thêm chủ ngữ nào khác.','hoa/thường, dấu chấm tuỳ ý'),'Gõ phần còn lại HOẶC cả câu...');
+fil('S2',21,'“Will ecotourism help preserve the fauna and flora in the Amazon Rainforest?”<div class="pre">➔ The locals wanted to know ______</div>','if ecotourism would help preserve the fauna and flora in the Amazon Rainforest',['if ecotourism would help preserve the fauna and flora in the Amazon Rainforest','whether ecotourism would help preserve the fauna and flora in the Amazon Rainforest','The locals wanted to know if ecotourism would help preserve the fauna and flora in the Amazon Rainforest'],F4('The locals wanted to know if / whether ecotourism would help preserve the fauna and flora in the Amazon Rainforest.','Người dân địa phương muốn biết liệu du lịch sinh thái có giúp bảo tồn hệ động thực vật ở rừng Amazon hay không.',W('ecotourism','n','du lịch sinh thái')+W('fauna and flora','n.phr','hệ động vật và thực vật')+G('will ➔ would','','lùi thì'),'Câu hỏi Yes/No ➔ thêm <b>if/whether</b> và lùi <b>will</b> ➜ <b>would</b>. Sau <i>help</i> giữ động từ nguyên thể <i>preserve</i>.','Đừng đảo <i>would ecotourism help</i>. Chú ý chính tả cặp từ <b>fauna</b> (động vật) và <b>flora</b> (thực vật) — rất hay bị lẫn.','gõ if hay whether đều được'),'Gõ phần còn lại HOẶC cả câu...');
+fil('S2',22,'“If you take steps to reduce pollution, you will help preserve the Great Barrier Reef.”<div class="pre">➔ A friend told me ______</div>','that if I took steps to reduce pollution, I would help preserve the Great Barrier Reef',['that if I took steps to reduce pollution, I would help preserve the Great Barrier Reef','if I took steps to reduce pollution, I would help preserve the Great Barrier Reef','that if I took steps to reduce pollution I would help preserve the Great Barrier Reef','A friend told me that if I took steps to reduce pollution, I would help preserve the Great Barrier Reef'],F4('A friend told me that if I took steps to reduce pollution, I would help preserve the Great Barrier Reef.','Một người bạn nói với tôi rằng nếu tôi thực hiện các biện pháp giảm ô nhiễm, tôi sẽ góp phần bảo tồn Great Barrier Reef.',W('take steps to V','collocation','thực hiện các biện pháp để làm gì')+W('preserve','v','bảo tồn')+G('told + O + that','','trần thuật CÓ người nghe')+G('điều kiện loại 1 ➔ loại 2 khi lùi thì','','take ➔ took; will ➔ would'),'Có người nghe (<i>me</i>) ➔ dùng <b>told me that</b>. Khi lùi thì, <b>câu điều kiện loại 1</b> chuyển thành dạng loại 2: <i>take</i> ➜ <b>took</b>, <i>will help</i> ➜ <b>would help</b>. Đổi ngôi <i>you</i> ➜ <b>I</b>.','Đừng viết <i>said me</i> — <b>said</b> không đi trực tiếp với người nghe; phải là <b>told me</b> hoặc <b>said TO me</b>. Ở đây <b>told me</b> mới chuẩn.','có that/dấu phẩy hay không đều được'),'Gõ phần còn lại HOẶC cả câu...');
+fil('S2',23,'“How do visitors usually travel to Phu Quy Island?”<div class="pre">➔ Wendy asked me ______</div>','how visitors usually travelled to Phu Quy Island',['how visitors usually travelled to Phu Quy Island','how visitors usually traveled to Phu Quy Island','Wendy asked me how visitors usually travelled to Phu Quy Island'],F4('Wendy asked me how visitors usually travelled to Phu Quy Island.','Wendy hỏi tôi rằng du khách thường đi tới đảo Phú Quý bằng cách nào.',W('usually','adv','thường xuyên')+G('How + do + S + V? ➔ how + S + V-ed','','bỏ trợ động từ do, lùi thì'),'Bỏ trợ động từ <b>do</b>, giữ từ hỏi <b>how</b> làm từ nối, rồi lùi thì: <i>travel</i> ➜ <b>travelled</b>. Trạng từ <b>usually</b> giữ nguyên vị trí trước động từ.','Đừng viết <i>how did visitors travel</i> — câu gián tiếp không giữ trợ động từ và không đảo. Ms nhận cả <b>travelled</b> (Anh) và <b>traveled</b> (Mỹ).','travelled hay traveled đều được'),'Gõ phần còn lại HOẶC cả câu...');
+fil('S2',24,'“Is it your first time kayaking and enjoying the beauty of Ha Long Bay?”<div class="pre">➔ The tour guide asked her ______</div>','if it was her first time kayaking and enjoying the beauty of Ha Long Bay',['if it was her first time kayaking and enjoying the beauty of Ha Long Bay','whether it was her first time kayaking and enjoying the beauty of Ha Long Bay','The tour guide asked her if it was her first time kayaking and enjoying the beauty of Ha Long Bay'],F4('The tour guide asked her if / whether it was her first time kayaking and enjoying the beauty of Ha Long Bay.','Hướng dẫn viên hỏi cô ấy rằng đây có phải lần đầu tiên cô đi kayak và ngắm vẻ đẹp của Vịnh Hạ Long không.',W('kayaking','n','việc đi thuyền kayak')+G('It is one’s first time + V-ing','structure','lần đầu tiên ai làm gì')+G('your ➔ her; is ➔ was','','đổi ngôi và lùi thì'),'Thêm <b>if/whether</b>, lùi <i>is</i> ➜ <b>was</b>, đổi tính từ sở hữu <b>your</b> ➜ <b>her</b> (vì người nghe là “cô ấy”). Giữ nguyên hai V-ing song song <i>kayaking and enjoying</i>.','Rất nhiều bạn quên đổi <b>your</b> ➜ <b>her</b>. Và sau <i>first time</i> phải là <b>V-ing</b>, không phải <i>to V</i>.','gõ if hay whether đều được'),'Gõ phần còn lại HOẶC cả câu...');
+fil('S2',25,'“This speaker is presenting the negative effects of global warming right now.”<div class="pre">➔ Andy said ______</div>','that that speaker was presenting the negative effects of global warming right then',['that that speaker was presenting the negative effects of global warming right then','that speaker was presenting the negative effects of global warming right then','Andy said that that speaker was presenting the negative effects of global warming right then'],F4('Andy said that that speaker was presenting the negative effects of global warming right then.','Andy nói rằng người diễn giả đó đang trình bày về những tác động tiêu cực của sự nóng lên toàn cầu ngay lúc ấy.',W('present','v','trình bày')+W('global warming','n.phr','sự nóng lên toàn cầu')+G('this ➔ that','','đổi từ chỉ định')+G('right now ➔ right then','','đổi mốc thời gian'),'Ba thay đổi: <b>this</b> ➜ <b>that</b>, lùi hiện tại tiếp diễn <i>is presenting</i> ➜ <b>was presenting</b>, và <b>right now</b> ➜ <b>right then</b>.','Đừng giữ <i>this</i> hay <i>right now</i>. Câu này không nêu người nghe nên dùng <b>said (that)</b>; nếu đề cho người nghe thì phải viết <b>told sb that</b>.','có that hay không đều được'),'Gõ phần còn lại HOẶC cả câu...');
+
+/* ══ DỰNG TRANG ══ */
+(function(){const K=new Set(["S2"]);const kp=Q.filter(m=>K.has(m.sec));Q.length=0;kp.forEach(m=>Q.push(m))})();
+
+(function(){const T=document.createElement('div'),T2=document.createElement('div');let nb=0;const txt=h=>{T2.innerHTML=h;return T2.textContent.trim()};
+ const pretty=html=>html.split(/<br\s*\/?>|(?<=[.!?…])\s+(?=[A-ZÀ-Ỹ“"<①②③④])/).map(s=>s.trim()).filter(s=>txt(s)).map((p,k)=>'<span class="hx hx'+(k%6)+'">▸ '+p.replace(/<b>/g,()=>'<b class="qe qe'+(nb++%6)+'">')+'</span>').join('<br>');
+ Q.forEach(m=>{if(!m.ex)return;T.innerHTML=m.ex;T.querySelectorAll('.ex-t').forEach(e=>{const lab=e.querySelector('.hl-green,.hl-red');if(!lab)return;const l=lab.outerHTML;lab.remove();e.innerHTML=l+'<br>'+pretty(e.innerHTML.trim())});T.querySelectorAll('.pg').forEach(e=>{e.innerHTML=pretty(e.innerHTML);e.classList.add('pgx')});m.ex=T.innerHTML});})();
+const TOTAL=Q.length;let answered=0,score=0;const done={},maps={},built={},sel={};
+function bump(){document.getElementById('fbb').style.width=(answered/TOTAL*100)+'%';
+ document.getElementById('sc').textContent=score;
+ const p=answered?score/answered:1;
+ document.getElementById('md').textContent=p>=.9?'🤩':p>=.7?'😃':p>=.5?'🙂':'💪';
+ if(typeof remUpd==='function')remUpd()}
+const APP=document.getElementById('app');let CUR=null;
+function sec(col,pill,title,ins){
+ const d=document.createElement('div');d.className='sec';
+ d.innerHTML='<div class="st"><span class="pill" style="background:'+col+'">'+pill+
+  '</span><h2>'+title+'</h2></div><div class="si">'+ins+'</div>';
+ APP.appendChild(d);CUR=d}
+function render(id){Q.forEach((m,i)=>{if(m.sec===id)CUR.appendChild(build(m,'g'+i))})}
+
+sec('#1F7A4D','ÔN TẬP','📚 Tóm tắt lý thuyết — REPORTED SPEECH (Câu gián tiếp)','<div class="thr">'+
+'<h4>① BƯỚC 1 · ĐỔI NGÔI</h4>'+
+'<table><tr><th>Trực tiếp</th><th>Gián tiếp</th></tr>'+
+'<tr><td>I / we</td><td>he, she / they</td></tr>'+
+'<tr><td>you</td><td>I, me / he, she, they (tuỳ người nghe)</td></tr>'+
+'<tr><td>my / our</td><td>his, her / their</td></tr>'+
+'<tr><td>me / us</td><td>him, her / them</td></tr></table>'+
+'<h4>② BƯỚC 2 · LÙI THÌ (xuống 1 bậc)</h4>'+
+'<table><tr><th>Trực tiếp</th><th>Gián tiếp</th></tr>'+
+'<tr><td>hiện tại đơn (V / V-s)</td><td>quá khứ đơn (V2/V-ed)</td></tr>'+
+'<tr><td>hiện tại tiếp diễn (am/is/are V-ing)</td><td>quá khứ tiếp diễn (was/were V-ing)</td></tr>'+
+'<tr><td>hiện tại hoàn thành (have/has V3)</td><td>quá khứ hoàn thành (had V3)</td></tr>'+
+'<tr><td>quá khứ đơn (V2)</td><td>quá khứ hoàn thành (had V3)</td></tr>'+
+'<tr><td><b>can</b> ➔ <b>could</b> &nbsp;·&nbsp; <b>may</b> ➔ <b>might</b></td><td><b>will</b> ➔ <b>would</b> &nbsp;·&nbsp; <b>must</b> ➔ <b>had to</b></td></tr></table>'+
+'<h4>③ BƯỚC 3 · ĐỔI MỐC THỜI GIAN / NƠI CHỐN</h4>'+
+'<table><tr><th>Trực tiếp</th><th>Gián tiếp</th></tr>'+
+'<tr><td>today / tonight</td><td>that day / that night</td></tr>'+
+'<tr><td>now / right now</td><td>then / right then</td></tr>'+
+'<tr><td>tomorrow</td><td>the next day / the following day</td></tr>'+
+'<tr><td>yesterday</td><td>the day before / the previous day</td></tr>'+
+'<tr><td>ago</td><td>before</td></tr>'+
+'<tr><td>next week / year</td><td>the following week / year</td></tr>'+
+'<tr><td>last week / year</td><td>the previous week / year</td></tr>'+
+'<tr><td>here &nbsp;·&nbsp; this &nbsp;·&nbsp; these</td><td>there &nbsp;·&nbsp; that &nbsp;·&nbsp; those</td></tr></table>'+
+'<h4>④ BA MẪU CÂU PHẢI THUỘC</h4>'+
+'<ul>'+
+'<li><b>Câu trần thuật:</b> <code>S + said (that) + S + V (lùi thì)</code> — khi KHÔNG nêu người nghe.<br>'+
+'<code>S + told + sb + (that) + S + V (lùi thì)</code> — khi CÓ người nghe.<br>'+
+'<i>“I saw her this morning,” he said.</i> ➔ He said that he had seen her that morning.</li>'+
+'<li><b>Câu hỏi Yes/No:</b> <code>S + asked/wondered/wanted to know + if/whether + S + V (lùi thì)</code><br>'+
+'<i>“Does your brother live in London?” she asked Nam.</i> ➔ She asked Nam if his brother lived in London.</li>'+
+'<li><b>Câu hỏi Wh-:</b> <code>S + asked + (O) + wh-word + S + V (lùi thì)</code> — KHÔNG đảo, KHÔNG dùng do/does/did.<br>'+
+'<i>“What time is it?” the boy asked me.</i> ➔ The boy asked me what time it was.</li>'+
+'</ul>'+
+'<h4>⑤ HAI NGOẠI LỆ CỦA CÂU HỎI YES/NO</h4>'+
+'<ul>'+
+'<li><b>Yêu cầu lịch sự</b> ➔ <code>S + asked sb + to V</code>. <i>“Can you do me a favour?” he said.</i> ➔ He asked me to do him a favour.</li>'+
+'<li><b>Câu hỏi đuôi</b> ➔ bỏ phần đuôi, chuyển như câu hỏi Yes/No thường. <i>“He was a pilot, wasn’t he?”</i> ➔ She asked if he had been a pilot.</li>'+
+'</ul>'+
+'<div class="warnbox">⚠️ <b>MS NHẮC KỸ — SAID hay TOLD?</b><br>'+
+'• <b>said</b> KHÔNG đi trực tiếp với người nghe: ✗ <i>said me</i>, ✗ <i>said the hikers</i>.<br>'+
+'• Nếu đề cho <b>“said to sb”</b> thì khi viết lại con hãy đổi thành <b>told + sb</b> cho chuẩn và gọn:<br>'+
+'&nbsp;&nbsp;&nbsp;<i>Mary said to Bill, “I don’t like living here.”</i> ➔ Mary <b>told Bill</b> (that) she didn’t like living there.<br>'+
+'• Không nêu người nghe ➔ dùng <b>said (that)</b>. Có nêu người nghe ➔ dùng <b>told + sb + (that)</b>.</div>'+
+'</div>');
+sec('#8C3A12','EX 2','🔁 Viết lại câu — Câu gián tiếp','Viết lại câu sao cho nghĩa không đổi. <b>Con gõ phần còn lại HOẶC gõ trọn cả câu đều được tính điểm; if hay whether, có that hay không đều nhận.</b> (25 câu)');render('S2');
+
+document.getElementById('tt').textContent=TOTAL;bump();
+
+function build(m,gid){
+ const c=document.createElement('div');c.className='q';c.id='c_'+gid;
+ const h='<span class="qn">'+m.num+'</span>';
+ if(m.t==='mcq'){
+  const so=shuffle(m.opts);maps[gid]=so;
+  c.innerHTML='<div class="qt">'+h+m.q+'</div><div class="og '+(m.cls||'')+'" id="o_'+gid+'">'+
+   so.map((o,i)=>'<button class="ob" onclick="pick(\''+gid+'\','+i+')">'+o+'</button>').join('')+
+   '</div><div class="ex" id="e_'+gid+'">'+m.ex+'</div>';
+ } else if(m.t==='fill'){
+  c.innerHTML='<div class="qt">'+h+m.q+'</div>'+
+   '<div class="fr"><input class="ti'+(m.sm?' sm':'')+'" id="i_'+gid+'" placeholder="'+m.ph+
+   '" autocomplete="off" spellcheck="false">'+
+   '<button class="ck" id="b_'+gid+'">Kiểm tra</button></div><div class="ex" id="e_'+gid+'">'+m.ex+'</div>';
+  const inp=c.querySelector('#i_'+gid),bt=c.querySelector('#b_'+gid);
+  const go=()=>{
+   if(done[gid])return;
+   const v=norm(inp.value);
+   if(!v){inp.classList.add('no');c.classList.add('shk');
+    setTimeout(()=>{inp.classList.remove('no');c.classList.remove('shk')},450);return}
+   done[gid]=true;answered++;
+   const ok=okAns(m.accept,v);
+   inp.disabled=true;bt.disabled=true;inp.classList.add(ok?'ok':'no');
+   document.getElementById('e_'+gid).classList.add('show');
+   if(ok){score++;ding();confetti()}else{buzz();c.classList.add('shk');setTimeout(()=>c.classList.remove('shk'),450)}
+   bump();
+  };
+  bt.onclick=go;inp.addEventListener('keydown',e=>{if(e.key==='Enter')go()});
+ } else if(m.t==='fix'){
+  c.innerHTML='<div class="qt">'+h+'Tìm phần SAI rồi gõ từ/cụm từ sửa lại:</div>'+
+   '<div class="segs" id="sg_'+gid+'">'+(m.pre||'')+
+   m.parts.map(p=>'<span class="sg" data-l="'+p[0]+'" onclick="selg(\''+gid+'\',\''+p[0]+'\')">'+
+    '<b>'+p[0]+'</b>'+p[1]+'</span>'+(p[2]||'')).join('')+'</div>'+
+   '<div class="fr"><input class="ti sm" id="i_'+gid+'" placeholder="Gõ phần sửa lại..." '+
+   'autocomplete="off" spellcheck="false">'+
+   '<button class="ck" id="b_'+gid+'">Kiểm tra</button></div><div class="ex" id="e_'+gid+'">'+m.ex+'</div>';
+  const inp=c.querySelector('#i_'+gid),bt=c.querySelector('#b_'+gid);
+  bt.onclick=()=>{
+   if(done[gid])return;
+   if(!sel[gid]||!norm(inp.value)){c.classList.add('shk');setTimeout(()=>c.classList.remove('shk'),450);return}
+   done[gid]=true;answered++;
+   const okL=sel[gid]===m.letter, okW=m.accept.map(norm).indexOf(norm(inp.value))>-1, ok=okL&&okW;
+   inp.disabled=true;bt.disabled=true;inp.classList.add(ok?'ok':'no');
+   document.querySelectorAll('#sg_'+gid+' .sg').forEach(s=>{s.classList.add('dn');s.classList.remove('pick');
+    if(s.dataset.l===m.letter)s.classList.add('ok');
+    else if(s.dataset.l===sel[gid])s.classList.add('no')});
+   document.getElementById('e_'+gid).classList.add('show');
+   if(ok){score++;ding();confetti()}else{buzz();c.classList.add('shk');setTimeout(()=>c.classList.remove('shk'),450)}
+   bump();
+  };
+  inp.addEventListener('keydown',e=>{if(e.key==='Enter')bt.click()});
+ } else {
+  const so=shuffle(m.words);maps[gid]=so;built[gid]=[];
+  c.innerHTML='<div class="qt">'+h+'Sắp xếp thành câu hoàn chỉnh:</div>'+
+   '<div class="chips" id="p_'+gid+'">'+
+   so.map((w,i)=>'<button class="cp" data-i="'+i+'" onclick="tap(\''+gid+'\','+i+')">'+w+'</button>').join('')+'</div>'+
+   '<div class="built" id="s_'+gid+'"><span class="ph">Bấm vào các thẻ từ ở trên…</span></div>'+
+   '<div class="acts"><button class="ck" id="b_'+gid+'">Kiểm tra</button>'+
+   '<button class="ck gh" id="r_'+gid+'">✕ Xoá hết</button></div>'+
+   '<div class="ex" id="e_'+gid+'">'+m.ex+'</div>';
+  c.querySelector('#b_'+gid).onclick=()=>chk(gid);
+  c.querySelector('#r_'+gid).onclick=()=>{
+   if(done[gid])return;built[gid]=[];
+   document.querySelectorAll('#p_'+gid+' .cp').forEach(b=>b.classList.remove('gone'));
+   document.getElementById('s_'+gid).innerHTML='<span class="ph">Bấm vào các thẻ từ ở trên…</span>';
+  };
+ }
+ return c;
+}
+function selg(gid,l){if(done[gid])return;sel[gid]=l;
+ document.querySelectorAll('#sg_'+gid+' .sg').forEach(s=>s.classList.toggle('pick',s.dataset.l===l))}
+function tap(gid,i){
+ if(done[gid])return;
+ const b=document.querySelector('#p_'+gid+' .cp[data-i="'+i+'"]');
+ if(!b||b.classList.contains('gone'))return;
+ b.classList.add('gone');built[gid].push(maps[gid][i]);
+ document.getElementById('s_'+gid).textContent=built[gid].join(' ')+' '+Q[+gid.slice(1)].end;
+}
+function chk(gid){
+ if(done[gid])return;
+ const m=Q[+gid.slice(1)],s=document.getElementById('s_'+gid),c=document.getElementById('c_'+gid);
+ if(!built[gid].length){c.classList.add('shk');setTimeout(()=>c.classList.remove('shk'),450);return}
+ done[gid]=true;answered++;
+ const ok=m.accept.map(norm).indexOf(norm(built[gid].join(' ')))>-1;
+ s.classList.add(ok?'ok':'no');
+ document.getElementById('b_'+gid).disabled=true;document.getElementById('r_'+gid).disabled=true;
+ document.querySelectorAll('#p_'+gid+' .cp').forEach(b=>b.style.pointerEvents='none');
+ document.getElementById('e_'+gid).classList.add('show');
+ if(ok){score++;ding();confetti()}else{buzz();c.classList.add('shk');setTimeout(()=>c.classList.remove('shk'),450)}
+ bump();
+}
+function pick(gid,i){
+ if(done[gid])return;done[gid]=true;answered++;
+ const m=Q[+gid.slice(1)],b=document.getElementById('o_'+gid),c=document.getElementById('c_'+gid);
+ const ok=maps[gid][i]===m.correct;
+ [...b.children].forEach((el,j)=>{el.disabled=true;el.classList.add('dn');
+  if(maps[gid][j]===m.correct)el.classList.add('ok');
+  else if(j===i)el.classList.add('no');else el.classList.add('dim')});
+ document.getElementById('e_'+gid).classList.add('show');
+ if(ok){score++;ding();confetti()}else{buzz();c.classList.add('shk');setTimeout(()=>c.classList.remove('shk'),450)}
+ bump();
+}
+function openName(){document.getElementById('nOv').classList.add('on');
+ setTimeout(()=>document.getElementById('nIn').focus(),180)}
+function showResult(){
+ const inp=document.getElementById('nIn'),er=document.getElementById('nEr'),nm=inp.value.trim();
+ if(!nm){inp.classList.add('er');er.style.display='block';setTimeout(()=>inp.classList.remove('er'),470);return}
+ er.style.display='none';document.getElementById('nOv').classList.remove('on');
+ const pct=score/TOTAL,ten=(pct*10).toFixed(2);
+ let g,msg,gif;
+ if(score===TOTAL){g='🏆 OSCAR CHO '+nm+'!';msg='Đúng TOÀN BỘ '+TOTAL+' câu của UNIT 7 — xuất sắc! 🎬';
+  gif='https://media.giphy.com/media/g9582DNuQppxC/giphy.gif';}
+ else if(pct>=.6){g='🌟 LÀM TỐT LẮM, '+nm+'!';msg='Điểm khá rồi! Đọc kỹ giải thích 4 bước ở những câu sai nhé!';
+  gif='https://media.giphy.com/media/11sBLVxNs7v6WA/giphy.gif';}
+ else{g='🎞️ CỐ LÊN NÀO, '+nm+'!';msg='Đừng buồn! Xem lại giải thích từng câu rồi làm lại nhé! 📚';
+  gif='https://media.giphy.com/media/d2lcHJTG5Tscg/giphy.gif';}
+ document.getElementById('rG').textContent=g;
+ document.getElementById('rS').textContent=score+' / '+TOTAL;
+ document.getElementById('rT').textContent='🎓 Quy đổi: '+ten+' / 10 điểm';
+ document.getElementById('rI').src=gif;
+ document.getElementById('rM').textContent=msg;
+ document.getElementById('rOv').classList.add('on');
+ if(pct>=.6){confetti();ding()}
+}
+</script>
+<script>
+/* ══ THANH NHẮC NHỞ ══ */
+const TIPS=['🧭 Xác định TRỌNG ÂM trước, rồi mới xét nguyên âm — âm tiết không nhấn gần như luôn thành /ə/.',
+ '🔁 Câu tường thuật: bỏ đảo ngữ · lùi thì · đổi đại từ · lùi trạng từ (yesterday ➜ the day before).',
+ '🔤 c và g đọc mềm khi đứng trước e · i · y: privacy /s/ · urgent /dʒ/.',
+ '📐 one of the + adj-est + Ns — so sánh nhất luôn có “the”, danh từ luôn số nhiều.',
+ '↔️ too + adj + to V = not + adj + enough + to V · No other … as X = X is the …-est.',
+ '🧲 avoid/enjoy/mind + V-ing · hesitate/offer/promise + TO V.',
+ '🗺️ Tên sông, dãy núi, rừng, biển ➜ luôn có “The”; tên quốc gia số ít, thành phố ➜ không mạo từ.',
+ '📓 Chép từ mới vào vở rồi hãy bấm “Nộp bài” nha!'];
+let tIdx=0;
+setInterval(function(){tIdx=(tIdx+1)%TIPS.length;
+ var e=document.getElementById('remTip');if(e)e.textContent=TIPS[tIdx]},7000);
+function remUpd(){
+ var left=TOTAL-answered,c=document.getElementById('remCnt');
+ if(!c)return;
+ c.textContent=left>0?('Còn '+left+' câu'):'Đã làm hết! 🎉';
+ c.classList.toggle('done',left===0);
+}
+function goUndone(){
+ for(var i=0;i<Q.length;i++){
+  if(!done['g'+i]){
+   var el=document.getElementById('c_g'+i);
+   if(el){el.scrollIntoView({behavior:'smooth',block:'center'});
+    el.classList.add('flash');setTimeout(function(){el.classList.remove('flash')},2400)}
+   return;
+  }
+ }
+ openName();
+}
+remUpd();
+</script>
+<script>
+/* ══ BẢNG NHẮN CỦA MS: luân phiên 5 lời nhắn + mở/đóng + tự chừa chỗ ══ */
+const MSG=[
+ '🌅 Chào con! Đây là phần TỰ LUẬN Unit 7 — Natural Wonders: con tự gõ trọn câu, không có A/B/C/D để đoán. Đây chính là phần rèn tay viết chắc nhất.',
+ '📚 Bảng tóm tắt lý thuyết Câu gián tiếp Ms để ngay đầu trang: ba bước đổi ngôi, lùi thì, đổi mốc thời gian. Con đọc lại một lượt rồi hãy làm, đừng làm chay.',
+ '⚠️ Câu trần thuật CÓ nêu người nghe thì dùng told + sb, đừng viết said me hay said to sb nữa. said chỉ dùng khi KHÔNG nêu người nghe.',
+ '✍️ Ms chấm điểm thông minh: có that hay không, if hay whether, travelling hay traveling, hoa hay thường, dấu câu tuỳ ý — máy vẫn nhận. Gõ phần còn lại hay cả câu đều được.',
+ '🕯️ Mỗi câu Ms viết đủ 4 bước. Con đọc cả những câu đã làm đúng — hiểu được cái bẫy mới là thứ theo con vào phòng thi.',
+ '💛 Con mở vở chép lại bảng lùi thì và các mốc thời gian giúp Ms — bạn nào chịu ghi, bạn ấy đi xa. ☎️ Đăng ký khoá học tiếng Anh chất lượng với MS Chí Nên: 0852639652.'];
+let mIdx=0;
+function msFit(){
+ var r=document.querySelector('.msnote .row');if(!r)return;
+ var h=r.offsetHeight+10;
+ var w=document.querySelector('.wrap');if(w)w.style.paddingTop=h+'px';
+ var sb=document.querySelector('.sb');if(sb)sb.style.top=(h-4)+'px';
+}
+function msToggle(){
+ var n=document.getElementById('msNote');n.classList.toggle('open');
+ document.getElementById('msBtn').textContent=n.classList.contains('open')?'▴ Thu lại':'▾ Đọc hết';
+}
+(function(){
+ var t=document.getElementById('msTxt');
+ if(t){t.textContent=MSG[0];
+  setInterval(function(){mIdx=(mIdx+1)%MSG.length;t.textContent=MSG[mIdx];msFit()},10000);}
+ msFit();window.addEventListener('resize',msFit);
+})();
+</script>
+<script>
+/* ══ Tô màu tách biệt Anh–Việt cho phần dịch (bài sắp xếp / xếp từ) ══ */
+(function(){
+ var LINE=/^\s*<b>([^<]{1,4})<\/b>\s*([\s\S]*?)\s*\u279c\s*([\s\S]*)$/;
+ var all=document.querySelectorAll('.ex-t');
+ for(var i=0;i<all.length;i++){
+  var t=all[i],h=t.innerHTML.trim();
+  if(h.indexOf('\u279c')<0&&h.indexOf(' = ')<0)continue;
+  var w=/^<span class="p-mean">([\s\S]*)<\/span>$/i.exec(h);
+  if(w)h=w[1];
+  /* 1) từng dòng "a. English ➜ Việt" */
+  if(h.indexOf('\u279c')>-1){
+   var parts=h.split(/<br\s*\/?>/i),out=[],ch=false;
+   for(var j=0;j<parts.length;j++){
+    var p=parts[j],m=p.match(LINE);
+    if(m){ch=true;
+     out.push('<div class="trp"><span class="trl">'+m[1].replace(/\.$/,'')+
+      '</span><div class="trb"><div class="tren">'+m[2]+
+      '</div><div class="trvi">'+m[3]+'</div></div></div>');
+    }else if(p.replace(/<[^>]+>/g,'').replace(/\s/g,'')){
+     out.push('<div class="ex-t2">'+p+'</div>');
+    }
+   }
+   if(ch){t.innerHTML=out.join('');continue}
+  }
+  /* 2) nghĩa từng thẻ từ: "EN <pos> = Việt · EN = Việt" */
+  if(h.indexOf(' \u00b7 ')>-1&&h.indexOf(' = ')>-1){
+   var segs=h.split(/<br\s*\/?>/i),o2=[],c2=false;
+   for(var k=0;k<segs.length;k++){
+    var s=segs[k];
+    if(s.indexOf(' \u00b7 ')>-1&&s.indexOf(' = ')>-1){
+     c2=true;
+     var head='',body=s,hm=/^([\s\S]*?<\/b>)\s*([\s\S]*)$/.exec(s);
+     if(hm){head=hm[1];body=hm[2]}
+     var items=body.split(' \u00b7 '),ren=[];
+     for(var q=0;q<items.length;q++){
+      var it=items[q],pos=it.lastIndexOf(' = ');
+      if(pos>-1){ren.push('<span class="glw">'+it.slice(0,pos)+'</span><span class="glv">'+
+        it.slice(pos+3)+'</span>')}
+      else{ren.push(it)}
+     }
+     o2.push('<div class="ex-t2">'+head+'</div><div>'+ren.join(' ')+'</div>');
+    }else if(s.replace(/<[^>]+>/g,'').replace(/\s/g,'')){o2.push('<div class="ex-t2">'+s+'</div>')}
+   }
+   if(c2)t.innerHTML=o2.join('');
+  }
+ }
+})();
+</script>
+<script>/*scnjs*/
+(function(){
+ const STOP=new Set(['the','a','an','and','or','but','so','because','although','is','are','was','were','do','does','did','you','your','he','she','they','it','we','i','my','his','her','their','our','to','of','in','on','at','for','with','what','who','where','when','why','how','which','that','this','these','those','can','will','not','very','too','also','there','have','has','had','be','me','him','them','its','am']);
+ function clean(t){return String(t).replace(/<(br|\/div|\/p)[^>]*>/gi,' ').replace(/<[^>]+>/g,'').replace(/&rsquo;|&#39;|\u2019/g,"'").replace(/&[a-z]+;/g,' ').trim()}
+ function words(m){if(!m)return[];if(m.opts&&m.opts.every(o=>/^\s*[a-z](\s*-\s*[a-z])+\s*$/i.test(String(o))))return[];let ws=[];
+  const parts=m.t==='mcq'?m.opts.map(clean):[clean(m.correct)];
+  if(parts.every(p=>p.split(/\s+/).length<=3))ws=parts;
+  else ws=clean(m.correct).toLowerCase().replace(/[^a-z' -]/g,' ').split(/\s+/).filter(w=>w.length>3&&!STOP.has(w)&&w.indexOf("'")<0).slice(0,4);
+  return [...new Set(ws.map(w=>w.toLowerCase().replace(/[^a-z' -]/g,' ').replace(/\s+/g,' ').trim()).filter(w=>w&&w.length<28&&w.split(' ').length<=3))];}
+ function cbHTML(ws){if(!ws.length)return '';return '<div class="cbw">🔊 <b>Tra từ điển Cambridge:</b> bấm vào từng từ để nghe phát âm chuẩn rồi đọc theo thật to nhé!<div class="cbl">'+
+  ws.map(w=>'<a href="https://dictionary.cambridge.org/vi/dictionary/english/'+encodeURIComponent(w.replace(/ /g,'-'))+'" target="_blank" rel="noopener">🔊 '+w+'</a>').join('')+'</div></div>';}
+ function addCB(e){if(!e||e.querySelector('.cbw'))return;const k=+String(e.id).replace('e_g','');if(isNaN(k))return;e.insertAdjacentHTML('beforeend',cbHTML(words(Q[k])))}
+ const mo=new MutationObserver(ms=>ms.forEach(m=>{const e=m.target;if(e.classList&&e.classList.contains('ex')&&e.classList.contains('show'))addCB(e)}));
+ document.querySelectorAll('.ex').forEach(e=>mo.observe(e,{attributes:true,attributeFilter:['class']}));
+ const duck=function(){try{const a=new Audio('https://hoctienganhcungcomaianulis.github.io/homework/%E1%BA%A2nh_File%20nghe/Sound/Ti%E1%BA%BFng%20V%E1%BB%8Bt%20k%C3%AAu%20meme%20mp3.mp3');a.volume=.85;a.play().catch(()=>{})}catch(e){}};
+ window.buzz=duck;try{buzz=duck}catch(x){}
+})();</script>
+<script>/*devclean*/(function(){
+var ZW=/[\u00AD\u034F\u061C\u115F\u1160\u17B4\u17B5\u180E\u200B-\u200F\u202A-\u202E\u2060-\u206F\uFEFF]/g,
+    SP=/[\u00A0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\t]/g,
+    AP=/[\u2018\u2019\u201A\u201B\u2032\u2035\u02B9\u02BB\u02BC\u02BD\u02C8\u0060\u00B4\uFF07]/g,
+    DQ=/[\u201C\u201D\u201E\u201F\u2033\u2036\u00AB\u00BB\uFF02]/g,
+    DS=/[\u2010\u2011\u2012\u2212\uFE63\uFF0D]/g;
+function clean(v){if(!v)return v;var s=String(v);try{s=s.normalize('NFKC')}catch(e){}
+  return s.replace(ZW,'').replace(SP,' ').replace(AP,"'").replace(DQ,'"').replace(DS,'-').replace(/[\u0300-\u036f]/g,'').replace(/ {2,}/g,' ');}
+window.__devclean=clean;
+function fix(skip){var L=document.querySelectorAll('input:not([type]),input[type=text],input[type=search],textarea');
+  for(var i=0;i<L.length;i++){var el=L[i];if(el===skip||el.readOnly||el.disabled)continue;var v=el.value,c=clean(v);if(c!==v)el.value=c;}}
+['pointerdown','mousedown','touchstart','click','change','focusout'].forEach(function(t){document.addEventListener(t,function(e){fix(t==='focusout'||t==='change'?null:e.target)},true)});
+document.addEventListener('keydown',function(e){if(e.key==='Enter'||e.keyCode===13)fix(null)},true);
+})();</script>
+<style>/*secres*/#ngClock{position:fixed;left:10px;bottom:10px;z-index:90;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.94);border:2px solid #C4B5FD;font-weight:800;font-size:.9rem;color:#5B21B6;box-shadow:0 4px 12px rgba(0,0,0,.12);pointer-events:none}
+.srBox{margin:10px auto 8px;max-width:420px;text-align:left}
+.srRow{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 14px;margin:5px 0;border-radius:14px;background:#FAF5FF;font-weight:700;color:#3B0764;font-size:.98rem}
+.srRow b{color:#BE185D;white-space:nowrap}.srRow.full b{color:#15803D}
+.ngTag{display:block;margin:8px auto;padding:10px 14px;border-radius:14px;background:#F5F3FF;border:2px dashed #C4B5FD;font-weight:800;color:#4C1D95;line-height:1.6;font-size:.98rem;text-align:center;max-width:420px}
+.ngTag small{font-weight:700;color:#6D28D9}</style><div id="ngClock">⏱ 00:00</div>
+<script>/*secres*/(function(){
+var C={"fn": "showResult", "name": "nIn", "anchor": "rT", "ro": 0},T0=Date.now(),TEND=0,clk=C.ro?null:document.getElementById('ngClock'),ICON=['📝','🎯','🧩','✏️','🔊','📚','💬','🔗','⭐','🎨'];
+function p2(n){return(n<10?'0':'')+n}
+function mmss(ms){var s=Math.floor(ms/1000);return p2(Math.floor(s/60))+':'+p2(s%60)}
+function dur(ms){var s=Math.floor(ms/1000),m=Math.floor(s/60);s%=60;return (m?m+' phút ':'')+s+' giây'}
+function stamp(){var d=new Date();return p2(d.getHours())+':'+p2(d.getMinutes())+' · '+p2(d.getDate())+'/'+p2(d.getMonth()+1)+'/'+d.getFullYear()}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+setInterval(function(){if(!TEND&&clk)clk.textContent='⏱ '+mmss(Date.now()-T0)},1000);
+function inModal(e){return e.closest('.ov,.modal,.mb,.npb,.modal-box,.passage,.lp,.pc,[id$="Ov"],[id$="Modal"],[id$="Res"]')}
+function heads(){
+  var hs=[].filter.call(document.querySelectorAll('h2'),function(h){return !inModal(h)&&h.textContent.trim()});
+  if(hs.length)return hs.map(function(h){var s=h.closest('.sec'),pl=s&&s.querySelector('.pill');var t=h.textContent.trim();if(t.length>46)t=t.slice(0,44)+'…';return {el:h,lab:(pl?pl.textContent.trim()+' · ':'')+t}});
+  hs=[].filter.call(document.querySelectorAll('h3'),function(h){return !inModal(h)&&/Lý thuyết trước|Bài \d+ ·/.test(h.textContent)});
+  if(hs.length)return hs.map(function(h){var t=h.textContent.trim(),m=t.match(/trước\s+(.+?)\s+—/);return {el:h,lab:m?m[1]:t.split(' — ')[0]}});
+  hs=[].filter.call(document.querySelectorAll('.sec-head,.sec'),function(h){return !inModal(h)&&h.textContent.trim()});
+  return hs.map(function(h){var x=h.querySelector('.e,.t')||h,t=((x.innerText||x.textContent).trim().split(/\n/)[0]).trim().replace(/\s+/g,' ');if(t.length>46)t=t.slice(0,44)+'…';return {el:h,lab:t}});
+}
+function rows(){
+  var Q=[].slice.call(document.querySelectorAll('.q,.qc'));if(!Q.length)Q=[].filter.call(document.querySelectorAll('.card'),function(c){return c.querySelector('.qtext,.qnum')});var H=heads(),G=[],idx={};
+  function grp(lab){if(!(lab in idx)){idx[lab]=G.length;G.push({lab:lab,c:0,t:0})}return G[idx[lab]]}
+  Q.forEach(function(q){
+    var lab='Toàn bài';
+    for(var i=H.length-1;i>=0;i--){if(H[i].el.compareDocumentPosition(q)&Node.DOCUMENT_POSITION_FOLLOWING){lab=H[i].lab;break}}
+    var g=grp(lab);g.t++;
+    var ok=(q.matches('.ok,.correct')||q.querySelector('.ok,.correct,.sgok,.okfill,.lok,.ppok'))&&!(q.matches('.no,.wrong')||q.querySelector('.no,.wrong,.sgno,.badfill,.lno,.ppno'));
+    if(ok)g.c++;
+  });
+  return G;
+}
+var KEY='att:'+decodeURIComponent(location.pathname);
+function load(){try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){return []}}
+function save(a){try{localStorage.setItem(KEY,JSON.stringify(a.slice(-20)))}catch(e){}}
+var orig=window[C.fn];if(typeof orig!=='function')return;
+window[C.fn]=function(){
+  var r=orig.apply(this,arguments);
+  try{
+    var ni=document.getElementById(C.name),nm=(ni&&ni.value||'').trim(),an=document.getElementById(C.anchor);
+    if(!nm||!an||!an.textContent.trim()||document.getElementById('srBox'))return r;
+    if(!TEND)TEND=Date.now();if(clk)clk.textContent='⏱ '+mmss(TEND-T0)+' ✔';
+    var G=rows(),tc=0,tt=0;G.forEach(function(g){tc+=g.c;tt+=g.t});
+    var box=document.createElement('div');box.id='srBox';box.className='srBox';
+    box.innerHTML=(G.length?G.map(function(g,i){return '<div class="srRow'+(g.c===g.t?' full':'')+'"><span>'+ICON[i%ICON.length]+' '+esc(g.lab)+'</span><b>'+g.c+'/'+g.t+'</b></div>'}).join(''):'')+
+      (C.ro?'':'<span class="ngTag" id="ngTag">👤 '+esc(nm)+'<br>⏱ Làm bài trong <b>'+dur(TEND-T0)+'</b><br><small>⏰ Nộp lúc '+stamp()+' · 📘 '+esc(document.title.split('|')[0].trim())+'</small></span>');
+    var blk=an;while(blk.parentElement&&getComputedStyle(blk).display.indexOf('inline')===0)blk=blk.parentElement;blk.parentNode.insertBefore(box,blk.nextSibling);
+    if(C.ro)return r;
+    var a=load();a.push({s:tc+'/'+tt,t:Date.now(),d:dur(TEND-T0)});save(a);
+    var k=a.length,prev=a.slice(Math.max(0,k-6),k-1),d=document.createElement('div');
+    d.style.cssText='display:block;margin-top:6px;padding-top:6px;border-top:2px dashed #DDD6FE';
+    d.innerHTML='🔁 <b>Lần nộp thứ '+k+'</b> trên máy này'+(prev.length?'<br><small>'+prev.map(function(x,i){var t=new Date(x.t);return 'Lần '+(k-prev.length+i)+': <b>'+x.s+'</b>'+(x.d?' · ⏱ làm trong <b>'+x.d+'</b>':'')+' · '+p2(t.getDate())+'/'+p2(t.getMonth()+1)}).join('<br>')+'</small>':'');
+    document.getElementById('ngTag').appendChild(d);
+  }catch(e){}
+  return r;
+};
+})();</script>
+<style id="ms-chi-nen-unlock-style">
+#passwordModal, #password-modal, #pwModal, #pw-modal, #pw-overlay,
+#lockModal, #passModal, #authModal, #auth-modal, #lockOverlay,
+#start-overlay, #intro-overlay, #start-screen,
+.password-modal, .lock-modal, .lock-overlay {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    z-index: -9999 !important;
+}
+</style>
+<script>
+// Remove password lock completely - direct quiz access
+(function() {
+    var initDone = false;
+    var renderCheckDone = false;
+
+    function hideEl(el, hard) {
+        if (!el) return;
+        if (hard) {
+            el.style.setProperty('display', 'none', 'important');
+            el.style.setProperty('visibility', 'hidden', 'important');
+            el.style.setProperty('opacity', '0', 'important');
+            el.style.setProperty('pointer-events', 'none', 'important');
+            el.style.setProperty('z-index', '-9999', 'important');
+        } else {
+            el.style.display = 'none';
+        }
+        el.classList.remove('active', 'show', 'open', 'visible', 'flex');
+    }
+
+    function hasRenderedQuiz() {
+        var containers = document.querySelectorAll(
+            '#quiz-container, #quizContainer, #questions-container, #questionPane, #quiz, #questions, #quiz-body, #questions-wrapper, #quiz-list, #quizList, #exercise-container, #app-container .split-container'
+        );
+        for (var i = 0; i < containers.length; i++) {
+            if (containers[i].querySelectorAll('button, input, select, textarea, .question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .question, .option-btn, .opt-btn, .ans-btn').length > 0) {
+                return true;
+            }
+        }
+        if (document.querySelectorAll('.question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .option-btn, .opt-btn, .ans-btn, .choice-btn').length > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    function ensureQuizRendered() {
+        if (renderCheckDone) return;
+        renderCheckDone = true;
+        if (hasRenderedQuiz()) return;
+
+        if (!hasRenderedQuiz() && typeof buildQuiz === 'function') { try { buildQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof initQuiz === 'function') { try { initQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderApp === 'function') { try { renderApp(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuiz === 'function') { try { renderQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuestions === 'function') { try { renderQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAllQuestions === 'function') { try { renderAllQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAll === 'function') { try { renderAll(); } catch(e){} }
+    }
+
+    function unlockNow() {
+        var pwIds = [
+            'passwordModal', 'password-modal', 'pwModal', 'pw-modal', 'pw-overlay',
+            'lockModal', 'passModal', 'authModal', 'auth-modal', 'lockOverlay',
+            'start-overlay', 'intro-overlay', 'start-screen'
+        ];
+        pwIds.forEach(function(id) {
+            hideEl(document.getElementById(id), true);
+        });
+
+        var modalEls = document.querySelectorAll('.password-modal, .lock-modal, .lock-overlay, #lockOverlay, #auth-modal');
+        modalEls.forEach(function(el) {
+            if (el.id !== 'resultModal' && el.id !== 'result-modal' && el.id !== 'scoreModal') {
+                hideEl(el, true);
+            }
+        });
+
+        ['nameModal', 'name-modal', 'nameInputModal'].forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) hideEl(el, false);
+        });
+
+        var qo = document.getElementById('quiz-overlay');
+        if (qo && (typeof isStarted === 'undefined' || !isStarted)) {
+            qo.style.display = 'none';
+        }
+
+        var mainIds = [
+            'mainContent', 'main-content', 'mainHeader', 'main-header',
+            'app-container', 'app', 'quizApp', 'quiz-wrapper', 'quizContainer', 'quiz-container', 'reading-content'
+        ];
+        mainIds.forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) {
+                el.classList.remove('hidden', 'blur', 'blurred', 'locked');
+                if (el.style.display === 'none') {
+                    el.style.removeProperty('display');
+                }
+                if (window.getComputedStyle(el).display === 'none') {
+                    var hasPane = el.querySelector('.pane, .left-pane, .right-pane, .split-container, .left-panel, .right-panel');
+                    if (id === 'main-content' || id.toLowerCase().includes('header') || el.classList.contains('main-container') || hasPane) {
+                        el.style.setProperty('display', 'flex', 'important');
+                    } else {
+                        el.style.setProperty('display', 'block', 'important');
+                    }
+                }
+            }
+        });
+
+        var qs = document.getElementById('quiz-screen');
+        if (qs) {
+            qs.classList.remove('hidden');
+            if (qs.classList.contains('flex-col')) {
+                qs.classList.add('flex');
+                qs.style.display = 'flex';
+            } else {
+                qs.style.display = 'block';
+            }
+        }
+
+        if (!initDone) {
+            initDone = true;
+
+            if (document.getElementById('start-overlay') && typeof startGame === 'function') {
+                var sn = document.getElementById('student-name') || document.getElementById('studentName');
+                if (sn && !sn.value.trim()) sn.value = 'Học sinh';
+            }
+            if (document.getElementById('name-modal') && typeof startQuiz === 'function') {
+                var sn2 = document.getElementById('student-name');
+                if (sn2 && !sn2.value.trim()) sn2.value = 'Học sinh';
+            }
+
+            if (typeof startQuiz === 'function' && (typeof isStarted === 'undefined' || !isStarted)) { try { startQuiz(); } catch(e){} }
+            if (typeof startGame === 'function') { try { startGame(); } catch(e){} }
+            if (typeof startTest === 'function') { try { startTest(); } catch(e){} }
+            if (typeof startApp === 'function') { try { startApp(); } catch(e){} }
+            if (typeof buildStarfield === 'function') { try { buildStarfield(); } catch(e){} }
+            if (typeof spawnFloats === 'function') { try { spawnFloats(); } catch(e){} }
+            if (typeof spawnFloaters === 'function') { try { spawnFloaters(); } catch(e){} }
+            if (typeof createFloatingBubbles === 'function') { try { createFloatingBubbles(); } catch(e){} }
+            if (typeof initAudio === 'function') { try { initAudio(); } catch(e){} }
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', unlockNow);
+    } else {
+        unlockNow();
+    }
+    if (document.readyState === 'complete') {
+        setTimeout(ensureQuizRendered, 150);
+    } else {
+        window.addEventListener('load', function() {
+            setTimeout(unlockNow, 20);
+            setTimeout(ensureQuizRendered, 150);
+            setTimeout(unlockNow, 300);
+            setTimeout(unlockNow, 700);
+        });
+    }
+    setTimeout(unlockNow, 50);
+    setTimeout(unlockNow, 200);
+    setTimeout(unlockNow, 600);
+    setTimeout(unlockNow, 1100);
+})();
+</script>
+</body>
+</html>

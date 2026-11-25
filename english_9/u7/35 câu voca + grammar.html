@@ -1,0 +1,1716 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyện tập Từ vựng và Câu tường thuật (Reported Speech) - MS Chí Nên</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <style>
+        :root {
+            --primary-color: #8854C0; /* Tím Pastel */
+            --secondary-color: #00C9A7; /* Xanh ngọc */
+            --accent-color: #FF9F43; /* Cam nhạt */
+            --correct-color: #00D26A; /* Xanh lá */
+            --wrong-color: #FF4757; /* Đỏ cam */
+            --text-color: #2f3542;
+            --bg-pattern: radial-gradient(#eccc68 15%, transparent 16%), radial-gradient(#7bed9f 15%, transparent 16%);
+        }
+
+        * {
+            box-sizing: border-box;
+            user-select: none; /* Tránh bôi đen text khi click nhanh */
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #f1f2f6;
+            background-image: var(--bg-pattern);
+            background-size: 60px 60px;
+            background-position: 0 0, 30px 30px;
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+            background: #fff;
+            padding: 20px 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 0 rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            border: 4px solid var(--primary-color);
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 800;
+            margin: 0;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            color: #747d8c;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+
+        /* Quiz Container */
+        #quiz-container {
+            width: 100%;
+            max-width: 800px;
+            padding-bottom: 80px; /* Space for footer */
+        }
+
+        /* Question Card */
+        .question-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border-bottom: 6px solid #dfe4ea;
+            position: relative;
+            transition: all 0.3s ease;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .q-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .q-number {
+            background: var(--primary-color);
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .q-content {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2f3542;
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+
+        /* Options Grid */
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        @media (max-width: 600px) {
+            .options-grid {
+                grid-template-columns: 1fr;
+            }
+            .q-content {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* 3D Button Styles */
+        .option-btn {
+            background: #fff;
+            border: 2px solid #a4b0be;
+            border-bottom: 5px solid #a4b0be; /* 3D effect */
+            border-radius: 15px;
+            padding: 15px 20px;
+            font-family: 'Nunito', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #57606f;
+            cursor: pointer;
+            transition: all 0.1s;
+            position: relative;
+            text-align: left;
+            display: flex;
+            align-items: center;
+        }
+
+        .option-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            border-color: var(--secondary-color);
+            border-bottom-color: var(--secondary-color);
+            color: var(--secondary-color);
+            background: #f0fffc;
+        }
+
+        .option-btn:active:not(:disabled) {
+            transform: translateY(3px);
+            border-bottom-width: 2px;
+        }
+
+        /* Correct/Wrong States */
+        .option-btn.correct {
+            background-color: #d1f7e4;
+            border-color: var(--correct-color);
+            border-bottom-color: var(--correct-color);
+            color: #009432;
+            transform: translateY(3px);
+            border-bottom-width: 2px;
+        }
+
+        .option-btn.wrong {
+            background-color: #ffdad9;
+            border-color: var(--wrong-color);
+            border-bottom-color: var(--wrong-color);
+            color: #c0392b;
+            animation: shake 0.5s;
+        }
+
+        .option-btn.disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        /* Icon indicators */
+        .status-icon {
+            margin-right: 10px;
+            font-size: 1.2rem;
+            width: 24px;
+            text-align: center;
+        }
+
+        /* Explanation Box */
+        .explanation-box {
+            margin-top: 25px;
+            background: #f8f0ff;
+            border: 2px dashed var(--primary-color);
+            border-radius: 15px;
+            padding: 20px;
+            display: none; /* Hidden by default */
+            animation: expand 0.4s ease-out;
+        }
+
+        @keyframes expand {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .exp-title {
+            color: var(--primary-color);
+            font-weight: 800;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .exp-content {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #4b4b4b;
+        }
+
+        .exp-content b {
+            color: var(--primary-color);
+        }
+
+        .exp-content p {
+            margin-bottom: 8px;
+        }
+
+        /* Animation Keyframes */
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-8px) rotate(-2deg); }
+            50% { transform: translateX(8px) rotate(2deg); }
+            75% { transform: translateX(-4px) rotate(-1deg); }
+            100% { transform: translateX(0); }
+        }
+
+        /* Footer / Submit */
+        .quiz-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.95);
+            padding: 15px;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+            z-index: 100;
+        }
+
+        .submit-btn {
+            background: var(--accent-color);
+            color: #fff;
+            border: none;
+            border-bottom: 5px solid #d35400;
+            padding: 12px 40px;
+            font-size: 1.2rem;
+            font-weight: 800;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-transform: uppercase;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            background: #ffbe76;
+        }
+
+        .submit-btn:active {
+            transform: translateY(2px);
+            border-bottom-width: 2px;
+        }
+
+        /* Popup Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(3px);
+        }
+
+        .modal-content {
+            background: #fff;
+            padding: 40px;
+            border-radius: 30px;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 5px solid var(--secondary-color);
+        }
+
+        @keyframes popIn {
+            from { transform: scale(0.5); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .score-circle {
+            width: 120px;
+            height: 120px;
+            background: var(--primary-color);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin: 0 auto 20px;
+            border: 5px solid #fff;
+            box-shadow: 0 0 0 5px var(--primary-color);
+        }
+
+        .modal-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .modal-msg {
+            font-size: 1.1rem;
+            color: #57606f;
+            margin-bottom: 30px;
+        }
+
+        .restart-btn {
+            background: var(--secondary-color);
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 30px;
+            border: none;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 201, 167, 0.4);
+        }
+
+        /* Utility for Text Highlighting */
+        u {
+            text-decoration-color: var(--primary-color);
+            text-decoration-thickness: 3px;
+            text-underline-offset: 4px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1><i class="fas fa-graduation-cap"></i> Practice Quiz</h1>
+        <div class="subtitle">Luyện tập Từ vựng và Câu tường thuật - MS Chí Nên</div>
+    </header>
+
+    <div id="quiz-container">
+        <!-- Questions will be injected here via JS -->
+    </div>
+
+    <div class="quiz-footer">
+        <button class="submit-btn" onclick="finishQuiz()">Nộp Bài <i class="fas fa-paper-plane"></i></button>
+    </div>
+
+    <!-- Modal Summary -->
+    <div class="modal-overlay" id="resultModal">
+        <div class="modal-content">
+            <div class="score-circle" id="finalScore">0/0</div>
+            <div class="modal-title">Hoàn thành xuất sắc!</div>
+            <div class="modal-msg" id="finalMsg">Bạn đã làm rất tốt. Hãy xem lại phần giải thích để hiểu sâu hơn nhé!</div>
+            <button class="restart-btn" onclick="location.reload()">Làm lại bài <i class="fas fa-redo"></i></button>
+        </div>
+    </div>
+
+    <script>
+        // === DỮ LIỆU CÂU HỎI (DATA) ===
+        // Lấy từ file input của đề bài
+        const rawData = {
+            "questions": [
+{
+"questionNumber": 1,
+"question": "26: Better _______ systems help more tourists reach remote natural wonders safely.",
+"answerOptions": [
+{
+"text": "A. transportation",
+"rationale": "**Dịch chi tiết:**\n- A. transportation (n): giao thông vận tải\n- B. decoration (n): sự trang trí\n- C. celebration (n): lễ kỷ niệm\n- D. frustration (n): sự thất vọng\n\n**Giải thích:** Câu văn nói về việc giúp du khách đến các địa điểm xa xôi, nên cần một danh từ chỉ phương tiện đi lại. \n\n**Dịch câu:** Các hệ thống giao thông tốt hơn giúp nhiều du khách đến các kỳ quan thiên nhiên xa xôi một cách an toàn.",
+"isCorrect": true
+},
+{
+"text": "B. decoration",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "C. celebration",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "D. frustration",
+"rationale": "",
+"isCorrect": false
+}
+],
+"hint": "Du khách cần phương tiện gì để di chuyển đến nơi xa?"
+},
+{
+"questionNumber": 2,
+"question": "27: Environmental _______ programs teach children about protecting natural heritage sites.",
+"answerOptions": [
+{
+"text": "A. education",
+"rationale": "**Dịch chi tiết:**\n- A. education (n): giáo dục\n- B. pollution (n): sự ô nhiễm\n- C. solution (n): giải pháp\n- D. revolution (n): cuộc cách mạng\n\n**Giải thích:** Cụm từ 'Environmental education programs' (các chương trình giáo dục môi trường) là hợp lý nhất để 'teach' (dạy) trẻ em.\n\n**Dịch câu:** Các chương trình giáo dục môi trường dạy trẻ em về việc bảo vệ các di sản thiên nhiên.",
+"isCorrect": true
+},
+{
+"text": "B. pollution",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "C. solution",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "D. revolution",
+"rationale": "",
+"isCorrect": false
+}
+],
+"hint": "Chương trình gì dùng để 'dạy' (teach) kiến thức cho trẻ em?"
+},
+{
+"questionNumber": 3,
+"question": "28: The _______ of rescue teams is crucial when hikers get lost in canyons.",
+"answerOptions": [
+{
+"text": "A. performance",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "B. appearance",
+"rationale": "**Dịch chi tiết:**\n- A. performance (n): hiệu suất, sự thực hiện\n- B. appearance (n): sự xuất hiện, diện mạo\n- C. clearance (n): sự dọn dẹp, giấy phép\n- D. insurance (n): bảo hiểm\n\n**Giải thích:** Khi ai đó bị lạc, sự 'xuất hiện' (đến nơi) của đội cứu hộ là yếu tố sống còn.\n\n**Dịch câu:** Sự xuất hiện của các đội cứu hộ là rất quan trọng khi những người đi bộ đường dài bị lạc trong các hẻm núi.",
+"isCorrect": true
+},
+{
+"text": "C. clearance",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "D. insurance",
+"rationale": "",
+"isCorrect": false
+}
+],
+"hint": "Khi bị lạc, điều gì từ đội cứu hộ là cần thiết nhất ngay lúc đó (sự có mặt)?"
+},
+{
+"questionNumber": 4,
+"question": "29: Tour guides need _______ to safely lead groups through dangerous natural areas.",
+"answerOptions": [
+{
+"text": "A. casual shopping",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "B. professional training",
+"rationale": "**Dịch chi tiết:**\n- A. casual shopping (np): mua sắm bình thường\n- B. professional training (np): đào tạo chuyên nghiệp\n- C. random guessing (np): đoán mò\n- D. careless planning (np): lên kế hoạch bất cẩn\n\n**Giải thích:** Để dẫn đoàn qua khu vực nguy hiểm ('dangerous natural areas'), hướng dẫn viên cần được 'đào tạo chuyên nghiệp'.\n\n**Dịch câu:** Hướng dẫn viên du lịch cần được đào tạo chuyên nghiệp để dẫn các nhóm đi qua các khu vực thiên nhiên nguy hiểm một cách an toàn.",
+"isCorrect": true
+},
+{
+"text": "C. random guessing",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "D. careless planning",
+"rationale": "",
+"isCorrect": false
+}
+],
+"hint": "Để đảm bảo an toàn, hướng dẫn viên cần kỹ năng gì?"
+},
+{
+"questionNumber": 5,
+"question": "30: Online booking makes it _______ for tourists to plan visits to natural parks.",
+"answerOptions": [
+{
+"text": "A. convenient",
+"rationale": "**Dịch chi tiết:**\n- A. convenient (adj): thuận tiện\n- B. ancient (adj): cổ xưa\n- C. patient (adj): kiên nhẫn\n- D. violent (adj): bạo lực\n\n**Giải thích:** Việc đặt vé trực tuyến giúp quá trình lên kế hoạch trở nên dễ dàng và 'thuận tiện' hơn.\n\n**Dịch câu:** Việc đặt chỗ trực tuyến giúp du khách lên kế hoạch tham quan các công viên thiên nhiên thuận tiện hơn.",
+"isCorrect": true
+},
+{
+"text": "B. ancient",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "C. patient",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "D. violent",
+"rationale": "",
+"isCorrect": false
+}
+],
+"hint": "Đặt vé online giúp tiết kiệm thời gian và công sức, tức là nó rất...?"
+},
+{
+"questionNumber": 6,
+"question": "31: \"Do you want to visit the Amazon rainforest?\"\nShe asked me _______ to visit the Amazon rainforest.",
+"answerOptions": [
+{
+"text": "A. if I wanted",
+"rationale": "**Dịch chi tiết:**\n- A. if I wanted: liệu tôi có muốn (đúng)\n- B. that I want: rằng tôi muốn (sai thì và từ nối)\n- C. do I want: (giữ nguyên dạng câu hỏi - sai)\n- D. whether did I want: (thừa trợ động từ did - sai)\n\n**Giải thích:** Câu hỏi Yes/No chuyển sang gián tiếp:\n1. Dùng 'if' hoặc 'whether'.\n2. Đổi ngôi (you -> I).\n3. Lùi thì (want -> wanted).\n4. Bỏ trợ động từ 'do', câu trần thuật không đảo ngữ.\n\n**Dịch câu:** Cô ấy hỏi tôi liệu tôi có muốn đến thăm rừng nhiệt đới Amazon không.",
+"isCorrect": true
+},
+{
+"text": "B. that I want",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "C. do I want",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "D. whether did I want",
+"rationale": "",
+"isCorrect": false
+}
+],
+"hint": "Câu hỏi Yes/No khi chuyển sang gián tiếp cần từ nối 'if' hoặc 'whether' và phải lùi thì."
+},
+{
+"questionNumber": 7,
+"question": "32: \"Is Mount Everest the highest mountain in the world?\"\nThe student asked the teacher _______ the highest mountain in the world at that time.",
+"answerOptions": [
+{
+"text": "A. is Mount Everest",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "B. if Mount Everest was",
+"rationale": "**Dịch chi tiết:**\n- A. is Mount Everest\n- B. if Mount Everest was\n- C. that Mount Everest is\n- D. Mount Everest was\n\n**Giải thích:**\n1. Dùng 'if' cho câu hỏi Yes/No.\n2. Chủ ngữ 'Mount Everest' + Động từ lùi thì (is -> was).\n3. Không đảo ngữ.\n\n**Dịch câu:** Học sinh hỏi giáo viên liệu đỉnh Everest có phải là ngọn núi cao nhất thế giới vào thời điểm đó không.",
+"isCorrect": true
+},
+{
+"text": "C. that Mount Everest is",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "D. Mount Everest was",
+"rationale": "",
+"isCorrect": false
+}
+],
+"hint": "Lùi thì của động từ 'is' thành 'was' và thêm từ nối cho câu hỏi Yes/No."
+},
+{
+"questionNumber": 8,
+"question": "33: \"Can tourists swim in this lake?\"\nThe visitor wanted to know _______ in that lake.",
+"answerOptions": [
+{
+"text": "A. can tourists swim",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "B. tourists can swim",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "C. whether tourists could swim",
+"rationale": "**Dịch chi tiết:**\n- A. can tourists swim\n- B. tourists can swim\n- C. whether tourists could swim\n- D. that tourists could swim\n\n**Giải thích:**\n1. Dùng 'whether'.\n2. Chủ ngữ 'tourists'.\n3. Lùi thì (can -> could).\n\n**Dịch câu:** Du khách muốn biết liệu khách du lịch có được bơi trong hồ đó không.",
+"isCorrect": true
+},
+{
+"text": "D. that tourists could swim",
+"rationale": "",
+"isCorrect": false
+}
+],
+"hint": "Chuyển 'can' thành 'could' và dùng 'whether'."
+},
+{
+"questionNumber": 9,
+"question": "34: \"Will you go to Halong Bay tomorrow?\"\nMy friend asked me _______ I would go to Halong Bay the next day.",
+"answerOptions": [
+{
+"text": "A. will I go",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "B. that",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "C. when",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "D. if",
+"rationale": "**Dịch chi tiết:**\n- A. will I go\n- B. that\n- C. when\n- D. if\n\n**Giải thích:** Câu gốc là câu hỏi Yes/No ('Will you...'), nên cần từ nối 'if'. Phần sau 'I would go...' đã được viết sẵn trong đề bài.\n\n**Dịch câu:** Bạn tôi hỏi tôi liệu tôi có đi Vịnh Hạ Long vào ngày hôm sau không.",
+"isCorrect": true
+}
+],
+"hint": "Câu hỏi Yes/No bắt đầu bằng 'Will', cần từ nối gì?"
+},
+{
+"questionNumber": 10,
+"question": "35: \"Are there any dangerous animals here?\"\nThe tourist asked the guide _______ any dangerous animals there.",
+"answerOptions": [
+{
+"text": "A. if there were",
+"rationale": "**Dịch chi tiết:**\n- A. if there were (đúng)\n- B. are there (đảo ngữ - sai)\n- C. that there were (sai từ nối)\n- D. there are (thiếu từ nối, sai thì)\n\n**Giải thích:**\n1. Dùng 'if'.\n2. Chủ ngữ giả 'there'.\n3. Lùi thì (are -> were).\n\n**Dịch câu:** Du khách hỏi hướng dẫn viên liệu có động vật nguy hiểm nào ở đó không.",
+"isCorrect": true
+},
+{
+"text": "B. are there",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "C. that there were",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "D. there are",
+"rationale": "",
+"isCorrect": false
+}
+],
+"hint": "'Are there' chuyển sang gián tiếp thành 'if there were'."
+},
+{
+"questionNumber": 11,
+"question": "36: \"Did you take photos of the waterfall yesterday?\"\nShe wanted to know _______ photos of the waterfall the day before.",
+"answerOptions": [
+{
+"text": "A. did I take",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "B. whether I had taken",
+"rationale": "**Dịch chi tiết:**\n- A. did I take\n- B. whether I had taken\n- C. that I took\n- D. I take\n\n**Giải thích:**\n1. Dùng 'whether'.\n2. Quá khứ đơn (did take) lùi thành Quá khứ hoàn thành (had taken).\n3. Đổi ngôi you -> I.\n\n**Dịch câu:** Cô ấy muốn biết liệu tôi có chụp ảnh thác nước vào ngày hôm trước không.",
+"isCorrect": true
+},
+{
+"text": "C. that I took",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "D. I take",
+"rationale": "",
+"isCorrect": false
+}
+],
+"hint": "Quá khứ đơn (Did take) lùi một thì thành Quá khứ hoàn thành."
+},
+{
+"questionNumber": 12,
+"question": "37: \"Have you ever seen the Northern Lights?\"\nHe asked me _______ the Northern Lights.",
+"answerOptions": [
+{
+"text": "A. have I ever seen",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "B. that I had ever seen",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "C. if I had ever seen",
+"rationale": "**Dịch chi tiết:**\n- A. have I ever seen\n- B. that I had ever seen\n- C. if I had ever seen\n- D. I ever saw\n\n**Giải thích:**\n1. Dùng 'if'.\n2. Hiện tại hoàn thành (Have seen) lùi thành Quá khứ hoàn thành (had seen).\n\n**Dịch câu:** Anh ấy hỏi tôi liệu tôi đã từng thấy Bắc Cực Quang chưa.",
+"isCorrect": true
+},
+{
+"text": "D. I ever saw",
+"rationale": "",
+"isCorrect": false
+}
+],
+"hint": "Hiện tại hoàn thành (Have seen) chuyển thành Quá khứ hoàn thành."
+},
+{
+"questionNumber": 13,
+"question": "38: \"Is the Grand Canyon in Arizona?\"\nThe child asked his mother _______ in Arizona then.",
+"answerOptions": [
+{
+"text": "A. the Grand Canyon is",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "B. is the Grand Canyon",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "C. that the Grand Canyon was",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "D. if the Grand Canyon was",
+"rationale": "**Dịch chi tiết:**\n- A. the Grand Canyon is\n- B. is the Grand Canyon\n- C. that the Grand Canyon was\n- D. if the Grand Canyon was\n\n**Giải thích:**\n1. Dùng 'if'.\n2. Lùi thì (is -> was).\n\n**Dịch câu:** Đứa trẻ hỏi mẹ liệu Grand Canyon có ở Arizona không.",
+"isCorrect": true
+}
+],
+"hint": "Tìm đáp án có 'if' và động từ 'is' đã lùi thì."
+},
+{
+"questionNumber": 14,
+"question": "39: \"Were you scared when climbing the mountain?\"\nThey asked him _______ scared when climbing the mountain.",
+"answerOptions": [
+{
+"text": "A. if he had been",
+"rationale": "**Dịch chi tiết:**\n- A. if he had been (đúng)\n- B. was he (đảo ngữ - sai)\n- C. that he was (sai từ nối)\n- D. he is (sai thì, thiếu từ nối)\n\n**Giải thích:**\n1. Dùng 'if'.\n2. Quá khứ đơn (Were) lùi thành Quá khứ hoàn thành (had been).\n\n**Dịch câu:** Họ hỏi anh ấy liệu anh ấy có sợ khi leo núi không.",
+"isCorrect": true
+},
+{
+"text": "B. was he",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "C. that he was",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "D. he is",
+"rationale": "",
+"isCorrect": false
+}
+],
+"hint": "Quá khứ đơn (Were) lùi thành Quá khứ hoàn thành (had been)."
+},
+{
+"questionNumber": 15,
+"question": "40: \"May I enter the national park now?\"\nThe visitor asked _______ the national park then.",
+"answerOptions": [
+{
+"text": "A. if he may enter",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "B. whether he might enter",
+"rationale": "**Dịch chi tiết:**\n- A. if he may enter\n- B. whether he might enter\n- C. that he might enter\n- D. may he enter\n\n**Giải thích:**\n1. Dùng 'whether'.\n2. Lùi thì: May -> Might.\n\n**Dịch câu:** Du khách hỏi liệu anh ấy có thể vào công viên quốc gia lúc đó không.",
+"isCorrect": true
+},
+{
+"text": "C. that he might enter",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "D. may he enter",
+"rationale": "",
+"isCorrect": false
+}
+],
+"hint": "'May' chuyển sang quá khứ là 'Might'."
+},
+{
+"questionNumber": 16,
+"question": "41: \"Do the local people speak English?\"\nWe wanted to know _______ English there.",
+"answerOptions": [
+{
+"text": "A. the local people speak",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "B. that the local people spoke",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "C. if the local people spoke",
+"rationale": "**Dịch chi tiết:**\n- A. the local people speak\n- B. that the local people spoke\n- C. if the local people spoke\n- D. do the local people speak\n\n**Giải thích:**\n1. Dùng 'if'.\n2. Lùi thì: Speak (hiện tại) -> Spoke (quá khứ).\n\n**Dịch câu:** Chúng tôi muốn biết liệu người dân địa phương có nói tiếng Anh không.",
+"isCorrect": true
+},
+{
+"text": "D. do the local people speak",
+"rationale": "",
+"isCorrect": false
+}
+],
+"hint": "Hiện tại đơn (speak) lùi thành Quá khứ đơn (spoke)."
+},
+{
+"questionNumber": 17,
+"question": "42: \"Is it safe to hike alone today?\"\nShe asked the ranger _______ to hike alone that day.",
+"answerOptions": [
+{
+"text": "A. it is safe",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "B. that it was safe",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "C. is it safe",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "D. whether it was safe",
+"rationale": "**Dịch chi tiết:**\n- A. it is safe\n- B. that it was safe\n- C. is it safe\n- D. whether it was safe\n\n**Giải thích:**\n1. Dùng 'whether'.\n2. Lùi thì: Is -> Was.\n\n**Dịch câu:** Cô ấy hỏi nhân viên kiểm lâm liệu đi bộ một mình ngày hôm đó có an toàn không.",
+"isCorrect": true
+}
+],
+"hint": "Lùi thì 'is' -> 'was' và dùng 'whether'."
+},
+{
+"questionNumber": 18,
+"question": "43: \"Can we camp near the volcano?\"\nThe tourists asked _______ near the volcano.",
+"answerOptions": [
+{
+"text": "A. if they could camp",
+"rationale": "**Dịch chi tiết:**\n- A. if they could camp (đúng)\n- B. can they camp (chưa lùi thì, thiếu từ nối)\n- C. that they could camp (sai từ nối)\n- D. they can camp (chưa lùi thì, thiếu từ nối)\n\n**Giải thích:**\n1. Dùng 'if'.\n2. Đổi ngôi: We -> They.\n3. Lùi thì: Can -> Could.\n\n**Dịch câu:** Các du khách hỏi liệu họ có được cắm trại gần núi lửa không.",
+"isCorrect": true
+},
+{
+"text": "B. can they camp",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "C. that they could camp",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "D. they can camp",
+"rationale": "",
+"isCorrect": false
+}
+],
+"hint": "'Can' chuyển thành 'Could' và đổi ngôi 'We' thành 'They'."
+},
+{
+"questionNumber": 19,
+"question": "44: \"Will the weather be good this weekend?\"\nHe wanted to know _______ good that weekend.",
+"answerOptions": [
+{
+"text": "A. will the weather be",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "B. if the weather would be",
+"rationale": "**Dịch chi tiết:**\n- A. will the weather be\n- B. if the weather would be\n- C. the weather will be\n- D. that the weather would be\n\n**Giải thích:**\n1. Dùng 'if'.\n2. Lùi thì: Will -> Would.\n\n**Dịch câu:** Anh ấy muốn biết liệu thời tiết cuối tuần đó có đẹp không.",
+"isCorrect": true
+},
+{
+"text": "C. the weather will be",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "D. that the weather would be",
+"rationale": "",
+"isCorrect": false
+}
+],
+"hint": "'Will' chuyển thành 'Would'."
+},
+{
+"questionNumber": 20,
+"question": "45: \"Have you booked the tour yet?\"\nMy parents asked me _______ the tour yet.",
+"answerOptions": [
+{
+"text": "A. have I booked",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "B. that I had booked",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "C. whether I had booked",
+"rationale": "**Dịch chi tiết:**\n- A. have I booked\n- B. that I had booked\n- C. whether I had booked\n- D. I booked\n\n**Giải thích:**\n1. Dùng 'whether'.\n2. Hiện tại hoàn thành (Have booked) lùi thành Quá khứ hoàn thành (had booked).\n\n**Dịch câu:** Bố mẹ hỏi tôi liệu tôi đã đặt tour chưa.",
+"isCorrect": true
+},
+{
+"text": "D. I booked",
+"rationale": "",
+"isCorrect": false
+}
+],
+"hint": "'Have booked' chuyển thành 'had booked'."
+},
+{
+"questionNumber": 21,
+"question": "46: \"Are you enjoying your trip?\"\nThe guide asked us _______ our trip.",
+"answerOptions": [
+{
+"text": "A. are we enjoying",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "B. that we were enjoying",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "C. we enjoy",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "D. if we were enjoying",
+"rationale": "**Dịch chi tiết:**\n- A. are we enjoying\n- B. that we were enjoying\n- C. we enjoy\n- D. if we were enjoying\n\n**Giải thích:**\n1. Dùng 'if'.\n2. Đổi ngôi: You -> We.\n3. Lùi thì: Are enjoying -> Were enjoying.\n\n**Dịch câu:** Hướng dẫn viên hỏi chúng tôi liệu chúng tôi có đang tận hưởng chuyến đi không.",
+"isCorrect": true
+}
+],
+"hint": "Hiện tại tiếp diễn (Are enjoying) lùi thành Quá khứ tiếp diễn (Were enjoying)."
+},
+{
+"questionNumber": 22,
+"question": "47: \"Did the earthquake damage the natural site?\"\nThe reporter asked _______ the natural site.",
+"answerOptions": [
+{
+"text": "A. whether the earthquake had damaged",
+"rationale": "**Dịch chi tiết:**\n- A. whether the earthquake had damaged (đúng)\n- B. did the earthquake damage (sai đảo ngữ)\n- C. the earthquake damaged (thiếu từ nối, chưa lùi thì hoàn thành)\n- D. that the earthquake damaged (sai từ nối)\n\n**Giải thích:**\n1. Dùng 'whether'.\n2. Quá khứ đơn (Did damage) lùi thành Quá khứ hoàn thành (had damaged).\n\n**Dịch câu:** Phóng viên hỏi liệu trận động đất có làm hư hại khu di tích thiên nhiên không.",
+"isCorrect": true
+},
+{
+"text": "B. did the earthquake damage",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "C. the earthquake damaged",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "D. that the earthquake damaged",
+"rationale": "",
+"isCorrect": false
+}
+],
+"hint": "Quá khứ đơn lùi về Quá khứ hoàn thành."
+},
+{
+"questionNumber": 23,
+"question": "48: \"Is there a visitor center here?\"\nThe family wanted to know _______ a visitor center there.",
+"answerOptions": [
+{
+"text": "A. is there",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "B. if there was",
+"rationale": "**Dịch chi tiết:**\n- A. is there\n- B. if there was\n- C. that there was\n- D. there is\n\n**Giải thích:**\n1. Dùng 'if'.\n2. Lùi thì: Is -> Was.\n\n**Dịch câu:** Gia đình muốn biết liệu có trung tâm du khách nào ở đó không.",
+"isCorrect": true
+},
+{
+"text": "C. that there was",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "D. there is",
+"rationale": "",
+"isCorrect": false
+}
+],
+"hint": "'Is there' chuyển thành 'if there was'."
+},
+{
+"questionNumber": 24,
+"question": "49: \"Can children participate in this activity?\"\nThe mother asked _______ in that activity.",
+"answerOptions": [
+{
+"text": "A. children can participate",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "B. that children could participate",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "C. whether children could participate",
+"rationale": "**Dịch chi tiết:**\n- A. children can participate\n- B. that children could participate\n- C. whether children could participate\n- D. can children participate\n\n**Giải thích:**\n1. Dùng 'whether'.\n2. Lùi thì: Can -> Could.\n\n**Dịch câu:** Người mẹ hỏi liệu trẻ em có được tham gia hoạt động đó không.",
+"isCorrect": true
+},
+{
+"text": "D. can children participate",
+"rationale": "",
+"isCorrect": false
+}
+],
+"hint": "'Can' chuyển thành 'Could'."
+},
+{
+"questionNumber": 25,
+"question": "50: \"Were you impressed by the coral reef?\"\nShe asked him _______ impressed by the coral reef.",
+"answerOptions": [
+{
+"text": "A. was he",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "B. that he was",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "C. he is",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "D. if he was",
+"rationale": "**Dịch chi tiết:**\n- A. was he\n- B. that he was\n- C. he is\n- D. if he was\n\n**Giải thích:**\n1. Dùng 'if'.\n2. Đổi ngôi You -> He.\n3. Lùi thì: 'Were' thường lùi thành 'had been', nhưng trong các lựa chọn được đưa ra, 'was' là phương án chấp nhận được nhất cho quá trình lùi thì đơn giản (hoặc giữ nguyên quá khứ) trong văn nói.\n\n**Dịch câu:** Cô ấy hỏi anh ấy liệu anh ấy có bị ấn tượng bởi rạn san hô không.",
+"isCorrect": true
+}
+],
+"hint": "Chọn đáp án có 'if' và động từ đã được chia ở quá khứ."
+},
+{
+"questionNumber": 26,
+"question": "51: \"Do I need special equipment for this trail?\"\nThe hiker asked _______ special equipment for that trail.",
+"answerOptions": [
+{
+"text": "A. if he needed",
+"rationale": "**Dịch chi tiết:**\n- A. if he needed (đúng)\n- B. do I need (sai ngôi, sai đảo ngữ)\n- C. that he needed (sai từ nối)\n- D. I need (sai ngôi, sai thì, thiếu từ nối)\n\n**Giải thích:**\n1. Dùng 'if'.\n2. Đổi ngôi I -> He.\n3. Lùi thì: Need -> Needed.\n\n**Dịch câu:** Người đi bộ hỏi liệu anh ấy có cần thiết bị đặc biệt cho con đường mòn đó không.",
+"isCorrect": true
+},
+{
+"text": "B. do I need",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "C. that he needed",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "D. I need",
+"rationale": "",
+"isCorrect": false
+}
+],
+"hint": "Hiện tại đơn (Need) lùi thành Quá khứ đơn (Needed)."
+},
+{
+"questionNumber": 27,
+"question": "52: \"Has the park opened this morning?\"\nWe asked the staff _______ that morning.",
+"answerOptions": [
+{
+"text": "A. has the park opened",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "B. whether the park had opened",
+"rationale": "**Dịch chi tiết:**\n- A. has the park opened\n- B. whether the park had opened\n- C. the park has opened\n- D. that the park opened\n\n**Giải thích:**\n1. Dùng 'whether'.\n2. Hiện tại hoàn thành (Has opened) lùi thành Quá khứ hoàn thành (had opened).\n\n**Dịch câu:** Chúng tôi hỏi nhân viên liệu công viên đã mở cửa sáng hôm đó chưa.",
+"isCorrect": true
+},
+{
+"text": "C. the park has opened",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "D. that the park opened",
+"rationale": "",
+"isCorrect": false
+}
+],
+"hint": "Hiện tại hoàn thành lùi về Quá khứ hoàn thành (had opened)."
+},
+{
+"questionNumber": 28,
+"question": "53: \"Will you join our conservation project?\"\nThey asked me _______ I would join their conservation project.",
+"answerOptions": [
+{
+"text": "A. will",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "B. that",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "C. if",
+"rationale": "**Dịch chi tiết:**\n- A. will\n- B. that\n- C. if\n- D. when\n\n**Giải thích:** Câu hỏi Yes/No cần từ nối 'if'. (Phần 'I would join' đã có sẵn).\n\n**Dịch câu:** Họ hỏi tôi liệu tôi có tham gia dự án bảo tồn của họ không.",
+"isCorrect": true
+},
+{
+"text": "D. when",
+"rationale": "",
+"isCorrect": false
+}
+],
+"hint": "Điền từ nối cho câu hỏi Yes/No."
+},
+{
+"questionNumber": 29,
+"question": "54: \"Is photography allowed in the cave?\"\nThe tourist wanted to know _______ in the cave at that time.",
+"answerOptions": [
+{
+"text": "A. photography is allowed",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "B. is photography allowed",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "C. that photography was allowed",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "D. whether photography was allowed",
+"rationale": "**Dịch chi tiết:**\n- A. photography is allowed\n- B. is photography allowed\n- C. that photography was allowed\n- D. whether photography was allowed\n\n**Giải thích:**\n1. Dùng 'whether'.\n2. Lùi thì: Is -> Was.\n\n**Dịch câu:** Du khách muốn biết liệu việc chụp ảnh có được phép trong hang động không.",
+"isCorrect": true
+}
+],
+"hint": "Lùi thì 'is' thành 'was' và thêm 'whether'."
+},
+{
+"questionNumber": 30,
+"question": "55: \"Did you see any wildlife yesterday?\"\nThe researcher asked us _______ any wildlife the day before.",
+"answerOptions": [
+{
+"text": "A. if we had seen",
+"rationale": "**Dịch chi tiết:**\n- A. if we had seen (đúng)\n- B. did we see (sai đảo ngữ)\n- C. that we saw (sai từ nối)\n- D. we saw (sai thì, thiếu từ nối)\n\n**Giải thích:**\n1. Dùng 'if'.\n2. Quá khứ đơn (Did see) lùi thành Quá khứ hoàn thành (had seen).\n\n**Dịch câu:** Nhà nghiên cứu hỏi chúng tôi liệu chúng tôi có nhìn thấy động vật hoang dã nào vào ngày hôm trước không.",
+"isCorrect": true
+},
+{
+"text": "B. did we see",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "C. that we saw",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "D. we saw",
+"rationale": "",
+"isCorrect": false
+}
+],
+"hint": "Quá khứ đơn (Did see) lùi thành Quá khứ hoàn thành (Had seen)."
+},
+{
+"questionNumber": 31,
+"question": "56: \"Are the trails well-marked?\"\nThe hikers asked the ranger _______ well-marked then.",
+"answerOptions": [
+{
+"text": "A. the trails are",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "B. if the trails were",
+"rationale": "**Dịch chi tiết:**\n- A. the trails are\n- B. if the trails were\n- C. that the trails were\n- D. are the trails\n\n**Giải thích:**\n1. Dùng 'if'.\n2. Lùi thì: Are -> Were.\n\n**Dịch câu:** Những người đi bộ hỏi kiểm lâm liệu các con đường mòn có được đánh dấu rõ ràng không.",
+"isCorrect": true
+},
+{
+"text": "C. that the trails were",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "D. are the trails",
+"rationale": "",
+"isCorrect": false
+}
+],
+"hint": "'Are' lùi thành 'were'."
+},
+{
+"questionNumber": 32,
+"question": "57: \"Have they finished building the bridge?\"\nShe wanted to know _______ building the bridge.",
+"answerOptions": [
+{
+"text": "A. have they finished",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "B. they have finished",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "C. whether they had finished",
+"rationale": "**Dịch chi tiết:**\n- A. have they finished\n- B. they have finished\n- C. whether they had finished\n- D. that they finished\n\n**Giải thích:**\n1. Dùng 'whether'.\n2. Hiện tại hoàn thành (Have finished) lùi thành Quá khứ hoàn thành (had finished).\n\n**Dịch câu:** Cô ấy muốn biết liệu họ đã xây xong cây cầu chưa.",
+"isCorrect": true
+},
+{
+"text": "D. that they finished",
+"rationale": "",
+"isCorrect": false
+}
+],
+"hint": "Hiện tại hoàn thành (Have finished) lùi về Quá khứ hoàn thành."
+},
+{
+"questionNumber": 33,
+"question": "58: \"Can we see dolphins from here?\"\nThe children asked their teacher _______ dolphins from there.",
+"answerOptions": [
+{
+"text": "A. can we see",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "B. we can see",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "C. that they could see",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "D. if they could see",
+"rationale": "**Dịch chi tiết:**\n- A. can we see\n- B. we can see\n- C. that they could see\n- D. if they could see\n\n**Giải thích:**\n1. Dùng 'if'.\n2. Đổi ngôi We -> They.\n3. Lùi thì: Can -> Could.\n\n**Dịch câu:** Lũ trẻ hỏi giáo viên liệu chúng có thể nhìn thấy cá heo từ đó không.",
+"isCorrect": true
+}
+],
+"hint": "'Can' chuyển thành 'could' và đổi ngôi."
+},
+{
+"questionNumber": 34,
+"question": "59: \"Was the volcano active last year?\"\nThe scientist asked _______ active the previous year.",
+"answerOptions": [
+{
+"text": "A. whether the volcano had been",
+"rationale": "**Dịch chi tiết:**\n- A. whether the volcano had been (đúng)\n- B. was the volcano (sai đảo ngữ)\n- C. the volcano was (thiếu từ nối, chưa lùi thì hoàn thành)\n- D. that the volcano was (sai từ nối)\n\n**Giải thích:**\n1. Dùng 'whether'.\n2. Quá khứ đơn (Was) lùi thành Quá khứ hoàn thành (had been).\n\n**Dịch câu:** Nhà khoa học hỏi liệu ngọn núi lửa có hoạt động vào năm trước đó không.",
+"isCorrect": true
+},
+{
+"text": "B. was the volcano",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "C. the volcano was",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "D. that the volcano was",
+"rationale": "",
+"isCorrect": false
+}
+],
+"hint": "Quá khứ đơn (Was) lùi thành Quá khứ hoàn thành (had been)."
+},
+{
+"questionNumber": 35,
+"question": "60: \"Do you know the history of this place?\"\nThe guide asked me _______ the history of that place.",
+"answerOptions": [
+{
+"text": "A. do I know",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "B. if I knew",
+"rationale": "**Dịch chi tiết:**\n- A. do I know\n- B. if I knew\n- C. that I knew\n- D. I know\n\n**Giải thích:**\n1. Dùng 'if'.\n2. Lùi thì: Know -> Knew.\n\n**Dịch câu:** Hướng dẫn viên hỏi tôi liệu tôi có biết lịch sử của nơi đó không.",
+"isCorrect": true
+},
+{
+"text": "C. that I knew",
+"rationale": "",
+"isCorrect": false
+},
+{
+"text": "D. I know",
+"rationale": "",
+"isCorrect": false
+}
+],
+"hint": "Hiện tại đơn (Know) lùi thành Quá khứ đơn (Knew)."
+}
+]
+        };
+
+        let currentQuestions = [];
+        let score = 0;
+        let answeredCount = 0;
+
+        // Âm thanh Base64 (Giữ file đơn giản, không cần load ngoài)
+        const sndCorrect = new Audio("data:audio/wav;base64,UklGRi4AAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQAAAAA="); // Placeholder, will replace with Tone logic or simple Beep URL if needed, but for now using Confetti + CSS Shake visual feedback is safer for single file without large blobs. Let's use simple AudioContext for "Ding" and "Buzz".
+
+        // Web Audio API for simple sounds
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        
+        function playSound(type) {
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            if (type === 'correct') {
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(500, audioCtx.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(1000, audioCtx.currentTime + 0.1);
+                gain.gain.setValueAtTime(0.3, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.5);
+                osc.start();
+                osc.stop(audioCtx.currentTime + 0.5);
+            } else {
+                osc.type = 'sawtooth';
+                osc.frequency.setValueAtTime(200, audioCtx.currentTime);
+                osc.frequency.linearRampToValueAtTime(100, audioCtx.currentTime + 0.3);
+                gain.gain.setValueAtTime(0.3, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.3);
+                osc.start();
+                osc.stop(audioCtx.currentTime + 0.3);
+            }
+        }
+
+
+        // === KHỞI TẠO BÀI THI ===
+        function initQuiz() {
+            // Shuffle questions
+            currentQuestions = shuffleArray([...rawData.questions]);
+            renderQuestions();
+        }
+
+        // Shuffle function (Fisher-Yates)
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        // Render Questions
+        function renderQuestions() {
+            const container = document.getElementById('quiz-container');
+            container.innerHTML = '';
+
+            currentQuestions.forEach((q, index) => {
+                const card = document.createElement('div');
+                card.className = 'question-card';
+                card.id = `q-card-${index}`;
+
+                // Header & Question Text
+                let html = `
+                    <div class="q-header">
+                        <span class="q-number">Question ${index + 1}</span>
+                    </div>
+                    <div class="q-content">${q.question.replace(/\n/g, '<br>')}</div>
+                `;
+
+                // Options Grid
+                html += `<div class="options-grid">`;
+                
+                // Trộn đáp án nếu muốn, ở đây giữ nguyên thứ tự ABCD để dễ theo dõi giải thích
+                // Nhưng theo yêu cầu Gamification có thể trộn, tuy nhiên dữ liệu giải thích đang gắn chặt text "A. B. C. D."
+                // Nên ta sẽ giữ nguyên thứ tự hiển thị ABCD, nhưng logic check vẫn đúng.
+                
+                q.answerOptions.forEach((opt, i) => {
+                    html += `
+                        <button class="option-btn" onclick="checkAnswer(${index}, ${i}, this, ${opt.isCorrect})">
+                            <span class="status-icon"><i class="far fa-circle"></i></span>
+                            ${opt.text}
+                        </button>
+                    `;
+                });
+                html += `</div>`;
+
+                // Explanation Box (Hidden initially)
+                // Tìm đáp án đúng để lấy rationale chung hoặc ghép rationale
+                // Trong dữ liệu, rationale nằm rải rác. Ta sẽ lấy rationale từ đáp án ĐÚNG (vì nó chứa full giải thích)
+                const correctOpt = q.answerOptions.find(o => o.isCorrect);
+                const explanationText = correctOpt ? correctOpt.rationale : "Chưa có giải thích chi tiết.";
+                
+                // Format Markdown to HTML
+                const formattedExp = formatMarkdown(explanationText);
+
+                html += `
+                    <div class="explanation-box" id="exp-${index}">
+                        <div class="exp-title"><i class="fas fa-lightbulb"></i> MS Chí Nên giải thích chi tiết:</div>
+                        <div class="exp-content">${formattedExp}</div>
+                    </div>
+                `;
+
+                card.innerHTML = html;
+                container.appendChild(card);
+            });
+        }
+
+        function formatMarkdown(text) {
+            if (!text) return "";
+            return text
+                .replace(/\*\*(.*?)\*\*/g, '<b>$1</b>') // Bold
+                .replace(/\n/g, '<br>') // Newline
+                .replace(/- /g, '• '); // Bullet points
+        }
+
+        // === XỬ LÝ TRẢ LỜI ===
+        function checkAnswer(qIndex, optIndex, btnElement, isCorrect) {
+            const card = document.getElementById(`q-card-${qIndex}`);
+            // Prevent re-answering
+            if (card.classList.contains('answered')) return;
+            card.classList.add('answered');
+
+            const icon = btnElement.querySelector('.status-icon');
+            const allBtns = card.querySelectorAll('.option-btn');
+
+            if (isCorrect) {
+                // Xử lý ĐÚNG
+                score++;
+                btnElement.classList.add('correct');
+                icon.innerHTML = '<i class="fas fa-check-circle"></i>';
+                playSound('correct');
+                
+                // Pháo giấy
+                confetti({
+                    particleCount: 100,
+                    spread: 70,
+                    origin: { y: 0.6 },
+                    colors: ['#00D26A', '#8854C0', '#FF9F43']
+                });
+            } else {
+                // Xử lý SAI
+                btnElement.classList.add('wrong');
+                icon.innerHTML = '<i class="fas fa-times-circle"></i>';
+                playSound('wrong');
+
+                // Highlight đáp án đúng
+                const correctBtnIndex = currentQuestions[qIndex].answerOptions.findIndex(o => o.isCorrect);
+                if (correctBtnIndex !== -1) {
+                    const correctBtn = allBtns[correctBtnIndex];
+                    correctBtn.classList.add('correct');
+                    correctBtn.querySelector('.status-icon').innerHTML = '<i class="fas fa-check-circle"></i>';
+                }
+            }
+
+            // Disable all buttons
+            allBtns.forEach(btn => btn.classList.add('disabled'));
+
+            // Show Explanation
+            const expBox = document.getElementById(`exp-${qIndex}`);
+            expBox.style.display = 'block';
+
+            answeredCount++;
+        }
+
+        // === NỘP BÀI ===
+        function finishQuiz() {
+            const total = currentQuestions.length;
+            const modal = document.getElementById('resultModal');
+            const scoreEl = document.getElementById('finalScore');
+            const msgEl = document.getElementById('finalMsg');
+
+            scoreEl.innerText = `${score}/${total}`;
+
+            const percent = (score / total) * 100;
+            if (percent === 100) {
+                msgEl.innerText = "Tuyệt vời! Em là thiên tài tiếng Anh! 🌟";
+                confetti({ particleCount: 200, spread: 100 });
+            } else if (percent >= 80) {
+                msgEl.innerText = "Giỏi lắm! Chỉ còn sai sót nhỏ thôi. 💪";
+            } else if (percent >= 50) {
+                msgEl.innerText = "Khá tốt! Hãy ôn lại các từ vựng đã sai nhé. 📚";
+            } else {
+                msgEl.innerText = "Cố lên nhé! Hãy đọc kỹ phần giải thích của MS Chí Nên. 🔥";
+            }
+
+            modal.style.display = 'flex';
+        }
+
+        // Start
+        initQuiz();
+
+    </script>
+<style id="ms-chi-nen-unlock-style">
+#passwordModal, #password-modal, #pwModal, #pw-modal, #pw-overlay,
+#lockModal, #passModal, #authModal, #auth-modal, #lockOverlay,
+#start-overlay, #intro-overlay, #start-screen,
+.password-modal, .lock-modal, .lock-overlay {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    z-index: -9999 !important;
+}
+</style>
+<script>
+// Remove password lock completely - direct quiz access
+(function() {
+    var initDone = false;
+    var renderCheckDone = false;
+
+    function hideEl(el, hard) {
+        if (!el) return;
+        if (hard) {
+            el.style.setProperty('display', 'none', 'important');
+            el.style.setProperty('visibility', 'hidden', 'important');
+            el.style.setProperty('opacity', '0', 'important');
+            el.style.setProperty('pointer-events', 'none', 'important');
+            el.style.setProperty('z-index', '-9999', 'important');
+        } else {
+            el.style.display = 'none';
+        }
+        el.classList.remove('active', 'show', 'open', 'visible', 'flex');
+    }
+
+    function hasRenderedQuiz() {
+        var containers = document.querySelectorAll(
+            '#quiz-container, #quizContainer, #questions-container, #questionPane, #quiz, #questions, #quiz-body, #questions-wrapper, #quiz-list, #quizList, #exercise-container, #app-container .split-container'
+        );
+        for (var i = 0; i < containers.length; i++) {
+            if (containers[i].querySelectorAll('button, input, select, textarea, .question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .question, .option-btn, .opt-btn, .ans-btn').length > 0) {
+                return true;
+            }
+        }
+        if (document.querySelectorAll('.question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .option-btn, .opt-btn, .ans-btn, .choice-btn').length > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    function ensureQuizRendered() {
+        if (renderCheckDone) return;
+        renderCheckDone = true;
+        if (hasRenderedQuiz()) return;
+
+        if (!hasRenderedQuiz() && typeof buildQuiz === 'function') { try { buildQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof initQuiz === 'function') { try { initQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderApp === 'function') { try { renderApp(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuiz === 'function') { try { renderQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuestions === 'function') { try { renderQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAllQuestions === 'function') { try { renderAllQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAll === 'function') { try { renderAll(); } catch(e){} }
+    }
+
+    function unlockNow() {
+        var pwIds = [
+            'passwordModal', 'password-modal', 'pwModal', 'pw-modal', 'pw-overlay',
+            'lockModal', 'passModal', 'authModal', 'auth-modal', 'lockOverlay',
+            'start-overlay', 'intro-overlay', 'start-screen'
+        ];
+        pwIds.forEach(function(id) {
+            hideEl(document.getElementById(id), true);
+        });
+
+        var modalEls = document.querySelectorAll('.password-modal, .lock-modal, .lock-overlay, #lockOverlay, #auth-modal');
+        modalEls.forEach(function(el) {
+            if (el.id !== 'resultModal' && el.id !== 'result-modal' && el.id !== 'scoreModal') {
+                hideEl(el, true);
+            }
+        });
+
+        ['nameModal', 'name-modal', 'nameInputModal'].forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) hideEl(el, false);
+        });
+
+        var qo = document.getElementById('quiz-overlay');
+        if (qo && (typeof isStarted === 'undefined' || !isStarted)) {
+            qo.style.display = 'none';
+        }
+
+        var mainIds = [
+            'mainContent', 'main-content', 'mainHeader', 'main-header',
+            'app-container', 'app', 'quizApp', 'quiz-wrapper', 'quizContainer', 'quiz-container', 'reading-content'
+        ];
+        mainIds.forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) {
+                el.classList.remove('hidden', 'blur', 'blurred', 'locked');
+                if (el.style.display === 'none') {
+                    el.style.removeProperty('display');
+                }
+                if (window.getComputedStyle(el).display === 'none') {
+                    var hasPane = el.querySelector('.pane, .left-pane, .right-pane, .split-container, .left-panel, .right-panel');
+                    if (id === 'main-content' || id.toLowerCase().includes('header') || el.classList.contains('main-container') || hasPane) {
+                        el.style.setProperty('display', 'flex', 'important');
+                    } else {
+                        el.style.setProperty('display', 'block', 'important');
+                    }
+                }
+            }
+        });
+
+        var qs = document.getElementById('quiz-screen');
+        if (qs) {
+            qs.classList.remove('hidden');
+            if (qs.classList.contains('flex-col')) {
+                qs.classList.add('flex');
+                qs.style.display = 'flex';
+            } else {
+                qs.style.display = 'block';
+            }
+        }
+
+        if (!initDone) {
+            initDone = true;
+
+            if (document.getElementById('start-overlay') && typeof startGame === 'function') {
+                var sn = document.getElementById('student-name') || document.getElementById('studentName');
+                if (sn && !sn.value.trim()) sn.value = 'Học sinh';
+            }
+            if (document.getElementById('name-modal') && typeof startQuiz === 'function') {
+                var sn2 = document.getElementById('student-name');
+                if (sn2 && !sn2.value.trim()) sn2.value = 'Học sinh';
+            }
+
+            if (typeof startQuiz === 'function' && (typeof isStarted === 'undefined' || !isStarted)) { try { startQuiz(); } catch(e){} }
+            if (typeof startGame === 'function') { try { startGame(); } catch(e){} }
+            if (typeof startTest === 'function') { try { startTest(); } catch(e){} }
+            if (typeof startApp === 'function') { try { startApp(); } catch(e){} }
+            if (typeof buildStarfield === 'function') { try { buildStarfield(); } catch(e){} }
+            if (typeof spawnFloats === 'function') { try { spawnFloats(); } catch(e){} }
+            if (typeof spawnFloaters === 'function') { try { spawnFloaters(); } catch(e){} }
+            if (typeof createFloatingBubbles === 'function') { try { createFloatingBubbles(); } catch(e){} }
+            if (typeof initAudio === 'function') { try { initAudio(); } catch(e){} }
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', unlockNow);
+    } else {
+        unlockNow();
+    }
+    if (document.readyState === 'complete') {
+        setTimeout(ensureQuizRendered, 150);
+    } else {
+        window.addEventListener('load', function() {
+            setTimeout(unlockNow, 20);
+            setTimeout(ensureQuizRendered, 150);
+            setTimeout(unlockNow, 300);
+            setTimeout(unlockNow, 700);
+        });
+    }
+    setTimeout(unlockNow, 50);
+    setTimeout(unlockNow, 200);
+    setTimeout(unlockNow, 600);
+    setTimeout(unlockNow, 1100);
+})();
+</script>
+</body>
+</html>

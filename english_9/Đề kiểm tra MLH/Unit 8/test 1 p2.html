@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Test 1 — Reading | Unit 8: Tourism — English 9 MLH | MS Chí Nên</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --velvet:#150e26; --velvet2:#221639; --velvet3:#33214f;
+  --gold:#ffc46b; --gold2:#ff5f9e; --amber:#ffe7c2;
+  --ink:#f7f2ff; --ink-dim:#bcaed4;
+  --ok:#5fd38d; --no:#ff6f7d;
+  --disp:'Syne',sans-serif; --ser:'Plus Jakarta Sans',sans-serif; --body:'Be Vietnam Pro',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:var(--body);color:var(--ink);min-height:100vh;overflow-x:hidden;
+  background:linear-gradient(125deg,#120c20,#2b1440,#5c1c52,#1b2a5e,#120c20);
+  background-size:400% 400%;animation:bg 26s ease infinite;
+}
+@keyframes bg{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+/* rèm nhung dọc */
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.85;
+  background:radial-gradient(closest-side circle at 18% 22%,rgba(255,95,158,.5),transparent),
+             radial-gradient(closest-side circle at 78% 16%,rgba(255,196,107,.42),transparent),
+             radial-gradient(closest-side circle at 66% 72%,rgba(126,90,255,.45),transparent),
+             radial-gradient(closest-side circle at 24% 84%,rgba(64,208,220,.35),transparent),
+             url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='0.09'/%3E%3C/svg%3E");
+  background-size:120% 120%,110% 110%,130% 130%,115% 115%,140px 140px;
+  filter:blur(38px) saturate(1.15);animation:mesh 22s ease-in-out infinite alternate}
+@keyframes mesh{0%{background-position:0% 0%,100% 0%,60% 100%,0% 100%,0 0}
+                100%{background-position:20% 12%,74% 18%,44% 82%,18% 88%,0 0}}
+/* emoji bay */
+.fl{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.f{position:absolute;bottom:-10%;opacity:.16;animation:up linear infinite}
+@keyframes up{0%{transform:translateY(0) rotate(0);opacity:0}12%{opacity:.2}100%{transform:translateY(-118vh) rotate(340deg);opacity:0}}
+
+header{position:relative;z-index:2;padding:20px 34px;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;
+  background:linear-gradient(180deg,rgba(61,15,28,.94),rgba(42,10,18,.86));
+  border-bottom:3px solid var(--gold2);box-shadow:0 8px 30px rgba(0,0,0,.5)}
+/* dãy bóng đèn marquee */
+header::after{content:'';position:absolute;left:0;right:0;bottom:-4px;height:4px;
+  background:linear-gradient(90deg,transparent,var(--gold2),var(--gold),#7e5aff,var(--gold2),transparent);
+  background-size:240% 100%;animation:blink 7s linear infinite;
+  box-shadow:0 0 20px rgba(255,95,158,.7)}
+@keyframes blink{0%{background-position:0 0}100%{background-position:240% 0}}
+.tag{font-family:var(--disp);font-size:.86rem;letter-spacing:.22em;color:var(--gold);margin-bottom:5px}
+header h1{font-family:var(--ser);font-weight:800;letter-spacing:-.01em;font-size:1.42rem;line-height:1.3;color:var(--amber);text-shadow:0 3px 12px rgba(0,0,0,.6)}
+.sub{font-size:.74rem;color:var(--ink-dim);margin-top:7px;font-weight:500;letter-spacing:.02em}
+.gauge{display:flex;align-items:center;gap:12px;background:rgba(0,0,0,.4);border:2px solid var(--gold2);border-radius:12px;padding:9px 18px}
+.gauge .num{font-family:var(--disp);font-size:1.9rem;letter-spacing:2px;color:var(--gold);line-height:1}
+.gauge .lbl{font-family:var(--disp);font-size:.72rem;letter-spacing:.2em;color:var(--ink-dim)}
+
+.main{position:relative;z-index:2;display:flex;gap:22px;padding:26px 30px 46px;align-items:flex-start}
+.lp,.rp{flex:1 1 50%;max-height:calc(100vh - 128px);overflow-y:auto;padding-right:8px}
+.lp::-webkit-scrollbar,.rp::-webkit-scrollbar{width:9px}
+.lp::-webkit-scrollbar-thumb,.rp::-webkit-scrollbar-thumb{background:var(--gold2);border-radius:6px}
+.lp::-webkit-scrollbar-track,.rp::-webkit-scrollbar-track{background:rgba(0,0,0,.3)}
+.slbl{font-family:var(--disp);font-size:1.05rem;letter-spacing:.2em;color:var(--gold);margin-bottom:13px;padding-bottom:7px;border-bottom:2px dashed var(--gold2)}
+
+/* thẻ đoạn văn = khung phim */
+.pc{position:relative;background:rgba(255,240,220,.07);backdrop-filter:blur(9px);
+  border:1.5px solid rgba(242,196,107,.35);border-left:6px solid var(--gold);border-radius:12px;
+  padding:16px 18px 15px 22px;margin-bottom:15px;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.plbl{font-family:var(--disp);font-size:.9rem;letter-spacing:.16em;color:var(--gold);margin-bottom:9px}
+.pt{font-size:1.03rem;line-height:1.95;color:var(--ink)}
+.wbox{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 12px}
+.wbox b{font-size:.9rem;background:rgba(242,196,107,.16);border:1.5px dashed var(--gold);color:var(--amber);
+  padding:5px 13px;border-radius:20px;font-weight:700}
+.blk{display:inline-block;min-width:40px;text-align:center;font-weight:800;color:var(--velvet);
+  background:var(--gold);border-radius:5px;padding:1px 9px;margin:0 3px}
+.btr{margin-top:11px;font-family:var(--body);font-size:.78rem;font-weight:700;background:transparent;
+  border:2px solid var(--gold2);color:var(--gold);padding:7px 17px;border-radius:22px;cursor:pointer;transition:.2s}
+.btr:hover{background:var(--gold);color:var(--velvet)}
+.tv{display:none;margin-top:10px;font-size:.95rem;line-height:1.9;color:var(--amber);
+  background:rgba(0,0,0,.32);border-left:4px solid var(--gold2);border-radius:0 9px 9px 0;padding:11px 14px}
+.tv.open{display:block;animation:fade .3s ease}
+@keyframes fade{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+
+/* glossary */
+.gw{background:rgba(255,240,220,.07);backdrop-filter:blur(9px);border:1.5px solid rgba(242,196,107,.35);
+  border-radius:12px;padding:16px 18px;margin-bottom:18px}
+.gt2{font-family:var(--disp);font-size:1rem;letter-spacing:.16em;color:var(--gold);margin-bottom:11px}
+.gtb{width:100%;border-collapse:collapse;font-size:.9rem}
+.gtb th{background:var(--gold2);color:#2a0a12;font-weight:800;padding:8px 10px;text-align:left;font-size:.84rem}
+.gtb td{border-bottom:1px solid rgba(242,196,107,.22);padding:7px 10px;vertical-align:top}
+.gtb .w{color:var(--amber);font-weight:700}
+.gtb .pos{color:var(--gold);font-style:italic;white-space:nowrap}
+
+/* câu hỏi */
+.qc{background:rgba(255,240,220,.07);backdrop-filter:blur(9px);border:1.5px solid rgba(242,196,107,.3);
+  border-radius:12px;padding:16px 18px;margin-bottom:15px;box-shadow:0 8px 24px rgba(0,0,0,.32)}
+.qn{font-family:var(--disp);font-size:.86rem;letter-spacing:.16em;color:var(--gold);margin-bottom:8px}
+.qt{font-size:1.06rem;line-height:1.85;font-weight:600;margin-bottom:13px}
+.opts{display:grid;grid-template-columns:1fr;gap:9px}
+.opt{font-family:var(--body);font-size:.98rem;font-weight:600;text-align:left;line-height:1.6;
+  background:rgba(0,0,0,.3);border:2px solid rgba(242,196,107,.35);color:var(--ink);
+  padding:11px 16px;border-radius:10px;cursor:pointer;transition:.18s}
+.opt:hover:not(:disabled){border-color:var(--gold);background:rgba(242,196,107,.15);transform:translateX(4px)}
+.opt:disabled{cursor:default}
+.opt.correct{background:rgba(95,211,141,.24);border-color:var(--ok);color:#d7ffe8}
+.opt.wrong{background:rgba(255,111,125,.22);border-color:var(--no);color:#ffdfe3;animation:shk .45s}
+@keyframes shk{10%,90%{transform:translateX(-2px)}20%,80%{transform:translateX(4px)}30%,50%,70%{transform:translateX(-7px)}40%,60%{transform:translateX(7px)}}
+
+.expl{display:none;margin-top:13px}
+.expl.open{display:block;animation:fade .35s ease}
+.expl h4{font-family:var(--disp);font-size:.95rem;letter-spacing:.14em;color:var(--gold);margin-bottom:10px}
+.estep{background:rgba(0,0,0,.3);border-left:5px solid var(--gold2);border-radius:0 9px 9px 0;
+  padding:11px 14px;margin-bottom:9px;font-size:.94rem;line-height:1.9}
+.estep:nth-child(2){border-left-color:#7fb4ff}
+.estep:nth-child(3){border-left-color:#c58cff}
+.estep:nth-child(4){border-left-color:var(--ok)}
+.estep:nth-child(5){border-left-color:var(--no)}
+.estep:nth-child(6){border-left-color:var(--amber)}
+.elbl{font-family:var(--disp);font-size:.84rem;letter-spacing:.14em;color:var(--amber);margin-bottom:6px}
+.p-word{color:#8fd3ff;font-weight:700}
+.p-phonetic{color:#b9a6ff;font-style:italic}
+.p-mean{color:#ffd98a;font-weight:600}
+.p-grammar{color:#ff9ecb;font-weight:700}
+.hl-green{color:var(--ok);font-weight:800}
+.hl-red{color:var(--no);font-weight:800}
+
+.sw{text-align:center;margin:22px 0 8px}
+.bsub{font-family:var(--disp);font-size:1.12rem;letter-spacing:.14em;
+  background:linear-gradient(135deg,var(--gold),var(--gold2));color:#2a0a12;border:none;
+  padding:15px 34px;border-radius:30px;cursor:pointer;box-shadow:0 8px 26px rgba(242,196,107,.35);transition:.2s}
+.bsub:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(242,196,107,.5)}
+
+/* modals */
+.ov{display:none;position:fixed;inset:0;z-index:100;background:rgba(20,4,9,.88);backdrop-filter:blur(6px);
+  align-items:center;justify-content:center;padding:16px}
+.ov.open{display:flex}
+.mb{background:linear-gradient(160deg,var(--velvet3),var(--velvet));border:3px solid var(--gold);
+  border-radius:16px;padding:26px 28px;max-width:455px;width:100%;text-align:center;animation:pop .3s ease;
+  box-shadow:0 20px 50px rgba(0,0,0,.6)}
+@keyframes pop{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
+.mb h2{font-family:var(--disp);font-size:1.3rem;letter-spacing:.14em;color:var(--gold);margin-bottom:14px}
+.mb input{width:100%;font-family:var(--body);font-size:.92rem;font-weight:600;padding:11px 14px;
+  background:rgba(0,0,0,.4);border:2px solid var(--gold2);border-radius:22px;color:var(--ink);
+  text-align:center;outline:none;margin-bottom:9px}
+.mb input:focus{border-color:var(--gold)}
+.err{color:var(--no);font-size:.72rem;font-weight:800;margin-bottom:8px;display:none}
+.err.show{display:block}
+.bok{font-family:var(--disp);font-size:1rem;letter-spacing:.12em;background:var(--gold);color:#2a0a12;
+  border:none;padding:11px 28px;border-radius:22px;cursor:pointer}
+.rname{font-size:.74rem;color:var(--ink-dim);font-weight:600;margin-bottom:5px}
+.rscore{font-family:var(--disp);font-size:2.9rem;letter-spacing:2px;color:var(--gold);line-height:1;margin:6px 0}
+.rs10{font-family:var(--disp);font-size:1.15rem;letter-spacing:1px;color:var(--ok);margin-bottom:8px}
+.rgif{width:180px;margin:10px auto;display:block;border:3px solid var(--gold2);border-radius:9px}
+.rcmt{font-size:.86rem;line-height:1.75;background:rgba(0,0,0,.32);border:2px dashed var(--gold2);
+  border-radius:9px;padding:11px 14px;margin:12px 0}
+.bcl{font-family:var(--body);font-size:.74rem;font-weight:800;background:transparent;border:2px solid var(--gold2);
+  color:var(--gold);padding:9px 24px;border-radius:22px;cursor:pointer}
+.cn{position:fixed;top:-16px;z-index:200;pointer-events:none;animation:cf 2.4s forwards}
+@keyframes cf{0%{transform:translateY(0) rotate(0);opacity:1}100%{transform:translateY(108vh) rotate(700deg);opacity:0}}
+@media(max-width:900px){.main{flex-direction:column;padding:0 18px 42px}.lp{flex:1 1 auto;width:100%}.lp,.rp{max-height:none}}
+</style>
+</head>
+<body>
+<style>
+:root{--nbh:52px}
+body{padding-top:var(--nbh)}
+.nbar{position:fixed;top:0;left:0;right:0;z-index:150;min-height:var(--nbh);
+  display:flex;align-items:center;gap:11px;padding:6px 14px;
+  background:linear-gradient(90deg,#ff1f4b,#ff7a00,#ffd400,#22c55e,#ff7a00,#ff1f4b);
+  background-size:400% 100%;animation:nbslide 11s linear infinite;
+  border-bottom:3px solid #fff;box-shadow:0 5px 22px rgba(0,0,0,.5)}
+@keyframes nbslide{0%{background-position:0 0}100%{background-position:400% 0}}
+.nbar .pin{font-size:1.25rem;flex:0 0 auto;animation:nbpulse 1.1s ease-in-out infinite;
+  filter:drop-shadow(0 2px 3px rgba(0,0,0,.4))}
+@keyframes nbpulse{0%,100%{transform:scale(1) rotate(0)}50%{transform:scale(1.3) rotate(-14deg)}}
+.nbtxt{flex:1 1 auto;min-width:0;font-family:'Be Vietnam Pro',sans-serif;font-size:.83rem;font-weight:800;
+  line-height:1.35;color:#170600;text-shadow:0 1px 0 rgba(255,255,255,.5);
+  animation:nbfade .5s ease}
+@keyframes nbfade{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+.nbtg{flex:0 0 auto;font-family:'Be Vietnam Pro',sans-serif;font-size:.7rem;font-weight:800;
+  background:#170600;color:#ffd400;border:2px solid #fff;border-radius:20px;
+  padding:6px 13px;cursor:pointer;white-space:nowrap}
+.nbtg:hover{background:#fff;color:#c40024}
+.nfull{display:none;position:fixed;top:var(--nbh);left:0;right:0;z-index:149;
+  max-height:52vh;overflow-y:auto;padding:13px 18px;
+  background:rgba(12,6,2,.96);backdrop-filter:blur(9px);border-bottom:3px solid #ffd400;
+  box-shadow:0 12px 30px rgba(0,0,0,.55)}
+.nfull.open{display:block;animation:nbfade .3s ease}
+.nfull ul{list-style:none;display:grid;gap:8px;max-width:1100px;margin:0 auto}
+.nfull li{font-family:'Be Vietnam Pro',sans-serif;font-size:.87rem;font-weight:600;line-height:1.7;
+  color:#fff6e0;background:rgba(255,212,0,.1);border-left:5px solid #ffd400;border-radius:0 9px 9px 0;
+  padding:9px 13px}
+.nfull li b{color:#ffd400}
+/* tru chieu cao thanh ghim khoi vung cuon cua hai cot */
+.lp,.rp{max-height:calc(100vh - 128px - var(--nbh))}
+@media(max-width:900px){:root{--nbh:66px}.nbtxt{font-size:.76rem}.lp,.rp{max-height:none}}
+</style>
+<script>
+function nbToggle(){
+  var p=document.getElementById('nfull'),b=document.getElementById('nbtg');
+  p.classList.toggle('open');
+  b.textContent=p.classList.contains('open')?'▲ Thu gọn':'▼ Xem đủ';
+}
+document.addEventListener('DOMContentLoaded',function(){
+  var src=document.querySelectorAll('#nfull li');
+  var box=document.getElementById('nbtxt');
+  if(!src.length||!box)return;
+  var i=0;
+  function show(){
+    box.innerHTML=src[i].innerHTML;
+    box.style.animation='none';box.offsetHeight;box.style.animation='nbfade .5s ease';
+    i=(i+1)%src.length;
+  }
+  show();setInterval(show,6000);
+});
+</script>
+<div class="nbar">
+  <span class="pin">📌</span>
+  <div class="nbtxt" id="nbtxt"></div>
+  <button class="nbtg" id="nbtg" onclick="nbToggle()">▼ Xem đủ</button>
+</div>
+<div class="nfull" id="nfull">
+  <ul>
+    <li>💛 <b>Ms để bảng này ở đây suốt bài, vì Ms sợ em quên mất mình đang học vì điều gì.</b> Câu nào chưa hiểu, em hãy dừng lại tra Google Dịch, ChatGPT hoặc Gemini cho bằng được nghĩa rồi mới chọn. Đoán bừa thì con số điểm có đẹp cũng chẳng phải của em.</li>
+    <li>🔉 <b>Một từ chỉ thật sự là của em khi em đọc được nó thành tiếng.</b> Tra ở từ điển Cambridge để xem phiên âm, nhìn kỹ trọng âm nằm ở âm tiết nào, bấm loa nghe rồi đọc theo dăm ba lượt.</li>
+    <li>🕯️ <b>Phần giải thích là chỗ Ms ngồi viết lâu nhất.</b> Em đọc đủ cả năm bước nhé, kể cả câu đã làm đúng — hiểu vì sao ba phương án kia sai mới là thứ theo em vào phòng thi.</li>
+    <li>🖋️ <b>Xin em hãy mở vở ra.</b> Chép lại từ mới, cụm cố định, cấu trúc vừa gặp kèm nghĩa tiếng Việt. Ms dạy nhiều khoá rồi và thấy rất rõ: bạn nào chịu ghi, bạn ấy đi xa.</li>
+    <li>🌾 <b>Không ai giỏi lên vì bấm cho hết bài.</b> Mười lăm phút em chịu khó đọc kỹ và ghi chép hôm nay sẽ quay lại thành điểm số của em ngày mai. Ms tin em, chỉ mong em đừng dễ dãi với chính mình.</li>
+  </ul>
+</div>
+<div class="fl" id="fl"></div>
+
+<header>
+  <div>
+    <div class="tag">English 9 · Unit 8 · Tourism · TEST 1</div>
+    <h1>B. Reading — Lễ Hội Âm Nhạc &amp; Kinh Tế &nbsp;·&nbsp; Người Trẻ Đi Du Lịch Thế Nào</h1>
+    <div class="sub">Giáo viên tạo: MS Chí Nên · 12 câu (30 → 41) — Phần I: điền từ vào chỗ trống (6 câu) + Phần II: đọc hiểu (6 câu)</div>
+  </div>
+  <div class="gauge">
+    <div class="num" id="lv">0/12</div>
+    <div class="lbl">Điểm</div>
+  </div>
+</header>
+
+<div class="main">
+<div class="lp">
+  <div class="slbl">🎫 Bài đọc</div>
+
+  <div class="pc">
+    <div class="plbl">I · MUSIC FESTIVALS &amp; ECONOMIES — Đoạn 1</div>
+    <div class="wbox"><b>transportation</b><b>cultural</b><b>how</b><b>anymore</b><b>quickly</b><b>generating</b></div>
+    <div class="pt">In recent years, music festivals have played a big role in helping local and global economies. These events are <span class="blk">30</span> billions of dollars, fueling tourism in the process. An event like Taylor Swift's Eras Tour is not just a concert; it's a global phenomenon that is changing <span class="blk">31</span> people travel.</div>
+    <button class="btr" onclick="tv('v1')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v1">Những năm gần đây, các lễ hội âm nhạc đã đóng vai trò lớn trong việc hỗ trợ nền kinh tế địa phương lẫn toàn cầu. Những sự kiện này đang <b>tạo ra</b> hàng tỉ đô la, đồng thời thúc đẩy du lịch. Một sự kiện như Eras Tour của Taylor Swift không chỉ là một buổi hoà nhạc; nó là một hiện tượng toàn cầu đang thay đổi <b>cách</b> con người đi du lịch.</div>
+  </div>
+
+  <div class="pc">
+    <div class="plbl">I · Đoạn 1 (tiếp)</div>
+    <div class="pt">Tourists from every corner of the world are booking flights, hotels, and even special concert packages just to be part of the show. The ripple effect of global music festivals is enormous, benefiting local economies in hospitality, retail, <span class="blk">32</span>, and beyond.</div>
+    <button class="btr" onclick="tv('v2')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v2">Du khách từ khắp mọi ngóc ngách của thế giới đang đặt vé máy bay, khách sạn, thậm chí cả các gói xem hoà nhạc đặc biệt chỉ để được góp mặt trong buổi diễn. Hiệu ứng lan toả của các lễ hội âm nhạc toàn cầu là vô cùng lớn, mang lại lợi ích cho kinh tế địa phương ở mảng lưu trú, bán lẻ, <b>giao thông vận tải</b> và hơn thế nữa.</div>
+  </div>
+
+  <div class="pc">
+    <div class="plbl">I · Đoạn 2</div>
+    <div class="pt">As the demand for music events rises <span class="blk">33</span>, cities that host these festivals are attracting millions of fans eager to spend their money on everything from festival tickets to local souvenirs. Festivals aren't just for music lovers <span class="blk">34</span>.</div>
+    <button class="btr" onclick="tv('v3')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v3">Khi nhu cầu với các sự kiện âm nhạc tăng lên <b>nhanh chóng</b>, những thành phố đăng cai các lễ hội này đang thu hút hàng triệu người hâm mộ sẵn sàng chi tiền cho mọi thứ, từ vé lễ hội cho tới đồ lưu niệm địa phương. Lễ hội <b>không còn</b> chỉ dành riêng cho người yêu nhạc nữa.</div>
+  </div>
+
+  <div class="pc">
+    <div class="plbl">I · Đoạn 2 (tiếp)</div>
+    <div class="pt">They're must-see cultural landmarks that draw crowds from across the globe. And it's not just about the big-name artists' concerts. Underground gigs, and local music scenes are booming, offering immersive <span class="blk">35</span> experiences that can't be copied elsewhere.</div>
+    <button class="btr" onclick="tv('v4')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v4">Chúng là những cột mốc văn hoá nhất định phải tới, kéo theo đám đông từ khắp toàn cầu. Và chuyện không chỉ nằm ở các buổi diễn của những nghệ sĩ tên tuổi. Các buổi diễn ngầm và những sân khấu âm nhạc bản địa đang bùng nổ, mang tới những trải nghiệm <b>văn hoá</b> đắm chìm mà không nơi nào khác sao chép được.</div>
+  </div>
+
+  <div class="pc" style="border-left-color:#7e5aff">
+    <div class="plbl">II · YOUNG TRAVELLERS — Đoạn 1</div>
+    <div class="pt">Nowadays, younger generations express distinct travel desires. One of those desires is to try unique experiences. In fact, 60% of young travellers intend to plan their trips around entertainment or sporting events. Music festivals, cultural celebrations, and sports tournaments are becoming the main opportunities to explore new destinations.</div>
+    <button class="btr" onclick="tv('v5')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v5">Ngày nay, các thế hệ trẻ bộc lộ những mong muốn du lịch rất riêng. Một trong số đó là được thử những trải nghiệm độc đáo. Thực tế, <b>60% du khách trẻ dự định lên kế hoạch cho chuyến đi xoay quanh các sự kiện giải trí hoặc thể thao</b>. Lễ hội âm nhạc, các dịp kỷ niệm văn hoá và giải đấu thể thao đang trở thành cơ hội chính để khám phá những điểm đến mới.</div>
+  </div>
+
+  <div class="pc" style="border-left-color:#7e5aff">
+    <div class="plbl">II · Đoạn 2</div>
+    <div class="pt">Young travellers also display a strong interest in local and handcrafted products. 82% of Gen Z and Millennials seek souvenirs that are not only unique but also symbolic of their travels. This demonstrates a willingness to support local businesses and bring home authentic items. For <b>them</b>, each purchase is an opportunity to keep a lasting memory of their experience.</div>
+    <button class="btr" onclick="tv('v6')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v6">Du khách trẻ cũng thể hiện sự quan tâm mạnh mẽ tới <b>các sản phẩm bản địa và đồ thủ công</b>. 82% thế hệ Gen Z và Millennials tìm kiếm những món quà lưu niệm vừa độc đáo vừa mang tính biểu trưng cho chuyến đi của mình. Điều này cho thấy <b>sự sẵn lòng ủng hộ các cơ sở kinh doanh địa phương</b> và mang về nhà những món đồ chân thực. Với <b>họ</b>, mỗi lần mua sắm là một cơ hội để lưu giữ ký ức lâu dài về trải nghiệm của mình.</div>
+  </div>
+
+  <div class="pc" style="border-left-color:#7e5aff">
+    <div class="plbl">II · Đoạn 3</div>
+    <div class="pt">Lastly, young travellers are increasingly concerned about choosing travel options that respect the environment and promote sustainability. This is particularly true for Gen Z, a significant portion of whom wish to engage in tourism that values eco-friendly initiatives and respects local cultures. These young people <b>aspire</b> for their travel choices to have a positive impact, both on the communities they visit and on the planet.</div>
+    <button class="btr" onclick="tv('v7')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v7">Cuối cùng, du khách trẻ ngày càng <b>quan tâm tới việc chọn những phương án du lịch tôn trọng môi trường và thúc đẩy tính bền vững</b>. Điều này đặc biệt đúng với Gen Z, một phần đáng kể trong số họ mong muốn tham gia loại hình du lịch coi trọng các sáng kiến thân thiện môi trường và tôn trọng văn hoá bản địa. Những người trẻ này <b>khao khát</b> rằng lựa chọn du lịch của mình sẽ tạo ra tác động tích cực, cho cả cộng đồng họ tới thăm lẫn cho hành tinh.</div>
+  </div>
+
+  <div class="gw">
+    <div class="gt2">📚 Glossary — Test 1 · Reading</div>
+    <table class="gtb">
+      <tr><th>Word / Phrase</th><th>Loại</th><th>Nghĩa tiếng Việt</th></tr>
+      <tr><td class="w">play a big role in</td><td class="pos">v.phr</td><td>đóng vai trò lớn trong</td></tr>
+      <tr><td class="w">generate</td><td class="pos">v</td><td>tạo ra, sinh ra (tiền, điện)</td></tr>
+      <tr><td class="w">fuel tourism</td><td class="pos">v.phr</td><td>thúc đẩy du lịch</td></tr>
+      <tr><td class="w">in the process</td><td class="pos">phr</td><td>trong quá trình đó, đồng thời</td></tr>
+      <tr><td class="w">phenomenon</td><td class="pos">n</td><td>hiện tượng</td></tr>
+      <tr><td class="w">every corner of the world</td><td class="pos">n.phr</td><td>mọi ngóc ngách trên thế giới</td></tr>
+      <tr><td class="w">concert package</td><td class="pos">n</td><td>gói dịch vụ xem hoà nhạc</td></tr>
+      <tr><td class="w">ripple effect</td><td class="pos">n</td><td>hiệu ứng lan toả</td></tr>
+      <tr><td class="w">enormous</td><td class="pos">adj</td><td>vô cùng lớn</td></tr>
+      <tr><td class="w">hospitality</td><td class="pos">n</td><td>ngành lưu trú, khách sạn nhà hàng</td></tr>
+      <tr><td class="w">retail</td><td class="pos">n</td><td>ngành bán lẻ</td></tr>
+      <tr><td class="w">transportation</td><td class="pos">n</td><td>ngành giao thông vận tải</td></tr>
+      <tr><td class="w">demand</td><td class="pos">n</td><td>nhu cầu</td></tr>
+      <tr><td class="w">host a festival</td><td class="pos">v.phr</td><td>đăng cai một lễ hội</td></tr>
+      <tr><td class="w">eager to</td><td class="pos">adj.phr</td><td>háo hức, sẵn lòng làm gì</td></tr>
+      <tr><td class="w">souvenir</td><td class="pos">n</td><td>quà lưu niệm</td></tr>
+      <tr><td class="w">not + mệnh đề + anymore</td><td class="pos">adv.phr</td><td>không còn ... nữa</td></tr>
+      <tr><td class="w">must-see</td><td class="pos">adj</td><td>nhất định phải xem, phải tới</td></tr>
+      <tr><td class="w">cultural landmark</td><td class="pos">n</td><td>cột mốc, biểu tượng văn hoá</td></tr>
+      <tr><td class="w">draw crowds</td><td class="pos">v.phr</td><td>thu hút đám đông</td></tr>
+      <tr><td class="w">big-name artist</td><td class="pos">n</td><td>nghệ sĩ tên tuổi</td></tr>
+      <tr><td class="w">underground gig</td><td class="pos">n</td><td>buổi diễn ngầm, ngoài dòng chính</td></tr>
+      <tr><td class="w">boom</td><td class="pos">v</td><td>bùng nổ, phát triển vượt bậc</td></tr>
+      <tr><td class="w">immersive</td><td class="pos">adj</td><td>đắm chìm, cuốn người ta vào</td></tr>
+      <tr><td class="w">distinct</td><td class="pos">adj</td><td>riêng biệt, khác hẳn</td></tr>
+      <tr><td class="w">intend to</td><td class="pos">v.phr</td><td>dự định làm gì</td></tr>
+      <tr><td class="w">sports tournament</td><td class="pos">n</td><td>giải đấu thể thao</td></tr>
+      <tr><td class="w">handcrafted product</td><td class="pos">n</td><td>sản phẩm thủ công</td></tr>
+      <tr><td class="w">symbolic of</td><td class="pos">adj.phr</td><td>mang tính biểu trưng cho</td></tr>
+      <tr><td class="w">demonstrate</td><td class="pos">v</td><td>cho thấy, chứng tỏ</td></tr>
+      <tr><td class="w">willingness</td><td class="pos">n</td><td>sự sẵn lòng</td></tr>
+      <tr><td class="w">authentic</td><td class="pos">adj</td><td>chân thực, đúng bản sắc</td></tr>
+      <tr><td class="w">lasting memory</td><td class="pos">n</td><td>ký ức lâu bền</td></tr>
+      <tr><td class="w">be concerned about</td><td class="pos">adj.phr</td><td>quan tâm, bận lòng về</td></tr>
+      <tr><td class="w">promote sustainability</td><td class="pos">v.phr</td><td>thúc đẩy tính bền vững</td></tr>
+      <tr><td class="w">a significant portion of</td><td class="pos">n.phr</td><td>một phần đáng kể trong số</td></tr>
+      <tr><td class="w">engage in</td><td class="pos">v.phr</td><td>tham gia vào</td></tr>
+      <tr><td class="w">eco-friendly initiative</td><td class="pos">n</td><td>sáng kiến thân thiện môi trường</td></tr>
+      <tr><td class="w">aspire</td><td class="pos">v</td><td>khao khát, ước mong</td></tr>
+      <tr><td class="w">self-guided tour</td><td class="pos">n</td><td>tour tự đi, không có hướng dẫn viên</td></tr>
+      <tr><td class="w">package tour</td><td class="pos">n</td><td>tour trọn gói</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="rp">
+  <div class="slbl">🎶 Bài tập — 12 câu</div>
+  <div id="quiz"></div>
+  <div class="sw">
+    <button class="bsub" onclick="openModal()">🎯 NỘP BÀI TÍNH ĐIỂM &amp; XEM KẾT QUẢ</button>
+  </div>
+</div>
+</div>
+
+<div class="ov" id="nm">
+  <div class="mb">
+    <h2>🎤 Nhập tên để nộp bài</h2>
+    <input type="text" id="sn" placeholder="Họ và tên học sinh...">
+    <div class="err" id="er">Vui lòng nhập tên trước khi nộp bài!</div>
+    <button class="bok" onclick="sub()">Xem kết quả</button>
+  </div>
+</div>
+
+<div class="ov" id="rm">
+  <div class="mb" style="max-width:470px">
+    <div class="rname" id="rn"></div>
+    <div class="rscore" id="rs"></div>
+    <div class="rs10" id="rs10"></div>
+    <img class="rgif" id="rg" src="" alt="">
+    <div class="rcmt" id="rc"></div>
+    <button class="bcl" onclick="closeR()">Đóng &amp; xem lại bài</button>
+  </div>
+</div>
+
+<script>
+const QS=[];
+
+QS.push({n:30,sec:'I · Điền từ vào chỗ trống',
+qt:'These events are <b>(30) ______</b> billions of dollars, fueling tourism in the process.',
+opts:[
+ {t:'generating',m:'V-ing của generate (động từ): đang tạo ra, sinh ra',c:true},
+ {t:'quickly',m:'trạng từ (adverb): một cách nhanh chóng',c:false},
+ {t:'cultural',m:'tính từ (adjective): thuộc về văn hoá',c:false},
+ {t:'anymore',m:'trạng từ (adverb): (không) còn nữa',c:false}],
+tr:'Những sự kiện này đang <b>tạo ra</b> hàng tỉ đô la, đồng thời thúc đẩy du lịch.',
+ok:'Trước chỗ trống là động từ tobe <span class="p-word">are</span> và sau đó là tân ngữ <span class="p-word">billions of dollars</span>, nên đây là thì <span class="p-grammar">Hiện tại tiếp diễn: S + be + V-ing + tân ngữ</span>. Trong khung từ chỉ <span class="p-word">generating</span> là <span class="p-mean">động từ ở dạng V-ing</span>, và cụm <span class="p-grammar">generate money</span> nghĩa "tạo ra tiền" hoàn toàn hợp với chủ đề đóng góp kinh tế.',
+no:'<span class="p-word">quickly</span> là <span class="p-mean">trạng từ</span>, đặt sau "are" thì câu thiếu hẳn động từ chính và tân ngữ bị bỏ rơi. <span class="p-word">cultural</span> là <span class="p-mean">tính từ</span>, không lấy tân ngữ được. <span class="p-word">anymore</span> là <span class="p-mean">trạng từ</span> và chỉ dùng ở cuối câu phủ định, không đứng giữa "are" và danh từ.',
+ev:'🔍 <span class="p-word">music festivals have played a big role in helping local and global economies. These events are (30) ______ billions of dollars, fueling tourism in the process</span> 👉 <span class="p-mean">các lễ hội âm nhạc đóng vai trò lớn với kinh tế địa phương và toàn cầu. Những sự kiện này đang tạo ra hàng tỉ đô la, đồng thời thúc đẩy du lịch</span>.'});
+
+QS.push({n:31,sec:'I · Điền từ vào chỗ trống',
+qt:'It is a global phenomenon that is changing <b>(31) ______</b> people travel.',
+opts:[
+ {t:'how',m:'từ để hỏi / liên từ (question word): cách thức, như thế nào',c:true},
+ {t:'cultural',m:'tính từ (adjective): thuộc về văn hoá',c:false},
+ {t:'quickly',m:'trạng từ (adverb): một cách nhanh chóng',c:false},
+ {t:'transportation',m:'danh từ (noun): giao thông vận tải',c:false}],
+tr:'Nó là một hiện tượng toàn cầu đang thay đổi <b>cách</b> con người đi du lịch.',
+ok:'Chỗ trống mở đầu một <span class="p-grammar">mệnh đề danh từ làm tân ngữ cho động từ "changing"</span>, và sau nó là chủ ngữ <span class="p-word">people</span> cùng động từ <span class="p-word">travel</span>. Từ nối phù hợp là <span class="p-word">how</span> nghĩa "cách thức", cho ta "thay đổi cách người ta đi du lịch" — đúng với việc du khách nay đặt vé, đặt phòng để chạy theo sự kiện âm nhạc.',
+no:'<span class="p-word">cultural</span> là <span class="p-mean">tính từ</span> nên không mở đầu được một mệnh đề. <span class="p-word">quickly</span> là <span class="p-mean">trạng từ</span>, đặt vào thì "people travel" thành mệnh đề lơ lửng không có từ nối. <span class="p-word">transportation</span> là <span class="p-mean">danh từ</span>; nếu điền vào thì sau nó không thể có ngay một mệnh đề đầy đủ như vậy.',
+ev:'🔍 <span class="p-word">An event like Taylor Swift&apos;s Eras Tour is not just a concert; it&apos;s a global phenomenon that is changing (31) ______ people travel</span> 👉 <span class="p-mean">Một sự kiện như Eras Tour của Taylor Swift không chỉ là buổi hoà nhạc; nó là hiện tượng toàn cầu đang thay đổi cách con người đi du lịch</span>.'});
+
+QS.push({n:32,sec:'I · Điền từ vào chỗ trống',
+qt:'The ripple effect is enormous, benefiting local economies in hospitality, retail, <b>(32) ______</b>, and beyond.',
+opts:[
+ {t:'transportation',m:'danh từ (noun): ngành giao thông vận tải',c:true},
+ {t:'generating',m:'V-ing của generate (động từ): đang tạo ra',c:false},
+ {t:'anymore',m:'trạng từ (adverb): (không) còn nữa',c:false},
+ {t:'how',m:'từ để hỏi (question word): như thế nào',c:false}],
+tr:'Hiệu ứng lan toả là vô cùng lớn, mang lại lợi ích cho kinh tế địa phương ở mảng lưu trú, bán lẻ, <b>giao thông vận tải</b> và hơn thế nữa.',
+ok:'Chỗ trống nằm trong một <span class="p-grammar">chuỗi liệt kê các ngành kinh tế</span>: <span class="p-word">hospitality</span> 👉 <span class="p-mean">lưu trú</span>, <span class="p-word">retail</span> 👉 <span class="p-mean">bán lẻ</span>, rồi tới chỗ trống. Cả ba phải cùng là <span class="p-mean">danh từ chỉ lĩnh vực</span>, và <span class="p-word">transportation</span> đúng là ngành hưởng lợi khi du khách bay và di chuyển tới xem hoà nhạc.',
+no:'<span class="p-word">generating</span> là <span class="p-mean">động từ dạng V-ing</span>, không liệt kê ngang hàng với danh từ được. <span class="p-word">anymore</span> là <span class="p-mean">trạng từ</span>, chỉ dùng cuối câu phủ định. <span class="p-word">how</span> là <span class="p-mean">từ để hỏi</span>, hoàn toàn không phải tên một ngành kinh tế.',
+ev:'🔍 <span class="p-word">benefiting local economies in hospitality, retail, (32) ______, and beyond</span> 👉 <span class="p-mean">mang lại lợi ích cho kinh tế địa phương ở các mảng lưu trú, bán lẻ, giao thông vận tải và hơn thế nữa</span>.'});
+
+QS.push({n:33,sec:'I · Điền từ vào chỗ trống',
+qt:'As the demand for music events rises <b>(33) ______</b>, cities that host these festivals are attracting millions of fans.',
+opts:[
+ {t:'quickly',m:'trạng từ (adverb): một cách nhanh chóng',c:true},
+ {t:'cultural',m:'tính từ (adjective): thuộc về văn hoá',c:false},
+ {t:'transportation',m:'danh từ (noun): giao thông vận tải',c:false},
+ {t:'generating',m:'V-ing của generate (động từ): đang tạo ra',c:false}],
+tr:'Khi nhu cầu với các sự kiện âm nhạc tăng lên <b>nhanh chóng</b>, những thành phố đăng cai các lễ hội này đang thu hút hàng triệu người hâm mộ.',
+ok:'Chỗ trống đứng ngay sau động từ <span class="p-word">rises</span> để mô tả <span class="p-grammar">cách thức của hành động</span>, đó chính là vị trí của một <span class="p-mean">trạng từ</span>. <span class="p-word">quickly</span> nghĩa "nhanh chóng" cũng ăn khớp với vế sau nói các thành phố đang hút về hàng triệu người hâm mộ.',
+no:'<span class="p-word">cultural</span> là <span class="p-mean">tính từ</span>, chỉ bổ nghĩa cho danh từ chứ không bổ nghĩa cho động từ "rises". <span class="p-word">transportation</span> là <span class="p-mean">danh từ</span>, đặt vào sẽ thành tân ngữ vô nghĩa cho một nội động từ. <span class="p-word">generating</span> là <span class="p-mean">động từ V-ing</span>, mà mệnh đề đã có động từ "rises" rồi.',
+ev:'🔍 <span class="p-word">As the demand for music events rises (33) ______, cities that host these festivals are attracting millions of fans eager to spend their money</span> 👉 <span class="p-mean">Khi nhu cầu với sự kiện âm nhạc tăng nhanh chóng, các thành phố đăng cai đang thu hút hàng triệu người hâm mộ sẵn sàng chi tiền</span>.'});
+
+QS.push({n:34,sec:'I · Điền từ vào chỗ trống',
+qt:'Festivals are not just for music lovers <b>(34) ______</b>. They are must-see cultural landmarks that draw crowds from across the globe.',
+opts:[
+ {t:'anymore',m:'trạng từ (adverb): (không) còn nữa — đứng cuối câu phủ định',c:true},
+ {t:'quickly',m:'trạng từ (adverb): một cách nhanh chóng',c:false},
+ {t:'how',m:'từ để hỏi (question word): như thế nào',c:false},
+ {t:'cultural',m:'tính từ (adjective): thuộc về văn hoá',c:false}],
+tr:'Lễ hội <b>không còn</b> chỉ dành riêng cho người yêu nhạc nữa. Chúng là những cột mốc văn hoá nhất định phải tới, kéo theo đám đông từ khắp toàn cầu.',
+ok:'Câu ở <span class="p-grammar">thể phủ định (aren&apos;t)</span> và chỗ trống nằm ở cuối câu — đó đúng là vị trí của <span class="p-word">anymore</span>, trạng từ chuyên dùng trong cấu trúc <span class="p-grammar">not + mệnh đề + anymore</span> nghĩa "không còn như thế nữa". Ý câu là lễ hội nay đã vượt khỏi phạm vi người mê nhạc, đúng như câu tiếp theo giải thích.',
+no:'<span class="p-word">quickly</span> là trạng từ chỉ cách thức, không hợp với một câu mô tả trạng thái "are for music lovers". <span class="p-word">how</span> là <span class="p-mean">từ để hỏi</span>, không đứng cuối câu trần thuật. <span class="p-word">cultural</span> là <span class="p-mean">tính từ</span>, cần có danh từ theo sau nên không thể kết thúc câu như vậy.',
+ev:'🔍 <span class="p-word">Festivals aren&apos;t just for music lovers (34) ______. They&apos;re must-see cultural landmarks that draw crowds from across the globe</span> 👉 <span class="p-mean">Lễ hội không còn chỉ dành cho người yêu nhạc nữa. Chúng là những cột mốc văn hoá nhất định phải tới, thu hút đám đông khắp toàn cầu</span>.'});
+
+QS.push({n:35,sec:'I · Điền từ vào chỗ trống',
+qt:'Underground gigs and local music scenes are booming, offering immersive <b>(35) ______</b> experiences that cannot be copied elsewhere.',
+opts:[
+ {t:'cultural',m:'tính từ (adjective): thuộc về văn hoá',c:true},
+ {t:'transportation',m:'danh từ (noun): giao thông vận tải',c:false},
+ {t:'anymore',m:'trạng từ (adverb): (không) còn nữa',c:false},
+ {t:'generating',m:'V-ing của generate (động từ): đang tạo ra',c:false}],
+tr:'Các buổi diễn ngầm và những sân khấu âm nhạc bản địa đang bùng nổ, mang tới những trải nghiệm <b>văn hoá</b> đắm chìm mà không nơi nào khác sao chép được.',
+ok:'Chỗ trống nằm giữa tính từ <span class="p-word">immersive</span> và danh từ <span class="p-word">experiences</span>, tức là vị trí của một <span class="p-mean">tính từ thứ hai cùng bổ nghĩa cho danh từ</span>. Về nghĩa, đoạn văn vừa gọi lễ hội là <span class="p-word">cultural landmarks</span>, nên "trải nghiệm văn hoá" là mạch nối tự nhiên.',
+no:'<span class="p-word">transportation</span> là <span class="p-mean">danh từ</span>, ghép thành "transportation experiences" thì lệch hẳn khỏi nội dung âm nhạc và văn hoá. <span class="p-word">anymore</span> là <span class="p-mean">trạng từ</span> chỉ dùng cuối câu phủ định. <span class="p-word">generating</span> là <span class="p-mean">động từ V-ing</span>, đặt giữa hai từ này là sai cấu trúc.',
+ev:'🔍 <span class="p-word">Underground gigs, and local music scenes are booming, offering immersive (35) ______ experiences that can&apos;t be copied elsewhere</span> 👉 <span class="p-mean">Các buổi diễn ngầm và sân khấu nhạc bản địa đang bùng nổ, mang tới trải nghiệm văn hoá đắm chìm không nơi nào sao chép được</span>.'});
+
+QS.push({n:36,sec:'II · Đọc hiểu',
+qt:'What is the main idea of the passage?',
+opts:[
+ {t:'How young people tend to travel nowadays',m:'Người trẻ ngày nay có xu hướng đi du lịch như thế nào',c:true},
+ {t:'Current trends in buying local and handcrafted products',m:'Các xu hướng mua sản phẩm bản địa và đồ thủ công hiện nay',c:false},
+ {t:'Respecting the environment while travelling',m:'Việc tôn trọng môi trường khi đi du lịch',c:false},
+ {t:'How different generations travel for leisure',m:'Các thế hệ khác nhau đi du lịch giải trí thế nào',c:false}],
+tr:'Ý chính của bài đọc là gì?',
+ok:'Câu mở bài xác định rõ đối tượng và chủ đề: <span class="p-word">Nowadays, younger generations express distinct travel desires</span> 👉 <span class="p-mean">Ngày nay, các thế hệ trẻ bộc lộ những mong muốn du lịch rất riêng</span>. Ba đoạn sau lần lượt nêu ba xu hướng: tìm trải nghiệm độc đáo, mua đồ bản địa, và chọn phương án du lịch bền vững — tất cả đều là <b>cách người trẻ đi du lịch</b>.',
+no:'<span class="p-word">Current trends in buying local and handcrafted products</span> chỉ là đoạn 2. <span class="p-word">Respecting the environment while travelling</span> chỉ là đoạn 3. <span class="p-word">How different generations travel for leisure</span> sai phạm vi vì bài chỉ nói về thế hệ trẻ, không so sánh nhiều thế hệ với nhau.',
+ev:'🔍 <span class="p-word">Nowadays, younger generations express distinct travel desires. One of those desires is to try unique experiences</span> 👉 <span class="p-mean">Ngày nay, các thế hệ trẻ bộc lộ những mong muốn du lịch riêng biệt. Một trong số đó là thử những trải nghiệm độc đáo</span>.'});
+
+QS.push({n:37,sec:'II · Đọc hiểu',
+qt:'According to the passage, most young travellers ______.',
+opts:[
+ {t:'look for typical products of the place they visit',m:'tìm kiếm những sản phẩm đặc trưng của nơi họ tới thăm',c:true},
+ {t:'prefer sports tourism to other types of tourism',m:'thích du lịch thể thao hơn các loại hình khác',c:false},
+ {t:'share the same travel preferences with older generations',m:'có cùng sở thích du lịch với các thế hệ lớn tuổi hơn',c:false},
+ {t:'stop travelling because of environmental issues',m:'ngừng đi du lịch vì các vấn đề môi trường',c:false}],
+tr:'Theo bài đọc, phần lớn du khách trẻ thì thế nào?',
+ok:'Đoạn 2 đưa ra con số áp đảo: <span class="p-word">82% of Gen Z and Millennials seek souvenirs that are not only unique but also symbolic of their travels</span> 👉 <span class="p-mean">82% Gen Z và Millennials tìm những món lưu niệm vừa độc đáo vừa mang tính biểu trưng cho chuyến đi</span>. Đó chính là "sản phẩm đặc trưng của nơi họ tới thăm", và bài còn nói thêm họ muốn <span class="p-word">bring home authentic items</span>.',
+no:'Phương án về du lịch thể thao sai vì bài xếp sự kiện thể thao <b>ngang hàng</b> với lễ hội âm nhạc và dịp văn hoá, không nói cái nào được ưa hơn. Phương án về việc giống thế hệ trước trái với từ <span class="p-word">distinct</span> 👉 <span class="p-mean">riêng biệt, khác hẳn</span> ở câu mở bài. Phương án cuối bịa thêm, vì bài nói họ chọn cách du lịch thân thiện môi trường chứ không hề bỏ đi du lịch.',
+ev:'🔍 <span class="p-word">82% of Gen Z and Millennials seek souvenirs that are not only unique but also symbolic of their travels. This demonstrates a willingness to support local businesses and bring home authentic items</span> 👉 <span class="p-mean">82% Gen Z và Millennials tìm quà lưu niệm vừa độc đáo vừa biểu trưng cho chuyến đi. Điều này cho thấy sự sẵn lòng ủng hộ cơ sở kinh doanh địa phương và mang về nhà những món đồ chân thực</span>.'});
+
+QS.push({n:38,sec:'II · Đọc hiểu',
+qt:'The word "<b>them</b>" in paragraph 2 refers to ______.',
+opts:[
+ {t:'Gen Z and Millennials',m:'thế hệ Gen Z và Millennials',c:true},
+ {t:'local businesses',m:'các cơ sở kinh doanh địa phương',c:false},
+ {t:'authentic items',m:'những món đồ chân thực, đúng bản sắc',c:false},
+ {t:'handcrafted products',m:'các sản phẩm thủ công',c:false}],
+tr:'Từ "them" ở đoạn 2 chỉ ai?',
+ok:'Câu chứa đại từ là <span class="p-word">For them, each purchase is an opportunity to keep a lasting memory of their experience</span> 👉 <span class="p-mean">Với họ, mỗi lần mua sắm là cơ hội lưu giữ ký ức lâu dài về trải nghiệm của mình</span>. Chỉ <b>con người</b> mới đi mua sắm và mới có ký ức, mà nhóm người được nhắc tới trong đoạn chính là <span class="p-word">Gen Z and Millennials</span>.',
+no:'<span class="p-word">local businesses</span> là bên <b>bán</b> chứ không phải bên mua. <span class="p-word">authentic items</span> và <span class="p-word">handcrafted products</span> đều là <b>đồ vật</b> — chúng chính là thứ được mua, nên không thể là chủ thể có "trải nghiệm" và "ký ức".',
+ev:'🔍 <span class="p-word">82% of Gen Z and Millennials seek souvenirs that are not only unique but also symbolic of their travels. For them, each purchase is an opportunity to keep a lasting memory of their experience</span> 👉 <span class="p-mean">82% Gen Z và Millennials tìm quà lưu niệm vừa độc đáo vừa biểu trưng cho chuyến đi. Với họ, mỗi lần mua là cơ hội lưu giữ ký ức lâu dài về trải nghiệm của mình</span>.'});
+
+QS.push({n:39,sec:'II · Đọc hiểu',
+qt:'What aspect of travelling do young travellers worry about?',
+opts:[
+ {t:'Protecting nature while on holiday',m:'Việc bảo vệ thiên nhiên trong lúc đi nghỉ',c:true},
+ {t:'Choosing new destinations to travel',m:'Việc chọn điểm đến mới để đi',c:false},
+ {t:'Keeping souvenirs from their trip',m:'Việc giữ lại quà lưu niệm từ chuyến đi',c:false},
+ {t:'Finding unique travel experiences',m:'Việc tìm những trải nghiệm du lịch độc đáo',c:false}],
+tr:'Người trẻ lo lắng về khía cạnh nào của việc đi du lịch?',
+ok:'Đoạn 3 dùng đúng động từ chỉ sự lo lắng: <span class="p-word">young travellers are increasingly concerned about choosing travel options that respect the environment and promote sustainability</span> 👉 <span class="p-mean">du khách trẻ ngày càng bận lòng về việc chọn phương án du lịch tôn trọng môi trường và thúc đẩy tính bền vững</span>. Cụm <span class="p-grammar">be concerned about</span> chính là "worry about" trong câu hỏi.',
+no:'Ba phương án còn lại đều là những điều người trẻ <b>mong muốn hoặc yêu thích</b> chứ không phải điều họ lo lắng: tìm trải nghiệm độc đáo và chọn điểm đến mới nằm ở đoạn 1, còn giữ quà lưu niệm nằm ở đoạn 2. Chỉ đoạn 3 mới dùng từ mang sắc thái băn khoăn.',
+ev:'🔍 <span class="p-word">Lastly, young travellers are increasingly concerned about choosing travel options that respect the environment and promote sustainability</span> 👉 <span class="p-mean">Cuối cùng, du khách trẻ ngày càng quan tâm tới việc chọn những lựa chọn du lịch tôn trọng môi trường và thúc đẩy tính bền vững</span>.'});
+
+QS.push({n:40,sec:'II · Đọc hiểu',
+qt:'The word "<b>aspire</b>" in paragraph 3 is opposite in meaning to ______.',
+opts:[
+ {t:'have no desire',m:'cụm động từ (v. phrase): không có mong muốn gì',c:true},
+ {t:'show passion',m:'cụm động từ (v. phrase): thể hiện niềm đam mê',c:false},
+ {t:'express hope',m:'cụm động từ (v. phrase): bày tỏ hi vọng',c:false},
+ {t:'seek interest',m:'cụm động từ (v. phrase): tìm kiếm sự hứng thú',c:false}],
+tr:'Từ "aspire" ở đoạn 3 trái nghĩa với cụm nào?',
+ok:'Đề hỏi cụm <span class="p-grammar">TRÁI nghĩa</span>. <span class="p-word">aspire</span> là <span class="p-mean">động từ</span> nghĩa "khao khát, ước mong điều gì". Cụm mang nghĩa ngược lại phải diễn tả sự dửng dưng, không mong muốn — đó chính là <span class="p-word">have no desire</span>. Ngữ cảnh cũng rõ: người trẻ mong lựa chọn du lịch của mình tạo tác động tích cực.',
+no:'<span class="p-word">show passion</span>, <span class="p-word">express hope</span> và <span class="p-word">seek interest</span> đều mang sắc thái tích cực, thể hiện sự mong muốn hoặc quan tâm, nên chúng <b>đồng nghĩa</b> với "aspire" chứ không trái nghĩa. Đây là bẫy dành cho bạn nào đọc lướt đề và tưởng câu hỏi tìm từ đồng nghĩa.',
+ev:'🔍 <span class="p-word">These young people aspire for their travel choices to have a positive impact, both on the communities they visit and on the planet</span> 👉 <span class="p-mean">Những người trẻ này khao khát rằng lựa chọn du lịch của họ sẽ tạo tác động tích cực, cho cả cộng đồng họ tới thăm lẫn cho hành tinh</span>.'});
+
+QS.push({n:41,sec:'II · Đọc hiểu',
+qt:'Which of the following is NOT mentioned about young travellers?',
+opts:[
+ {t:'Most young travellers choose self-guided tours over package ones.',m:'Phần lớn du khách trẻ chọn tour tự đi thay vì tour trọn gói.',c:true},
+ {t:'Young travellers show great interest in cultural and music events.',m:'Du khách trẻ rất hứng thú với các sự kiện văn hoá và âm nhạc.',c:false},
+ {t:'Young travellers are well aware of sustainable tourism.',m:'Du khách trẻ rất có ý thức về du lịch bền vững.',c:false},
+ {t:'Most young travellers are willing to support local businesses.',m:'Phần lớn du khách trẻ sẵn lòng ủng hộ các cơ sở kinh doanh địa phương.',c:false}],
+tr:'Điều nào sau đây KHÔNG được nhắc tới về du khách trẻ?',
+ok:'Cả bài không hề so sánh tour tự đi với tour trọn gói. Bài chỉ nói người trẻ lên kế hoạch quanh sự kiện, mua đồ bản địa và chọn du lịch bền vững, chứ chưa từng bàn tới <span class="p-grammar">self-guided tours</span> hay <span class="p-grammar">package tours</span>. Vì vậy đây là thông tin KHÔNG được nêu.',
+no:'Ba phương án còn lại đều có trong bài. Sự hứng thú với sự kiện văn hoá và âm nhạc ứng với <span class="p-word">60% of young travellers intend to plan their trips around entertainment or sporting events</span>. Ý thức về du lịch bền vững ứng với đoạn 3. Còn việc ủng hộ kinh doanh địa phương ứng với <span class="p-word">a willingness to support local businesses</span>.',
+ev:'🔍 <span class="p-word">This demonstrates a willingness to support local businesses and bring home authentic items</span> 👉 <span class="p-mean">Điều này cho thấy sự sẵn lòng ủng hộ các cơ sở kinh doanh địa phương và mang về những món đồ chân thực</span>.'});
+
+/* ---------- FLOATERS ---------- */
+const ems=['🎤','🎫','🌍','🎸','🧳','🛍️','🎶','✈️','🥁','🪘','🎡','🌱'];
+const flc=document.getElementById('fl');
+for(let i=0;i<28;i++){
+  const s=document.createElement('span');s.className='f';
+  s.textContent=ems[i%ems.length];
+  s.style.left=Math.random()*100+'%';
+  s.style.animationDuration=(14+Math.random()*14)+'s';
+  s.style.animationDelay=(-Math.random()*20)+'s';
+  s.style.fontSize=(1.0+Math.random()*1.2)+'rem';
+  flc.appendChild(s);
+}
+
+/* ---------- RENDER ---------- */
+const done={};let cc=0;
+function shuffle(a){return a.sort(()=>Math.random()-0.5)}
+
+function build(){
+  const box=document.getElementById('quiz');
+  QS.forEach(q=>{
+    let ol='<ul style="margin:4px 0 0 4px;list-style:none">';
+    q.opts.forEach(o=>{ol+='<li style="margin:5px 0">'+(o.c?'✅ ':'❌ ')+'<span class="p-word">'+o.t+'</span> ➔ <span class="p-mean">'+o.m+'</span></li>';});
+    ol+='</ul>';
+    const card=document.createElement('div');card.className='qc';card.id='q'+q.n;
+    card.innerHTML=
+      '<div class="qn">Câu '+q.n+' · '+q.sec+'</div>'+
+      '<div class="qt">'+q.qt+'</div>'+
+      '<div class="opts" id="o'+q.n+'"></div>'+
+      '<div class="expl" id="e'+q.n+'">'+
+        '<h4>📘 Giải thích chi tiết – Câu '+q.n+'</h4>'+
+        '<div class="estep"><div class="elbl">Bước 1 · Dịch cả câu</div>'+q.tr+'</div>'+
+        '<div class="estep"><div class="elbl">Bước 2 · Các phương án và nghĩa</div>'+ol+'</div>'+
+        '<div class="estep"><div class="elbl">Bước 3 · Vì sao đáp án này <span class="hl-green">đúng</span></div>'+q.ok+'</div>'+
+        '<div class="estep"><div class="elbl">Bước 4 · Vì sao các phương án kia <span class="hl-red">sai</span></div>'+q.no+'</div>'+
+        '<div class="estep"><div class="elbl">🔍 Dẫn chứng trong bài</div>'+q.ev+'</div>'+
+      '</div>';
+    box.appendChild(card);
+    const cont=card.querySelector('.opts');
+    const correct=q.opts.filter(o=>o.c)[0].t;
+    shuffle([...q.opts]).forEach(o=>{
+      const b=document.createElement('button');b.className='opt';b.textContent=o.t;
+      b.onclick=()=>chk(q.n,o.t,correct,b,cont);cont.appendChild(b);
+    });
+  });
+  document.getElementById('lv').textContent='0/'+QS.length;
+}
+
+function chk(qid,chosen,correct,btn,container){
+  if(qid in done)return;
+  done[qid]=chosen===correct;
+  container.querySelectorAll('.opt').forEach(b=>{
+    b.disabled=true;
+    if(b.textContent===correct)b.classList.add('correct');
+  });
+  if(chosen===correct){btn.classList.add('correct');cc++;ding();conf();}
+  else{btn.classList.add('wrong');buzz();}
+  document.getElementById('e'+qid).classList.add('open');
+  document.getElementById('lv').textContent=cc+'/'+QS.length;
+}
+
+/* ---------- AUDIO (giữ nguyên theme) ---------- */
+const A=new(window.AudioContext||window.webkitAudioContext)();
+function ding(){const o=A.createOscillator(),g=A.createGain();o.connect(g);g.connect(A.destination);o.frequency.setValueAtTime(523,A.currentTime);o.frequency.exponentialRampToValueAtTime(784,A.currentTime+0.15);g.gain.setValueAtTime(0.28,A.currentTime);g.gain.exponentialRampToValueAtTime(0.001,A.currentTime+0.5);o.start();o.stop(A.currentTime+0.5);}
+function buzz(){const o=A.createOscillator(),g=A.createGain();o.type='triangle';o.connect(g);g.connect(A.destination);o.frequency.setValueAtTime(200,A.currentTime);o.frequency.exponentialRampToValueAtTime(100,A.currentTime+0.2);g.gain.setValueAtTime(0.18,A.currentTime);g.gain.exponentialRampToValueAtTime(0.001,A.currentTime+0.28);o.start();o.stop(A.currentTime+0.28);}
+
+function conf(){
+  const cols=['#ff5f9e','#ffc46b','#7e5aff','#40d0dc','#ffe7c2','#ffffff'];
+  for(let i=0;i<35;i++){
+    const d=document.createElement('div');d.className='cn';
+    d.style.left=Math.random()*100+'vw';
+    d.style.background=cols[Math.floor(Math.random()*cols.length)];
+    d.style.animationDelay=Math.random()*0.7+'s';
+    d.style.animationDuration=(1.8+Math.random()*1.0)+'s';
+    d.style.width=d.style.height=(6+Math.random()*8)+'px';
+    d.style.borderRadius=Math.random()>0.5?'50%':'2px';
+    document.body.appendChild(d);setTimeout(()=>d.remove(),3100);
+  }
+}
+
+function tv(id){
+  const el=document.getElementById(id);el.classList.toggle('open');
+  const btn=el.previousElementSibling;
+  btn.textContent=el.classList.contains('open')?'Ẩn dịch 🌟':'Mở dịch đoạn này 🌟';
+}
+
+function openModal(){document.getElementById('nm').classList.add('open')}
+function sub(){
+  const n=document.getElementById('sn').value.trim();
+  const er=document.getElementById('er');
+  if(!n){er.classList.add('show');return;}
+  er.classList.remove('show');
+  document.getElementById('nm').classList.remove('open');
+  showRes(n);
+}
+function showRes(n){
+  const tot=QS.length;let c=0;QS.forEach(q=>{if(done[q.n]===true)c++;});
+  const p=c/tot,s10=(c/tot*10).toFixed(2);
+  document.getElementById('rn').textContent='Học sinh: '+n;
+  document.getElementById('rs').textContent=c+' / '+tot;
+  document.getElementById('rs10').textContent='Điểm quy đổi: '+s10+' / 10';
+  let gif='',cmt='';
+  if(p>=1){gif='https://media.giphy.com/media/l0MYGb1LuZ3n7dRnO/giphy.gif';cmt='🏆 Trọn vẹn 100%! Em nắm chắc cả bài điền từ về lễ hội âm nhạc lẫn bài đọc hiểu về xu hướng du lịch của người trẻ. MS Chí Nên rất tự hào!';}
+  else if(p>=0.6){gif='https://media.giphy.com/media/26u4lOMA8JKSnL9Uk/giphy.gif';cmt='🎫 Rất tốt! Em đạt '+c+'/'+tot+' câu. Đọc lại phần giải thích 4 bước để hiểu sâu hơn nhé!';}
+  else{gif='https://media.giphy.com/media/d2lcHJTG5Tscg/giphy.gif';cmt='🎶 Cố lên! Em đạt '+c+'/'+tot+' câu. Bấm nút dịch từng đoạn, đọc kỹ phần giải thích rồi thử lại — Ms tin em làm được!';}
+  document.getElementById('rg').src=gif;
+  document.getElementById('rc').textContent=cmt;
+  document.getElementById('rm').classList.add('open');
+}
+function closeR(){document.getElementById('rm').classList.remove('open')}
+
+build();
+</script>
+<script>/*devclean*/(function(){
+var ZW=/[\u00AD\u034F\u061C\u115F\u1160\u17B4\u17B5\u180E\u200B-\u200F\u202A-\u202E\u2060-\u206F\uFEFF]/g,
+    SP=/[\u00A0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\t]/g,
+    AP=/[\u2018\u2019\u201A\u201B\u2032\u2035\u02B9\u02BB\u02BC\u02BD\u02C8\u0060\u00B4\uFF07]/g,
+    DQ=/[\u201C\u201D\u201E\u201F\u2033\u2036\u00AB\u00BB\uFF02]/g,
+    DS=/[\u2010\u2011\u2012\u2212\uFE63\uFF0D]/g;
+function clean(v){if(!v)return v;var s=String(v);try{s=s.normalize('NFKC')}catch(e){}
+  return s.replace(ZW,'').replace(SP,' ').replace(AP,"'").replace(DQ,'"').replace(DS,'-').replace(/[\u0300-\u036f]/g,'').replace(/ {2,}/g,' ');}
+window.__devclean=clean;
+function fix(skip){var L=document.querySelectorAll('input:not([type]),input[type=text],input[type=search],textarea');
+  for(var i=0;i<L.length;i++){var el=L[i];if(el===skip||el.readOnly||el.disabled)continue;var v=el.value,c=clean(v);if(c!==v)el.value=c;}}
+['pointerdown','mousedown','touchstart','click','change','focusout'].forEach(function(t){document.addEventListener(t,function(e){fix(t==='focusout'||t==='change'?null:e.target)},true)});
+document.addEventListener('keydown',function(e){if(e.key==='Enter'||e.keyCode===13)fix(null)},true);
+})();</script>
+<style id="ms-chi-nen-unlock-style">
+#passwordModal, #password-modal, #pwModal, #pw-modal, #pw-overlay,
+#lockModal, #passModal, #authModal, #auth-modal, #lockOverlay,
+#start-overlay, #intro-overlay, #start-screen,
+.password-modal, .lock-modal, .lock-overlay {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    z-index: -9999 !important;
+}
+</style>
+<script>
+// Remove password lock completely - direct quiz access
+(function() {
+    var initDone = false;
+    var renderCheckDone = false;
+
+    function hideEl(el, hard) {
+        if (!el) return;
+        if (hard) {
+            el.style.setProperty('display', 'none', 'important');
+            el.style.setProperty('visibility', 'hidden', 'important');
+            el.style.setProperty('opacity', '0', 'important');
+            el.style.setProperty('pointer-events', 'none', 'important');
+            el.style.setProperty('z-index', '-9999', 'important');
+        } else {
+            el.style.display = 'none';
+        }
+        el.classList.remove('active', 'show', 'open', 'visible', 'flex');
+    }
+
+    function hasRenderedQuiz() {
+        var containers = document.querySelectorAll(
+            '#quiz-container, #quizContainer, #questions-container, #questionPane, #quiz, #questions, #quiz-body, #questions-wrapper, #quiz-list, #quizList, #exercise-container, #app-container .split-container'
+        );
+        for (var i = 0; i < containers.length; i++) {
+            if (containers[i].querySelectorAll('button, input, select, textarea, .question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .question, .option-btn, .opt-btn, .ans-btn').length > 0) {
+                return true;
+            }
+        }
+        if (document.querySelectorAll('.question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .option-btn, .opt-btn, .ans-btn, .choice-btn').length > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    function ensureQuizRendered() {
+        if (renderCheckDone) return;
+        renderCheckDone = true;
+        if (hasRenderedQuiz()) return;
+
+        if (!hasRenderedQuiz() && typeof buildQuiz === 'function') { try { buildQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof initQuiz === 'function') { try { initQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderApp === 'function') { try { renderApp(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuiz === 'function') { try { renderQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuestions === 'function') { try { renderQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAllQuestions === 'function') { try { renderAllQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAll === 'function') { try { renderAll(); } catch(e){} }
+    }
+
+    function unlockNow() {
+        var pwIds = [
+            'passwordModal', 'password-modal', 'pwModal', 'pw-modal', 'pw-overlay',
+            'lockModal', 'passModal', 'authModal', 'auth-modal', 'lockOverlay',
+            'start-overlay', 'intro-overlay', 'start-screen'
+        ];
+        pwIds.forEach(function(id) {
+            hideEl(document.getElementById(id), true);
+        });
+
+        var modalEls = document.querySelectorAll('.password-modal, .lock-modal, .lock-overlay, #lockOverlay, #auth-modal');
+        modalEls.forEach(function(el) {
+            if (el.id !== 'resultModal' && el.id !== 'result-modal' && el.id !== 'scoreModal') {
+                hideEl(el, true);
+            }
+        });
+
+        ['nameModal', 'name-modal', 'nameInputModal'].forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) hideEl(el, false);
+        });
+
+        var qo = document.getElementById('quiz-overlay');
+        if (qo && (typeof isStarted === 'undefined' || !isStarted)) {
+            qo.style.display = 'none';
+        }
+
+        var mainIds = [
+            'mainContent', 'main-content', 'mainHeader', 'main-header',
+            'app-container', 'app', 'quizApp', 'quiz-wrapper', 'quizContainer', 'quiz-container', 'reading-content'
+        ];
+        mainIds.forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) {
+                el.classList.remove('hidden', 'blur', 'blurred', 'locked');
+                if (el.style.display === 'none') {
+                    el.style.removeProperty('display');
+                }
+                if (window.getComputedStyle(el).display === 'none') {
+                    var hasPane = el.querySelector('.pane, .left-pane, .right-pane, .split-container, .left-panel, .right-panel');
+                    if (id === 'main-content' || id.toLowerCase().includes('header') || el.classList.contains('main-container') || hasPane) {
+                        el.style.setProperty('display', 'flex', 'important');
+                    } else {
+                        el.style.setProperty('display', 'block', 'important');
+                    }
+                }
+            }
+        });
+
+        var qs = document.getElementById('quiz-screen');
+        if (qs) {
+            qs.classList.remove('hidden');
+            if (qs.classList.contains('flex-col')) {
+                qs.classList.add('flex');
+                qs.style.display = 'flex';
+            } else {
+                qs.style.display = 'block';
+            }
+        }
+
+        if (!initDone) {
+            initDone = true;
+
+            if (document.getElementById('start-overlay') && typeof startGame === 'function') {
+                var sn = document.getElementById('student-name') || document.getElementById('studentName');
+                if (sn && !sn.value.trim()) sn.value = 'Học sinh';
+            }
+            if (document.getElementById('name-modal') && typeof startQuiz === 'function') {
+                var sn2 = document.getElementById('student-name');
+                if (sn2 && !sn2.value.trim()) sn2.value = 'Học sinh';
+            }
+
+            if (typeof startQuiz === 'function' && (typeof isStarted === 'undefined' || !isStarted)) { try { startQuiz(); } catch(e){} }
+            if (typeof startGame === 'function') { try { startGame(); } catch(e){} }
+            if (typeof startTest === 'function') { try { startTest(); } catch(e){} }
+            if (typeof startApp === 'function') { try { startApp(); } catch(e){} }
+            if (typeof buildStarfield === 'function') { try { buildStarfield(); } catch(e){} }
+            if (typeof spawnFloats === 'function') { try { spawnFloats(); } catch(e){} }
+            if (typeof spawnFloaters === 'function') { try { spawnFloaters(); } catch(e){} }
+            if (typeof createFloatingBubbles === 'function') { try { createFloatingBubbles(); } catch(e){} }
+            if (typeof initAudio === 'function') { try { initAudio(); } catch(e){} }
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', unlockNow);
+    } else {
+        unlockNow();
+    }
+    if (document.readyState === 'complete') {
+        setTimeout(ensureQuizRendered, 150);
+    } else {
+        window.addEventListener('load', function() {
+            setTimeout(unlockNow, 20);
+            setTimeout(ensureQuizRendered, 150);
+            setTimeout(unlockNow, 300);
+            setTimeout(unlockNow, 700);
+        });
+    }
+    setTimeout(unlockNow, 50);
+    setTimeout(unlockNow, 200);
+    setTimeout(unlockNow, 600);
+    setTimeout(unlockNow, 1100);
+})();
+</script>
+</body>
+</html>
