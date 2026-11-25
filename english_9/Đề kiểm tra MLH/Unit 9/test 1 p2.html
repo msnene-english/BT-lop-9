@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Test 1 — Reading | Unit 9: World Englishes — English 9 MLH | MS Chí Nên</title>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Karla:wght@500;600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --velvet:#0d1122; --velvet2:#161d38; --velvet3:#212a50;
+  --gold:#ffb35c; --gold2:#5b8cff; --amber:#ffe2b8;
+  --ink:#f3f1ea; --ink-dim:#a9adc4;
+  --ok:#5fd38d; --no:#ff6f7d;
+  --disp:'Abril Fatface',serif; --ser:'Karla',sans-serif; --body:'Be Vietnam Pro',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:var(--body);color:var(--ink);min-height:100vh;overflow-x:hidden;
+  background:linear-gradient(123deg,#0a0e1d,#1a2143,#33265c,#123049,#0a0e1d);
+  background-size:400% 400%;animation:bg 26s ease infinite;
+}
+@keyframes bg{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+/* rèm nhung dọc */
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='420'%3E%3Ctext x='10' y='150' font-family='Georgia,serif' font-size='170' fill='none' stroke='%23ffb35c' stroke-width='1.4' opacity='0.5'%3EAa%3C/text%3E%3Ctext x='215' y='330' font-family='Georgia,serif' font-size='150' fill='none' stroke='%235b8cff' stroke-width='1.4' opacity='0.45'%3EEe%3C/text%3E%3Ctext x='30' y='390' font-family='Georgia,serif' font-size='120' fill='none' stroke='%23f3f1ea' stroke-width='1' opacity='0.28'%3EOo%3C/text%3E%3C/svg%3E"),
+             repeating-linear-gradient(0deg,rgba(243,241,234,.055) 0 1px,transparent 1px 34px);
+  background-size:420px 420px,100% 34px}
+/* emoji bay */
+.fl{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.f{position:absolute;bottom:-10%;opacity:.16;animation:up linear infinite}
+@keyframes up{0%{transform:translateY(0) rotate(0);opacity:0}12%{opacity:.2}100%{transform:translateY(-118vh) rotate(340deg);opacity:0}}
+
+header{position:relative;z-index:2;padding:20px 34px;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;
+  background:linear-gradient(180deg,rgba(61,15,28,.94),rgba(42,10,18,.86));
+  border-bottom:3px solid var(--gold2);box-shadow:0 8px 30px rgba(0,0,0,.5)}
+/* dãy bóng đèn marquee */
+header::after{content:'';position:absolute;left:0;right:0;bottom:-10px;height:10px;
+  background-image:linear-gradient(0deg,var(--gold) 0 3px,transparent 3px),
+                   linear-gradient(0deg,transparent 0 5px,var(--gold2) 5px 7px,transparent 7px);
+  background-size:100% 10px,100% 10px;opacity:.9;
+  animation:blink 8s ease-in-out infinite;box-shadow:0 4px 14px rgba(0,0,0,.5)}
+@keyframes blink{0%,100%{filter:hue-rotate(0deg)}50%{filter:hue-rotate(24deg)}}
+.tag{font-family:var(--disp);font-size:.86rem;letter-spacing:.22em;color:var(--gold);margin-bottom:5px}
+header h1{font-family:var(--ser);font-weight:800;font-size:1.42rem;line-height:1.3;color:var(--amber);text-shadow:0 3px 12px rgba(0,0,0,.6)}
+.sub{font-size:.74rem;color:var(--ink-dim);margin-top:7px;font-weight:500;letter-spacing:.02em}
+.gauge{display:flex;align-items:center;gap:12px;background:rgba(0,0,0,.4);border:2px solid var(--gold2);border-radius:12px;padding:9px 18px}
+.gauge .num{font-family:var(--disp);font-size:1.9rem;letter-spacing:2px;color:var(--gold);line-height:1}
+.gauge .lbl{font-family:var(--disp);font-size:.72rem;letter-spacing:.2em;color:var(--ink-dim)}
+
+.main{position:relative;z-index:2;display:flex;gap:22px;padding:26px 30px 46px;align-items:flex-start}
+.lp,.rp{flex:1 1 50%;max-height:calc(100vh - 128px);overflow-y:auto;padding-right:8px}
+.lp::-webkit-scrollbar,.rp::-webkit-scrollbar{width:9px}
+.lp::-webkit-scrollbar-thumb,.rp::-webkit-scrollbar-thumb{background:var(--gold2);border-radius:6px}
+.lp::-webkit-scrollbar-track,.rp::-webkit-scrollbar-track{background:rgba(0,0,0,.3)}
+.slbl{font-family:var(--disp);font-size:1.05rem;letter-spacing:.2em;color:var(--gold);margin-bottom:13px;padding-bottom:7px;border-bottom:2px dashed var(--gold2)}
+
+/* thẻ đoạn văn = khung phim */
+.pc{position:relative;background:rgba(255,240,220,.07);backdrop-filter:blur(9px);
+  border:1.5px solid rgba(242,196,107,.35);border-left:6px solid var(--gold);border-radius:12px;
+  padding:16px 18px 15px 22px;margin-bottom:15px;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.plbl{font-family:var(--disp);font-size:.9rem;letter-spacing:.16em;color:var(--gold);margin-bottom:9px}
+.pt{font-size:1.03rem;line-height:1.95;color:var(--ink)}
+.wbox{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 12px}
+.wbox b{font-size:.9rem;background:rgba(242,196,107,.16);border:1.5px dashed var(--gold);color:var(--amber);
+  padding:5px 13px;border-radius:20px;font-weight:700}
+.blk{display:inline-block;min-width:40px;text-align:center;font-weight:800;color:var(--velvet);
+  background:var(--gold);border-radius:5px;padding:1px 9px;margin:0 3px}
+.btr{margin-top:11px;font-family:var(--body);font-size:.78rem;font-weight:700;background:transparent;
+  border:2px solid var(--gold2);color:var(--gold);padding:7px 17px;border-radius:22px;cursor:pointer;transition:.2s}
+.btr:hover{background:var(--gold);color:var(--velvet)}
+.tv{display:none;margin-top:10px;font-size:.95rem;line-height:1.9;color:var(--amber);
+  background:rgba(0,0,0,.32);border-left:4px solid var(--gold2);border-radius:0 9px 9px 0;padding:11px 14px}
+.tv.open{display:block;animation:fade .3s ease}
+@keyframes fade{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+
+/* glossary */
+.gw{background:rgba(255,240,220,.07);backdrop-filter:blur(9px);border:1.5px solid rgba(242,196,107,.35);
+  border-radius:12px;padding:16px 18px;margin-bottom:18px}
+.gt2{font-family:var(--disp);font-size:1rem;letter-spacing:.16em;color:var(--gold);margin-bottom:11px}
+.gtb{width:100%;border-collapse:collapse;font-size:.9rem}
+.gtb th{background:var(--gold2);color:#2a0a12;font-weight:800;padding:8px 10px;text-align:left;font-size:.84rem}
+.gtb td{border-bottom:1px solid rgba(242,196,107,.22);padding:7px 10px;vertical-align:top}
+.gtb .w{color:var(--amber);font-weight:700}
+.gtb .pos{color:var(--gold);font-style:italic;white-space:nowrap}
+
+/* câu hỏi */
+.qc{background:rgba(255,240,220,.07);backdrop-filter:blur(9px);border:1.5px solid rgba(242,196,107,.3);
+  border-radius:12px;padding:16px 18px;margin-bottom:15px;box-shadow:0 8px 24px rgba(0,0,0,.32)}
+.qn{font-family:var(--disp);font-size:.86rem;letter-spacing:.16em;color:var(--gold);margin-bottom:8px}
+.qt{font-size:1.06rem;line-height:1.85;font-weight:600;margin-bottom:13px}
+.opts{display:grid;grid-template-columns:1fr;gap:9px}
+.opt{font-family:var(--body);font-size:.98rem;font-weight:600;text-align:left;line-height:1.6;
+  background:rgba(0,0,0,.3);border:2px solid rgba(242,196,107,.35);color:var(--ink);
+  padding:11px 16px;border-radius:10px;cursor:pointer;transition:.18s}
+.opt:hover:not(:disabled){border-color:var(--gold);background:rgba(242,196,107,.15);transform:translateX(4px)}
+.opt:disabled{cursor:default}
+.opt.correct{background:rgba(95,211,141,.24);border-color:var(--ok);color:#d7ffe8}
+.opt.wrong{background:rgba(255,111,125,.22);border-color:var(--no);color:#ffdfe3;animation:shk .45s}
+@keyframes shk{10%,90%{transform:translateX(-2px)}20%,80%{transform:translateX(4px)}30%,50%,70%{transform:translateX(-7px)}40%,60%{transform:translateX(7px)}}
+
+.expl{display:none;margin-top:13px}
+.expl.open{display:block;animation:fade .35s ease}
+.expl h4{font-family:var(--disp);font-size:.95rem;letter-spacing:.14em;color:var(--gold);margin-bottom:10px}
+.estep{background:rgba(0,0,0,.3);border-left:5px solid var(--gold2);border-radius:0 9px 9px 0;
+  padding:11px 14px;margin-bottom:9px;font-size:.94rem;line-height:1.9}
+.estep:nth-child(2){border-left-color:#7fb4ff}
+.estep:nth-child(3){border-left-color:#c58cff}
+.estep:nth-child(4){border-left-color:var(--ok)}
+.estep:nth-child(5){border-left-color:var(--no)}
+.estep:nth-child(6){border-left-color:var(--amber)}
+.elbl{font-family:var(--disp);font-size:.84rem;letter-spacing:.14em;color:var(--amber);margin-bottom:6px}
+.p-word{color:#8fd3ff;font-weight:700}
+.p-phonetic{color:#b9a6ff;font-style:italic}
+.p-mean{color:#ffd98a;font-weight:600}
+.p-grammar{color:#ff9ecb;font-weight:700}
+.hl-green{color:var(--ok);font-weight:800}
+.hl-red{color:var(--no);font-weight:800}
+
+.sw{text-align:center;margin:22px 0 8px}
+.bsub{font-family:var(--disp);font-size:1.12rem;letter-spacing:.14em;
+  background:linear-gradient(135deg,var(--gold),var(--gold2));color:#2a0a12;border:none;
+  padding:15px 34px;border-radius:30px;cursor:pointer;box-shadow:0 8px 26px rgba(242,196,107,.35);transition:.2s}
+.bsub:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(242,196,107,.5)}
+
+/* modals */
+.ov{display:none;position:fixed;inset:0;z-index:100;background:rgba(20,4,9,.88);backdrop-filter:blur(6px);
+  align-items:center;justify-content:center;padding:16px}
+.ov.open{display:flex}
+.mb{background:linear-gradient(160deg,var(--velvet3),var(--velvet));border:3px solid var(--gold);
+  border-radius:16px;padding:26px 28px;max-width:455px;width:100%;text-align:center;animation:pop .3s ease;
+  box-shadow:0 20px 50px rgba(0,0,0,.6)}
+@keyframes pop{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
+.mb h2{font-family:var(--disp);font-size:1.3rem;letter-spacing:.14em;color:var(--gold);margin-bottom:14px}
+.mb input{width:100%;font-family:var(--body);font-size:.92rem;font-weight:600;padding:11px 14px;
+  background:rgba(0,0,0,.4);border:2px solid var(--gold2);border-radius:22px;color:var(--ink);
+  text-align:center;outline:none;margin-bottom:9px}
+.mb input:focus{border-color:var(--gold)}
+.err{color:var(--no);font-size:.72rem;font-weight:800;margin-bottom:8px;display:none}
+.err.show{display:block}
+.bok{font-family:var(--disp);font-size:1rem;letter-spacing:.12em;background:var(--gold);color:#2a0a12;
+  border:none;padding:11px 28px;border-radius:22px;cursor:pointer}
+.rname{font-size:.74rem;color:var(--ink-dim);font-weight:600;margin-bottom:5px}
+.rscore{font-family:var(--disp);font-size:2.9rem;letter-spacing:2px;color:var(--gold);line-height:1;margin:6px 0}
+.rs10{font-family:var(--disp);font-size:1.15rem;letter-spacing:1px;color:var(--ok);margin-bottom:8px}
+.rgif{width:180px;margin:10px auto;display:block;border:3px solid var(--gold2);border-radius:9px}
+.rcmt{font-size:.86rem;line-height:1.75;background:rgba(0,0,0,.32);border:2px dashed var(--gold2);
+  border-radius:9px;padding:11px 14px;margin:12px 0}
+.bcl{font-family:var(--body);font-size:.74rem;font-weight:800;background:transparent;border:2px solid var(--gold2);
+  color:var(--gold);padding:9px 24px;border-radius:22px;cursor:pointer}
+.cn{position:fixed;top:-16px;z-index:200;pointer-events:none;animation:cf 2.4s forwards}
+@keyframes cf{0%{transform:translateY(0) rotate(0);opacity:1}100%{transform:translateY(108vh) rotate(700deg);opacity:0}}
+@media(max-width:900px){.main{flex-direction:column;padding:0 18px 42px}.lp{flex:1 1 auto;width:100%}.lp,.rp{max-height:none}}
+</style>
+</head>
+<body>
+<style>
+:root{--nbh:52px}
+body{padding-top:var(--nbh)}
+.nbar{position:fixed;top:0;left:0;right:0;z-index:150;min-height:var(--nbh);
+  display:flex;align-items:center;gap:11px;padding:6px 14px;
+  background:linear-gradient(90deg,#ff1f4b,#ff7a00,#ffd400,#22c55e,#ff7a00,#ff1f4b);
+  background-size:400% 100%;animation:nbslide 11s linear infinite;
+  border-bottom:3px solid #fff;box-shadow:0 5px 22px rgba(0,0,0,.5)}
+@keyframes nbslide{0%{background-position:0 0}100%{background-position:400% 0}}
+.nbar .pin{font-size:1.25rem;flex:0 0 auto;animation:nbpulse 1.1s ease-in-out infinite;
+  filter:drop-shadow(0 2px 3px rgba(0,0,0,.4))}
+@keyframes nbpulse{0%,100%{transform:scale(1) rotate(0)}50%{transform:scale(1.3) rotate(-14deg)}}
+.nbtxt{flex:1 1 auto;min-width:0;font-family:'Be Vietnam Pro',sans-serif;font-size:.83rem;font-weight:800;
+  line-height:1.35;color:#170600;text-shadow:0 1px 0 rgba(255,255,255,.5);
+  animation:nbfade .5s ease}
+@keyframes nbfade{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+.nbtg{flex:0 0 auto;font-family:'Be Vietnam Pro',sans-serif;font-size:.7rem;font-weight:800;
+  background:#170600;color:#ffd400;border:2px solid #fff;border-radius:20px;
+  padding:6px 13px;cursor:pointer;white-space:nowrap}
+.nbtg:hover{background:#fff;color:#c40024}
+.nfull{display:none;position:fixed;top:var(--nbh);left:0;right:0;z-index:149;
+  max-height:52vh;overflow-y:auto;padding:13px 18px;
+  background:rgba(12,6,2,.96);backdrop-filter:blur(9px);border-bottom:3px solid #ffd400;
+  box-shadow:0 12px 30px rgba(0,0,0,.55)}
+.nfull.open{display:block;animation:nbfade .3s ease}
+.nfull ul{list-style:none;display:grid;gap:8px;max-width:1100px;margin:0 auto}
+.nfull li{font-family:'Be Vietnam Pro',sans-serif;font-size:.87rem;font-weight:600;line-height:1.7;
+  color:#fff6e0;background:rgba(255,212,0,.1);border-left:5px solid #ffd400;border-radius:0 9px 9px 0;
+  padding:9px 13px}
+.nfull li b{color:#ffd400}
+/* tru chieu cao thanh ghim khoi vung cuon cua hai cot */
+.lp,.rp{max-height:calc(100vh - 128px - var(--nbh))}
+@media(max-width:900px){:root{--nbh:66px}.nbtxt{font-size:.76rem}.lp,.rp{max-height:none}}
+</style>
+<script>
+function nbToggle(){
+  var p=document.getElementById('nfull'),b=document.getElementById('nbtg');
+  p.classList.toggle('open');
+  b.textContent=p.classList.contains('open')?'▲ Thu gọn':'▼ Xem đủ';
+}
+document.addEventListener('DOMContentLoaded',function(){
+  var src=document.querySelectorAll('#nfull li');
+  var box=document.getElementById('nbtxt');
+  if(!src.length||!box)return;
+  var i=0;
+  function show(){
+    box.innerHTML=src[i].innerHTML;
+    box.style.animation='none';box.offsetHeight;box.style.animation='nbfade .5s ease';
+    i=(i+1)%src.length;
+  }
+  show();setInterval(show,6000);
+});
+</script>
+<div class="nbar">
+  <span class="pin">📌</span>
+  <div class="nbtxt" id="nbtxt"></div>
+  <button class="nbtg" id="nbtg" onclick="nbToggle()">▼ Xem đủ</button>
+</div>
+<div class="nfull" id="nfull">
+  <ul>
+    <li>💛 <b>Ms để bảng này ở đây suốt bài, vì Ms sợ em quên mất mình đang học vì điều gì.</b> Câu nào chưa hiểu, em hãy dừng lại tra Google Dịch, ChatGPT hoặc Gemini cho bằng được nghĩa rồi mới chọn. Đoán bừa thì con số điểm có đẹp cũng chẳng phải của em.</li>
+    <li>🔉 <b>Một từ chỉ thật sự là của em khi em đọc được nó thành tiếng.</b> Tra ở từ điển Cambridge để xem phiên âm, nhìn kỹ trọng âm nằm ở âm tiết nào, bấm loa nghe rồi đọc theo dăm ba lượt.</li>
+    <li>🕯️ <b>Phần giải thích là chỗ Ms ngồi viết lâu nhất.</b> Em đọc đủ cả năm bước nhé, kể cả câu đã làm đúng — hiểu vì sao ba phương án kia sai mới là thứ theo em vào phòng thi.</li>
+    <li>🖋️ <b>Xin em hãy mở vở ra.</b> Chép lại từ mới, cụm cố định, cấu trúc vừa gặp kèm nghĩa tiếng Việt. Ms dạy nhiều khoá rồi và thấy rất rõ: bạn nào chịu ghi, bạn ấy đi xa.</li>
+    <li>🌾 <b>Không ai giỏi lên vì bấm cho hết bài.</b> Mười lăm phút em chịu khó đọc kỹ và ghi chép hôm nay sẽ quay lại thành điểm số của em ngày mai. Ms tin em, chỉ mong em đừng dễ dãi với chính mình.</li>
+  </ul>
+</div>
+<div class="fl" id="fl"></div>
+
+<header>
+  <div>
+    <div class="tag">English 9 · Unit 9 · World Englishes · TEST 1</div>
+    <h1>B. Reading — Tiếng Anh Úc &nbsp;·&nbsp; Vượt Qua Nỗi Sợ Nói Tiếng Anh Trước Đám Đông</h1>
+    <div class="sub">Giáo viên tạo: MS Chí Nên · 12 câu (32 → 43) — Phần I: đọc điền từ (6 câu) + Phần II: đọc hiểu (6 câu)</div>
+  </div>
+  <div class="gauge">
+    <div class="num" id="lv">0/12</div>
+    <div class="lbl">Điểm</div>
+  </div>
+</header>
+
+<div class="main">
+<div class="lp">
+  <div class="slbl">📖 Bài đọc</div>
+
+  <div class="pc">
+    <div class="plbl">I · AUSTRALIAN ENGLISH — Đoạn 1</div>
+    <div class="pt">You've probably heard the phrase "divided by a common language" used to describe the <span class="blk">32</span> between British and American English. But what about Australian English? Aussies also speak a unique dialect with <span class="blk">33</span> distinctive features.</div>
+    <button class="btr" onclick="tv('v1')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v1">Chắc bạn từng nghe câu "bị chia cắt bởi một ngôn ngữ chung" được dùng để mô tả <b>những khác biệt</b> giữa tiếng Anh Anh và tiếng Anh Mỹ. Nhưng còn tiếng Anh Úc thì sao? Người Úc cũng nói một phương ngữ độc đáo với <b>rất nhiều</b> nét đặc trưng riêng.</div>
+  </div>
+
+  <div class="pc">
+    <div class="plbl">I · Đoạn 2</div>
+    <div class="pt">Australian English uses more diminutives than any other form of English. Diminutives are shortened versions of <span class="blk">34</span> English words. For example, you've probably heard "obvi" used instead of "obviously", or "vacay" instead of "vacation". There are more than 4,300 recorded diminutives in Australian English.</div>
+    <button class="btr" onclick="tv('v2')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v2">Tiếng Anh Úc dùng nhiều từ rút gọn hơn bất kỳ dạng tiếng Anh nào khác. Từ rút gọn là những phiên bản ngắn đi của các từ tiếng Anh <b>chuẩn</b>. Chẳng hạn, chắc bạn từng nghe "obvi" được dùng thay cho "obviously", hay "vacay" thay cho "vacation". Có hơn 4.300 từ rút gọn được ghi nhận trong tiếng Anh Úc.</div>
+  </div>
+
+  <div class="pc">
+    <div class="plbl">I · Đoạn 2 (tiếp)</div>
+    <div class="pt">You <span class="blk">35</span> that "barbie" means "barbeque" in Australia. But did you know that instead of "afternoon", an Australian might say "arvo"?</div>
+    <button class="btr" onclick="tv('v3')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v3">Có lẽ bạn <b>đã biết rồi</b> rằng "barbie" nghĩa là "tiệc nướng ngoài trời" ở Úc. Nhưng bạn có biết rằng thay vì nói "afternoon", một người Úc có thể nói "arvo" không?</div>
+  </div>
+
+  <div class="pc">
+    <div class="plbl">I · Đoạn 3</div>
+    <div class="pt">Besides, some Australian English words are foreign to speakers <span class="blk">36</span> American English and British English alike. Here are just some <span class="blk">37</span> unique to Australia: "G'day" is a general greeting, like "Hi" or "Hello"; "mate" means friend; and "hooroo" means goodbye.</div>
+    <button class="btr" onclick="tv('v4')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v4">Bên cạnh đó, một số từ tiếng Anh Úc nghe rất xa lạ với người nói tiếng Anh Mỹ <b>lẫn</b> tiếng Anh Anh. Sau đây chỉ là vài <b>từ vựng</b> riêng có của nước Úc: "G'day" là lời chào chung, giống như "Hi" hay "Hello"; "mate" nghĩa là bạn bè; và "hooroo" nghĩa là tạm biệt.</div>
+  </div>
+
+  <div class="pc" style="border-left-color:var(--gold2)">
+    <div class="plbl">II · FEAR OF SPEAKING ENGLISH — Đoạn 1</div>
+    <div class="pt">If speaking English in public feels overwhelming, you're not alone. It's common to feel nervous, whether you're preparing for a presentation or engaging in a conversation. The good news is, with the right strategies, you can overcome this fear and boost your confidence.</div>
+    <button class="btr" onclick="tv('v5')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v5">Nếu việc nói tiếng Anh trước đám đông khiến bạn thấy quá sức, bạn không hề đơn độc đâu. Cảm thấy hồi hộp là chuyện thường, dù bạn đang chuẩn bị <b>cho một bài thuyết trình</b> hay đang tham gia một cuộc trò chuyện. Tin vui là, với những chiến lược đúng đắn, bạn có thể <b>vượt qua nỗi sợ này và tăng sự tự tin</b> của mình.</div>
+  </div>
+
+  <div class="pc" style="border-left-color:var(--gold2)">
+    <div class="plbl">II · Đoạn 2</div>
+    <div class="pt">When speaking in public, many people worry about being perfect. This pressure often causes more fear. The key is to focus on communication, not perfection. You might make minor grammatical errors, but as long as you're conveying your message clearly, that's what matters. Even native speakers make mistakes, so don't worry about <b>them</b>.</div>
+    <button class="btr" onclick="tv('v6')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v6">Khi nói trước đám đông, nhiều người lo phải thật hoàn hảo. Áp lực này thường gây thêm sợ hãi. Điều mấu chốt là <b>tập trung vào việc truyền đạt, chứ không phải sự hoàn hảo</b>. Bạn có thể mắc vài <b>lỗi ngữ pháp nhỏ</b>, nhưng chỉ cần bạn truyền đạt được thông điệp rõ ràng thì đó mới là điều quan trọng. Ngay cả người bản ngữ cũng mắc lỗi, nên đừng lo lắng về <b>chúng</b>.</div>
+  </div>
+
+  <div class="pc" style="border-left-color:var(--gold2)">
+    <div class="plbl">II · Đoạn 3</div>
+    <div class="pt">Also, speaking in front of a large group can be <b>intimidating</b>. To build confidence, you can begin by speaking in front of a mirror. This will help you practise your speech without the fear of judgment. Next, try speaking to a friend or family member, then to a smaller group.</div>
+    <button class="btr" onclick="tv('v7')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v7">Ngoài ra, việc nói trước một nhóm đông có thể rất <b>đáng sợ</b>. Để xây dựng sự tự tin, bạn có thể bắt đầu bằng cách nói trước gương. Việc này giúp bạn luyện bài nói mà không sợ bị ai đánh giá. Tiếp theo, hãy thử nói với một người bạn hoặc người thân trong gia đình, <b>rồi tới một nhóm nhỏ</b>.</div>
+  </div>
+
+  <div class="pc" style="border-left-color:var(--gold2)">
+    <div class="plbl">II · Đoạn 4</div>
+    <div class="pt">No one becomes fluent overnight. Overcoming the fear of speaking English in public takes time, but with regular practice and the right mindset, you can significantly improve your confidence.</div>
+    <button class="btr" onclick="tv('v8')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v8">Chẳng ai trở nên lưu loát chỉ sau một đêm. Việc vượt qua nỗi sợ nói tiếng Anh trước đám đông cần có thời gian, nhưng với <b>việc luyện tập đều đặn và tư duy đúng đắn</b>, bạn có thể cải thiện đáng kể sự tự tin của mình.</div>
+  </div>
+
+  <div class="gw">
+    <div class="gt2">📚 Glossary — Test 1 · Reading</div>
+    <table class="gtb">
+      <tr><th>Word / Phrase</th><th>Loại</th><th>Nghĩa tiếng Việt</th></tr>
+      <tr><td class="w">a common language</td><td class="pos">n.phr</td><td>một ngôn ngữ chung</td></tr>
+      <tr><td class="w">difference</td><td class="pos">n</td><td>sự khác biệt</td></tr>
+      <tr><td class="w">Aussie</td><td class="pos">n</td><td>người Úc (cách gọi thân mật)</td></tr>
+      <tr><td class="w">dialect</td><td class="pos">n</td><td>phương ngữ, tiếng địa phương</td></tr>
+      <tr><td class="w">plenty of</td><td class="pos">quantifier</td><td>rất nhiều</td></tr>
+      <tr><td class="w">distinctive feature</td><td class="pos">n</td><td>nét đặc trưng riêng</td></tr>
+      <tr><td class="w">diminutive</td><td class="pos">n</td><td>từ rút gọn thân mật</td></tr>
+      <tr><td class="w">shortened version</td><td class="pos">n</td><td>phiên bản rút ngắn</td></tr>
+      <tr><td class="w">standard</td><td class="pos">adj</td><td>chuẩn mực, tiêu chuẩn</td></tr>
+      <tr><td class="w">instead of</td><td class="pos">prep.phr</td><td>thay vì</td></tr>
+      <tr><td class="w">recorded</td><td class="pos">adj</td><td>được ghi nhận lại</td></tr>
+      <tr><td class="w">be foreign to</td><td class="pos">adj.phr</td><td>xa lạ với</td></tr>
+      <tr><td class="w">alike</td><td class="pos">adv</td><td>như nhau, cả hai bên</td></tr>
+      <tr><td class="w">vocabulary</td><td class="pos">n</td><td>từ vựng</td></tr>
+      <tr><td class="w">general greeting</td><td class="pos">n</td><td>lời chào thông dụng</td></tr>
+      <tr><td class="w">overwhelming</td><td class="pos">adj</td><td>quá sức, choáng ngợp</td></tr>
+      <tr><td class="w">nervous</td><td class="pos">adj</td><td>hồi hộp, lo lắng</td></tr>
+      <tr><td class="w">give a presentation</td><td class="pos">v.phr</td><td>thuyết trình</td></tr>
+      <tr><td class="w">engage in a conversation</td><td class="pos">v.phr</td><td>tham gia một cuộc trò chuyện</td></tr>
+      <tr><td class="w">strategy</td><td class="pos">n</td><td>chiến lược, cách làm</td></tr>
+      <tr><td class="w">overcome a fear</td><td class="pos">v.phr</td><td>vượt qua nỗi sợ</td></tr>
+      <tr><td class="w">boost confidence</td><td class="pos">v.phr</td><td>tăng sự tự tin</td></tr>
+      <tr><td class="w">pressure</td><td class="pos">n</td><td>áp lực</td></tr>
+      <tr><td class="w">perfection</td><td class="pos">n</td><td>sự hoàn hảo</td></tr>
+      <tr><td class="w">minor grammatical error</td><td class="pos">n</td><td>lỗi ngữ pháp nhỏ</td></tr>
+      <tr><td class="w">convey a message</td><td class="pos">v.phr</td><td>truyền đạt thông điệp</td></tr>
+      <tr><td class="w">as long as</td><td class="pos">conj</td><td>miễn là, chỉ cần</td></tr>
+      <tr><td class="w">native speaker</td><td class="pos">n</td><td>người bản ngữ</td></tr>
+      <tr><td class="w">intimidating</td><td class="pos">adj</td><td>đáng sợ, gây e dè</td></tr>
+      <tr><td class="w">frightening</td><td class="pos">adj</td><td>đáng sợ, làm người ta hoảng</td></tr>
+      <tr><td class="w">fear of judgment</td><td class="pos">n.phr</td><td>nỗi sợ bị đánh giá</td></tr>
+      <tr><td class="w">fluent</td><td class="pos">adj</td><td>lưu loát</td></tr>
+      <tr><td class="w">overnight</td><td class="pos">adv</td><td>chỉ sau một đêm, tức thì</td></tr>
+      <tr><td class="w">regular practice</td><td class="pos">n</td><td>việc luyện tập đều đặn</td></tr>
+      <tr><td class="w">mindset</td><td class="pos">n</td><td>tư duy, lối nghĩ</td></tr>
+      <tr><td class="w">significantly</td><td class="pos">adv</td><td>một cách đáng kể</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="rp">
+  <div class="slbl">🗣️ Bài tập — 12 câu</div>
+  <div id="quiz"></div>
+  <div class="sw">
+    <button class="bsub" onclick="openModal()">🎯 NỘP BÀI TÍNH ĐIỂM &amp; XEM KẾT QUẢ</button>
+  </div>
+</div>
+</div>
+
+<div class="ov" id="nm">
+  <div class="mb">
+    <h2>📖 Nhập tên để nộp bài</h2>
+    <input type="text" id="sn" placeholder="Họ và tên học sinh...">
+    <div class="err" id="er">Vui lòng nhập tên trước khi nộp bài!</div>
+    <button class="bok" onclick="sub()">Xem kết quả</button>
+  </div>
+</div>
+
+<div class="ov" id="rm">
+  <div class="mb" style="max-width:470px">
+    <div class="rname" id="rn"></div>
+    <div class="rscore" id="rs"></div>
+    <div class="rs10" id="rs10"></div>
+    <img class="rgif" id="rg" src="" alt="">
+    <div class="rcmt" id="rc"></div>
+    <button class="bcl" onclick="closeR()">Đóng &amp; xem lại bài</button>
+  </div>
+</div>
+
+<script>
+const QS=[];
+
+QS.push({n:32,sec:'I · Đọc điền từ',
+qt:'The phrase "divided by a common language" is used to describe the <b>(32) ______</b> between British and American English.',
+opts:[
+ {t:'differences',m:'danh từ số nhiều (noun): những điểm khác biệt',c:true},
+ {t:'similarities',m:'danh từ số nhiều (noun): những điểm tương đồng',c:false},
+ {t:'languages',m:'danh từ số nhiều (noun): các ngôn ngữ',c:false},
+ {t:'translations',m:'danh từ số nhiều (noun): các bản dịch',c:false}],
+tr:'Cụm "bị chia cắt bởi một ngôn ngữ chung" được dùng để mô tả <b>những khác biệt</b> giữa tiếng Anh Anh và tiếng Anh Mỹ.',
+ok:'Cụm <span class="p-word">divided by a common language</span> 👉 <span class="p-mean">bị chia cắt bởi một ngôn ngữ chung</span> mang ý nghịch lý: cùng nói tiếng Anh mà vẫn thấy khác nhau. Động từ <span class="p-grammar">divide</span> nghĩa "chia tách" nên thứ được mô tả phải là <span class="p-word">differences</span> 👉 <span class="p-mean">những khác biệt</span>. Cả bài sau đó cũng đi kể ra nét riêng của tiếng Anh Úc.',
+no:'<span class="p-word">similarities</span> nghĩa "điểm giống nhau" thì mâu thuẫn hẳn với động từ "divided". <span class="p-word">languages</span> sai vì tiếng Anh Anh và tiếng Anh Mỹ là hai <b>biến thể</b> của cùng một ngôn ngữ, chính cụm "a common language" đã nói rõ điều đó. <span class="p-word">translations</span> nghĩa "bản dịch", hoàn toàn không liên quan vì không ai dịch giữa hai biến thể này.',
+ev:'🔍 <span class="p-word">You&apos;ve probably heard the phrase "divided by a common language" used to describe the (32) ______ between British and American English</span> 👉 <span class="p-mean">Chắc bạn từng nghe cụm "bị chia cắt bởi một ngôn ngữ chung" dùng để mô tả những khác biệt giữa tiếng Anh Anh và tiếng Anh Mỹ</span>.'});
+
+QS.push({n:33,sec:'I · Đọc điền từ',
+qt:'Aussies also speak a unique dialect with <b>(33) ______</b> distinctive features.',
+opts:[
+ {t:'plenty of',m:'lượng từ (quantifier): rất nhiều — đi với danh từ số nhiều và không đếm được',c:true},
+ {t:'any of',m:'lượng từ (quantifier): bất kỳ cái nào trong số — cần "the" hoặc từ hạn định theo sau',c:false},
+ {t:'much of',m:'lượng từ (quantifier): phần lớn — đi với danh từ không đếm được',c:false},
+ {t:'none of',m:'lượng từ (quantifier): không cái nào trong số',c:false}],
+tr:'Người Úc cũng nói một phương ngữ độc đáo với <b>rất nhiều</b> nét đặc trưng riêng.',
+ok:'Sau chỗ trống là <span class="p-word">distinctive features</span> — danh từ đếm được số nhiều và <span class="p-grammar">không có mạo từ "the"</span>. Chỉ <span class="p-word">plenty of</span> đứng trực tiếp trước danh từ số nhiều không xác định được. Về nghĩa, tính từ <span class="p-word">unique</span> ở đầu câu cũng báo hiệu phương ngữ này có nhiều nét riêng, đúng như phần sau liệt kê hàng loạt ví dụ.',
+no:'<span class="p-word">any of</span> và <span class="p-word">none of</span> đều đòi hỏi phải có từ hạn định theo sau như "any of the features"; hơn nữa "none of" mang nghĩa phủ định, trái với việc bài kể ra rất nhiều nét đặc trưng. <span class="p-word">much of</span> chỉ đi với <span class="p-mean">danh từ không đếm được</span>, mà "features" thì đếm được và đang ở số nhiều.',
+ev:'🔍 <span class="p-word">But what about Australian English? Aussies also speak a unique dialect with (33) ______ distinctive features</span> 👉 <span class="p-mean">Nhưng còn tiếng Anh Úc thì sao? Người Úc cũng nói một phương ngữ độc đáo với rất nhiều nét đặc trưng riêng</span>.'});
+
+QS.push({n:34,sec:'I · Đọc điền từ',
+qt:'Diminutives are shortened versions of <b>(34) ______</b> English words.',
+opts:[
+ {t:'standard',m:'tính từ (adjective): chuẩn mực, tiêu chuẩn',c:true},
+ {t:'borrowed',m:'tính từ / phân từ hai (adjective): được vay mượn từ ngôn ngữ khác',c:false},
+ {t:'foreign',m:'tính từ (adjective): thuộc nước ngoài, xa lạ',c:false},
+ {t:'bilingual',m:'tính từ (adjective): song ngữ, dùng hai thứ tiếng',c:false}],
+tr:'Từ rút gọn là những phiên bản ngắn đi của các từ tiếng Anh <b>chuẩn</b>.',
+ok:'Chỗ trống đứng trước cụm <span class="p-word">English words</span> nên là một <span class="p-mean">tính từ</span>. Đây là câu định nghĩa: muốn rút gọn thì phải có bản đầy đủ ban đầu, và hai ví dụ ngay sau chứng minh điều đó — <span class="p-word">"obvi" instead of "obviously"</span>, <span class="p-word">"vacay" instead of "vacation"</span>. Những từ gốc ấy chính là từ tiếng Anh <span class="p-word">standard</span> 👉 <span class="p-mean">chuẩn</span>.',
+no:'<span class="p-word">borrowed</span> nghĩa "vay mượn từ tiếng khác", nhưng "obviously" và "vacation" là từ tiếng Anh gốc chứ không phải từ mượn. <span class="p-word">foreign</span> nghĩa "nước ngoài" thì tự mâu thuẫn khi đi với "English words". <span class="p-word">bilingual</span> chỉ người hoặc chương trình dùng hai thứ tiếng, không dùng để mô tả một từ đơn lẻ.',
+ev:'🔍 <span class="p-word">Diminutives are shortened versions of (34) ______ English words. For example, you&apos;ve probably heard "obvi" used instead of "obviously"</span> 👉 <span class="p-mean">Từ rút gọn là phiên bản ngắn đi của các từ tiếng Anh chuẩn. Ví dụ, bạn từng nghe "obvi" dùng thay cho "obviously"</span>.'});
+
+QS.push({n:35,sec:'I · Đọc điền từ',
+qt:'You <b>(35) ______</b> that "barbie" means "barbeque" in Australia.',
+opts:[
+ {t:'might already know',m:'động từ khuyết thiếu + trạng từ + V: có lẽ đã biết rồi',c:true},
+ {t:'have to already know',m:'trật tự sai: trạng từ chen sai chỗ trong cụm "have to + V"',c:false},
+ {t:'have to know already',m:'cụm động từ: buộc phải biết rồi',c:false},
+ {t:'already might know',m:'trật tự sai: trạng từ đứng trước động từ khuyết thiếu',c:false}],
+tr:'Có lẽ bạn <b>đã biết rồi</b> rằng "barbie" nghĩa là "tiệc nướng ngoài trời" ở Úc.',
+ok:'Quy tắc trật tự từ là <span class="p-grammar">S + động từ khuyết thiếu + trạng từ + động từ chính</span>, nên <span class="p-word">already</span> phải nằm giữa <span class="p-word">might</span> và <span class="p-word">know</span>. Về nghĩa, <span class="p-word">might</span> diễn tả sự phỏng đoán nhẹ nhàng, rất hợp với giọng văn thân mật và với vế sau <span class="p-word">But did you know that an Australian might say "arvo"?</span> — tác giả đoán bạn biết cái dễ, rồi mới hỏi cái khó hơn.',
+no:'<span class="p-word">already might know</span> sai trật tự vì trạng từ không đứng trước động từ khuyết thiếu. <span class="p-word">have to already know</span> cũng sai trật tự, vì "have to" là một cụm không thể tách rời. <span class="p-word">have to know already</span> tuy đúng ngữ pháp nhưng sai nghĩa: "buộc phải biết" mang tính bắt buộc, không hợp với giọng trò chuyện nhẹ nhàng của bài.',
+ev:'🔍 <span class="p-word">You (35) ______ that "barbie" means "barbeque" in Australia. But did you know that instead of "afternoon", an Australian might say "arvo"?</span> 👉 <span class="p-mean">Có lẽ bạn đã biết "barbie" nghĩa là tiệc nướng ở Úc. Nhưng bạn có biết thay vì "afternoon", người Úc có thể nói "arvo" không?</span>'});
+
+QS.push({n:36,sec:'I · Đọc điền từ',
+qt:'Some Australian English words are foreign to speakers <b>(36) ______</b> American English and British English alike.',
+opts:[
+ {t:'of',m:'giới từ (preposition): của — dùng trong cụm speakers of a language',c:true},
+ {t:'in',m:'giới từ (preposition): trong, ở trong',c:false},
+ {t:'at',m:'giới từ (preposition): tại, ở',c:false},
+ {t:'from',m:'giới từ (preposition): từ (nơi xuất phát)',c:false}],
+tr:'Một số từ tiếng Anh Úc nghe rất xa lạ với người nói tiếng Anh Mỹ <b>lẫn</b> tiếng Anh Anh.',
+ok:'Cụm cố định để chỉ người sử dụng một ngôn ngữ là <span class="p-grammar">speakers OF + tên ngôn ngữ</span>, ví dụ "speakers of English", "native speakers of French". Vì vậy giới từ đúng ở đây là <span class="p-word">of</span>.',
+no:'<span class="p-word">in</span> dùng khi nói ngôn ngữ dùng để viết hay nói ra một nội dung, như "written in English", chứ không đi với "speakers". <span class="p-word">at</span> chỉ vị trí hoặc mức độ giỏi như "good at English", không dùng ở đây. <span class="p-word">from</span> chỉ nơi xuất thân của người, không dùng để nối người nói với ngôn ngữ họ nói.',
+ev:'🔍 <span class="p-word">Besides, some Australian English words are foreign to speakers (36) ______ American English and British English alike</span> 👉 <span class="p-mean">Bên cạnh đó, một số từ tiếng Anh Úc rất xa lạ với người nói tiếng Anh Mỹ lẫn tiếng Anh Anh</span>.'});
+
+QS.push({n:37,sec:'I · Đọc điền từ',
+qt:'Here are just some <b>(37) ______</b> unique to Australia: "G&apos;day" is a general greeting; "mate" means friend; and "hooroo" means goodbye.',
+opts:[
+ {t:'vocabulary',m:'danh từ không đếm được (noun): từ vựng, vốn từ',c:true},
+ {t:'grammar',m:'danh từ không đếm được (noun): ngữ pháp',c:false},
+ {t:'pronunciation',m:'danh từ (noun): cách phát âm',c:false},
+ {t:'spelling',m:'danh từ (noun): cách viết chính tả',c:false}],
+tr:'Sau đây chỉ là vài <b>từ vựng</b> riêng có của nước Úc: "G&apos;day" là lời chào chung; "mate" nghĩa là bạn bè; và "hooroo" nghĩa là tạm biệt.',
+ok:'Ba ví dụ nêu ngay sau dấu hai chấm đều là <b>những từ riêng lẻ kèm nghĩa</b> của chúng: G&apos;day, mate, hooroo. Đó chính là <span class="p-word">vocabulary</span> 👉 <span class="p-mean">từ vựng</span>. Cả đoạn cũng mở đầu bằng ý <span class="p-word">some Australian English words</span>, tức trọng tâm là từ ngữ chứ không phải khía cạnh nào khác.',
+no:'<span class="p-word">grammar</span> nói về quy tắc đặt câu, mà ba ví dụ ở đây không phải cấu trúc câu nào cả. <span class="p-word">pronunciation</span> nói về cách đọc; bài chỉ nêu nghĩa của từ chứ không ghi phiên âm. <span class="p-word">spelling</span> nói về cách viết chính tả, cũng không phải điều bài đang so sánh.',
+ev:'🔍 <span class="p-word">Here are just some (37) ______ unique to Australia: "G&apos;day" is a general greeting, like "Hi" or "Hello"; "mate" means friend; and "hooroo" means goodbye</span> 👉 <span class="p-mean">Sau đây chỉ là vài từ vựng riêng của Úc: "G&apos;day" là lời chào chung như "Hi"; "mate" nghĩa là bạn; "hooroo" nghĩa là tạm biệt</span>.'});
+
+QS.push({n:38,sec:'II · Đọc hiểu',
+qt:'What is the main idea of the passage?',
+opts:[
+ {t:'Tips to overcome the fear of speaking English',m:'Những mẹo để vượt qua nỗi sợ nói tiếng Anh',c:true},
+ {t:'How to give a perfect presentation in English',m:'Cách thuyết trình hoàn hảo bằng tiếng Anh',c:false},
+ {t:'Improving speaking skills with friends',m:'Cải thiện kỹ năng nói cùng bạn bè',c:false},
+ {t:'Helping teenagers feel confident in themselves',m:'Giúp thanh thiếu niên tự tin vào bản thân',c:false}],
+tr:'Ý chính của bài đọc là gì?',
+ok:'Câu mở bài nêu vấn đề và hứa hẹn giải pháp: <span class="p-word">with the right strategies, you can overcome this fear and boost your confidence</span> 👉 <span class="p-mean">với những chiến lược đúng, bạn có thể vượt qua nỗi sợ này và tăng sự tự tin</span>. Hai đoạn giữa đưa ra lời khuyên cụ thể, đoạn cuối tổng kết. Đó đúng là bố cục của một bài mẹo vượt qua nỗi sợ.',
+no:'<span class="p-word">How to give a perfect presentation</span> đi ngược lại thông điệp của bài, vì bài khuyên <span class="p-word">focus on communication, not perfection</span>. <span class="p-word">Improving speaking skills with friends</span> chỉ là một bước nhỏ trong đoạn 3. <span class="p-word">Helping teenagers feel confident in themselves</span> quá rộng, bài chỉ bàn tới sự tự tin khi <b>nói tiếng Anh</b>.',
+ev:'🔍 <span class="p-word">The good news is, with the right strategies, you can overcome this fear and boost your confidence</span> 👉 <span class="p-mean">Tin vui là với những chiến lược đúng đắn, bạn có thể vượt qua nỗi sợ này và tăng sự tự tin</span>.'});
+
+QS.push({n:39,sec:'II · Đọc hiểu',
+qt:'According to the passage, people feel nervous about speaking English when ______.',
+opts:[
+ {t:'giving a presentation',m:'khi đang thuyết trình',c:true},
+ {t:'talking to someone close to them',m:'khi nói chuyện với người thân thiết',c:false},
+ {t:'choosing the right strategies',m:'khi chọn những chiến lược đúng đắn',c:false},
+ {t:'making mistakes during a test',m:'khi mắc lỗi trong một bài kiểm tra',c:false}],
+tr:'Theo bài đọc, người ta thấy hồi hộp khi nói tiếng Anh trong tình huống nào?',
+ok:'Bài nêu đúng hai tình huống gây hồi hộp: <span class="p-word">It&apos;s common to feel nervous, whether you&apos;re preparing for a presentation or engaging in a conversation</span> 👉 <span class="p-mean">Cảm thấy hồi hộp là chuyện thường, dù bạn đang chuẩn bị thuyết trình hay tham gia một cuộc trò chuyện</span>. Thuyết trình là tình huống đầu tiên được kể tên.',
+no:'<span class="p-word">talking to someone close to them</span> bị đảo ngược: bài coi việc nói với bạn bè hay người thân là <b>bước tập luyện an toàn</b> để xây dựng tự tin, chứ không phải nguồn gây lo lắng. <span class="p-word">choosing the right strategies</span> là giải pháp, không phải nỗi sợ. <span class="p-word">making mistakes during a test</span> không có trong bài; bài chỉ nhắc tới lỗi ngữ pháp khi giao tiếp.',
+ev:'🔍 <span class="p-word">It&apos;s common to feel nervous, whether you&apos;re preparing for a presentation or engaging in a conversation</span> 👉 <span class="p-mean">Cảm thấy lo lắng là chuyện bình thường, dù bạn đang chuẩn bị cho một bài thuyết trình hay tham gia trò chuyện</span>.'});
+
+QS.push({n:40,sec:'II · Đọc hiểu',
+qt:'The word "<b>them</b>" in paragraph 2 refers to ______.',
+opts:[
+ {t:'grammatical errors',m:'những lỗi ngữ pháp',c:true},
+ {t:'native speakers',m:'những người bản ngữ',c:false},
+ {t:'pressures',m:'những áp lực',c:false},
+ {t:'messages',m:'những thông điệp',c:false}],
+tr:'Từ "them" ở đoạn 2 chỉ cái gì?',
+ok:'Câu chứa đại từ là <span class="p-word">Even native speakers make mistakes, so don&apos;t worry about them</span> 👉 <span class="p-mean">Ngay cả người bản ngữ cũng mắc lỗi, nên đừng lo lắng về chúng</span>. Thứ ta được khuyên đừng lo chính là những lỗi ấy, và trước đó bài đã nhắc tới <span class="p-word">minor grammatical errors</span> 👉 <span class="p-mean">các lỗi ngữ pháp nhỏ</span>.',
+no:'<span class="p-word">native speakers</span> vô lý vì câu sẽ thành "đừng lo lắng về người bản ngữ", trong khi họ được nêu ra để trấn an chứ không phải để sợ. <span class="p-word">pressures</span> nằm ở câu trước và đã được giải quyết bằng lời khuyên tập trung vào giao tiếp. <span class="p-word">messages</span> là thứ cần truyền đạt rõ ràng, tức điều nên quan tâm chứ không phải điều nên bỏ qua.',
+ev:'🔍 <span class="p-word">You might make minor grammatical errors, but as long as you&apos;re conveying your message clearly, that&apos;s what matters. Even native speakers make mistakes, so don&apos;t worry about them</span> 👉 <span class="p-mean">Bạn có thể mắc vài lỗi ngữ pháp nhỏ, nhưng chỉ cần truyền đạt thông điệp rõ ràng thì đó mới là điều quan trọng. Ngay cả người bản ngữ cũng mắc lỗi, nên đừng lo về chúng</span>.'});
+
+QS.push({n:41,sec:'II · Đọc hiểu',
+qt:'The word "<b>intimidating</b>" in paragraph 3 can be replaced by ______.',
+opts:[
+ {t:'frightening',m:'tính từ (adjective): đáng sợ, làm người ta hoảng',c:true},
+ {t:'exhilarating',m:'tính từ (adjective): làm phấn chấn, hân hoan',c:false},
+ {t:'encouraging',m:'tính từ (adjective): đáng khích lệ, cổ vũ',c:false},
+ {t:'fascinating',m:'tính từ (adjective): cực kỳ hấp dẫn, cuốn hút',c:false}],
+tr:'Từ "intimidating" ở đoạn 3 có thể được thay bằng từ nào?',
+ok:'<span class="p-word">intimidating</span> là <span class="p-mean">tính từ</span> nghĩa "gây e dè, khiến người ta khiếp". Ngữ cảnh khẳng định rõ sắc thái tiêu cực: ngay sau đó bài phải mách cách <span class="p-word">build confidence</span> và nói tới <span class="p-word">the fear of judgment</span> 👉 <span class="p-mean">nỗi sợ bị đánh giá</span>. Vì vậy <span class="p-word">frightening</span> nghĩa "đáng sợ" là từ thay thế chính xác.',
+no:'<span class="p-word">exhilarating</span>, <span class="p-word">encouraging</span> và <span class="p-word">fascinating</span> đều mang sắc thái <b>tích cực</b> — phấn chấn, khích lệ, cuốn hút. Nếu nói trước đám đông mà thấy vui thích thì cả đoạn khuyên cách xây dựng tự tin sẽ trở nên thừa thãi.',
+ev:'🔍 <span class="p-word">Also, speaking in front of a large group can be intimidating. To build confidence, you can begin by speaking in front of a mirror. This will help you practise your speech without the fear of judgment</span> 👉 <span class="p-mean">Ngoài ra, nói trước nhóm đông có thể rất đáng sợ. Để xây dựng tự tin, hãy bắt đầu bằng cách nói trước gương, giúp bạn luyện mà không sợ bị đánh giá</span>.'});
+
+QS.push({n:42,sec:'II · Đọc hiểu',
+qt:'What should you do if you are afraid of speaking in front of many people?',
+opts:[
+ {t:'Practise speaking to a smaller group first.',m:'Hãy tập nói trước một nhóm nhỏ hơn trước đã.',c:true},
+ {t:'Avoid talking to a friend or family member.',m:'Hãy tránh nói chuyện với bạn bè hay người thân.',c:false},
+ {t:'Ignore your mistakes and continue speaking.',m:'Hãy phớt lờ lỗi của mình và cứ nói tiếp.',c:false},
+ {t:'Only speak to yourself or in front of a mirror.',m:'Chỉ nói với chính mình hoặc trước gương mà thôi.',c:false}],
+tr:'Bạn nên làm gì nếu sợ nói trước nhiều người?',
+ok:'Bài đưa ra <span class="p-grammar">lộ trình tăng dần</span>: nói trước gương, rồi <span class="p-word">try speaking to a friend or family member, then to a smaller group</span> 👉 <span class="p-mean">thử nói với một người bạn hoặc người thân, rồi tới một nhóm nhỏ</span>. Tức là phải luyện với nhóm nhỏ trước khi đứng trước đám đông.',
+no:'Phương án "tránh nói chuyện với bạn bè hay người thân" đảo ngược hoàn toàn lời khuyên trong bài. Phương án "phớt lờ lỗi" hơi khác với ý bài: bài khuyên <span class="p-word">don&apos;t worry about them</span> tức đừng quá lo lắng, chứ không bảo mặc kệ lỗi sai. Phương án có chữ <span class="p-grammar">Only</span> sai vì nói trước gương chỉ là <b>bước đầu tiên</b>, không phải điểm dừng.',
+ev:'🔍 <span class="p-word">To build confidence, you can begin by speaking in front of a mirror. This will help you practise your speech without the fear of judgment. Next, try speaking to a friend or family member, then to a smaller group</span> 👉 <span class="p-mean">Để xây dựng tự tin, hãy bắt đầu bằng cách nói trước gương, giúp bạn luyện mà không sợ bị đánh giá. Tiếp theo, thử nói với bạn bè hoặc người thân, rồi tới một nhóm nhỏ</span>.'});
+
+QS.push({n:43,sec:'II · Đọc hiểu',
+qt:'Which of the following advice is NOT mentioned in the passage?',
+opts:[
+ {t:'Take a deep breath and avoid speaking too fast.',m:'Hãy hít thở sâu và tránh nói quá nhanh.',c:true},
+ {t:'Do not be afraid to make mistakes while speaking.',m:'Đừng sợ mắc lỗi khi nói.',c:false},
+ {t:'Try to deliver your message in an understandable way.',m:'Hãy cố truyền đạt thông điệp theo cách dễ hiểu.',c:false},
+ {t:'Be patient and practise speaking regularly.',m:'Hãy kiên nhẫn và luyện nói đều đặn.',c:false}],
+tr:'Lời khuyên nào sau đây KHÔNG được nhắc tới trong bài?',
+ok:'Cả bài không hề nói tới kỹ thuật hít thở hay tốc độ nói. Bài chỉ bàn tới tâm lý và lộ trình luyện tập, nên <span class="p-word">Take a deep breath and avoid speaking too fast</span> là lời khuyên KHÔNG xuất hiện — đúng thứ đề đang hỏi.',
+no:'Ba phương án còn lại đều có trong bài. Đừng sợ mắc lỗi ứng với <span class="p-word">Even native speakers make mistakes, so don&apos;t worry about them</span>. Truyền đạt dễ hiểu ứng với <span class="p-word">as long as you&apos;re conveying your message clearly</span>. Kiên nhẫn luyện đều ứng với <span class="p-word">No one becomes fluent overnight. Overcoming the fear takes time, but with regular practice and the right mindset</span>.',
+ev:'🔍 <span class="p-word">No one becomes fluent overnight. Overcoming the fear of speaking English in public takes time, but with regular practice and the right mindset, you can significantly improve your confidence</span> 👉 <span class="p-mean">Chẳng ai lưu loát sau một đêm. Vượt qua nỗi sợ cần thời gian, nhưng với luyện tập đều đặn và tư duy đúng, bạn sẽ tự tin hơn rõ rệt</span>.'});
+
+/* ---------- FLOATERS ---------- */
+const ems=['🦘','🇦🇺','🗣️','📖','🎤','🪃','🌏','💬','🔤','🪧','🐨','✍️'];
+const flc=document.getElementById('fl');
+for(let i=0;i<28;i++){
+  const s=document.createElement('span');s.className='f';
+  s.textContent=ems[i%ems.length];
+  s.style.left=Math.random()*100+'%';
+  s.style.animationDuration=(14+Math.random()*14)+'s';
+  s.style.animationDelay=(-Math.random()*20)+'s';
+  s.style.fontSize=(1.0+Math.random()*1.2)+'rem';
+  flc.appendChild(s);
+}
+
+/* ---------- RENDER ---------- */
+const done={};let cc=0;
+function shuffle(a){return a.sort(()=>Math.random()-0.5)}
+
+function build(){
+  const box=document.getElementById('quiz');
+  QS.forEach(q=>{
+    let ol='<ul style="margin:4px 0 0 4px;list-style:none">';
+    q.opts.forEach(o=>{ol+='<li style="margin:5px 0">'+(o.c?'✅ ':'❌ ')+'<span class="p-word">'+o.t+'</span> ➔ <span class="p-mean">'+o.m+'</span></li>';});
+    ol+='</ul>';
+    const card=document.createElement('div');card.className='qc';card.id='q'+q.n;
+    card.innerHTML=
+      '<div class="qn">Câu '+q.n+' · '+q.sec+'</div>'+
+      '<div class="qt">'+q.qt+'</div>'+
+      '<div class="opts" id="o'+q.n+'"></div>'+
+      '<div class="expl" id="e'+q.n+'">'+
+        '<h4>📘 Giải thích chi tiết – Câu '+q.n+'</h4>'+
+        '<div class="estep"><div class="elbl">Bước 1 · Dịch cả câu</div>'+q.tr+'</div>'+
+        '<div class="estep"><div class="elbl">Bước 2 · Các phương án và nghĩa</div>'+ol+'</div>'+
+        '<div class="estep"><div class="elbl">Bước 3 · Vì sao đáp án này <span class="hl-green">đúng</span></div>'+q.ok+'</div>'+
+        '<div class="estep"><div class="elbl">Bước 4 · Vì sao các phương án kia <span class="hl-red">sai</span></div>'+q.no+'</div>'+
+        '<div class="estep"><div class="elbl">🔍 Dẫn chứng trong bài</div>'+q.ev+'</div>'+
+      '</div>';
+    box.appendChild(card);
+    const cont=card.querySelector('.opts');
+    const correct=q.opts.filter(o=>o.c)[0].t;
+    shuffle([...q.opts]).forEach(o=>{
+      const b=document.createElement('button');b.className='opt';b.textContent=o.t;
+      b.onclick=()=>chk(q.n,o.t,correct,b,cont);cont.appendChild(b);
+    });
+  });
+  document.getElementById('lv').textContent='0/'+QS.length;
+}
+
+function chk(qid,chosen,correct,btn,container){
+  if(qid in done)return;
+  done[qid]=chosen===correct;
+  container.querySelectorAll('.opt').forEach(b=>{
+    b.disabled=true;
+    if(b.textContent===correct)b.classList.add('correct');
+  });
+  if(chosen===correct){btn.classList.add('correct');cc++;ding();conf();}
+  else{btn.classList.add('wrong');buzz();}
+  document.getElementById('e'+qid).classList.add('open');
+  document.getElementById('lv').textContent=cc+'/'+QS.length;
+}
+
+/* ---------- AUDIO (giữ nguyên theme) ---------- */
+const A=new(window.AudioContext||window.webkitAudioContext)();
+function ding(){const o=A.createOscillator(),g=A.createGain();o.connect(g);g.connect(A.destination);o.frequency.setValueAtTime(523,A.currentTime);o.frequency.exponentialRampToValueAtTime(784,A.currentTime+0.15);g.gain.setValueAtTime(0.28,A.currentTime);g.gain.exponentialRampToValueAtTime(0.001,A.currentTime+0.5);o.start();o.stop(A.currentTime+0.5);}
+function buzz(){const o=A.createOscillator(),g=A.createGain();o.type='triangle';o.connect(g);g.connect(A.destination);o.frequency.setValueAtTime(200,A.currentTime);o.frequency.exponentialRampToValueAtTime(100,A.currentTime+0.2);g.gain.setValueAtTime(0.18,A.currentTime);g.gain.exponentialRampToValueAtTime(0.001,A.currentTime+0.28);o.start();o.stop(A.currentTime+0.28);}
+
+function conf(){
+  const cols=['#ffb35c','#5b8cff','#ffe2b8','#f3f1ea','#7ad6a0','#ff8f5c'];
+  for(let i=0;i<35;i++){
+    const d=document.createElement('div');d.className='cn';
+    d.style.left=Math.random()*100+'vw';
+    d.style.background=cols[Math.floor(Math.random()*cols.length)];
+    d.style.animationDelay=Math.random()*0.7+'s';
+    d.style.animationDuration=(1.8+Math.random()*1.0)+'s';
+    d.style.width=d.style.height=(6+Math.random()*8)+'px';
+    d.style.borderRadius=Math.random()>0.5?'50%':'2px';
+    document.body.appendChild(d);setTimeout(()=>d.remove(),3100);
+  }
+}
+
+function tv(id){
+  const el=document.getElementById(id);el.classList.toggle('open');
+  const btn=el.previousElementSibling;
+  btn.textContent=el.classList.contains('open')?'Ẩn dịch 🌟':'Mở dịch đoạn này 🌟';
+}
+
+function openModal(){document.getElementById('nm').classList.add('open')}
+function sub(){
+  const n=document.getElementById('sn').value.trim();
+  const er=document.getElementById('er');
+  if(!n){er.classList.add('show');return;}
+  er.classList.remove('show');
+  document.getElementById('nm').classList.remove('open');
+  showRes(n);
+}
+function showRes(n){
+  const tot=QS.length;let c=0;QS.forEach(q=>{if(done[q.n]===true)c++;});
+  const p=c/tot,s10=(c/tot*10).toFixed(2);
+  document.getElementById('rn').textContent='Học sinh: '+n;
+  document.getElementById('rs').textContent=c+' / '+tot;
+  document.getElementById('rs10').textContent='Điểm quy đổi: '+s10+' / 10';
+  let gif='',cmt='';
+  if(p>=1){gif='https://media.giphy.com/media/l0MYGb1LuZ3n7dRnO/giphy.gif';cmt='🏆 Trọn vẹn 100%! Em nắm chắc cả bài điền từ về tiếng Anh Úc lẫn bài đọc hiểu về cách vượt qua nỗi sợ nói tiếng Anh. MS Chí Nên rất tự hào!';}
+  else if(p>=0.6){gif='https://media.giphy.com/media/26u4lOMA8JKSnL9Uk/giphy.gif';cmt='🗣️ Rất tốt! Em đạt '+c+'/'+tot+' câu. Đọc lại phần giải thích 4 bước để hiểu sâu hơn nhé!';}
+  else{gif='https://media.giphy.com/media/d2lcHJTG5Tscg/giphy.gif';cmt='📖 Cố lên! Em đạt '+c+'/'+tot+' câu. Bấm nút dịch từng đoạn, đọc kỹ phần giải thích rồi thử lại — Ms tin em làm được!';}
+  document.getElementById('rg').src=gif;
+  document.getElementById('rc').textContent=cmt;
+  document.getElementById('rm').classList.add('open');
+}
+function closeR(){document.getElementById('rm').classList.remove('open')}
+
+build();
+</script>
+<script>/*devclean*/(function(){
+var ZW=/[\u00AD\u034F\u061C\u115F\u1160\u17B4\u17B5\u180E\u200B-\u200F\u202A-\u202E\u2060-\u206F\uFEFF]/g,
+    SP=/[\u00A0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\t]/g,
+    AP=/[\u2018\u2019\u201A\u201B\u2032\u2035\u02B9\u02BB\u02BC\u02BD\u02C8\u0060\u00B4\uFF07]/g,
+    DQ=/[\u201C\u201D\u201E\u201F\u2033\u2036\u00AB\u00BB\uFF02]/g,
+    DS=/[\u2010\u2011\u2012\u2212\uFE63\uFF0D]/g;
+function clean(v){if(!v)return v;var s=String(v);try{s=s.normalize('NFKC')}catch(e){}
+  return s.replace(ZW,'').replace(SP,' ').replace(AP,"'").replace(DQ,'"').replace(DS,'-').replace(/[\u0300-\u036f]/g,'').replace(/ {2,}/g,' ');}
+window.__devclean=clean;
+function fix(skip){var L=document.querySelectorAll('input:not([type]),input[type=text],input[type=search],textarea');
+  for(var i=0;i<L.length;i++){var el=L[i];if(el===skip||el.readOnly||el.disabled)continue;var v=el.value,c=clean(v);if(c!==v)el.value=c;}}
+['pointerdown','mousedown','touchstart','click','change','focusout'].forEach(function(t){document.addEventListener(t,function(e){fix(t==='focusout'||t==='change'?null:e.target)},true)});
+document.addEventListener('keydown',function(e){if(e.key==='Enter'||e.keyCode===13)fix(null)},true);
+})();</script>
+<style id="ms-chi-nen-unlock-style">
+#passwordModal, #password-modal, #pwModal, #pw-modal, #pw-overlay,
+#lockModal, #passModal, #authModal, #auth-modal, #lockOverlay,
+#start-overlay, #intro-overlay, #start-screen,
+.password-modal, .lock-modal, .lock-overlay {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    z-index: -9999 !important;
+}
+</style>
+<script>
+// Remove password lock completely - direct quiz access
+(function() {
+    var initDone = false;
+    var renderCheckDone = false;
+
+    function hideEl(el, hard) {
+        if (!el) return;
+        if (hard) {
+            el.style.setProperty('display', 'none', 'important');
+            el.style.setProperty('visibility', 'hidden', 'important');
+            el.style.setProperty('opacity', '0', 'important');
+            el.style.setProperty('pointer-events', 'none', 'important');
+            el.style.setProperty('z-index', '-9999', 'important');
+        } else {
+            el.style.display = 'none';
+        }
+        el.classList.remove('active', 'show', 'open', 'visible', 'flex');
+    }
+
+    function hasRenderedQuiz() {
+        var containers = document.querySelectorAll(
+            '#quiz-container, #quizContainer, #questions-container, #questionPane, #quiz, #questions, #quiz-body, #questions-wrapper, #quiz-list, #quizList, #exercise-container, #app-container .split-container'
+        );
+        for (var i = 0; i < containers.length; i++) {
+            if (containers[i].querySelectorAll('button, input, select, textarea, .question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .question, .option-btn, .opt-btn, .ans-btn').length > 0) {
+                return true;
+            }
+        }
+        if (document.querySelectorAll('.question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .option-btn, .opt-btn, .ans-btn, .choice-btn').length > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    function ensureQuizRendered() {
+        if (renderCheckDone) return;
+        renderCheckDone = true;
+        if (hasRenderedQuiz()) return;
+
+        if (!hasRenderedQuiz() && typeof buildQuiz === 'function') { try { buildQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof initQuiz === 'function') { try { initQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderApp === 'function') { try { renderApp(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuiz === 'function') { try { renderQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuestions === 'function') { try { renderQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAllQuestions === 'function') { try { renderAllQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAll === 'function') { try { renderAll(); } catch(e){} }
+    }
+
+    function unlockNow() {
+        var pwIds = [
+            'passwordModal', 'password-modal', 'pwModal', 'pw-modal', 'pw-overlay',
+            'lockModal', 'passModal', 'authModal', 'auth-modal', 'lockOverlay',
+            'start-overlay', 'intro-overlay', 'start-screen'
+        ];
+        pwIds.forEach(function(id) {
+            hideEl(document.getElementById(id), true);
+        });
+
+        var modalEls = document.querySelectorAll('.password-modal, .lock-modal, .lock-overlay, #lockOverlay, #auth-modal');
+        modalEls.forEach(function(el) {
+            if (el.id !== 'resultModal' && el.id !== 'result-modal' && el.id !== 'scoreModal') {
+                hideEl(el, true);
+            }
+        });
+
+        ['nameModal', 'name-modal', 'nameInputModal'].forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) hideEl(el, false);
+        });
+
+        var qo = document.getElementById('quiz-overlay');
+        if (qo && (typeof isStarted === 'undefined' || !isStarted)) {
+            qo.style.display = 'none';
+        }
+
+        var mainIds = [
+            'mainContent', 'main-content', 'mainHeader', 'main-header',
+            'app-container', 'app', 'quizApp', 'quiz-wrapper', 'quizContainer', 'quiz-container', 'reading-content'
+        ];
+        mainIds.forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) {
+                el.classList.remove('hidden', 'blur', 'blurred', 'locked');
+                if (el.style.display === 'none') {
+                    el.style.removeProperty('display');
+                }
+                if (window.getComputedStyle(el).display === 'none') {
+                    var hasPane = el.querySelector('.pane, .left-pane, .right-pane, .split-container, .left-panel, .right-panel');
+                    if (id === 'main-content' || id.toLowerCase().includes('header') || el.classList.contains('main-container') || hasPane) {
+                        el.style.setProperty('display', 'flex', 'important');
+                    } else {
+                        el.style.setProperty('display', 'block', 'important');
+                    }
+                }
+            }
+        });
+
+        var qs = document.getElementById('quiz-screen');
+        if (qs) {
+            qs.classList.remove('hidden');
+            if (qs.classList.contains('flex-col')) {
+                qs.classList.add('flex');
+                qs.style.display = 'flex';
+            } else {
+                qs.style.display = 'block';
+            }
+        }
+
+        if (!initDone) {
+            initDone = true;
+
+            if (document.getElementById('start-overlay') && typeof startGame === 'function') {
+                var sn = document.getElementById('student-name') || document.getElementById('studentName');
+                if (sn && !sn.value.trim()) sn.value = 'Học sinh';
+            }
+            if (document.getElementById('name-modal') && typeof startQuiz === 'function') {
+                var sn2 = document.getElementById('student-name');
+                if (sn2 && !sn2.value.trim()) sn2.value = 'Học sinh';
+            }
+
+            if (typeof startQuiz === 'function' && (typeof isStarted === 'undefined' || !isStarted)) { try { startQuiz(); } catch(e){} }
+            if (typeof startGame === 'function') { try { startGame(); } catch(e){} }
+            if (typeof startTest === 'function') { try { startTest(); } catch(e){} }
+            if (typeof startApp === 'function') { try { startApp(); } catch(e){} }
+            if (typeof buildStarfield === 'function') { try { buildStarfield(); } catch(e){} }
+            if (typeof spawnFloats === 'function') { try { spawnFloats(); } catch(e){} }
+            if (typeof spawnFloaters === 'function') { try { spawnFloaters(); } catch(e){} }
+            if (typeof createFloatingBubbles === 'function') { try { createFloatingBubbles(); } catch(e){} }
+            if (typeof initAudio === 'function') { try { initAudio(); } catch(e){} }
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', unlockNow);
+    } else {
+        unlockNow();
+    }
+    if (document.readyState === 'complete') {
+        setTimeout(ensureQuizRendered, 150);
+    } else {
+        window.addEventListener('load', function() {
+            setTimeout(unlockNow, 20);
+            setTimeout(ensureQuizRendered, 150);
+            setTimeout(unlockNow, 300);
+            setTimeout(unlockNow, 700);
+        });
+    }
+    setTimeout(unlockNow, 50);
+    setTimeout(unlockNow, 200);
+    setTimeout(unlockNow, 600);
+    setTimeout(unlockNow, 1100);
+})();
+</script>
+</body>
+</html>

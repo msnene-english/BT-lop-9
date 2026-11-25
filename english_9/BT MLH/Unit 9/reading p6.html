@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📮 E9 UNIT 9 · WORLD ENGLISHES — D. READING I &amp; II | MS Chí Nên</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F3E8D2;--paper2:#FFFAF0;--card:#FFFDF7;--ink:#3A2D20;--dim:#7D6A53;
+ --red:#C1121F;--blue:#0353A4;--sepia:#8A6D3B;--gold:#C9A227;--good:#2F6F3E;--bad:#A4161A;
+ --edge:#D9C7A7;--disp:'Playfair Display',serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito',sans-serif;color:var(--ink);min-height:100vh;overflow-x:hidden;
+ background:
+  repeating-linear-gradient(0deg,rgba(138,109,59,.045) 0 2px,transparent 2px 5px),
+  linear-gradient(-45deg,#EFE0C4,#F7EEDC,#E9DAC0,#FBF3E4,#EADFC6);
+ background-size:auto,400% 400%;animation:bg 28s ease infinite}
+@keyframes bg{0%,100%{background-position:0 0,0% 50%}50%{background-position:0 0,100% 50%}}
+.sky{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.sky i{position:absolute;font-size:26px;opacity:.22;animation:fly linear infinite;font-style:normal}
+@keyframes fly{0%,100%{transform:translate(0,0) rotate(-8deg)}50%{transform:translate(20px,-30px) rotate(9deg)}}
+.sky b{position:absolute;border-radius:50%;filter:blur(72px);opacity:.3;animation:fly 22s ease-in-out infinite}
+.wrap{position:relative;z-index:2;max-width:1500px;margin:0 auto;padding:8px 14px 70px}
+/* ── thanh nhac nho: dai tem air mail ── */
+.note{position:sticky;top:0;z-index:40;margin:0 -14px 12px;padding:9px 14px;background:var(--card);
+ border-bottom:6px solid transparent;
+ border-image:repeating-linear-gradient(45deg,var(--red) 0 11px,#FFFDF7 11px 22px,var(--blue) 22px 33px,#FFFDF7 33px 44px) 6;
+ box-shadow:0 5px 16px rgba(90,70,40,.22)}
+.note .in{display:flex;align-items:center;gap:10px;max-width:1470px;margin:0 auto}
+.note .tg{flex:none;background:var(--red);color:#FFF6E2;font-weight:900;font-size:.82rem;padding:3px 12px;border-radius:4px;white-space:nowrap}
+.note .tx{flex:1;min-width:0;color:var(--ink);font-weight:800;font-size:1rem;line-height:1.55;transition:opacity .25s}
+/* ── header: buu thiep co ── */
+.hd{background:var(--card);padding:20px 18px;text-align:center;margin-bottom:14px;position:relative;
+ border:9px solid transparent;
+ border-image:repeating-linear-gradient(45deg,var(--red) 0 12px,#FFFDF7 12px 24px,var(--blue) 24px 36px,#FFFDF7 36px 48px) 9;
+ box-shadow:0 12px 30px rgba(90,70,40,.28)}
+.hd:after{content:'★ PAR AVION ★';position:absolute;right:12px;top:10px;font-family:var(--disp);
+ font-size:.62rem;letter-spacing:2px;color:var(--blue);border:2px double var(--blue);padding:2px 8px;
+ border-radius:999px;transform:rotate(6deg);opacity:.75}
+.hd h1{font-family:var(--disp);font-weight:800;font-size:clamp(21px,4.5vw,34px);line-height:1.32;color:var(--red);
+ text-shadow:1px 1px 0 #FFF,2px 2px 0 rgba(201,162,39,.35)}
+.hd .by{display:inline-block;margin-top:11px;background:var(--gold);color:#2E2308;font-weight:900;
+ font-size:.95rem;padding:6px 16px;border-radius:4px;box-shadow:2px 2px 0 var(--sepia)}
+.hd p{margin-top:10px;font-size:.98rem;font-weight:700;color:var(--dim);line-height:1.75}
+.bar{display:flex;align-items:center;gap:10px;background:var(--card);border:2px solid var(--edge);
+ border-radius:6px;padding:9px 15px;margin-bottom:14px;font-weight:900;font-size:1.04rem;
+ box-shadow:0 6px 16px rgba(90,70,40,.16)}
+.bar .tr{flex:1;height:12px;background:#EDE2CC;border-radius:99px;overflow:hidden;border:1px solid var(--edge)}
+.bar .fb{height:100%;width:0;background:repeating-linear-gradient(45deg,var(--red) 0 9px,var(--gold) 9px 18px,var(--blue) 18px 27px);transition:width .4s}
+/* ── split ── */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+@media(max-width:940px){.split{grid-template-columns:1fr}}
+.pane{position:sticky;top:64px;max-height:calc(100vh - 82px);overflow-y:auto}
+@media(max-width:940px){.pane{position:static;max-height:none}}
+.letter{background:var(--card);border:2px solid var(--edge);border-radius:6px;overflow:hidden;
+ box-shadow:0 12px 30px rgba(90,70,40,.26)}
+.letter .edge{height:12px;background:repeating-linear-gradient(45deg,var(--red) 0 11px,#FFFDF7 11px 22px,var(--blue) 22px 33px,#FFFDF7 33px 44px)}
+.letter .bd{padding:16px 18px 20px}
+.stamp{float:right;width:86px;height:98px;margin:0 0 8px 12px;padding:6px;
+ background:var(--paper2);border:2px solid var(--sepia);display:grid;place-items:center;text-align:center;
+ font-size:26px;line-height:1.15;color:var(--red);
+ -webkit-mask:radial-gradient(circle 4px,transparent 96%,#000) -6px -6px/16px 16px;
+ mask:radial-gradient(circle 4px,transparent 96%,#000) -6px -6px/16px 16px}
+.stamp b{display:block;font-family:var(--disp);font-size:.55rem;letter-spacing:1px;color:var(--sepia)}
+.bank{background:var(--paper);border:2px dashed var(--sepia);border-radius:6px;padding:10px 12px;
+ margin-bottom:12px;font-weight:800;font-size:1rem;line-height:1.85;color:var(--ink);text-align:center}
+.bank b{font-family:var(--disp);color:var(--red);letter-spacing:1px}
+.letter h2{font-family:var(--disp);font-weight:800;font-size:1.26rem;color:var(--blue);line-height:1.35;margin-bottom:4px}
+.letter .sub{font-size:.88rem;font-weight:800;color:var(--red);font-style:italic;margin-bottom:12px}
+.letter p{font-size:1.06rem;line-height:1.98;margin-bottom:8px}
+.letter ul{margin:0 0 8px 20px;font-size:1.06rem;line-height:1.9}
+.letter b{color:var(--red)}
+.bl{display:inline;background:#FBEFC9;border-bottom:2px solid var(--gold);border-radius:4px;padding:1px 8px;
+ font-weight:900;color:#7A5A05}
+.bl.ok{background:#DDEEDD;border-color:var(--good);color:#1E5A2C}
+.tbtn{display:inline-block;margin:2px 0 10px;background:var(--blue);color:#FFF6E2;border:none;border-radius:4px;
+ padding:6px 16px;font-family:'Nunito';font-weight:900;font-size:.85rem;cursor:pointer;box-shadow:2px 2px 0 var(--sepia)}
+.tvi{display:none;background:var(--paper);border-left:5px solid var(--blue);border-radius:0 6px 6px 0;
+ padding:9px 13px;margin-bottom:10px;font-size:1rem;line-height:1.85;color:#33281B;font-weight:700}
+.tvi.on{display:block}
+.gl{margin-top:14px;background:var(--paper);border:2px dashed var(--sepia);border-radius:6px;padding:12px 14px}
+.gl h3{font-family:var(--disp);color:var(--red);font-size:1.06rem;margin-bottom:8px;letter-spacing:.5px}
+.gl div{font-size:.98rem;line-height:1.88}
+.p-word{color:var(--blue);font-weight:900}
+.p-phonetic{color:var(--sepia);font-style:italic}
+.p-mean{color:#1E5A2C;font-weight:800}
+.p-grammar{color:var(--red);font-weight:800}
+.hl-green{background:#DDEEDD;color:#1E5A2C;padding:1px 7px;border-radius:4px;font-weight:900}
+.hl-red{background:#F6DCDC;color:#8C1218;padding:1px 7px;border-radius:4px;font-weight:900}
+/* ── cau hoi ── */
+.sec{background:var(--card);border:2px solid var(--edge);border-radius:6px;padding:15px;margin-bottom:14px;
+ box-shadow:0 12px 28px rgba(90,70,40,.24)}
+.sec>h3{font-family:var(--disp);color:var(--blue);font-size:1.1rem;margin-bottom:10px;line-height:1.4;letter-spacing:.4px}
+.q{background:var(--paper2);border:1px solid var(--edge);border-left:6px solid var(--red);border-radius:5px;
+ padding:12px 13px;margin-bottom:12px}
+.q .qt{font-weight:800;font-size:1.07rem;line-height:1.9}
+.qn{display:inline-block;background:var(--red);color:#FFF6E2;min-width:32px;text-align:center;border-radius:3px;
+ padding:1px 8px;margin-right:8px;font-weight:900;font-size:.9rem}
+.og{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+@media(max-width:560px){.og{grid-template-columns:1fr}}
+.ob{background:var(--card);color:var(--ink);border:2px solid var(--edge);border-radius:5px;padding:11px 12px;
+ font-family:'Nunito';font-weight:800;font-size:1.04rem;cursor:pointer;text-align:left;line-height:1.55;
+ transition:.14s;box-shadow:3px 3px 0 rgba(138,109,59,.22)}
+.ob:hover:not(.dn){transform:translate(-1px,-1px);border-color:var(--blue);box-shadow:4px 4px 0 rgba(3,83,164,.3)}
+.ob.dn{cursor:default}
+.ob.ok{background:#DDEEDD;border-color:var(--good);color:#1E5A2C;box-shadow:3px 3px 0 rgba(47,111,62,.3)}
+.ob.no{background:#F6DCDC;border-color:var(--bad);color:#8C1218;box-shadow:3px 3px 0 rgba(164,22,26,.28)}
+.ex{display:none;margin-top:10px;background:var(--paper2);border:2px solid var(--edge);border-radius:5px;
+ padding:12px;font-size:1.02rem;line-height:1.88}
+.ex.on{display:block;animation:pop .3s}
+@keyframes pop{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+.kb{background:#DDEEDD;border:2px solid var(--good);border-radius:5px;padding:7px 12px;font-weight:900;color:#1E5A2C;margin-bottom:8px}
+.stp{background:var(--card);border:1px solid var(--edge);border-radius:5px;padding:9px 12px;margin-bottom:7px}
+.stp .l{display:inline-block;background:var(--blue);color:#FFF6E2;padding:2px 11px;border-radius:3px;
+ font-size:.72rem;font-weight:900;letter-spacing:.5px;margin-bottom:5px}
+.op4{background:var(--paper2);border:1px solid var(--edge);border-radius:4px;padding:6px 10px;margin-bottom:5px;font-size:1rem}
+.op4.rt{background:#DDEEDD;border-color:var(--good)}
+.op4 b{color:var(--blue)}.op4.rt b{color:#1E5A2C}
+.wr{background:#F6DCDC;border:1px solid #E4B7B7;border-radius:4px;padding:6px 10px;margin-bottom:5px;font-size:1rem}
+.wr b{color:#8C1218}
+.shk{animation:shk .42s}
+@keyframes shk{0%,100%{transform:translateX(0)}25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+.sbtn{display:block;width:100%;max-width:560px;margin:22px auto 0;background:var(--red);color:#FFF6E2;
+ border:none;border-radius:6px;padding:16px;font-family:var(--disp);font-weight:800;font-size:1.2rem;
+ letter-spacing:.6px;cursor:pointer;box-shadow:5px 5px 0 var(--sepia)}
+.sbtn:hover{transform:translate(-1px,-1px);box-shadow:6px 6px 0 var(--sepia)}
+.ov{position:fixed;inset:0;background:rgba(58,45,32,.82);display:none;place-items:center;z-index:99;padding:16px}
+.ov.on{display:grid}
+.mb{background:var(--card);color:var(--ink);border-radius:6px;padding:22px;max-width:430px;width:100%;text-align:center;
+ border:8px solid transparent;
+ border-image:repeating-linear-gradient(45deg,var(--red) 0 10px,#FFFDF7 10px 20px,var(--blue) 20px 30px,#FFFDF7 30px 40px) 8;
+ box-shadow:0 20px 46px rgba(40,30,16,.5)}
+.mb h2{font-family:var(--disp);font-weight:800;color:var(--blue);font-size:1.22rem;margin-bottom:10px}
+.mb input{width:100%;padding:12px;border-radius:4px;border:2px solid var(--edge);background:var(--paper2);
+ font-family:'Nunito';font-weight:800;font-size:1.03rem;text-align:center;outline:none;color:var(--ink)}
+.mb .em{display:none;color:var(--bad);font-weight:800;font-size:.9rem;margin-top:7px}
+.mb .em.on{display:block}
+.mb img{width:100%;border-radius:5px;margin:10px 0;border:2px solid var(--edge)}
+.mb .rs{font-family:var(--disp);font-weight:800;font-size:2.3rem;color:var(--red)}
+.mb .t10{display:inline-block;margin-top:8px;background:var(--gold);color:#2E2308;font-weight:900;
+ padding:6px 18px;border-radius:4px;font-size:1.06rem;box-shadow:2px 2px 0 var(--sepia)}
+.mb .rm{font-size:1rem;line-height:1.78;margin-top:10px;font-weight:700;color:var(--dim)}
+.foot{text-align:center;margin-top:22px;font-size:.92rem;color:var(--sepia);font-weight:800;line-height:1.8}
+</style>
+</head>
+<body>
+<div class="sky" id="sky"></div>
+<div class="wrap">
+
+<div class="note"><div class="in">
+  <span class="tg">📮 MS NHẮN</span>
+  <span class="tx" id="msTx">Ms tin con làm được bài này.</span>
+</div></div>
+
+<div class="hd">
+  <h1>📮 UNIT 9 · WORLD ENGLISHES<br>D. READING — PHẦN I &amp; PHẦN II</h1>
+  <div class="by">✒️ Giáo viên tạo: MS Chí Nên &nbsp;·&nbsp; ☎️ 0852639652 để đăng ký khoá học tiếng Anh</div>
+  <p><b>19 câu</b> · Phần I: điền 8 từ trong khung vào bài đọc &nbsp;·&nbsp; Phần II: tìm 6 từ in đậm theo định nghĩa + 5 câu đọc hiểu<br>
+  <i>Bên trái là bài đọc, bên phải là câu hỏi. Mỗi đoạn nhỏ đều có nút mở bản dịch tiếng Việt.</i></p>
+</div>
+
+<div class="bar">🎟️ <span id="sc">0</span>/<span id="tt">0</span>
+  <div class="tr"><div class="fb" id="fb"></div></div><span id="md" style="font-size:1.3rem">💪</span></div>
+
+<div id="app"></div>
+
+<button class="sbtn" onclick="openName()">🎯 NỘP BÀI TÍNH ĐIỂM &amp; XEM KẾT QUẢ</button>
+<div class="foot">📮 Made with love for World Englishes — MS Chí Nên · ☎️ 0852639652</div>
+</div>
+
+<div class="ov" id="ovN"><div class="mb">
+  <h2>📮 Con ghi tên lên phong bì nhé!</h2>
+  <input id="nIn" placeholder="Ví dụ: Nguyễn Văn A" autocomplete="off" maxlength="50">
+  <div class="em" id="nEm">⚠️ Con chưa nhập tên kìa! Nhập tên rồi mới xem điểm được nha.</div>
+  <button class="sbtn" style="margin-top:14px;font-size:1rem;padding:12px" onclick="showResult()">🚀 Xem kết quả</button>
+</div></div>
+
+<div class="ov" id="ovR"><div class="mb">
+  <div style="font-size:2.6rem" id="rEmo">🎉</div>
+  <h2 id="rGr"></h2>
+  <img id="rGif" alt="ket qua">
+  <div class="rs"><span id="rSc">0</span>/<span id="rTt">0</span></div>
+  <div class="t10">🎓 Quy đổi: <span id="r10">0</span>/10 điểm</div>
+  <div class="rm" id="rMs"></div>
+  <button class="sbtn" style="margin-top:14px;font-size:1rem;padding:12px" onclick="location.reload()">🔄 Làm lại</button>
+</div></div>
+
+<script>
+/* ══ nen bay ══ */
+(function(){var e=['📮','✉️','🕰️','🗺️','✒️','📯','🏛️','📜','📖','🌍'],s=document.getElementById('sky'),h='';
+ h+='<b style="left:-6%;top:6%;width:46vw;height:46vw;background:#C9A227"></b>'+'<b style="right:-8%;top:32%;width:42vw;height:42vw;background:#C1121F;animation-duration:23s"></b>'+'<b style="left:22%;bottom:-12%;width:48vw;height:48vw;background:#0353A4;animation-duration:27s"></b>';for(var i=0;i<18;i++)h+='<i style="left:'+(Math.random()*98)+'%;top:'+(Math.random()*96)+'%;animation-duration:'+(9+Math.random()*10)+'s;animation-delay:'+(Math.random()*6)+'s">'+e[i%e.length]+'</i>';
+ s.innerHTML=h})();
+
+/* ══ am thanh ══ */
+var AC=null;
+function ac(){if(!AC){try{AC=new (window.AudioContext||window.webkitAudioContext)()}catch(e){}}if(AC&&AC.state==='suspended')AC.resume();return AC}
+function ding(){var c=ac();if(!c)return;var t=c.currentTime;[880,1174.7,1567.9].forEach(function(f,i){var o=c.createOscillator(),g=c.createGain();o.type='sine';o.frequency.value=f;o.connect(g);g.connect(c.destination);var s=t+i*0.09;g.gain.setValueAtTime(0.0001,s);g.gain.exponentialRampToValueAtTime(.22,s+.02);g.gain.exponentialRampToValueAtTime(.0001,s+.34);o.start(s);o.stop(s+.36)})}
+function buzz(){var c=ac();if(!c)return;var t=c.currentTime;[[300,0],[250,.15],[200,.3]].forEach(function(p){var o=c.createOscillator(),g=c.createGain();o.type='square';o.frequency.value=p[0];o.connect(g);g.connect(c.destination);var s=t+p[1];g.gain.setValueAtTime(0.0001,s);g.gain.exponentialRampToValueAtTime(.15,s+.02);g.gain.exponentialRampToValueAtTime(.0001,s+.15);o.start(s);o.stop(s+.16)})}
+function conf(){var cs=['#F2B03C','#D63A2F','#1F5FA8','#7BE0A8','#FFE9B8'];
+ for(var i=0;i<60;i++){var d=document.createElement('div');
+  d.style.cssText='position:fixed;top:-14px;width:9px;height:14px;z-index:98;pointer-events:none;left:'+(Math.random()*100)+'vw;background:'+cs[i%5]+';opacity:.9;transition:transform 2.2s linear,opacity 2.2s';
+  document.body.appendChild(d);(function(d){requestAnimationFrame(function(){d.style.transform='translateY(102vh) rotate('+(Math.random()*720)+'deg)';d.style.opacity=0});setTimeout(function(){d.remove()},2400)})(d)}}
+function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}
+
+/* ══ helper du lieu ══ */
+var P=[];
+function pas(id,ic,ttl,sub,body,gloss,qs){P.push({id:id,ic:ic,ttl:ttl,sub:sub,body:body,gloss:gloss,qs:qs})}
+function W(w,ph,ty,vi){return '<div><span class="p-word">'+w+'</span> <span class="p-phonetic">'+ph+'</span> <span class="p-grammar">('+ty+')</span> = <span class="p-mean">'+vi+'</span></div>'}
+function OP(en,ty,vi,ok){return '<div class="op4'+(ok?' rt':'')+'"><b>'+(ok?'✔ ':'')+en+'</b> <span class="p-grammar">('+ty+')</span> ➔ <span class="p-mean">'+vi+'</span></div>'}
+function WR(o,why){return '<div class="wr"><b>✗ '+o+'</b> — '+why+'</div>'}
+function E5(key,de,ops,why,wrong,ev,evvi){
+ return '<div class="kb">✅ Đáp án: '+key+'</div>'+
+ '<div class="stp"><span class="l">BƯỚC 1 · DỊCH CẢ CÂU CHỨA CHỖ TRỐNG</span><br>'+de+'</div>'+
+ '<div class="stp"><span class="l">BƯỚC 2 · NGUYÊN VĂN, TỪ LOẠI &amp; NGHĨA CỦA TỪNG LỰA CHỌN</span>'+ops+'</div>'+
+ '<div class="stp"><span class="l">BƯỚC 3 · TẠI SAO ĐÁP ÁN NÀY ĐÚNG</span><br>'+why+'</div>'+
+ '<div class="stp"><span class="l">BƯỚC 4 · TẠI SAO CÁC PHƯƠNG ÁN KIA SAI</span>'+wrong+'</div>'+
+ '<div class="stp"><span class="l">BƯỚC 5 · BẰNG CHỨNG TRONG BÀI</span><br>🔍 <i>'+ev+'</i><br>👉 '+evvi+'</div>'}
+function Q(n,ans,opts,ex,st){return {n:n,ans:ans,opts:opts,ex:ex,st:st}}
+function T(en,vi){return en+'<button class="tbtn" onclick="tg(this)">Mở dịch đoạn này 🌟</button><div class="tvi">'+vi+'</div>'}
+function tg(b){var d=b.nextElementSibling;d.classList.toggle('on');b.textContent=d.classList.contains('on')?'Ẩn bản dịch 🙈':'Mở dịch đoạn này 🌟'}
+function B(id,n){return '<span class="bl" id="bl_'+id+'_'+n+'">('+n+') _____</span>'}
+
+var BOLD=['accurately','aviation','proficiency','lingua franca','neglect','technical terminology'];
+/* ═════════ D. READING I — ĐIỀN TỪ TRONG KHUNG ═════════ */
+pas('L','📮','THE TERM “ENGLISH”','Reading I — Complete the passage with words from the box (8 câu)',
+ '<div class="stamp">📮<b>WORD BANK</b></div>'+
+ '<div class="bank"><b>KHUNG TỪ</b><br>nationalities · power · dialects · derived<br>varieties · worldwide · dominant · second</div>'+
+ T('<p>The term “English” is '+B('L',1)+' from <i>Anglisc</i>, the speech of the Angles – one of the three Germanic tribes that invaded England during the fifth century.</p>', 'Thuật ngữ “English” bắt nguồn từ chữ Anglisc, tiếng nói của người Angle — một trong ba bộ tộc German đã xâm chiếm nước Anh vào thế kỷ thứ năm.')+
+ T('<p>The English language is the primary language of several countries, including Australia, Canada, New Zealand, the United Kingdom and many of its former colonies, and the United States, and the '+B('L',2)+' language in a number of multilingual countries, including India, Singapore, and the Philippines.</p>', 'Tiếng Anh là ngôn ngữ chính của một số quốc gia, trong đó có Úc, Canada, New Zealand, Vương quốc Anh cùng nhiều thuộc địa cũ của nước này, và Hoa Kỳ; đồng thời là ngôn ngữ thứ hai ở một loạt quốc gia đa ngôn ngữ như Ấn Độ, Singapore và Philippines.')+
+ T('<p>It’s an official language in several African countries as well, such as Liberia, Nigeria, and South Africa, but is spoken '+B('L',3)+' in more than 100.</p>', 'Nó cũng là ngôn ngữ chính thức ở vài nước châu Phi như Liberia, Nigeria và Nam Phi, nhưng được nói trên khắp thế giới ở hơn 100 quốc gia.')+
+ T('<p>It’s learned around the world by children in school as a foreign language and often becomes a common denominator between people of different '+B('L',4)+' when they meet while traveling, doing business, or in other contexts.</p>', 'Trẻ em khắp nơi học nó trong trường như một ngoại ngữ, và nó thường trở thành mẫu số chung giữa những người thuộc các quốc tịch khác nhau khi họ gặp nhau lúc đi du lịch, làm ăn hay trong những hoàn cảnh khác.')+
+ T('<p>According to Christine Kenneally in her book <i>The First Word</i>, “Today there are about 6,000 languages in the world, and half of the world’s population speaks only 10 of them. English is the single most '+B('L',5)+' of these 10.</p>', 'Theo Christine Kenneally trong cuốn sách The First Word: “Ngày nay trên thế giới có khoảng 6.000 ngôn ngữ, và một nửa dân số thế giới chỉ nói 10 trong số đó. Tiếng Anh là ngôn ngữ có ưu thế nhất trong 10 ngôn ngữ ấy.')+
+ T('<p>British colonialism initiated the spread of English across the globe; it has been spoken nearly everywhere and has become even more prevalent since World War II, with the global reach of American '+B('L',6)+'.”</p>', 'Chủ nghĩa thực dân Anh đã khởi đầu cho sự lan toả của tiếng Anh ra khắp toàn cầu; nó được nói ở gần như mọi nơi và càng trở nên phổ biến hơn kể từ sau Thế chiến thứ hai, cùng với tầm với toàn cầu của sức mạnh Mỹ.”')+
+ T('<p>Just as the United States has regional '+B('L',7)+' and there are differences in pronunciation and words in British and American English, the language has local '+B('L',8)+' around the world: American, British, Canadian, Caribbean, Euro-English, Hinglish, Indian, Irish, Nigerian, Scottish, Singaporean, Zimbabwean, etc.</p>',
+   'Cũng giống như nước Mỹ có các phương ngữ vùng miền và có những khác biệt về phát âm cùng từ ngữ giữa tiếng Anh-Anh và tiếng Anh-Mỹ, ngôn ngữ này cũng có các biến thể địa phương trên khắp thế giới: tiếng Anh Mỹ, Anh-Anh, Canada, Caribe, Euro-English, Hinglish, Ấn Độ, Ireland, Nigeria, Scotland, Singapore, Zimbabwe, v.v.'),
+ W('derive from','/dɪˈraɪv frəm/','v','bắt nguồn từ, có gốc từ')+
+ W('tribe','/traɪb/','n','bộ tộc')+
+ W('invade','/ɪnˈveɪd/','v','xâm chiếm, xâm lược')+
+ W('primary language','/ˈpraɪməri ˈlæŋɡwɪdʒ/','np','ngôn ngữ chính')+
+ W('former colony','/ˈfɔːmə ˈkɒləni/','np','thuộc địa cũ')+
+ W('multilingual','/ˌmʌltiˈlɪŋɡwəl/','adj','đa ngôn ngữ')+
+ W('worldwide','/ˌwɜːldˈwaɪd/','adv','trên khắp thế giới')+
+ W('common denominator','/ˈkɒmən dɪˈnɒmɪneɪtə(r)/','np','mẫu số chung, điểm chung')+
+ W('nationality','/ˌnæʃəˈnæləti/','n','quốc tịch')+
+ W('dominant','/ˈdɒmɪnənt/','adj','có ưu thế, chiếm ưu thế')+
+ W('colonialism','/kəˈləʊniəlɪzəm/','n','chủ nghĩa thực dân')+
+ W('prevalent','/ˈprevələnt/','adj','phổ biến, thịnh hành')+
+ W('global reach','/ˈɡləʊbl riːtʃ/','np','tầm với toàn cầu')+
+ W('dialect','/ˈdaɪəlekt/','n','phương ngữ, tiếng địa phương')+
+ W('variety','/vəˈraɪəti/','n','biến thể của một ngôn ngữ'),
+[
+Q(1,'derived',['derived','dominant','second','power'],E5('derived',
+ 'Thuật ngữ “English” bắt nguồn từ chữ Anglisc, tiếng nói của người Angle.',
+ OP('derived','phân từ hai (be derived from)','được bắt nguồn từ',1)+OP('dominant','tính từ','chiếm ưu thế')+
+ OP('second','tính từ','thứ hai')+OP('power','danh từ','sức mạnh, quyền lực'),
+ 'Cấu trúc cố định là <b>be derived from something</b> = bắt nguồn từ cái gì. Ngay sau chỗ trống có giới từ <b>from</b>, đó chính là dấu hiệu nhận biết chắc chắn nhất.',
+ WR('dominant','là tính từ chỉ ưu thế, không đi với giới từ <i>from</i> theo nghĩa nguồn gốc')+
+ WR('second','ghép thành <i>is second from Anglisc</i> — không phải cụm tiếng Anh nào cả')+
+ WR('power','là danh từ, đặt sau <i>is</i> sẽ thành “thuật ngữ English là sức mạnh” — vô nghĩa'),
+ 'The term “English” is derived from Anglisc, the speech of the Angles.',
+ 'Thuật ngữ “English” bắt nguồn từ chữ Anglisc, tiếng nói của người Angle.')),
+Q(2,'second',['second','dominant','worldwide','varieties'],E5('second',
+ 'Tiếng Anh là ngôn ngữ thứ hai ở một loạt quốc gia đa ngôn ngữ như Ấn Độ, Singapore và Philippines.',
+ OP('second','tính từ','thứ hai',1)+OP('dominant','tính từ','chiếm ưu thế')+
+ OP('worldwide','trạng từ / tính từ','trên khắp thế giới')+OP('varieties','danh từ số nhiều','các biến thể'),
+ 'Vế trước nói tiếng Anh là <i>the primary language</i> ở nhóm nước thứ nhất; vế này nối bằng <i>and</i> để nêu vai trò ở nhóm nước khác. Ở Ấn Độ, Singapore và Philippines — những nước <b>multilingual</b> — tiếng Anh là <b>ngôn ngữ thứ hai</b>, tạo thế đối lập chuẩn với <i>primary</i>.',
+ WR('dominant','sẽ nói tiếng Anh chiếm ưu thế tuyệt đối ở các nước ấy, mâu thuẫn với chữ <i>multilingual</i> (đa ngôn ngữ)')+
+ WR('worldwide','không đứng trước danh từ <i>language</i> theo cách này, và nó đã là đáp án của chỗ trống khác')+
+ WR('varieties','là danh từ số nhiều, không thể bổ nghĩa cho <i>language</i> ở vị trí tính từ'),
+ 'The English language is the primary language of several countries, and the second language in a number of multilingual countries, including India, Singapore, and the Philippines.',
+ 'Tiếng Anh là ngôn ngữ chính của một số quốc gia, và là ngôn ngữ thứ hai ở một loạt quốc gia đa ngôn ngữ như Ấn Độ, Singapore và Philippines.')),
+Q(3,'worldwide',['worldwide','nationalities','derived','dialects'],E5('worldwide',
+ 'Nó cũng là ngôn ngữ chính thức ở vài nước châu Phi, nhưng được nói trên khắp thế giới ở hơn 100 quốc gia.',
+ OP('worldwide','trạng từ','trên khắp thế giới',1)+OP('nationalities','danh từ số nhiều','các quốc tịch')+
+ OP('derived','phân từ hai','được bắt nguồn từ')+OP('dialects','danh từ số nhiều','các phương ngữ'),
+ 'Chỗ trống đứng ngay sau động từ bị động <i>is spoken</i> nên phải là <b>trạng từ</b> chỉ phạm vi. Cụm <i>in more than 100</i> ngay sau đó nói tới hơn 100 quốc gia, khớp hoàn hảo với nghĩa “khắp thế giới”.',
+ WR('nationalities','là danh từ, không bổ nghĩa được cho động từ <i>is spoken</i>')+
+ WR('derived','đã dùng cho chỗ trống 1 và cũng không thể ghép thành <i>is spoken derived</i>')+
+ WR('dialects','là danh từ số nhiều chỉ phương ngữ, đặt ngay sau <i>is spoken</i> sẽ sai ngữ pháp'),
+ 'It’s an official language in several African countries as well, but is spoken worldwide in more than 100.',
+ 'Nó cũng là ngôn ngữ chính thức ở vài nước châu Phi, nhưng được nói trên khắp thế giới ở hơn 100 quốc gia.')),
+Q(4,'nationalities',['nationalities','varieties','dialects','power'],E5('nationalities',
+ 'Nó thường trở thành mẫu số chung giữa những người thuộc các quốc tịch khác nhau khi họ gặp nhau.',
+ OP('nationalities','danh từ số nhiều','các quốc tịch',1)+OP('varieties','danh từ số nhiều','các biến thể')+
+ OP('dialects','danh từ số nhiều','các phương ngữ')+OP('power','danh từ không đếm được','sức mạnh'),
+ 'Cụm <i>people of different</i> cộng một danh từ số nhiều đòi hỏi một danh từ nói về ĐẶC ĐIỂM của con người. Bối cảnh là họ gặp nhau <i>while traveling, doing business</i>, tức là người từ các nước khác nhau, nên <b>nationalities</b> là lựa chọn duy nhất hợp nghĩa.',
+ WR('varieties','nói về biến thể của ngôn ngữ chứ không phải đặc điểm của con người')+
+ WR('dialects','cũng chỉ phương ngữ; người ta nói <i>people of different nationalities</i> chứ không nói <i>people of different dialects</i> trong ngữ cảnh gặp gỡ này')+
+ WR('power','là danh từ không đếm được, không dùng với <i>different</i> ở dạng số nhiều như vậy'),
+ 'It often becomes a common denominator between people of different nationalities when they meet while traveling, doing business, or in other contexts.',
+ 'Nó thường trở thành mẫu số chung giữa những người thuộc các quốc tịch khác nhau khi họ gặp nhau lúc đi du lịch, làm ăn hay trong những hoàn cảnh khác.')),
+Q(5,'dominant',['dominant','second','derived','worldwide'],E5('dominant',
+ 'Tiếng Anh là ngôn ngữ có ưu thế nhất trong 10 ngôn ngữ ấy.',
+ OP('dominant','tính từ','chiếm ưu thế, có sức ảnh hưởng lớn nhất',1)+OP('second','tính từ','thứ hai')+
+ OP('derived','phân từ hai','được bắt nguồn từ')+OP('worldwide','trạng từ / tính từ','trên khắp thế giới'),
+ 'Cấu trúc <b>the single most + tính từ</b> đòi hỏi một TÍNH TỪ dài ở dạng so sánh nhất. Ý cả đoạn là trong 10 ngôn ngữ mà nửa dân số thế giới nói, tiếng Anh mạnh nhất, nên <b>dominant</b> vừa đúng từ loại vừa đúng nghĩa.',
+ WR('second','tuy là tính từ nhưng <i>the most second</i> không tồn tại, vì <i>second</i> không có dạng so sánh nhất')+
+ WR('derived','là phân từ mang nghĩa bị động “được bắt nguồn”, không ghép được với <i>the single most</i>')+
+ WR('worldwide','mang nghĩa phạm vi, không phải phẩm chất để so sánh hơn kém'),
+ 'English is the single most dominant of these 10.',
+ 'Tiếng Anh là ngôn ngữ có ưu thế nhất trong 10 ngôn ngữ ấy.')),
+Q(6,'power',['power','nationalities','dialects','second'],E5('power',
+ 'Tiếng Anh càng phổ biến hơn kể từ sau Thế chiến thứ hai, cùng với tầm với toàn cầu của sức mạnh Mỹ.',
+ OP('power','danh từ','sức mạnh, quyền lực',1)+OP('nationalities','danh từ số nhiều','các quốc tịch')+
+ OP('dialects','danh từ số nhiều','các phương ngữ')+OP('second','tính từ','thứ hai'),
+ 'Cụm <i>the global reach of American</i> cộng một danh từ cần một danh từ chỉ thứ có thể vươn ra toàn cầu. Sau Thế chiến thứ hai, thứ lan rộng cùng tiếng Anh chính là <b>sức mạnh của nước Mỹ</b> về kinh tế, quân sự và văn hoá.',
+ WR('nationalities','ghép thành <i>American nationalities</i> — vừa thừa vừa vô nghĩa, vì đã có chữ <i>American</i>')+
+ WR('dialects','tuy có thể nói <i>American dialects</i> nhưng phương ngữ không phải thứ có <i>global reach</i>, và từ này dành cho chỗ trống 7')+
+ WR('second','là tính từ, không thể làm danh từ đứng sau <i>American</i> ở vị trí này'),
+ 'It has become even more prevalent since World War II, with the global reach of American power.',
+ 'Tiếng Anh càng trở nên phổ biến hơn kể từ sau Thế chiến thứ hai, cùng với tầm với toàn cầu của sức mạnh Mỹ.')),
+Q(7,'dialects',['dialects','varieties','nationalities','worldwide'],E5('dialects',
+ 'Cũng giống như nước Mỹ có các phương ngữ vùng miền.',
+ OP('dialects','danh từ số nhiều','các phương ngữ, tiếng địa phương',1)+OP('varieties','danh từ số nhiều','các biến thể')+
+ OP('nationalities','danh từ số nhiều','các quốc tịch')+OP('worldwide','trạng từ / tính từ','trên khắp thế giới'),
+ 'Tính từ <b>regional</b> (thuộc vùng miền) ngay trước chỗ trống là chìa khoá: bên trong MỘT quốc gia, cách nói khác nhau theo từng vùng được gọi là <b>dialects</b>. Câu này so sánh chuyện trong nước Mỹ với chuyện trên toàn thế giới ở vế sau.',
+ WR('varieties','dành cho vế sau nói về phạm vi TOÀN CẦU (<i>local varieties around the world</i>); dùng ở đây sẽ trùng lặp và làm mất thế đối chiếu')+
+ WR('nationalities','chỉ quốc tịch, mà trong một nước Mỹ thì không có nhiều quốc tịch theo vùng miền')+
+ WR('worldwide','không phải danh từ nên không đứng sau tính từ <i>regional</i> được'),
+ 'Just as the United States has regional dialects and there are differences in pronunciation and words in British and American English.',
+ 'Cũng giống như nước Mỹ có các phương ngữ vùng miền và có những khác biệt về phát âm cùng từ ngữ giữa tiếng Anh-Anh và tiếng Anh-Mỹ.')),
+Q(8,'varieties',['varieties','dialects','nationalities','power'],E5('varieties',
+ 'Ngôn ngữ này có các biến thể địa phương trên khắp thế giới.',
+ OP('varieties','danh từ số nhiều','các biến thể của một ngôn ngữ',1)+OP('dialects','danh từ số nhiều','các phương ngữ')+
+ OP('nationalities','danh từ số nhiều','các quốc tịch')+OP('power','danh từ','sức mạnh'),
+ 'Danh sách ngay sau dấu hai chấm — <i>American, British, Canadian, Caribbean, Euro-English, Hinglish, Indian, Irish, Nigerian, Scottish, Singaporean, Zimbabwean</i> — là các nhánh tiếng Anh ở tầm QUỐC GIA và khu vực. Trong ngôn ngữ học, những nhánh lớn như thế gọi là <b>varieties</b>, và đây cũng là từ duy nhất còn lại chưa dùng trong khung.',
+ WR('dialects','đã dùng cho chỗ trống 7 để nói về vùng miền trong một nước; ở tầm thế giới người ta dùng <i>varieties</i>')+
+ WR('nationalities','chỉ quốc tịch của con người, không phải tên gọi của các nhánh ngôn ngữ')+
+ WR('power','là danh từ trừu tượng chỉ sức mạnh, không liệt kê được thành American, British, Canadian'),
+ 'The language has local varieties around the world: American, British, Canadian, Caribbean, Euro-English, Hinglish, Indian, Irish, Nigerian, Scottish, Singaporean, Zimbabwean, etc.',
+ 'Ngôn ngữ này có các biến thể địa phương trên khắp thế giới: tiếng Anh Mỹ, Anh-Anh, Canada, Caribe, Euro-English, Hinglish, Ấn Độ, Ireland, Nigeria, Scotland, Singapore, Zimbabwe, v.v.'))
+]);
+
+/* ═════════ D. READING II — ENGLISH AS A GLOBAL LANGUAGE ═════════ */
+pas('M','🌐','ENGLISH AS A GLOBAL LANGUAGE','Reading II — Tìm từ in đậm (6 câu) &amp; Đọc hiểu (5 câu)',
+ '<div class="stamp">🌐<b>GLOBAL</b></div>'+
+ T('<p>People often talk about English as a global language or <b>lingua franca</b>.</p>', 'Người ta thường nói về tiếng Anh như một ngôn ngữ toàn cầu hay một ngôn ngữ chung.')+
+ T('<p>With more than 350 million people around the world speaking English as a first language and more than 430 million speaking it as a second language, there are English speakers in most countries around the world.</p>', 'Với hơn 350 triệu người trên thế giới nói tiếng Anh như tiếng mẹ đẻ và hơn 430 triệu người nói nó như ngôn ngữ thứ hai, hầu hết các quốc gia trên thế giới đều có người nói tiếng Anh.')+
+ T('<p>Why is English so popular, though? And why has it become a global language?</p>', 'Nhưng vì sao tiếng Anh lại phổ biến đến thế? Và vì sao nó trở thành một ngôn ngữ toàn cầu?')+
+ T('<p>People often call English the international language of business, and it’s increasingly true as international trade expands every year, bringing new countries into contact.</p>', 'Người ta thường gọi tiếng Anh là ngôn ngữ kinh doanh quốc tế, và điều đó ngày càng đúng khi thương mại quốc tế mở rộng từng năm, đưa thêm nhiều quốc gia tiếp xúc với nhau.')+
+ T('<p>Most multinational companies require a certain degree of English <b>proficiency</b> from potential employees so in order to get a position with a top company, more and more people are learning English.</p>', 'Phần lớn các công ty đa quốc gia đòi hỏi ứng viên phải có một trình độ tiếng Anh nhất định, nên để có được một vị trí ở công ty hàng đầu, ngày càng nhiều người đi học tiếng Anh.')+
+ T('<p>If your ambitions lie in science or medicine, you can’t <b>neglect</b> English either.</p>', 'Nếu hoài bão của bạn nằm ở khoa học hay y học, bạn cũng không thể xem nhẹ tiếng Anh.')+
+ T('<p>Much of the <b>technical terminology</b> is based on English words, and if you want to learn about the latest developments and discoveries from around the world, you’ll read about them in journals and research reports published in English, no matter whether the scientists who wrote them are from China or Norway.</p>', 'Phần lớn thuật ngữ chuyên ngành đều dựa trên các từ tiếng Anh, và nếu bạn muốn biết về những tiến bộ cùng phát hiện mới nhất trên thế giới, bạn sẽ phải đọc chúng trong các tạp chí và báo cáo nghiên cứu được xuất bản bằng tiếng Anh, bất kể nhà khoa học viết ra chúng đến từ Trung Quốc hay Na Uy.')+
+ T('<p>If you want a career in travel, English is absolutely essential. As the international language of <b>aviation</b>, pilots and cabin crew all need to speak English.</p>', 'Nếu bạn muốn theo nghề du lịch, tiếng Anh là thứ tuyệt đối cần thiết. Là ngôn ngữ quốc tế của ngành hàng không, phi công và tiếp viên đều cần nói được tiếng Anh.')+
+ T('<p>Even if you’re not up in the air, speaking English <b>accurately</b> will ensure you are able to communicate with clients and suppliers all over the world.</p>', 'Ngay cả khi bạn không bay trên trời, việc nói tiếng Anh một cách chuẩn xác sẽ bảo đảm bạn có thể giao tiếp với khách hàng và nhà cung cấp trên khắp thế giới.')+
+ T('<p>So, what’s stopping you from learning this global language?</p>', 'Vậy điều gì đang ngăn bạn học thứ ngôn ngữ toàn cầu này?')+
+ T('<p>With all the English resources available on the internet and so many other English speakers around the world to practice with, there’s never been a better time to start learning English.</p>', 'Với tất cả nguồn học liệu tiếng Anh sẵn có trên Internet và biết bao người nói tiếng Anh khác trên thế giới để luyện tập cùng, chưa bao giờ có thời điểm tốt hơn để bắt đầu học tiếng Anh.')+
+ T('<p>Pick up a book, learn a few words, or even start a course today and take your first steps towards becoming one of nearly 800 million English speakers in the world. <i>(Adapted from englishlive.ef.com)</i></p>', 'Hãy cầm lấy một cuốn sách, học vài từ, hoặc thậm chí bắt đầu một khoá học ngay hôm nay và bước những bước đầu tiên để trở thành một trong gần 800 triệu người nói tiếng Anh trên thế giới.'),
+ W('lingua franca','/ˌlɪŋɡwə ˈfræŋkə/','np','ngôn ngữ chung để giao tiếp')+
+ W('proficiency','/prəˈfɪʃnsi/','n','trình độ thành thạo, năng lực')+
+ W('neglect','/nɪˈɡlekt/','v','xem nhẹ, lơ là, bỏ bê')+
+ W('technical terminology','/ˈteknɪkl ˌtɜːmɪˈnɒlədʒi/','np','thuật ngữ chuyên ngành')+
+ W('aviation','/ˌeɪviˈeɪʃn/','n','ngành hàng không')+
+ W('accurately','/ˈækjərətli/','adv','một cách chuẩn xác')+
+ W('expand','/ɪkˈspænd/','v','mở rộng')+
+ W('potential employee','/pəˈtenʃl ɪmˈplɔɪiː/','np','ứng viên tiềm năng')+
+ W('ambition','/æmˈbɪʃn/','n','hoài bão, khát vọng')+
+ W('journal','/ˈdʒɜːnl/','n','tạp chí khoa học')+
+ W('cabin crew','/ˈkæbɪn kruː/','np','tiếp viên hàng không')+
+ W('supplier','/səˈplaɪə(r)/','n','nhà cung cấp')+
+ W('resource','/rɪˈsɔːs/','n','nguồn học liệu, tài nguyên')+
+ W('take the first steps','/teɪk ðə fɜːst steps/','phr','thực hiện những bước đi đầu tiên'),
+[
+Q(1,'accurately',BOLD,E5('accurately',
+ 'Tìm từ in đậm mang nghĩa: theo cách đúng đắn và chính xác tới từng chi tiết.',
+ OP('accurately','trạng từ','một cách chuẩn xác, chính xác',1)+OP('aviation','danh từ','ngành hàng không')+
+ OP('proficiency','danh từ','trình độ thành thạo')+OP('lingua franca','cụm danh từ','ngôn ngữ chung')+
+ OP('neglect','động từ','xem nhẹ, lơ là')+OP('technical terminology','cụm danh từ','thuật ngữ chuyên ngành'),
+ 'Định nghĩa <i>in a way that is correct and true in every detail</i> mở đầu bằng <b>in a way that</b> — dấu hiệu của một TRẠNG TỪ. Trong bài chỉ có một trạng từ in đậm là <b>accurately</b>, và nó xuất hiện trong cụm <i>speaking English accurately</i>.',
+ WR('aviation','là danh từ chỉ ngành hàng không, không mô tả cách thức làm việc gì')+
+ WR('proficiency','là danh từ chỉ năng lực, không phải trạng từ chỉ cách thức')+
+ WR('lingua franca','là cụm danh từ chỉ một loại ngôn ngữ')+
+ WR('neglect','là động từ mang nghĩa lơ là, trái hẳn nghĩa chính xác')+
+ WR('technical terminology','là cụm danh từ chỉ hệ thuật ngữ'),
+ 'Even if you’re not up in the air, speaking English accurately will ensure you are able to communicate with clients and suppliers all over the world.',
+ 'Ngay cả khi bạn không bay trên trời, việc nói tiếng Anh một cách chuẩn xác sẽ bảo đảm bạn có thể giao tiếp với khách hàng và nhà cung cấp trên khắp thế giới.'),
+ '🔎 in a way that is correct and true in every detail'),
+Q(2,'aviation',BOLD,E5('aviation',
+ 'Tìm từ in đậm mang nghĩa: hoạt động điều khiển máy bay, ngành hàng không.',
+ OP('accurately','trạng từ','một cách chuẩn xác')+OP('aviation','danh từ','ngành hàng không, việc bay',1)+
+ OP('proficiency','danh từ','trình độ thành thạo')+OP('lingua franca','cụm danh từ','ngôn ngữ chung')+
+ OP('neglect','động từ','xem nhẹ, lơ là')+OP('technical terminology','cụm danh từ','thuật ngữ chuyên ngành'),
+ 'Câu chứa từ này nói <i>As the international language of aviation, pilots and cabin crew all need to speak English</i>. Hai chủ thể <b>pilots</b> (phi công) và <b>cabin crew</b> (tiếp viên) chính là bằng chứng rằng <b>aviation</b> là ngành bay.',
+ WR('accurately','là trạng từ chỉ cách thức, không phải tên một ngành nghề')+
+ WR('proficiency','chỉ năng lực ngôn ngữ, không liên quan tới máy bay')+
+ WR('lingua franca','là ngôn ngữ chung, không phải hoạt động bay')+
+ WR('neglect','là động từ chỉ sự lơ là')+
+ WR('technical terminology','là hệ thuật ngữ của một ngành, không phải bản thân ngành hàng không'),
+ 'As the international language of aviation, pilots and cabin crew all need to speak English.',
+ 'Là ngôn ngữ quốc tế của ngành hàng không, phi công và tiếp viên đều cần nói được tiếng Anh.'),
+ '🔎 the activity of flying aircraft'),
+Q(3,'proficiency',BOLD,E5('proficiency',
+ 'Tìm từ in đậm mang nghĩa: kỹ năng, khả năng và kinh nghiệm ở mức cao.',
+ OP('accurately','trạng từ','một cách chuẩn xác')+OP('aviation','danh từ','ngành hàng không')+
+ OP('proficiency','danh từ','trình độ thành thạo, năng lực cao',1)+OP('lingua franca','cụm danh từ','ngôn ngữ chung')+
+ OP('neglect','động từ','xem nhẹ, lơ là')+OP('technical terminology','cụm danh từ','thuật ngữ chuyên ngành'),
+ 'Từ này nằm trong cụm <i>require a certain degree of English proficiency from potential employees</i>. Chữ <b>a certain degree of</b> (một mức độ nhất định của) chỉ đi kèm những danh từ đo được theo cấp bậc, đúng với nghĩa trình độ, năng lực.',
+ WR('accurately','là trạng từ, không đứng sau <i>a certain degree of</i> được')+
+ WR('aviation','là tên một ngành, không phải mức kỹ năng của con người')+
+ WR('lingua franca','chỉ một ngôn ngữ chung, không phải năng lực cá nhân')+
+ WR('neglect','mang nghĩa lơ là, ngược hẳn với ý thành thạo')+
+ WR('technical terminology','là tập hợp từ ngữ chuyên ngành, không phải kỹ năng'),
+ 'Most multinational companies require a certain degree of English proficiency from potential employees.',
+ 'Phần lớn các công ty đa quốc gia đòi hỏi ứng viên phải có một trình độ tiếng Anh nhất định.'),
+ '🔎 great skill, ability, and experience'),
+Q(4,'lingua franca',BOLD,E5('lingua franca',
+ 'Tìm từ in đậm mang nghĩa: một ngôn ngữ dùng để giao tiếp giữa những người có tiếng mẹ đẻ khác nhau.',
+ OP('accurately','trạng từ','một cách chuẩn xác')+OP('aviation','danh từ','ngành hàng không')+
+ OP('proficiency','danh từ','trình độ thành thạo')+OP('lingua franca','cụm danh từ','ngôn ngữ chung giữa những người khác tiếng mẹ đẻ',1)+
+ OP('neglect','động từ','xem nhẹ, lơ là')+OP('technical terminology','cụm danh từ','thuật ngữ chuyên ngành'),
+ 'Ngay câu đầu bài, tác giả đặt hai cách gọi cạnh nhau: <i>English as a global language or lingua franca</i>. Chữ <b>or</b> cho thấy hai cách gọi này tương đương, tức <b>lingua franca</b> chính là ngôn ngữ chung cho mọi người thuộc các tiếng mẹ đẻ khác nhau.',
+ WR('accurately','là trạng từ chỉ cách thức nói năng, không phải tên gọi một loại ngôn ngữ')+
+ WR('aviation','là ngành hàng không')+
+ WR('proficiency','là trình độ của người học, không phải bản thân ngôn ngữ')+
+ WR('neglect','là động từ')+
+ WR('technical terminology','là hệ thuật ngữ trong một lĩnh vực, không phải ngôn ngữ dùng chung giữa các dân tộc'),
+ 'People often talk about English as a global language or lingua franca.',
+ 'Người ta thường nói về tiếng Anh như một ngôn ngữ toàn cầu hay một ngôn ngữ chung.'),
+ '🔎 a language used for communication between people of different native languages'),
+Q(5,'neglect',BOLD,E5('neglect',
+ 'Tìm từ in đậm mang nghĩa: không dành đủ sự quan tâm cho điều gì.',
+ OP('accurately','trạng từ','một cách chuẩn xác')+OP('aviation','danh từ','ngành hàng không')+
+ OP('proficiency','danh từ','trình độ thành thạo')+OP('lingua franca','cụm danh từ','ngôn ngữ chung')+
+ OP('neglect','động từ','xem nhẹ, lơ là, bỏ bê',1)+OP('technical terminology','cụm danh từ','thuật ngữ chuyên ngành'),
+ 'Định nghĩa bắt đầu bằng <b>to</b> nên đây phải là một ĐỘNG TỪ, và từ in đậm duy nhất là động từ chính là <b>neglect</b>. Câu trong bài <i>you can’t neglect English either</i> = bạn cũng không thể lơ là tiếng Anh.',
+ WR('accurately','là trạng từ, không khớp với định nghĩa mở đầu bằng <i>to</i>')+
+ WR('aviation','là danh từ chỉ ngành hàng không')+
+ WR('proficiency','là danh từ chỉ năng lực')+
+ WR('lingua franca','là cụm danh từ')+
+ WR('technical terminology','cũng là cụm danh từ, không phải hành động'),
+ 'If your ambitions lie in science or medicine, you can’t neglect English either.',
+ 'Nếu hoài bão của bạn nằm ở khoa học hay y học, bạn cũng không thể xem nhẹ tiếng Anh.'),
+ '🔎 to not give enough attention to'),
+Q(6,'technical terminology',BOLD,E5('technical terminology',
+ 'Tìm từ in đậm mang nghĩa: những từ hoặc cách diễn đạt đặc biệt dùng trong một môn học hay một lĩnh vực cụ thể.',
+ OP('accurately','trạng từ','một cách chuẩn xác')+OP('aviation','danh từ','ngành hàng không')+
+ OP('proficiency','danh từ','trình độ thành thạo')+OP('lingua franca','cụm danh từ','ngôn ngữ chung')+
+ OP('neglect','động từ','xem nhẹ, lơ là')+OP('technical terminology','cụm danh từ','hệ thuật ngữ chuyên ngành',1),
+ 'Cụm này xuất hiện ngay trong đoạn nói về khoa học và y học: <i>Much of the technical terminology is based on English words</i>. Nó chỉ đúng kho từ ngữ riêng của một chuyên ngành, khớp trọn vẹn với định nghĩa đề bài.',
+ WR('accurately','là trạng từ chỉ cách thức')+
+ WR('aviation','là tên một ngành chứ không phải hệ thuật ngữ của ngành đó')+
+ WR('proficiency','là năng lực của người học')+
+ WR('lingua franca','là ngôn ngữ chung dùng giữa các dân tộc, không bó hẹp trong một lĩnh vực')+
+ WR('neglect','là động từ chỉ sự lơ là'),
+ 'Much of the technical terminology is based on English words.',
+ 'Phần lớn thuật ngữ chuyên ngành đều dựa trên các từ tiếng Anh.'),
+ '🔎 special words or expressions used in a particular subject or field'),
+Q(7,'is more than one speaking it as mother tongue',
+ ['lives in most English speaking countries around the world','mostly works at multinational companies','is more than one speaking it as mother tongue','accounts for less than 400 million people'],
+ E5('is more than one speaking it as mother tongue',
+ 'Số người nói tiếng Anh như ngôn ngữ thứ hai thì nhiều hơn số người nói nó như tiếng mẹ đẻ.',
+ OP('lives in most English speaking countries around the world','mệnh đề','sống ở hầu hết các nước nói tiếng Anh')+
+ OP('mostly works at multinational companies','mệnh đề','chủ yếu làm việc tại các công ty đa quốc gia')+
+ OP('is more than one speaking it as mother tongue','mệnh đề','nhiều hơn số người nói nó như tiếng mẹ đẻ',1)+
+ OP('accounts for less than 400 million people','mệnh đề','chiếm chưa tới 400 triệu người'),
+ 'Bài cho hai con số rất rõ: <b>350 triệu</b> người nói tiếng Anh như tiếng mẹ đẻ và <b>430 triệu</b> người nói như ngôn ngữ thứ hai. So sánh hai con số ấy thì nhóm thứ hai đông hơn, đúng như phương án được chọn.',
+ WR('lives in most English speaking countries around the world','bài nói <i>there are English speakers in most countries</i> — người nói tiếng Anh có mặt ở hầu hết các nước, chứ không nói người học tiếng Anh sống trong các nước nói tiếng Anh')+
+ WR('mostly works at multinational companies','bài chỉ nói công ty đa quốc gia đòi hỏi tiếng Anh, không thống kê rằng phần lớn nhóm này làm ở đó')+
+ WR('accounts for less than 400 million people','sai số liệu: con số của nhóm nói tiếng Anh như ngôn ngữ thứ hai là hơn 430 triệu, tức là nhiều hơn 400 triệu'),
+ 'With more than 350 million people around the world speaking English as a first language and more than 430 million speaking it as a second language.',
+ 'Với hơn 350 triệu người trên thế giới nói tiếng Anh như tiếng mẹ đẻ và hơn 430 triệu người nói nó như ngôn ngữ thứ hai.'),
+ 'The number of people speaking English as a second language ______.'),
+Q(8,'be hired by a top company',
+ ['be hired by a top company','expand international trade','require a certain degree','make contact with foreigners'],
+ E5('be hired by a top company',
+ 'Ngày càng nhiều người học tiếng Anh để được nhận vào làm ở một công ty hàng đầu.',
+ OP('be hired by a top company','cụm động từ','được một công ty hàng đầu tuyển dụng',1)+
+ OP('expand international trade','cụm động từ','mở rộng thương mại quốc tế')+
+ OP('require a certain degree','cụm động từ','đòi hỏi một trình độ nhất định')+
+ OP('make contact with foreigners','cụm động từ','tạo liên hệ với người nước ngoài'),
+ 'Câu trong bài nêu thẳng mục đích: <i>in order to get a position with a top company, more and more people are learning English</i>. Cụm <b>get a position with a top company</b> chính là được nhận vào làm ở công ty hàng đầu.',
+ WR('expand international trade','là bối cảnh chung khiến tiếng Anh quan trọng, không phải mục đích của từng người học')+
+ WR('require a certain degree','đó là việc của CÔNG TY (công ty đòi hỏi trình độ), không phải mục đích của người học')+
+ WR('make contact with foreigners','bài có nói thương mại đưa các nước tiếp xúc với nhau, nhưng đó không phải lý do được nêu cho việc ngày càng nhiều người học tiếng Anh'),
+ 'In order to get a position with a top company, more and more people are learning English.',
+ 'Để có được một vị trí ở công ty hàng đầu, ngày càng nhiều người đi học tiếng Anh.'),
+ 'More and more people are learning English in order to ______.'),
+Q(9,'Because many medical terms are English.',
+ ['Because all journals of the world are published in English.','Because most medical researchs are written by English scientists.','Because medicine conferences are often held in English.','Because many medical terms are English.'],
+ E5('Because many medical terms are English.',
+ 'Vì sao tiếng Anh lại quan trọng nếu bạn muốn theo đuổi nghề y?',
+ OP('Because all journals of the world are published in English.','câu','vì mọi tạp chí trên thế giới đều xuất bản bằng tiếng Anh')+
+ OP('Because most medical researchs are written by English scientists.','câu','vì phần lớn nghiên cứu y học do các nhà khoa học người Anh viết')+
+ OP('Because medicine conferences are often held in English.','câu','vì các hội nghị y khoa thường được tổ chức bằng tiếng Anh')+
+ OP('Because many medical terms are English.','câu','vì nhiều thuật ngữ y học là tiếng Anh',1),
+ 'Đoạn về khoa học và y học nói rõ: <i>Much of the technical terminology is based on English words</i>. Thuật ngữ chuyên ngành dựa trên từ tiếng Anh chính là lý do trực tiếp được nêu trong bài.',
+ WR('Because all journals of the world are published in English.','bài chỉ nói bạn sẽ đọc về các phát hiện mới trong tạp chí xuất bản bằng tiếng Anh, không khẳng định MỌI tạp chí trên thế giới đều như vậy')+
+ WR('Because most medical researchs are written by English scientists.','ngược với bài, vì bài nhấn mạnh <i>no matter whether the scientists who wrote them are from China or Norway</i>')+
+ WR('Because medicine conferences are often held in English.','bài hoàn toàn không nhắc tới hội nghị y khoa'),
+ 'Much of the technical terminology is based on English words.',
+ 'Phần lớn thuật ngữ chuyên ngành đều dựa trên các từ tiếng Anh.'),
+ 'Why is English important if you want to pursue a medical career?'),
+Q(10,'actions',['movements','actions','feet','stages'],E5('actions',
+ 'Danh từ “steps” trong cụm “take your first steps” có nghĩa là gì?',
+ OP('movements','danh từ số nhiều','các chuyển động của cơ thể')+OP('actions','danh từ số nhiều','những hành động, việc làm',1)+
+ OP('feet','danh từ số nhiều','những bàn chân')+OP('stages','danh từ số nhiều','các giai đoạn'),
+ 'Cụm <i>take your first steps towards becoming one of nearly 800 million English speakers</i> đứng ngay sau ba lời khuyên rất cụ thể: <i>Pick up a book, learn a few words, or even start a course</i>. Vậy <b>steps</b> ở đây là những HÀNH ĐỘNG đầu tiên mà người học bắt tay vào làm.',
+ WR('movements','chỉ chuyển động cơ thể theo nghĩa đen, trong khi đây là cách nói ẩn dụ')+
+ WR('feet','là bàn chân, nghĩa đen hoàn toàn, không hợp với việc bắt đầu học một ngôn ngữ')+
+ WR('stages','nghĩa là giai đoạn; nếu vậy câu sẽ nói về các chặng dài của quá trình, còn ở đây tác giả đang giục người đọc BẮT TAY LÀM ngay ba việc nhỏ'),
+ 'Pick up a book, learn a few words, or even start a course today and take your first steps towards becoming one of nearly 800 million English speakers in the world.',
+ 'Hãy cầm lấy một cuốn sách, học vài từ, hoặc thậm chí bắt đầu một khoá học ngay hôm nay và bước những bước đầu tiên để trở thành một trong gần 800 triệu người nói tiếng Anh trên thế giới.'),
+ 'The noun “steps” used in the phrase “take your first steps” means ______.'),
+Q(11,'It’s better to take online English classes than physical classes.',
+ ['Speaking English fluently is necessary even if you are on the ground staff.','You can learn English from online resources or other English speakers.','It’s better to take online English classes than physical classes.','There are nearly 800 million English speakers, both as first and second language.'],
+ E5('It’s better to take online English classes than physical classes.',
+ 'Điều nào sau đây KHÔNG được nhắc tới trong bài đọc?',
+ OP('Speaking English fluently is necessary even if you are on the ground staff.','câu','nói tiếng Anh trôi chảy là cần thiết ngay cả khi bạn làm việc dưới mặt đất')+
+ OP('You can learn English from online resources or other English speakers.','câu','bạn có thể học tiếng Anh từ nguồn trực tuyến hoặc từ những người nói tiếng Anh khác')+
+ OP('It’s better to take online English classes than physical classes.','câu','học lớp tiếng Anh trực tuyến thì tốt hơn lớp học trực tiếp',1)+
+ OP('There are nearly 800 million English speakers, both as first and second language.','câu','có gần 800 triệu người nói tiếng Anh, cả tiếng mẹ đẻ lẫn ngôn ngữ thứ hai'),
+ 'Đây là câu hỏi <b>NOT mentioned</b>. Bài có nhắc tới nguồn học liệu trên Internet, nhưng tuyệt nhiên KHÔNG so sánh lớp học trực tuyến với lớp học trực tiếp, cũng không nói cái nào tốt hơn cái nào.',
+ WR('Speaking English fluently is necessary even if you are on the ground staff.','CÓ được nhắc: <i>Even if you’re not up in the air, speaking English accurately will ensure you are able to communicate with clients and suppliers</i>')+
+ WR('You can learn English from online resources or other English speakers.','CÓ được nhắc: <i>With all the English resources available on the internet and so many other English speakers around the world to practice with</i>')+
+ WR('There are nearly 800 million English speakers, both as first and second language.','CÓ được nhắc ở câu cuối: <i>becoming one of nearly 800 million English speakers in the world</i>'),
+ 'With all the English resources available on the internet and so many other English speakers around the world to practice with, there’s never been a better time to start learning English.',
+ 'Với tất cả nguồn học liệu tiếng Anh sẵn có trên Internet và biết bao người nói tiếng Anh khác trên thế giới để luyện tập cùng, chưa bao giờ có thời điểm tốt hơn để bắt đầu học tiếng Anh.'),
+ 'Which of the following statements is NOT mentioned in the passage?')
+]);
+
+/* ══ DUNG TRANG ══ */
+var TOTAL=0;P.forEach(function(p){TOTAL+=p.qs.length});
+var answered=0,score=0,done={},MAP={};
+var app=document.getElementById('app');
+P.forEach(function(p,pi){
+ var d=document.createElement('div');d.className='split';
+ var qh='';
+ p.qs.forEach(function(q,qi){
+  var gid=p.id+'_'+q.n;
+  var so=shuffle(q.opts);
+  qh+='<div class="q" id="c_'+gid+'"><div class="qt"><span class="qn">'+q.n+'</span>'+(q.st||'Chọn từ đúng cho chỗ trống ('+q.n+')')+'</div>'+
+   '<div class="og" id="o_'+gid+'">'+so.map(function(o,i){
+     return '<button class="ob" onclick="pick(\''+gid+'\','+pi+','+qi+','+i+')">'+o+'</button>'}).join('')+'</div>'+
+   '<div class="ex" id="e_'+gid+'">'+q.ex+'</div></div>';
+  MAP[gid]=so;
+ });
+ d.innerHTML='<div class="pane"><div class="letter"><div class="edge"></div><div class="bd">'+
+   '<h2>'+p.ic+' '+p.ttl+'</h2><div class="sub">'+p.sub+'</div>'+p.body+
+   '<div class="gl"><h3>📖 Từ vựng khó cần nhớ</h3><div>'+p.gloss+'</div></div></div></div></div>'+
+   '<div><div class="sec"><h3>'+p.ic+' '+p.sub+'</h3>'+qh+'</div></div>';
+ app.appendChild(d);
+});
+document.getElementById('tt').textContent=TOTAL;
+
+function pick(gid,pi,qi,i){
+ if(done[gid])return;done[gid]=true;answered++;
+ var q=P[pi].qs[qi],so=MAP[gid],bs=document.getElementById('o_'+gid).children;
+ var ok=so[i]===q.ans;
+ for(var k=0;k<bs.length;k++){bs[k].classList.add('dn');
+  if(so[k]===q.ans)bs[k].classList.add('ok');else if(k===i)bs[k].classList.add('no')}
+ var bl=document.getElementById('bl_'+gid);
+ if(bl){bl.textContent=q.ans==='no article'?'( '+q.n+' ) ∅':'('+q.n+') '+q.ans;bl.classList.add('ok')}
+ document.getElementById('e_'+gid).classList.add('on');
+ if(ok){score++;ding();conf()}
+ else{buzz();var c=document.getElementById('c_'+gid);c.classList.add('shk');setTimeout(function(){c.classList.remove('shk')},430)}
+ bump();
+}
+function bump(){document.getElementById('sc').textContent=score;
+ document.getElementById('fb').style.width=(answered/TOTAL*100)+'%';
+ var p=answered?score/answered:1;
+ document.getElementById('md').textContent=p>=.9?'🤩':p>=.7?'😃':p>=.5?'🙂':'💪'}
+
+/* ══ nop bai ══ */
+function openName(){document.getElementById('ovN').classList.add('on');setTimeout(function(){document.getElementById('nIn').focus()},150)}
+document.getElementById('nIn').addEventListener('keydown',function(e){if(e.key==='Enter')showResult()});
+function showResult(){
+ var i=document.getElementById('nIn'),n=i.value.trim();
+ if(!n){document.getElementById('nEm').classList.add('on');i.focus();return}
+ document.getElementById('nEm').classList.remove('on');
+ document.getElementById('ovN').classList.remove('on');
+ var pct=score/TOTAL,ten=(pct*10).toFixed(2),e,g,m,gif;
+ if(score===TOTAL){e='🏆';g='🌟 XUẤT SẮC TUYỆT ĐỐI, '+n+'!';m='Con đúng trọn vẹn cả '+TOTAL+' câu. Ms rất tự hào về con!';gif='https://media.giphy.com/media/g9582DNuQppxC/giphy.gif'}
+ else if(pct>=.8){e='🎉';g='👏 GIỎI LẮM, '+n+'!';m='Con nắm bài rất chắc. Đọc lại vài câu sai để lần sau trọn điểm nhé!';gif='https://media.giphy.com/media/11sBLVxNs7v6WA/giphy.gif'}
+ else if(pct>=.6){e='🙌';g='💪 KHÁ RỒI ĐẤY, '+n+'!';m='Con đã qua ngưỡng an toàn. Mở phần giải thích từng bước ra đọc, con sẽ lên nhanh lắm.';gif='https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif'}
+ else{e='🤗';g='🌱 CỐ LÊN NHÉ, '+n+'!';m='Đừng buồn con. Con hãy đọc kỹ lời giải, chép cấu trúc vào vở rồi làm lại — Ms tin con sẽ khác hẳn.';gif='https://media.giphy.com/media/l4pTsNgkyKQPzsxRm/giphy.gif'}
+ document.getElementById('rEmo').textContent=e;
+ document.getElementById('rGr').textContent=g;
+ document.getElementById('rMs').textContent=m+' ☎️ Đăng ký khoá học cùng MS Chí Nên: 0852639652.';
+ document.getElementById('rGif').src=gif;
+ document.getElementById('rSc').textContent=score;
+ document.getElementById('rTt').textContent=TOTAL;
+ document.getElementById('r10').textContent=ten;
+ document.getElementById('ovR').classList.add('on');
+ if(pct>=.6){conf();ding()}
+}
+
+/* ══ loi nhac cua Ms — tu doi 4.2 giay ══ */
+var MSNH=[
+ '💛 Ms để bảng nhắn này ở đây suốt bài, không phải để giục con, mà để con nhớ rằng có một cô giáo đang mong con học cho tử tế.',
+ '📜 Bên trái là bài đọc, bên phải là câu hỏi. Con hãy đọc trọn cả đoạn rồi mới chọn, đừng vội nhìn mỗi chỗ trống.',
+ '🌟 Mỗi đoạn Ms đều để một nút mở bản dịch. Con thử tự hiểu trước, rồi mới mở ra đối chiếu — như vậy mới thật sự tiến bộ.',
+ '🌱 Sai một câu không làm con kém đi chút nào đâu. Nó chỉ chỉ cho con thấy chỗ mình chưa chắc. Ms thích học sinh <b>dám sai rồi sửa</b>.',
+ '🕯 Phần giải thích là chỗ Ms ngồi viết lâu nhất. Câu nào đúng con cũng hãy mở ra đọc, vì <b>đúng do hiểu</b> khác hẳn <b>đúng do may</b>.',
+ '🖋 Xin con mở vở ra chép lại những câu mình làm sai. Ms dạy nhiều khoá rồi và thấy rất rõ: <b>bạn nào chịu ghi, bạn ấy đi xa</b>.',
+ '📖 Bảng từ vựng ở cuối mỗi lá thư có phiên âm và từ loại đầy đủ. Con đọc to lên vài lượt, tay chép, miệng đọc thì từ mới ở lại lâu.',
+ '🐢 Làm chậm mà chắc vẫn hơn bấm cho hết bài. Mười lăm phút con chịu khó hôm nay sẽ quay lại thành điểm số của con ngày mai.',
+ '🤝 Chỗ nào chưa hiểu cứ hỏi Ms nhé. Không có câu hỏi nào là ngớ ngẩn cả, chỉ có thắc mắc giữ im trong lòng mới đáng lo.',
+ '☎️ Con và phụ huynh muốn học cùng <b>MS Chí Nên</b> thì gọi <b>0852639652</b> — khoá tiếng Anh <b>cấp 1 đến cấp 3</b>, câu nào cũng có lời giải riêng và dịch nghĩa đầy đủ.'
+];
+(function(){var e=document.getElementById('msTx'),k=0;e.innerHTML=MSNH[0];
+ setInterval(function(){k=(k+1)%MSNH.length;e.style.opacity=0;
+  setTimeout(function(){e.innerHTML=MSNH[k];e.style.opacity=1},250)},4200)})();
+</script>
+<script>/*devclean*/(function(){
+var ZW=/[\u00AD\u034F\u061C\u115F\u1160\u17B4\u17B5\u180E\u200B-\u200F\u202A-\u202E\u2060-\u206F\uFEFF]/g,
+    SP=/[\u00A0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\t]/g,
+    AP=/[\u2018\u2019\u201A\u201B\u2032\u2035\u02B9\u02BB\u02BC\u02BD\u02C8\u0060\u00B4\uFF07]/g,
+    DQ=/[\u201C\u201D\u201E\u201F\u2033\u2036\u00AB\u00BB\uFF02]/g,
+    DS=/[\u2010\u2011\u2012\u2212\uFE63\uFF0D]/g;
+function clean(v){if(!v)return v;var s=String(v);try{s=s.normalize('NFKC')}catch(e){}
+  return s.replace(ZW,'').replace(SP,' ').replace(AP,"'").replace(DQ,'"').replace(DS,'-').replace(/[\u0300-\u036f]/g,'').replace(/ {2,}/g,' ');}
+window.__devclean=clean;
+function fix(skip){var L=document.querySelectorAll('input:not([type]),input[type=text],input[type=search],textarea');
+  for(var i=0;i<L.length;i++){var el=L[i];if(el===skip||el.readOnly||el.disabled)continue;var v=el.value,c=clean(v);if(c!==v)el.value=c;}}
+['pointerdown','mousedown','touchstart','click','change','focusout'].forEach(function(t){document.addEventListener(t,function(e){fix(t==='focusout'||t==='change'?null:e.target)},true)});
+document.addEventListener('keydown',function(e){if(e.key==='Enter'||e.keyCode===13)fix(null)},true);
+})();</script>
+<style id="ms-chi-nen-unlock-style">
+#passwordModal, #password-modal, #pwModal, #pw-modal, #pw-overlay,
+#lockModal, #passModal, #authModal, #auth-modal, #lockOverlay,
+#start-overlay, #intro-overlay, #start-screen,
+.password-modal, .lock-modal, .lock-overlay {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    z-index: -9999 !important;
+}
+</style>
+<script>
+// Remove password lock completely - direct quiz access
+(function() {
+    var initDone = false;
+    var renderCheckDone = false;
+
+    function hideEl(el, hard) {
+        if (!el) return;
+        if (hard) {
+            el.style.setProperty('display', 'none', 'important');
+            el.style.setProperty('visibility', 'hidden', 'important');
+            el.style.setProperty('opacity', '0', 'important');
+            el.style.setProperty('pointer-events', 'none', 'important');
+            el.style.setProperty('z-index', '-9999', 'important');
+        } else {
+            el.style.display = 'none';
+        }
+        el.classList.remove('active', 'show', 'open', 'visible', 'flex');
+    }
+
+    function hasRenderedQuiz() {
+        var containers = document.querySelectorAll(
+            '#quiz-container, #quizContainer, #questions-container, #questionPane, #quiz, #questions, #quiz-body, #questions-wrapper, #quiz-list, #quizList, #exercise-container, #app-container .split-container'
+        );
+        for (var i = 0; i < containers.length; i++) {
+            if (containers[i].querySelectorAll('button, input, select, textarea, .question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .question, .option-btn, .opt-btn, .ans-btn').length > 0) {
+                return true;
+            }
+        }
+        if (document.querySelectorAll('.question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .option-btn, .opt-btn, .ans-btn, .choice-btn').length > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    function ensureQuizRendered() {
+        if (renderCheckDone) return;
+        renderCheckDone = true;
+        if (hasRenderedQuiz()) return;
+
+        if (!hasRenderedQuiz() && typeof buildQuiz === 'function') { try { buildQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof initQuiz === 'function') { try { initQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderApp === 'function') { try { renderApp(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuiz === 'function') { try { renderQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuestions === 'function') { try { renderQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAllQuestions === 'function') { try { renderAllQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAll === 'function') { try { renderAll(); } catch(e){} }
+    }
+
+    function unlockNow() {
+        var pwIds = [
+            'passwordModal', 'password-modal', 'pwModal', 'pw-modal', 'pw-overlay',
+            'lockModal', 'passModal', 'authModal', 'auth-modal', 'lockOverlay',
+            'start-overlay', 'intro-overlay', 'start-screen'
+        ];
+        pwIds.forEach(function(id) {
+            hideEl(document.getElementById(id), true);
+        });
+
+        var modalEls = document.querySelectorAll('.password-modal, .lock-modal, .lock-overlay, #lockOverlay, #auth-modal');
+        modalEls.forEach(function(el) {
+            if (el.id !== 'resultModal' && el.id !== 'result-modal' && el.id !== 'scoreModal') {
+                hideEl(el, true);
+            }
+        });
+
+        ['nameModal', 'name-modal', 'nameInputModal'].forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) hideEl(el, false);
+        });
+
+        var qo = document.getElementById('quiz-overlay');
+        if (qo && (typeof isStarted === 'undefined' || !isStarted)) {
+            qo.style.display = 'none';
+        }
+
+        var mainIds = [
+            'mainContent', 'main-content', 'mainHeader', 'main-header',
+            'app-container', 'app', 'quizApp', 'quiz-wrapper', 'quizContainer', 'quiz-container', 'reading-content'
+        ];
+        mainIds.forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) {
+                el.classList.remove('hidden', 'blur', 'blurred', 'locked');
+                if (el.style.display === 'none') {
+                    el.style.removeProperty('display');
+                }
+                if (window.getComputedStyle(el).display === 'none') {
+                    var hasPane = el.querySelector('.pane, .left-pane, .right-pane, .split-container, .left-panel, .right-panel');
+                    if (id === 'main-content' || id.toLowerCase().includes('header') || el.classList.contains('main-container') || hasPane) {
+                        el.style.setProperty('display', 'flex', 'important');
+                    } else {
+                        el.style.setProperty('display', 'block', 'important');
+                    }
+                }
+            }
+        });
+
+        var qs = document.getElementById('quiz-screen');
+        if (qs) {
+            qs.classList.remove('hidden');
+            if (qs.classList.contains('flex-col')) {
+                qs.classList.add('flex');
+                qs.style.display = 'flex';
+            } else {
+                qs.style.display = 'block';
+            }
+        }
+
+        if (!initDone) {
+            initDone = true;
+
+            if (document.getElementById('start-overlay') && typeof startGame === 'function') {
+                var sn = document.getElementById('student-name') || document.getElementById('studentName');
+                if (sn && !sn.value.trim()) sn.value = 'Học sinh';
+            }
+            if (document.getElementById('name-modal') && typeof startQuiz === 'function') {
+                var sn2 = document.getElementById('student-name');
+                if (sn2 && !sn2.value.trim()) sn2.value = 'Học sinh';
+            }
+
+            if (typeof startQuiz === 'function' && (typeof isStarted === 'undefined' || !isStarted)) { try { startQuiz(); } catch(e){} }
+            if (typeof startGame === 'function') { try { startGame(); } catch(e){} }
+            if (typeof startTest === 'function') { try { startTest(); } catch(e){} }
+            if (typeof startApp === 'function') { try { startApp(); } catch(e){} }
+            if (typeof buildStarfield === 'function') { try { buildStarfield(); } catch(e){} }
+            if (typeof spawnFloats === 'function') { try { spawnFloats(); } catch(e){} }
+            if (typeof spawnFloaters === 'function') { try { spawnFloaters(); } catch(e){} }
+            if (typeof createFloatingBubbles === 'function') { try { createFloatingBubbles(); } catch(e){} }
+            if (typeof initAudio === 'function') { try { initAudio(); } catch(e){} }
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', unlockNow);
+    } else {
+        unlockNow();
+    }
+    if (document.readyState === 'complete') {
+        setTimeout(ensureQuizRendered, 150);
+    } else {
+        window.addEventListener('load', function() {
+            setTimeout(unlockNow, 20);
+            setTimeout(ensureQuizRendered, 150);
+            setTimeout(unlockNow, 300);
+            setTimeout(unlockNow, 700);
+        });
+    }
+    setTimeout(unlockNow, 50);
+    setTimeout(unlockNow, 200);
+    setTimeout(unlockNow, 600);
+    setTimeout(unlockNow, 1100);
+})();
+</script>
+</body>
+</html>

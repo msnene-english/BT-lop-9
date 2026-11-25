@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GKII · TEST 5 · READING — Light Pollution &amp; Australia's Social Media Ban | MS Chí Nên</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* THEME: STARLIGHT NIGHT (bầu trời đêm huyền ảo) */
+:root{
+  --bg1:#0d1128;--bg2:#1b2350;--star:#e8e6ff;--silver:#c7d2fe;--gold:#fbbf24;--violet:#8b7cf6;
+  --glass:rgba(255,255,255,.07);--edge:rgba(199,210,254,.18);
+  --text:#eae8ff;--text-dim:#9694c4;
+  --ok:#4ade80;--ok-bg:rgba(74,222,128,.18);--no:#ff6b8a;--no-bg:rgba(255,107,138,.2);
+  --disp:'Cormorant Garamond',serif;--body:'Nunito',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:19px}
+body{font-family:var(--body);color:var(--text);min-height:100vh;overflow-x:hidden;position:relative;background:linear-gradient(180deg,var(--bg1),var(--bg2))}
+.stars{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.7;
+  background-image:radial-gradient(1.6px 1.6px at 20% 30%,var(--star),transparent),
+    radial-gradient(1.2px 1.2px at 70% 15%,var(--star),transparent),
+    radial-gradient(1.4px 1.4px at 45% 60%,var(--silver),transparent),
+    radial-gradient(1.1px 1.1px at 85% 75%,var(--star),transparent),
+    radial-gradient(1.3px 1.3px at 10% 80%,var(--silver),transparent),
+    radial-gradient(1.5px 1.5px at 60% 40%,var(--star),transparent),
+    radial-gradient(1.1px 1.1px at 30% 90%,var(--silver),transparent);
+  background-size:220px 220px;animation:twinkle 4s ease-in-out infinite alternate}
+@keyframes twinkle{0%{opacity:.5}100%{opacity:.85}}
+.mist{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;filter:blur(60px);opacity:.35}
+.mist span{position:absolute;width:44vw;height:44vw;border-radius:50%;mix-blend-mode:screen;animation:drift 27s ease-in-out infinite}
+.mist span:nth-child(1){background:var(--violet);top:-14%;left:-8%}
+.mist span:nth-child(2){background:#4361ee;top:10%;right:-12%;animation-delay:-9s}
+.mist span:nth-child(3){background:var(--gold);bottom:-18%;left:22%;animation-delay:-17s}
+@keyframes drift{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(5%,-6%) scale(1.12)}}
+.fl{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.f{position:absolute;bottom:-10%;opacity:.28;animation:up linear infinite}
+@keyframes up{0%{transform:translateY(0) rotate(0);opacity:0}12%{opacity:.32}100%{transform:translateY(-118vh) rotate(340deg);opacity:0}}
+header{position:relative;z-index:2;padding:20px 34px;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;
+  background:rgba(13,17,40,.75);backdrop-filter:blur(10px);border-bottom:3px solid var(--gold);box-shadow:0 8px 22px rgba(0,0,0,.35)}
+.tag{font-family:var(--disp);font-size:.9rem;letter-spacing:.1em;color:var(--gold);margin-bottom:5px;font-weight:700}
+header h1{font-family:var(--disp);font-weight:700;font-size:1.4rem;line-height:1.3;color:var(--star)}
+.sub{font-size:.74rem;color:var(--text-dim);margin-top:7px;font-weight:600}
+.gauge{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.06);border:2px solid var(--gold);border-radius:12px;padding:9px 18px}
+.gauge .num{font-family:var(--disp);font-size:1.8rem;color:var(--gold);line-height:1;font-weight:700}
+.gauge .lbl{font-family:var(--disp);font-size:.7rem;letter-spacing:.1em;color:var(--text-dim)}
+.main{position:relative;z-index:2;display:flex;gap:22px;padding:26px 30px 46px;align-items:flex-start}
+.lp,.rp{flex:1 1 50%;max-height:calc(100vh - 128px);overflow-y:auto;padding-right:8px}
+.lp::-webkit-scrollbar,.rp::-webkit-scrollbar{width:9px}
+.lp::-webkit-scrollbar-thumb,.rp::-webkit-scrollbar-thumb{background:var(--violet);border-radius:6px}
+.slbl{font-family:var(--disp);font-size:1.06rem;color:var(--gold);margin-bottom:13px;padding-bottom:7px;border-bottom:2px dashed var(--violet);font-weight:700}
+.pc{position:relative;background:var(--glass);backdrop-filter:blur(10px);border:1.5px solid var(--edge);border-left:6px solid var(--violet);border-radius:12px;
+  padding:16px 18px 15px 22px;margin-bottom:15px;box-shadow:0 6px 18px rgba(0,0,0,.28)}
+.plbl{font-family:var(--disp);font-size:.92rem;color:var(--silver);margin-bottom:9px;font-weight:700}
+.pt{font-size:1.0rem;line-height:1.95;color:var(--text)}
+.pt b{color:var(--gold);font-weight:800}
+.blk{display:inline-block;min-width:40px;text-align:center;font-weight:800;color:#0d1128;background:var(--gold);border-radius:5px;padding:1px 9px;margin:0 3px}
+.btr{margin-top:11px;font-family:var(--body);font-size:.78rem;font-weight:700;background:transparent;border:2px solid var(--silver);color:var(--silver);padding:7px 17px;border-radius:22px;cursor:pointer;transition:.2s}
+.btr:hover{background:var(--silver);color:#0d1128}
+.tv{display:none;margin-top:10px;font-size:.93rem;line-height:1.9;color:#e0defc;background:rgba(139,124,246,.12);border-left:4px solid var(--violet);border-radius:0 9px 9px 0;padding:11px 14px}
+.tv.open{display:block;animation:fd .3s ease}
+@keyframes fd{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.gw{background:var(--glass);backdrop-filter:blur(10px);border:1.5px solid var(--edge);border-radius:12px;padding:16px 18px;margin-top:6px}
+.gt2{font-family:var(--disp);font-size:1.0rem;color:var(--gold);margin-bottom:11px;font-weight:700}
+table.gtb{width:100%;border-collapse:collapse;font-size:.84rem}
+table.gtb th{background:var(--violet);color:#fff;font-weight:800;padding:8px 10px;text-align:left;font-size:.76rem}
+table.gtb td{border-bottom:1px solid var(--edge);padding:7px 10px;vertical-align:top;color:var(--text)}
+.w{color:var(--silver);font-weight:800}
+.pos{color:var(--gold);font-style:italic;font-size:.78rem;white-space:nowrap}
+.qc{background:var(--glass);backdrop-filter:blur(10px);border:1.5px solid var(--edge);border-radius:12px;padding:16px 18px;margin-bottom:15px;box-shadow:0 6px 18px rgba(0,0,0,.28)}
+.qn{font-family:var(--disp);font-size:.86rem;color:var(--gold);margin-bottom:8px;font-weight:700}
+.qt{font-size:1.02rem;line-height:1.8;font-weight:600;margin-bottom:13px;color:var(--text)}
+.qt b{color:var(--gold)}
+.opts{display:grid;grid-template-columns:1fr;gap:9px}
+.opt{font-family:var(--body);font-size:.92rem;font-weight:600;text-align:left;line-height:1.55;background:rgba(255,255,255,.05);border:2px solid var(--edge);color:var(--text);
+  padding:11px 16px;border-radius:9px;cursor:pointer;transition:.18s}
+.opt:hover:not(:disabled){border-color:var(--gold);background:rgba(251,191,36,.1);transform:translateX(4px)}
+.opt:disabled{cursor:default}
+.opt.correct{background:rgba(74,222,128,.22);border-color:var(--ok);color:#c8ffdc;font-weight:800}
+.opt.wrong{background:rgba(255,107,138,.2);border-color:var(--no);color:#ffd6e0;font-weight:800;animation:shk .45s}
+@keyframes shk{10%,90%{transform:translateX(-2px)}20%,80%{transform:translateX(4px)}30%,50%,70%{transform:translateX(-7px)}40%,60%{transform:translateX(7px)}}
+.expl{display:none;margin-top:13px}
+.expl.open{display:block;animation:fd .35s ease}
+.expl h4{font-family:var(--disp);font-size:1.0rem;color:var(--gold);margin-bottom:10px;font-weight:700}
+.estep{background:rgba(255,255,255,.05);border-left:5px solid var(--violet);border-radius:0 9px 9px 0;padding:11px 14px;margin-bottom:9px;font-size:.92rem;line-height:1.85}
+.estep.s1{border-left-color:#4cc9f0} .estep.s1 .elbl{color:#7dd3fc}
+.estep.s2{border-left-color:var(--gold)} .estep.s2 .elbl{color:var(--gold)}
+.estep.s3{border-left-color:var(--ok);background:rgba(74,222,128,.08)} .estep.s3 .elbl{color:var(--ok)}
+.estep.s4{border-left-color:var(--no);background:rgba(255,107,138,.08)} .estep.s4 .elbl{color:var(--no)}
+.estep.ev{border-left-color:var(--silver);background:rgba(199,210,254,.08)} .estep.ev .elbl{color:var(--silver)}
+.elbl{display:block;font-family:var(--disp);font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;font-weight:700;margin-bottom:5px;color:var(--text-dim)}
+.expl ul{list-style:none;margin:5px 0 0}
+.expl li{padding:6px 9px;margin:5px 0;background:rgba(255,255,255,.05);border-left:2px solid var(--edge);border-radius:0 4px 4px 0}
+.p-word{color:#7dd3fc;font-weight:800}
+.p-mean{color:var(--gold);font-weight:700}
+.p-grammar{color:#f472b6;font-weight:800;background:rgba(244,114,182,.14);border-radius:4px;padding:0 6px}
+.hl-green{color:var(--ok);font-weight:800}
+.hl-red{color:var(--no);font-weight:800}
+.sw{text-align:center;margin:22px 0 8px}
+.bsub{font-family:var(--disp);font-size:1.1rem;background:linear-gradient(135deg,var(--violet),var(--gold));color:#0d1128;border:none;
+  padding:15px 34px;border-radius:30px;cursor:pointer;box-shadow:0 8px 24px rgba(139,124,246,.4);transition:.2s;font-weight:700}
+.bsub:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(251,191,36,.45)}
+.ov{display:none;position:fixed;inset:0;z-index:100;background:rgba(5,7,20,.7);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:16px}
+.ov.open{display:flex}
+.mb{background:linear-gradient(160deg,#171d40,#0d1128);border:3px solid var(--gold);border-radius:16px;padding:26px 28px;max-width:455px;width:100%;
+  text-align:center;animation:pop .3s ease;box-shadow:0 20px 50px rgba(0,0,0,.5)}
+@keyframes pop{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
+.mb h2{font-family:var(--disp);font-size:1.25rem;color:var(--gold);margin-bottom:14px;font-weight:700}
+.mb input{width:100%;font-family:var(--body);font-size:.92rem;font-weight:600;padding:11px 14px;background:rgba(255,255,255,.06);border:2px solid var(--violet);border-radius:22px;color:var(--text);text-align:center;outline:none;margin-bottom:9px}
+.mb input:focus{border-color:var(--gold)}
+.err{color:var(--no);font-size:.72rem;font-weight:800;margin-bottom:8px;display:none}
+.err.show{display:block}
+.bok{font-family:var(--disp);font-size:1.0rem;background:var(--gold);color:#0d1128;border:none;padding:11px 28px;border-radius:22px;cursor:pointer;font-weight:700}
+.rname{font-size:.76rem;color:var(--text-dim);font-weight:600;margin-bottom:5px}
+.rscore{font-family:var(--disp);font-size:2.7rem;color:var(--gold);line-height:1;margin:6px 0;font-weight:700}
+.rs10{font-family:var(--disp);font-size:1.1rem;color:var(--ok);margin-bottom:8px;font-weight:700}
+.rgif{width:175px;margin:10px auto;display:block;border:3px solid var(--violet);border-radius:9px}
+.rcmt{font-size:.85rem;line-height:1.75;background:rgba(139,124,246,.1);border:2px dashed var(--violet);border-radius:9px;padding:11px 14px;margin:12px 0}
+.bcl{font-family:var(--body);font-size:.72rem;font-weight:800;background:transparent;border:2px solid var(--violet);color:var(--gold);padding:9px 24px;border-radius:22px;cursor:pointer}
+.cn{position:fixed;top:-16px;z-index:200;pointer-events:none;animation:cf 2.4s forwards}
+@keyframes cf{0%{transform:translateY(0) rotate(0);opacity:1}100%{transform:translateY(108vh) rotate(700deg);opacity:0}}
+@media(max-width:900px){.main{flex-direction:column;padding:0 18px 42px}.lp{flex:1 1 auto;width:100%}.lp,.rp{max-height:none}}
+</style>
+</head>
+<body>
+<style>
+:root{--nbh:50px}
+body{padding-top:var(--nbh)}
+.nbar{position:fixed;top:0;left:0;right:0;z-index:150;min-height:var(--nbh);display:flex;align-items:center;gap:11px;padding:6px 16px;
+  background:#ffb703;border-bottom:2px solid #c98a00;box-shadow:0 2px 12px rgba(0,0,0,.2)}
+.nbar .pin{font-size:1.15rem;flex:0 0 auto;animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.22);opacity:.75}}
+.nbtxt{flex:1 1 auto;min-width:0;font-family:'Nunito',sans-serif;font-size:.82rem;font-weight:800;line-height:1.35;color:#1a1033;transition:opacity .4s ease}
+.nbtg{flex:0 0 auto;font-family:'Nunito',sans-serif;font-size:.68rem;font-weight:800;background:#1a1033;color:#ffd76e;border:none;border-radius:16px;padding:6px 13px;cursor:pointer;white-space:nowrap}
+.nbtg:hover{background:#2b1b52}
+.nfull{display:none;position:fixed;top:var(--nbh);left:0;right:0;z-index:149;max-height:52vh;overflow-y:auto;padding:13px 18px;background:#fff8e6;border-bottom:2px solid #c98a00;box-shadow:0 8px 22px rgba(0,0,0,.2)}
+.nfull.open{display:block}
+.nfull ul{list-style:none;display:grid;gap:8px;max-width:1100px;margin:0 auto}
+.nfull li{font-family:'Nunito',sans-serif;font-size:.86rem;font-weight:600;line-height:1.7;color:#42305a;background:rgba(255,183,3,.14);border-left:4px solid #ffb703;border-radius:0 8px 8px 0;padding:9px 13px}
+.nfull li b{color:#a35b00}
+@media(max-width:900px){:root{--nbh:64px}.nbtxt{font-size:.75rem}}
+</style>
+<script>
+function nbToggle(){var p=document.getElementById('nfull'),b=document.getElementById('nbtg');p.classList.toggle('open');b.textContent=p.classList.contains('open')?'▲ Thu gọn':'▼ Xem đủ';}
+document.addEventListener('DOMContentLoaded',function(){var src=document.querySelectorAll('#nfull li');var box=document.getElementById('nbtxt');if(!src.length||!box)return;var i=0;
+function show(){box.style.opacity=0;setTimeout(()=>{box.innerHTML=src[i].innerHTML;box.style.opacity=1;i=(i+1)%src.length;},400);}
+show();setInterval(show,7000);});
+</script>
+<div class="nbar"><span class="pin">💡</span><div class="nbtxt" id="nbtxt"></div><button class="nbtg" id="nbtg" onclick="nbToggle()">▼ Xem đủ</button></div>
+<div class="nfull" id="nfull"><ul>
+  <li>🤝 <b>Ms không chấm em bằng số câu đúng, mà bằng số điều em thật sự hiểu.</b> Gặp chữ lạ thì mở Google Dịch, ChatGPT hay Gemini tra cho rõ đã, đừng vội bấm rồi tự nhủ "chắc là câu này".</li>
+  <li>👂 <b>Một từ chỉ thuộc về em khi em nói được nó.</b> Tra ở từ điển Cambridge để biết phiên âm, trọng âm rơi vào đâu, nghe máy đọc rồi lặp lại vài lần.</li>
+  <li>🔍 <b>Đừng đóng bài khi chưa đọc lời giải.</b> Cả bốn bước đều được viết ra để em thấy cái bẫy nằm ở đâu — nhận ra hôm nay thì mai vào phòng thi em sẽ bình tĩnh hơn nhiều.</li>
+  <li>✏️ <b>Trang vở của em quan trọng hơn màn hình này.</b> Ghi lại từ mới, giới từ đi kèm, cấu trúc câu, thêm một ví dụ do chính em đặt.</li>
+  <li>🌌 <b>Bài đọc hôm nay nói về ô nhiễm ánh sáng và mạng xã hội.</b> Đôi khi tắt bớt ánh đèn, tắt bớt màn hình, ta lại nhìn thấy nhiều điều đẹp đẽ hơn — như bầu trời sao chẳng hạn!</li>
+</ul></div>
+<div class="stars"></div>
+<div class="mist"><span></span><span></span><span></span></div>
+<div class="fl" id="fl"></div>
+
+<header>
+  <div>
+    <div class="tag">🌌 GKII · Second Midterm · Test 5</div>
+    <h1>B. Reading — Light Pollution &amp; Australia's Social Media Ban</h1>
+    <div class="sub">Giáo viên tạo: MS Chí Nên · 12 câu (17 → 28)</div>
+  </div>
+  <div class="gauge"><div class="num" id="lv">0/12</div><div class="lbl">Điểm</div></div>
+</header>
+
+<div class="main">
+<div class="lp">
+  <div class="slbl">✨ Bài đọc</div>
+
+  <div class="pc">
+    <div class="plbl">V — Light Pollution (đoạn 1 → 2)</div>
+    <div class="pt">In most situations, light helps us see. But when it comes to looking at the night sky, light is actually a kind of pollution. It blocks our view of <span class="blk">17</span> most spectacular sights: stars, planets, and even galaxies.</div>
+    <button class="btr" onclick="tv('v1')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v1">Trong hầu hết các tình huống, ánh sáng giúp chúng ta nhìn thấy. Nhưng khi nói đến việc ngắm nhìn bầu trời đêm, ánh sáng thực chất là một loại ô nhiễm. Nó che khuất tầm nhìn của chúng ta đối với một số cảnh tượng ngoạn mục nhất của cuộc sống: các vì sao, hành tinh, và thậm chí cả các thiên hà.</div>
+
+    <div class="pt" style="margin-top:10px">Normally, about 2,500 individual stars are visible to the human eye <span class="blk">18</span> using any special equipment. But <span class="blk">19</span> light pollution, you actually see just 200 to 300 from today's suburbs, and fewer than a dozen from a typical city.</div>
+    <button class="btr" onclick="tv('v2')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v2">Thông thường, khoảng 2.500 ngôi sao riêng lẻ có thể nhìn thấy bằng mắt thường mà không cần bất kỳ thiết bị đặc biệt nào. Nhưng do ô nhiễm ánh sáng, bạn thực tế chỉ nhìn thấy 200 đến 300 ngôi sao từ các vùng ngoại ô ngày nay, và ít hơn một tá từ một thành phố điển hình.</div>
+  </div>
+
+  <div class="pc">
+    <div class="plbl">V (tiếp) — đoạn 3 → 4</div>
+    <div class="pt">What's more, migrating birds sometimes fly over cities and become confused by the brightness, which causes them to fly in circles until they drop from <span class="blk">20</span>. Sea turtles need dark beaches for nesting and won't approach bright lights. And too much light at night may even <span class="blk">21</span> human health; scientists are still learning more.</div>
+    <button class="btr" onclick="tv('v3')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v3">Hơn nữa, các loài chim di cư đôi khi bay qua các thành phố và trở nên bối rối vì độ sáng, khiến chúng bay vòng tròn cho đến khi kiệt sức mà rơi xuống. Rùa biển cần các bãi biển tối để làm tổ và sẽ không đến gần ánh đèn sáng. Và quá nhiều ánh sáng vào ban đêm thậm chí có thể ảnh hưởng đến sức khỏe con người; các nhà khoa học vẫn đang tìm hiểu thêm.</div>
+
+    <div class="pt" style="margin-top:10px">Currently, many cities and towns have passed laws <span class="blk">22</span> lights at night, making sure the streets are bright enough for safety without creating a lot of light pollution.</div>
+    <button class="btr" onclick="tv('v4')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v4">Hiện nay, nhiều thành phố và thị trấn đã ban hành luật hạn chế ánh sáng vào ban đêm, đảm bảo đường phố đủ sáng để an toàn mà không tạo ra quá nhiều ô nhiễm ánh sáng.</div>
+  </div>
+
+  <div class="pc" style="border-left-color:#4361ee">
+    <div class="plbl">VI — Australia's Social Media Ban (đoạn 1)</div>
+    <div class="pt">In November 2024, Australia imposed a ban on social media for children under 16. It is one of the world's most complete measures to safeguard young people from potential harms online, such as online hate or bullying. Some students in the US shared their opinions on Australia's new law.</div>
+    <button class="btr" onclick="tv('v5')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v5">Vào tháng 11 năm 2024, Úc đã áp đặt lệnh cấm sử dụng mạng xã hội đối với trẻ em dưới 16 tuổi. Đây là một trong những biện pháp toàn diện nhất trên thế giới nhằm bảo vệ giới trẻ khỏi những tác hại tiềm ẩn trên mạng, chẳng hạn như thù ghét trực tuyến hay bắt nạt. Một số học sinh ở Mỹ đã chia sẻ quan điểm của mình về luật mới của Úc.</div>
+  </div>
+
+  <div class="pc" style="border-left-color:#4361ee">
+    <div class="plbl">VI (tiếp) — Lauren &amp; Ava</div>
+    <div class="pt"><b>Lauren, New York</b> — I think Australia's new law is a good idea. Social media has been proven to harm young minds, especially their self-confidence. This law can minimise the negative mental health effects that come from comparing oneself to others online... Other countries should begin adopting this law to protect children as well.</div>
+    <button class="btr" onclick="tv('v6')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v6"><b>Lauren, New York</b> — Tôi nghĩ luật mới của Úc là một ý tưởng hay. Mạng xã hội đã được chứng minh là gây hại cho tâm trí non trẻ, đặc biệt là sự tự tin của các em. Luật này có thể giảm thiểu những tác động tiêu cực đến sức khỏe tâm thần đến từ việc so sánh bản thân với người khác trên mạng... Các quốc gia khác cũng nên bắt đầu áp dụng luật này để bảo vệ trẻ em.</div>
+
+    <div class="pt" style="margin-top:10px"><b>Ava, Colorado</b> — Social media helps you see the world and gain a better understanding of how it works. Growing up in a small town with limited opportunities to travel can make you feel disconnected. Without social media, many people would be closed off from the world...</div>
+    <button class="btr" onclick="tv('v7')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v7"><b>Ava, Colorado</b> — Mạng xã hội giúp bạn nhìn thấy thế giới và hiểu rõ hơn về cách nó vận hành. Lớn lên ở một thị trấn nhỏ với ít cơ hội đi du lịch có thể khiến bạn cảm thấy bị cô lập. Nếu không có mạng xã hội, nhiều người sẽ bị đóng kín khỏi thế giới bên ngoài...</div>
+  </div>
+
+  <div class="pc" style="border-left-color:#4361ee">
+    <div class="plbl">VI (tiếp) — Noah</div>
+    <div class="pt"><b>Noah, Washington</b> — As a 16-year-old, I feel I would have been better off without social media because it encouraged some bad habits, like <u>doomscrolling</u> in the morning instead of getting up, or spending beautiful Saturday mornings doing nothing. I think I would have enjoyed my childhood more by running around and playing outside instead of watching YouTube all day.</div>
+    <button class="btr" onclick="tv('v8')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v8"><b>Noah, Washington</b> — Là một người 16 tuổi, tôi cảm thấy mình sẽ tốt hơn nếu không có mạng xã hội vì nó khuyến khích một số thói quen xấu, như lướt mạng xem tin xấu liên tục vào buổi sáng thay vì dậy sớm, hoặc dành những buổi sáng thứ Bảy đẹp trời để không làm gì cả. Tôi nghĩ mình sẽ tận hưởng tuổi thơ nhiều hơn nếu được chạy nhảy và chơi đùa ngoài trời thay vì xem YouTube cả ngày.</div>
+  </div>
+
+  <div class="gw">
+    <div class="gt2">📚 Glossary — Test 5</div>
+    <table class="gtb">
+      <tr><th>Word / Phrase</th><th>Loại</th><th>Nghĩa tiếng Việt</th></tr>
+      <tr><td class="w">light pollution</td><td class="pos">n phr</td><td>ô nhiễm ánh sáng</td></tr>
+      <tr><td class="w">spectacular</td><td class="pos">adj</td><td>ngoạn mục</td></tr>
+      <tr><td class="w">migrating bird</td><td class="pos">n phr</td><td>chim di cư</td></tr>
+      <tr><td class="w">exhaustion</td><td class="pos">n</td><td>sự kiệt sức</td></tr>
+      <tr><td class="w">nesting</td><td class="pos">n</td><td>việc làm tổ</td></tr>
+      <tr><td class="w">safeguard</td><td class="pos">v</td><td>bảo vệ</td></tr>
+      <tr><td class="w">self-confidence</td><td class="pos">n</td><td>sự tự tin</td></tr>
+      <tr><td class="w">disconnected</td><td class="pos">adj</td><td>bị cô lập, mất kết nối</td></tr>
+      <tr><td class="w">doomscrolling</td><td class="pos">n</td><td>lướt mạng xem tin xấu liên tục</td></tr>
+      <tr><td class="w">bad habit</td><td class="pos">n phr</td><td>thói quen xấu</td></tr>
+      <tr><td class="w">adopt (a law)</td><td class="pos">v</td><td>áp dụng (luật)</td></tr>
+      <tr><td class="w">mental health</td><td class="pos">n phr</td><td>sức khỏe tâm thần</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="rp">
+  <div class="slbl">✍️ Bài tập — 12 câu</div>
+  <div id="quiz"></div>
+  <div class="sw"><button class="bsub" onclick="openModal()">🎯 Nộp bài tính điểm &amp; xem kết quả</button></div>
+</div>
+</div>
+
+<div class="ov" id="nm"><div class="mb">
+  <h2>✍️ Nhập tên để nộp bài</h2>
+  <input type="text" id="sn" placeholder="Họ và tên học sinh...">
+  <div class="err" id="er">Vui lòng nhập tên trước khi nộp bài!</div>
+  <button class="bok" onclick="sub()">Xem kết quả</button>
+</div></div>
+
+<div class="ov" id="rm"><div class="mb" style="max-width:470px">
+  <div class="rname" id="rn"></div><div class="rscore" id="rs"></div><div class="rs10" id="rs10"></div>
+  <img class="rgif" id="rg" src="" alt=""><div class="rcmt" id="rc"></div>
+  <button class="bcl" onclick="closeR()">Đóng &amp; xem lại bài</button>
+</div></div>
+
+<script>
+const QS=[];
+
+QS.push({n:17,sec:"V · Light Pollution",qt:"It blocks our view of <b>(17)_____</b> most spectacular sights.",
+opts:[{t:"life's some of",pos:"cấu trúc sai",m:"sai trật tự sở hữu cách"},{t:"the some of life's",pos:"cấu trúc sai",m:"thừa mạo từ 'the'"},{t:"some of life's",pos:"cụm định lượng + sở hữu cách",m:"một số... của cuộc sống",c:1},{t:"life's the some of",pos:"cấu trúc sai",m:"sai hoàn toàn trật tự từ"}],
+tr:'"It blocks our view of ______ most spectacular sights: stars, planets, and even galaxies." 👉 <span class="p-mean">"Nó che khuất tầm nhìn của chúng ta đối với một số cảnh tượng ngoạn mục nhất của cuộc sống: các vì sao, hành tinh, và cả thiên hà."</span>',
+ok:'Chọn <span class="hl-green">some of life\'s</span>. Cấu trúc đúng: <span class="p-grammar">some of + sở hữu cách (life\'s) + tính từ so sánh nhất + danh từ</span> — "một số [cảnh tượng] ngoạn mục nhất CỦA CUỘC SỐNG".',
+no:'<span class="hl-red">life\'s some of</span> sai trật tự (sở hữu cách phải đứng SAU "some of"); <span class="hl-red">the some of life\'s</span> thừa mạo từ "the" không cần thiết trước "some"; <span class="hl-red">life\'s the some of</span> sai hoàn toàn trật tự từ.',
+ev:'"It blocks our view of <b>some of life\'s</b> most spectacular sights: stars, planets, and even galaxies." 👉 <span class="p-mean">"Nó che khuất tầm nhìn của ta với một số cảnh tượng ngoạn mục nhất của cuộc sống: sao, hành tinh, thiên hà."</span>'});
+
+QS.push({n:18,sec:"V · Light Pollution",qt:"...about 2,500 individual stars are visible to the human eye <b>(18)_____</b> using any special equipment.",
+opts:[{t:"without",pos:"giới từ",m:"không cần",c:1},{t:"against",pos:"giới từ",m:"chống lại"},{t:"among",pos:"giới từ",m:"giữa (nhiều thứ)"},{t:"towards",pos:"giới từ",m:"về phía"}],
+tr:'"Normally, about 2,500 individual stars are visible to the human eye ______ using any special equipment." 👉 <span class="p-mean">"Thông thường, khoảng 2.500 ngôi sao có thể nhìn thấy bằng mắt thường mà không cần bất kỳ thiết bị đặc biệt nào."</span>',
+ok:'Chọn <span class="hl-green">without</span> <span class="p-mean">(không cần, không có)</span>. Diễn tả việc nhìn thấy sao KHÔNG CẦN thiết bị hỗ trợ — đúng với ý "bằng mắt thường".',
+no:'<span class="hl-red">against</span> (chống lại), <span class="hl-red">among</span> (giữa), <span class="hl-red">towards</span> (về phía) đều không phù hợp ngữ nghĩa với ý "không cần thiết bị".',
+ev:'"...about 2,500 individual stars are visible to the human eye <b>without</b> using any special equipment." 👉 <span class="p-mean">"...khoảng 2.500 ngôi sao có thể nhìn thấy bằng mắt thường mà không cần thiết bị đặc biệt."</span>'});
+
+QS.push({n:19,sec:"V · Light Pollution",qt:"But <b>(19)_____</b> light pollution, you actually see just 200 to 300 from today's suburbs.",
+opts:[{t:"despite",pos:"giới từ",m:"mặc dù"},{t:"because of",pos:"cụm giới từ",m:"bởi vì",c:1},{t:"since",pos:"liên từ/giới từ",m:"từ khi, vì"},{t:"in case of",pos:"cụm giới từ",m:"trong trường hợp"}],
+tr:'"But ______ light pollution, you actually see just 200 to 300 from today\'s suburbs, and fewer than a dozen from a typical city." 👉 <span class="p-mean">"Nhưng do ô nhiễm ánh sáng, bạn thực tế chỉ nhìn thấy 200 đến 300 ngôi sao từ vùng ngoại ô ngày nay, và ít hơn một tá từ một thành phố điển hình."</span>',
+ok:'Chọn <span class="hl-green">because of</span> <span class="p-mean">(bởi vì)</span>. Diễn tả NGUYÊN NHÂN trực tiếp khiến số lượng sao nhìn thấy giảm mạnh — ô nhiễm ánh sáng là lý do gây ra hiện tượng này.',
+no:'<span class="hl-red">despite</span> (mặc dù) mang nghĩa nhượng bộ, không phù hợp quan hệ nhân quả; <span class="hl-red">since</span> ở đây dễ gây nhầm với nghĩa thời gian; <span class="hl-red">in case of</span> (trong trường hợp) diễn tả điều kiện giả định, không phải nguyên nhân thực tế đã xảy ra.',
+ev:'"But <b>because of</b> light pollution, you actually see just 200 to 300 from today\'s suburbs..." 👉 <span class="p-mean">"Nhưng do ô nhiễm ánh sáng, bạn thực tế chỉ nhìn thấy 200-300 ngôi sao từ vùng ngoại ô..."</span>'});
+
+QS.push({n:20,sec:"V · Light Pollution",qt:"...causes them to fly in circles until they drop from <b>(20)_____</b>.",
+opts:[{t:"exhausting",pos:"tính từ/V-ing",m:"gây kiệt sức"},{t:"exhausted",pos:"tính từ (quá khứ phân từ)",m:"bị kiệt sức"},{t:"exhaust",pos:"động từ/danh từ",m:"làm kiệt sức / khí thải"},{t:"exhaustion",pos:"danh từ",m:"sự kiệt sức",c:1}],
+tr:'"...which causes them to fly in circles until they drop from ______." 👉 <span class="p-mean">"...khiến chúng bay vòng tròn cho đến khi kiệt sức mà rơi xuống."</span>',
+ok:'Chọn <span class="hl-green">exhaustion</span> <span class="p-mean">(sự kiệt sức)</span>. Sau giới từ "from" cần một <span class="p-grammar">danh từ</span> — "drop from exhaustion" (rơi xuống VÌ kiệt sức) là cách diễn đạt chuẩn.',
+no:'<span class="hl-red">exhausting</span> (gây kiệt sức, tính từ) và <span class="hl-red">exhausted</span> (bị kiệt sức, tính từ) đều là tính từ, không đứng được sau giới từ "from" làm danh từ; <span class="hl-red">exhaust</span> là động từ/danh từ khác nghĩa (khí thải), không phù hợp ngữ cảnh.',
+ev:'"...which causes them to fly in circles until they drop from <b>exhaustion</b>." 👉 <span class="p-mean">"...khiến chúng bay vòng tròn cho đến khi kiệt sức mà rơi xuống."</span>'});
+
+QS.push({n:21,sec:"V · Light Pollution",qt:"...too much light at night may even <b>(21)_____</b> human health.",
+opts:[{t:"benefit",pos:"động từ",m:"mang lại lợi ích"},{t:"control",pos:"động từ",m:"kiểm soát"},{t:"affect",pos:"động từ",m:"ảnh hưởng",c:1},{t:"develop",pos:"động từ",m:"phát triển"}],
+tr:'"And too much light at night may even ______ human health; scientists are still learning more." 👉 <span class="p-mean">"Và quá nhiều ánh sáng vào ban đêm thậm chí có thể ảnh hưởng đến sức khỏe con người; các nhà khoa học vẫn đang tìm hiểu thêm."</span>',
+ok:'Chọn <span class="hl-green">affect</span> <span class="p-mean">(ảnh hưởng)</span>. Phù hợp với giọng văn TRUNG LẬP, THẬN TRỌNG của câu ("scientists are still learning more" – vẫn chưa chắc chắn hoàn toàn về tác động).',
+no:'<span class="hl-red">benefit</span> (mang lại lợi ích) mang nghĩa TÍCH CỰC, trái với ngữ cảnh cảnh báo; <span class="hl-red">control</span> (kiểm soát) và <span class="hl-red">develop</span> (phát triển) đều không phù hợp nghĩa với "sức khỏe con người" trong câu cảnh báo này.',
+ev:'"...too much light at night may even <b>affect</b> human health; scientists are still learning more." 👉 <span class="p-mean">"...quá nhiều ánh sáng ban đêm thậm chí có thể ảnh hưởng đến sức khỏe con người; các nhà khoa học vẫn đang tìm hiểu thêm."</span>'});
+
+QS.push({n:22,sec:"V · Light Pollution",qt:"...many cities and towns have passed laws <b>(22)_____</b> lights at night.",
+opts:[{t:"threatening",pos:"động từ (V-ing)",m:"đe dọa"},{t:"supporting",pos:"động từ (V-ing)",m:"hỗ trợ"},{t:"promoting",pos:"động từ (V-ing)",m:"thúc đẩy"},{t:"limiting",pos:"động từ (V-ing)",m:"hạn chế",c:1}],
+tr:'"Currently, many cities and towns have passed laws ______ lights at night, making sure the streets are bright enough for safety without creating a lot of light pollution." 👉 <span class="p-mean">"Hiện nay, nhiều thành phố và thị trấn đã ban hành luật hạn chế ánh sáng vào ban đêm, đảm bảo đường phố đủ sáng để an toàn mà không tạo ra quá nhiều ô nhiễm ánh sáng."</span>',
+ok:'Chọn <span class="hl-green">limiting</span> <span class="p-mean">(hạn chế)</span>. Phù hợp với mục tiêu của luật: vừa đảm bảo AN TOÀN (đủ sáng) vừa GIẢM Ô NHIỄM ánh sáng — tức HẠN CHẾ ánh sáng dư thừa, không phải cấm hoàn toàn.',
+no:'<span class="hl-red">threatening</span> (đe dọa) sai nghĩa hoàn toàn; <span class="hl-red">supporting</span> (hỗ trợ) và <span class="hl-red">promoting</span> (thúc đẩy) đều mang nghĩa TĂNG CƯỜNG ánh sáng, trái với mục tiêu giảm ô nhiễm ánh sáng của đạo luật.',
+ev:'"...many cities and towns have passed laws <b>limiting</b> lights at night, making sure the streets are bright enough for safety without creating a lot of light pollution." 👉 <span class="p-mean">"...nhiều thành phố đã ban hành luật hạn chế ánh sáng ban đêm, đảm bảo đường phố đủ sáng mà không gây ô nhiễm ánh sáng."</span>'});
+
+QS.push({n:23,sec:"VI · Social Media Ban",qt:"In Australia, if you haven't turned 16, you aren't allowed to use social media.",
+opts:[{t:"True",m:"Đúng",c:1},{t:"False",m:"Sai"},{t:"Not mentioned",m:"Không được nhắc đến"},{t:"Only for boys",m:"Chỉ đúng với bé trai"}],
+tr:'"In Australia, if you haven\'t turned 16, you aren\'t allowed to use social media." 👉 <span class="p-mean">"Ở Úc, nếu bạn chưa đủ 16 tuổi, bạn không được phép dùng mạng xã hội."</span>',
+ok:'Chọn <span class="hl-green">True</span>. Bài xác nhận: "Australia imposed a ban on social media for children under 16."',
+no:'<span class="hl-red">False</span> sai vì khớp hoàn toàn với bài; <span class="hl-red">Not mentioned</span> sai vì có nêu rõ; <span class="hl-red">Only for boys</span> sai vì luật áp dụng cho TẤT CẢ trẻ em dưới 16 tuổi, không phân biệt giới tính.',
+ev:'"In November 2024, Australia imposed a ban on social media for <b>children under 16</b>." 👉 <span class="p-mean">"Vào tháng 11/2024, Úc áp đặt lệnh cấm mạng xã hội với trẻ em dưới 16 tuổi."</span>'});
+
+QS.push({n:24,sec:"VI · Social Media Ban",qt:"Lauren agrees with the new law but hopes it won't be adopted worldwide.",
+opts:[{t:"True",m:"Đúng"},{t:"False",m:"Sai",c:1},{t:"Not mentioned",m:"Không được nhắc đến"},{t:"Only for New York",m:"Chỉ đúng ở New York"}],
+tr:'"Lauren agrees with the new law but hopes it won\'t be adopted worldwide." 👉 <span class="p-mean">"Lauren đồng ý với luật mới nhưng hy vọng nó sẽ KHÔNG được áp dụng trên toàn thế giới."</span>',
+ok:'Chọn <span class="hl-green">False</span>. Bài nói NGƯỢC LẠI: "Other countries should begin adopting this law to protect children as well." — Lauren MONG MUỐN các nước khác cũng áp dụng luật này, không phải hy vọng nó KHÔNG được áp dụng.',
+no:'<span class="hl-red">True</span> sai vì đảo ngược hoàn toàn ý kiến thực sự của Lauren; <span class="hl-red">Not mentioned</span> sai vì có trích dẫn rõ ràng; <span class="hl-red">Only for New York</span> không hợp lý vì Lauren đang nói về việc áp dụng luật RỘNG RÃI hơn, không giới hạn ở New York.',
+ev:'"Other countries should begin <b>adopting this law</b> to protect children as well." 👉 <span class="p-mean">"Các quốc gia khác cũng nên bắt đầu áp dụng luật này để bảo vệ trẻ em."</span> — Lauren muốn luật lan rộng, không phải mong nó KHÔNG được áp dụng.'});
+
+QS.push({n:25,sec:"VI · Social Media Ban",qt:"Noah says that social media made him waste his mornings and weekends.",
+opts:[{t:"True",m:"Đúng",c:1},{t:"False",m:"Sai"},{t:"Not mentioned",m:"Không được nhắc đến"},{t:"Only on Sundays",m:"Chỉ đúng vào Chủ nhật"}],
+tr:'"Noah says that social media made him waste his mornings and weekends." 👉 <span class="p-mean">"Noah nói rằng mạng xã hội đã khiến cậu lãng phí những buổi sáng và cuối tuần của mình."</span>',
+ok:'Chọn <span class="hl-green">True</span>. Bài xác nhận: "doomscrolling in the morning instead of getting up, or spending beautiful Saturday mornings doing nothing... watching YouTube all day."',
+no:'<span class="hl-red">False</span> sai vì khớp với lời kể của Noah; <span class="hl-red">Not mentioned</span> sai vì có mô tả chi tiết; <span class="hl-red">Only on Sundays</span> sai vì Noah nhắc đến "Saturday mornings" (thứ Bảy), không phải Chủ nhật.',
+ev:'"...it encouraged some bad habits, like <b>doomscrolling in the morning</b> instead of getting up, or spending beautiful <b>Saturday mornings</b> doing nothing." 👉 <span class="p-mean">"...nó khuyến khích thói quen xấu như lướt mạng buổi sáng thay vì dậy sớm, hay dành buổi sáng thứ Bảy đẹp trời để không làm gì."</span>'});
+
+QS.push({n:26,sec:"VI · Social Media Ban",qt:"Only Ava thinks there are good and bad sides of social media.",
+opts:[{t:"True",m:"Đúng"},{t:"False",m:"Sai",c:1},{t:"Not mentioned",m:"Không được nhắc đến"},{t:"Only Noah does",m:"Chỉ Noah mới nghĩ vậy"}],
+tr:'"Only Ava thinks there are good and bad sides of social media." 👉 <span class="p-mean">"Chỉ có Ava nghĩ rằng mạng xã hội có cả mặt tốt và mặt xấu."</span>',
+ok:'Chọn <span class="hl-green">False</span>. Thực tế bài của Ava chỉ trình bày TOÀN BỘ mặt TÍCH CỰC của mạng xã hội (không hề nhắc đến mặt xấu), nên không chính xác khi nói cô ấy thấy "cả tốt và xấu" — mỗi bạn học sinh chỉ trình bày MỘT góc nhìn duy nhất (hoặc tích cực, hoặc tiêu cực), không ai đề cập đến CẢ HAI mặt.',
+no:'<span class="hl-red">True</span> sai vì Ava không hề nhắc đến mặt XẤU của mạng xã hội trong bài viết của mình; <span class="hl-red">Not mentioned</span> không hợp lý vì có thể xác định được ý kiến của từng người; <span class="hl-red">Only Noah does</span> cũng sai vì Noah chỉ trình bày mặt TIÊU CỰC, không nhắc đến mặt tốt.',
+ev:'Bài của Ava: "Social media helps you see the world..." — CHỈ toàn ý tích cực, không có câu nào nhắc đến mặt tiêu cực, nên không thể nói Ava (hay bất kỳ ai) trình bày "cả hai mặt tốt và xấu".'});
+
+QS.push({n:27,sec:"VI · Social Media Ban",qt:'The word "doomscrolling" in the last paragraph mostly means ___.',
+opts:[{t:"continuously checking bad news",m:"liên tục xem tin xấu",c:1},{t:"lazily lying in bed",m:"lười biếng nằm trên giường"},{t:"frequently posting pictures",m:"thường xuyên đăng ảnh"},{t:"anxiously reading emails",m:"lo lắng đọc email"}],
+tr:'"...it encouraged some bad habits, like doomscrolling in the morning instead of getting up..." 👉 <span class="p-mean">"...nó khuyến khích một số thói quen xấu, như lướt mạng xem tin xấu liên tục vào buổi sáng thay vì dậy sớm..."</span>',
+ok:'Chọn <span class="hl-green">continuously checking bad news</span>. <span class="p-word">doomscrolling</span> là từ ghép từ "doom" (điềm gở, tin xấu) + "scrolling" (lướt mạng liên tục) — nghĩa là LIÊN TỤC LƯỚT XEM TIN TỨC TIÊU CỰC.',
+no:'<span class="hl-red">lazily lying in bed</span> (lười nằm giường) chỉ là HỆ QUẢ, không phải Ý NGHĨA của từ "doomscrolling"; <span class="hl-red">posting pictures</span> (đăng ảnh) và <span class="hl-red">reading emails</span> (đọc email) đều không liên quan đến hành động "lướt xem tin xấu liên tục".',
+ev:'"...it encouraged some bad habits, like <b>doomscrolling</b> in the morning instead of getting up..." 👉 <span class="p-mean">"...nó khuyến khích thói quen xấu như lướt mạng xem tin xấu liên tục vào buổi sáng thay vì dậy sớm..."</span>'});
+
+QS.push({n:28,sec:"VI · Social Media Ban",qt:"What is one benefit of social media according to the passage?",
+opts:[{t:"It allows children to run around and play outside more.",m:"Giúp trẻ chạy nhảy và chơi ngoài trời nhiều hơn"},{t:"It gives some people a view of the bigger world.",m:"Cho một số người cái nhìn về thế giới rộng lớn hơn",c:1},{t:"It prevents potential harms online like cyberbullying.",m:"Ngăn chặn tác hại tiềm ẩn như bắt nạt trên mạng"},{t:"It lets teens compare themselves and increase self-confidence.",m:"Cho phép teen so sánh bản thân và tăng tự tin"}],
+tr:'"What is one benefit of social media according to the passage?" 👉 <span class="p-mean">"Theo bài, một lợi ích của mạng xã hội là gì?"</span>',
+ok:'Chọn <span class="hl-green">It gives some people a view of the bigger world.</span> Bài của Ava: "Social media helps you see the world and gain a better understanding of how it works."',
+no:'<span class="hl-red">allows children to play outside more</span> ❌ SAI hoàn toàn — Noah nói NGƯỢC LẠI, mạng xã hội khiến anh KHÔNG chơi ngoài trời (xem YouTube cả ngày); <span class="hl-red">prevents cyberbullying</span> ❌ SAI — chính LUẬT CẤM mới là biện pháp bảo vệ khỏi bắt nạt, không phải bản thân mạng xã hội; <span class="hl-red">increase self-confidence</span> ❌ SAI — Lauren nói mạng xã hội làm GIẢM tự tin do việc so sánh bản thân với người khác, không phải tăng.',
+ev:'"Social media helps you see the world and gain a <b>better understanding</b> of how it works." 👉 <span class="p-mean">"Mạng xã hội giúp bạn nhìn thấy thế giới và hiểu rõ hơn về cách nó vận hành."</span>'});
+
+const done={};let cc=0;
+function shuffle(a){return a.sort(()=>Math.random()-0.5)}
+function build(){
+  const box=document.getElementById('quiz');
+  QS.forEach(q=>{
+    let ol='<ul style="margin:4px 0 0 4px;list-style:none">';
+    q.opts.forEach(o=>{ol+='<li style="margin:5px 0">'+(o.c?'✅ ':'❌ ')+'<span class="p-word">'+o.t+'</span>'+(o.pos?' <span class="p-grammar">'+o.pos+'</span>':'')+' ➔ <span class="p-mean">'+o.m+'</span></li>';});
+    ol+='</ul>';
+    const card=document.createElement('div');card.className='qc';card.id='q'+q.n;
+    card.innerHTML=
+      '<div class="qn">Câu '+q.n+' · '+q.sec+'</div>'+
+      '<div class="qt">'+q.qt+'</div>'+
+      '<div class="opts" id="o'+q.n+'"></div>'+
+      '<div class="expl" id="e'+q.n+'">'+
+        '<h4>📘 Giải thích chi tiết – Câu '+q.n+'</h4>'+
+        '<div class="estep s1"><div class="elbl">Bước 1 · Dịch</div>'+q.tr+'</div>'+
+        '<div class="estep s2"><div class="elbl">Bước 2 · Các phương án và nghĩa</div>'+ol+'</div>'+
+        '<div class="estep s3"><div class="elbl">Bước 3 · Vì sao đáp án này <span class="hl-green">đúng</span></div>'+q.ok+'</div>'+
+        '<div class="estep s4"><div class="elbl">Bước 4 · Vì sao các phương án kia <span class="hl-red">sai</span></div>'+q.no+'</div>'+
+        '<div class="estep ev"><div class="elbl">🔍 Dẫn chứng trong bài</div>'+q.ev+'</div>'+
+      '</div>';
+    box.appendChild(card);
+    const cont=card.querySelector('.opts');
+    const correct=q.opts.filter(o=>o.c)[0].t;
+    shuffle([...q.opts]).forEach(o=>{
+      const b=document.createElement('button');b.className='opt';b.textContent=o.t;
+      b.onclick=()=>chk(q.n,o.t,correct,b,cont);cont.appendChild(b);
+    });
+  });
+  document.getElementById('lv').textContent='0/'+QS.length;
+}
+function chk(qid,chosen,correct,btn,container){
+  if(qid in done)return;
+  done[qid]=chosen===correct;
+  container.querySelectorAll('.opt').forEach(b=>{b.disabled=true;if(b.textContent===correct)b.classList.add('correct');});
+  if(chosen===correct){btn.classList.add('correct');cc++;ding();conf();}
+  else{btn.classList.add('wrong');buzz();}
+  document.getElementById('e'+qid).classList.add('open');
+  document.getElementById('lv').textContent=cc+'/'+QS.length;
+}
+const A=new(window.AudioContext||window.webkitAudioContext)();
+function ding(){const o=A.createOscillator(),g=A.createGain();o.connect(g);g.connect(A.destination);o.frequency.setValueAtTime(523,A.currentTime);o.frequency.exponentialRampToValueAtTime(784,A.currentTime+0.15);g.gain.setValueAtTime(0.28,A.currentTime);g.gain.exponentialRampToValueAtTime(0.001,A.currentTime+0.5);o.start();o.stop(A.currentTime+0.5);}
+function buzz(){const o=A.createOscillator(),g=A.createGain();o.type='triangle';o.connect(g);g.connect(A.destination);o.frequency.setValueAtTime(200,A.currentTime);o.frequency.exponentialRampToValueAtTime(100,A.currentTime+0.2);g.gain.setValueAtTime(0.18,A.currentTime);g.gain.exponentialRampToValueAtTime(0.001,A.currentTime+0.28);o.start();o.stop(A.currentTime+0.28);}
+function conf(){
+  const cols=['#8b7cf6','#fbbf24','#4361ee','#4ade80','#f472b6'];
+  for(let i=0;i<35;i++){
+    const d=document.createElement('div');d.className='cn';
+    d.style.left=Math.random()*100+'vw';d.style.background=cols[Math.floor(Math.random()*cols.length)];
+    d.style.animationDelay=Math.random()*0.7+'s';d.style.animationDuration=(1.8+Math.random()*1.0)+'s';
+    d.style.width=d.style.height=(6+Math.random()*8)+'px';d.style.borderRadius=Math.random()>0.5?'50%':'2px';
+    document.body.appendChild(d);setTimeout(()=>d.remove(),3100);
+  }
+}
+function tv(id){
+  const el=document.getElementById(id);el.classList.toggle('open');
+  const btn=el.previousElementSibling;
+  btn.textContent=el.classList.contains('open')?'Ẩn dịch 🌟':'Mở dịch đoạn này 🌟';
+}
+function openModal(){document.getElementById('nm').classList.add('open')}
+function sub(){
+  const n=document.getElementById('sn').value.trim();
+  const er=document.getElementById('er');
+  if(!n){er.classList.add('show');return;}
+  er.classList.remove('show');
+  document.getElementById('nm').classList.remove('open');
+  showRes(n);
+}
+function showRes(n){
+  const tot=QS.length;let c=0;QS.forEach(q=>{if(done[q.n]===true)c++;});
+  const p=c/tot,s10=(c/tot*10).toFixed(2);
+  document.getElementById('rn').textContent='Học sinh: '+n;
+  document.getElementById('rs').textContent=c+' / '+tot;
+  document.getElementById('rs10').textContent='Điểm quy đổi: '+s10+' / 10';
+  let gif='',cmt='';
+  if(p>=1){gif='https://media.giphy.com/media/l0MYGb1LuZ3n7dRnO/giphy.gif';cmt='🏆 Sáng như sao! Đúng 100% — em nắm chắc cả ô nhiễm ánh sáng lẫn cuộc tranh luận về mạng xã hội. MS Chí Nên rất tự hào về em!';}
+  else if(p>=0.6){gif='https://media.giphy.com/media/26u4lOMA8JKSnL9Uk/giphy.gif';cmt='🌌 Lấp lánh rồi đó! Em đạt '+c+'/'+tot+' câu. Đọc lại phần giải thích 4 bước để tỏa sáng trọn vẹn hơn nhé!';}
+  else{gif='https://media.giphy.com/media/d2lcHJTG5Tscg/giphy.gif';cmt='✨ Cố lên nào! Em đạt '+c+'/'+tot+' câu. Bấm nút dịch từng đoạn, đọc kỹ giải thích rồi thử lại — Ms tin em sẽ tỏa sáng!';}
+  document.getElementById('rg').src=gif;
+  document.getElementById('rc').textContent=cmt;
+  document.getElementById('rm').classList.add('open');
+}
+function closeR(){document.getElementById('rm').classList.remove('open')}
+
+const ems=['🌌','✨','🌙','🐢','📵'];
+const flc=document.getElementById('fl');
+for(let i=0;i<26;i++){
+  const s=document.createElement('span');s.className='f';
+  s.textContent=ems[i%ems.length];s.style.left=Math.random()*100+'%';
+  s.style.animationDuration=(14+Math.random()*14)+'s';s.style.animationDelay=(-Math.random()*20)+'s';
+  s.style.fontSize=(1.0+Math.random()*1.2)+'rem';flc.appendChild(s);
+}
+
+build();
+</script>
+<script>/*devclean*/(function(){
+var ZW=/[\u00AD\u034F\u061C\u115F\u1160\u17B4\u17B5\u180E\u200B-\u200F\u202A-\u202E\u2060-\u206F\uFEFF]/g,
+    SP=/[\u00A0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\t]/g,
+    AP=/[\u2018\u2019\u201A\u201B\u2032\u2035\u02B9\u02BB\u02BC\u02BD\u02C8\u0060\u00B4\uFF07]/g,
+    DQ=/[\u201C\u201D\u201E\u201F\u2033\u2036\u00AB\u00BB\uFF02]/g,
+    DS=/[\u2010\u2011\u2012\u2212\uFE63\uFF0D]/g;
+function clean(v){if(!v)return v;var s=String(v);try{s=s.normalize('NFKC')}catch(e){}
+  return s.replace(ZW,'').replace(SP,' ').replace(AP,"'").replace(DQ,'"').replace(DS,'-').replace(/[\u0300-\u036f]/g,'').replace(/ {2,}/g,' ');}
+window.__devclean=clean;
+function fix(skip){var L=document.querySelectorAll('input:not([type]),input[type=text],input[type=search],textarea');
+  for(var i=0;i<L.length;i++){var el=L[i];if(el===skip||el.readOnly||el.disabled)continue;var v=el.value,c=clean(v);if(c!==v)el.value=c;}}
+['pointerdown','mousedown','touchstart','click','change','focusout'].forEach(function(t){document.addEventListener(t,function(e){fix(t==='focusout'||t==='change'?null:e.target)},true)});
+document.addEventListener('keydown',function(e){if(e.key==='Enter'||e.keyCode===13)fix(null)},true);
+})();</script>
+<style id="ms-chi-nen-unlock-style">
+#passwordModal, #password-modal, #pwModal, #pw-modal, #pw-overlay,
+#lockModal, #passModal, #authModal, #auth-modal, #lockOverlay,
+#start-overlay, #intro-overlay, #start-screen,
+.password-modal, .lock-modal, .lock-overlay {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    z-index: -9999 !important;
+}
+</style>
+<script>
+// Remove password lock completely - direct quiz access
+(function() {
+    var initDone = false;
+    var renderCheckDone = false;
+
+    function hideEl(el, hard) {
+        if (!el) return;
+        if (hard) {
+            el.style.setProperty('display', 'none', 'important');
+            el.style.setProperty('visibility', 'hidden', 'important');
+            el.style.setProperty('opacity', '0', 'important');
+            el.style.setProperty('pointer-events', 'none', 'important');
+            el.style.setProperty('z-index', '-9999', 'important');
+        } else {
+            el.style.display = 'none';
+        }
+        el.classList.remove('active', 'show', 'open', 'visible', 'flex');
+    }
+
+    function hasRenderedQuiz() {
+        var containers = document.querySelectorAll(
+            '#quiz-container, #quizContainer, #questions-container, #questionPane, #quiz, #questions, #quiz-body, #questions-wrapper, #quiz-list, #quizList, #exercise-container, #app-container .split-container'
+        );
+        for (var i = 0; i < containers.length; i++) {
+            if (containers[i].querySelectorAll('button, input, select, textarea, .question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .question, .option-btn, .opt-btn, .ans-btn').length > 0) {
+                return true;
+            }
+        }
+        if (document.querySelectorAll('.question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .option-btn, .opt-btn, .ans-btn, .choice-btn').length > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    function ensureQuizRendered() {
+        if (renderCheckDone) return;
+        renderCheckDone = true;
+        if (hasRenderedQuiz()) return;
+
+        if (!hasRenderedQuiz() && typeof buildQuiz === 'function') { try { buildQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof initQuiz === 'function') { try { initQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderApp === 'function') { try { renderApp(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuiz === 'function') { try { renderQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuestions === 'function') { try { renderQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAllQuestions === 'function') { try { renderAllQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAll === 'function') { try { renderAll(); } catch(e){} }
+    }
+
+    function unlockNow() {
+        var pwIds = [
+            'passwordModal', 'password-modal', 'pwModal', 'pw-modal', 'pw-overlay',
+            'lockModal', 'passModal', 'authModal', 'auth-modal', 'lockOverlay',
+            'start-overlay', 'intro-overlay', 'start-screen'
+        ];
+        pwIds.forEach(function(id) {
+            hideEl(document.getElementById(id), true);
+        });
+
+        var modalEls = document.querySelectorAll('.password-modal, .lock-modal, .lock-overlay, #lockOverlay, #auth-modal');
+        modalEls.forEach(function(el) {
+            if (el.id !== 'resultModal' && el.id !== 'result-modal' && el.id !== 'scoreModal') {
+                hideEl(el, true);
+            }
+        });
+
+        ['nameModal', 'name-modal', 'nameInputModal'].forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) hideEl(el, false);
+        });
+
+        var qo = document.getElementById('quiz-overlay');
+        if (qo && (typeof isStarted === 'undefined' || !isStarted)) {
+            qo.style.display = 'none';
+        }
+
+        var mainIds = [
+            'mainContent', 'main-content', 'mainHeader', 'main-header',
+            'app-container', 'app', 'quizApp', 'quiz-wrapper', 'quizContainer', 'quiz-container', 'reading-content'
+        ];
+        mainIds.forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) {
+                el.classList.remove('hidden', 'blur', 'blurred', 'locked');
+                if (el.style.display === 'none') {
+                    el.style.removeProperty('display');
+                }
+                if (window.getComputedStyle(el).display === 'none') {
+                    var hasPane = el.querySelector('.pane, .left-pane, .right-pane, .split-container, .left-panel, .right-panel');
+                    if (id === 'main-content' || id.toLowerCase().includes('header') || el.classList.contains('main-container') || hasPane) {
+                        el.style.setProperty('display', 'flex', 'important');
+                    } else {
+                        el.style.setProperty('display', 'block', 'important');
+                    }
+                }
+            }
+        });
+
+        var qs = document.getElementById('quiz-screen');
+        if (qs) {
+            qs.classList.remove('hidden');
+            if (qs.classList.contains('flex-col')) {
+                qs.classList.add('flex');
+                qs.style.display = 'flex';
+            } else {
+                qs.style.display = 'block';
+            }
+        }
+
+        if (!initDone) {
+            initDone = true;
+
+            if (document.getElementById('start-overlay') && typeof startGame === 'function') {
+                var sn = document.getElementById('student-name') || document.getElementById('studentName');
+                if (sn && !sn.value.trim()) sn.value = 'Học sinh';
+            }
+            if (document.getElementById('name-modal') && typeof startQuiz === 'function') {
+                var sn2 = document.getElementById('student-name');
+                if (sn2 && !sn2.value.trim()) sn2.value = 'Học sinh';
+            }
+
+            if (typeof startQuiz === 'function' && (typeof isStarted === 'undefined' || !isStarted)) { try { startQuiz(); } catch(e){} }
+            if (typeof startGame === 'function') { try { startGame(); } catch(e){} }
+            if (typeof startTest === 'function') { try { startTest(); } catch(e){} }
+            if (typeof startApp === 'function') { try { startApp(); } catch(e){} }
+            if (typeof buildStarfield === 'function') { try { buildStarfield(); } catch(e){} }
+            if (typeof spawnFloats === 'function') { try { spawnFloats(); } catch(e){} }
+            if (typeof spawnFloaters === 'function') { try { spawnFloaters(); } catch(e){} }
+            if (typeof createFloatingBubbles === 'function') { try { createFloatingBubbles(); } catch(e){} }
+            if (typeof initAudio === 'function') { try { initAudio(); } catch(e){} }
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', unlockNow);
+    } else {
+        unlockNow();
+    }
+    if (document.readyState === 'complete') {
+        setTimeout(ensureQuizRendered, 150);
+    } else {
+        window.addEventListener('load', function() {
+            setTimeout(unlockNow, 20);
+            setTimeout(ensureQuizRendered, 150);
+            setTimeout(unlockNow, 300);
+            setTimeout(unlockNow, 700);
+        });
+    }
+    setTimeout(unlockNow, 50);
+    setTimeout(unlockNow, 200);
+    setTimeout(unlockNow, 600);
+    setTimeout(unlockNow, 1100);
+})();
+</script>
+</body>
+</html>

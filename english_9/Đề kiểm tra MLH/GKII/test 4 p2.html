@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GKII · TEST 4 · READING — Study Workshop, TikTok, Fast Fashion &amp; Celebrity Culture | MS Chí Nên</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* THEME: SOCIAL FEED (gradient app hiện đại) */
+:root{
+  --bg1:#fff5f0;--bg2:#fdf0fb;--ig1:#833ab4;--ig2:#fd1d6b;--ig3:#fcb045;--ig4:#00b8d9;
+  --glass:rgba(255,255,255,.68);--edge:rgba(131,58,180,.16);
+  --text:#2a1830;--text-dim:#7a6685;--gold:#fd1d6b;
+  --ok:#0e9f5e;--ok-bg:rgba(14,159,94,.14);--no:#d6336c;--no-bg:rgba(214,51,108,.14);
+  --disp:'Poppins',sans-serif;--body:'Nunito',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:19px}
+body{font-family:var(--body);color:var(--text);min-height:100vh;overflow-x:hidden;position:relative;background:linear-gradient(150deg,var(--bg1),var(--bg2))}
+.mist{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;filter:blur(60px);opacity:.42}
+.mist span{position:absolute;width:44vw;height:44vw;border-radius:50%;mix-blend-mode:multiply;animation:drift 25s ease-in-out infinite}
+.mist span:nth-child(1){background:var(--ig1);top:-14%;left:-8%}
+.mist span:nth-child(2){background:var(--ig2);top:10%;right:-12%;animation-delay:-8s}
+.mist span:nth-child(3){background:var(--ig3);bottom:-18%;left:22%;animation-delay:-16s}
+.mist span:nth-child(4){background:var(--ig4);bottom:-6%;right:10%;width:30vw;height:30vw;animation-delay:-4s}
+@keyframes drift{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(5%,-6%) scale(1.12)}}
+.fl{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.f{position:absolute;bottom:-10%;opacity:.18;animation:up linear infinite}
+@keyframes up{0%{transform:translateY(0) rotate(0);opacity:0}12%{opacity:.22}100%{transform:translateY(-118vh) rotate(340deg);opacity:0}}
+header{position:relative;z-index:2;padding:20px 34px;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;
+  background:linear-gradient(180deg,rgba(255,255,255,.92),rgba(253,240,251,.84));border-bottom:3px solid var(--ig2);box-shadow:0 8px 22px rgba(42,24,48,.1)}
+header::after{content:'';position:absolute;left:0;right:0;bottom:-7px;height:7px;
+  background:linear-gradient(90deg,var(--ig1),var(--ig2),var(--ig3),var(--ig4),var(--ig1));background-size:220% 100%;animation:blink 9s linear infinite}
+@keyframes blink{0%{background-position:0 0}100%{background-position:220% 0}}
+.tag{font-family:var(--disp);font-size:.78rem;letter-spacing:.1em;color:var(--ig2);margin-bottom:5px;font-weight:700}
+header h1{font-family:var(--disp);font-weight:700;font-size:1.26rem;line-height:1.3;
+  background:linear-gradient(90deg,var(--ig1),var(--ig2),var(--ig3));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{font-size:.74rem;color:var(--text-dim);margin-top:7px;font-weight:600}
+.gauge{display:flex;align-items:center;gap:12px;background:#fff;border:2px solid var(--ig2);border-radius:16px;padding:9px 18px;box-shadow:0 4px 12px rgba(42,24,48,.1)}
+.gauge .num{font-family:var(--disp);font-size:1.7rem;color:var(--ig2);line-height:1;font-weight:700}
+.gauge .lbl{font-family:var(--disp);font-size:.62rem;letter-spacing:.1em;color:var(--text-dim)}
+.main{position:relative;z-index:2;display:flex;gap:22px;padding:26px 30px 46px;align-items:flex-start}
+.lp,.rp{flex:1 1 50%;max-height:calc(100vh - 128px);overflow-y:auto;padding-right:8px}
+.lp::-webkit-scrollbar,.rp::-webkit-scrollbar{width:9px}
+.lp::-webkit-scrollbar-thumb,.rp::-webkit-scrollbar-thumb{background:var(--ig1);border-radius:6px}
+.slbl{font-family:var(--disp);font-size:.98rem;color:var(--ig2);margin-bottom:13px;padding-bottom:7px;border-bottom:2px dashed var(--ig1);font-weight:700}
+.pc{position:relative;background:var(--glass);backdrop-filter:blur(9px);border:1.5px solid var(--edge);border-left:6px solid var(--ig2);border-radius:14px;
+  padding:16px 18px 15px 22px;margin-bottom:15px;box-shadow:0 6px 16px rgba(42,24,48,.08)}
+.plbl{font-family:var(--disp);font-size:.82rem;color:var(--ig1);margin-bottom:9px;font-weight:700}
+.pt{font-size:1.0rem;line-height:1.95;color:var(--text)}
+.pt b{color:var(--gold);font-weight:800}
+.blk{display:inline-block;min-width:40px;text-align:center;font-weight:800;color:#fff;background:linear-gradient(120deg,var(--ig2),var(--ig1));border-radius:8px;padding:1px 9px;margin:0 3px}
+.btr{margin-top:11px;font-family:var(--body);font-size:.78rem;font-weight:700;background:transparent;border:2px solid var(--ig1);color:var(--ig1);padding:7px 17px;border-radius:22px;cursor:pointer;transition:.2s}
+.btr:hover{background:var(--ig1);color:#fff}
+.tv{display:none;margin-top:10px;font-size:.93rem;line-height:1.9;color:#3a1e40;background:rgba(131,58,180,.08);border-left:4px solid var(--ig1);border-radius:0 9px 9px 0;padding:11px 14px}
+.tv.open{display:block;animation:fd .3s ease}
+@keyframes fd{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.gw{background:var(--glass);backdrop-filter:blur(9px);border:1.5px solid var(--edge);border-radius:14px;padding:16px 18px;margin-top:6px}
+.gt2{font-family:var(--disp);font-size:.9rem;color:var(--gold);margin-bottom:11px;font-weight:700}
+table.gtb{width:100%;border-collapse:collapse;font-size:.84rem}
+table.gtb th{background:var(--ig2);color:#fff;font-weight:800;padding:8px 10px;text-align:left;font-size:.76rem}
+table.gtb td{border-bottom:1px solid var(--edge);padding:7px 10px;vertical-align:top}
+.w{color:var(--ig1);font-weight:800}
+.pos{color:var(--gold);font-style:italic;font-size:.78rem;white-space:nowrap}
+.qc{background:var(--glass);backdrop-filter:blur(9px);border:1.5px solid var(--edge);border-radius:14px;padding:16px 18px;margin-bottom:15px;box-shadow:0 6px 16px rgba(42,24,48,.08)}
+.qn{font-family:var(--disp);font-size:.72rem;color:var(--ig2);margin-bottom:8px;font-weight:700}
+.qt{font-size:1.0rem;line-height:1.8;font-weight:600;margin-bottom:13px}
+.qt b{color:var(--gold)}
+.opts{display:grid;grid-template-columns:1fr;gap:9px}
+.opt{font-family:var(--body);font-size:.91rem;font-weight:600;text-align:left;line-height:1.55;background:#fff9f5;border:2px solid var(--edge);color:var(--text);
+  padding:11px 16px;border-radius:12px;cursor:pointer;transition:.18s}
+.opt:hover:not(:disabled){border-color:var(--ig2);background:#fdeef6;transform:translateX(4px)}
+.opt:disabled{cursor:default}
+.opt.correct{background:#d7f7e6;border-color:var(--ok);color:#065f3a;font-weight:800}
+.opt.wrong{background:#fde1ea;border-color:var(--no);color:#7d1141;font-weight:800;animation:shk .45s}
+@keyframes shk{10%,90%{transform:translateX(-2px)}20%,80%{transform:translateX(4px)}30%,50%,70%{transform:translateX(-7px)}40%,60%{transform:translateX(7px)}}
+.expl{display:none;margin-top:13px}
+.expl.open{display:block;animation:fd .35s ease}
+.expl h4{font-family:var(--disp);font-size:.92rem;color:var(--gold);margin-bottom:10px;font-weight:700}
+.estep{background:#fff8f2;border-left:5px solid var(--ig1);border-radius:0 9px 9px 0;padding:11px 14px;margin-bottom:9px;font-size:.91rem;line-height:1.85}
+.estep.s1{border-left-color:var(--ig4)} .estep.s1 .elbl{color:#007a94}
+.estep.s2{border-left-color:var(--ig3)} .estep.s2 .elbl{color:#b8730a}
+.estep.s3{border-left-color:var(--ok);background:rgba(14,159,94,.06)} .estep.s3 .elbl{color:var(--ok)}
+.estep.s4{border-left-color:var(--no);background:rgba(214,51,108,.06)} .estep.s4 .elbl{color:var(--no)}
+.estep.ev{border-left-color:var(--ig2);background:rgba(253,29,107,.06)} .estep.ev .elbl{color:var(--ig2)}
+.elbl{display:block;font-family:var(--disp);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;margin-bottom:5px;color:var(--text-dim)}
+.expl ul{list-style:none;margin:5px 0 0}
+.expl li{padding:6px 9px;margin:5px 0;background:#fff;border-left:2px solid var(--edge);border-radius:0 5px 5px 0}
+.p-word{color:var(--ig1);font-weight:800}
+.p-mean{color:var(--gold);font-weight:700}
+.p-grammar{color:var(--ig2);font-weight:800;background:rgba(253,29,107,.1);border-radius:4px;padding:0 6px}
+.hl-green{color:var(--ok);font-weight:800}
+.hl-red{color:var(--no);font-weight:800}
+.sw{text-align:center;margin:22px 0 8px}
+.bsub{font-family:var(--disp);font-size:1.0rem;background:linear-gradient(135deg,var(--ig1),var(--ig2),var(--ig3));color:#fff;border:none;
+  padding:15px 34px;border-radius:30px;cursor:pointer;box-shadow:0 8px 22px rgba(253,29,107,.32);transition:.2s;font-weight:700}
+.bsub:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(131,58,180,.36)}
+.ov{display:none;position:fixed;inset:0;z-index:100;background:rgba(42,24,48,.5);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:16px}
+.ov.open{display:flex}
+.mb{background:linear-gradient(160deg,#fff,#fdf0f6);border:3px solid var(--ig2);border-radius:18px;padding:26px 28px;max-width:455px;width:100%;
+  text-align:center;animation:pop .3s ease;box-shadow:0 20px 44px rgba(0,0,0,.22)}
+@keyframes pop{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
+.mb h2{font-family:var(--disp);font-size:1.08rem;color:var(--ig2);margin-bottom:14px;font-weight:700}
+.mb input{width:100%;font-family:var(--body);font-size:.92rem;font-weight:600;padding:11px 14px;background:#fff8f2;border:2px solid var(--ig1);border-radius:22px;color:var(--text);text-align:center;outline:none;margin-bottom:9px}
+.mb input:focus{border-color:var(--ig2)}
+.err{color:var(--no);font-size:.72rem;font-weight:800;margin-bottom:8px;display:none}
+.err.show{display:block}
+.bok{font-family:var(--disp);font-size:.9rem;background:var(--ig2);color:#fff;border:none;padding:11px 28px;border-radius:22px;cursor:pointer;font-weight:700}
+.rname{font-size:.76rem;color:var(--text-dim);font-weight:600;margin-bottom:5px}
+.rscore{font-family:var(--disp);font-size:2.5rem;color:var(--ig2);line-height:1;margin:6px 0;font-weight:700}
+.rs10{font-family:var(--disp);font-size:1.0rem;color:var(--ok);margin-bottom:8px;font-weight:700}
+.rgif{width:175px;margin:10px auto;display:block;border:3px solid var(--ig1);border-radius:10px}
+.rcmt{font-size:.85rem;line-height:1.75;background:#faf0fd;border:2px dashed var(--ig1);border-radius:10px;padding:11px 14px;margin:12px 0}
+.bcl{font-family:var(--body);font-size:.72rem;font-weight:800;background:transparent;border:2px solid var(--ig1);color:var(--ig2);padding:9px 24px;border-radius:22px;cursor:pointer}
+.cn{position:fixed;top:-16px;z-index:200;pointer-events:none;animation:cf 2.4s forwards}
+@keyframes cf{0%{transform:translateY(0) rotate(0);opacity:1}100%{transform:translateY(108vh) rotate(700deg);opacity:0}}
+@media(max-width:900px){.main{flex-direction:column;padding:0 18px 42px}.lp{flex:1 1 auto;width:100%}.lp,.rp{max-height:none}}
+</style>
+</head>
+<body>
+<style>
+:root{--nbh:50px}
+body{padding-top:var(--nbh)}
+.nbar{position:fixed;top:0;left:0;right:0;z-index:150;min-height:var(--nbh);display:flex;align-items:center;gap:11px;padding:6px 16px;
+  background:#ffb703;border-bottom:2px solid #c98a00;box-shadow:0 2px 12px rgba(0,0,0,.14)}
+.nbar .pin{font-size:1.15rem;flex:0 0 auto;animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.22);opacity:.75}}
+.nbtxt{flex:1 1 auto;min-width:0;font-family:'Nunito',sans-serif;font-size:.82rem;font-weight:800;line-height:1.35;color:#1a1033;transition:opacity .4s ease}
+.nbtg{flex:0 0 auto;font-family:'Nunito',sans-serif;font-size:.68rem;font-weight:800;background:#1a1033;color:#ffd76e;border:none;border-radius:16px;padding:6px 13px;cursor:pointer;white-space:nowrap}
+.nbtg:hover{background:#2b1b52}
+.nfull{display:none;position:fixed;top:var(--nbh);left:0;right:0;z-index:149;max-height:52vh;overflow-y:auto;padding:13px 18px;background:#fff8e6;border-bottom:2px solid #c98a00;box-shadow:0 8px 22px rgba(0,0,0,.14)}
+.nfull.open{display:block}
+.nfull ul{list-style:none;display:grid;gap:8px;max-width:1100px;margin:0 auto}
+.nfull li{font-family:'Nunito',sans-serif;font-size:.86rem;font-weight:600;line-height:1.7;color:#42305a;background:rgba(255,183,3,.14);border-left:4px solid #ffb703;border-radius:0 8px 8px 0;padding:9px 13px}
+.nfull li b{color:#a35b00}
+@media(max-width:900px){:root{--nbh:64px}.nbtxt{font-size:.75rem}}
+</style>
+<script>
+function nbToggle(){var p=document.getElementById('nfull'),b=document.getElementById('nbtg');p.classList.toggle('open');b.textContent=p.classList.contains('open')?'▲ Thu gọn':'▼ Xem đủ';}
+document.addEventListener('DOMContentLoaded',function(){var src=document.querySelectorAll('#nfull li');var box=document.getElementById('nbtxt');if(!src.length||!box)return;var i=0;
+function show(){box.style.opacity=0;setTimeout(()=>{box.innerHTML=src[i].innerHTML;box.style.opacity=1;i=(i+1)%src.length;},400);}
+show();setInterval(show,7000);});
+</script>
+<div class="nbar"><span class="pin">💡</span><div class="nbtxt" id="nbtxt"></div><button class="nbtg" id="nbtg" onclick="nbToggle()">▼ Xem đủ</button></div>
+<div class="nfull" id="nfull"><ul>
+  <li>🤝 <b>Ms không chấm em bằng số câu đúng, mà bằng số điều em thật sự hiểu.</b> Gặp chữ lạ thì mở Google Dịch, ChatGPT hay Gemini tra cho rõ đã, đừng vội bấm rồi tự nhủ "chắc là câu này".</li>
+  <li>👂 <b>Một từ chỉ thuộc về em khi em nói được nó.</b> Tra ở từ điển Cambridge để biết phiên âm, trọng âm rơi vào đâu, nghe máy đọc rồi lặp lại vài lần.</li>
+  <li>🔍 <b>Đừng đóng bài khi chưa đọc lời giải.</b> Cả bốn bước đều được viết ra để em thấy cái bẫy nằm ở đâu — nhận ra hôm nay thì mai vào phòng thi em sẽ bình tĩnh hơn nhiều.</li>
+  <li>✏️ <b>Trang vở của em quan trọng hơn màn hình này.</b> Ghi lại từ mới, giới từ đi kèm, cấu trúc câu, thêm một ví dụ do chính em đặt.</li>
+  <li>📱 <b>Bài đọc hôm nay nói về mạng xã hội, thời trang nhanh và người nổi tiếng.</b> Là người tiêu dùng thông thái, mình luôn có quyền lựa chọn điều tốt hơn cho bản thân và hành tinh này!</li>
+</ul></div>
+<div class="mist"><span></span><span></span><span></span><span></span></div>
+<div class="fl" id="fl"></div>
+
+<header>
+  <div>
+    <div class="tag">📱 GKII · Second Midterm · Test 4</div>
+    <h1>B. Reading — Study Workshop, TikTok for Learning, Fast Fashion &amp; Celebrity Culture</h1>
+    <div class="sub">Giáo viên tạo: MS Chí Nên · 20 câu (13-16, 19-24, 27-32, 33-36)</div>
+  </div>
+  <div class="gauge"><div class="num" id="lv">0/20</div><div class="lbl">SCORE</div></div>
+</header>
+
+<div class="main">
+<div class="lp">
+  <div class="slbl">💬 Bài đọc</div>
+
+  <div class="pc">
+    <div class="plbl">IV — Time Management &amp; Study Skills Workshop</div>
+    <div class="pt"><b>TIME MANAGEMENT &amp; STUDY SKILLS WORKSHOP</b><br>Tuesday, September 15th · 2:00 p.m. – 3:00 p.m.<br>Presented via Zoom (link will be sent prior <span class="blk">13</span> workshop)<br>From home to study space – how are you organising your time to succeed in <span class="blk">14</span> learning?<br>Not sure how to study when <span class="blk">15</span> your classes are online?<br>Join us for our virtual refresher for tips on how to <span class="blk">16</span> your time.<br>For more information, contact us at: 312-355-5025 or chance@uic.edu</div>
+    <button class="btr" onclick="tv('v1')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v1"><b>HỘI THẢO QUẢN LÝ THỜI GIAN &amp; KỸ NĂNG HỌC TẬP</b><br>Thứ Ba, ngày 15/9 · 2:00 – 3:00 chiều<br>Trình bày qua Zoom (đường link sẽ gửi trước buổi hội thảo)<br>Từ nhà đến không gian học tập – bạn đang sắp xếp thời gian như thế nào để thành công trong việc học từ xa?<br>Không chắc phải học như thế nào khi tất cả lớp học đều trực tuyến?<br>Hãy tham gia buổi ôn tập trực tuyến để nhận mẹo tối ưu hóa thời gian.<br>Để biết thêm thông tin, liên hệ: 312-355-5025 hoặc chance@uic.edu</div>
+  </div>
+
+  <div class="pc">
+    <div class="plbl">VI — TikTok for Learning (đoạn 1)</div>
+    <div class="pt">Are you bored of Facebook? Tired of Instagram? Perhaps what you're <span class="blk">19</span> is TikTok. It's currently one of the fastest-growing apps with over 800 million active monthly users. More than that, TikTok is quickly becoming a platform for learning – and that includes English language learning <span class="blk">20</span>!</div>
+    <button class="btr" onclick="tv('v2')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v2">Bạn đã chán Facebook chưa? Mệt mỏi với Instagram rồi à? Có lẽ thứ bạn đang tìm kiếm chính là TikTok. Đây hiện là một trong những ứng dụng phát triển nhanh nhất với hơn 800 triệu người dùng hoạt động hàng tháng. Hơn thế nữa, TikTok đang nhanh chóng trở thành một nền tảng học tập – và điều đó bao gồm cả việc học tiếng Anh nữa!</div>
+  </div>
+
+  <div class="pc">
+    <div class="plbl">VI (tiếp) — đoạn 2 → 3</div>
+    <div class="pt">Thanks to the hashtag #EduTok, which started in India, TikTok users <span class="blk">21</span> learning tips and tutorials. As these videos are often short, it's all about micro-learning – using your phone as a mini classroom to learn what you want. This makes it excellent for people with short <span class="blk">22</span> spans, or perfect for a quick scroll through your phone while on your lunch break.</div>
+    <button class="btr" onclick="tv('v3')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v3">Nhờ hashtag #EduTok, bắt nguồn từ Ấn Độ, người dùng TikTok có thể dễ dàng tiếp cận các mẹo và hướng dẫn học tập. Vì những video này thường ngắn, nên tất cả xoay quanh việc học vi mô – dùng điện thoại như một lớp học thu nhỏ để học những gì bạn muốn. Điều này khiến nó tuyệt vời cho người có khoảng chú ý ngắn, hoặc hoàn hảo để lướt nhanh trong giờ nghỉ trưa.</div>
+
+    <div class="pt" style="margin-top:10px">Besides, TikTok is a fun resource for listening to <span class="blk">23</span> speech and hearing accents. Not to mention the amount of snippets of grammar and vocabulary you can also find. <span class="blk">24</span> app allows you to comment on and share videos while interacting with other learners. So you're getting the communication element too!</div>
+    <button class="btr" onclick="tv('v4')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v4">Bên cạnh đó, TikTok là nguồn tài nguyên thú vị để nghe cách nói chuyện tự nhiên và các giọng vùng miền. Chưa kể lượng ngữ pháp và từ vựng nhỏ mà bạn cũng có thể tìm thấy. Ứng dụng này cho phép bạn bình luận, chia sẻ video trong khi tương tác với người học khác. Vậy nên bạn cũng có được yếu tố giao tiếp nữa!</div>
+  </div>
+
+  <div class="pc" style="border-left-color:var(--ig1)">
+    <div class="plbl">VIII — Fast Fashion (đoạn 1 → 2)</div>
+    <div class="pt">Fast fashion is a term used to describe cheap and low-quality clothes that are rapidly produced and sold to consumers, who are always looking for good deals and the latest trends. Some of the world's biggest and most notable fast fashion brands include Shein, Forever 21, Zara, and H&amp;M.</div>
+    <button class="btr" onclick="tv('v5')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v5">Thời trang nhanh (fast fashion) là thuật ngữ mô tả quần áo giá rẻ, chất lượng thấp, được sản xuất nhanh và bán cho người tiêu dùng luôn tìm kiếm ưu đãi tốt và xu hướng mới nhất. Một số thương hiệu thời trang nhanh lớn nhất thế giới gồm Shein, Forever 21, Zara, và H&amp;M.</div>
+
+    <div class="pt" style="margin-top:10px">The fast fashion industry is responsible for approximately 8% of global carbon emissions – more than all international flights and maritime shipping combined. The emissions derive not only from the manufacturing process itself but also from the shipment of clothing around the world, as well as its disposal.</div>
+    <button class="btr" onclick="tv('v6')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v6">Ngành thời trang nhanh chịu trách nhiệm cho khoảng 8% lượng khí thải carbon toàn cầu – nhiều hơn tổng khí thải từ tất cả chuyến bay quốc tế và vận tải đường biển cộng lại. Khí thải này không chỉ đến từ quá trình sản xuất mà còn từ việc vận chuyển quần áo đi khắp thế giới, cũng như xử lý chúng.</div>
+  </div>
+
+  <div class="pc" style="border-left-color:var(--ig1)">
+    <div class="plbl">VIII (tiếp) — đoạn 3</div>
+    <div class="pt">If we really want the industry to change and contribute to fighting climate change, we as consumers have to rethink our choices and understand that our actions have consequences. It can all start by <u>opting for</u> more sustainable companies over fast fashion brands, or reducing the number of clothes we buy. Although we might have to spend more money for a higher quality item, <u>it</u> will certainly last longer, making it a good investment in the long run.</div>
+    <button class="btr" onclick="tv('v7')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v7">Nếu chúng ta thực sự muốn ngành công nghiệp này thay đổi và góp phần chống biến đổi khí hậu, chúng ta – người tiêu dùng – phải suy nghĩ lại về lựa chọn của mình và hiểu rằng hành động có hậu quả. Tất cả có thể bắt đầu bằng việc chọn các công ty bền vững hơn thay vì thương hiệu thời trang nhanh, hoặc giảm số lượng quần áo mua. Dù có thể phải chi nhiều tiền hơn cho món đồ chất lượng cao hơn, nó chắc chắn sẽ bền hơn, trở thành khoản đầu tư tốt về lâu dài.</div>
+  </div>
+
+  <div class="pc" style="border-left-color:var(--ig4)">
+    <div class="plbl">IX — Celebrities' Influence on Teenagers</div>
+    <div class="pt">Celebrities hold a significant influence over the lives of teenagers, shaping their behaviours and attitudes. <span class="blk">33</span> Whether through music, movies, sports, or social media, celebrities have a profound impact on the lifestyles of teenagers.<br><br>Celebrities can inspire teens to pursue their dreams, overcome obstacles, and strive for success. <span class="blk">34</span> teenagers develop a sense of motivation and purpose.<br><br><span class="blk">35</span> When celebrities engage in risky activities such as smoking, drinking, or reckless driving, some teens may be more likely to follow these actions.<br><br>Parents and schools should help teens navigate the influence of celebrity culture by <span class="blk">36</span></div>
+    <button class="btr" onclick="tv('v8')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v8">Người nổi tiếng có ảnh hưởng đáng kể đến cuộc sống của thanh thiếu niên, định hình hành vi và thái độ của họ. Họ đóng vai trò là hình mẫu và nguồn cảm hứng, thường ảnh hưởng đến cách thanh thiếu niên suy nghĩ và hành động. Dù thông qua âm nhạc, phim ảnh, thể thao, hay mạng xã hội, người nổi tiếng có tác động sâu sắc đến lối sống của thanh thiếu niên.<br><br>Người nổi tiếng có thể truyền cảm hứng cho thanh thiếu niên theo đuổi ước mơ, vượt qua trở ngại, và phấn đấu vì thành công. Bằng cách quan sát thành tựu và đặc điểm tích cực của hình mẫu, thanh thiếu niên phát triển ý thức về động lực và mục đích sống.<br><br>Tuy nhiên, hành động của người nổi tiếng cũng có thể ảnh hưởng tiêu cực đến thanh thiếu niên. Khi người nổi tiếng tham gia hoạt động rủi ro như hút thuốc, uống rượu, hay lái xe liều lĩnh, một số thanh thiếu niên có thể làm theo.<br><br>Cha mẹ và nhà trường nên giúp thanh thiếu niên định hướng trước ảnh hưởng của văn hóa người nổi tiếng bằng cách thúc đẩy giao tiếp cởi mở, thiết lập ranh giới lành mạnh, và khuyến khích những kỳ vọng thực tế.</div>
+  </div>
+
+  <div class="gw">
+    <div class="gt2">📚 Glossary — Test 4</div>
+    <table class="gtb">
+      <tr><th>Word / Phrase</th><th>Loại</th><th>Nghĩa tiếng Việt</th></tr>
+      <tr><td class="w">remote learning</td><td class="pos">n phr</td><td>học từ xa</td></tr>
+      <tr><td class="w">optimise</td><td class="pos">v</td><td>tối ưu hóa</td></tr>
+      <tr><td class="w">attention span</td><td class="pos">n phr</td><td>khoảng thời gian tập trung</td></tr>
+      <tr><td class="w">micro-learning</td><td class="pos">n phr</td><td>học vi mô (học từng phần nhỏ)</td></tr>
+      <tr><td class="w">accent</td><td class="pos">n</td><td>giọng vùng miền</td></tr>
+      <tr><td class="w">fast fashion</td><td class="pos">n phr</td><td>thời trang nhanh</td></tr>
+      <tr><td class="w">carbon emission</td><td class="pos">n phr</td><td>khí thải carbon</td></tr>
+      <tr><td class="w">maritime shipping</td><td class="pos">n phr</td><td>vận tải đường biển</td></tr>
+      <tr><td class="w">sustainable</td><td class="pos">adj</td><td>bền vững</td></tr>
+      <tr><td class="w">role model</td><td class="pos">n phr</td><td>hình mẫu</td></tr>
+      <tr><td class="w">obstacle</td><td class="pos">n</td><td>trở ngại</td></tr>
+      <tr><td class="w">healthy boundary</td><td class="pos">n phr</td><td>ranh giới lành mạnh</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="rp">
+  <div class="slbl">✍️ Bài tập — 20 câu</div>
+  <div id="quiz"></div>
+  <div class="sw"><button class="bsub" onclick="openModal()">🎯 Nộp bài tính điểm &amp; xem kết quả</button></div>
+</div>
+</div>
+
+<div class="ov" id="nm"><div class="mb">
+  <h2>✍️ Nhập tên để nộp bài</h2>
+  <input type="text" id="sn" placeholder="Họ và tên học sinh...">
+  <div class="err" id="er">Vui lòng nhập tên trước khi nộp bài!</div>
+  <button class="bok" onclick="sub()">Xem kết quả</button>
+</div></div>
+
+<div class="ov" id="rm"><div class="mb" style="max-width:470px">
+  <div class="rname" id="rn"></div><div class="rscore" id="rs"></div><div class="rs10" id="rs10"></div>
+  <img class="rgif" id="rg" src="" alt=""><div class="rcmt" id="rc"></div>
+  <button class="bcl" onclick="closeR()">Đóng &amp; xem lại bài</button>
+</div></div>
+
+<script>
+const QS=[];
+
+QS.push({n:13,sec:"IV · Study Workshop",qt:"...link will be sent prior <b>(13)_____</b> workshop.",
+opts:[{t:"in",pos:"giới từ",m:"trong"},{t:"with",pos:"giới từ",m:"với"},{t:"to",pos:"giới từ",m:"đến",c:1},{t:"for",pos:"giới từ",m:"cho"}],
+tr:'"Presented via Zoom (link will be sent prior ______ workshop)" 👉 <span class="p-mean">"Trình bày qua Zoom (đường link sẽ được gửi trước buổi hội thảo)"</span>',
+ok:'Chọn <span class="hl-green">to</span>. Cụm cố định <span class="p-grammar">prior to sth</span> <span class="p-mean">(trước điều gì)</span> là collocation chuẩn.',
+no:'<span class="hl-red">in</span>, <span class="hl-red">with</span>, <span class="hl-red">for</span> đều không tạo thành collocation với "prior".',
+ev:'"...link will be sent prior <b>to</b> workshop." 👉 <span class="p-mean">"...đường link sẽ được gửi trước buổi hội thảo."</span>'});
+
+QS.push({n:14,sec:"IV · Study Workshop",qt:"...how are you organising your time to succeed in <b>(14)_____</b> learning?",
+opts:[{t:"separate",pos:"tính từ",m:"riêng biệt"},{t:"remote",pos:"tính từ",m:"từ xa",c:1},{t:"different",pos:"tính từ",m:"khác nhau"},{t:"convenient",pos:"tính từ",m:"tiện lợi"}],
+tr:'"...how are you organising your time to succeed in ______ learning?" 👉 <span class="p-mean">"...bạn đang sắp xếp thời gian như thế nào để thành công trong việc học từ xa?"</span>',
+ok:'Chọn <span class="hl-green">remote</span> <span class="p-mean">(từ xa)</span>. Phù hợp với ngữ cảnh "From home to study space" (từ nhà đến không gian học) — nói về việc học TỪ XA/trực tuyến.',
+no:'<span class="hl-red">separate</span>, <span class="hl-red">different</span>, <span class="hl-red">convenient</span> đều không tạo thành cụm "___ learning" mang nghĩa "học từ xa" như bối cảnh yêu cầu.',
+ev:'"...how are you organising your time to succeed in <b>remote</b> learning?" 👉 <span class="p-mean">"...bạn sắp xếp thời gian thế nào để thành công trong việc học từ xa?"</span>'});
+
+QS.push({n:15,sec:"IV · Study Workshop",qt:"Not sure how to study when <b>(15)_____</b> your classes are online?",
+opts:[{t:"all",pos:"lượng từ",m:"tất cả",c:1},{t:"every",pos:"lượng từ",m:"mỗi (đi với danh từ số ít)"},{t:"some",pos:"lượng từ",m:"một số"},{t:"a lot",pos:"lượng từ",m:"nhiều"}],
+tr:'"Not sure how to study when ______ your classes are online?" 👉 <span class="p-mean">"Không chắc phải học như thế nào khi tất cả lớp học của bạn đều trực tuyến?"</span>',
+ok:'Chọn <span class="hl-green">all</span>. <span class="p-grammar">All + danh từ số nhiều</span> ("all your classes") phù hợp ngữ pháp và ngữ nghĩa "tất cả các lớp học".',
+no:'<span class="hl-red">every</span> chỉ đi với danh từ SỐ ÍT ("every class"), không đi với "classes" (số nhiều); <span class="hl-red">some</span> (một số) và <span class="hl-red">a lot</span> (nhiều, cần "of") không khớp ngữ pháp/ngữ nghĩa bằng "all".',
+ev:'"Not sure how to study when <b>all</b> your classes are online?" 👉 <span class="p-mean">"Không chắc phải học thế nào khi tất cả lớp học của bạn đều trực tuyến?"</span>'});
+
+QS.push({n:16,sec:"IV · Study Workshop",qt:"...tips on how to <b>(16)_____</b> your time.",
+opts:[{t:"waste",pos:"động từ",m:"lãng phí"},{t:"accomplish",pos:"động từ",m:"hoàn thành"},{t:"concentrate",pos:"động từ",m:"tập trung"},{t:"optimise",pos:"động từ",m:"tối ưu hóa",c:1}],
+tr:'"Join us for our virtual refresher for tips on how to ______ your time." 👉 <span class="p-mean">"Hãy tham gia buổi ôn tập trực tuyến để nhận mẹo về cách tối ưu hóa thời gian của bạn."</span>',
+ok:'Chọn <span class="hl-green">optimise</span> <span class="p-mean">(tối ưu hóa)</span>. Phù hợp với chủ đề "Time Management" (quản lý thời gian) của cả hội thảo — mục tiêu là SỬ DỤNG THỜI GIAN HIỆU QUẢ NHẤT.',
+no:'<span class="hl-red">waste</span> (lãng phí) trái nghĩa hoàn toàn với mục đích hội thảo; <span class="hl-red">accomplish</span> (hoàn thành) và <span class="hl-red">concentrate</span> (tập trung) không kết hợp tự nhiên với "your time" theo cách diễn đạt chuẩn này.',
+ev:'"Join us for our virtual refresher for tips on how to <b>optimise</b> your time." 👉 <span class="p-mean">"Hãy tham gia buổi ôn tập để nhận mẹo tối ưu hóa thời gian của bạn."</span>'});
+
+QS.push({n:19,sec:"VI · TikTok for Learning",qt:"Perhaps what you're <b>(19)_____</b> is TikTok.",
+opts:[{t:"looking up",pos:"cụm động từ",m:"tra cứu"},{t:"looking for",pos:"cụm động từ",m:"tìm kiếm",c:1},{t:"looking forward",pos:"cụm động từ",m:"mong chờ"},{t:"looking at",pos:"cụm động từ",m:"nhìn vào"}],
+tr:'"Perhaps what you\'re ______ is TikTok." 👉 <span class="p-mean">"Có lẽ thứ bạn đang tìm kiếm chính là TikTok."</span>',
+ok:'Chọn <span class="hl-green">looking for</span> <span class="p-mean">(tìm kiếm)</span>. Sau câu hỏi "Bored of Facebook? Tired of Instagram?", câu này gợi ý TikTok là thứ người đọc đang TÌM KIẾM để thay thế.',
+no:'<span class="hl-red">looking up</span> (tra cứu thông tin cụ thể), <span class="hl-red">looking forward</span> (mong chờ, cần "to"), <span class="hl-red">looking at</span> (nhìn vào) đều không phù hợp ngữ nghĩa "đang tìm kiếm một ứng dụng mới".',
+ev:'"Are you bored of Facebook? Tired of Instagram? Perhaps what you\'re <b>looking for</b> is TikTok." 👉 <span class="p-mean">"Bạn chán Facebook chưa? Mệt Instagram rồi à? Có lẽ thứ bạn đang tìm kiếm chính là TikTok."</span>'});
+
+QS.push({n:20,sec:"VI · TikTok for Learning",qt:"...that includes English language learning <b>(20)_____</b>!",
+opts:[{t:"either",pos:"trạng từ (câu phủ định)",m:"cũng không"},{t:"neither",pos:"trạng từ phủ định",m:"cũng không (câu phủ định)"},{t:"more",pos:"trạng từ so sánh hơn",m:"hơn nữa"},{t:"too",pos:"trạng từ",m:"cũng vậy",c:1}],
+tr:'"...TikTok is quickly becoming a platform for learning – and that includes English language learning ______!" 👉 <span class="p-mean">"...TikTok đang nhanh chóng trở thành nền tảng học tập – và điều đó bao gồm cả việc học tiếng Anh nữa!"</span>',
+ok:'Chọn <span class="hl-green">too</span> <span class="p-mean">(cũng vậy, cũng nữa)</span>. Trạng từ khẳng định thêm ý, dùng cuối câu khẳng định để nhấn mạnh "bao gồm luôn cả việc học tiếng Anh".',
+no:'<span class="hl-red">either</span> và <span class="hl-red">neither</span> chỉ dùng trong câu PHỦ ĐỊNH, không phù hợp với câu khẳng định này; <span class="hl-red">more</span> mang nghĩa so sánh hơn, không phù hợp ngữ cảnh nhấn mạnh "cũng bao gồm".',
+ev:'"...TikTok is quickly becoming a platform for learning – and that includes English language learning <b>too</b>!" 👉 <span class="p-mean">"...TikTok đang trở thành nền tảng học tập – và điều đó bao gồm cả việc học tiếng Anh nữa!"</span>'});
+
+QS.push({n:21,sec:"VI · TikTok for Learning",qt:"...TikTok users <b>(21)_____</b> learning tips and tutorials.",
+opts:[{t:"accessible easily",pos:"cấu trúc sai",m:"sai trật tự từ"},{t:"easily accessible",pos:"tính từ + trạng từ (bổ ngữ)",m:"dễ tiếp cận (tính từ)"},{t:"can easily access",pos:"động từ khuyết thiếu + trạng từ + động từ",m:"có thể dễ dàng tiếp cận",c:1},{t:"easily can access",pos:"cấu trúc sai",m:"sai vị trí trạng từ"}],
+tr:'"Thanks to the hashtag #EduTok, which started in India, TikTok users ______ learning tips and tutorials." 👉 <span class="p-mean">"Nhờ hashtag #EduTok, bắt nguồn từ Ấn Độ, người dùng TikTok có thể dễ dàng tiếp cận các mẹo và hướng dẫn học tập."</span>',
+ok:'Chọn <span class="hl-green">can easily access</span>. Câu cần một <span class="p-grammar">động từ chính</span> (access) có tân ngữ "learning tips and tutorials" theo sau — cấu trúc chuẩn là <span class="p-grammar">can + trạng từ + động từ</span>.',
+no:'<span class="hl-red">accessible easily</span> và <span class="hl-red">easily accessible</span> là TÍNH TỪ, cần động từ "be" đi kèm, không thể làm vị ngữ chính một mình với tân ngữ theo sau; <span class="hl-red">easily can access</span> sai vị trí trạng từ (phải đứng SAU động từ khuyết thiếu "can", không phải trước).',
+ev:'"...TikTok users <b>can easily access</b> learning tips and tutorials." 👉 <span class="p-mean">"...người dùng TikTok có thể dễ dàng tiếp cận các mẹo và hướng dẫn học tập."</span>'});
+
+QS.push({n:22,sec:"VI · TikTok for Learning",qt:"...excellent for people with short <b>(22)_____</b> spans.",
+opts:[{t:"attendance",pos:"danh từ",m:"sự có mặt"},{t:"attentive",pos:"tính từ",m:"chú ý, ân cần"},{t:"attention",pos:"danh từ",m:"sự chú ý",c:1},{t:"attentively",pos:"trạng từ",m:"một cách chú ý"}],
+tr:'"This makes it excellent for people with short ______ spans..." 👉 <span class="p-mean">"Điều này khiến nó tuyệt vời cho những người có khoảng chú ý ngắn..."</span>',
+ok:'Chọn <span class="hl-green">attention</span> <span class="p-mean">(sự chú ý)</span>. Cụm cố định <span class="p-grammar">attention span</span> <span class="p-mean">(khoảng thời gian tập trung chú ý)</span> là thuật ngữ chuẩn.',
+no:'<span class="hl-red">attendance</span> (sự có mặt) sai nghĩa hoàn toàn; <span class="hl-red">attentive</span> là tính từ, <span class="hl-red">attentively</span> là trạng từ — không đứng được trước danh từ "spans" để tạo cụm danh từ ghép.',
+ev:'"This makes it excellent for people with short <b>attention</b> spans..." 👉 <span class="p-mean">"Điều này khiến nó tuyệt vời cho người có khoảng chú ý ngắn..."</span>'});
+
+QS.push({n:23,sec:"VI · TikTok for Learning",qt:"...a fun resource for listening to <b>(23)_____</b> speech and hearing accents.",
+opts:[{t:"natural",pos:"tính từ",m:"tự nhiên",c:1},{t:"active",pos:"tính từ",m:"chủ động"},{t:"careful",pos:"tính từ",m:"cẩn thận"},{t:"liveable",pos:"tính từ",m:"đáng sống"}],
+tr:'"...TikTok is a fun resource for listening to ______ speech and hearing accents." 👉 <span class="p-mean">"...TikTok là nguồn tài nguyên thú vị để nghe cách nói chuyện tự nhiên và các giọng vùng miền."</span>',
+ok:'Chọn <span class="hl-green">natural</span> <span class="p-mean">(tự nhiên)</span>. Video TikTok thường ghi lại cách nói chuyện ĐỜI THƯỜNG, TỰ NHIÊN của người bản xứ — khác với giọng đọc trang trọng trong sách giáo khoa.',
+no:'<span class="hl-red">active</span> (chủ động), <span class="hl-red">careful</span> (cẩn thận), <span class="hl-red">liveable</span> (đáng sống) đều không phù hợp để mô tả kiểu "speech" (cách nói chuyện) trong ngữ cảnh này.',
+ev:'"Besides, TikTok is a fun resource for listening to <b>natural</b> speech and hearing accents." 👉 <span class="p-mean">"Bên cạnh đó, TikTok là nguồn tài nguyên thú vị để nghe cách nói chuyện tự nhiên và các giọng vùng miền."</span>'});
+
+QS.push({n:24,sec:"VI · TikTok for Learning",qt:"<b>(24)_____</b> app allows you to comment on and share videos.",
+opts:[{t:"∅ (không mạo từ)",pos:"mạo từ",m:"không dùng mạo từ"},{t:"The",pos:"mạo từ",m:"cái, con (xác định)",c:1},{t:"A",pos:"mạo từ",m:"một (chưa xác định)"},{t:"An",pos:"mạo từ",m:"một (trước nguyên âm)"}],
+tr:'"______ app allows you to comment on and share videos while interacting with other learners." 👉 <span class="p-mean">"Ứng dụng này cho phép bạn bình luận, chia sẻ video trong khi tương tác với người học khác."</span>',
+ok:'Chọn <span class="hl-green">The</span>. "App" ở đây chỉ CHÍNH TikTok đã được nhắc đến xuyên suốt bài (thông tin đã XÁC ĐỊNH), nên cần mạo từ xác định <span class="p-grammar">the</span>.',
+no:'<span class="hl-red">∅</span> (không mạo từ) sai vì danh từ đếm được số ít cần mạo từ; <span class="hl-red">A</span>, <span class="hl-red">An</span> đều là mạo từ KHÔNG XÁC ĐỊNH, không phù hợp khi "app" (TikTok) đã được biết rõ từ ngữ cảnh trước đó.',
+ev:'"<b>The</b> app allows you to comment on and share videos while interacting with other learners." 👉 <span class="p-mean">"Ứng dụng này cho phép bạn bình luận, chia sẻ video khi tương tác với người học khác."</span>'});
+
+QS.push({n:27,sec:"VIII · Fast Fashion",qt:"What is fast fashion?",
+opts:[{t:"Low-quality clothes that consumers won't buy",m:"Quần áo chất lượng thấp mà người tiêu dùng sẽ không mua"},{t:"Clothes that are always on promotion",m:"Quần áo luôn được khuyến mãi"},{t:"Cheap clothes quickly made to follow trends",m:"Quần áo giá rẻ được sản xuất nhanh để theo xu hướng",c:1},{t:"Clothes produced by big and notable fashion brands",m:"Quần áo do thương hiệu lớn, nổi tiếng sản xuất"}],
+tr:'"What is fast fashion?" 👉 <span class="p-mean">"Thời trang nhanh là gì?"</span>',
+ok:'Chọn <span class="hl-green">Cheap clothes quickly made to follow trends</span>. Bài định nghĩa: "cheap and low-quality clothes that are rapidly produced and sold to consumers... looking for good deals and the latest trends."',
+no:'<span class="hl-red">clothes consumers won\'t buy</span> ❌ SAI hoàn toàn — người tiêu dùng THÍCH mua vì giá rẻ, hợp xu hướng; <span class="hl-red">always on promotion</span> ❌ không được nhắc, bài không nói về khuyến mãi; <span class="hl-red">produced by big and notable brands</span> ❌ nhầm lẫn — "big and notable" mô tả các THƯƠNG HIỆU fast fashion, không phải ĐỊNH NGHĨA của khái niệm.',
+ev:'"Fast fashion is a term used to describe <b>cheap and low-quality clothes that are rapidly produced</b> and sold to consumers, who are always looking for good deals and the latest trends." 👉 <span class="p-mean">"Thời trang nhanh mô tả quần áo giá rẻ, chất lượng thấp, sản xuất nhanh để bán cho người tiêu dùng tìm kiếm ưu đãi và xu hướng mới nhất."</span>'});
+
+QS.push({n:28,sec:"VIII · Fast Fashion",qt:"According to the passage, fast fashion produces carbon emissions ___.",
+opts:[{t:"less than maritime shipping",m:"ít hơn vận tải đường biển"},{t:"as much as flights and shipping",m:"bằng với hàng không và vận tải biển"},{t:"the most all over the world",m:"nhiều nhất thế giới"},{t:"more than international flights",m:"nhiều hơn các chuyến bay quốc tế",c:1}],
+tr:'"According to the passage, fast fashion produces carbon emissions ___." 👉 <span class="p-mean">"Theo bài, thời trang nhanh sản xuất khí thải carbon ___."</span>',
+ok:'Chọn <span class="hl-green">more than international flights</span>. Bài: "responsible for approximately 8% of global carbon emissions – more than all international flights and maritime shipping combined."',
+no:'<span class="hl-red">less than maritime shipping</span> ❌ SAI hoàn toàn — thời trang nhanh thải NHIỀU HƠN, không phải ít hơn; <span class="hl-red">as much as flights and shipping</span> ❌ SAI — bài nói NHIỀU HƠN CẢ HAI CỘNG LẠI, không phải "bằng"; <span class="hl-red">the most all over the world</span> ❌ không được đề cập, bài chỉ so sánh với hàng không/vận tải biển, không phải "nhất thế giới".',
+ev:'"The fast fashion industry is responsible for approximately 8% of global carbon emissions – <b>more than all international flights and maritime shipping combined</b>." 👉 <span class="p-mean">"Ngành thời trang nhanh chịu trách nhiệm cho khoảng 8% khí thải carbon toàn cầu – nhiều hơn tổng khí thải từ các chuyến bay quốc tế và vận tải biển cộng lại."</span>'});
+
+QS.push({n:29,sec:"VIII · Fast Fashion",qt:"Which parts of fast fashion industry produce carbon emissions?",
+opts:[{t:"Manufacturing, shipment, disposal",m:"Sản xuất, vận chuyển, xử lý rác",c:1},{t:"The clothes that are produced",m:"Những bộ quần áo được sản xuất"},{t:"Shipment through sea transport",m:"Vận chuyển qua đường biển"},{t:"Air travel and sea travel",m:"Di chuyển đường không và đường biển"}],
+tr:'"Which parts of fast fashion industry produce carbon emissions?" 👉 <span class="p-mean">"Những khâu nào của ngành thời trang nhanh gây ra khí thải carbon?"</span>',
+ok:'Chọn <span class="hl-green">Manufacturing, shipment, disposal</span>. Bài: "The emissions derive not only from the manufacturing process itself but also from the shipment of clothing around the world, as well as its disposal."',
+no:'<span class="hl-red">the clothes that are produced</span> ❌ hiểu sai — khí thải đến từ QUÁ TRÌNH sản xuất, không phải từ BẢN THÂN sản phẩm; <span class="hl-red">shipment through sea transport</span> và <span class="hl-red">air/sea travel</span> ❌ đều chỉ là MỘT phần nhỏ (so sánh ở câu trước), không phải danh sách đầy đủ các khâu gây khí thải được nêu ở đây.',
+ev:'"The emissions derive not only from the <b>manufacturing process</b> itself but also from the <b>shipment</b> of clothing around the world, as well as its <b>disposal</b>." 👉 <span class="p-mean">"Khí thải đến từ quá trình sản xuất, vận chuyển, và xử lý rác."</span>'});
+
+QS.push({n:30,sec:"VIII · Fast Fashion",qt:'The word "opting for" in paragraph 3 is closest in meaning to ___.',
+opts:[{t:"choosing",m:"lựa chọn",c:1},{t:"practicing",m:"thực hành"},{t:"avoiding",m:"tránh né"},{t:"buying",m:"mua"}],
+tr:'"...more sustainable companies over fast fashion brands." 👉 <span class="p-mean">"...chọn các công ty bền vững hơn thay vì thương hiệu thời trang nhanh."</span>',
+ok:'Chọn <span class="hl-green">choosing</span> <span class="p-mean">(lựa chọn)</span>. <span class="p-word">opting for</span> gần nghĩa nhất với "choosing" — cùng chỉ hành động LỰA CHỌN một điều gì đó.',
+no:'<span class="hl-red">practicing</span> (thực hành), <span class="hl-red">avoiding</span> (tránh né), <span class="hl-red">buying</span> (mua) đều không đúng nghĩa "lựa chọn" mà "opting for" thể hiện.',
+ev:'"It can all start by <b>opting for</b> more sustainable companies over fast fashion brands..." 👉 <span class="p-mean">"Tất cả có thể bắt đầu bằng việc CHỌN các công ty bền vững hơn thay vì thương hiệu thời trang nhanh..."</span>'});
+
+QS.push({n:31,sec:"VIII · Fast Fashion",qt:'The word "it" in paragraph 3 refers to ___.',
+opts:[{t:"fast fashion",m:"thời trang nhanh"},{t:"sustainable brand",m:"thương hiệu bền vững"},{t:"the number of clothes",m:"số lượng quần áo"},{t:"higher quality item",m:"món đồ chất lượng cao hơn",c:1}],
+tr:'"Although we might have to spend more money for a higher quality item, it will certainly last longer..." 👉 <span class="p-mean">"Dù có thể phải chi nhiều tiền hơn cho một món đồ chất lượng cao hơn, NÓ chắc chắn sẽ bền hơn..."</span>',
+ok:'Chọn <span class="hl-green">higher quality item</span>. "It" thay thế cho danh từ số ít vừa nhắc ngay trước đó — "a higher quality item" (món đồ chất lượng cao hơn) chính là thứ "sẽ bền hơn".',
+no:'<span class="hl-red">fast fashion</span> và <span class="hl-red">sustainable brand</span> không phải chủ thể "bền" trong câu — mà là MÓN ĐỒ được mua từ các thương hiệu đó; <span class="hl-red">the number of clothes</span> là một con số, không phải vật có thể "last longer" (bền lâu).',
+ev:'"Although we might have to spend more money for a <b>higher quality item</b>, <b>it</b> will certainly last longer, making it a good investment in the long run." — "it" = "a higher quality item".'});
+
+QS.push({n:32,sec:"VIII · Fast Fashion",qt:"Which of the following is true about fast fashion?",
+opts:[{t:"Fast fashion clothing can last longer than sustainable one.",m:"Đồ thời trang nhanh bền hơn đồ bền vững"},{t:"Shein and Zara are two examples of sustainable fashion.",m:"Shein và Zara là ví dụ về thời trang bền vững"},{t:"Fast fashion often can't keep up with the trends these days.",m:"Thời trang nhanh không theo kịp xu hướng"},{t:"Supporting fast fashion can result in climate change.",m:"Ủng hộ thời trang nhanh có thể góp phần gây biến đổi khí hậu",c:1}],
+tr:'"Which of the following is true about fast fashion?" 👉 <span class="p-mean">"Ý nào sau đây ĐÚNG về thời trang nhanh?"</span>',
+ok:'Chọn <span class="hl-green">Supporting fast fashion can result in climate change.</span> Bài nhấn mạnh: thời trang nhanh chiếm 8% khí thải carbon toàn cầu, và việc thay đổi lựa chọn tiêu dùng có thể "contribute to fighting climate change" — ngụ ý việc TIẾP TỤC ủng hộ nó sẽ góp phần vào biến đổi khí hậu.',
+no:'<span class="hl-red">last longer than sustainable one</span> ❌ SAI — bài nói NGƯỢC LẠI, đồ chất lượng cao (bền vững) mới "last longer"; <span class="hl-red">Shein and Zara are sustainable</span> ❌ SAI — đây chính là các thương hiệu THỜI TRANG NHANH được liệt kê, không phải bền vững; <span class="hl-red">can\'t keep up with trends</span> ❌ SAI hoàn toàn — bài nói thời trang nhanh được sản xuất NHANH để THEO KỊP xu hướng mới nhất.',
+ev:'"If we really want the industry to change and contribute to fighting climate change..." 👉 <span class="p-mean">"Nếu muốn ngành công nghiệp này thay đổi và góp phần chống biến đổi khí hậu..."</span> — ngụ ý thời trang nhanh hiện đang GÓP PHẦN gây ra biến đổi khí hậu.'});
+
+QS.push({n:33,sec:"IX · Celebrity Culture",qt:"...shaping their behaviours and attitudes. <b>(33)_____</b> Whether through music, movies, sports, or social media...",
+opts:[{t:"However, celebrities' actions and behaviours can negatively influence teenagers.",m:"Tuy nhiên, hành động của người nổi tiếng có thể ảnh hưởng tiêu cực"},{t:"By observing the achievements and positive traits of their role models,",m:"Bằng cách quan sát thành tựu và đặc điểm tích cực của hình mẫu,"},{t:"They serve as role models and sources of inspiration, often affecting the way teens think, and act.",m:"Họ là hình mẫu và nguồn cảm hứng, thường ảnh hưởng cách thanh thiếu niên suy nghĩ và hành động",c:1},{t:"fostering open communication, setting healthy boundaries, and promoting realistic expectations.",m:"thúc đẩy giao tiếp cởi mở, thiết lập ranh giới lành mạnh, khuyến khích kỳ vọng thực tế"}],
+tr:'"Celebrities hold a significant influence over the lives of teenagers, shaping their behaviours and attitudes. ______ Whether through music, movies, sports, or social media, celebrities have a profound impact on the lifestyles of teenagers." 👉 <span class="p-mean">"Người nổi tiếng có ảnh hưởng đáng kể đến thanh thiếu niên... ______ Dù qua âm nhạc, phim ảnh, thể thao, hay mạng xã hội, họ đều tác động sâu sắc đến lối sống thanh thiếu niên."</span>',
+ok:'Chọn <span class="hl-green">They serve as role models and sources of inspiration, often affecting the way teens think, and act.</span> Câu này giải thích RÕ HƠN vai trò "ảnh hưởng" vừa nêu, và "Whether through music, movies..." tiếp nối liệt kê các KÊNH mà sự ảnh hưởng đó xảy ra.',
+no:'Ba đáp án còn lại không phù hợp vị trí: <span class="hl-red">However...</span> là câu chuyển ý tiêu cực (thuộc đoạn 3); <span class="hl-red">By observing...</span> là vế phụ thuộc thuộc câu ở đoạn 2; <span class="hl-red">fostering...</span> là phần kết ở đoạn 4 — không phải câu giải thích tiếp nối ý "shaping behaviours and attitudes" ở đoạn 1.',
+ev:'"Celebrities hold a significant influence... shaping their behaviours and attitudes. <b>They serve as role models and sources of inspiration, often affecting the way teens think, and act.</b> Whether through music, movies, sports, or social media..." 👉 <span class="p-mean">"...Họ là hình mẫu và nguồn cảm hứng, thường ảnh hưởng cách thanh thiếu niên suy nghĩ và hành động. Dù qua âm nhạc, phim ảnh..."</span>'});
+
+QS.push({n:34,sec:"IX · Celebrity Culture",qt:"Celebrities can inspire teens to pursue their dreams... <b>(34)_____</b> teenagers develop a sense of motivation and purpose.",
+opts:[{t:"However, celebrities' actions and behaviours can negatively influence teenagers.",m:"Tuy nhiên, hành động của người nổi tiếng có thể ảnh hưởng tiêu cực"},{t:"By observing the achievements and positive traits of their role models,",m:"Bằng cách quan sát thành tựu và đặc điểm tích cực của hình mẫu,",c:1},{t:"They serve as role models and sources of inspiration, often affecting the way teens think, and act.",m:"Họ là hình mẫu và nguồn cảm hứng, ảnh hưởng cách teen nghĩ và hành động"},{t:"fostering open communication, setting healthy boundaries, and promoting realistic expectations.",m:"thúc đẩy giao tiếp cởi mở, thiết lập ranh giới lành mạnh"}],
+tr:'"Celebrities can inspire teens to pursue their dreams, overcome obstacles, and strive for success. ______ teenagers develop a sense of motivation and purpose." 👉 <span class="p-mean">"Người nổi tiếng truyền cảm hứng cho thanh thiếu niên theo đuổi ước mơ... ______, thanh thiếu niên phát triển ý thức động lực và mục đích."</span>',
+ok:'Chọn <span class="hl-green">By observing the achievements and positive traits of their role models,</span> Đây là <span class="p-grammar">cụm trạng ngữ chỉ cách thức (By + V-ing)</span> hoàn thiện câu với chủ ngữ "teenagers develop..." theo sau — giải thích CÁCH mà thanh thiếu niên có được động lực.',
+no:'Ba đáp án còn lại không tạo thành câu có nghĩa khi ghép với "teenagers develop a sense of motivation": <span class="hl-red">However...</span> là câu hoàn chỉnh riêng biệt; <span class="hl-red">They serve as...</span> đã có chủ ngữ "They" riêng; <span class="hl-red">fostering...</span> thuộc cấu trúc khác ở đoạn 4.',
+ev:'"Celebrities can inspire teens to pursue their dreams, overcome obstacles, and strive for success. <b>By observing the achievements and positive traits of their role models,</b> teenagers develop a sense of motivation and purpose." 👉 <span class="p-mean">"...Bằng cách quan sát thành tựu và đặc điểm tích cực của hình mẫu, thanh thiếu niên phát triển động lực và mục đích sống."</span>'});
+
+QS.push({n:35,sec:"IX · Celebrity Culture",qt:"<b>(35)_____</b> When celebrities engage in risky activities such as smoking, drinking, or reckless driving...",
+opts:[{t:"However, celebrities' actions and behaviours can negatively influence teenagers.",m:"Tuy nhiên, hành động của người nổi tiếng có thể ảnh hưởng tiêu cực",c:1},{t:"By observing the achievements and positive traits of their role models,",m:"Bằng cách quan sát thành tựu và đặc điểm tích cực của hình mẫu"},{t:"They serve as role models and sources of inspiration, often affecting the way teens think, and act.",m:"Họ là hình mẫu và nguồn cảm hứng, ảnh hưởng cách teen nghĩ và hành động"},{t:"fostering open communication, setting healthy boundaries, and promoting realistic expectations.",m:"thúc đẩy giao tiếp cởi mở, thiết lập ranh giới lành mạnh"}],
+tr:'"______ When celebrities engage in risky activities such as smoking, drinking, or reckless driving, some teens may be more likely to follow these actions." 👉 <span class="p-mean">"______ Khi người nổi tiếng tham gia hoạt động rủi ro như hút thuốc, uống rượu, hay lái xe liều lĩnh, một số thanh thiếu niên có thể làm theo."</span>',
+ok:'Chọn <span class="hl-green">However, celebrities\' actions and behaviours can negatively influence teenagers.</span> Đây là câu CHỦ ĐỀ mở đầu đoạn mới, dùng "However" để CHUYỂN HƯỚNG từ ảnh hưởng TÍCH CỰC (đoạn 2) sang ảnh hưởng TIÊU CỰC (đoạn 3), và ví dụ "smoking, drinking..." minh họa ngay cho ý "negatively influence" vừa nêu.',
+no:'Ba đáp án còn lại không phù hợp: <span class="hl-red">By observing...</span> và <span class="hl-red">They serve as...</span> đều mang giọng văn TÍCH CỰC, trái với nội dung tiêu cực của đoạn 3; <span class="hl-red">fostering...</span> thuộc cấu trúc câu khác ở đoạn 4.',
+ev:'"<b>However, celebrities\' actions and behaviours can negatively influence teenagers.</b> When celebrities engage in risky activities such as smoking, drinking, or reckless driving, some teens may be more likely to follow these actions." 👉 <span class="p-mean">"Tuy nhiên, hành động của người nổi tiếng có thể ảnh hưởng tiêu cực đến thanh thiếu niên. Khi họ tham gia hoạt động rủi ro..., một số teen có thể làm theo."</span>'});
+
+QS.push({n:36,sec:"IX · Celebrity Culture",qt:"Parents and schools should help teens navigate the influence of celebrity culture by <b>(36)_____</b>",
+opts:[{t:"However, celebrities' actions and behaviours can negatively influence teenagers.",m:"Tuy nhiên, hành động của người nổi tiếng có thể ảnh hưởng tiêu cực"},{t:"By observing the achievements and positive traits of their role models,",m:"Bằng cách quan sát thành tựu và đặc điểm tích cực của hình mẫu"},{t:"They serve as role models and sources of inspiration, often affecting the way teens think, and act.",m:"Họ là hình mẫu và nguồn cảm hứng, ảnh hưởng cách teen nghĩ và hành động"},{t:"fostering open communication, setting healthy boundaries, and promoting realistic expectations.",m:"thúc đẩy giao tiếp cởi mở, thiết lập ranh giới lành mạnh, khuyến khích kỳ vọng thực tế",c:1}],
+tr:'"Parents and schools should help teens navigate the influence of celebrity culture by ______" 👉 <span class="p-mean">"Cha mẹ và nhà trường nên giúp thanh thiếu niên định hướng trước ảnh hưởng của văn hóa người nổi tiếng bằng cách ______"</span>',
+ok:'Chọn <span class="hl-green">fostering open communication, setting healthy boundaries, and promoting realistic expectations.</span> Sau giới từ "by" cần một chuỗi <span class="p-grammar">V-ing song song</span> hoàn thiện câu, liệt kê các CÁCH THỨC cụ thể mà cha mẹ/nhà trường có thể áp dụng.',
+no:'Ba đáp án còn lại đều là CÂU HOÀN CHỈNH riêng biệt (có chủ ngữ + động từ chia thì), không thể nối tiếp sau giới từ "by" để hoàn thành câu.',
+ev:'"Parents and schools should help teens navigate the influence of celebrity culture by <b>fostering open communication, setting healthy boundaries, and promoting realistic expectations.</b>" 👉 <span class="p-mean">"Cha mẹ và nhà trường nên giúp thanh thiếu niên định hướng trước ảnh hưởng văn hóa người nổi tiếng bằng cách thúc đẩy giao tiếp cởi mở, thiết lập ranh giới lành mạnh, khuyến khích kỳ vọng thực tế."</span>'});
+
+const done={};let cc=0;
+function shuffle(a){return a.sort(()=>Math.random()-0.5)}
+function build(){
+  const box=document.getElementById('quiz');
+  QS.forEach(q=>{
+    let ol='<ul style="margin:4px 0 0 4px;list-style:none">';
+    q.opts.forEach(o=>{ol+='<li style="margin:5px 0">'+(o.c?'✅ ':'❌ ')+'<span class="p-word">'+o.t+'</span>'+(o.pos?' <span class="p-grammar">'+o.pos+'</span>':'')+' ➔ <span class="p-mean">'+o.m+'</span></li>';});
+    ol+='</ul>';
+    const card=document.createElement('div');card.className='qc';card.id='q'+q.n;
+    card.innerHTML=
+      '<div class="qn">Câu '+q.n+' · '+q.sec+'</div>'+
+      '<div class="qt">'+q.qt+'</div>'+
+      '<div class="opts" id="o'+q.n+'"></div>'+
+      '<div class="expl" id="e'+q.n+'">'+
+        '<h4>📘 Giải thích chi tiết – Câu '+q.n+'</h4>'+
+        '<div class="estep s1"><div class="elbl">Bước 1 · Dịch</div>'+q.tr+'</div>'+
+        '<div class="estep s2"><div class="elbl">Bước 2 · Các phương án và nghĩa</div>'+ol+'</div>'+
+        '<div class="estep s3"><div class="elbl">Bước 3 · Vì sao đáp án này <span class="hl-green">đúng</span></div>'+q.ok+'</div>'+
+        '<div class="estep s4"><div class="elbl">Bước 4 · Vì sao các phương án kia <span class="hl-red">sai</span></div>'+q.no+'</div>'+
+        '<div class="estep ev"><div class="elbl">🔍 Dẫn chứng trong bài</div>'+q.ev+'</div>'+
+      '</div>';
+    box.appendChild(card);
+    const cont=card.querySelector('.opts');
+    const correct=q.opts.filter(o=>o.c)[0].t;
+    shuffle([...q.opts]).forEach(o=>{
+      const b=document.createElement('button');b.className='opt';b.textContent=o.t;
+      b.onclick=()=>chk(q.n,o.t,correct,b,cont);cont.appendChild(b);
+    });
+  });
+  document.getElementById('lv').textContent='0/'+QS.length;
+}
+function chk(qid,chosen,correct,btn,container){
+  if(qid in done)return;
+  done[qid]=chosen===correct;
+  container.querySelectorAll('.opt').forEach(b=>{b.disabled=true;if(b.textContent===correct)b.classList.add('correct');});
+  if(chosen===correct){btn.classList.add('correct');cc++;ding();conf();}
+  else{btn.classList.add('wrong');buzz();}
+  document.getElementById('e'+qid).classList.add('open');
+  document.getElementById('lv').textContent=cc+'/'+QS.length;
+}
+const A=new(window.AudioContext||window.webkitAudioContext)();
+function ding(){const o=A.createOscillator(),g=A.createGain();o.connect(g);g.connect(A.destination);o.frequency.setValueAtTime(523,A.currentTime);o.frequency.exponentialRampToValueAtTime(784,A.currentTime+0.15);g.gain.setValueAtTime(0.28,A.currentTime);g.gain.exponentialRampToValueAtTime(0.001,A.currentTime+0.5);o.start();o.stop(A.currentTime+0.5);}
+function buzz(){const o=A.createOscillator(),g=A.createGain();o.type='triangle';o.connect(g);g.connect(A.destination);o.frequency.setValueAtTime(200,A.currentTime);o.frequency.exponentialRampToValueAtTime(100,A.currentTime+0.2);g.gain.setValueAtTime(0.18,A.currentTime);g.gain.exponentialRampToValueAtTime(0.001,A.currentTime+0.28);o.start();o.stop(A.currentTime+0.28);}
+function conf(){
+  const cols=['#833ab4','#fd1d6b','#fcb045','#00b8d9','#0e9f5e'];
+  for(let i=0;i<35;i++){
+    const d=document.createElement('div');d.className='cn';
+    d.style.left=Math.random()*100+'vw';d.style.background=cols[Math.floor(Math.random()*cols.length)];
+    d.style.animationDelay=Math.random()*0.7+'s';d.style.animationDuration=(1.8+Math.random()*1.0)+'s';
+    d.style.width=d.style.height=(6+Math.random()*8)+'px';d.style.borderRadius=Math.random()>0.5?'50%':'2px';
+    document.body.appendChild(d);setTimeout(()=>d.remove(),3100);
+  }
+}
+function tv(id){
+  const el=document.getElementById(id);el.classList.toggle('open');
+  const btn=el.previousElementSibling;
+  btn.textContent=el.classList.contains('open')?'Ẩn dịch 🌟':'Mở dịch đoạn này 🌟';
+}
+function openModal(){document.getElementById('nm').classList.add('open')}
+function sub(){
+  const n=document.getElementById('sn').value.trim();
+  const er=document.getElementById('er');
+  if(!n){er.classList.add('show');return;}
+  er.classList.remove('show');
+  document.getElementById('nm').classList.remove('open');
+  showRes(n);
+}
+function showRes(n){
+  const tot=QS.length;let c=0;QS.forEach(q=>{if(done[q.n]===true)c++;});
+  const p=c/tot,s10=(c/tot*10).toFixed(2);
+  document.getElementById('rn').textContent='Học sinh: '+n;
+  document.getElementById('rs').textContent=c+' / '+tot;
+  document.getElementById('rs10').textContent='Điểm quy đổi: '+s10+' / 10';
+  let gif='',cmt='';
+  if(p>=1){gif='https://media.giphy.com/media/l0MYGb1LuZ3n7dRnO/giphy.gif';cmt='🏆 Viral hoàn hảo! Đúng 100% — em nắm chắc mọi chủ đề từ quản lý thời gian, TikTok, thời trang nhanh đến văn hóa người nổi tiếng. MS Chí Nên rất tự hào về em!';}
+  else if(p>=0.6){gif='https://media.giphy.com/media/26u4lOMA8JKSnL9Uk/giphy.gif';cmt='📱 Khá viral rồi đó! Em đạt '+c+'/'+tot+' câu. Đọc lại phần giải thích 4 bước để lên top nhé!';}
+  else{gif='https://media.giphy.com/media/d2lcHJTG5Tscg/giphy.gif';cmt='💬 Cố lên nào! Em đạt '+c+'/'+tot+' câu. Bấm nút dịch từng đoạn, đọc kỹ giải thích rồi thử lại — Ms tin em làm được!';}
+  document.getElementById('rg').src=gif;
+  document.getElementById('rc').textContent=cmt;
+  document.getElementById('rm').classList.add('open');
+}
+function closeR(){document.getElementById('rm').classList.remove('open')}
+
+const ems=['📱','💬','🛍️','🎬','⏰'];
+const flc=document.getElementById('fl');
+for(let i=0;i<28;i++){
+  const s=document.createElement('span');s.className='f';
+  s.textContent=ems[i%ems.length];s.style.left=Math.random()*100+'%';
+  s.style.animationDuration=(14+Math.random()*14)+'s';s.style.animationDelay=(-Math.random()*20)+'s';
+  s.style.fontSize=(1.0+Math.random()*1.2)+'rem';flc.appendChild(s);
+}
+
+build();
+</script>
+<script>/*devclean*/(function(){
+var ZW=/[\u00AD\u034F\u061C\u115F\u1160\u17B4\u17B5\u180E\u200B-\u200F\u202A-\u202E\u2060-\u206F\uFEFF]/g,
+    SP=/[\u00A0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\t]/g,
+    AP=/[\u2018\u2019\u201A\u201B\u2032\u2035\u02B9\u02BB\u02BC\u02BD\u02C8\u0060\u00B4\uFF07]/g,
+    DQ=/[\u201C\u201D\u201E\u201F\u2033\u2036\u00AB\u00BB\uFF02]/g,
+    DS=/[\u2010\u2011\u2012\u2212\uFE63\uFF0D]/g;
+function clean(v){if(!v)return v;var s=String(v);try{s=s.normalize('NFKC')}catch(e){}
+  return s.replace(ZW,'').replace(SP,' ').replace(AP,"'").replace(DQ,'"').replace(DS,'-').replace(/[\u0300-\u036f]/g,'').replace(/ {2,}/g,' ');}
+window.__devclean=clean;
+function fix(skip){var L=document.querySelectorAll('input:not([type]),input[type=text],input[type=search],textarea');
+  for(var i=0;i<L.length;i++){var el=L[i];if(el===skip||el.readOnly||el.disabled)continue;var v=el.value,c=clean(v);if(c!==v)el.value=c;}}
+['pointerdown','mousedown','touchstart','click','change','focusout'].forEach(function(t){document.addEventListener(t,function(e){fix(t==='focusout'||t==='change'?null:e.target)},true)});
+document.addEventListener('keydown',function(e){if(e.key==='Enter'||e.keyCode===13)fix(null)},true);
+})();</script>
+<style id="ms-chi-nen-unlock-style">
+#passwordModal, #password-modal, #pwModal, #pw-modal, #pw-overlay,
+#lockModal, #passModal, #authModal, #auth-modal, #lockOverlay,
+#start-overlay, #intro-overlay, #start-screen,
+.password-modal, .lock-modal, .lock-overlay {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    z-index: -9999 !important;
+}
+</style>
+<script>
+// Remove password lock completely - direct quiz access
+(function() {
+    var initDone = false;
+    var renderCheckDone = false;
+
+    function hideEl(el, hard) {
+        if (!el) return;
+        if (hard) {
+            el.style.setProperty('display', 'none', 'important');
+            el.style.setProperty('visibility', 'hidden', 'important');
+            el.style.setProperty('opacity', '0', 'important');
+            el.style.setProperty('pointer-events', 'none', 'important');
+            el.style.setProperty('z-index', '-9999', 'important');
+        } else {
+            el.style.display = 'none';
+        }
+        el.classList.remove('active', 'show', 'open', 'visible', 'flex');
+    }
+
+    function hasRenderedQuiz() {
+        var containers = document.querySelectorAll(
+            '#quiz-container, #quizContainer, #questions-container, #questionPane, #quiz, #questions, #quiz-body, #questions-wrapper, #quiz-list, #quizList, #exercise-container, #app-container .split-container'
+        );
+        for (var i = 0; i < containers.length; i++) {
+            if (containers[i].querySelectorAll('button, input, select, textarea, .question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .question, .option-btn, .opt-btn, .ans-btn').length > 0) {
+                return true;
+            }
+        }
+        if (document.querySelectorAll('.question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .option-btn, .opt-btn, .ans-btn, .choice-btn').length > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    function ensureQuizRendered() {
+        if (renderCheckDone) return;
+        renderCheckDone = true;
+        if (hasRenderedQuiz()) return;
+
+        if (!hasRenderedQuiz() && typeof buildQuiz === 'function') { try { buildQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof initQuiz === 'function') { try { initQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderApp === 'function') { try { renderApp(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuiz === 'function') { try { renderQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuestions === 'function') { try { renderQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAllQuestions === 'function') { try { renderAllQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAll === 'function') { try { renderAll(); } catch(e){} }
+    }
+
+    function unlockNow() {
+        var pwIds = [
+            'passwordModal', 'password-modal', 'pwModal', 'pw-modal', 'pw-overlay',
+            'lockModal', 'passModal', 'authModal', 'auth-modal', 'lockOverlay',
+            'start-overlay', 'intro-overlay', 'start-screen'
+        ];
+        pwIds.forEach(function(id) {
+            hideEl(document.getElementById(id), true);
+        });
+
+        var modalEls = document.querySelectorAll('.password-modal, .lock-modal, .lock-overlay, #lockOverlay, #auth-modal');
+        modalEls.forEach(function(el) {
+            if (el.id !== 'resultModal' && el.id !== 'result-modal' && el.id !== 'scoreModal') {
+                hideEl(el, true);
+            }
+        });
+
+        ['nameModal', 'name-modal', 'nameInputModal'].forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) hideEl(el, false);
+        });
+
+        var qo = document.getElementById('quiz-overlay');
+        if (qo && (typeof isStarted === 'undefined' || !isStarted)) {
+            qo.style.display = 'none';
+        }
+
+        var mainIds = [
+            'mainContent', 'main-content', 'mainHeader', 'main-header',
+            'app-container', 'app', 'quizApp', 'quiz-wrapper', 'quizContainer', 'quiz-container', 'reading-content'
+        ];
+        mainIds.forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) {
+                el.classList.remove('hidden', 'blur', 'blurred', 'locked');
+                if (el.style.display === 'none') {
+                    el.style.removeProperty('display');
+                }
+                if (window.getComputedStyle(el).display === 'none') {
+                    var hasPane = el.querySelector('.pane, .left-pane, .right-pane, .split-container, .left-panel, .right-panel');
+                    if (id === 'main-content' || id.toLowerCase().includes('header') || el.classList.contains('main-container') || hasPane) {
+                        el.style.setProperty('display', 'flex', 'important');
+                    } else {
+                        el.style.setProperty('display', 'block', 'important');
+                    }
+                }
+            }
+        });
+
+        var qs = document.getElementById('quiz-screen');
+        if (qs) {
+            qs.classList.remove('hidden');
+            if (qs.classList.contains('flex-col')) {
+                qs.classList.add('flex');
+                qs.style.display = 'flex';
+            } else {
+                qs.style.display = 'block';
+            }
+        }
+
+        if (!initDone) {
+            initDone = true;
+
+            if (document.getElementById('start-overlay') && typeof startGame === 'function') {
+                var sn = document.getElementById('student-name') || document.getElementById('studentName');
+                if (sn && !sn.value.trim()) sn.value = 'Học sinh';
+            }
+            if (document.getElementById('name-modal') && typeof startQuiz === 'function') {
+                var sn2 = document.getElementById('student-name');
+                if (sn2 && !sn2.value.trim()) sn2.value = 'Học sinh';
+            }
+
+            if (typeof startQuiz === 'function' && (typeof isStarted === 'undefined' || !isStarted)) { try { startQuiz(); } catch(e){} }
+            if (typeof startGame === 'function') { try { startGame(); } catch(e){} }
+            if (typeof startTest === 'function') { try { startTest(); } catch(e){} }
+            if (typeof startApp === 'function') { try { startApp(); } catch(e){} }
+            if (typeof buildStarfield === 'function') { try { buildStarfield(); } catch(e){} }
+            if (typeof spawnFloats === 'function') { try { spawnFloats(); } catch(e){} }
+            if (typeof spawnFloaters === 'function') { try { spawnFloaters(); } catch(e){} }
+            if (typeof createFloatingBubbles === 'function') { try { createFloatingBubbles(); } catch(e){} }
+            if (typeof initAudio === 'function') { try { initAudio(); } catch(e){} }
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', unlockNow);
+    } else {
+        unlockNow();
+    }
+    if (document.readyState === 'complete') {
+        setTimeout(ensureQuizRendered, 150);
+    } else {
+        window.addEventListener('load', function() {
+            setTimeout(unlockNow, 20);
+            setTimeout(ensureQuizRendered, 150);
+            setTimeout(unlockNow, 300);
+            setTimeout(unlockNow, 700);
+        });
+    }
+    setTimeout(unlockNow, 50);
+    setTimeout(unlockNow, 200);
+    setTimeout(unlockNow, 600);
+    setTimeout(unlockNow, 1100);
+})();
+</script>
+</body>
+</html>
