@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌸 U10 E9 · READING COMPREHENSION — Cloze | MS Chí Nên</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#7a1652;--dim:#c2185b;--clay:#ec4899;--sun:#ffd9ec;--sky:#ffb6d9;
+ --good:#2a9d8f;--bad:#e5383b;--card:#fff7fb;--pan:#fff7fb;
+ --pw:#c1121f;--pm:#ad1457;--pg:#6a4c93}
+*{box-sizing:border-box;margin:0;padding:0}
+html{overflow-x:hidden}
+body{font-family:'Baloo 2','Segoe UI',sans-serif;font-weight:700;color:var(--ink);min-height:100vh;
+ background:linear-gradient(-45deg,#ffe3f1,#ffb6d9,#ff8fc7,#f472b6,#ec4899);background-size:400% 400%;animation:bg 18s ease infinite}
+@keyframes bg{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+ background:repeating-radial-gradient(circle at 50% 130%,rgba(255,255,255,.35) 0 4px,transparent 4px 34px),
+  radial-gradient(rgba(255,255,255,.5) 3px,transparent 3.2px);
+ background-size:200px 100px,50px 50px}
+.sky{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.sky i{position:absolute;font-size:30px;opacity:.55;animation:fly linear infinite;font-style:normal;
+ filter:drop-shadow(0 4px 6px rgba(0,0,0,.15))}
+@keyframes fly{0%,100%{transform:translate(0,0) rotate(-6deg)}50%{transform:translate(14px,-28px) rotate(9deg)}}
+.sky b{display:none}
+.wrap{position:relative;z-index:2;max-width:1500px;margin:0 auto;padding:8px 14px 70px}
+/* ── thanh nhac nho ── */
+.note{position:sticky;top:0;z-index:40;margin:0 -14px 12px;padding:10px 14px;
+ background:linear-gradient(90deg,var(--clay),var(--dim));box-shadow:0 5px 20px rgba(122,22,82,.35);
+ border-bottom:3px solid var(--ink)}
+.note .in{display:flex;align-items:center;gap:10px;max-width:1470px;margin:0 auto}
+.note .tg{flex:none;background:#fff;color:var(--dim);font-weight:900;font-size:.86rem;padding:4px 14px;
+ border-radius:20px;white-space:nowrap;border:2px solid var(--ink)}
+.note .tx{flex:1;min-width:0;color:#fff;font-weight:800;font-size:1.08rem;line-height:1.55;transition:opacity .25s;
+ text-shadow:1px 1px 0 rgba(0,0,0,.2)}
+/* ── header ── */
+.hd{background:var(--pan);border:4px solid var(--ink);border-radius:22px;padding:22px 18px;text-align:center;
+ margin-bottom:14px;box-shadow:7px 7px 0 rgba(122,22,82,.3)}
+.hd h1{font-family:'Baloo 2';font-weight:800;font-size:clamp(24px,5vw,38px);line-height:1.3;
+ color:#fff;-webkit-text-stroke:1.6px var(--ink);text-shadow:3px 3px 0 var(--clay),4px 4px 0 rgba(0,0,0,.15)}
+.hd .by{display:inline-block;margin-top:12px;background:linear-gradient(135deg,var(--dim),var(--clay));color:#fff;
+ font-weight:900;font-size:1.05rem;padding:8px 20px;border-radius:20px;border:2.5px solid var(--ink)}
+.hd p{margin-top:11px;font-size:1.08rem;font-weight:800;color:var(--dim);line-height:1.8}
+.bar{display:flex;align-items:center;gap:10px;background:var(--pan);border:4px solid var(--ink);
+ border-radius:20px;padding:11px 16px;margin-bottom:14px;font-weight:900;font-size:1.12rem;color:var(--ink);
+ box-shadow:5px 5px 0 rgba(122,22,82,.25)}
+.bar .tr{flex:1;height:15px;background:#fff;border:2px solid var(--ink);border-radius:20px;overflow:hidden}
+.bar .fb{height:100%;width:0;background:linear-gradient(90deg,var(--dim),var(--sky),var(--clay));transition:width .4s}
+/* ── split: ca hai ben cuon doc lap ── */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+@media(max-width:940px){.split{grid-template-columns:1fr}}
+.pane{position:sticky;top:64px;max-height:calc(100vh - 82px);overflow-y:auto}
+@media(max-width:940px){.pane{position:static;max-height:none}.sec{position:static!important;max-height:none!important}}
+.letter{background:var(--card);color:var(--ink);border:4px solid var(--ink);border-radius:22px;overflow:hidden;
+ box-shadow:7px 7px 0 rgba(122,22,82,.28)}
+.letter .edge{height:11px;background:repeating-linear-gradient(90deg,var(--clay) 0 22px,var(--sky) 22px 44px)}
+.letter .bd{padding:17px 19px 22px}
+.stamp{float:right;width:82px;height:82px;margin:0 0 8px 12px;border-radius:20px;
+ background:linear-gradient(135deg,#fff0f7,var(--sky));border:3px solid var(--ink);display:grid;place-items:center;
+ text-align:center;font-size:28px;line-height:1.1;color:var(--dim);box-shadow:4px 4px 0 rgba(0,0,0,.15)}
+.stamp b{display:block;font-weight:800;font-size:.62rem;letter-spacing:.8px;color:var(--dim)}
+.bank{background:#fff0f7;border:3px dashed var(--clay);border-radius:16px;padding:11px 13px;margin-bottom:12px;
+ font-weight:900;font-size:1.06rem;line-height:1.9;text-align:center;color:var(--ink)}
+.bank b{color:var(--dim);letter-spacing:1px}
+.letter h2{font-family:'Baloo 2';font-weight:800;font-size:1.4rem;color:var(--dim);line-height:1.32;margin-bottom:5px}
+.letter .sub{font-size:.98rem;font-weight:900;color:var(--pw);font-style:italic;margin-bottom:13px}
+.letter p{font-size:1.18rem;font-weight:700;line-height:2.05;margin-bottom:9px}
+.letter b{color:var(--dim);font-weight:900}
+.bl{display:inline;background:var(--sky);border-bottom:4px solid var(--clay);border-radius:8px;padding:2px 11px;
+ font-weight:900;color:#7a1652}
+.bl.ok{background:#c9f7d8;border-color:var(--good);color:#0a6e45}
+.tbtn{display:inline-block;margin:3px 0 11px;background:linear-gradient(135deg,var(--dim),var(--clay));color:#fff;
+ border:2.5px solid var(--ink);border-radius:20px;padding:8px 20px;font-family:'Baloo 2';font-weight:800;font-size:.94rem;
+ cursor:pointer;box-shadow:3px 3px 0 var(--ink);transition:.14s}
+.tbtn:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--ink)}
+.tvi{display:none;background:#fff0f7;border-left:6px solid var(--dim);border-radius:0 14px 14px 0;padding:11px 14px;
+ margin-bottom:11px;font-size:1.1rem;font-weight:700;line-height:1.9;color:#6b1148}
+.tvi.on{display:block;animation:pop .3s}
+/* ── BANG TU VUNG: KE O CHUAN, KHONG LECH COT ── */
+.gl{margin-top:15px;background:var(--card);border:4px solid var(--ink);border-radius:20px;overflow:hidden;
+ box-shadow:5px 5px 0 rgba(122,22,82,.22)}
+.gl h3{font-family:'Baloo 2';font-weight:800;font-size:1.14rem;color:#fff;background:linear-gradient(90deg,var(--clay),var(--dim));
+ margin:0;padding:10px 15px}
+.gtb{width:100%;table-layout:fixed;border-collapse:collapse;font-size:1.02rem}
+.gtb col.c1{width:24%}.gtb col.c2{width:20%}.gtb col.c3{width:12%}.gtb col.c4{width:44%}
+.gtb tr{border-top:2px solid #ffd9ec}
+.gtb tr:nth-child(even){background:#fff3f9}
+.gtb td{padding:9px 11px;vertical-align:top;line-height:1.6;word-wrap:break-word;overflow-wrap:break-word}
+.gtb .gw{color:var(--pw);font-weight:900}
+.gtb .gp{color:var(--dim);font-style:italic;font-weight:600;font-size:.92rem}
+.gtb .gt{color:var(--pg);font-weight:900;text-align:center;font-size:.9rem}
+.gtb .gm{color:#0a6e45;font-weight:800}
+.p-word{color:var(--pw);font-weight:900}
+.p-phonetic{color:var(--dim);font-style:italic}
+.p-mean{color:var(--pm);font-weight:900}
+.p-grammar{color:var(--pg);font-weight:900}
+.hl-green{background:#c9f7d8;color:#0a6e45;padding:2px 9px;border-radius:6px;font-weight:900}
+.hl-red{background:#ffdde1;color:#a31832;padding:2px 9px;border-radius:6px;font-weight:900}
+/* ── cau hoi ── */
+.sec{position:sticky;top:64px;max-height:calc(100vh - 82px);overflow-y:auto;
+ background:var(--pan);border:4px solid var(--ink);border-radius:22px;padding:16px;margin-bottom:14px;
+ box-shadow:7px 7px 0 rgba(122,22,82,.25)}
+.sec>h3{font-family:'Baloo 2';font-weight:800;color:var(--dim);font-size:1.16rem;margin-bottom:11px;line-height:1.4}
+.q{background:#fff;border:3px solid var(--ink);border-left:8px solid var(--clay);
+ border-radius:16px;padding:14px 15px;margin-bottom:13px;box-shadow:4px 4px 0 rgba(122,22,82,.18)}
+.q .qt{font-weight:900;font-size:1.14rem;color:var(--ink);line-height:1.9}
+.qn{display:inline-block;background:linear-gradient(135deg,var(--clay),var(--dim));color:#fff;min-width:36px;
+ text-align:center;border-radius:8px;padding:3px 9px;margin-right:9px;font-weight:900;font-size:.96rem;
+ border:2px solid var(--ink)}
+.og{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:11px}
+@media(max-width:560px){.og{grid-template-columns:1fr}}
+.ob{background:#fff;color:var(--ink);border:2.5px solid var(--ink);border-radius:14px;padding:13px 14px;
+ font-family:'Baloo 2';font-weight:800;font-size:1.1rem;cursor:pointer;text-align:left;line-height:1.55;
+ transition:.14s;box-shadow:3px 3px 0 var(--ink)}
+.ob:hover:not(.dn){transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--ink);background:#fff3f9}
+.ob.dn{cursor:default}
+.ob.ok{background:#c9f7d8;border-color:var(--good);color:#0a6e45;box-shadow:3px 3px 0 var(--good)}
+.ob.no{background:#ffdde1;border-color:var(--bad);color:#a31832;box-shadow:3px 3px 0 var(--bad)}
+.ex{display:none;margin-top:11px;background:#fffdf7;border:3px dashed var(--ink);border-radius:16px;padding:14px;
+ font-size:1.08rem;font-weight:700;line-height:1.95}
+.ex.on{display:block;animation:pop .3s}
+@keyframes pop{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+.kb{background:#c9f7d8;border:3px solid var(--good);border-radius:14px;padding:9px 14px;font-weight:900;color:#0a6e45;margin-bottom:9px}
+.stp{background:#fff0f7;border:2.5px solid #ffd9ec;border-radius:14px;padding:11px 14px;margin-bottom:9px}
+.stp .l{display:inline-block;background:var(--ink);color:#fff;padding:3px 13px;border-radius:8px;
+ font-size:.78rem;font-weight:900;letter-spacing:.4px;margin-bottom:6px}
+.op4{background:#fff;border:2px solid #ffd9ec;border-radius:10px;padding:8px 12px;margin-bottom:6px;font-size:1.05rem;font-weight:700}
+.op4.rt{background:#c9f7d8;border-color:var(--good)}
+.op4 b{color:var(--dim)}.op4.rt b{color:#0a6e45}
+.wr{background:#fff0f2;border:2px solid #f0c0cb;border-radius:10px;padding:8px 12px;margin-bottom:6px;font-size:1.05rem;font-weight:700}
+.wr b{color:#a31832}
+.shk{animation:shk .42s}
+@keyframes shk{0%,100%{transform:translateX(0)}25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+.sbtn{display:block;width:100%;max-width:560px;margin:24px auto 0;
+ background:linear-gradient(135deg,#ff5fa8,#c2185b);background-size:200% 200%;animation:bg 6s ease infinite;
+ color:#fff;border:4px solid var(--ink);border-radius:20px;padding:18px;font-family:'Baloo 2';font-weight:800;font-size:1.24rem;
+ cursor:pointer;box-shadow:6px 6px 0 rgba(122,22,82,.35)}
+.ov{position:fixed;inset:0;background:rgba(122,22,82,.55);backdrop-filter:blur(4px);display:none;place-items:center;z-index:99;padding:16px}
+.ov.on{display:grid}
+.mb{background:var(--card);color:var(--ink);border-radius:22px;padding:24px;max-width:440px;width:100%;text-align:center;
+ border:4px solid var(--ink);box-shadow:8px 8px 0 rgba(122,22,82,.35)}
+.mb h2{font-family:'Baloo 2';font-weight:800;color:var(--dim);font-size:1.3rem;margin-bottom:11px}
+.mb input{width:100%;padding:13px;border-radius:14px;border:2.5px solid var(--ink);font-family:'Baloo 2';
+ font-weight:800;font-size:1.08rem;text-align:center;outline:none;color:var(--ink)}
+.mb .em{display:none;color:var(--bad);font-weight:900;font-size:.94rem;margin-top:8px}
+.mb .em.on{display:block}
+.mb img{width:100%;border-radius:14px;margin:11px 0}
+.mb .rs{font-family:'Baloo 2';font-weight:800;font-size:2.5rem;color:var(--clay)}
+.mb .t10{display:inline-block;margin-top:9px;background:var(--ink);color:#fff;font-weight:900;
+ padding:8px 20px;border-radius:14px;font-size:1.12rem}
+.mb .rm{font-size:1.06rem;font-weight:700;line-height:1.82;margin-top:11px;color:var(--dim)}
+.foot{text-align:center;margin-top:24px;font-size:1rem;color:#8a1a5c;font-weight:900;line-height:1.8}
+</style>
+</head>
+<body>
+<div class="sky" id="sky"></div>
+<div class="wrap">
+
+<div class="note"><div class="in">
+  <span class="tg">📮 MS NHẮN</span>
+  <span class="tx" id="msTx">🌸 Chào các con lớp 9! Hôm nay mình cùng đọc hiểu ba bài học thuật thật thú vị nhé.</span>
+</div></div>
+
+<div class="hd">
+  <h1>🌸 READING COMPREHENSION CHALLENGE<br>BIODIVERSITY · PLANET EARTH · NILE RIVER (15 CÂU)</h1>
+  <div class="by">🦋 Giáo viên tạo: MS Chí Nên &nbsp;·&nbsp; ☎️ 0852639652 để đăng ký khoá học tiếng Anh <b>từ lớp 1 đến lớp 12</b></div>
+  <p><b>15 câu</b> · A: Declining Biodiversity (5 câu) &nbsp;·&nbsp; B: Fun Facts About the Earth (5 câu) &nbsp;·&nbsp; C: The Nile River (5 câu)<br>
+  <i>Bên trái là bài đọc chia thành từng đoạn nhỏ, mỗi đoạn có nút mở bản dịch riêng.</i></p>
+</div>
+
+<div class="bar">🎟️ <span id="sc">0</span>/<span id="tt">0</span>
+  <div class="tr"><div class="fb" id="fb"></div></div><span id="md" style="font-size:1.3rem">💪</span></div>
+
+<div id="app"></div>
+
+<button class="sbtn" onclick="openName()">🎯 NỘP BÀI TÍNH ĐIỂM &amp; XEM KẾT QUẢ</button>
+<div class="foot">🌋 Made with love for World Englishes — MS Chí Nên · ☎️ 0852639652 để đăng ký khoá học từ lớp 1 đến lớp 12</div>
+</div>
+
+<div class="ov" id="ovN"><div class="mb">
+  <h2>📮 Con ghi tên lên phong bì nhé!</h2>
+  <input id="nIn" placeholder="Ví dụ: Nguyễn Văn A" autocomplete="off" maxlength="50">
+  <div class="em" id="nEm">⚠️ Con chưa nhập tên kìa! Nhập tên rồi mới xem điểm được nha.</div>
+  <button class="sbtn" style="margin-top:14px;font-size:1rem;padding:12px" onclick="showResult()">🚀 Xem kết quả</button>
+</div></div>
+
+<div class="ov" id="ovR"><div class="mb">
+  <div style="font-size:2.6rem" id="rEmo">🎉</div>
+  <h2 id="rGr"></h2>
+  <img id="rGif" alt="ket qua">
+  <div class="rs"><span id="rSc">0</span>/<span id="rTt">0</span></div>
+  <div class="t10">🎓 Quy đổi: <span id="r10">0</span>/10 điểm</div>
+  <div class="rm" id="rMs"></div>
+  <button class="sbtn" style="margin-top:14px;font-size:1rem;padding:12px" onclick="location.reload()">🔄 Làm lại</button>
+</div></div>
+
+<script>
+/* ══ nen bay ══ */
+(function(){var e=['🦋','🐦','🌸','🌺','🌷','🕊️','✨','🎓','📖','🌿'],s=document.getElementById('sky'),h='';
+ h+='<b style="left:-6%;top:6%;width:46vw;height:46vw;background:#FFB627"></b>'+'<b style="right:-8%;top:32%;width:42vw;height:42vw;background:#FF3D6E;animation-duration:23s"></b>'+'<b style="left:22%;bottom:-12%;width:48vw;height:48vw;background:#FF6B2C;animation-duration:27s"></b>';for(var i=0;i<18;i++)h+='<i style="left:'+(Math.random()*98)+'%;top:'+(Math.random()*96)+'%;animation-duration:'+(9+Math.random()*10)+'s;animation-delay:'+(Math.random()*6)+'s">'+e[i%e.length]+'</i>';
+ s.innerHTML=h})();
+
+/* ══ am thanh ══ */
+var AC=null;
+function ac(){if(!AC){try{AC=new (window.AudioContext||window.webkitAudioContext)()}catch(e){}}if(AC&&AC.state==='suspended')AC.resume();return AC}
+function ding(){var c=ac();if(!c)return;var t=c.currentTime;[880,1174.7,1567.9].forEach(function(f,i){var o=c.createOscillator(),g=c.createGain();o.type='sine';o.frequency.value=f;o.connect(g);g.connect(c.destination);var s=t+i*0.09;g.gain.setValueAtTime(0.0001,s);g.gain.exponentialRampToValueAtTime(.22,s+.02);g.gain.exponentialRampToValueAtTime(.0001,s+.34);o.start(s);o.stop(s+.36)})}
+function buzz(){var c=ac();if(!c)return;var t=c.currentTime;[[300,0],[250,.15],[200,.3]].forEach(function(p){var o=c.createOscillator(),g=c.createGain();o.type='square';o.frequency.value=p[0];o.connect(g);g.connect(c.destination);var s=t+p[1];g.gain.setValueAtTime(0.0001,s);g.gain.exponentialRampToValueAtTime(.15,s+.02);g.gain.exponentialRampToValueAtTime(.0001,s+.15);o.start(s);o.stop(s+.16)})}
+function conf(){var cs=['#F2B03C','#D63A2F','#1F5FA8','#7BE0A8','#FFE9B8'];
+ for(var i=0;i<60;i++){var d=document.createElement('div');
+  d.style.cssText='position:fixed;top:-14px;width:9px;height:14px;z-index:98;pointer-events:none;left:'+(Math.random()*100)+'vw;background:'+cs[i%5]+';opacity:.9;transition:transform 2.2s linear,opacity 2.2s';
+  document.body.appendChild(d);(function(d){requestAnimationFrame(function(){d.style.transform='translateY(102vh) rotate('+(Math.random()*720)+'deg)';d.style.opacity=0});setTimeout(function(){d.remove()},2400)})(d)}}
+function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}
+
+/* ══ helper du lieu ══ */
+var P=[];
+function pas(id,ic,ttl,sub,body,gloss,qs){P.push({id:id,ic:ic,ttl:ttl,sub:sub,body:body,gloss:gloss,qs:qs})}
+function W(w,ph,ty,vi){return '<div><span class="p-word">'+w+'</span> <span class="p-phonetic">'+ph+'</span> <span class="p-grammar">('+ty+')</span> = <span class="p-mean">'+vi+'</span></div>'}
+function OP(en,ty,vi,ok){return '<div class="op4'+(ok?' rt':'')+'"><b>'+(ok?'✔ ':'')+en+'</b> <span class="p-grammar">('+ty+')</span> ➔ <span class="p-mean">'+vi+'</span></div>'}
+function WR(o,why){return '<div class="wr"><b>✗ '+o+'</b> — '+why+'</div>'}
+function E5(key,de,ops,why,wrong,ev,evvi){
+ return '<div class="kb">✅ Đáp án: '+key+'</div>'+
+ '<div class="stp"><span class="l">BƯỚC 1 · DỊCH CẢ CÂU CHỨA CHỖ TRỐNG</span><br>'+de+'</div>'+
+ '<div class="stp"><span class="l">BƯỚC 2 · NGUYÊN VĂN, TỪ LOẠI &amp; NGHĨA CỦA TỪNG LỰA CHỌN</span>'+ops+'</div>'+
+ '<div class="stp"><span class="l">BƯỚC 3 · TẠI SAO ĐÁP ÁN NÀY ĐÚNG</span><br>'+why+'</div>'+
+ '<div class="stp"><span class="l">BƯỚC 4 · TẠI SAO CÁC PHƯƠNG ÁN KIA SAI</span>'+wrong+'</div>'+
+ '<div class="stp"><span class="l">BƯỚC 5 · BẰNG CHỨNG TRONG BÀI</span><br>🔍 <i>'+ev+'</i><br>👉 '+evvi+'</div>'}
+function Q(n,ans,opts,ex,st){return {n:n,ans:ans,opts:opts,ex:ex,st:st}}
+function T(en,vi){return en+'<button class="tbtn" onclick="tg(this)">Mở dịch đoạn này 🌟</button><div class="tvi">'+vi+'</div>'}
+function tg(b){var d=b.nextElementSibling;d.classList.toggle('on');b.textContent=d.classList.contains('on')?'Ẩn bản dịch 🙈':'Mở dịch đoạn này 🌟'}
+function B(id,n){return '<span class="bl" id="bl_'+id+'_'+n+'">('+n+') _____</span>'}
+function W(w,ph,ty,vi){return '<tr><td class="gw">'+w+'</td><td class="gp">'+ph+'</td><td class="gt">'+ty+'</td><td class="gm">'+vi+'</td></tr>'}
+
+/* ═════════ PASSAGE A — DECLINING BIODIVERSITY (5 câu) ═════════ */
+pas('A','🐼','DECLINING BIODIVERSITY','Chọn từ đúng cho mỗi chỗ trống (5 câu)',
+ '<div class="stamp">🐼<b>BIO</b></div>'+
+ T('<p>There are possibly billions of different species of plants, animals, bacteria, and other living things throughout the world – but we\'ve only documented about two million of them.</p>',
+   'Có thể có hàng tỷ loài thực vật, động vật, vi khuẩn và các sinh vật sống khác trên khắp thế giới – nhưng chúng ta mới chỉ ghi chép được khoảng hai triệu loài trong số đó.')+
+ T('<p>'+B('A',1)+' of these known and unknown species have uncertain futures though.</p>',
+   'Tuy nhiên, nhiều loài trong số những loài đã biết và chưa biết này lại có tương lai bất định.')+
+ T('<p>Climate change, pollution, poaching, and habitat '+B('A',2)+' change the number of plant and animal species '+B('A',3)+' live in a habitat, known as declining biodiversity.</p>',
+   'Biến đổi khí hậu, ô nhiễm, săn trộm và sự phá hủy môi trường sống làm thay đổi số lượng loài động thực vật sống trong một môi trường sống, hiện tượng này được gọi là sự suy giảm đa dạng sinh học.')+
+ T('<p>Due in part to declining biodiversity, almost one-third of Earth\'s animals are '+B('A',4)+' risk of extinction according to the International Union for Conservation of Nature.</p>',
+   'Một phần do sự suy giảm đa dạng sinh học, gần một phần ba số loài động vật trên Trái Đất đang có nguy cơ tuyệt chủng, theo Liên minh Bảo tồn Thiên nhiên Quốc tế.')+
+ T('<p>By preventing the decline of biodiversity, you can help keep Earth safe. Some animals such as sharks are especially important to protect.</p>',
+   'Bằng cách ngăn chặn sự suy giảm đa dạng sinh học, bạn có thể giúp giữ an toàn cho Trái Đất. Một số loài động vật như cá mập đặc biệt quan trọng cần được bảo vệ.')+
+ T('<p>Scientists call these animals '+B('A',5)+' species because they\'re the key to keeping whole ecosystems healthy. So if you save animals like sharks, you protect other critters.</p>',
+   'Các nhà khoa học gọi những loài động vật này là loài chủ chốt bởi vì chúng chính là chìa khóa để giữ cho toàn bộ hệ sinh thái luôn khỏe mạnh. Vậy nên nếu bạn cứu những loài như cá mập, bạn cũng đang bảo vệ những sinh vật khác.'),
+ W('biodiversity','/ˌbaɪəʊdaɪˈvɜːsəti/','n','đa dạng sinh học')+
+ W('document','/ˈdɒkjumənt/','v','ghi chép lại, tư liệu hóa')+
+ W('poaching','/ˈpəʊtʃɪŋ/','n','săn trộm')+
+ W('habitat','/ˈhæbɪtæt/','n','môi trường sống')+
+ W('decline','/dɪˈklaɪn/','v/n','suy giảm')+
+ W('extinction','/ɪkˈstɪŋkʃn/','n','sự tuyệt chủng')+
+ W('conservation','/ˌkɒnsəˈveɪʃn/','n','sự bảo tồn')+
+ W('ecosystem','/ˈiːkəʊsɪstəm/','n','hệ sinh thái')+
+ W('critter','/ˈkrɪtə(r)/','n','sinh vật (cách gọi thân mật)'),
+[
+Q(1,'Many',['Much','Any','Many','None'],
+ E5('Many','Nhiều trong số những loài đã biết và chưa biết này lại có tương lai bất định.',
+  OP('Much','lượng từ','nhiều (dùng cho danh từ không đếm được)',0)+
+  OP('Any','lượng từ','bất kỳ',0)+
+  OP('Many','lượng từ','nhiều (dùng cho danh từ đếm được số nhiều)',1)+
+  OP('None','đại từ','không cái nào',0),
+  'Danh từ <b>"species"</b> (loài) trong câu này là danh từ đếm được, đang ở dạng số nhiều (ý là "these species" — những loài này). Vì vậy phải dùng lượng từ đi với danh từ đếm được số nhiều là <b>"Many"</b>.',
+  WR('Much','"Much" chỉ dùng với danh từ không đếm được, trong khi "species" ở đây được dùng như danh từ đếm được số nhiều.')+
+  WR('Any','"Any" thường dùng trong câu phủ định hoặc câu hỏi, không phù hợp để bắt đầu một câu khẳng định mang tính khái quát như thế này.')+
+  WR('None','Nghĩa "không loài nào" trái ngược với ngữ cảnh: đoạn văn đang nói rằng có rất nhiều loài đang gặp nguy hiểm, chứ không phải không loài nào.'),
+  'Many of these known and unknown species have uncertain futures though.',
+  'Câu này khẳng định có rất nhiều loài (đã biết lẫn chưa biết) đang có tương lai bất định, dùng đúng lượng từ "Many".')),
+
+Q(2,'destruction',['management','conservation','quality','destruction'],
+ E5('destruction','Biến đổi khí hậu, ô nhiễm, săn trộm và sự phá hủy môi trường sống làm thay đổi số lượng loài động thực vật.',
+  OP('management','danh từ','sự quản lý',0)+
+  OP('conservation','danh từ','sự bảo tồn',0)+
+  OP('quality','danh từ','chất lượng',0)+
+  OP('destruction','danh từ','sự phá hủy',1),
+  'Đây là cụm từ cố định <b>"habitat destruction"</b> nghĩa là "sự phá hủy môi trường sống". Từ này được liệt kê cùng các tác nhân tiêu cực khác như biến đổi khí hậu, ô nhiễm, săn trộm, nên phải mang nghĩa tiêu cực.',
+  WR('management','Nghĩa "quản lý" mang sắc thái trung tính hoặc tích cực, không phù hợp khi liệt kê cùng những tác nhân gây hại như ô nhiễm, săn trộm.')+
+  WR('conservation','Nghĩa "bảo tồn" hoàn toàn trái ngược, vì đây là hành động tích cực bảo vệ môi trường sống, không phải nguyên nhân gây suy giảm đa dạng sinh học.')+
+  WR('quality','Nghĩa "chất lượng" không tạo thành cụm từ có nghĩa khi kết hợp với "habitat" trong ngữ cảnh liệt kê các nguyên nhân gây hại này.'),
+  'Climate change, pollution, poaching, and habitat destruction change the number of plant and animal species which live in a habitat, known as declining biodiversity.',
+  'Câu này liệt kê bốn nguyên nhân gây suy giảm đa dạng sinh học, trong đó nguyên nhân thứ tư là "habitat destruction" (sự phá hủy môi trường sống).')),
+
+Q(3,'which',['they','what','whose','which'],
+ E5('which','Các loài động thực vật mà sống trong một môi trường sống.',
+  OP('they','đại từ nhân xưng','chúng',0)+
+  OP('what','đại từ quan hệ','cái mà',0)+
+  OP('whose','đại từ quan hệ sở hữu','của ai, của cái gì',0)+
+  OP('which','đại từ quan hệ','mà (thay cho vật)',1),
+  'Đây là một mệnh đề quan hệ bổ nghĩa cho danh từ chỉ vật/loài đứng trước là <b>"plant and animal species"</b>. Với danh từ chỉ vật, ta dùng đại từ quan hệ <b>"which"</b> (hoặc "that").',
+  WR('they','"They" là đại từ nhân xưng làm chủ ngữ độc lập, không thể dùng để nối mệnh đề quan hệ với danh từ đứng trước nó.')+
+  WR('what','"What" không dùng trong mệnh đề quan hệ bổ nghĩa cho một danh từ cụ thể đã nêu ra trước đó; "what" chỉ mang nghĩa "cái mà" khi không có danh từ đứng trước.')+
+  WR('whose','"Whose" dùng để chỉ quan hệ sở hữu (của ai, của cái gì), không phù hợp ở đây vì câu không nói về sự sở hữu.'),
+  'habitat destruction change the number of plant and animal species which live in a habitat',
+  'Mệnh đề quan hệ "which live in a habitat" bổ nghĩa cho "plant and animal species", dùng đúng đại từ quan hệ chỉ vật là "which".')),
+
+Q(4,'at',['on','at','in','with'],
+ E5('at','Gần một phần ba số loài động vật trên Trái Đất đang có nguy cơ tuyệt chủng.',
+  OP('on','giới từ','trên',0)+
+  OP('at','giới từ','tại, ở mức',1)+
+  OP('in','giới từ','trong',0)+
+  OP('with','giới từ','với',0),
+  'Đây là cụm từ cố định (idiom) <b>"at risk of"</b> nghĩa là "có nguy cơ gặp phải điều gì đó". Cụm này phải học thuộc nguyên khối.',
+  WR('on','"on risk" không phải là cụm từ có nghĩa trong tiếng Anh.')+
+  WR('in','"in risk" không tồn tại như một cụm từ cố định mang nghĩa "có nguy cơ".')+
+  WR('with','"with risk" không tạo thành cụm từ tự nhiên với nghĩa "có nguy cơ" trong ngữ cảnh này.'),
+  'almost one-third of Earth\'s animals are at risk of extinction',
+  'Câu nêu số liệu cụ thể: gần một phần ba số loài động vật trên Trái Đất đang "at risk of extinction" (có nguy cơ tuyệt chủng).')),
+
+Q(5,'keystone',['keystone','keychain','keyhole','keyboard'],
+ E5('keystone','Các nhà khoa học gọi những loài động vật này là loài chủ chốt bởi vì chúng chính là chìa khóa để giữ cho toàn bộ hệ sinh thái luôn khỏe mạnh.',
+  OP('keystone','danh từ ghép','loài chủ chốt',1)+
+  OP('keychain','danh từ ghép','móc chìa khóa',0)+
+  OP('keyhole','danh từ ghép','lỗ khóa',0)+
+  OP('keyboard','danh từ ghép','bàn phím',0),
+  'Đây là thuật ngữ sinh học cố định <b>"keystone species"</b> nghĩa là "loài chủ chốt" — loài đóng vai trò quan trọng bậc nhất trong việc duy trì sự cân bằng của cả một hệ sinh thái.',
+  WR('keychain','Nghĩa "móc chìa khóa" là một vật dụng thông thường, không liên quan gì đến thuật ngữ sinh học về vai trò của loài trong hệ sinh thái.')+
+  WR('keyhole','Nghĩa "lỗ khóa" cũng chỉ một vật dụng, hoàn toàn không phù hợp với ngữ cảnh khoa học của câu.')+
+  WR('keyboard','Nghĩa "bàn phím" là một thiết bị điện tử, không có liên hệ nào với chủ đề bảo tồn động vật của bài đọc.'),
+  'Scientists call these animals keystone species because they\'re the key to keeping whole ecosystems healthy.',
+  'Câu giải thích trực tiếp lý do gọi tên: vì các loài này "là chìa khóa" (the key) để giữ cho hệ sinh thái khỏe mạnh, nên thuật ngữ đúng là "keystone species".'))
+]);
+
+/* ═════════ PASSAGE B — FUN FACTS ABOUT THE EARTH (5 câu) ═════════ */
+pas('B','🌍','FUN FACTS ABOUT THE EARTH','Chọn từ đúng cho mỗi chỗ trống (5 câu)',
+ '<div class="stamp">🌍<b>EARTH</b></div>'+
+ T('<p>Earth is the one place everyone on the planet calls home. Here are some fun facts about the Earth.</p>',
+   'Trái Đất là nơi duy nhất mà mọi người trên hành tinh này gọi là nhà. Dưới đây là một vài sự thật thú vị về Trái Đất.')+
+ T('<p>🔹 The Greek name for Earth was Gaia. It means "Mother Earth".</p>',
+   'Tên gọi Hy Lạp của Trái Đất là Gaia. Nó có nghĩa là "Mẹ Trái Đất".')+
+ T('<p>🔹 The Earth is not too hot or cold for '+B('B',1)+' things to survive and it is the only planet in our solar system that is known to support life.</p>',
+   'Trái Đất không quá nóng cũng không quá lạnh để các sinh vật sống có thể tồn tại, và đây là hành tinh duy nhất trong hệ mặt trời của chúng ta được biết đến là có thể duy trì sự sống.')+
+ T('<p>🔹 The Earth is home to 8.7 million different '+B('B',2)+' of plants and animals!</p>',
+   'Trái Đất là nơi sinh sống của 8,7 triệu loài thực vật và động vật khác nhau!')+
+ T('<p>🔹 The Earth looks like a ball shape or sphere, but it is not perfectly round.</p>',
+   'Trái Đất trông giống hình quả bóng hay hình cầu, nhưng nó không tròn hoàn hảo.')+
+ T('<p>🔹 The average speed of a race car is 200 miles per hour. The Earth travels around the sun at 67,000 miles per hour! Our Earth is moving '+B('B',3)+'!</p>',
+   'Tốc độ trung bình của một chiếc xe đua là 200 dặm/giờ. Trái Đất di chuyển quanh mặt trời với tốc độ 67.000 dặm/giờ! Trái Đất của chúng ta đang di chuyển rất nhanh!')+
+ T('<p>🔹 It takes the Earth 365 days to '+B('B',4)+' one entire orbit around the sun. We call this orbit a year.</p>',
+   'Trái Đất mất 365 ngày để hoàn thành một vòng quỹ đạo quanh mặt trời. Chúng ta gọi vòng quay này là một năm.')+
+ T('<p>🔹 Only 3 per cent of the Earth\'s water is fresh! The rest – 97 per cent – is salt water.</p>',
+   'Chỉ có 3 phần trăm lượng nước trên Trái Đất là nước ngọt! Phần còn lại — 97 phần trăm — là nước mặn.')+
+ T('<p>🔹 The lowest '+B('B',5)+' on Earth is the Dead Sea located between Jordan and Israel. It\'s 1,400 feet below sea level.</p>',
+   'Điểm thấp nhất trên Trái Đất là Biển Chết, nằm giữa Jordan và Israel. Nó thấp hơn mực nước biển 1.400 feet.'),
+ W('survive','/səˈvaɪv/','v','sinh tồn, sống sót')+
+ W('solar system','/ˈsəʊlə ˈsɪstəm/','n.phr','hệ mặt trời')+
+ W('support life','/səˈpɔːt laɪf/','v.phr','duy trì sự sống')+
+ W('sphere','/sfɪə(r)/','n','hình cầu')+
+ W('average','/ˈævərɪdʒ/','adj','trung bình')+
+ W('orbit','/ˈɔːbɪt/','n','quỹ đạo, vòng quay')+
+ W('located','/ləʊˈkeɪtɪd/','adj','tọa lạc, nằm ở')+
+ W('sea level','/siː ˈlevl/','n.phr','mực nước biển'),
+[
+Q(1,'living',['dead','living','precious','ocean'],
+ E5('living','Trái Đất không quá nóng cũng không quá lạnh để các sinh vật sống có thể tồn tại.',
+  OP('dead','tính từ','đã chết',0)+
+  OP('living','tính từ','đang sống',1)+
+  OP('precious','tính từ','quý giá',0)+
+  OP('ocean','danh từ','đại dương',0),
+  'Đây là cụm từ cố định <b>"living things"</b> nghĩa là "sinh vật sống". Câu đang nói về điều kiện để sự sống tồn tại, nên từ cần điền phải mang nghĩa "sống, có sự sống".',
+  WR('dead','Nghĩa "đã chết" hoàn toàn trái ngược với ý nghĩa của câu, vì câu đang nói về điều kiện để sự sống tồn tại ("to survive").')+
+  WR('precious','Nghĩa "quý giá" không tạo thành cụm từ cố định quen thuộc với "things" trong ngữ cảnh nói về sự sống trên Trái Đất.')+
+  WR('ocean','Đây là danh từ (đại dương), không thể đứng ở vị trí tính từ để bổ nghĩa cho "things".'),
+  'The Earth is not too hot or cold for living things to survive',
+  'Câu khẳng định Trái Đất có nhiệt độ phù hợp để "living things" (sinh vật sống) tồn tại.')),
+
+Q(2,'species',['things','stages','flora','species'],
+ E5('species','Trái Đất là nơi sinh sống của 8,7 triệu loài thực vật và động vật khác nhau.',
+  OP('things','danh từ','những thứ',0)+
+  OP('stages','danh từ','giai đoạn',0)+
+  OP('flora','danh từ','hệ thực vật',0)+
+  OP('species','danh từ','loài',1),
+  'Khi muốn phân loại và đếm số lượng các nhóm sinh vật khác nhau ("plants and animals"), tiếng Anh dùng thuật ngữ chuyên ngành <b>"species"</b> (loài).',
+  WR('things','Nghĩa "những thứ" quá chung chung, không phải thuật ngữ khoa học chính xác dùng để đếm số lượng loài sinh vật.')+
+  WR('stages','Nghĩa "giai đoạn" hoàn toàn không liên quan đến việc phân loại các loài thực vật và động vật.')+
+  WR('flora','"Flora" chỉ nói riêng về thực vật, trong khi câu này nói về cả thực vật và động vật ("plants and animals"), nên "flora" không bao quát đủ nghĩa.'),
+  'The Earth is home to 8.7 million different species of plants and animals!',
+  'Câu nêu số liệu cụ thể về 8,7 triệu "species" (loài) thực vật và động vật khác nhau trên Trái Đất.')),
+
+Q(3,'fast',['fast','smoothly','slow','continuously'],
+ E5('fast','Trái Đất của chúng ta đang di chuyển rất nhanh!',
+  OP('fast','trạng từ','nhanh',1)+
+  OP('smoothly','trạng từ','êm ả',0)+
+  OP('slow','tính từ','chậm (sai vị trí ngữ pháp)',0)+
+  OP('continuously','trạng từ','liên tục',0),
+  'Câu ngay trước đó so sánh tốc độ: xe đua chạy 200 dặm/giờ, còn Trái Đất di chuyển quanh mặt trời với tốc độ 67.000 dặm/giờ — nhanh hơn rất nhiều. Vậy nên từ phù hợp để diễn tả tốc độ ấn tượng này là <b>"fast"</b> (nhanh).',
+  WR('smoothly','Nghĩa "êm ả" nói về cách thức chuyển động diễn ra êm dịu hay không, không liên quan đến việc so sánh tốc độ đã nêu ở câu trước.')+
+  WR('slow','"Slow" là tính từ, còn ở đây cần trạng từ bổ nghĩa cho động từ "moving"; hơn nữa nghĩa "chậm" cũng trái ngược hoàn toàn với con số 67.000 dặm/giờ.')+
+  WR('continuously','Nghĩa "liên tục" nói về tính chất không ngừng của chuyển động, không phải về tốc độ nhanh hay chậm mà câu đang muốn nhấn mạnh.'),
+  'The Earth travels around the sun at 67,000 miles per hour! Our Earth is moving fast!',
+  'Sau khi nêu tốc độ khổng lồ 67.000 dặm/giờ, câu kết luận Trái Đất đang di chuyển "fast" (nhanh).')),
+
+Q(4,'complete',['start','see','complete','run'],
+ E5('complete','Trái Đất mất 365 ngày để hoàn thành một vòng quỹ đạo quanh mặt trời.',
+  OP('start','động từ','bắt đầu',0)+
+  OP('see','động từ','nhìn thấy',0)+
+  OP('complete','động từ','hoàn thành',1)+
+  OP('run','động từ','chạy',0),
+  'Đây là cụm từ cố định <b>"complete an orbit"</b> nghĩa là "hoàn thành một vòng quỹ đạo". Câu đang nói về khoảng thời gian để hoàn tất trọn vẹn một vòng quay, nên từ đúng là <b>"complete"</b>.',
+  WR('start','Nghĩa "bắt đầu" chỉ nói về điểm khởi đầu, trong khi câu đang nói về toàn bộ 365 ngày cần thiết để đi hết một vòng quỹ đạo trọn vẹn.')+
+  WR('see','Nghĩa "nhìn thấy" hoàn toàn không phù hợp với chủ ngữ "Trái Đất" thực hiện hành động quay quanh mặt trời.')+
+  WR('run','"Run an orbit" không phải là cụm từ cố định tự nhiên trong tiếng Anh để diễn tả việc hoàn thành một vòng quay.'),
+  'It takes the Earth 365 days to complete one entire orbit around the sun.',
+  'Câu nêu rõ cần 365 ngày để Trái Đất "complete" (hoàn thành) trọn một vòng quỹ đạo quanh mặt trời.')),
+
+Q(5,'point',['peak','point','hole','level'],
+ E5('point','Điểm thấp nhất trên Trái Đất là Biển Chết.',
+  OP('peak','danh từ','đỉnh',0)+
+  OP('point','danh từ','điểm',1)+
+  OP('hole','danh từ','cái hố',0)+
+  OP('level','danh từ','mức độ',0),
+  'Trong địa lý, cụm từ cố định để chỉ vị trí cao nhất hoặc thấp nhất của một khu vực là <b>"the highest/lowest point"</b> (điểm cao nhất/thấp nhất).',
+  WR('peak','Nghĩa "đỉnh" thường dùng để chỉ điểm cao nhất (như đỉnh núi), mâu thuẫn với tính từ "lowest" (thấp nhất) đứng ngay trước nó.')+
+  WR('hole','Nghĩa "cái hố" là một khoảng trống bị đào hoặc khoét ra, không phải thuật ngữ địa lý chỉ vị trí địa hình.')+
+  WR('level','Nghĩa "mức độ" quá chung chung và không tạo thành cụm từ địa lý cố định như cách người ta vẫn nói về vị trí thấp nhất trên Trái Đất.'),
+  'The lowest point on Earth is the Dead Sea located between Jordan and Israel.',
+  'Câu giới thiệu Biển Chết là "the lowest point on Earth" (điểm thấp nhất trên Trái Đất), đúng thuật ngữ địa lý quen thuộc.'))
+]);
+
+/* ═════════ PASSAGE C — THE NILE RIVER (5 câu) ═════════ */
+pas('C','🛶','THE NILE RIVER','Chọn từ đúng cho mỗi chỗ trống (5 câu)',
+ '<div class="stamp">🛶<b>NILE</b></div>'+
+ T('<p>The Nile River is one of the longest rivers in the world, flowing through several countries in Africa. It is a vital source of life for the people and wildlife in the region.</p>',
+   'Sông Nile là một trong những con sông dài nhất thế giới, chảy qua nhiều quốc gia ở châu Phi. Đây là nguồn sống thiết yếu cho con người và động vật hoang dã trong khu vực.')+
+ T('<p>The Nile River, which spans over 6,600 kilometres, '+B('C',1)+' water for drinking, irrigation, and agriculture. Many communities along its banks rely on the '+B('C',2)+' for their livelihoods.</p>',
+   'Sông Nile, trải dài hơn 6.600 km, cung cấp nước để uống, tưới tiêu và canh tác nông nghiệp. Nhiều cộng đồng dân cư dọc theo hai bờ sông dựa vào dòng sông này để mưu sinh.')+
+ T('<p>The Nile also supports a diverse ecosystem, with various '+B('C',3)+' of fish, birds, and mammals.</p>',
+   'Sông Nile cũng nuôi dưỡng một hệ sinh thái đa dạng, với nhiều loài cá, chim và động vật có vú khác nhau.')+
+ T('<p>It is a popular tourist destination, attracting visitors who enjoy boat cruises and '+B('C',4)+' its historical sites.</p>',
+   'Đây là một điểm đến du lịch nổi tiếng, thu hút du khách thích đi du thuyền và khám phá các di tích lịch sử của nó.')+
+ T('<p>The river played a significant role in ancient civilisations, such as the Egyptian civilisation, where it was worshipped as a divine entity.</p>',
+   'Dòng sông này đã đóng một vai trò quan trọng trong các nền văn minh cổ đại, chẳng hạn như nền văn minh Ai Cập, nơi nó được tôn thờ như một thực thể thần thánh.')+
+ T('<p>Today, efforts are being made to '+B('C',5)+' the Nile\'s ecosystem and ensure its sustainable use for future generations. The Nile River is truly a remarkable natural wonder, showcasing the beauty and importance of our planet\'s water resources.</p>',
+   'Ngày nay, những nỗ lực đang được thực hiện để bảo vệ hệ sinh thái của sông Nile và đảm bảo việc sử dụng bền vững cho các thế hệ tương lai. Sông Nile thực sự là một kỳ quan thiên nhiên đáng kinh ngạc, thể hiện vẻ đẹp và tầm quan trọng của nguồn tài nguyên nước trên hành tinh của chúng ta.'),
+ W('vital','/ˈvaɪtl/','adj','thiết yếu, quan trọng sống còn')+
+ W('irrigation','/ˌɪrɪˈɡeɪʃn/','n','sự thủy lợi, tưới tiêu')+
+ W('agriculture','/ˈæɡrɪkʌltʃə(r)/','n','nông nghiệp')+
+ W('livelihood','/ˈlaɪvlihʊd/','n','sinh kế (kế sinh nhai)')+
+ W('diverse','/daɪˈvɜːs/','adj','đa dạng')+
+ W('mammal','/ˈmæml/','n','động vật có vú')+
+ W('civilisation','/ˌsɪvəlaɪˈzeɪʃn/','n','nền văn minh')+
+ W('divine entity','/dɪˈvaɪn ˈentəti/','n.phr','thực thể thần thánh')+
+ W('sustainable','/səˈsteɪnəbl/','adj','bền vững'),
+[
+Q(1,'provides',['provides','sells','produces','buys'],
+ E5('provides','Sông Nile, trải dài hơn 6.600 km, cung cấp nước để uống, tưới tiêu và canh tác nông nghiệp.',
+  OP('provides','động từ','cung cấp',1)+
+  OP('sells','động từ','bán',0)+
+  OP('produces','động từ','sản xuất ra',0)+
+  OP('buys','động từ','mua',0),
+  'Một dòng sông tự nhiên mang lại nguồn nước cho con người sử dụng, hành động đúng để diễn tả việc này là <b>"provides"</b> (cung cấp).',
+  WR('sells','Nghĩa "bán" chỉ dùng cho hoạt động thương mại có sự trao đổi tiền bạc, một dòng sông không thể "bán" nước.')+
+  WR('produces','Nghĩa "sản xuất ra" thường dùng cho nhà máy hay quy trình công nghiệp tạo ra sản phẩm, không tự nhiên khi nói về nước sông vốn có sẵn.')+
+  WR('buys','Nghĩa "mua" cũng là hoạt động thương mại, hoàn toàn không phù hợp với chủ ngữ là một dòng sông.'),
+  'The Nile River, which spans over 6,600 kilometres, provides water for drinking, irrigation, and agriculture.',
+  'Câu miêu tả vai trò của sông Nile là "provides" (cung cấp) nước cho các mục đích sinh hoạt và nông nghiệp.')),
+
+Q(2,'river',['sea','river','mountain','lake'],
+ E5('river','Nhiều cộng đồng dân cư dọc theo hai bờ sông dựa vào dòng sông này để mưu sinh.',
+  OP('sea','danh từ','biển',0)+
+  OP('river','danh từ','sông',1)+
+  OP('mountain','danh từ','núi',0)+
+  OP('lake','danh từ','hồ',0),
+  'Cả đoạn văn đang nói về <b>"The Nile River"</b> (Sông Nile), nên danh từ nhắc lại ở câu sau phải tham chiếu đúng tới chính dòng sông ấy, tức là <b>"the river"</b>.',
+  WR('sea','Nghĩa "biển" không chính xác vì chủ thể của cả bài là một dòng sông, không phải biển.')+
+  WR('mountain','Nghĩa "núi" hoàn toàn không liên quan đến chủ đề nguồn nước và sinh kế mà câu đang nhắc tới.')+
+  WR('lake','Nghĩa "hồ" cũng sai vì bài đọc đang nói cụ thể về sông Nile, một dòng sông chứ không phải một cái hồ.'),
+  'Many communities along its banks rely on the river for their livelihoods.',
+  'Câu nhắc lại "the river" để chỉ chính sông Nile đã được giới thiệu ở câu trước, làm nguồn sinh kế cho các cộng đồng ven sông.')),
+
+Q(3,'species',['animals','trees','species','plants'],
+ E5('species','Sông Nile cũng nuôi dưỡng một hệ sinh thái đa dạng, với nhiều loài cá, chim và động vật có vú khác nhau.',
+  OP('animals','danh từ','động vật',0)+
+  OP('trees','danh từ','cây cối',0)+
+  OP('species','danh từ','loài',1)+
+  OP('plants','danh từ','thực vật',0),
+  'Đây là cấu trúc quen thuộc <b>"species of fish/birds/mammals"</b> (các loài cá/chim/động vật có vú). Từ "species" phù hợp để đi cùng giới từ "of" và liệt kê nhiều nhóm sinh vật khác nhau.',
+  WR('animals','Cụm "animals of fish, birds, and mammals" nghe không tự nhiên và sai logic, vì "fish, birds, mammals" bản thân đã là các loại động vật rồi.')+
+  WR('trees','Nghĩa "cây cối" không phù hợp vì đi kèm là "fish, birds, and mammals" — toàn các loài động vật, không phải thực vật.')+
+  WR('plants','Tương tự "trees", nghĩa "thực vật" hoàn toàn không khớp với danh sách "fish, birds, and mammals" phía sau.'),
+  'The Nile also supports a diverse ecosystem, with various species of fish, birds, and mammals.',
+  'Cụm "various species of fish, birds, and mammals" liệt kê nhiều loài cá, chim, động vật có vú khác nhau, đúng cấu trúc "species of".')),
+
+Q(4,'exploring',['exchanging','exporting','explaining','exploring'],
+ E5('exploring','Đây là một điểm đến du lịch nổi tiếng, thu hút du khách thích đi du thuyền và khám phá các di tích lịch sử của nó.',
+  OP('exchanging','danh động từ','trao đổi',0)+
+  OP('exporting','danh động từ','xuất khẩu',0)+
+  OP('explaining','danh động từ','giải thích',0)+
+  OP('exploring','danh động từ','khám phá',1),
+  'Sau liên từ "and", động từ phải ở cùng dạng V-ing như động từ "enjoy" (đúng hơn là song song với danh động từ "cruises" đi cùng "enjoy"). Về nghĩa, hành động phù hợp nhất mà du khách làm với các di tích lịch sử là <b>"khám phá, tham quan"</b> (exploring).',
+  WR('exchanging','Nghĩa "trao đổi" không phải là hoạt động khách du lịch thường làm với các di tích lịch sử.')+
+  WR('exporting','Nghĩa "xuất khẩu" là thuật ngữ thương mại, hoàn toàn không liên quan đến việc tham quan di tích.')+
+  WR('explaining','Nghĩa "giải thích" thường là việc của hướng dẫn viên chứ không phải hành động chính của khách du lịch khi tham quan.'),
+  'It is a popular tourist destination, attracting visitors who enjoy boat cruises and exploring its historical sites.',
+  'Câu liệt kê hai hoạt động du khách yêu thích: đi du thuyền (boat cruises) và "exploring" (khám phá) các di tích lịch sử.')),
+
+Q(5,'protect',['protect','create','change','provide'],
+ E5('protect','Ngày nay, những nỗ lực đang được thực hiện để bảo vệ hệ sinh thái của sông Nile.',
+  OP('protect','động từ','bảo vệ',1)+
+  OP('create','động từ','tạo ra',0)+
+  OP('change','động từ','thay đổi',0)+
+  OP('provide','động từ','cung cấp',0),
+  'Cả câu nói về việc đảm bảo sử dụng bền vững hệ sinh thái sông Nile cho các thế hệ tương lai ("ensure its sustainable use for future generations"), nên hành động cần làm với hệ sinh thái phải là <b>"bảo vệ"</b> (protect) nó.',
+  WR('create','Nghĩa "tạo ra" không hợp lý vì hệ sinh thái sông Nile đã tồn tại từ lâu, không cần phải "tạo ra" nó.')+
+  WR('change','Nghĩa "thay đổi" mâu thuẫn với mục tiêu "đảm bảo sử dụng bền vững" được nêu ngay sau đó trong câu.')+
+  WR('provide','Nghĩa "cung cấp" không đi cùng tân ngữ "ecosystem" (hệ sinh thái) một cách tự nhiên trong ngữ cảnh nói về bảo tồn.'),
+  'Today, efforts are being made to protect the Nile\'s ecosystem and ensure its sustainable use for future generations.',
+  'Câu nêu rõ mục tiêu của các nỗ lực hiện tại là "protect" (bảo vệ) hệ sinh thái sông Nile để dùng bền vững cho tương lai.'))
+]);
+
+/* ══ DUNG TRANG ══ */
+/* ══ DUNG TRANG ══ */
+/* ══ DUNG TRANG ══ */
+var TOTAL=0;P.forEach(function(p){TOTAL+=p.qs.length});
+var answered=0,score=0,done={},MAP={};
+var app=document.getElementById('app');
+P.forEach(function(p,pi){
+ var d=document.createElement('div');d.className='split';
+ var qh='';
+ p.qs.forEach(function(q,qi){
+  var gid=p.id+'_'+q.n;
+  var so=shuffle(q.opts);
+  qh+='<div class="q" id="c_'+gid+'"><div class="qt"><span class="qn">'+q.n+'</span>'+(q.st||'Chọn từ đúng cho chỗ trống ('+q.n+')')+'</div>'+
+   '<div class="og" id="o_'+gid+'">'+so.map(function(o,i){
+     return '<button class="ob" onclick="pick(\''+gid+'\','+pi+','+qi+','+i+')">'+o+'</button>'}).join('')+'</div>'+
+   '<div class="ex" id="e_'+gid+'">'+q.ex+'</div></div>';
+  MAP[gid]=so;
+ });
+ d.innerHTML='<div class="pane"><div class="letter"><div class="edge"></div><div class="bd">'+
+   '<h2>'+p.ic+' '+p.ttl+'</h2><div class="sub">'+p.sub+'</div>'+p.body+
+   '<div class="gl"><h3>📖 BẢNG TỪ VỰNG CẦN NHỚ</h3><table class="gtb"><colgroup><col class="c1"><col class="c2"><col class="c3"><col class="c4"></colgroup>'+p.gloss+'</table></div></div></div></div>'+
+   '<div><div class="sec"><h3>'+p.ic+' '+p.sub+'</h3>'+qh+'</div></div>';
+ app.appendChild(d);
+});
+document.getElementById('tt').textContent=TOTAL;
+
+function pick(gid,pi,qi,i){
+ if(done[gid])return;done[gid]=true;answered++;
+ var q=P[pi].qs[qi],so=MAP[gid],bs=document.getElementById('o_'+gid).children;
+ var ok=so[i]===q.ans;
+ for(var k=0;k<bs.length;k++){bs[k].classList.add('dn');
+  if(so[k]===q.ans)bs[k].classList.add('ok');else if(k===i)bs[k].classList.add('no')}
+ var bl=document.getElementById('bl_'+gid);
+ if(bl){bl.textContent=q.ans==='no article'?'( '+q.n+' ) ∅':'('+q.n+') '+q.ans;bl.classList.add('ok')}
+ document.getElementById('e_'+gid).classList.add('on');
+ if(ok){score++;ding();conf()}
+ else{buzz();var c=document.getElementById('c_'+gid);c.classList.add('shk');setTimeout(function(){c.classList.remove('shk')},430)}
+ bump();
+}
+function bump(){document.getElementById('sc').textContent=score;
+ document.getElementById('fb').style.width=(answered/TOTAL*100)+'%';
+ var p=answered?score/answered:1;
+ document.getElementById('md').textContent=p>=.9?'🤩':p>=.7?'😃':p>=.5?'🙂':'💪'}
+
+/* ══ nop bai ══ */
+function openName(){document.getElementById('ovN').classList.add('on');setTimeout(function(){document.getElementById('nIn').focus()},150)}
+document.getElementById('nIn').addEventListener('keydown',function(e){if(e.key==='Enter')showResult()});
+function showResult(){
+ var i=document.getElementById('nIn'),n=i.value.trim();
+ if(!n){document.getElementById('nEm').classList.add('on');i.focus();return}
+ document.getElementById('nEm').classList.remove('on');
+ document.getElementById('ovN').classList.remove('on');
+ var pct=score/TOTAL,ten=(pct*10).toFixed(2),e,g,m,gif;
+ if(score===TOTAL){e='🏆';g='🌟 XUẤT SẮC TUYỆT ĐỐI, '+n+'!';m='Con đúng trọn vẹn cả '+TOTAL+' câu. Ms rất tự hào về con!';gif='https://media.giphy.com/media/g9582DNuQppxC/giphy.gif'}
+ else if(pct>=.8){e='🎉';g='👏 GIỎI LẮM, '+n+'!';m='Con nắm bài rất chắc. Đọc lại vài câu sai để lần sau trọn điểm nhé!';gif='https://media.giphy.com/media/11sBLVxNs7v6WA/giphy.gif'}
+ else if(pct>=.6){e='🙌';g='💪 KHÁ RỒI ĐẤY, '+n+'!';m='Con đã qua ngưỡng an toàn. Mở phần giải thích từng bước ra đọc, con sẽ lên nhanh lắm.';gif='https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif'}
+ else{e='🤗';g='🌱 CỐ LÊN NHÉ, '+n+'!';m='Đừng buồn con. Con hãy đọc kỹ lời giải, chép cấu trúc vào vở rồi làm lại — Ms tin con sẽ khác hẳn.';gif='https://media.giphy.com/media/l4pTsNgkyKQPzsxRm/giphy.gif'}
+ document.getElementById('rEmo').textContent=e;
+ document.getElementById('rGr').textContent=g;
+ document.getElementById('rMs').textContent=m+' ☎️ Đăng ký khoá học cùng MS Chí Nên: 0852639652.';
+ document.getElementById('rGif').src=gif;
+ document.getElementById('rSc').textContent=score;
+ document.getElementById('rTt').textContent=TOTAL;
+ document.getElementById('r10').textContent=ten;
+ document.getElementById('ovR').classList.add('on');
+ if(pct>=.6){conf();ding()}
+}
+
+/* ══ loi nhac cua Ms — tu doi 4.2 giay ══ */
+var MSNH=[
+ '🌸 Ba bài đọc hôm nay đều là những bài học thuật thật hay — về đa dạng sinh học, về Trái Đất và về sông Nile. Cô mong con đọc thật kỹ trước khi chọn đáp án.',
+ '🦋 Bên trái là bài đọc, bên phải là câu hỏi tương ứng. Con hãy đọc trọn cả đoạn văn rồi mới quyết định, đừng vội nhìn mỗi chỗ trống mà đoán.',
+ '🌷 Mỗi đoạn văn cô đều để sẵn nút mở bản dịch. Con hãy tự dịch trong đầu trước, rồi mới bấm ra xem, như vậy phản xạ đọc hiểu của con mới lớn lên thật sự.',
+ '🕊 Sai không sao cả con nhé. Cái quý nhất không phải là điểm số, mà là con biết được chính xác mình đang hổng chỗ nào để bù đắp.',
+ '📖 Phần giải thích 5 bước cô viết rất chi tiết — kể cả câu con làm đúng cũng nên mở ra đọc lại, để chắc chắn con đúng vì hiểu chứ không phải vì may mắn.',
+ '🌿 Bảng từ vựng học thuật ở cuối mỗi bài rất quan trọng cho các kỳ thi sau này. Con hãy dành thời gian đọc to và ghi vào vở riêng của mình.',
+ '🐦 Ba chủ đề hôm nay — sinh học, địa lý, môi trường — đều là những chủ đề hay gặp trong các bài đọc hiểu nâng cao. Nắm chắc từ vựng ở đây sẽ giúp con rất nhiều.',
+ '💌 Nếu có câu nào con phân vân giữa hai đáp án, hãy đọc kỹ lại đúng câu chứa chỗ trống đó — thường thì chỉ một chi tiết nhỏ sẽ quyết định đáp án đúng.',
+ '🌼 Con đang học rất chăm chỉ đấy. Cô rất vui vì có những học trò chịu khó ngồi làm hết một bài đọc dài như thế này.',
+ '✨ Làm xong đừng vội đóng máy nhé — hãy dành thêm năm phút đọc lại toàn bộ ba bài đọc một lần nữa, con sẽ nhớ từ vựng lâu hơn rất nhiều.'
+];
+(function(){var e=document.getElementById('msTx'),k=0;e.innerHTML=MSNH[0];
+ setInterval(function(){k=(k+1)%MSNH.length;e.style.opacity=0;
+  setTimeout(function(){e.innerHTML=MSNH[k];e.style.opacity=1},250)},4200)})();
+</script>
+<script>/*devclean*/(function(){
+var ZW=/[\u00AD\u034F\u061C\u115F\u1160\u17B4\u17B5\u180E\u200B-\u200F\u202A-\u202E\u2060-\u206F\uFEFF]/g,
+    SP=/[\u00A0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\t]/g,
+    AP=/[\u2018\u2019\u201A\u201B\u2032\u2035\u02B9\u02BB\u02BC\u02BD\u02C8\u0060\u00B4\uFF07]/g,
+    DQ=/[\u201C\u201D\u201E\u201F\u2033\u2036\u00AB\u00BB\uFF02]/g,
+    DS=/[\u2010\u2011\u2012\u2212\uFE63\uFF0D]/g;
+function clean(v){if(!v)return v;var s=String(v);try{s=s.normalize('NFKC')}catch(e){}
+  return s.replace(ZW,'').replace(SP,' ').replace(AP,"'").replace(DQ,'"').replace(DS,'-').replace(/[\u0300-\u036f]/g,'').replace(/ {2,}/g,' ');}
+window.__devclean=clean;
+function fix(skip){var L=document.querySelectorAll('input:not([type]),input[type=text],input[type=search],textarea');
+  for(var i=0;i<L.length;i++){var el=L[i];if(el===skip||el.readOnly||el.disabled)continue;var v=el.value,c=clean(v);if(c!==v)el.value=c;}}
+['pointerdown','mousedown','touchstart','click','change','focusout'].forEach(function(t){document.addEventListener(t,function(e){fix(t==='focusout'||t==='change'?null:e.target)},true)});
+document.addEventListener('keydown',function(e){if(e.key==='Enter'||e.keyCode===13)fix(null)},true);
+})();</script>
+<style id="ms-chi-nen-unlock-style">
+#passwordModal, #password-modal, #pwModal, #pw-modal, #pw-overlay,
+#lockModal, #passModal, #authModal, #auth-modal, #lockOverlay,
+#start-overlay, #intro-overlay, #start-screen,
+.password-modal, .lock-modal, .lock-overlay {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    z-index: -9999 !important;
+}
+</style>
+<script>
+// Remove password lock completely - direct quiz access
+(function() {
+    var initDone = false;
+    var renderCheckDone = false;
+
+    function hideEl(el, hard) {
+        if (!el) return;
+        if (hard) {
+            el.style.setProperty('display', 'none', 'important');
+            el.style.setProperty('visibility', 'hidden', 'important');
+            el.style.setProperty('opacity', '0', 'important');
+            el.style.setProperty('pointer-events', 'none', 'important');
+            el.style.setProperty('z-index', '-9999', 'important');
+        } else {
+            el.style.display = 'none';
+        }
+        el.classList.remove('active', 'show', 'open', 'visible', 'flex');
+    }
+
+    function hasRenderedQuiz() {
+        var containers = document.querySelectorAll(
+            '#quiz-container, #quizContainer, #questions-container, #questionPane, #quiz, #questions, #quiz-body, #questions-wrapper, #quiz-list, #quizList, #exercise-container, #app-container .split-container'
+        );
+        for (var i = 0; i < containers.length; i++) {
+            if (containers[i].querySelectorAll('button, input, select, textarea, .question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .question, .option-btn, .opt-btn, .ans-btn').length > 0) {
+                return true;
+            }
+        }
+        if (document.querySelectorAll('.question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .option-btn, .opt-btn, .ans-btn, .choice-btn').length > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    function ensureQuizRendered() {
+        if (renderCheckDone) return;
+        renderCheckDone = true;
+        if (hasRenderedQuiz()) return;
+
+        if (!hasRenderedQuiz() && typeof buildQuiz === 'function') { try { buildQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof initQuiz === 'function') { try { initQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderApp === 'function') { try { renderApp(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuiz === 'function') { try { renderQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuestions === 'function') { try { renderQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAllQuestions === 'function') { try { renderAllQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAll === 'function') { try { renderAll(); } catch(e){} }
+    }
+
+    function unlockNow() {
+        var pwIds = [
+            'passwordModal', 'password-modal', 'pwModal', 'pw-modal', 'pw-overlay',
+            'lockModal', 'passModal', 'authModal', 'auth-modal', 'lockOverlay',
+            'start-overlay', 'intro-overlay', 'start-screen'
+        ];
+        pwIds.forEach(function(id) {
+            hideEl(document.getElementById(id), true);
+        });
+
+        var modalEls = document.querySelectorAll('.password-modal, .lock-modal, .lock-overlay, #lockOverlay, #auth-modal');
+        modalEls.forEach(function(el) {
+            if (el.id !== 'resultModal' && el.id !== 'result-modal' && el.id !== 'scoreModal') {
+                hideEl(el, true);
+            }
+        });
+
+        ['nameModal', 'name-modal', 'nameInputModal'].forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) hideEl(el, false);
+        });
+
+        var qo = document.getElementById('quiz-overlay');
+        if (qo && (typeof isStarted === 'undefined' || !isStarted)) {
+            qo.style.display = 'none';
+        }
+
+        var mainIds = [
+            'mainContent', 'main-content', 'mainHeader', 'main-header',
+            'app-container', 'app', 'quizApp', 'quiz-wrapper', 'quizContainer', 'quiz-container', 'reading-content'
+        ];
+        mainIds.forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) {
+                el.classList.remove('hidden', 'blur', 'blurred', 'locked');
+                if (el.style.display === 'none') {
+                    el.style.removeProperty('display');
+                }
+                if (window.getComputedStyle(el).display === 'none') {
+                    var hasPane = el.querySelector('.pane, .left-pane, .right-pane, .split-container, .left-panel, .right-panel');
+                    if (id === 'main-content' || id.toLowerCase().includes('header') || el.classList.contains('main-container') || hasPane) {
+                        el.style.setProperty('display', 'flex', 'important');
+                    } else {
+                        el.style.setProperty('display', 'block', 'important');
+                    }
+                }
+            }
+        });
+
+        var qs = document.getElementById('quiz-screen');
+        if (qs) {
+            qs.classList.remove('hidden');
+            if (qs.classList.contains('flex-col')) {
+                qs.classList.add('flex');
+                qs.style.display = 'flex';
+            } else {
+                qs.style.display = 'block';
+            }
+        }
+
+        if (!initDone) {
+            initDone = true;
+
+            if (document.getElementById('start-overlay') && typeof startGame === 'function') {
+                var sn = document.getElementById('student-name') || document.getElementById('studentName');
+                if (sn && !sn.value.trim()) sn.value = 'Học sinh';
+            }
+            if (document.getElementById('name-modal') && typeof startQuiz === 'function') {
+                var sn2 = document.getElementById('student-name');
+                if (sn2 && !sn2.value.trim()) sn2.value = 'Học sinh';
+            }
+
+            if (typeof startQuiz === 'function' && (typeof isStarted === 'undefined' || !isStarted)) { try { startQuiz(); } catch(e){} }
+            if (typeof startGame === 'function') { try { startGame(); } catch(e){} }
+            if (typeof startTest === 'function') { try { startTest(); } catch(e){} }
+            if (typeof startApp === 'function') { try { startApp(); } catch(e){} }
+            if (typeof buildStarfield === 'function') { try { buildStarfield(); } catch(e){} }
+            if (typeof spawnFloats === 'function') { try { spawnFloats(); } catch(e){} }
+            if (typeof spawnFloaters === 'function') { try { spawnFloaters(); } catch(e){} }
+            if (typeof createFloatingBubbles === 'function') { try { createFloatingBubbles(); } catch(e){} }
+            if (typeof initAudio === 'function') { try { initAudio(); } catch(e){} }
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', unlockNow);
+    } else {
+        unlockNow();
+    }
+    if (document.readyState === 'complete') {
+        setTimeout(ensureQuizRendered, 150);
+    } else {
+        window.addEventListener('load', function() {
+            setTimeout(unlockNow, 20);
+            setTimeout(ensureQuizRendered, 150);
+            setTimeout(unlockNow, 300);
+            setTimeout(unlockNow, 700);
+        });
+    }
+    setTimeout(unlockNow, 50);
+    setTimeout(unlockNow, 200);
+    setTimeout(unlockNow, 600);
+    setTimeout(unlockNow, 1100);
+})();
+</script>
+</body>
+</html>

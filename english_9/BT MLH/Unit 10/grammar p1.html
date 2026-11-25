@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎨 E9 UNIT 10 · B.VI · VII · VIII — 34 câu | MS Chí Nên</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FFF4E3;--ink:#1E1633;--pk:#FF4D9D;--yl:#FFC93C;--cy:#25D0E0;--gr:#3ED17B;--vi:#8A5CFF;
+ --or:#FF7A3D;--bad:#E63950;--dim:#6B5F80}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito',sans-serif;color:var(--ink);background:var(--cream);font-size:18px;overflow-x:hidden}
+.fk{font-family:'Fredoka',sans-serif}
+.bg{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.terr{position:absolute;inset:0;opacity:.5;
+ background-image:radial-gradient(var(--pk) 3px,transparent 3.5px),radial-gradient(var(--cy) 3px,transparent 3.5px),
+  radial-gradient(var(--yl) 4px,transparent 4.5px),radial-gradient(var(--gr) 2.5px,transparent 3px);
+ background-size:190px 190px,240px 240px,300px 300px,150px 150px;
+ background-position:0 0,70px 110px,140px 40px,40px 160px;animation:tm 40s linear infinite}
+@keyframes tm{to{background-position:190px 190px,260px 300px,440px 340px,190px 350px}}
+.wash{position:absolute;inset:-25%;filter:blur(95px);opacity:.4;
+ background:radial-gradient(26% 20% at 14% 14%,rgba(255,77,157,.7),transparent 68%),
+  radial-gradient(26% 20% at 86% 16%,rgba(37,208,224,.65),transparent 68%),
+  radial-gradient(24% 18% at 80% 84%,rgba(255,201,60,.6),transparent 68%),
+  radial-gradient(24% 18% at 18% 86%,rgba(138,92,255,.55),transparent 68%);
+ animation:wm 30s ease-in-out infinite alternate}
+@keyframes wm{to{transform:translate3d(3%,3%,0) scale(1.16)}}
+.zig{position:absolute;left:-10%;right:-10%;height:26px;opacity:.28;
+ background:repeating-linear-gradient(135deg,var(--vi) 0 8px,transparent 8px 18px);animation:zm 9s linear infinite}
+.zig.a{top:22vh}.zig.b{top:64vh;background:repeating-linear-gradient(45deg,var(--or) 0 8px,transparent 8px 18px);animation-duration:13s}
+@keyframes zm{to{transform:translateX(36px)}}
+.shp i{position:absolute;font-style:normal;font-size:26px;opacity:.5;animation:fly linear infinite}
+@keyframes fly{0%{transform:translate3d(-14vw,0,0) rotate(0)}100%{transform:translate3d(114vw,-5vh,0) rotate(300deg)}}
+.wrap{position:relative;z-index:2;max-width:940px;margin:0 auto;padding:16px 14px 88px}
+.bx{background:#fff;border:4px solid var(--ink);border-radius:20px}
+.hdr{padding:22px 20px 18px;text-align:center;box-shadow:10px 10px 0 var(--pk);transform:rotate(-.5deg)}
+.hdr h1{font-family:'Fredoka';font-size:clamp(19px,4.4vw,30px);line-height:1.25;color:var(--vi)}
+.hdr h1 em{font-style:normal;color:var(--pk)}
+.hdr .tag{display:inline-block;margin-top:11px;font-family:'Fredoka';font-size:1.04rem;color:#fff;
+ background:var(--ink);padding:4px 18px;border-radius:999px;transform:rotate(1deg)}
+.hdr p{font-size:1rem;font-weight:700;margin-top:12px;line-height:1.9;color:#3E3352}
+.hdr b{background:var(--yl);border:2px solid var(--ink);border-radius:6px;padding:0 6px}
+.thy{margin:16px 0;padding:15px 18px;box-shadow:9px 9px 0 var(--vi)}
+.thy h3{font-family:'Fredoka';font-size:1.14rem;color:var(--vi);margin-bottom:8px}
+.thy p{font-size:.99rem;font-weight:700;line-height:1.85;margin-top:6px;color:#3E3352}
+.thy b{color:var(--pk)}.thy .ok{color:#0E7F43;font-weight:900}.thy .no{color:var(--bad);font-weight:900}
+.sb{position:sticky;top:8px;z-index:9;display:flex;align-items:center;gap:11px;margin:18px 0 10px;padding:9px 17px;
+ background:#fff;border:4px solid var(--ink);border-radius:999px;box-shadow:6px 6px 0 var(--cy)}
+.sb b{font-family:'Fredoka';font-size:1.24rem;color:var(--pk)}
+.tr{flex:1;height:15px;background:#F1E7DA;border:3px solid var(--ink);border-radius:999px;overflow:hidden}
+.fl{height:100%;width:0;transition:width .45s;
+ background:repeating-linear-gradient(45deg,var(--gr) 0 10px,var(--cy) 10px 20px)}
+.rmb{position:sticky;top:64px;z-index:8;display:flex;align-items:center;gap:11px;margin-bottom:20px;padding:13px 18px;
+ font-weight:800;font-size:1.04rem;line-height:1.75;border:4px solid var(--ink);border-radius:16px;
+ background:linear-gradient(120deg,#FFF0B8,#FFD5E8,#C9F7EE,#E4D8FF,#FFF0B8);background-size:320% 100%;
+ animation:rg 8s ease-in-out infinite;box-shadow:8px 8px 0 var(--vi)}
+@keyframes rg{50%{background-position:100% 50%}}
+.rmb:before{content:'MS NHẮN';flex:0 0 auto;font-family:'Fredoka';font-size:.9rem;background:var(--pk);color:#fff;
+ padding:3px 13px;border:2px solid var(--ink);border-radius:999px;transform:rotate(-3deg)}
+.rmb .ic{font-size:1.4rem;animation:bt 1.5s ease-in-out infinite}
+@keyframes bt{50%{transform:scale(1.3)}}
+.rmb b{color:#B3005C;background:#fff;border-radius:5px;padding:0 4px}
+#rmt{animation:fi .5s ease}
+@keyframes fi{from{opacity:0;transform:translateY(5px)}}
+@media(max-width:640px){.rmb{font-size:.95rem;padding:11px 13px}.rmb:before{display:none}}
+.sec{padding:19px 16px 16px;margin-bottom:28px}
+.sec.s1{box-shadow:9px 9px 0 var(--cy)}.sec.s2{box-shadow:9px 9px 0 var(--yl)}
+.sec.s3{box-shadow:9px 9px 0 var(--gr)}
+.st{display:flex;flex-wrap:wrap;align-items:center;gap:11px;margin-bottom:8px}
+.pill{font-family:'Fredoka';font-size:1.22rem;color:#fff;border:3px solid var(--ink);border-radius:8px;
+ padding:2px 15px;transform:rotate(-2deg)}
+.st h2{font-family:'Fredoka';font-size:1.32rem}
+.si{font-size:1.02rem;font-weight:700;line-height:1.92;margin-bottom:14px;background:#FFFBF0;
+ border:3px dashed var(--ink);border-radius:12px;padding:11px 14px;color:#3E3352}
+.si b{color:var(--pk)}.si i{color:#0E7F94;font-style:normal;font-weight:800}
+.q{background:#FFFDF7;border:3px solid var(--ink);border-radius:15px;padding:14px 14px 12px;margin-bottom:14px;
+ box-shadow:5px 5px 0 rgba(30,22,51,.18);transition:.2s}
+.q:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(30,22,51,.22)}
+.q.shk{animation:shk .42s}
+@keyframes shk{25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
+.qn{display:inline-block;min-width:38px;text-align:center;font-family:'Fredoka';font-size:1.1rem;color:#fff;
+ background:var(--vi);border:2px solid var(--ink);border-radius:8px;padding:1px 10px;margin-right:9px}
+.qt{font-size:1.12rem;line-height:1.98;font-weight:700}
+.tg{display:inline-block;background:var(--yl);border:2px solid var(--ink);border-radius:999px;padding:0 12px;
+ font-weight:900;font-size:.94rem;margin-left:7px}
+.fr{display:flex;gap:9px;flex-wrap:wrap;margin-top:13px;align-items:center}
+.ti{flex:1 1 250px;background:#fff;border:3px solid var(--ink);border-radius:11px;padding:11px 14px;
+ font-family:'Nunito';font-size:1.06rem;font-weight:800;color:var(--ink);outline:none}
+.ti::placeholder{color:#A99CB8;font-style:italic;font-weight:600}
+.ti:focus{border-color:var(--cy);box-shadow:4px 4px 0 var(--cy)}
+.ti.ok{background:#D6FBE6;border-color:#0E7F43}.ti.no{background:#FFE0E6;border-color:var(--bad)}
+.ck{font-family:'Fredoka';font-size:1.06rem;background:var(--pk);color:#fff;border:3px solid var(--ink);
+ border-radius:11px;padding:10px 22px;cursor:pointer;box-shadow:4px 4px 0 var(--ink)}
+.ck:hover:not(:disabled){transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.ck:disabled{opacity:.45;cursor:default;box-shadow:none}
+.ex{display:none;margin-top:13px;background:#FFFBF0;border:3px solid var(--ink);border-radius:13px;padding:13px;
+ font-size:1.02rem;line-height:1.95}
+.ex.show{display:block}
+.kb{background:#D6FBE6;border:3px solid #0E7F43;border-radius:10px;padding:8px 12px;margin-bottom:9px;
+ font-weight:900;color:#0E7F43}
+.vi{background:#FFF0B8;border-left:6px solid var(--yl);border-radius:0 10px 10px 0;padding:8px 12px;margin-bottom:9px;
+ font-weight:700;color:#6B4A00}
+.sp{background:#fff;border:3px solid rgba(30,22,51,.28);border-radius:11px;padding:9px 12px;margin-bottom:8px}
+.sp .l{display:inline-block;font-family:'Fredoka';font-size:.94rem;background:var(--vi);color:#fff;
+ border:2px solid var(--ink);border-radius:7px;padding:0 11px;margin-bottom:6px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:6px 0}
+@media(max-width:640px){.g2{grid-template-columns:1fr}}
+.g2>div{background:#FFFDF7;border:2px solid rgba(30,22,51,.2);border-radius:9px;padding:7px 10px;
+ font-weight:700;line-height:1.85;font-size:.99rem}
+.w{color:#0E7F94;font-weight:800}.g{color:#0E7F43;font-weight:900}
+.t{background:#EDE2FF;border:1.5px solid var(--vi);color:var(--vi);padding:0 7px;border-radius:6px;
+ font-size:.8em;font-weight:800;margin:0 5px}
+.m{color:#B34700;font-weight:700}
+.pg{background:linear-gradient(transparent 58%,var(--yl) 58%);font-weight:800}
+.sub{text-align:center;margin-top:26px}
+.sbtn{font-family:'Fredoka';font-size:1.5rem;background:var(--gr);color:#fff;border:4px solid var(--ink);
+ border-radius:16px;padding:15px 46px;cursor:pointer;box-shadow:9px 9px 0 var(--ink)}
+.sbtn:hover{transform:translate(-3px,-3px);box-shadow:12px 12px 0 var(--ink)}
+.ov{position:fixed;inset:0;background:rgba(30,22,51,.75);z-index:99;display:none;align-items:center;
+ justify-content:center;padding:16px;overflow-y:auto}
+.ov.on{display:flex}
+.mb{background:var(--cream);border:5px solid var(--ink);border-radius:22px;padding:26px 22px;width:440px;
+ max-width:96%;text-align:center;max-height:92vh;overflow-y:auto;box-shadow:12px 12px 0 var(--pk)}
+.mb h2{font-family:'Fredoka';font-size:1.4rem;color:var(--vi);margin-bottom:13px}
+.mb input{width:100%;padding:12px;border:3px solid var(--ink);border-radius:11px;font-family:'Nunito';
+ font-weight:800;font-size:1.02rem;text-align:center;outline:none;margin-bottom:11px}
+.mb input.er{border-color:var(--bad);background:#FFE0E6;animation:shk .42s}
+.mb .em{color:var(--bad);font-weight:800;font-size:.9rem;display:none;margin-bottom:9px}
+.mb .gr2{font-family:'Fredoka';font-size:1.34rem;color:var(--pk);line-height:1.3;margin-bottom:6px}
+.mb .rs{font-family:'Fredoka';font-size:2.5rem;color:var(--vi)}
+.mb .rt{font-weight:900;color:#0E7F43;font-size:1.06rem;margin:4px 0 7px}
+.mb .rm{font-weight:700;font-size:.97rem;line-height:1.8;margin-bottom:12px;color:#3E3352}
+.mb img{width:100%;max-width:250px;border:3px solid var(--ink);border-radius:12px;margin:11px auto;display:block}
+.cf{position:fixed;top:-12px;width:10px;height:15px;z-index:110;pointer-events:none;border-radius:3px}
+@keyframes fall{to{transform:translateY(105vh) rotate(700deg);opacity:.2}}
+</style>
+</head>
+<body>
+<div class="bg"><div class="wash"></div><div class="terr"></div><div class="zig a"></div><div class="zig b"></div>
+ <div class="shp" id="dz"></div></div>
+<div class="wrap">
+  <div class="hdr bx">
+    <h1>🎨 UNIT 10 · PLANET EARTH<br><em>EXERCISE B.VI · VII · VIII</em></h1>
+    <div class="tag">34 CÂU · RELATIVE CLAUSES</div>
+    <p>🏠 Giáo viên tạo: <b>MS Chí Nên</b> &nbsp;·&nbsp; ☎️ <b>0852639652</b><br>
+    B.VI Điền đại từ quan hệ (12) · B.VII Ghép câu bằng mệnh đề không xác định (10) · B.VIII Ghép câu bằng mệnh đề quan hệ — xác định &amp; không xác định (12)<br>
+    Đăng ký khoá tiếng Anh <b>từ lớp 1 đến lớp 12</b>: web luyện tập giải chi tiết từng câu, ngân hàng đề thi xịn xò 💎</p>
+  </div>
+  <div class="thy bx">
+    <h3>📘 LÝ THUYẾT NHANH — MỆNH ĐỀ QUAN HỆ (RELATIVE CLAUSES)</h3>
+    <p><span class="ok">① XÁC ĐỊNH (defining)</span> — KHÔNG có dấu phẩy. Cho biết thông tin <b>cần thiết</b> để xác định rõ danh từ đứng trước (danh từ còn CHUNG CHUNG: a/an, some, the + danh từ chưa rõ). Bỏ mệnh đề đi thì câu mất nghĩa hoặc hiểu sai. Dùng được <b>who/whom/which/that/whose</b>.</p>
+    <p><span class="no">② KHÔNG XÁC ĐỊNH (non-defining)</span> — dùng để cung cấp <b>thông tin thêm</b> (extra information). Nếu bỏ mệnh đề này đi, câu vẫn có nghĩa rõ ràng và người nghe vẫn hiểu đang nói về ai/cái gì. Dấu hiệu: luôn có <b>dấu phẩy</b> ngăn cách. Dùng <b>who/whom/which/whose</b> — <b>KHÔNG BAO GIỜ dùng "that"</b>.<br>
+    <i>VD:</i> <b>This program, which is totally free, protects your computer against viruses.</b> (Chương trình này — hoàn toàn miễn phí — bảo vệ máy tính bạn khỏi virus; bỏ "which is totally free" đi câu vẫn rõ nghĩa.)<br>
+    <b>Carl, whose sister is famous, is a friend of mine.</b> (Carl, người có chị gái nổi tiếng, là bạn tôi.)</p>
+    <p>💡 <b>Mẹo nhận biết nhanh</b> — chỉ cần nhìn DANH TỪ ĐỨNG NGAY TRƯỚC đại từ quan hệ. Là <span class="no">KHÔNG XÁC ĐỊNH (phải có phẩy)</span> nếu danh từ đó thuộc 1 trong 4 nhóm:<br>
+    &nbsp;&nbsp;<b>(1)</b> danh từ riêng — tên người/địa danh (Mr. John, Hanoi, Mary…)<br>
+    &nbsp;&nbsp;<b>(2)</b> có tính từ sở hữu đứng trước (my mother, his friend…)<br>
+    &nbsp;&nbsp;<b>(3)</b> có đại từ chỉ định đứng trước (this book, that tall boy…)<br>
+    &nbsp;&nbsp;<b>(4)</b> danh từ chỉ sự vật duy nhất (the sun, the moon, the earth…)<br>
+    Nếu danh từ KHÔNG thuộc 4 nhóm trên (the boy, a book, the students…) ➔ đó là <span class="ok">XÁC ĐỊNH (không phẩy)</span>.</p>
+    <p><span class="no">③ MỆNH ĐỀ QUAN HỆ NỐI TIẾP (continuative)</span> — dùng để giải thích/bình luận về <b>CẢ MỘT MỆNH ĐỀ</b> đứng trước, không phải một danh từ cụ thể. Trường hợp này CHỈ dùng <b>which</b>, luôn có dấu phẩy, và mệnh đề này luôn đứng ở <b>CUỐI CÂU</b>.<br>
+    <i>VD:</i> <b>He sent me a bunch of flowers, which made me surprised.</b><br>
+    <b>We finally got tickets for the concert, which was very lucky.</b> (Cuối cùng chúng tôi cũng có được vé cho buổi hoà nhạc, điều đó thật may mắn — <i>which</i> không nói buổi hoà nhạc may mắn, mà nói VIỆC có được vé mới là may mắn.)</p>
+  </div>
+  <div class="sb">🎨 <b><span id="sc">0</span>/<span id="tt">0</span></b>
+    <div class="tr"><div class="fl" id="fb"></div></div><span id="md" style="font-size:1.35rem">💪</span></div>
+  <div class="rmb"><span class="ic">💛</span><span id="rmt">…</span></div>
+  <div id="app"></div>
+  <div class="sub"><button class="sbtn" onclick="openName()">NỘP BÀI</button></div>
+</div>
+<div class="ov" id="nOv"><div class="mb"><h2>✍️ NHẬP TÊN CỦA CON</h2>
+  <input id="nIn" placeholder="Ví dụ: Nguyễn Văn A..." maxlength="50" onkeydown="if(event.key==='Enter')showResult()">
+  <div class="em" id="nEr">⚠️ Con chưa nhập tên kìa!</div>
+  <button class="sbtn" style="width:100%;font-size:1.12rem;padding:12px" onclick="showResult()">XEM KẾT QUẢ</button></div></div>
+<div class="ov" id="rOv"><div class="mb"><div class="gr2" id="rG"></div><div class="rs" id="rS"></div>
+  <div class="rt" id="rT"></div><img id="rI" alt=""><div class="rm" id="rM"></div>
+  <button class="sbtn" style="width:100%;font-size:1.12rem;padding:12px" onclick="location.reload()">LÀM LẠI</button></div></div>
+
+<script>
+let AC;function ac(){if(!AC)AC=new (window.AudioContext||window.webkitAudioContext)();if(AC.state==='suspended')AC.resume();return AC}
+function ding(){try{const c=ac(),n=c.currentTime;[523,659,784,1047].forEach((f,i)=>{const o=c.createOscillator(),g=c.createGain();
+ o.type='sine';o.frequency.value=f;o.connect(g);g.connect(c.destination);const t=n+i*.085;
+ g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.18,t+.03);g.gain.exponentialRampToValueAtTime(.001,t+.44);
+ o.start(t);o.stop(t+.46)})}catch(e){}}
+function buzz(){try{const c=ac(),n=c.currentTime;[300,235,180].forEach((f,i)=>{const o=c.createOscillator(),g=c.createGain();
+ o.type='square';o.frequency.value=f;o.connect(g);g.connect(c.destination);const t=n+i*.12;
+ g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.1,t+.02);g.gain.exponentialRampToValueAtTime(.001,t+.17);
+ o.start(t);o.stop(t+.19)})}catch(e){}}
+document.addEventListener('click',()=>{try{ac()}catch(e){}},{once:true});
+function confetti(){const c=['#FF4D9D','#FFC93C','#25D0E0','#3ED17B','#8A5CFF','#FF7A3D'];
+ for(let i=0;i<34;i++){const d=document.createElement('div');d.className='cf';d.style.background=c[i%c.length];
+  d.style.left=(Math.random()*100)+'vw';d.style.animation='fall '+(1.4+Math.random()*1.3)+'s linear forwards';
+  d.style.animationDelay=(Math.random()*.3)+'s';document.body.appendChild(d);setTimeout(()=>d.remove(),3200)}}
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function norm(s){return (s||'').toLowerCase().replace(/[’'`´]/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim()}
+function normC(s){return (s||'').toLowerCase().replace(/[’'`´]/g,'').replace(/[^a-z0-9,\s]/g,' ').replace(/\s*,\s*/g,' , ').replace(/\s+/g,' ').trim()}
+</script>
+
+<script>
+const Q=[];
+function mcq(sec,num,q,correct,opts,ex,cls){Q.push({t:'mcq',sec,num,q,correct,opts,ex,cls:cls||''})}
+function fil(sec,num,q,accept,ex,ph){Q.push({t:'fill',sec,num,q,accept,ex,ph:ph||'Gõ đáp án…'})}
+function W(w,ty,m){return "<div><span class='w'>"+w+"</span><span class='t'>"+ty+"</span>= <span class='m'>"+m+"</span></div>"}
+function G(w,ty,m){return "<div><span class='g'>"+w+"</span><span class='t'>"+ty+"</span>= <span class='m'>"+m+"</span></div>"}
+function EX(k,vn,cells,why,trap){
+ return '<div class="kb">🔑 ĐÁP ÁN: '+k+'</div><div class="vi">💬 '+vn+'</div>'+
+  '<div class="sp"><span class="l">1 · PHÂN TÍCH</span><div class="g2">'+cells+'</div></div>'+
+  '<div class="sp"><span class="l">2 · TẠI SAO ĐÚNG</span><br><span class="pg">'+why+'</span></div>'+
+  '<div class="sp"><span class="l">3 · MẸO / BẪY</span><br><span class="pg">'+trap+'</span></div>'}
+
+/* ═════ B.VI — ĐIỀN ĐẠI TỪ QUAN HỆ PHÙ HỢP (12 câu) ═════ */
+const RP=(n,sent,ans,dich,cells,why,trap)=>fil('S1',n,'<b>'+n+'.</b> '+sent,[ans],EX('<b>'+ans+'</b>',dich,cells,why,trap),'Gõ đại từ quan hệ…');
+RP(1,'The Amazon Rainforest, ______ is often called the &ldquo;lungs of the Earth&rdquo;, is home to numerous species of flora and fauna.','which',
+ 'Rừng Amazon, thường được gọi là &ldquo;lá phổi của Trái Đất&rdquo;, là nơi sinh sống của vô số loài động thực vật.',
+ G('which','thay cho VẬT','Amazon Rainforest là khu rừng — vật, không phải người')+W('who','chỉ NGƯỜI','sai vì rừng không phải người'),
+ 'Danh từ trước là &ldquo;The Amazon Rainforest&rdquo; (vật) ➔ dùng <b>which</b>.',
+ 'Không dùng &ldquo;that&rdquo; — mệnh đề có dấu phẩy hai bên (không xác định) nên cấm dùng &ldquo;that&rdquo;.');
+RP(2,'Bill Clinton, ______ wife is a brilliant lawyer, became the President of the US in 1993.','whose',
+ 'Bill Clinton, người có vợ là một luật sư xuất sắc, đã trở thành Tổng thống Mỹ năm 1993.',
+ G('whose','sở hữu','đứng trước danh từ "wife" ➔ vợ CỦA Bill Clinton')+W('who','chủ ngữ','sai vì sau đó là danh từ, không phải động từ'),
+ 'Chỗ trống đứng ngay trước danh từ <b>wife</b> (vợ CỦA ai đó) ➔ cần đại từ sở hữu <b>whose</b>.',
+ 'Đừng nhầm &ldquo;whose&rdquo; với &ldquo;who&rdquo; — &ldquo;whose&rdquo; luôn đứng trước MỘT DANH TỪ khác.');
+RP(3,'Mrs Smith, ______ has a lot of teaching experience at junior level, will be joining the school in September.','who',
+ 'Cô Smith, người có nhiều kinh nghiệm giảng dạy ở cấp tiểu học, sẽ gia nhập trường vào tháng Chín.',
+ G('who','chỉ NGƯỜI','Mrs Smith là người, làm chủ ngữ cho "has"')+W('which','chỉ VẬT','sai vì Mrs Smith là người'),
+ 'Danh từ trước là &ldquo;Mrs Smith&rdquo; (người), pronoun làm CHỦ NGỮ của &ldquo;has&rdquo; ➔ dùng <b>who</b>.',
+ 'Không dùng &ldquo;that&rdquo; vì có dấu phẩy — mệnh đề không xác định không dùng &ldquo;that&rdquo;.');
+RP(4,'Sydney, ______ has a population of more than three million, is Australia&rsquo;s largest city.','which',
+ 'Sydney, có dân số hơn ba triệu người, là thành phố lớn nhất nước Úc.',
+ G('which','chỉ VẬT/địa danh','Sydney là thành phố — vật, không phải người')+W('who','chỉ NGƯỜI','sai vì Sydney không phải người'),
+ 'Sydney là một ĐỊA DANH (vật) ➔ dùng <b>which</b>.',
+ 'Tên riêng của thành phố/quốc gia luôn dùng &ldquo;which&rdquo;, không bao giờ dùng &ldquo;who&rdquo;.');
+RP(5,'Darwin, ______ views changed out view of the world, travelled to a lot of countries.','whose',
+ 'Darwin, người có quan điểm đã làm thay đổi cách nhìn của chúng ta về thế giới, đã đi đến rất nhiều quốc gia.',
+ G('whose','sở hữu','đứng trước danh từ "views" ➔ quan điểm CỦA Darwin')+W('who','chủ ngữ','sai vì sau đó là danh từ, không phải động từ'),
+ 'Chỗ trống đứng trước danh từ <b>views</b> (quan điểm CỦA Darwin) ➔ cần <b>whose</b>.',
+ 'Cùng kiểu bẫy với câu 2 — thấy đại từ + DANH TỪ NGAY SAU thì nghĩ tới &ldquo;whose&rdquo;.');
+RP(6,'The hijacker gave himself up to police, ______ are now questioning him.','who',
+ 'Kẻ không tặc đã đầu thú với cảnh sát, những người hiện đang thẩm vấn hắn.',
+ G('who','chỉ NGƯỜI','police (cảnh sát) là người')+W('which','chỉ VẬT','sai vì police là người'),
+ '&ldquo;police&rdquo; (cảnh sát) là NGƯỜI, làm chủ ngữ cho &ldquo;are questioning&rdquo; ➔ dùng <b>who</b>.',
+ '&ldquo;police&rdquo; là danh từ tập thể chỉ NGƯỜI, luôn đi với động từ số nhiều (are, không phải is).');
+RP(7,'We are going to see the new Tom Carter film, ______ was released on Friday.','which',
+ 'Chúng tôi sắp đi xem bộ phim mới của Tom Carter, được phát hành vào thứ Sáu.',
+ G('which','chỉ VẬT','film (bộ phim) là vật')+W('who','chỉ NGƯỜI','sai vì film không phải người'),
+ '&ldquo;film&rdquo; (bộ phim) là VẬT ➔ dùng <b>which</b>.',
+ 'Đừng nhầm phim là người chỉ vì có tên &ldquo;Tom Carter&rdquo; đi kèm — chủ thể vẫn là &ldquo;film&rdquo;.');
+RP(8,'Mr Sheldon, ______ has devoted his time to cleaning up beaches, helps protect the marine ecosystems.','who',
+ 'Ông Sheldon, người đã dành thời gian dọn dẹp các bãi biển, giúp bảo vệ hệ sinh thái biển.',
+ G('who','chỉ NGƯỜI','Mr Sheldon là người, làm chủ ngữ cho "has devoted"')+W('which','chỉ VẬT','sai vì Mr Sheldon là người'),
+ 'Mr Sheldon là NGƯỜI, làm chủ ngữ của &ldquo;has devoted&rdquo; ➔ dùng <b>who</b>.',
+ 'Luôn kiểm tra danh từ ngay TRƯỚC dấu phẩy: là người ➔ who/whom, là vật ➔ which.');
+RP(9,'Tina got very good marks in the exam, ______ pleased her parents and teachers.','which',
+ 'Tina đạt điểm rất cao trong kỳ thi, điều này khiến bố mẹ và thầy cô cô ấy hài lòng.',
+ G('which','thay cho CẢ Ý TRƯỚC','không có danh từ cụ thể — "which" thay cho việc "đạt điểm cao"')+W('who','chỉ NGƯỜI','sai vì không có danh từ chỉ người ngay trước'),
+ '&ldquo;which&rdquo; ở đây thay thế CẢ Ý của mệnh đề trước (đạt điểm cao), không chỉ một danh từ cụ thể.',
+ 'Dạng đặc biệt hay gặp: &ldquo;which&rdquo; đứng sau dấu phẩy để bình luận về CẢ CÂU trước đó.');
+RP(10,'Charles Darwin, ______ is best known for his theory of evolution, was an English biologist.','who',
+ 'Charles Darwin, người nổi tiếng nhất với thuyết tiến hoá, là một nhà sinh vật học người Anh.',
+ G('who','chỉ NGƯỜI','Charles Darwin là người')+W('which','chỉ VẬT','sai vì Charles Darwin là người'),
+ 'Charles Darwin là NGƯỜI ➔ dùng <b>who</b>.',
+ 'So sánh với câu 5: câu 5 cần &ldquo;whose&rdquo; (sở hữu + danh từ "views"); câu này cần &ldquo;who&rdquo; (chủ ngữ + động từ "is").');
+RP(11,'The endangered sea turtles, ______ nesting grounds are threatened by humans, face an uncertain future.','whose',
+ 'Những chú rùa biển đang nguy cấp, có bãi đẻ trứng bị con người đe doạ, đang đối mặt với một tương lai bất định.',
+ G('whose','sở hữu','đứng trước danh từ "nesting grounds" ➔ bãi đẻ trứng CỦA rùa biển')+W('which','chỉ VẬT (chủ/tân ngữ)','sai vì sau đó là danh từ, không phải động từ'),
+ 'Chỗ trống đứng trước danh từ <b>nesting grounds</b> ➔ cần <b>whose</b>.',
+ '&ldquo;whose&rdquo; dùng được cho CẢ người lẫn vật khi diễn tả SỞ HỮU — đây là ví dụ dùng cho ĐỘNG VẬT.');
+RP(12,'The Himalayas, ______ peaks are known as the &ldquo;Roof of the World&rdquo;, are a mountain range in Asia.','whose',
+ 'Dãy Himalaya, có những đỉnh núi được biết đến với tên gọi &ldquo;Nóc nhà Thế giới&rdquo;, là một dãy núi ở châu Á.',
+ G('whose','sở hữu','đứng trước danh từ "peaks" ➔ đỉnh núi CỦA dãy Himalaya')+W('which','chỉ VẬT (chủ/tân ngữ)','sai vì sau đó là danh từ, không phải động từ'),
+ 'Chỗ trống đứng trước danh từ <b>peaks</b> ➔ cần <b>whose</b>.',
+ 'Các câu 2, 5, 11, 12 đều dùng &ldquo;whose&rdquo; vì cùng khuôn: <b>danh từ, whose + DANH TỪ KHÁC...</b> — nhớ khuôn này là ăn trọn điểm.');
+
+/* ═════ B.VII — GHÉP 2 CÂU THÀNH MỆNH ĐỀ KHÔNG XÁC ĐỊNH (10 câu · gõ cả câu) ═════ */
+const CB=(n,s1,s2,ans,acc,dich,cells,why,trap)=>fil('S2',n,'<b>'+n+'.</b> '+s1+' '+s2,acc,
+ EX('<b>'+ans+'</b>',dich,cells,why,trap),'Gõ cả câu đã ghép…');
+CB(1,'Catherine ruled Russia for over 30 years.','She made many important changes.',
+ 'Catherine, who made many important changes, ruled Russia for over 30 years.',
+ ['Catherine, who made many important changes, ruled Russia for over 30 years.'],
+ 'Catherine, người đã thực hiện nhiều thay đổi quan trọng, đã cai trị nước Nga hơn 30 năm.',
+ G('who','KHÔNG xác định','Catherine đã là tên riêng ➔ mệnh đề phụ, có phẩy')+W('that','cấm dùng','vì có dấu phẩy'),
+ 'Câu 2 bổ sung THÔNG TIN THÊM về Catherine (đã xác định rõ tên) ➔ mệnh đề không xác định, dùng <b>who</b> + dấu phẩy hai bên.',
+ 'Không dùng &ldquo;that&rdquo; vì đây là mệnh đề KHÔNG XÁC ĐỊNH — &ldquo;that&rdquo; chỉ dùng cho mệnh đề xác định.');
+CB(2,'The woman next door is moving next month.',"I met her for the first time last week.",
+ 'The woman next door, who I met for the first time last week, is moving next month.',
+ ['The woman next door, who I met for the first time last week, is moving next month.',
+  'The woman next door, whom I met for the first time last week, is moving next month.'],
+ 'Người phụ nữ ở nhà bên cạnh, người tôi mới gặp lần đầu tuần trước, sắp chuyển đi vào tháng sau.',
+ G('who/whom','tân ngữ','"her" ➔ thay bằng who/whom, KHÔNG XÁC ĐỊNH vì "the woman next door" đã rõ')+W('that','cấm dùng','vì có dấu phẩy'),
+ '&ldquo;her&rdquo; trong câu 2 chỉ &ldquo;the woman next door&rdquo; (tân ngữ) ➔ dùng <b>who/whom</b> + dấu phẩy hai bên.',
+ '&ldquo;whom&rdquo; trang trọng hơn &ldquo;who&rdquo; khi làm tân ngữ, nhưng cả hai đều được chấp nhận.');
+CB(3,'Starbucks wants to open new stores in China.','It does business all over the world.',
+ 'Starbucks, which does business all over the world, wants to open new stores in China.',
+ ['Starbucks, which does business all over the world, wants to open new stores in China.'],
+ 'Starbucks, công ty kinh doanh trên khắp thế giới, muốn mở các cửa hàng mới ở Trung Quốc.',
+ G('which','KHÔNG xác định','Starbucks là tên riêng ➔ có phẩy')+W('that','cấm dùng','vì có dấu phẩy'),
+ 'Starbucks là TÊN RIÊNG (đã xác định) ➔ mệnh đề bổ sung dùng <b>which</b> + dấu phẩy hai bên.',
+ 'Tên công ty/thương hiệu luôn được coi là đã xác định rõ ➔ mệnh đề đi kèm luôn KHÔNG XÁC ĐỊNH, có phẩy.');
+CB(4,'The Pacific Ocean is the largest ocean on the planet.',"It covers more than one-third of Earth's surface.",
+ "The Pacific Ocean, which covers more than one-third of Earth's surface, is the largest ocean on the planet.",
+ ["The Pacific Ocean, which covers more than one-third of Earth's surface, is the largest ocean on the planet."],
+ "Thái Bình Dương, bao phủ hơn một phần ba bề mặt Trái Đất, là đại dương lớn nhất hành tinh.",
+ G('which','KHÔNG xác định','tên riêng duy nhất ➔ có phẩy')+W('that','cấm dùng','vì có dấu phẩy'),
+ "&ldquo;The Pacific Ocean&rdquo; là tên riêng duy nhất (đã xác định) ➔ dùng <b>which</b> + dấu phẩy hai bên.",
+ "Đừng quên phẩy sau &ldquo;Ocean&rdquo; và trước &ldquo;is&rdquo; — thiếu 1 trong 2 dấu phẩy là sai cấu trúc.");
+CB(5,'The Games International Company has just gone bankrupt.','We have done business with them for many years.',
+ 'The Games International Company, which we have done business with for many years, has just gone bankrupt.',
+ ['The Games International Company, which we have done business with for many years, has just gone bankrupt.'],
+ 'Công ty Games International, mà chúng tôi đã hợp tác kinh doanh nhiều năm, vừa mới phá sản.',
+ G('which','tân ngữ của "with"','"them" ➔ thay bằng which, KHÔNG XÁC ĐỊNH vì tên công ty đã rõ')+W('that','cấm dùng','vì có dấu phẩy'),
+ '&ldquo;them&rdquo; trong câu 2 chỉ công ty (tân ngữ của &ldquo;done business with&rdquo;) ➔ dùng <b>which</b> + dấu phẩy hai bên.',
+ 'Giới từ &ldquo;with&rdquo; đứng cuối mệnh đề (&ldquo;which we have done business with&rdquo;) — cách viết tự nhiên trong tiếng Anh hiện đại.');
+CB(6,'Our professor of biology has written some very interesting books.','I always attend her lectures.',
+ 'Our professor of biology, whose lectures I always attend, has written some very interesting books.',
+ ['Our professor of biology, whose lectures I always attend, has written some very interesting books.'],
+ 'Giáo sư sinh học của chúng tôi, người mà tôi luôn tham dự các bài giảng, đã viết một số cuốn sách rất thú vị.',
+ G('whose','sở hữu','"her" ➔ whose + lectures, KHÔNG XÁC ĐỊNH vì "our professor" đã rõ')+W('that','cấm dùng','vì có dấu phẩy'),
+ '&ldquo;her&rdquo; trong câu 2 là tính từ sở hữu, thay bằng <b>whose</b> + danh từ &ldquo;lectures&rdquo; ➔ mệnh đề không xác định.',
+ '&ldquo;whose&rdquo; giữ nguyên vị trí trước danh từ (whose lectures), không đảo thành &ldquo;lectures whose&rdquo;.');
+CB(7,'Jane has decided to volunteer in summer.','It will be an interesting experience for her.',
+ 'Jane has decided to volunteer in summer, which will be an interesting experience for her.',
+ ['Jane has decided to volunteer in summer, which will be an interesting experience for her.'],
+ 'Jane đã quyết định làm tình nguyện vào mùa hè, đây sẽ là một trải nghiệm thú vị đối với cô ấy.',
+ G('which','thay cho CẢ Ý TRƯỚC','"It" ➔ which, đứng CUỐI câu vì không có danh từ cụ thể')+W('that','cấm dùng','vì có dấu phẩy'),
+ 'Câu 2 bình luận về CẢ hành động ở câu 1, không phải một danh từ cụ thể ➔ <b>which</b> đứng ở CUỐI câu, sau dấu phẩy.',
+ 'Khác các câu khác, ở đây mệnh đề KHÔNG chen vào giữa mà nằm ở CUỐI vì &ldquo;which&rdquo; thay cho cả mệnh đề trước.');
+CB(8,'Mrs Molly discovered a new species of plant in the rainforest.','She dedicated her life to environmental research.',
+ 'Mrs Molly, who dedicated her life to environmental research, discovered a new species of plant in the rainforest.',
+ ['Mrs Molly, who dedicated her life to environmental research, discovered a new species of plant in the rainforest.'],
+ 'Bà Molly, người đã cống hiến cả cuộc đời cho nghiên cứu môi trường, đã phát hiện ra một loài thực vật mới trong rừng nhiệt đới.',
+ G('who','KHÔNG xác định','Mrs Molly là tên riêng ➔ có phẩy')+W('that','cấm dùng','vì có dấu phẩy'),
+ '&ldquo;She&rdquo; trong câu 2 chỉ Mrs Molly (người, đã xác định tên) ➔ dùng <b>who</b> + dấu phẩy hai bên.',
+ 'Mệnh đề &ldquo;who dedicated...&rdquo; chen vào NGAY SAU tên riêng, trước động từ chính &ldquo;discovered&rdquo;.');
+CB(9,'The tigers require urgent help to prevent extinction.','Their survival is threatened by habitat loss.',
+ 'The tigers, whose survival is threatened by habitat loss, require urgent help to prevent extinction.',
+ ['The tigers, whose survival is threatened by habitat loss, require urgent help to prevent extinction.'],
+ 'Những chú hổ, có sự sống còn bị đe doạ bởi mất môi trường sống, cần được giúp đỡ khẩn cấp để tránh tuyệt chủng.',
+ G('whose','sở hữu','"Their" ➔ whose + survival, KHÔNG XÁC ĐỊNH vì "the tigers" (loài) đã rõ')+W('that','cấm dùng','vì có dấu phẩy'),
+ '&ldquo;Their&rdquo; trong câu 2 là sở hữu của &ldquo;the tigers&rdquo; ➔ dùng <b>whose</b> + danh từ &ldquo;survival&rdquo;.',
+ '&ldquo;whose&rdquo; áp dụng được cho ĐỘNG VẬT/SỰ VẬT chứ không chỉ người — đừng nghĩ &ldquo;whose&rdquo; chỉ dùng cho người.');
+CB(10,'Aboriginal Australians have a deep connection to nature.','We encountered them on our travels.',
+ 'Aboriginal Australians, who we encountered on our travels, have a deep connection to nature.',
+ ['Aboriginal Australians, who we encountered on our travels, have a deep connection to nature.',
+  'Aboriginal Australians, whom we encountered on our travels, have a deep connection to nature.'],
+ 'Người Úc bản địa, những người chúng tôi đã gặp trong các chuyến đi, có mối liên hệ sâu sắc với thiên nhiên.',
+ G('who/whom','tân ngữ','"them" ➔ who/whom, KHÔNG XÁC ĐỊNH vì nhóm người đã rõ')+W('that','cấm dùng','vì có dấu phẩy'),
+ '&ldquo;them&rdquo; trong câu 2 chỉ &ldquo;Aboriginal Australians&rdquo; (tân ngữ) ➔ dùng <b>who/whom</b> + dấu phẩy hai bên.',
+ 'Không dùng &ldquo;that&rdquo; vì có dấu phẩy — quy tắc xuyên suốt cả bài VII: KHÔNG XÁC ĐỊNH thì KHÔNG BAO GIỜ dùng &ldquo;that&rdquo;.');
+
+/* ═════ B.VIII — GHÉP 2 CÂU BẰNG MỆNH ĐỀ QUAN HỆ (12 câu · gõ cả câu, có câu xác định/không xác định) ═════ */
+const CX=(n,s1,s2,ans,acc,dich,comma,why,trap)=>fil('S3',n,'<b>'+n+'.</b> '+s1+' '+s2,acc,
+ EX('<b>'+ans+'</b>',dich,
+  G(ans,'mệnh đề quan hệ','')+
+  (comma?G('Có dấu phẩy','KHÔNG xác định','danh từ trước đã RÕ RÀNG/DUY NHẤT'):W('Không dùng phẩy','XÁC ĐỊNH','danh từ trước còn CHUNG CHUNG, cần mệnh đề để làm rõ')),
+  why,trap),'Gõ cả câu đã ghép…');
+CX(1,'The Indian Ocean is known for its warm waters and diverse marine life.','It is the third largest ocean in the world.',
+ 'The Indian Ocean, which is the third largest ocean in the world, is known for its warm waters and diverse marine life.',
+ ['The Indian Ocean, which is the third largest ocean in the world, is known for its warm waters and diverse marine life.'],
+ 'Ấn Độ Dương, đại dương lớn thứ ba trên thế giới, nổi tiếng với vùng nước ấm và sự đa dạng sinh vật biển.',true,
+ '&ldquo;The Indian Ocean&rdquo; là tên riêng duy nhất (đã xác định) ➔ mệnh đề chỉ là THÔNG TIN THÊM, dùng <b>which</b> + dấu phẩy hai bên.',
+ 'Thiếu 1 trong 2 dấu phẩy quanh &ldquo;which is the third largest ocean in the world&rdquo; sẽ bị tính SAI.');
+CX(2,'Gravity is the force.','It pulls things towards the Earth and stops us floating off into space.',
+ 'Gravity is the force that pulls things towards the Earth and stops us floating off into space.',
+ ['Gravity is the force that pulls things towards the Earth and stops us floating off into space.',
+  'Gravity is the force which pulls things towards the Earth and stops us floating off into space.'],
+ 'Trọng lực là lực hút mọi vật về phía Trái Đất và ngăn chúng ta trôi nổi vào không gian.',false,
+ '&ldquo;the force&rdquo; còn CHUNG CHUNG (lực nào?) ➔ mệnh đề bắt buộc phải có để XÁC ĐỊNH RÕ, dùng <b>that/which</b>, KHÔNG được có dấu phẩy.',
+ 'Nếu con gõ thêm dấu phẩy trước &ldquo;that/which&rdquo; sẽ bị tính SAI — đây là mệnh đề XÁC ĐỊNH.');
+CX(3,'The conservationist saved countless endangered animals.','He founded a nature reserve in Africa.',
+ 'The conservationist who founded a nature reserve in Africa saved countless endangered animals.',
+ ['The conservationist who founded a nature reserve in Africa saved countless endangered animals.',
+  'The conservationist that founded a nature reserve in Africa saved countless endangered animals.'],
+ 'Nhà bảo tồn đã thành lập một khu bảo tồn thiên nhiên ở châu Phi đã cứu sống vô số động vật nguy cấp.',false,
+ '&ldquo;The conservationist&rdquo; còn CHUNG CHUNG (nhà bảo tồn nào?) ➔ cần mệnh đề xác định, dùng <b>who/that</b>, KHÔNG phẩy.',
+ 'Mệnh đề chen vào GIỮA câu (sau "conservationist", trước "saved") và KHÔNG có dấu phẩy hai bên.');
+CX(4,"They'd like to visit a national park.",'It offers a range of traditional outdoor recreational activities.',
+ "They'd like to visit a national park that offers a range of traditional outdoor recreational activities.",
+ ["They'd like to visit a national park that offers a range of traditional outdoor recreational activities.",
+  "They'd like to visit a national park which offers a range of traditional outdoor recreational activities."],
+ 'Họ muốn ghé thăm một công viên quốc gia có nhiều hoạt động vui chơi ngoài trời truyền thống.',false,
+ '&ldquo;a national park&rdquo; còn CHUNG CHUNG (công viên nào?) ➔ cần mệnh đề xác định, dùng <b>that/which</b>, KHÔNG phẩy.',
+ 'Mạo từ &ldquo;a&rdquo; (không phải "the") là dấu hiệu rõ ràng của danh từ CHUNG CHUNG ➔ chắc chắn không dùng phẩy.');
+CX(5,'A species is called a keystone species.','Its habitat ranges over 13 countries across Asia.',
+ 'A species whose habitat ranges over 13 countries across Asia is called a keystone species.',
+ ['A species whose habitat ranges over 13 countries across Asia is called a keystone species.'],
+ 'Một loài có môi trường sống trải khắp 13 quốc gia ở châu Á được gọi là loài chủ chốt (keystone species).',false,
+ '&ldquo;A species&rdquo; còn CHUNG CHUNG (loài nào?) ➔ cần mệnh đề xác định, dùng <b>whose</b> + danh từ &ldquo;habitat&rdquo;, KHÔNG phẩy.',
+ 'Mệnh đề &ldquo;whose habitat...Asia&rdquo; chen vào GIỮA, ngay trước &ldquo;is called&rdquo;, không có dấu phẩy.');
+CX(6,'The Asian elephant is an endangered species with less than 40,000 remaining worldwide.','Their presence is critical to maintaining the ecological balance.',
+ 'The Asian elephant, whose presence is critical to maintaining the ecological balance, is an endangered species with less than 40,000 remaining worldwide.',
+ ['The Asian elephant, whose presence is critical to maintaining the ecological balance, is an endangered species with less than 40,000 remaining worldwide.'],
+ 'Voi châu Á, có sự hiện diện đóng vai trò then chốt trong việc duy trì cân bằng sinh thái, là một loài nguy cấp với chưa tới 40.000 cá thể còn lại trên thế giới.',true,
+ '&ldquo;The Asian elephant&rdquo; là một loài đã xác định RÕ tên ➔ mệnh đề chỉ là THÔNG TIN THÊM, dùng <b>whose</b> + dấu phẩy hai bên.',
+ 'So sánh với câu 5: cùng dùng &ldquo;whose&rdquo; nhưng câu 5 KHÔNG phẩy (a species chung chung), câu 6 CÓ phẩy (the Asian elephant đã xác định).');
+CX(7,'We met a biologist during our hiking trip.','He studied rare flora and fauna found only in remote rainforests.',
+ 'We met a biologist who studied rare flora and fauna found only in remote rainforests during our hiking trip.',
+ ['We met a biologist who studied rare flora and fauna found only in remote rainforests during our hiking trip.',
+  'We met a biologist that studied rare flora and fauna found only in remote rainforests during our hiking trip.'],
+ 'Chúng tôi đã gặp một nhà sinh vật học nghiên cứu các loài động thực vật quý hiếm chỉ có ở những khu rừng nhiệt đới hẻo lánh trong chuyến đi bộ đường dài.',false,
+ '&ldquo;a biologist&rdquo; còn CHUNG CHUNG (nhà sinh vật học nào?) ➔ cần mệnh đề xác định, dùng <b>who/that</b>, KHÔNG phẩy.',
+ 'Mệnh đề chen vào NGAY SAU &ldquo;biologist&rdquo;, trước cụm &ldquo;during our hiking trip&rdquo; — không dấu phẩy.');
+CX(8,'Mr Albert highlighted the urgent need for conservation efforts to protect biodiversity.','I interviewed him for my research project.',
+ 'Mr Albert, whom I interviewed for my research project, highlighted the urgent need for conservation efforts to protect biodiversity.',
+ ['Mr Albert, whom I interviewed for my research project, highlighted the urgent need for conservation efforts to protect biodiversity.',
+  'Mr Albert, who I interviewed for my research project, highlighted the urgent need for conservation efforts to protect biodiversity.'],
+ 'Ông Albert, người mà tôi đã phỏng vấn cho dự án nghiên cứu của mình, đã nhấn mạnh nhu cầu cấp thiết về các nỗ lực bảo tồn để bảo vệ đa dạng sinh học.',true,
+ '&ldquo;Mr Albert&rdquo; là tên riêng (đã xác định) ➔ mệnh đề chỉ là THÔNG TIN THÊM, dùng <b>whom/who</b> + dấu phẩy hai bên.',
+ '&ldquo;him&rdquo; là tân ngữ ➔ đổi thành &ldquo;whom/who&rdquo; và đưa lên đầu mệnh đề; nhớ đủ 2 dấu phẩy quanh mệnh đề.');
+CX(9,'The regions are called the north and south poles.','They are located at the northernmost and southernmost points of the Earth.',
+ 'The regions that are located at the northernmost and southernmost points of the Earth are called the north and south poles.',
+ ['The regions that are located at the northernmost and southernmost points of the Earth are called the north and south poles.',
+  'The regions which are located at the northernmost and southernmost points of the Earth are called the north and south poles.'],
+ 'Những khu vực nằm ở điểm cực bắc và cực nam của Trái Đất được gọi là hai địa cực.',false,
+ '&ldquo;The regions&rdquo; còn CHUNG CHUNG (vùng nào?) ➔ cần mệnh đề xác định, dùng <b>that/which</b>, KHÔNG phẩy.',
+ 'Tuy có &ldquo;the&rdquo; đứng trước nhưng &ldquo;the regions&rdquo; KHÔNG phải vật duy nhất (khác the sun/the moon) ➔ vẫn cần mệnh đề xác định, không phẩy.');
+CX(10,'The explorer shared fascinating stories about rare wildlife sightings.','We met him during our trek through the jungle.',
+ 'The explorer who we met during our trek through the jungle shared fascinating stories about rare wildlife sightings.',
+ ['The explorer who we met during our trek through the jungle shared fascinating stories about rare wildlife sightings.',
+  'The explorer whom we met during our trek through the jungle shared fascinating stories about rare wildlife sightings.'],
+ 'Nhà thám hiểm mà chúng tôi đã gặp trong chuyến đi bộ xuyên rừng đã kể những câu chuyện thú vị về các lần bắt gặp động vật hoang dã quý hiếm.',false,
+ '&ldquo;The explorer&rdquo; còn CHUNG CHUNG (nhà thám hiểm nào?) ➔ cần mệnh đề xác định, dùng <b>who/whom</b>, KHÔNG phẩy.',
+ '&ldquo;him&rdquo; là tân ngữ ➔ đổi thành &ldquo;who/whom&rdquo; và đưa lên đầu mệnh đề, không dấu phẩy.');
+CX(11,'Naxos is my favorite island.',"I've visited it several times recently.",
+ "Naxos, which I've visited several times recently, is my favorite island.",
+ ["Naxos, which I've visited several times recently, is my favorite island.",
+  "Naxos, which I have visited several times recently, is my favorite island."],
+ 'Naxos, hòn đảo mà tôi đã ghé thăm vài lần gần đây, là hòn đảo yêu thích nhất của tôi.',true,
+ '&ldquo;Naxos&rdquo; là tên riêng duy nhất (đã xác định) ➔ mệnh đề chỉ là THÔNG TIN THÊM, dùng <b>which</b> + dấu phẩy hai bên.',
+ '&ldquo;it&rdquo; ➔ đổi thành &ldquo;which&rdquo;; nhớ đủ 2 dấu phẩy quanh mệnh đề &ldquo;which I&rsquo;ve visited several times recently&rdquo;.');
+CX(12,'My best friend wants to become a biologist.','She is interested in learning about plants and animals.',
+ 'My best friend, who is interested in learning about plants and animals, wants to become a biologist.',
+ ['My best friend, who is interested in learning about plants and animals, wants to become a biologist.'],
+ 'Bạn thân nhất của tôi, người rất thích tìm hiểu về thực vật và động vật, muốn trở thành một nhà sinh vật học.',true,
+ '&ldquo;My best friend&rdquo; đã xác định RÕ (chỉ có một người bạn thân nhất) ➔ mệnh đề chỉ là THÔNG TIN THÊM, dùng <b>who</b> + dấu phẩy hai bên.',
+ 'Cụm sở hữu &ldquo;my + danh từ&rdquo; (my best friend) luôn thuộc nhóm KHÔNG XÁC ĐỊNH theo mẹo ở phần lý thuyết ➔ luôn có phẩy.');
+
+/* ══ DỰNG TRANG ══ */
+const TOTAL=Q.length;let answered=0,score=0;const done={},maps={};
+function bump(){document.getElementById('fb').style.width=(answered/TOTAL*100)+'%';
+ document.getElementById('sc').textContent=score;
+ const p=answered?score/answered:1;
+ document.getElementById('md').textContent=p>=.9?'🤩':p>=.7?'😃':p>=.5?'🙂':'💪'}
+const APP=document.getElementById('app');let CUR=null;
+function sec(cls,col,pill,title,ins){const d=document.createElement('div');d.className='sec bx '+cls;
+ d.innerHTML='<div class="st"><span class="pill" style="background:'+col+'">'+pill+'</span><h2>'+title+'</h2></div>'+
+  '<div class="si">'+ins+'</div>';APP.appendChild(d);CUR=d}
+function render(id){Q.forEach((m,i)=>{if(m.sec===id)CUR.appendChild(build(m,'g'+i))})}
+
+sec('s1','#25D0E0','B.VI','📝 ĐIỀN ĐẠI TỪ QUAN HỆ PHÙ HỢP (12 câu)',
+ 'Gõ tay MỘT đại từ quan hệ đúng (who · whom · which · whose).<br>Tất cả 12 câu đều có dấu phẩy sẵn (mệnh đề KHÔNG XÁC ĐỊNH) ➔ tuyệt đối không được gõ &ldquo;that&rdquo;.<br>Ba bước:<br>&nbsp;&nbsp;① danh từ trước là NGƯỜI hay VẬT?<br>&nbsp;&nbsp;② chỗ trống đứng trước MỘT DANH TỪ khác (sở hữu) hay trước ĐỘNG TỪ (chủ ngữ)?<br>&nbsp;&nbsp;③ kiểm tra lại quy tắc ở phần lý thuyết phía trên.');
+render('S1');
+
+sec('s2','#FF4D9D','B.VII','🔗 GHÉP 2 CÂU THÀNH MỆNH ĐỀ KHÔNG XÁC ĐỊNH (10 câu)',
+ 'Gõ TRỌN VẸN câu đã ghép hai câu lại bằng đại từ quan hệ phù hợp.<br>Tất cả 10 câu đều là mệnh đề KHÔNG XÁC ĐỊNH (danh từ đã rõ: tên riêng, "the woman next door"...) ➔ luôn có dấu phẩy, không dùng &ldquo;that&rdquo;.<br>Câu 2, 7 chú ý mệnh đề chen GIỮA hoặc đặt ở CUỐI câu tuỳ theo đại từ thay thế cho gì.<br>⚠️ Ms chấm CHẶT dấu phẩy: thiếu hoặc đặt sai vị trí dấu phẩy sẽ tính SAI, vì đây chính là dấu hiệu ngữ pháp của mệnh đề không xác định.');
+render('S2');
+
+sec('s3','#3ED17B','B.VIII','🧩 GHÉP 2 CÂU BẰNG MỆNH ĐỀ QUAN HỆ (12 câu · gõ cả câu)',
+ 'Gõ TRỌN VẸN câu đã ghép hai câu lại bằng đại từ quan hệ phù hợp (đổi He/She/It/They/Their/Its trong câu 2 thành who/whom/which/that/whose).<br>Bài này XEN CẢ hai loại: có câu XÁC ĐỊNH (không phẩy, được dùng &ldquo;that&rdquo;) và có câu KHÔNG XÁC ĐỊNH (bắt buộc có phẩy, cấm &ldquo;that&rdquo;) — đọc kỹ danh từ đứng trước để quyết định.<br>⚠️ Ms chấm CHẶT dấu phẩy: có phẩy mà thiếu, hoặc không cần phẩy mà con vẫn thêm vào, đều tính SAI.');
+render('S3');
+
+document.getElementById('tt').textContent=TOTAL;bump();
+
+function build(m,gid){
+ const c=document.createElement('div');c.className='q';c.id='c_'+gid;
+ const h='<span class="qn">'+m.num+'</span>';
+ if(m.t==='mcq'){
+  const so=shuffle(m.opts);maps[gid]=so;
+  c.innerHTML='<div class="qt">'+h+m.q+'</div><div class="og '+(m.cls||'')+'" id="o_'+gid+'">'+
+   so.map((o,i)=>'<button class="ob" onclick="pick(\''+gid+'\','+i+')">'+o+'</button>').join('')+
+   '</div><div class="ex" id="e_'+gid+'">'+m.ex+'</div>';
+ }else{
+  c.innerHTML='<div class="qt">'+h+m.q+'</div>'+
+   '<div class="fr"><input class="ti" id="i_'+gid+'" placeholder="'+m.ph+'" autocomplete="off" spellcheck="false">'+
+   '<button class="ck" id="b_'+gid+'">KIỂM TRA</button></div><div class="ex" id="e_'+gid+'">'+m.ex+'</div>';
+  const inp=c.querySelector('#i_'+gid),bt=c.querySelector('#b_'+gid);
+  const go=()=>{
+   if(done[gid])return;
+   const v=norm(inp.value);
+   if(!v){inp.classList.add('no');c.classList.add('shk');
+    setTimeout(()=>{inp.classList.remove('no');c.classList.remove('shk')},460);return}
+   done[gid]=true;answered++;
+   const ok=m.accept.map(normC).indexOf(normC(inp.value))>-1;
+   inp.disabled=true;bt.disabled=true;inp.classList.add(ok?'ok':'no');
+   document.getElementById('e_'+gid).classList.add('show');
+   if(ok){score++;ding();confetti()}else{buzz();c.classList.add('shk');setTimeout(()=>c.classList.remove('shk'),460)}
+   bump();
+  };
+  bt.onclick=go;inp.addEventListener('keydown',e=>{if(e.key==='Enter')go()});
+ }
+ return c;
+}
+function pick(gid,i){
+ if(done[gid])return;done[gid]=true;answered++;
+ const m=Q[+gid.slice(1)],b=document.getElementById('o_'+gid),c=document.getElementById('c_'+gid);
+ const ok=maps[gid][i]===m.correct;
+ [...b.children].forEach((el,j)=>{el.disabled=true;el.classList.add('dn');
+  if(maps[gid][j]===m.correct)el.classList.add('ok');
+  else if(j===i)el.classList.add('no');else el.classList.add('dim')});
+ document.getElementById('e_'+gid).classList.add('show');
+ if(ok){score++;ding();confetti()}else{buzz();c.classList.add('shk');setTimeout(()=>c.classList.remove('shk'),460)}
+ bump();
+}
+function openName(){document.getElementById('nOv').classList.add('on');setTimeout(()=>document.getElementById('nIn').focus(),180)}
+function showResult(){
+ const inp=document.getElementById('nIn'),er=document.getElementById('nEr'),nm=inp.value.trim();
+ if(!nm){inp.classList.add('er');er.style.display='block';setTimeout(()=>inp.classList.remove('er'),470);return}
+ er.style.display='none';document.getElementById('nOv').classList.remove('on');
+ const pct=score/TOTAL,ten=(pct*10).toFixed(2);
+ let g,msg,gif;
+ if(score===TOTAL){g='🏆 TUYỆT VỜI, '+nm+'!';msg='Con đúng TOÀN BỘ '+TOTAL+' câu — mệnh đề quan hệ đã nằm trong lòng bàn tay! 🎨';
+  gif='https://media.giphy.com/media/g9582DNuQppxC/giphy.gif';}
+ else if(pct>=.6){g='🌟 GIỎI LẮM, '+nm+'!';msg='Con làm rất tốt rồi. Nhớ mẹo: dấu phẩy ➔ không dùng that; danh từ chung chung ➔ không phẩy, được dùng that nhé!';
+  gif='https://media.giphy.com/media/11sBLVxNs7v6WA/giphy.gif';}
+ else{g='🌱 CỐ LÊN NÀO, '+nm+'!';msg='Đừng buồn nhé! Con đọc lại phần lý thuyết ở đầu trang và bản dịch trong phần giải thích, chép lại vào vở rồi làm lại là lên điểm ngay! 📚';
+  gif='https://media.giphy.com/media/d2lcHJTG5Tscg/giphy.gif';}
+ document.getElementById('rG').textContent=g;
+ document.getElementById('rS').textContent=score+' / '+TOTAL;
+ document.getElementById('rT').textContent='🎓 Quy đổi: '+ten+' / 10 điểm';
+ document.getElementById('rI').src=gif;
+ document.getElementById('rM').textContent=msg;
+ document.getElementById('rOv').classList.add('on');
+ if(pct>=.6){confetti();ding()}
+}
+</script>
+
+<script>
+var RM=['<b>Con giỏi lắm!</b> Lớp 9 là năm bản lề — mỗi câu con làm chắc hôm nay là một điểm số vững vàng cho kỳ thi tuyển sinh. Cô tin con! 💪',
+ 'Sai một câu không sao đâu — <b>đọc kỹ bản dịch và lý thuyết ở đầu trang</b> rồi con sẽ nhớ rất lâu nhé! 🌟',
+ '🔎 Mẹo cốt lõi cả bài: <b>có dấu phẩy ➔ không bao giờ dùng "that"</b>; danh từ còn chung chung ➔ không phẩy, được dùng "that".',
+ '☎️ Đăng ký khoá tiếng Anh <b>từ lớp 1 đến lớp 12</b> cùng <b>MS Chí Nên — 0852639652</b>: web luyện tập giải chi tiết từng câu, ngân hàng đề thi xịn xò!',
+ '🧩 Bài <b>B.VIII</b>: đổi đại từ trong câu 2 rồi mới ghép — He/She ➔ who/whom, It/They ➔ which/that, Their/Its/Her/His ➔ whose. Nhớ dấu phẩy chấm rất chặt!',
+ '🖋️ <b>Mở vở ra chép lại</b> 12 câu B.VI và bảng phân biệt xác định/không xác định. Chép một lần bằng đọc mười lần!',
+ '<b>Cô tự hào về con</b> vì con đã ngồi vào bàn và bắt đầu. Kiên trì thêm chút nữa thôi, con nhé! 🌈',
+ '☎️ <b>MS Chí Nên — 0852639652</b> · Đồng hành cùng con <b>từ lớp 1 đến lớp 12</b>, giải chi tiết từng câu 💎'];
+(function(){var e=document.getElementById('rmt'),k=0;
+ function go(){e.style.animation='none';void e.offsetWidth;e.style.animation='';e.innerHTML=RM[k];k=(k+1)%RM.length}
+ go();setInterval(go,4200);
+ var L=document.getElementById('dz'),E=['🔺','⭐','🟡','🌀','🔷','🎈','✳️','🟣'];
+ for(var i=0;i<8;i++){var d=document.createElement('i');d.textContent=E[i];
+  d.style.top=(5+i*11.5)+'vh';d.style.fontSize=(22+Math.random()*16).toFixed(0)+'px';
+  d.style.animationDuration=(28+Math.random()*22).toFixed(1)+'s';
+  d.style.animationDelay=(-Math.random()*44).toFixed(1)+'s';L.appendChild(d)}
+})();
+window.addEventListener('error',function(ev){var q=document.getElementById('app');
+ if(q&&q.children.length<1){q.innerHTML='<div style="background:#fff;border:3px solid #E63950;border-radius:12px;padding:15px;font-weight:800;color:#8a1038">⚠️ Lỗi: '+ev.message+'</div>'}});
+</script>
+<script>/*devclean*/(function(){
+var ZW=/[\u00AD\u034F\u061C\u115F\u1160\u17B4\u17B5\u180E\u200B-\u200F\u202A-\u202E\u2060-\u206F\uFEFF]/g,
+    SP=/[\u00A0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\t]/g,
+    AP=/[\u2018\u2019\u201A\u201B\u2032\u2035\u02B9\u02BB\u02BC\u02BD\u02C8\u0060\u00B4\uFF07]/g,
+    DQ=/[\u201C\u201D\u201E\u201F\u2033\u2036\u00AB\u00BB\uFF02]/g,
+    DS=/[\u2010\u2011\u2012\u2212\uFE63\uFF0D]/g;
+function clean(v){if(!v)return v;var s=String(v);try{s=s.normalize('NFKC')}catch(e){}
+  return s.replace(ZW,'').replace(SP,' ').replace(AP,"'").replace(DQ,'"').replace(DS,'-').replace(/[\u0300-\u036f]/g,'').replace(/ {2,}/g,' ');}
+window.__devclean=clean;
+function fix(skip){var L=document.querySelectorAll('input:not([type]),input[type=text],input[type=search],textarea');
+  for(var i=0;i<L.length;i++){var el=L[i];if(el===skip||el.readOnly||el.disabled)continue;var v=el.value,c=clean(v);if(c!==v)el.value=c;}}
+['pointerdown','mousedown','touchstart','click','change','focusout'].forEach(function(t){document.addEventListener(t,function(e){fix(t==='focusout'||t==='change'?null:e.target)},true)});
+document.addEventListener('keydown',function(e){if(e.key==='Enter'||e.keyCode===13)fix(null)},true);
+})();</script>
+<style id="ms-chi-nen-unlock-style">
+#passwordModal, #password-modal, #pwModal, #pw-modal, #pw-overlay,
+#lockModal, #passModal, #authModal, #auth-modal, #lockOverlay,
+#start-overlay, #intro-overlay, #start-screen,
+.password-modal, .lock-modal, .lock-overlay {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    z-index: -9999 !important;
+}
+</style>
+<script>
+// Remove password lock completely - direct quiz access
+(function() {
+    var initDone = false;
+    var renderCheckDone = false;
+
+    function hideEl(el, hard) {
+        if (!el) return;
+        if (hard) {
+            el.style.setProperty('display', 'none', 'important');
+            el.style.setProperty('visibility', 'hidden', 'important');
+            el.style.setProperty('opacity', '0', 'important');
+            el.style.setProperty('pointer-events', 'none', 'important');
+            el.style.setProperty('z-index', '-9999', 'important');
+        } else {
+            el.style.display = 'none';
+        }
+        el.classList.remove('active', 'show', 'open', 'visible', 'flex');
+    }
+
+    function hasRenderedQuiz() {
+        var containers = document.querySelectorAll(
+            '#quiz-container, #quizContainer, #questions-container, #questionPane, #quiz, #questions, #quiz-body, #questions-wrapper, #quiz-list, #quizList, #exercise-container, #app-container .split-container'
+        );
+        for (var i = 0; i < containers.length; i++) {
+            if (containers[i].querySelectorAll('button, input, select, textarea, .question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .question, .option-btn, .opt-btn, .ans-btn').length > 0) {
+                return true;
+            }
+        }
+        if (document.querySelectorAll('.question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .option-btn, .opt-btn, .ans-btn, .choice-btn').length > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    function ensureQuizRendered() {
+        if (renderCheckDone) return;
+        renderCheckDone = true;
+        if (hasRenderedQuiz()) return;
+
+        if (!hasRenderedQuiz() && typeof buildQuiz === 'function') { try { buildQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof initQuiz === 'function') { try { initQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderApp === 'function') { try { renderApp(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuiz === 'function') { try { renderQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuestions === 'function') { try { renderQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAllQuestions === 'function') { try { renderAllQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAll === 'function') { try { renderAll(); } catch(e){} }
+    }
+
+    function unlockNow() {
+        var pwIds = [
+            'passwordModal', 'password-modal', 'pwModal', 'pw-modal', 'pw-overlay',
+            'lockModal', 'passModal', 'authModal', 'auth-modal', 'lockOverlay',
+            'start-overlay', 'intro-overlay', 'start-screen'
+        ];
+        pwIds.forEach(function(id) {
+            hideEl(document.getElementById(id), true);
+        });
+
+        var modalEls = document.querySelectorAll('.password-modal, .lock-modal, .lock-overlay, #lockOverlay, #auth-modal');
+        modalEls.forEach(function(el) {
+            if (el.id !== 'resultModal' && el.id !== 'result-modal' && el.id !== 'scoreModal') {
+                hideEl(el, true);
+            }
+        });
+
+        ['nameModal', 'name-modal', 'nameInputModal'].forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) hideEl(el, false);
+        });
+
+        var qo = document.getElementById('quiz-overlay');
+        if (qo && (typeof isStarted === 'undefined' || !isStarted)) {
+            qo.style.display = 'none';
+        }
+
+        var mainIds = [
+            'mainContent', 'main-content', 'mainHeader', 'main-header',
+            'app-container', 'app', 'quizApp', 'quiz-wrapper', 'quizContainer', 'quiz-container', 'reading-content'
+        ];
+        mainIds.forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) {
+                el.classList.remove('hidden', 'blur', 'blurred', 'locked');
+                if (el.style.display === 'none') {
+                    el.style.removeProperty('display');
+                }
+                if (window.getComputedStyle(el).display === 'none') {
+                    var hasPane = el.querySelector('.pane, .left-pane, .right-pane, .split-container, .left-panel, .right-panel');
+                    if (id === 'main-content' || id.toLowerCase().includes('header') || el.classList.contains('main-container') || hasPane) {
+                        el.style.setProperty('display', 'flex', 'important');
+                    } else {
+                        el.style.setProperty('display', 'block', 'important');
+                    }
+                }
+            }
+        });
+
+        var qs = document.getElementById('quiz-screen');
+        if (qs) {
+            qs.classList.remove('hidden');
+            if (qs.classList.contains('flex-col')) {
+                qs.classList.add('flex');
+                qs.style.display = 'flex';
+            } else {
+                qs.style.display = 'block';
+            }
+        }
+
+        if (!initDone) {
+            initDone = true;
+
+            if (document.getElementById('start-overlay') && typeof startGame === 'function') {
+                var sn = document.getElementById('student-name') || document.getElementById('studentName');
+                if (sn && !sn.value.trim()) sn.value = 'Học sinh';
+            }
+            if (document.getElementById('name-modal') && typeof startQuiz === 'function') {
+                var sn2 = document.getElementById('student-name');
+                if (sn2 && !sn2.value.trim()) sn2.value = 'Học sinh';
+            }
+
+            if (typeof startQuiz === 'function' && (typeof isStarted === 'undefined' || !isStarted)) { try { startQuiz(); } catch(e){} }
+            if (typeof startGame === 'function') { try { startGame(); } catch(e){} }
+            if (typeof startTest === 'function') { try { startTest(); } catch(e){} }
+            if (typeof startApp === 'function') { try { startApp(); } catch(e){} }
+            if (typeof buildStarfield === 'function') { try { buildStarfield(); } catch(e){} }
+            if (typeof spawnFloats === 'function') { try { spawnFloats(); } catch(e){} }
+            if (typeof spawnFloaters === 'function') { try { spawnFloaters(); } catch(e){} }
+            if (typeof createFloatingBubbles === 'function') { try { createFloatingBubbles(); } catch(e){} }
+            if (typeof initAudio === 'function') { try { initAudio(); } catch(e){} }
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', unlockNow);
+    } else {
+        unlockNow();
+    }
+    if (document.readyState === 'complete') {
+        setTimeout(ensureQuizRendered, 150);
+    } else {
+        window.addEventListener('load', function() {
+            setTimeout(unlockNow, 20);
+            setTimeout(ensureQuizRendered, 150);
+            setTimeout(unlockNow, 300);
+            setTimeout(unlockNow, 700);
+        });
+    }
+    setTimeout(unlockNow, 50);
+    setTimeout(unlockNow, 200);
+    setTimeout(unlockNow, 600);
+    setTimeout(unlockNow, 1100);
+})();
+</script>
+</body>
+</html>

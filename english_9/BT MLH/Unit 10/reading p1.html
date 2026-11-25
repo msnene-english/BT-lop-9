@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🛰️ UNIT 10 · PLANET EARTH — Reading I &amp; II | MS Chí Nên</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800;900&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--sp:#060818;--sp2:#0D1130;--neb:#7C3AED;--neb2:#E879F9;--cy:#22D3EE;--gold:#FBBF24;
+ --good:#34D399;--bad:#FB7185;--pan:rgba(13,17,48,.88);--sheet:#F5F2FF;--disp:'Orbitron',sans-serif;
+ --ink:#EDEBFF;--dim:#A5A6D6}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito',sans-serif;color:var(--ink);min-height:100vh;overflow-x:hidden;
+ background:linear-gradient(-45deg,#04050F,#0D1130,#1A0F3D,#0B1440,#04050F);background-size:400% 400%;animation:bg 28s ease infinite}
+@keyframes bg{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+ background:radial-gradient(1.2px 1.2px at 12% 18%,rgba(255,255,255,.9) 0,transparent 60%),
+  radial-gradient(1.4px 1.4px at 78% 32%,rgba(255,255,255,.8) 0,transparent 60%),
+  radial-gradient(1px 1px at 42% 68%,rgba(255,255,255,.7) 0,transparent 60%),
+  radial-gradient(1.6px 1.6px at 88% 82%,rgba(255,255,255,.85) 0,transparent 60%),
+  radial-gradient(1px 1px at 24% 86%,rgba(255,255,255,.6) 0,transparent 60%),
+  radial-gradient(1.3px 1.3px at 62% 8%,rgba(255,255,255,.8) 0,transparent 60%),
+  radial-gradient(circle at 84% 10%,rgba(124,58,237,.35) 0,transparent 24%),
+  radial-gradient(circle at 10% 90%,rgba(34,211,238,.28) 0,transparent 24%);
+ animation:glow 15s ease-in-out infinite alternate}
+@keyframes glow{0%{filter:brightness(.88)}100%{filter:brightness(1.18)}}
+.sky{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.sky i{position:absolute;font-size:25px;opacity:.28;animation:fly linear infinite;font-style:normal;
+ filter:drop-shadow(0 0 7px rgba(124,58,237,.7))}
+@keyframes fly{0%,100%{transform:translate(0,0) rotate(-6deg)}50%{transform:translate(18px,-28px) rotate(9deg)}}
+.sky b{position:absolute;border-radius:50%;filter:blur(74px);opacity:.34;animation:fly 20s ease-in-out infinite}
+.wrap{position:relative;z-index:2;max-width:1500px;margin:0 auto;padding:8px 14px 70px}
+/* ── thanh nhac nho: tin hieu ve tinh ── */
+.note{position:sticky;top:0;z-index:40;margin:0 -14px 12px;padding:9px 14px;
+ background:linear-gradient(90deg,var(--neb),var(--cy) 48%,var(--gold));box-shadow:0 5px 20px rgba(0,0,20,.5)}
+.note .in{display:flex;align-items:center;gap:10px;max-width:1470px;margin:0 auto}
+.note .tg{flex:none;background:#0B0E24;color:var(--cy);font-weight:900;font-size:.82rem;padding:3px 12px;border-radius:4px;white-space:nowrap}
+.note .tx{flex:1;min-width:0;color:#0B0E24;font-weight:800;font-size:1rem;line-height:1.55;transition:opacity .25s}
+/* ── header: bang dieu khien tram vu tru ── */
+.hd{position:relative;background:var(--pan);border:2px solid var(--cy);border-radius:8px;padding:20px 18px;
+ text-align:center;margin-bottom:14px;box-shadow:0 0 34px rgba(34,211,238,.28);backdrop-filter:blur(6px)}
+.hd:before{content:'';position:absolute;inset:6px;border:1px dashed rgba(34,211,238,.4);border-radius:5px;pointer-events:none}
+.hd:after{content:'MISSION LOG · EARTH-01';position:absolute;right:14px;bottom:8px;font-family:var(--disp);
+ font-weight:700;font-size:.62rem;letter-spacing:2px;color:var(--cy);opacity:.65}
+.hd h1{font-family:var(--disp);font-weight:800;font-size:clamp(21px,4.4vw,34px);line-height:1.22;letter-spacing:1px;
+ color:#fff;text-shadow:0 0 14px rgba(124,58,237,.9)}
+.hd .by{display:inline-block;margin-top:11px;background:linear-gradient(135deg,var(--neb),var(--neb2));color:#fff;
+ font-weight:900;font-size:.95rem;padding:6px 16px;border-radius:5px}
+.hd p{margin-top:10px;font-size:.95rem;font-weight:700;color:var(--dim);line-height:1.75}
+.bar{display:flex;align-items:center;gap:10px;background:var(--pan);border:2px solid rgba(34,211,238,.4);
+ border-radius:8px;padding:9px 15px;margin-bottom:14px;font-weight:900;font-size:1.04rem}
+.bar .tr{flex:1;height:12px;background:rgba(255,255,255,.1);border-radius:6px;overflow:hidden}
+.bar .fb{height:100%;width:0;background:repeating-linear-gradient(45deg,var(--cy) 0 10px,var(--neb) 10px 20px,var(--gold) 20px 30px);transition:width .4s}
+/* ── split ── */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+@media(max-width:940px){.split{grid-template-columns:1fr}}
+.pane{position:sticky;top:64px;max-height:calc(100vh - 82px);overflow-y:auto}
+@media(max-width:940px){.pane{position:static;max-height:none}.sec{position:static!important;max-height:none!important}}
+/* to nhat ky su menh, giay sang mau */
+.letter{background:var(--sheet);color:#211846;border:2px solid #C9BEF0;border-radius:8px;overflow:hidden;
+ box-shadow:0 14px 32px rgba(0,0,20,.5)}
+.letter .edge{height:9px;background:repeating-linear-gradient(90deg,var(--neb) 0 22px,var(--cy) 22px 30px)}
+.letter .bd{padding:16px 18px 20px;
+ background:repeating-linear-gradient(90deg,rgba(124,58,237,.05) 0 1px,transparent 1px 26px),
+  repeating-linear-gradient(0deg,rgba(124,58,237,.05) 0 1px,transparent 1px 26px)}
+.stamp{float:right;width:84px;height:84px;margin:0 0 8px 12px;border-radius:50%;
+ background:#F1EBFF;border:2px solid var(--neb);display:grid;place-items:center;text-align:center;
+ font-size:27px;line-height:1.1;color:var(--neb);box-shadow:0 0 0 4px rgba(124,58,237,.15)}
+.stamp b{display:block;font-family:var(--disp);font-weight:800;font-size:.6rem;letter-spacing:1.2px;color:#5B3FCB}
+.bank{background:#EFE9FF;border:2px dashed var(--neb);border-radius:6px;padding:10px 12px;margin-bottom:12px;
+ font-weight:800;font-size:1.01rem;line-height:1.9;text-align:center;color:#211846}
+.bank b{font-family:var(--disp);font-weight:800;font-size:1.06rem;letter-spacing:1px;color:var(--neb)}
+.letter h2{font-family:var(--disp);font-weight:800;font-size:1.45rem;letter-spacing:.5px;color:#5B3FCB;line-height:1.25;margin-bottom:4px}
+.letter .sub{font-size:.9rem;font-weight:800;color:#0E8FA3;font-style:italic;margin-bottom:12px}
+.letter p{font-size:1.06rem;line-height:1.96;margin-bottom:8px}
+.letter b{color:#0E8FA3}
+.bl{display:inline;background:#FFF0BE;border-bottom:3px solid var(--gold);border-radius:4px;padding:1px 9px;
+ font-weight:900;color:#8A5A00}
+.bl.ok{background:#D6F7E6;border-color:var(--good);color:#0A6E45}
+.tbtn{display:inline-block;margin:2px 0 10px;background:var(--neb);color:#fff;border:none;border-radius:16px;
+ padding:6px 16px;font-family:'Nunito';font-weight:900;font-size:.85rem;cursor:pointer;box-shadow:0 3px 0 #4C24A8}
+.tvi{display:none;background:#EFF9FC;border-left:5px solid #0E8FA3;border-radius:0 6px 6px 0;padding:9px 13px;
+ margin-bottom:10px;font-size:1rem;line-height:1.85;color:#12313B;font-weight:700}
+.tvi.on{display:block}
+/* ── BANG TU VUNG KE O ── */
+.gl{margin-top:16px;background:#F4F0FF;border:2px solid var(--neb);border-radius:8px;padding:0;overflow:hidden}
+.gl h3{font-family:var(--disp);font-weight:800;font-size:1.08rem;letter-spacing:.5px;color:#fff;
+ background:var(--neb);margin:0;padding:8px 12px}
+.gtb{width:100%;table-layout:fixed;border-collapse:collapse;font-size:.97rem}
+.gtb col.c1{width:24%}.gtb col.c2{width:20%}.gtb col.c3{width:12%}.gtb col.c4{width:44%}
+.gtb tr{border-top:1px solid #DCD3F5}
+.gtb tr:nth-child(even){background:#FAF7FF}
+.gtb td{padding:7px 10px;vertical-align:top;line-height:1.6;word-wrap:break-word;overflow-wrap:break-word}
+.gtb .gw{color:var(--neb);font-weight:900}
+.gtb .gp{color:#7A6A3A;font-style:italic;font-size:.91rem}
+.gtb .gt{color:#B3451F;font-weight:800;text-align:center;font-size:.91rem}
+.gtb .gm{color:#0A6E45;font-weight:800}
+.p-word{color:var(--neb);font-weight:900}
+.p-phonetic{color:#7A6A3A;font-style:italic}
+.p-mean{color:#0A6E45;font-weight:800}
+.p-grammar{color:#B3451F;font-weight:800}
+.hl-green{background:#D6F7E6;color:#0A6E45;padding:1px 7px;border-radius:4px;font-weight:900}
+.hl-red{background:#FFE1E7;color:#A31838;padding:1px 7px;border-radius:4px;font-weight:900}
+/* ── cau hoi: bang dieu khien ── */
+.sec{position:sticky;top:64px;max-height:calc(100vh - 82px);overflow-y:auto;
+ background:var(--pan);border:2px solid rgba(34,211,238,.4);border-radius:8px;padding:15px;margin-bottom:14px;
+ box-shadow:0 0 28px rgba(34,211,238,.16);backdrop-filter:blur(6px)}
+.sec>h3{font-family:var(--disp);font-weight:800;font-size:1.1rem;letter-spacing:.5px;color:var(--gold);margin-bottom:10px;line-height:1.3}
+.q{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-left:6px solid var(--cy);
+ border-radius:6px;padding:12px 13px;margin-bottom:12px}
+.q .qt{font-weight:800;font-size:1.02rem;line-height:1.85}
+.qn{display:inline-block;background:linear-gradient(135deg,var(--cy),var(--neb2));color:#0B0E24;min-width:34px;
+ text-align:center;border-radius:5px;padding:1px 8px;margin-right:8px;font-weight:900;font-size:.88rem}
+.og{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+@media(max-width:560px){.og{grid-template-columns:1fr}}
+.ob{background:rgba(255,255,255,.07);color:var(--ink);border:2px solid rgba(255,255,255,.22);border-radius:16px;
+ padding:11px 14px;font-family:'Nunito';font-weight:800;font-size:1rem;cursor:pointer;text-align:left;
+ line-height:1.5;transition:.14s}
+.ob:hover:not(.dn){transform:translateX(3px);border-color:var(--cy);box-shadow:0 0 10px rgba(34,211,238,.4)}
+.ob.dn{cursor:default}
+.ob.ok{background:rgba(52,211,153,.2);border-color:var(--good);color:#C6FFE2}
+.ob.no{background:rgba(251,113,133,.18);border-color:var(--bad);color:#FFD5DE}
+.ex{display:none;margin-top:10px;background:var(--sheet);color:#211846;border:2px solid #C9BEF0;border-radius:6px;
+ padding:12px;font-size:1rem;line-height:1.85}
+.ex.on{display:block;animation:pop .3s}
+@keyframes pop{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+.kb{background:#D6F7E6;border:2px solid var(--good);border-radius:6px;padding:7px 12px;font-weight:900;color:#0A6E45;margin-bottom:8px}
+.stp{background:#F4F0FF;border:1px solid #DCD3F5;border-radius:6px;padding:9px 12px;margin-bottom:7px}
+.stp .l{display:inline-block;background:var(--neb);color:#fff;padding:2px 12px;border-radius:10px;
+ font-size:.68rem;font-weight:900;letter-spacing:.4px;margin-bottom:5px}
+.op4{background:#fff;border:1px solid #DCD3F5;border-radius:5px;padding:6px 10px;margin-bottom:5px;font-size:.99rem}
+.op4.rt{background:#D6F7E6;border-color:var(--good)}
+.op4 b{color:var(--neb)}.op4.rt b{color:#0A6E45}
+.wr{background:#FFF0F4;border:1px solid #F7C6D2;border-radius:5px;padding:6px 10px;margin-bottom:5px;font-size:.99rem}
+.wr b{color:#A31838}
+.shk{animation:shk .42s}
+@keyframes shk{0%,100%{transform:translateX(0)}25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+.sbtn{display:block;width:100%;max-width:560px;margin:22px auto 0;
+ background:linear-gradient(135deg,var(--neb),var(--cy),var(--gold));background-size:200% 200%;animation:bg 6s ease infinite;
+ color:#0B0E24;border:none;border-radius:26px;padding:16px;font-family:var(--disp);font-weight:800;font-size:1.3rem;
+ letter-spacing:1px;cursor:pointer;box-shadow:0 6px 0 rgba(0,0,20,.5)}
+.ov{position:fixed;inset:0;background:rgba(2,3,12,.9);backdrop-filter:blur(4px);display:none;place-items:center;z-index:99;padding:16px}
+.ov.on{display:grid}
+.mb{background:var(--sheet);color:#211846;border-radius:8px;padding:22px;max-width:430px;width:100%;text-align:center;
+ border:3px solid var(--neb);box-shadow:0 0 44px rgba(124,58,237,.4)}
+.mb h2{font-family:var(--disp);font-weight:800;font-size:1.35rem;letter-spacing:.5px;color:var(--neb);margin-bottom:10px}
+.mb input{width:100%;padding:12px;border-radius:8px;border:2px solid #C9BEF0;background:#fff;
+ font-family:'Nunito';font-weight:800;font-size:1.03rem;text-align:center;outline:none;color:#211846}
+.mb .em{display:none;color:#A31838;font-weight:800;font-size:.9rem;margin-top:7px}
+.mb .em.on{display:block}
+.mb img{width:100%;border-radius:6px;margin:10px 0;border:2px solid #C9BEF0}
+.mb .rs{font-family:var(--disp);font-weight:800;font-size:2.3rem;color:var(--neb)}
+.mb .t10{display:inline-block;margin-top:8px;background:var(--neb);color:#fff;font-weight:900;
+ padding:6px 18px;border-radius:14px;font-size:1.05rem}
+.mb .rm{font-size:1rem;line-height:1.78;margin-top:10px;font-weight:700;color:#4A4272}
+.foot{text-align:center;margin-top:22px;font-size:.92rem;color:var(--dim);font-weight:800;line-height:1.8}
+</style>
+</head>
+<body>
+<div class="sky" id="sky"></div>
+<div class="wrap">
+
+<div class="note"><div class="in">
+  <span class="tg">📮 MS NHẮN</span>
+  <span class="tx" id="msTx">🛰️ Chào các em lớp 9! MS Chí Nên ở đây cùng làm bài Unit 10 - Planet Earth với các em nhé.</span>
+</div></div>
+
+<div class="hd">
+  <h1>🛰️ UNIT 10 · PLANET EARTH<br>I. Earth — Our Home Planet &amp; II. Polar Habitats</h1>
+  <div class="by">🚀 Giáo viên tạo: MS Chí Nên &nbsp;·&nbsp; ☎️ <b>0852639652</b> để đăng ký khoá học tiếng Anh từ lớp 1 đến lớp 12</div>
+  <p><b>19 câu</b> · Bài I: điền từ vào 8 chỗ trống &nbsp;·&nbsp; Bài II: 6 câu Đúng/Sai + 5 câu trắc nghiệm<br>
+  <i>Bên trái là nhật ký sứ mệnh chia thành từng đoạn ngắn, mỗi đoạn có nút mở bản dịch riêng. Bảng từ vựng kẻ ô ở cuối mỗi bài.</i></p>
+</div>
+
+<div class="bar">🎟️ <span id="sc">0</span>/<span id="tt">0</span>
+  <div class="tr"><div class="fb" id="fb"></div></div><span id="md" style="font-size:1.3rem">💪</span></div>
+
+<div id="app"></div>
+
+<button class="sbtn" onclick="openName()">🎯 NỘP BÀI TÍNH ĐIỂM &amp; XEM KẾT QUẢ</button>
+<div class="foot">🌋 Made with love for World Englishes — MS Chí Nên · ☎️ 0852639652 để đăng ký khoá học từ lớp 1 đến lớp 12</div>
+</div>
+
+<div class="ov" id="ovN"><div class="mb">
+  <h2>📮 Con ghi tên lên phong bì nhé!</h2>
+  <input id="nIn" placeholder="Ví dụ: Nguyễn Văn A" autocomplete="off" maxlength="50">
+  <div class="em" id="nEm">⚠️ Con chưa nhập tên kìa! Nhập tên rồi mới xem điểm được nha.</div>
+  <button class="sbtn" style="margin-top:14px;font-size:1rem;padding:12px" onclick="showResult()">🚀 Xem kết quả</button>
+</div></div>
+
+<div class="ov" id="ovR"><div class="mb">
+  <div style="font-size:2.6rem" id="rEmo">🎉</div>
+  <h2 id="rGr"></h2>
+  <img id="rGif" alt="ket qua">
+  <div class="rs"><span id="rSc">0</span>/<span id="rTt">0</span></div>
+  <div class="t10">🎓 Quy đổi: <span id="r10">0</span>/10 điểm</div>
+  <div class="rm" id="rMs"></div>
+  <button class="sbtn" style="margin-top:14px;font-size:1rem;padding:12px" onclick="location.reload()">🔄 Làm lại</button>
+</div></div>
+
+<script>
+/* ══ nen bay ══ */
+(function(){var e=['🛰️','🚀','🌍','🪐','⭐','☄️','🌌','🔭','🌕'],s=document.getElementById('sky'),h='';
+ h+='<b style="left:-6%;top:6%;width:46vw;height:46vw;background:#7C3AED"></b>'+'<b style="right:-8%;top:32%;width:42vw;height:42vw;background:#22D3EE;animation-duration:23s"></b>'+'<b style="left:22%;bottom:-12%;width:48vw;height:48vw;background:#FBBF24;animation-duration:27s"></b>';for(var i=0;i<18;i++)h+='<i style="left:'+(Math.random()*98)+'%;top:'+(Math.random()*96)+'%;animation-duration:'+(9+Math.random()*10)+'s;animation-delay:'+(Math.random()*6)+'s">'+e[i%e.length]+'</i>';
+ s.innerHTML=h})();
+
+/* ══ am thanh ══ */
+var AC=null;
+function ac(){if(!AC){try{AC=new (window.AudioContext||window.webkitAudioContext)()}catch(e){}}if(AC&&AC.state==='suspended')AC.resume();return AC}
+function ding(){var c=ac();if(!c)return;var t=c.currentTime;[880,1174.7,1567.9].forEach(function(f,i){var o=c.createOscillator(),g=c.createGain();o.type='sine';o.frequency.value=f;o.connect(g);g.connect(c.destination);var s=t+i*0.09;g.gain.setValueAtTime(0.0001,s);g.gain.exponentialRampToValueAtTime(.22,s+.02);g.gain.exponentialRampToValueAtTime(.0001,s+.34);o.start(s);o.stop(s+.36)})}
+function buzz(){var c=ac();if(!c)return;var t=c.currentTime;[[300,0],[250,.15],[200,.3]].forEach(function(p){var o=c.createOscillator(),g=c.createGain();o.type='square';o.frequency.value=p[0];o.connect(g);g.connect(c.destination);var s=t+p[1];g.gain.setValueAtTime(0.0001,s);g.gain.exponentialRampToValueAtTime(.15,s+.02);g.gain.exponentialRampToValueAtTime(.0001,s+.15);o.start(s);o.stop(s+.16)})}
+function conf(){var cs=['#F2B03C','#D63A2F','#1F5FA8','#7BE0A8','#FFE9B8'];
+ for(var i=0;i<60;i++){var d=document.createElement('div');
+  d.style.cssText='position:fixed;top:-14px;width:9px;height:14px;z-index:98;pointer-events:none;left:'+(Math.random()*100)+'vw;background:'+cs[i%5]+';opacity:.9;transition:transform 2.2s linear,opacity 2.2s';
+  document.body.appendChild(d);(function(d){requestAnimationFrame(function(){d.style.transform='translateY(102vh) rotate('+(Math.random()*720)+'deg)';d.style.opacity=0});setTimeout(function(){d.remove()},2400)})(d)}}
+function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}
+
+/* ══ helper du lieu ══ */
+var P=[];
+function pas(id,ic,ttl,sub,body,gloss,qs){P.push({id:id,ic:ic,ttl:ttl,sub:sub,body:body,gloss:gloss,qs:qs})}
+function W(w,ph,ty,vi){return '<div><span class="p-word">'+w+'</span> <span class="p-phonetic">'+ph+'</span> <span class="p-grammar">('+ty+')</span> = <span class="p-mean">'+vi+'</span></div>'}
+function OP(en,ty,vi,ok){return '<div class="op4'+(ok?' rt':'')+'"><b>'+(ok?'✔ ':'')+en+'</b> <span class="p-grammar">('+ty+')</span> ➔ <span class="p-mean">'+vi+'</span></div>'}
+function WR(o,why){return '<div class="wr"><b>✗ '+o+'</b> — '+why+'</div>'}
+function E5(key,de,ops,why,wrong,ev,evvi){
+ return '<div class="kb">✅ Đáp án: '+key+'</div>'+
+ '<div class="stp"><span class="l">BƯỚC 1 · DỊCH CẢ CÂU CHỨA CHỖ TRỐNG</span><br>'+de+'</div>'+
+ '<div class="stp"><span class="l">BƯỚC 2 · NGUYÊN VĂN, TỪ LOẠI &amp; NGHĨA CỦA TỪNG LỰA CHỌN</span>'+ops+'</div>'+
+ '<div class="stp"><span class="l">BƯỚC 3 · TẠI SAO ĐÁP ÁN NÀY ĐÚNG</span><br>'+why+'</div>'+
+ '<div class="stp"><span class="l">BƯỚC 4 · TẠI SAO CÁC PHƯƠNG ÁN KIA SAI</span>'+wrong+'</div>'+
+ '<div class="stp"><span class="l">BƯỚC 5 · BẰNG CHỨNG TRONG BÀI</span><br>🔍 <i>'+ev+'</i><br>👉 '+evvi+'</div>'}
+function Q(n,ans,opts,ex,st){return {n:n,ans:ans,opts:opts,ex:ex,st:st}}
+function T(en,vi){return en+'<button class="tbtn" onclick="tg(this)">Mở dịch đoạn này 🌟</button><div class="tvi">'+vi+'</div>'}
+function tg(b){var d=b.nextElementSibling;d.classList.toggle('on');b.textContent=d.classList.contains('on')?'Ẩn bản dịch 🙈':'Mở dịch đoạn này 🌟'}
+function B(id,n){return '<span class="bl" id="bl_'+id+'_'+n+'">('+n+') _____</span>'}
+function W(w,ph,ty,vi){return '<tr><td class="gw">'+w+'</td><td class="gp">'+ph+'</td><td class="gt">'+ty+'</td><td class="gm">'+vi+'</td></tr>'}
+
+/* ═════════ BÀI I — EARTH: OUR HOME PLANET (8 câu) ═════════ */
+pas('A','🌍','I. EARTH — OUR HOME PLANET','Chọn từ đúng cho mỗi chỗ trống (8 câu)',
+ '<div class="stamp">🌍<b>EARTH</b></div>'+
+ '<div class="bank"><b>HỘP TỪ</b><br>metal · hospitable · exist · covered · inhabited · surface · climate · simply</div>'+
+ T('<p>Earth – our home planet – is the third planet from the Sun, and the fifth largest planet. It\'s the only place we know of '+B('A',1)+' by living things.</p>',
+   'Trái Đất – hành tinh quê hương của chúng ta – là hành tinh thứ ba tính từ Mặt Trời, và là hành tinh lớn thứ năm. Đây là nơi duy nhất chúng ta biết được (1)___ bởi các sinh vật sống.')+
+ T('<p>While Earth is only the fifth largest planet in the solar system, it is the only world in our solar system with liquid water on the '+B('A',2)+'. Just slightly larger than nearby Venus, Earth is the biggest of the four planets closest to the Sun, all of which are made of rock and '+B('A',3)+'.</p>',
+   'Dù Trái Đất chỉ là hành tinh lớn thứ năm trong hệ Mặt Trời, đây là thế giới duy nhất trong hệ Mặt Trời có nước lỏng trên (2)___. Chỉ lớn hơn một chút so với Sao Kim gần đó, Trái Đất là hành tinh lớn nhất trong bốn hành tinh gần Mặt Trời nhất, tất cả đều được tạo thành từ đá và (3)___.')+
+ T('<p>Earth is the only planet in the solar system whose English name does not come from Greek or Roman mythology. The name was taken from Old English and Germanic. It '+B('A',4)+' means "the ground." There are, of course, many names for our planet in the thousands of languages spoken by the people of the third planet from the Sun.</p>',
+   'Trái Đất là hành tinh duy nhất trong hệ Mặt Trời có tên tiếng Anh không bắt nguồn từ thần thoại Hy Lạp hay La Mã. Cái tên được lấy từ tiếng Anh cổ và tiếng Đức. Nó (4)___ có nghĩa là "mặt đất." Tất nhiên, có rất nhiều tên gọi khác cho hành tinh của chúng ta trong hàng ngàn ngôn ngữ được nói bởi người dân của hành tinh thứ ba tính từ Mặt Trời.')+
+ T('<p>Earth has a very '+B('A',5)+' temperature and mix of chemicals that have made life abundant here. Most notably, Earth is unique in that most of our planet is '+B('A',6)+' in liquid water, since the temperature allows liquid water to '+B('A',7)+' for extended periods of time.</p>',
+   'Trái Đất có một nhiệt độ và hỗn hợp hóa chất rất (5)___, khiến sự sống trở nên phong phú ở đây. Đáng chú ý nhất, Trái Đất là duy nhất ở chỗ phần lớn hành tinh của chúng ta được (6)___ trong nước lỏng, vì nhiệt độ cho phép nước lỏng (7)___ trong thời gian dài.')+
+ T('<p>Earth\'s vast oceans provided a convenient place for life to begin about 3.8 billion years ago. However, some of the features of our planet that make it great for sustaining life are changing due to the ongoing effects of '+B('A',8)+' change.</p>',
+   'Các đại dương rộng lớn của Trái Đất đã tạo ra một nơi thuận tiện cho sự sống bắt đầu khoảng 3,8 tỷ năm trước. Tuy nhiên, một số đặc điểm của hành tinh chúng ta khiến nó tuyệt vời cho việc duy trì sự sống đang thay đổi do những tác động liên tục của biến đổi (8)___.'),
+ W('hospitable','/hɒˈspɪtəbl/','adj','dễ chịu, thích hợp cho sự sống')+
+ W('inhabited','/ɪnˈhæbɪtɪd/','adj','có người/sinh vật sinh sống')+
+ W('mythology','/mɪˈθɒlədʒi/','n','thần thoại')+
+ W('chemical','/ˈkemɪkl/','n','hóa chất')+
+ W('sustain','/səˈsteɪn/','v','duy trì'),
+[
+Q(1,'inhabited',['inhabited','exist','covered','climate'],
+ E5('inhabited','<span class="p-word">"It\'s the only place we know of ______ by living things."</span><br>👉 Đây là nơi duy nhất chúng ta biết được ______ bởi các sinh vật sống.',
+  OP('inhabited','tính từ (bị động: được sinh sống)','có sinh vật sinh sống',1)+OP('exist','động từ nguyên mẫu','tồn tại',0)+OP('covered','tính từ (bị động: được che phủ)','được che phủ',0)+OP('climate','danh từ','khí hậu',0),
+  'Đáp án đúng là <span class="p-word">inhabited</span>. Cấu trúc <span class="p-grammar">"the only place we know of inhabited by living things"</span> (nơi duy nhất chúng ta biết có sinh vật sống sinh sống) diễn tả đúng ý nghĩa Trái Đất là hành tinh duy nhất có sự sống — "inhabited by" là cụm cố định nghĩa "có sinh vật sinh sống".',
+  WR('exist','<span class="hl-red">"Exist"</span> (tồn tại) là động từ nguyên mẫu, không thể đứng ngay sau "know of" theo cấu trúc bị động cần thiết ở đây.')+
+  WR('covered','<span class="hl-red">"Covered"</span> (được che phủ) sai nghĩa — câu đang nói về sự SỐNG của sinh vật, không phải việc bị che phủ.')+
+  WR('climate','<span class="hl-red">"Climate"</span> (khí hậu) là danh từ, không thể đứng ở vị trí tính từ bị động sau "know of".',),
+  'It\'s the only place we know of inhabited by living things.',
+  'Đây là nơi duy nhất chúng ta biết được có sinh vật sống sinh sống.')),
+
+Q(2,'surface',['surface','metal','hospitable','simply'],
+ E5('surface','<span class="p-word">"While Earth is only the fifth largest planet in the solar system, it is the only world in our solar system with liquid water on the ______."</span><br>👉 Dù Trái Đất chỉ là hành tinh lớn thứ năm trong hệ Mặt Trời, đây là thế giới duy nhất trong hệ Mặt Trời có nước lỏng trên ______.',
+  OP('surface','danh từ','bề mặt',1)+OP('metal','danh từ','kim loại',0)+OP('hospitable','tính từ','dễ chịu, thích hợp cho sự sống',0)+OP('simply','trạng từ','đơn giản là',0),
+  'Đáp án đúng là <span class="p-word">surface</span>. Cụm từ <span class="p-grammar">"liquid water on the surface"</span> (nước lỏng trên bề mặt) là cách diễn đạt tự nhiên và chính xác khi nói về nước ở BỀ MẶT một hành tinh.',
+  WR('metal','<span class="hl-red">"Metal"</span> (kim loại) sai nghĩa, không liên quan đến vị trí của nước.')+
+  WR('hospitable','<span class="hl-red">"Hospitable"</span> (dễ chịu) là tính từ, không thể đứng sau mạo từ "the" ở vị trí danh từ.')+
+  WR('simply','<span class="hl-red">"Simply"</span> (đơn giản là) là trạng từ, sai từ loại hoàn toàn ở vị trí cần một danh từ.',),
+  'It is the only world in our solar system with liquid water on the surface.',
+  'Đây là thế giới duy nhất trong hệ Mặt Trời có nước lỏng trên bề mặt.')),
+
+Q(3,'metal',['metal','exist','inhabited','covered'],
+ E5('metal','<span class="p-word">"Earth is the biggest of the four planets closest to the Sun, all of which are made of rock and ______."</span><br>👉 Trái Đất là hành tinh lớn nhất trong bốn hành tinh gần Mặt Trời nhất, tất cả đều được tạo thành từ đá và ______.',
+  OP('metal','danh từ','kim loại',1)+OP('exist','động từ','tồn tại',0)+OP('inhabited','tính từ','có sinh vật sinh sống',0)+OP('covered','tính từ','được che phủ',0),
+  'Đáp án đúng là <span class="p-word">metal</span>. Cụm <span class="p-grammar">"made of rock and metal"</span> (được tạo thành từ đá và kim loại) mô tả chính xác thành phần cấu tạo của các hành tinh đá (rocky planets) như Trái Đất, Sao Kim, Sao Thủy, Sao Hỏa.',
+  WR('exist','<span class="hl-red">"Exist"</span> (tồn tại) là động từ, không thể đứng sau "made of rock and" — vị trí này cần một DANH TỪ chỉ vật liệu.')+
+  WR('inhabited','<span class="hl-red">"Inhabited"</span> (có sinh vật sinh sống) là tính từ mô tả trạng thái, không phải vật liệu cấu tạo.')+
+  WR('covered','<span class="hl-red">"Covered"</span> (được che phủ) cũng không phải là vật liệu, sai nghĩa trong ngữ cảnh mô tả cấu tạo hành tinh.',),
+  'Earth is the biggest of the four planets closest to the Sun, all of which are made of rock and metal.',
+  'Trái Đất là hành tinh lớn nhất trong bốn hành tinh gần Mặt Trời nhất, tất cả đều được tạo thành từ đá và kim loại.')),
+
+Q(4,'simply',['simply','hospitable','climate','surface'],
+ E5('simply','<span class="p-word">"It ______ means \'the ground.\'"</span><br>👉 Nó ______ có nghĩa là "mặt đất."',
+  OP('simply','trạng từ','đơn giản là',1)+OP('hospitable','tính từ','dễ chịu, thích hợp cho sự sống',0)+OP('climate','danh từ','khí hậu',0)+OP('surface','danh từ','bề mặt',0),
+  'Đáp án đúng là <span class="p-word">simply</span>. Đây là vị trí cần một TRẠNG TỪ bổ nghĩa cho động từ "means" (có nghĩa là) — "simply" (đơn giản là) đúng từ loại và nghĩa, nhấn mạnh ý nghĩa của tên gọi rất mộc mạc.',
+  WR('hospitable','<span class="hl-red">"Hospitable"</span> là tính từ, không thể bổ nghĩa cho động từ "means".')+
+  WR('climate','<span class="hl-red">"Climate"</span> là danh từ, sai vị trí ngữ pháp hoàn toàn.')+
+  WR('surface','<span class="hl-red">"Surface"</span> cũng là danh từ, không thể đứng ở vị trí trạng từ này.',),
+  'It simply means "the ground."',
+  'Nó đơn giản có nghĩa là "mặt đất."')),
+
+Q(5,'hospitable',['hospitable','covered','metal','exist'],
+ E5('hospitable','<span class="p-word">"Earth has a very ______ temperature and mix of chemicals that have made life abundant here."</span><br>👉 Trái Đất có một nhiệt độ và hỗn hợp hóa chất rất ______, khiến sự sống trở nên phong phú ở đây.',
+  OP('hospitable','tính từ','dễ chịu, thích hợp cho sự sống',1)+OP('covered','tính từ (bị động)','được che phủ',0)+OP('metal','danh từ','kim loại',0)+OP('exist','động từ','tồn tại',0),
+  'Đáp án đúng là <span class="p-word">hospitable</span>. Sau "very" cần một TÍNH TỪ, và "hospitable" (dễ chịu, thích hợp cho sự sống) đúng nghĩa vì cả câu đang giải thích vì sao sự sống phong phú ở Trái Đất.',
+  WR('covered','<span class="hl-red">"Covered"</span> (được che phủ) không mô tả được đặc tính "nhiệt độ và hỗn hợp hóa chất", sai nghĩa.')+
+  WR('metal','<span class="hl-red">"Metal"</span> là danh từ, không thể đứng sau "very" làm tính từ bổ nghĩa cho "temperature".')+
+  WR('exist','<span class="hl-red">"Exist"</span> là động từ, sai từ loại hoàn toàn ở vị trí này.',),
+  'Earth has a very hospitable temperature and mix of chemicals that have made life abundant here.',
+  'Trái Đất có một nhiệt độ và hỗn hợp hóa chất rất dễ chịu, khiến sự sống trở nên phong phú ở đây.')),
+
+Q(6,'covered',['covered','climate','simply','inhabited'],
+ E5('covered','<span class="p-word">"Most notably, Earth is unique in that most of our planet is ______ in liquid water."</span><br>👉 Đáng chú ý nhất, Trái Đất là duy nhất ở chỗ phần lớn hành tinh của chúng ta được ______ trong nước lỏng.',
+  OP('covered','tính từ (bị động: được che phủ)','được che phủ',1)+OP('climate','danh từ','khí hậu',0)+OP('simply','trạng từ','đơn giản là',0)+OP('inhabited','tính từ (bị động: có sinh vật sinh sống)','có sinh vật sinh sống',0),
+  'Đáp án đúng là <span class="p-word">covered</span>. Cụm <span class="p-grammar">"is covered in liquid water"</span> (được che phủ bởi nước lỏng) đúng cấu trúc bị động và đúng nghĩa khi nói về phần lớn bề mặt Trái Đất là đại dương.',
+  WR('climate','<span class="hl-red">"Climate"</span> là danh từ, không đúng cấu trúc "is + adj/pp + in".')+
+  WR('simply','<span class="hl-red">"Simply"</span> là trạng từ, sai vị trí ngữ pháp.')+
+  WR('inhabited','<span class="hl-red">"Inhabited"</span> (có sinh vật sinh sống) sai nghĩa — câu đang mô tả bề mặt được BAO PHỦ bởi nước, không phải có sinh vật sinh sống trong nước.',),
+  'Most notably, Earth is unique in that most of our planet is covered in liquid water.',
+  'Đáng chú ý nhất, Trái Đất là duy nhất ở chỗ phần lớn hành tinh của chúng ta được che phủ trong nước lỏng.')),
+
+Q(7,'exist',['exist','surface','hospitable','metal'],
+ E5('exist','<span class="p-word">"Most of our planet is covered in liquid water, since the temperature allows liquid water to ______ for extended periods of time."</span><br>👉 Phần lớn hành tinh của chúng ta được che phủ trong nước lỏng, vì nhiệt độ cho phép nước lỏng ______ trong thời gian dài.',
+  OP('exist','động từ nguyên mẫu','tồn tại',1)+OP('surface','danh từ','bề mặt',0)+OP('hospitable','tính từ','dễ chịu',0)+OP('metal','danh từ','kim loại',0),
+  'Đáp án đúng là <span class="p-word">exist</span>. Cấu trúc <span class="p-grammar">"allow + tân ngữ + to V"</span> (cho phép ai/cái gì làm gì) cần một ĐỘNG TỪ NGUYÊN MẪU sau "to" — "exist" (tồn tại) đúng ngữ pháp và nghĩa, diễn tả nước lỏng có thể tồn tại lâu dài.',
+  WR('surface','<span class="hl-red">"Surface"</span> là danh từ, không thể đứng sau "to" trong cấu trúc "allow + tân ngữ + to V".')+
+  WR('hospitable','<span class="hl-red">"Hospitable"</span> là tính từ, sai từ loại ở vị trí động từ.')+
+  WR('metal','<span class="hl-red">"Metal"</span> là danh từ, hoàn toàn sai vị trí ngữ pháp.',),
+  'Since the temperature allows liquid water to exist for extended periods of time.',
+  'Vì nhiệt độ cho phép nước lỏng tồn tại trong thời gian dài.')),
+
+Q(8,'climate',['climate','inhabited','covered','simply'],
+ E5('climate','<span class="p-word">"However, some of the features of our planet that make it great for sustaining life are changing due to the ongoing effects of ______ change."</span><br>👉 Tuy nhiên, một số đặc điểm của hành tinh chúng ta khiến nó tuyệt vời cho việc duy trì sự sống đang thay đổi do những tác động liên tục của biến đổi ______.',
+  OP('climate','danh từ (làm định ngữ)','khí hậu',1)+OP('inhabited','tính từ','có sinh vật sinh sống',0)+OP('covered','tính từ','được che phủ',0)+OP('simply','trạng từ','đơn giản là',0),
+  'Đáp án đúng là <span class="p-word">climate</span>. Cụm danh từ ghép <span class="p-grammar">"climate change"</span> (biến đổi khí hậu) là thuật ngữ cố định, quen thuộc, đúng nghĩa trong ngữ cảnh nói về những thay đổi ảnh hưởng đến khả năng duy trì sự sống của Trái Đất.',
+  WR('inhabited','<span class="hl-red">"Inhabited"</span> là tính từ, không tạo thành cụm từ có nghĩa với "change".')+
+  WR('covered','<span class="hl-red">"Covered"</span> cũng là tính từ, sai nghĩa và không tạo thành thuật ngữ quen thuộc nào với "change".')+
+  WR('simply','<span class="hl-red">"Simply"</span> là trạng từ, sai từ loại hoàn toàn ở vị trí cần danh từ định ngữ.',),
+  'However, some of the features of our planet that make it great for sustaining life are changing due to the ongoing effects of climate change.',
+  'Tuy nhiên, một số đặc điểm của hành tinh chúng ta khiến nó tuyệt vời cho việc duy trì sự sống đang thay đổi do những tác động liên tục của biến đổi khí hậu.'))
+]);
+
+/* ═════════ BÀI II — POLAR HABITATS (6 câu Đúng/Sai + 5 câu trắc nghiệm) ═════════ */
+pas('B','🧊','II. POLAR HABITATS','Đọc kỹ đoạn văn rồi trả lời 11 câu hỏi (6 câu Đúng/Sai + 5 câu trắc nghiệm)',
+ '<div class="stamp">🧊<b>POLES</b></div>'+
+ T('<p>Polar habitats cover the top and bottom of planet Earth at the North and South Poles. The North Pole is surrounded by the Arctic Ocean. There isn\'t any land here, just a group of continually shifting ice sheets. Parts of Canada and Greenland are near the North Pole. The South Pole is located in Antarctica. This area has land, but it\'s completely covered with a layer of ice that\'s almost 3 miles thick.</p>',
+   'Môi trường sống vùng cực bao phủ đỉnh và đáy của hành tinh Trái Đất tại Cực Bắc và Cực Nam. Cực Bắc được bao quanh bởi Bắc Băng Dương. Không có đất liền ở đây, chỉ có một nhóm những tảng băng liên tục dịch chuyển. Một phần của Canada và Greenland nằm gần Cực Bắc. Cực Nam nằm ở châu Nam Cực. Khu vực này có đất liền, nhưng nó hoàn toàn được bao phủ bởi một lớp băng dày gần 3 dặm.')+
+ T('<p>The polar regions have two seasons: summer and winter. In the summer, the sun shines 24 hours a day, but it never gets high enough above the <b>horizon</b> to warm things up, so even summers are pretty cold. It\'s dark all winter because the sun doesn\'t rise during those months of the year. Fierce continuous winds make it feel even colder.</p>',
+   'Các vùng cực có hai mùa: mùa hè và mùa đông. Vào mùa hè, mặt trời chiếu sáng 24 giờ một ngày, nhưng nó không bao giờ lên đủ cao trên đường chân trời để làm ấm mọi thứ, vì vậy ngay cả mùa hè cũng khá lạnh. Trời tối suốt mùa đông vì mặt trời không mọc trong những tháng đó của năm. Những cơn gió dữ dội liên tục khiến trời cảm giác càng lạnh hơn.')+
+ T('<p>It\'s much too cold and dry for trees to grow in most areas of the Arctic, and there is no room for their roots, because just under the surface of the ground there is always a layer of ice, called permafrost. You won\'t find trees in Antarctica, but some types of small shrubs, lichens, mosses, and algae are able to grow in the harsh climate.</p>',
+   'Ở hầu hết các khu vực của Bắc Cực, thời tiết quá lạnh và khô để cây cối có thể mọc, và không có chỗ cho rễ cây phát triển, vì ngay dưới bề mặt đất luôn có một lớp băng gọi là băng vĩnh cửu (permafrost). Bạn sẽ không tìm thấy cây cối ở châu Nam Cực, nhưng một số loại cây bụi nhỏ, địa y, rêu và tảo có thể mọc được trong khí hậu khắc nghiệt này.')+
+ T('<p>Polar bears and arctic foxes are adapted to the extreme weather of the Arctic region. Walruses and humpback whales live in the Arctic ocean. Several kinds of penguins, including the emperor penguin, live in Antarctica, and so do walruses and narwhals.</p>',
+   'Gấu Bắc Cực và cáo Bắc Cực đã thích nghi với thời tiết khắc nghiệt của vùng Bắc Cực. Hải mã và cá voi lưng gù sống ở Bắc Băng Dương. Nhiều loài chim cánh cụt, bao gồm chim cánh cụt hoàng đế, sống ở châu Nam Cực, và hải mã cùng cá kỳ lân biển (narwhal) cũng vậy.'),
+ W('permafrost','/ˈpɜːməfrɒst/','n','băng vĩnh cửu (lớp băng dưới mặt đất)')+
+ W('shrub','/ʃrʌb/','n','cây bụi')+
+ W('lichen','/ˈlaɪkən/','n','địa y')+
+ W('walrus','/ˈwɔːlrəs/','n','hải mã')+
+ W('narwhal','/ˈnɑːwəl/','n','cá kỳ lân biển (một loài cá voi có ngà)')+
+ W('horizon','/həˈraɪzn/','n','đường chân trời'),
+[
+Q(1,'Sai',['Đúng','Sai'],
+ E5('Sai','<span class="p-word">"The North Pole has mainly land and the South Pole has mainly ice sheets."</span><br>👉 Cực Bắc chủ yếu là đất liền và Cực Nam chủ yếu là các tảng băng.',
+  OP('Đúng','nhận định','nhận định này đúng theo bài',0)+OP('Sai','nhận định','nhận định này sai theo bài',1),
+  'Đáp án đúng là <span class="hl-red">Sai</span>. Nhận định này bị ĐẢO NGƯỢC so với bài đọc: bài nói <span class="p-word">"There isn\'t any land"</span> ở Cực Bắc (chỉ có các tảng băng), còn Cực Nam (Antarctica) mới <span class="p-word">"has land"</span> (có đất liền, dù bị băng bao phủ).',
+  WR('Đúng','Học sinh chọn "Đúng" thường do đọc nhanh và nhầm lẫn giữa Cực Bắc và Cực Nam — thực tế bài đọc mô tả HOÀN TOÀN NGƯỢC LẠI với nhận định này.',),
+  'The North Pole is surrounded by the Arctic Ocean. There isn\'t any land here, just a group of continually shifting ice sheets. The South Pole is located in Antarctica. This area has land, but it\'s completely covered with a layer of ice.',
+  'Cực Bắc được bao quanh bởi Bắc Băng Dương. Không có đất liền ở đây, chỉ có các tảng băng liên tục dịch chuyển. Cực Nam nằm ở châu Nam Cực. Khu vực này có đất liền, nhưng hoàn toàn được bao phủ bởi một lớp băng.'),
+ '1. Nhận định này ĐÚNG hay SAI: "The North Pole has mainly land and the South Pole has mainly ice sheets."'),
+
+Q(2,'Sai',['Đúng','Sai'],
+ E5('Sai','<span class="p-word">"Summer in the polar habitats is hot because the sun shines 24 hours a day."</span><br>👉 Mùa hè ở môi trường sống vùng cực rất nóng vì mặt trời chiếu sáng 24 giờ một ngày.',
+  OP('Đúng','nhận định','nhận định này đúng theo bài',0)+OP('Sai','nhận định','nhận định này sai theo bài',1),
+  'Đáp án đúng là <span class="hl-red">Sai</span>. Dù mặt trời chiếu sáng 24 giờ, bài đọc nói rõ: <span class="p-word">"it never gets high enough above the horizon to warm things up, so even summers are pretty cold"</span> (mặt trời không bao giờ lên đủ cao để làm ấm mọi thứ, nên mùa hè vẫn khá LẠNH, không phải nóng).',
+  WR('Đúng','Học sinh dễ nhầm vì nghĩ "mặt trời chiếu 24 giờ" đồng nghĩa với "nóng", nhưng bài đọc khẳng định ngược lại — mùa hè ở vùng cực vẫn LẠNH vì mặt trời không lên đủ cao.',),
+  'In the summer, the sun shines 24 hours a day, but it never gets high enough above the horizon to warm things up, so even summers are pretty cold.',
+  'Vào mùa hè, mặt trời chiếu sáng 24 giờ một ngày, nhưng nó không bao giờ lên đủ cao để làm ấm mọi thứ, vì vậy ngay cả mùa hè cũng khá lạnh.'),
+ '2. Nhận định này ĐÚNG hay SAI: "Summer in the polar habitats is hot because the sun shines 24 hours a day."'),
+
+Q(3,'Đúng',['Đúng','Sai'],
+ E5('Đúng','<span class="p-word">"During winter, the polar habitats are dark because there is no sun."</span><br>👉 Vào mùa đông, môi trường sống vùng cực tối tăm vì không có mặt trời.',
+  OP('Đúng','nhận định','nhận định này đúng theo bài',1)+OP('Sai','nhận định','nhận định này sai theo bài',0),
+  'Đáp án đúng là <span class="hl-green">Đúng</span>. Bài đọc xác nhận: <span class="p-word">"It\'s dark all winter because the sun doesn\'t rise during those months of the year"</span> (trời tối suốt mùa đông vì mặt trời không mọc trong những tháng đó).',
+  WR('Sai','Nhận định này khớp hoàn toàn với thông tin trong bài, nên không thể chọn "Sai".',),
+  'It\'s dark all winter because the sun doesn\'t rise during those months of the year.',
+  'Trời tối suốt mùa đông vì mặt trời không mọc trong những tháng đó của năm.'),
+ '3. Nhận định này ĐÚNG hay SAI: "During winter, the polar habitats are dark because there is no sun."'),
+
+Q(4,'Đúng',['Đúng','Sai'],
+ E5('Đúng','<span class="p-word">"It\'s often colder in the winter because of the continuous winds."</span><br>👉 Trời thường lạnh hơn vào mùa đông vì những cơn gió liên tục.',
+  OP('Đúng','nhận định','nhận định này đúng theo bài',1)+OP('Sai','nhận định','nhận định này sai theo bài',0),
+  'Đáp án đúng là <span class="hl-green">Đúng</span>. Bài đọc nói: <span class="p-word">"Fierce continuous winds make it feel even colder"</span> (những cơn gió dữ dội liên tục khiến trời cảm giác càng lạnh hơn), khớp với nhận định.',
+  WR('Sai','Nhận định này được xác nhận trực tiếp bởi câu cuối đoạn 2 trong bài, nên không thể chọn "Sai".',),
+  'Fierce continuous winds make it feel even colder.',
+  'Những cơn gió dữ dội liên tục khiến trời cảm giác càng lạnh hơn.'),
+ '4. Nhận định này ĐÚNG hay SAI: "It\'s often colder in the winter because of the continuous winds."'),
+
+Q(5,'Đúng',['Đúng','Sai'],
+ E5('Đúng','<span class="p-word">"Trees cannot grow in the South Pole, but some other types of vegetation can."</span><br>👉 Cây cối không thể mọc ở Cực Nam, nhưng một số loại thực vật khác thì có thể.',
+  OP('Đúng','nhận định','nhận định này đúng theo bài',1)+OP('Sai','nhận định','nhận định này sai theo bài',0),
+  'Đáp án đúng là <span class="hl-green">Đúng</span>. Bài đọc nói: <span class="p-word">"You won\'t find trees in Antarctica, but some types of small shrubs, lichens, mosses, and algae are able to grow"</span> (bạn sẽ không tìm thấy cây cối ở châu Nam Cực, nhưng một số loại cây bụi nhỏ, địa y, rêu và tảo có thể mọc được) — khớp hoàn toàn với nhận định.',
+  WR('Sai','Nhận định này được xác nhận trực tiếp trong bài (không có cây nhưng có cây bụi, địa y, rêu, tảo), nên không thể chọn "Sai".',),
+  'You won\'t find trees in Antarctica, but some types of small shrubs, lichens, mosses, and algae are able to grow in the harsh climate.',
+  'Bạn sẽ không tìm thấy cây cối ở châu Nam Cực, nhưng một số loại cây bụi nhỏ, địa y, rêu và tảo có thể mọc được trong khí hậu khắc nghiệt này.'),
+ '5. Nhận định này ĐÚNG hay SAI: "Trees cannot grow in the South Pole, but some other types of vegetation can."'),
+
+Q(6,'Sai',['Đúng','Sai'],
+ E5('Sai','<span class="p-word">"Polar bears and penguins are the only two fauna that can get adapted to the polar habitats."</span><br>👉 Gấu Bắc Cực và chim cánh cụt là hai loài động vật DUY NHẤT có thể thích nghi với môi trường sống vùng cực.',
+  OP('Đúng','nhận định','nhận định này đúng theo bài',0)+OP('Sai','nhận định','nhận định này sai theo bài',1),
+  'Đáp án đúng là <span class="hl-red">Sai</span>. Bài đọc liệt kê RẤT NHIỀU loài khác cũng thích nghi được với vùng cực: <span class="p-word">"arctic foxes"</span> (cáo Bắc Cực), <span class="p-word">"walruses"</span> (hải mã), <span class="p-word">"humpback whales"</span> (cá voi lưng gù), và <span class="p-word">"narwhals"</span> (cá kỳ lân biển) — không chỉ có gấu Bắc Cực và chim cánh cụt.',
+  WR('Đúng','Học sinh dễ nhầm vì gấu Bắc Cực và chim cánh cụt là hai loài nổi tiếng nhất, nhưng bài đọc còn nhắc đến cáo Bắc Cực, hải mã, cá voi lưng gù và cá kỳ lân biển — nên đây KHÔNG PHẢI là hai loài duy nhất.',),
+  'Polar bears and arctic foxes are adapted to the extreme weather of the Arctic region. Walruses and humpback whales live in the Arctic ocean. Several kinds of penguins, including the emperor penguin, live in Antarctica, and so do walruses and narwhals.',
+  'Gấu Bắc Cực và cáo Bắc Cực đã thích nghi với thời tiết khắc nghiệt của vùng Bắc Cực. Hải mã và cá voi lưng gù sống ở Bắc Băng Dương. Nhiều loài chim cánh cụt, bao gồm chim cánh cụt hoàng đế, sống ở châu Nam Cực, và hải mã cùng cá kỳ lân biển cũng vậy.'),
+ '6. Nhận định này ĐÚNG hay SAI: "Polar bears and penguins are the only two fauna that can get adapted to the polar habitats."'),
+
+Q(7,'has a lot of shifting ice sheets',['includes Canada and Greenland','is located on Antarctica',"has ice that's almost three miles thick",'has a lot of shifting ice sheets'],
+ E5('has a lot of shifting ice sheets','<span class="p-word">"According to the first paragraph, the North Pole ______."</span><br>👉 Theo đoạn văn đầu tiên, Cực Bắc ______.',
+  OP('includes Canada and Greenland','sai, đây là chi tiết đánh lừa','bao gồm Canada và Greenland',0)+OP('is located on Antarctica','sai, đây là mô tả của Cực Nam','nằm ở châu Nam Cực',0)+OP("has ice that's almost three miles thick",'sai, đây là mô tả của Cực Nam','có lớp băng dày gần ba dặm',0)+OP('has a lot of shifting ice sheets','đúng theo bài','có rất nhiều tảng băng liên tục dịch chuyển',1),
+  'Đáp án đúng là <span class="p-word">"has a lot of shifting ice sheets"</span>. Bài đọc nói: <span class="hl-green">"just a group of continually shifting ice sheets"</span> (chỉ có một nhóm những tảng băng liên tục dịch chuyển) khi mô tả Cực Bắc.',
+  WR('includes Canada and Greenland','Bài đọc nói Canada và Greenland chỉ ở GẦN Cực Bắc <span class="p-word">"near the North Pole"</span>, không phải Cực Bắc BAO GỒM hai nước này.')+
+  WR('is located on Antarctica','Đây là thông tin về CỰC NAM, không phải Cực Bắc — Cực Bắc được bao quanh bởi Bắc Băng Dương, không nằm ở châu Nam Cực.')+
+  WR("has ice that's almost three miles thick",'Lớp băng dày gần 3 dặm là mô tả của CỰC NAM (Antarctica), không phải Cực Bắc.',),
+  'The North Pole is surrounded by the Arctic Ocean. There isn\'t any land here, just a group of continually shifting ice sheets.',
+  'Cực Bắc được bao quanh bởi Bắc Băng Dương. Không có đất liền ở đây, chỉ có một nhóm những tảng băng liên tục dịch chuyển.'),
+ '7. According to the first paragraph, the North Pole ______.'),
+
+Q(8,'skyline',['sea level','skyline','ice sheet','the Earth'],
+ E5('skyline','<span class="p-word">"The word \'horizon\' in paragraph 2 mostly means ______."</span><br>👉 Từ "horizon" trong đoạn văn thứ hai có nghĩa gần nhất là ______.',
+  OP('sea level','sai nghĩa','mực nước biển',0)+OP('skyline','đúng nghĩa gần nhất','đường chân trời',1)+OP('ice sheet','sai nghĩa','tảng băng',0)+OP('the Earth','sai nghĩa','Trái Đất',0),
+  'Đáp án đúng là <span class="p-word">skyline</span>. Trong câu <span class="p-word">"it never gets high enough above the horizon"</span> (mặt trời không bao giờ lên đủ cao trên "horizon"), từ "horizon" nghĩa là đường ranh giới giữa bầu trời và mặt đất/biển — đồng nghĩa với "skyline" (đường chân trời).',
+  WR('sea level','<span class="hl-red">"Sea level"</span> (mực nước biển) là khái niệm đo độ cao so với biển, không phải nghĩa của "horizon" trong câu này.')+
+  WR('ice sheet','<span class="hl-red">"Ice sheet"</span> (tảng băng) hoàn toàn không liên quan đến nghĩa của "horizon" (đường chân trời).')+
+  WR('the Earth','<span class="hl-red">"The Earth"</span> (Trái Đất) quá rộng nghĩa, không phải nghĩa cụ thể của "horizon".',),
+  'In the summer, the sun shines 24 hours a day, but it never gets high enough above the horizon to warm things up.',
+  'Vào mùa hè, mặt trời chiếu sáng 24 giờ một ngày, nhưng nó không bao giờ lên đủ cao trên đường chân trời để làm ấm mọi thứ.'),
+ '8. The word "horizon" in paragraph 2 mostly means ______.'),
+
+Q(9,'Because the permafrost prevents the roots from growing.',['Because the permafrost prevents the roots from growing.',"Because the sun doesn't rise most of the time.",'Because shrubs and lichens grow instead of trees.','Because the winds make the weather even colder.'],
+ E5('Because the permafrost prevents the roots from growing.','<span class="p-word">"Why can\'t trees grow in the Arctic?"</span><br>👉 Tại sao cây cối không thể mọc ở Bắc Cực?',
+  OP('Because the permafrost prevents the roots from growing.','đúng theo bài','vì lớp băng vĩnh cửu ngăn cản rễ cây phát triển',1)+OP("Because the sun doesn't rise most of the time.",'sai, đây là lý do của mùa đông tối, không liên quan đến cây cối','vì mặt trời không mọc phần lớn thời gian',0)+OP('Because shrubs and lichens grow instead of trees.','sai, đây là kết quả chứ không phải nguyên nhân','vì cây bụi và địa y mọc thay vì cây to',0)+OP('Because the winds make the weather even colder.','sai, đây là lý do khiến trời lạnh hơn, không phải lý do cây không mọc được','vì gió khiến thời tiết lạnh hơn',0),
+  'Đáp án đúng là <span class="p-word">"Because the permafrost prevents the roots from growing"</span>. Bài đọc nói rõ: <span class="hl-green">"there is no room for their roots, because just under the surface of the ground there is always a layer of ice, called permafrost"</span> (không có chỗ cho rễ cây, vì ngay dưới bề mặt đất luôn có một lớp băng gọi là băng vĩnh cửu).',
+  WR("Because the sun doesn't rise most of the time.",'Chi tiết "mặt trời không mọc" chỉ áp dụng cho MÙA ĐÔNG, không phải lý do chính khiến cây không mọc được quanh năm.')+
+  WR('Because shrubs and lichens grow instead of trees.','Đây là KẾT QUẢ (cây bụi/địa y mọc thay cây to), không phải NGUYÊN NHÂN khiến cây không mọc được.')+
+  WR('Because the winds make the weather even colder.','Gió chỉ khiến trời cảm giác lạnh hơn, không phải lý do trực tiếp ngăn cản rễ cây phát triển như băng vĩnh cửu.',),
+  'It\'s much too cold and dry for trees to grow in most areas of the Arctic, and there is no room for their roots, because just under the surface of the ground there is always a layer of ice, called permafrost.',
+  'Ở hầu hết các khu vực của Bắc Cực, thời tiết quá lạnh và khô để cây cối có thể mọc, và không có chỗ cho rễ cây phát triển, vì ngay dưới bề mặt đất luôn có một lớp băng gọi là băng vĩnh cửu.'),
+ '9. Why can\'t trees grow in the Arctic?'),
+
+Q(10,'Walruses',['Polar bears','Emperor penguins','Humpback whales','Walruses'],
+ E5('Walruses','<span class="p-word">"What animal can be found in both the North and South Poles?"</span><br>👉 Loài động vật nào có thể tìm thấy ở CẢ Cực Bắc và Cực Nam?',
+  OP('Polar bears','sai, chỉ sống ở Bắc Cực','gấu Bắc Cực',0)+OP('Emperor penguins','sai, chỉ sống ở Nam Cực','chim cánh cụt hoàng đế',0)+OP('Humpback whales','sai, chỉ sống ở Bắc Băng Dương','cá voi lưng gù',0)+OP('Walruses','đúng, sống ở cả hai nơi','hải mã',1),
+  'Đáp án đúng là <span class="p-word">Walruses</span> (hải mã). Bài đọc nói hải mã sống ở <span class="hl-green">"Arctic ocean"</span> (Bắc Băng Dương) VÀ cũng được nhắc lại ở câu cuối cùng khi nói về Antarctica: <span class="hl-green">"so do walruses and narwhals"</span> (hải mã và cá kỳ lân biển cũng vậy) — chứng tỏ hải mã xuất hiện ở cả hai cực.',
+  WR('Polar bears','Gấu Bắc Cực chỉ được nhắc đến ở vùng <span class="p-word">"Arctic region"</span> (Bắc Cực), không xuất hiện ở Nam Cực trong bài.')+
+  WR('Emperor penguins','Chim cánh cụt hoàng đế chỉ được nhắc đến ở <span class="p-word">"Antarctica"</span> (Nam Cực), không xuất hiện ở Bắc Cực.')+
+  WR('Humpback whales','Cá voi lưng gù chỉ được nhắc đến ở <span class="p-word">"Arctic ocean"</span> (Bắc Băng Dương), không được nhắc ở Nam Cực.',),
+  'Walruses and humpback whales live in the Arctic ocean. Several kinds of penguins, including the emperor penguin, live in Antarctica, and so do walruses and narwhals.',
+  'Hải mã và cá voi lưng gù sống ở Bắc Băng Dương. Nhiều loài chim cánh cụt, bao gồm chim cánh cụt hoàng đế, sống ở châu Nam Cực, và hải mã cùng cá kỳ lân biển cũng vậy.'),
+ '10. What animal can be found in both the North and South Poles?'),
+
+Q(11,'The polar habitats have four seasons just like other parts of the world.',['There is land covered with ice in the South Pole.','There are other types of penguins besides the emperor penguins in the South Pole.','The polar habitats have four seasons just like other parts of the world.',"It's cold and dry in most areas of the Arctic."],
+ E5('The polar habitats have four seasons just like other parts of the world.','<span class="p-word">"Which of the following sentences is NOT true about polar habitats?"</span><br>👉 Câu nào sau đây KHÔNG ĐÚNG về môi trường sống vùng cực?',
+  OP('There is land covered with ice in the South Pole.','đúng theo bài, nên KHÔNG PHẢI đáp án','có đất liền được bao phủ bởi băng ở Cực Nam',0)+OP('There are other types of penguins besides the emperor penguins in the South Pole.','đúng theo bài, nên KHÔNG PHẢI đáp án','có các loài chim cánh cụt khác ngoài chim cánh cụt hoàng đế ở Cực Nam',0)+OP('The polar habitats have four seasons just like other parts of the world.','sai theo bài — đây chính là câu KHÔNG ĐÚNG cần tìm','môi trường sống vùng cực có bốn mùa giống như các nơi khác trên thế giới',1)+OP("It's cold and dry in most areas of the Arctic.",'đúng theo bài, nên KHÔNG PHẢI đáp án','ở hầu hết khu vực Bắc Cực trời lạnh và khô',0),
+  'Đáp án đúng (câu KHÔNG ĐÚNG) là <span class="p-word">"The polar habitats have four seasons just like other parts of the world"</span>. Bài đọc nói rõ: <span class="hl-red">"The polar regions have two seasons: summer and winter"</span> (các vùng cực chỉ có HAI mùa: hè và đông), không phải bốn mùa như nhiều nơi khác trên thế giới.',
+  WR('There is land covered with ice in the South Pole.','Câu này ĐÚNG theo bài (<span class="p-word">"This area has land, but it\'s completely covered with a layer of ice"</span>), nên không phải là câu cần tìm.')+
+  WR('There are other types of penguins besides the emperor penguins in the South Pole.','Câu này ĐÚNG theo bài (<span class="p-word">"Several kinds of penguins, including the emperor penguin, live in Antarctica"</span> — "several kinds" nghĩa là còn nhiều loài khác nữa), nên không phải là câu cần tìm.')+
+  WR("It's cold and dry in most areas of the Arctic.",'Câu này ĐÚNG theo bài (<span class="p-word">"It\'s much too cold and dry for trees to grow in most areas of the Arctic"</span>), nên không phải là câu cần tìm.',),
+  'The polar regions have two seasons: summer and winter.',
+  'Các vùng cực có hai mùa: mùa hè và mùa đông.'),
+ '11. Which of the following sentences is NOT true about polar habitats?')
+]);
+
+/* ══ DUNG TRANG ══ */
+/* ══ DUNG TRANG ══ */
+/* ══ DUNG TRANG ══ */
+var TOTAL=0;P.forEach(function(p){TOTAL+=p.qs.length});
+var answered=0,score=0,done={},MAP={};
+var app=document.getElementById('app');
+P.forEach(function(p,pi){
+ var d=document.createElement('div');d.className='split';
+ var qh='';
+ p.qs.forEach(function(q,qi){
+  var gid=p.id+'_'+q.n;
+  var so=shuffle(q.opts);
+  qh+='<div class="q" id="c_'+gid+'"><div class="qt"><span class="qn">'+q.n+'</span>'+(q.st||'Chọn từ đúng cho chỗ trống ('+q.n+')')+'</div>'+
+   '<div class="og" id="o_'+gid+'">'+so.map(function(o,i){
+     return '<button class="ob" onclick="pick(\''+gid+'\','+pi+','+qi+','+i+')">'+o+'</button>'}).join('')+'</div>'+
+   '<div class="ex" id="e_'+gid+'">'+q.ex+'</div></div>';
+  MAP[gid]=so;
+ });
+ d.innerHTML='<div class="pane"><div class="letter"><div class="edge"></div><div class="bd">'+
+   '<h2>'+p.ic+' '+p.ttl+'</h2><div class="sub">'+p.sub+'</div>'+p.body+
+   '<div class="gl"><h3>📖 BẢNG TỪ VỰNG CẦN NHỚ</h3><table class="gtb"><colgroup><col class="c1"><col class="c2"><col class="c3"><col class="c4"></colgroup>'+p.gloss+'</table></div></div></div></div>'+
+   '<div><div class="sec"><h3>'+p.ic+' '+p.sub+'</h3>'+qh+'</div></div>';
+ app.appendChild(d);
+});
+document.getElementById('tt').textContent=TOTAL;
+
+function pick(gid,pi,qi,i){
+ if(done[gid])return;done[gid]=true;answered++;
+ var q=P[pi].qs[qi],so=MAP[gid],bs=document.getElementById('o_'+gid).children;
+ var ok=so[i]===q.ans;
+ for(var k=0;k<bs.length;k++){bs[k].classList.add('dn');
+  if(so[k]===q.ans)bs[k].classList.add('ok');else if(k===i)bs[k].classList.add('no')}
+ var bl=document.getElementById('bl_'+gid);
+ if(bl){bl.textContent=q.ans==='no article'?'( '+q.n+' ) ∅':'('+q.n+') '+q.ans;bl.classList.add('ok')}
+ document.getElementById('e_'+gid).classList.add('on');
+ if(ok){score++;ding();conf()}
+ else{buzz();var c=document.getElementById('c_'+gid);c.classList.add('shk');setTimeout(function(){c.classList.remove('shk')},430)}
+ bump();
+}
+function bump(){document.getElementById('sc').textContent=score;
+ document.getElementById('fb').style.width=(answered/TOTAL*100)+'%';
+ var p=answered?score/answered:1;
+ document.getElementById('md').textContent=p>=.9?'🤩':p>=.7?'😃':p>=.5?'🙂':'💪'}
+
+/* ══ nop bai ══ */
+function openName(){document.getElementById('ovN').classList.add('on');setTimeout(function(){document.getElementById('nIn').focus()},150)}
+document.getElementById('nIn').addEventListener('keydown',function(e){if(e.key==='Enter')showResult()});
+function showResult(){
+ var i=document.getElementById('nIn'),n=i.value.trim();
+ if(!n){document.getElementById('nEm').classList.add('on');i.focus();return}
+ document.getElementById('nEm').classList.remove('on');
+ document.getElementById('ovN').classList.remove('on');
+ var pct=score/TOTAL,ten=(pct*10).toFixed(2),e,g,m,gif;
+ if(score===TOTAL){e='🏆';g='🌟 XUẤT SẮC TUYỆT ĐỐI, '+n+'!';m='Con đúng trọn vẹn cả '+TOTAL+' câu. Ms rất tự hào về con!';gif='https://media.giphy.com/media/g9582DNuQppxC/giphy.gif'}
+ else if(pct>=.8){e='🎉';g='👏 GIỎI LẮM, '+n+'!';m='Con nắm bài rất chắc. Đọc lại vài câu sai để lần sau trọn điểm nhé!';gif='https://media.giphy.com/media/11sBLVxNs7v6WA/giphy.gif'}
+ else if(pct>=.6){e='🙌';g='💪 KHÁ RỒI ĐẤY, '+n+'!';m='Con đã qua ngưỡng an toàn. Mở phần giải thích từng bước ra đọc, con sẽ lên nhanh lắm.';gif='https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif'}
+ else{e='🤗';g='🌱 CỐ LÊN NHÉ, '+n+'!';m='Đừng buồn con. Con hãy đọc kỹ lời giải, chép cấu trúc vào vở rồi làm lại — Ms tin con sẽ khác hẳn.';gif='https://media.giphy.com/media/l4pTsNgkyKQPzsxRm/giphy.gif'}
+ document.getElementById('rEmo').textContent=e;
+ document.getElementById('rGr').textContent=g;
+ document.getElementById('rMs').textContent=m+' ☎️ Đăng ký khoá học cùng MS Chí Nên: 0852639652.';
+ document.getElementById('rGif').src=gif;
+ document.getElementById('rSc').textContent=score;
+ document.getElementById('rTt').textContent=TOTAL;
+ document.getElementById('r10').textContent=ten;
+ document.getElementById('ovR').classList.add('on');
+ if(pct>=.6){conf();ding()}
+}
+
+/* ══ loi nhac cua Ms — tu doi 4.2 giay ══ */
+var MSNH=[
+ '🛰️ Ms để bảng nhắn này ở đây suốt bài, không phải để giục các em đâu, mà để các em nhớ rằng Ms luôn đồng hành cùng các em.',
+ '🌟 Mỗi đoạn văn đều có nút mở bản dịch. Các em thử tự đọc và đoán nghĩa trước, rồi mới mở ra xem để hiểu rõ hơn nhé.',
+ '📖 Bài I có 8 câu điền từ về Trái Đất, Bài II có 6 câu Đúng/Sai và 5 câu trắc nghiệm về Cực Bắc - Cực Nam — đọc kỹ từng đoạn trước khi chọn nhé.',
+ '🌱 Làm sai một câu không sao cả, đây là cấp lớp 9 rồi nên bài sẽ khó hơn một chút. Sai rồi sửa lại mới là cách học giỏi nhất đó!',
+ '🕯 Phần giải thích của Ms viết rất chi tiết theo 5 bước — câu nào làm đúng cũng nên đọc lại để hiểu bản chất, không chỉ để lấy điểm.',
+ '🧊 Ở bài II, chú ý phân biệt thật kỹ giữa Bắc Cực (Arctic) và Nam Cực (Antarctica) nhé, hai nơi rất khác nhau đó!',
+ '🐢 Không cần vội đâu các em. Cứ từ từ đọc kỹ rồi làm, chậm mà chắc luôn tốt hơn nhanh mà ẩu.',
+ '🚀 MS Chí Nên đang mở lớp tiếng Anh chất lượng cao Lớp 1 → 12! Gọi/Zalo ngay 📞 0852639652 để đăng ký cho con nhé!'
+];
+(function(){var e=document.getElementById('msTx'),k=0;e.innerHTML=MSNH[0];
+ setInterval(function(){k=(k+1)%MSNH.length;e.style.opacity=0;
+  setTimeout(function(){e.innerHTML=MSNH[k];e.style.opacity=1},250)},4200)})();
+</script>
+<script>/*devclean*/(function(){
+var ZW=/[\u00AD\u034F\u061C\u115F\u1160\u17B4\u17B5\u180E\u200B-\u200F\u202A-\u202E\u2060-\u206F\uFEFF]/g,
+    SP=/[\u00A0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\t]/g,
+    AP=/[\u2018\u2019\u201A\u201B\u2032\u2035\u02B9\u02BB\u02BC\u02BD\u02C8\u0060\u00B4\uFF07]/g,
+    DQ=/[\u201C\u201D\u201E\u201F\u2033\u2036\u00AB\u00BB\uFF02]/g,
+    DS=/[\u2010\u2011\u2012\u2212\uFE63\uFF0D]/g;
+function clean(v){if(!v)return v;var s=String(v);try{s=s.normalize('NFKC')}catch(e){}
+  return s.replace(ZW,'').replace(SP,' ').replace(AP,"'").replace(DQ,'"').replace(DS,'-').replace(/[\u0300-\u036f]/g,'').replace(/ {2,}/g,' ');}
+window.__devclean=clean;
+function fix(skip){var L=document.querySelectorAll('input:not([type]),input[type=text],input[type=search],textarea');
+  for(var i=0;i<L.length;i++){var el=L[i];if(el===skip||el.readOnly||el.disabled)continue;var v=el.value,c=clean(v);if(c!==v)el.value=c;}}
+['pointerdown','mousedown','touchstart','click','change','focusout'].forEach(function(t){document.addEventListener(t,function(e){fix(t==='focusout'||t==='change'?null:e.target)},true)});
+document.addEventListener('keydown',function(e){if(e.key==='Enter'||e.keyCode===13)fix(null)},true);
+})();</script>
+<style id="ms-chi-nen-unlock-style">
+#passwordModal, #password-modal, #pwModal, #pw-modal, #pw-overlay,
+#lockModal, #passModal, #authModal, #auth-modal, #lockOverlay,
+#start-overlay, #intro-overlay, #start-screen,
+.password-modal, .lock-modal, .lock-overlay {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    z-index: -9999 !important;
+}
+</style>
+<script>
+// Remove password lock completely - direct quiz access
+(function() {
+    var initDone = false;
+    var renderCheckDone = false;
+
+    function hideEl(el, hard) {
+        if (!el) return;
+        if (hard) {
+            el.style.setProperty('display', 'none', 'important');
+            el.style.setProperty('visibility', 'hidden', 'important');
+            el.style.setProperty('opacity', '0', 'important');
+            el.style.setProperty('pointer-events', 'none', 'important');
+            el.style.setProperty('z-index', '-9999', 'important');
+        } else {
+            el.style.display = 'none';
+        }
+        el.classList.remove('active', 'show', 'open', 'visible', 'flex');
+    }
+
+    function hasRenderedQuiz() {
+        var containers = document.querySelectorAll(
+            '#quiz-container, #quizContainer, #questions-container, #questionPane, #quiz, #questions, #quiz-body, #questions-wrapper, #quiz-list, #quizList, #exercise-container, #app-container .split-container'
+        );
+        for (var i = 0; i < containers.length; i++) {
+            if (containers[i].querySelectorAll('button, input, select, textarea, .question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .question, .option-btn, .opt-btn, .ans-btn').length > 0) {
+                return true;
+            }
+        }
+        if (document.querySelectorAll('.question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .option-btn, .opt-btn, .ans-btn, .choice-btn').length > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    function ensureQuizRendered() {
+        if (renderCheckDone) return;
+        renderCheckDone = true;
+        if (hasRenderedQuiz()) return;
+
+        if (!hasRenderedQuiz() && typeof buildQuiz === 'function') { try { buildQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof initQuiz === 'function') { try { initQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderApp === 'function') { try { renderApp(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuiz === 'function') { try { renderQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuestions === 'function') { try { renderQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAllQuestions === 'function') { try { renderAllQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAll === 'function') { try { renderAll(); } catch(e){} }
+    }
+
+    function unlockNow() {
+        var pwIds = [
+            'passwordModal', 'password-modal', 'pwModal', 'pw-modal', 'pw-overlay',
+            'lockModal', 'passModal', 'authModal', 'auth-modal', 'lockOverlay',
+            'start-overlay', 'intro-overlay', 'start-screen'
+        ];
+        pwIds.forEach(function(id) {
+            hideEl(document.getElementById(id), true);
+        });
+
+        var modalEls = document.querySelectorAll('.password-modal, .lock-modal, .lock-overlay, #lockOverlay, #auth-modal');
+        modalEls.forEach(function(el) {
+            if (el.id !== 'resultModal' && el.id !== 'result-modal' && el.id !== 'scoreModal') {
+                hideEl(el, true);
+            }
+        });
+
+        ['nameModal', 'name-modal', 'nameInputModal'].forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) hideEl(el, false);
+        });
+
+        var qo = document.getElementById('quiz-overlay');
+        if (qo && (typeof isStarted === 'undefined' || !isStarted)) {
+            qo.style.display = 'none';
+        }
+
+        var mainIds = [
+            'mainContent', 'main-content', 'mainHeader', 'main-header',
+            'app-container', 'app', 'quizApp', 'quiz-wrapper', 'quizContainer', 'quiz-container', 'reading-content'
+        ];
+        mainIds.forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) {
+                el.classList.remove('hidden', 'blur', 'blurred', 'locked');
+                if (el.style.display === 'none') {
+                    el.style.removeProperty('display');
+                }
+                if (window.getComputedStyle(el).display === 'none') {
+                    var hasPane = el.querySelector('.pane, .left-pane, .right-pane, .split-container, .left-panel, .right-panel');
+                    if (id === 'main-content' || id.toLowerCase().includes('header') || el.classList.contains('main-container') || hasPane) {
+                        el.style.setProperty('display', 'flex', 'important');
+                    } else {
+                        el.style.setProperty('display', 'block', 'important');
+                    }
+                }
+            }
+        });
+
+        var qs = document.getElementById('quiz-screen');
+        if (qs) {
+            qs.classList.remove('hidden');
+            if (qs.classList.contains('flex-col')) {
+                qs.classList.add('flex');
+                qs.style.display = 'flex';
+            } else {
+                qs.style.display = 'block';
+            }
+        }
+
+        if (!initDone) {
+            initDone = true;
+
+            if (document.getElementById('start-overlay') && typeof startGame === 'function') {
+                var sn = document.getElementById('student-name') || document.getElementById('studentName');
+                if (sn && !sn.value.trim()) sn.value = 'Học sinh';
+            }
+            if (document.getElementById('name-modal') && typeof startQuiz === 'function') {
+                var sn2 = document.getElementById('student-name');
+                if (sn2 && !sn2.value.trim()) sn2.value = 'Học sinh';
+            }
+
+            if (typeof startQuiz === 'function' && (typeof isStarted === 'undefined' || !isStarted)) { try { startQuiz(); } catch(e){} }
+            if (typeof startGame === 'function') { try { startGame(); } catch(e){} }
+            if (typeof startTest === 'function') { try { startTest(); } catch(e){} }
+            if (typeof startApp === 'function') { try { startApp(); } catch(e){} }
+            if (typeof buildStarfield === 'function') { try { buildStarfield(); } catch(e){} }
+            if (typeof spawnFloats === 'function') { try { spawnFloats(); } catch(e){} }
+            if (typeof spawnFloaters === 'function') { try { spawnFloaters(); } catch(e){} }
+            if (typeof createFloatingBubbles === 'function') { try { createFloatingBubbles(); } catch(e){} }
+            if (typeof initAudio === 'function') { try { initAudio(); } catch(e){} }
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', unlockNow);
+    } else {
+        unlockNow();
+    }
+    if (document.readyState === 'complete') {
+        setTimeout(ensureQuizRendered, 150);
+    } else {
+        window.addEventListener('load', function() {
+            setTimeout(unlockNow, 20);
+            setTimeout(ensureQuizRendered, 150);
+            setTimeout(unlockNow, 300);
+            setTimeout(unlockNow, 700);
+        });
+    }
+    setTimeout(unlockNow, 50);
+    setTimeout(unlockNow, 200);
+    setTimeout(unlockNow, 600);
+    setTimeout(unlockNow, 1100);
+})();
+</script>
+</body>
+</html>

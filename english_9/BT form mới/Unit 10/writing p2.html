@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌍 E9 UNIT 10 · PLANET EARTH — WRITING Ex3 + Ex4 · 10 câu | MS Chí Nên</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Cinzel:wght@600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#e9b949; --gold2:#f5d77a; --violet:#7c3aed; --deepv:#3b0764; --indigo:#1e1b4b; --teal:#0ea5a4;
+  --ink:#2a2140; --soft:#6b5e87; --parch:#fdf7ea; --green:#16b364; --red:#FF4757;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito',sans-serif;color:#ece6ff;min-height:100vh;position:relative;overflow-x:hidden;
+  background:radial-gradient(1100px 700px at 20% -8%, #2e1065 0%, transparent 60%),radial-gradient(1000px 700px at 110% 10%, #0b3b3a 0%, transparent 55%),linear-gradient(165deg,#140a2e,#1b1140 45%,#0c0820 100%);background-attachment:fixed}
+.pattern{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(40px,-30px) scale(1.2)}}
+@keyframes twinkle{0%,100%{opacity:.25}50%{opacity:.95}}
+.fly{position:absolute;animation:fly linear infinite, twinkle ease-in-out infinite}
+@keyframes fly{0%{transform:translate(0,0) rotate(0deg)}33%{transform:translate(24px,-30px) rotate(120deg)}66%{transform:translate(-18px,-12px) rotate(240deg)}100%{transform:translate(0,0) rotate(360deg)}}
+.wrap{position:relative;z-index:2;max-width:880px;margin:0 auto;padding:10px 13px 110px}
+
+/* ===== STICKY ===== */
+.sticky{position:sticky;top:7px;z-index:60;margin:0 auto 18px;border-radius:18px;color:#2a2140;overflow:hidden;background:linear-gradient(115deg,#f5d77a,#e9b949 45%,#c4943a);box-shadow:0 12px 30px rgba(233,185,73,.4),0 0 0 1px rgba(255,255,255,.4) inset;border:2.5px solid #fff}
+.sticky .top{display:flex;align-items:center;gap:8px;padding:8px 13px 7px;font-family:'Baloo 2';font-weight:800;font-size:.96rem;background:rgba(60,7,100,.18);color:#3b0764}
+.sticky .top .live{margin-left:auto;background:#3b0764;color:#f5d77a;border-radius:10px;padding:1px 10px;font-weight:900;font-size:.9rem}
+.sticky .body{padding:7px 13px 9px;font-size:.76rem;line-height:1.4;font-weight:700;color:#4a2c0a}
+.sticky .body b{font-weight:900;text-decoration:underline;text-decoration-color:rgba(60,7,100,.4)}
+.sticky .body .row{display:flex;gap:7px;margin:2px 0}
+.sticky .body .ic{flex:none}
+
+/* ===== HEADER ===== */
+header.hero{margin:4px 0 14px;border-radius:24px;padding:24px 18px;text-align:center;color:#f7eccb;position:relative;overflow:hidden;background:linear-gradient(135deg,#3b0764,#1e1b4b 55%,#0b3b3a);box-shadow:0 16px 40px rgba(0,0,0,.5),0 0 0 1.5px var(--gold) inset;border:2px solid rgba(233,185,73,.5)}
+header.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 42%,rgba(245,215,122,.22) 50%,transparent 58%);background-size:250% 250%;animation:sheen 6s linear infinite}
+@keyframes sheen{from{background-position:200% 0}to{background-position:-60% 0}}
+.teachertag{position:relative;z-index:1;display:inline-block;font-size:.72rem;font-weight:800;background:rgba(245,215,122,.18);border:1px solid rgba(245,215,122,.6);padding:3px 13px;border-radius:30px;margin-bottom:9px;color:#f5d77a}
+header.hero h1{position:relative;z-index:1;font-family:'Cinzel',serif;font-size:1.4rem;line-height:1.22;color:#f7eccb;text-shadow:0 0 14px rgba(233,185,73,.5)}
+header.hero p{position:relative;z-index:1;font-weight:700;opacity:.92;margin-top:7px;font-size:.88rem;color:#d9cffb}
+.scorebar{position:relative;z-index:1;display:inline-flex;gap:8px;margin-top:12px;background:var(--gold);color:#3b0764;padding:6px 16px;border-radius:30px;font-weight:900;font-size:.9rem;box-shadow:0 5px 16px rgba(233,185,73,.4)}
+
+/* ===== SECTION HEAD ===== */
+.sec-head{margin:26px 2px 13px;display:flex;align-items:center;gap:11px}
+.sec-head .chip{flex:none;width:46px;height:46px;border-radius:15px;display:grid;place-items:center;font-size:1.4rem;color:#3b0764;background:linear-gradient(135deg,#f5d77a,#e9b949);box-shadow:0 8px 20px rgba(233,185,73,.4);transform:rotate(-6deg)}
+.sec-head.e20 .chip{background:linear-gradient(135deg,#a78bfa,#7c3aed);color:#fff}
+.sec-head.e21 .chip{background:linear-gradient(135deg,#5eead4,#0ea5a4);color:#06302f}
+.sec-head .t{flex:1}
+.sec-head .t .e{font-family:'Cinzel',serif;font-weight:700;font-size:1.05rem;line-height:1.2;color:#f5d77a;text-shadow:0 0 10px rgba(233,185,73,.35)}
+.sec-head .t .d{font-size:.8rem;color:#c3b6e8;font-weight:700;margin-top:2px}
+
+/* ===== CARD (parchment) ===== */
+.card{background:linear-gradient(180deg,#fffdf6,#fdf3df);border:1.5px solid rgba(233,185,73,.7);border-radius:18px;padding:15px 16px 13px;margin-bottom:14px;color:var(--ink);box-shadow:0 12px 30px rgba(0,0,0,.4),0 0 16px rgba(233,185,73,.12)}
+.qhead{display:flex;gap:10px;align-items:flex-start;margin-bottom:11px}
+.qnum{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;color:#3b0764;font-family:'Baloo 2';font-weight:800;font-size:.82rem;background:linear-gradient(135deg,#f5d77a,#e9b949);box-shadow:0 4px 9px rgba(233,185,73,.5)}
+.qtext{font-size:1.05rem;font-weight:800;line-height:1.5;flex:1;color:var(--ink)}
+.qline{font-size:1.08rem;font-weight:800}
+.orig{background:#f3e9ff;border-left:4px solid var(--violet);border-radius:8px;padding:8px 12px;margin-bottom:8px;font-weight:800;color:#4c1d95;font-style:italic}
+.hint{display:inline-block;background:linear-gradient(135deg,#ede9fe,#fdeccf);color:#7c3aed;border-radius:8px;padding:0 9px;font-weight:800;font-size:.95rem;border:1px solid #e3d3f7}
+.scramble{background:#f6efff;border:1.5px dashed #c4a8f0;border-radius:12px;padding:8px 12px;font-weight:800;color:#5b21b6;margin-bottom:6px;font-size:1rem;line-height:1.5}
+.instr{font-size:.82rem;color:var(--soft);font-weight:700;font-style:italic;margin-bottom:9px}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.opts.col{grid-template-columns:1fr}
+@media(max-width:560px){.opts{grid-template-columns:1fr}}
+.opt{font-family:'Nunito';font-size:1.03rem;font-weight:700;cursor:pointer;text-align:left;border:none;border-radius:13px;padding:12px 15px;color:var(--ink);background:linear-gradient(135deg,#fffaf0,#f6ecd6);box-shadow:0 5px 0 #e2cfa0,0 9px 16px rgba(80,40,10,.12);transition:transform .12s ease,box-shadow .12s,background .2s}
+.opt:hover:not(.done){transform:translateY(-3px) scale(1.02) rotate(-.3deg)}
+.opt.correct{background:linear-gradient(135deg,#8ef0b8,#16b364);color:#06351f;box-shadow:0 5px 0 #0c8f4d,0 11px 20px rgba(22,179,100,.4)}
+.opt.wrong{background:linear-gradient(135deg,#ffb3bd,#FF4757);color:#fff;box-shadow:0 5px 0 #d61f30,0 11px 20px rgba(255,71,87,.4)}
+.opt.dim{opacity:.5;filter:saturate(.55)}
+.shake{animation:shake .42s}
+@keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-8px)}40%{transform:translateX(8px)}60%{transform:translateX(-6px)}80%{transform:translateX(6px)}}
+
+/* ===== FILL ===== */
+.fillrow{display:flex;gap:9px;flex-wrap:wrap;align-items:center}
+.fillinput{flex:1;min-width:200px;font-family:'Nunito';font-size:1.04rem;font-weight:700;padding:11px 14px;border-radius:13px;border:2.5px solid #e2cfa0;outline:none;color:var(--ink);background:#fff;transition:border-color .2s}
+.fillinput:focus{border-color:var(--violet)}
+.fillinput.okfill{border-color:var(--green);background:#e9fbf1;color:#06351f}
+.fillinput.badfill{border-color:var(--red);background:#fff0f1}
+.fillinput.shakex{animation:shake .42s}
+.checkbtn{font-family:'Baloo 2';font-weight:800;font-size:1rem;color:#fff;border:none;cursor:pointer;padding:11px 20px;border-radius:13px;background:linear-gradient(135deg,#7c3aed,#0ea5a4);box-shadow:0 5px 0 #5a2bb0;transition:transform .1s}
+.checkbtn:active{transform:translateY(2px)}
+.checkbtn:disabled{cursor:default;background:linear-gradient(135deg,#9aa,#bbb);box-shadow:0 5px 0 #889}
+
+/* ===== EXPLANATION ===== */
+.explain{max-height:0;overflow:hidden;transition:max-height .5s ease,margin .3s,padding .3s;background:#fffdf7;border-radius:14px;font-size:1rem;line-height:1.55}
+.explain.open{max-height:2600px;margin-top:13px;padding:12px 15px;border:2px dashed #e2cfa0}
+.explain .vnt{display:block;background:linear-gradient(135deg,#f3e9ff,#fdeccf);border:1.5px solid #d8c2f3;border-radius:10px;padding:7px 12px;margin-bottom:8px;font-weight:800;color:#5b21b6}
+.explain ol{margin:0;padding-left:18px}
+.explain ol>li{margin:7px 0;font-weight:600}
+.full{background:#ecfdf5;border:1.5px solid #a7f3d0;border-radius:10px;padding:7px 11px;margin:6px 0;font-weight:800;color:#065f46}
+.p-word{color:#1565c0;font-weight:800}
+.p-phonetic{color:#7b2ff7;background:#f0e9ff;border-radius:5px;padding:0 5px;font-style:italic;font-weight:700}
+.p-mean{color:#ad1457;font-weight:800}
+.p-grammar{border-bottom:2px solid var(--red);font-weight:700;color:var(--ink)}
+.hl-green{color:#0a8f48;font-weight:900}
+.hl-red{color:#d61f30;font-weight:900}
+.optlist{background:#fff;border:1px solid #ece0c4;border-radius:10px;padding:6px 12px 6px 4px;margin:6px 0}
+.optlist b{display:block;margin:2px 0 3px 14px;color:var(--soft);font-size:.86rem}
+.optlist ul{margin:0;padding-left:30px}
+.optlist li{margin:3px 0;font-weight:600}
+
+/* ===== SUBMIT + MODALS ===== */
+.submitwrap{text-align:center;margin:30px 0 6px}
+.btn-submit{font-family:'Cinzel',serif;font-size:1.1rem;font-weight:700;color:#3b0764;border:none;cursor:pointer;padding:16px 30px;border-radius:20px;background:linear-gradient(135deg,#f5d77a,#e9b949,#c4943a);background-size:200% 200%;animation:bg 6s ease infinite;box-shadow:0 9px 0 rgba(120,90,20,.4),0 16px 34px rgba(233,185,73,.4);transition:transform .12s}
+@keyframes bg{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.btn-submit:hover{transform:translateY(-3px) scale(1.03)}.btn-submit:active{transform:translateY(2px)}
+.modal{position:fixed;inset:0;z-index:200;display:none;place-items:center;padding:18px;background:rgba(10,5,25,.7);backdrop-filter:blur(6px)}
+.modal.show{display:grid;animation:fade .25s}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.box{width:100%;max-width:440px;background:linear-gradient(180deg,#fffdf6,#f6ecd6);border:2px solid var(--gold);border-radius:24px;padding:26px 22px;text-align:center;box-shadow:0 24px 60px rgba(0,0,0,.6),0 0 24px rgba(233,185,73,.3);animation:pop .3s;color:var(--ink)}
+@keyframes pop{from{transform:scale(.8);opacity:0}to{transform:scale(1);opacity:1}}
+.box h2{font-family:'Cinzel',serif;color:#7c3aed;font-size:1.3rem;margin-bottom:6px}
+.box p{color:var(--soft);font-weight:700;font-size:.95rem;margin-bottom:14px}
+.box input{width:100%;font-family:'Nunito';font-size:1.05rem;font-weight:700;padding:13px 15px;border-radius:14px;border:2.5px solid #e2cfa0;outline:none;text-align:center;color:var(--ink)}
+.box input.err{border-color:var(--red);animation:shake .4s;background:#fff0f1}
+.warn{color:var(--red);font-weight:800;font-size:.86rem;margin-top:8px;display:none}.warn.show{display:block}
+.box .go{margin-top:16px;font-family:'Cinzel',serif;font-size:1rem;font-weight:700;color:#3b0764;border:none;cursor:pointer;padding:13px 26px;border-radius:16px;background:linear-gradient(135deg,#f5d77a,#e9b949);box-shadow:0 8px 0 rgba(120,90,20,.4)}
+.box .go:active{transform:translateY(2px)}
+.reaction{font-size:4.6rem;margin:4px 0;line-height:1;animation:bounce 1s ease infinite}
+@keyframes bounce{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-14px) rotate(5deg)}}
+.scorebig{font-family:'Cinzel',serif;font-size:2.3rem;font-weight:700;color:#7c3aed;line-height:1}
+.scoresub{font-weight:800;color:var(--soft);margin-top:2px}
+.score10{display:inline-block;margin-top:10px;font-family:'Cinzel',serif;font-size:1.25rem;color:#3b0764;padding:6px 18px;border-radius:30px;background:linear-gradient(135deg,#f5d77a,#e9b949);box-shadow:0 6px 16px rgba(233,185,73,.4)}
+.retry{margin-top:18px;background:none;border:2px solid var(--violet);color:var(--violet);font-weight:800;font-family:'Baloo 2';padding:9px 20px;border-radius:14px;cursor:pointer;font-size:.95rem}
+.confetti{position:fixed;top:-12px;width:11px;height:14px;z-index:300;pointer-events:none;border-radius:2px}
+.foot{text-align:center;color:#b8a9d6;font-size:.78rem;font-weight:800;margin-top:22px}
+</style>
+</head>
+<body>
+<div class="pattern" id="pattern"></div>
+<div class="wrap">
+
+  <div class="sticky">
+    <div class="top">📌 GHI NHỚ TRƯỚC KHI LÀM BÀI <span class="live">Đã làm <span id="liveCount">0</span>/<span id="liveTotal">0</span></span></div>
+    <div class="body">
+      <div class="row"><span class="ic">🔍</span><span>Tự tra từ mới bằng <b>Google Dịch / ChatGPT / Gemini</b> để hiểu rõ từng câu — đừng lười suy nghĩ rồi chọn bừa.</span></div>
+      <div class="row"><span class="ic">🔊</span><span>Tra <b>ngữ âm &amp; trọng âm</b> trên từ điển <b>Cambridge</b>, nghe máy đọc rồi đọc theo.</span></div>
+      <div class="row"><span class="ic">✍️</span><span>Đọc kỹ giải thích &amp; <b>ghi từ/cấu trúc mới vào vở</b> mới thực sự giỏi lên. Làm qua loa, không ghi chép = phí thời gian.</span></div>
+    </div>
+  </div>
+
+  <header class="hero">
+    <span class="teachertag">🪄 Giáo viên tạo: MS Chí Nên &nbsp;·&nbsp; ☎️ 0852639652</span>
+    <h1>🌍 UNIT 10 · PLANET EARTH ✨<br>WRITING Ex3 — Kết hợp câu (6) · Ex4 — Sắp xếp câu (4)</h1>
+    <p><b>10 câu</b> · Ex3: Chọn câu kết hợp đúng nhất (6) · Ex4: Sắp xếp câu thành đoạn văn/lá thư có nghĩa (4)</p>
+    <div class="scorebar">⭐ Điểm: <span id="topScore">0</span>/<span id="topTotal">0</span></div>
+  </header>
+
+  <div id="quiz"></div>
+
+  <div class="submitwrap">
+    <button class="btn-submit" onclick="openName()">🎯 NỘP BÀI &amp; XEM KẾT QUẢ</button>
+  </div>
+  <div class="foot">Made with ✨ for curious little wizards — MS Chí Nên</div>
+</div>
+
+<div class="modal" id="nameModal"><div class="box">
+  <h2>🪄 Nhập tên của con nhé!</h2><p>Để cô gọi tên khi báo điểm 🌟</p>
+  <input id="nameInput" type="text" placeholder="Ví dụ: Nguyễn Văn A..." autocomplete="off">
+  <div class="warn" id="nameWarn">⚠️ Con chưa nhập tên kìa! Nhập tên rồi mới xem điểm được nha.</div>
+  <button class="go" onclick="showResult()">Xem kết quả 🚀</button>
+</div></div>
+
+<div class="modal" id="resultModal"><div class="box">
+  <div class="reaction" id="reaction">🎉</div>
+  <h2 id="greeting">Tuyệt vời!</h2>
+  <div class="scorebig"><span id="rCorrect">0</span>/<span id="rTotal">0</span></div>
+  <div class="scoresub">câu đúng</div>
+  <div class="score10">🎓 Quy đổi: <span id="r10">0</span>/10 điểm</div>
+  <p id="rmsg" style="margin-top:14px"></p>
+  <button class="retry" onclick="location.reload()">🔄 Làm lại từ đầu</button>
+</div></div>
+
+<audio id="aWrong" preload="auto" src="https://hoctienganhcungcomaianulis.github.io/homework/%E1%BA%A2nh_File%20nghe/Sound/oi-ban-oi.mp3"></audio>
+<audio id="aIntro" preload="auto" src="https://hoctienganhcungcomaianulis.github.io/homework/%E1%BA%A2nh_File%20nghe/Sound/ti%E1%BA%BFng%20%C4%91%E1%BB%8Dc%20kh%C3%ADch%20l%E1%BB%87%20p2.mp3"></audio>
+
+<script>
+/* mystical starfield + flying objects */
+(function(){
+  const p=document.getElementById('pattern');
+  const neb=[['#7c3aed','12%','8%',520],['#0ea5a4','86%','18%',460],['#e9b949','62%','86%',400],['#a855f7','28%','72%',480]];
+  neb.forEach(n=>{const b=document.createElement('div');b.style.cssText='position:absolute;border-radius:50%;filter:blur(82px);mix-blend-mode:screen;opacity:.45;width:'+n[3]+'px;height:'+n[3]+'px;background:'+n[0]+';left:'+n[1]+';top:'+n[2]+';animation:drift '+(20+Math.random()*10)+'s ease-in-out infinite alternate';p.appendChild(b);});
+  for(let i=0;i<48;i++){const s=document.createElement('div');const sz=1+Math.random()*2.5;s.style.cssText='position:absolute;border-radius:50%;background:#fff;width:'+sz+'px;height:'+sz+'px;left:'+(Math.random()*100)+'%;top:'+(Math.random()*100)+'%;opacity:'+(.3+Math.random()*.6)+';animation:twinkle '+(1.5+Math.random()*3)+'s ease-in-out '+(Math.random()*-3)+'s infinite';p.appendChild(s);}
+  const sparkle4='<path d="M14 0 C15 9 19 13 28 14 C19 15 15 19 14 28 C13 19 9 15 0 14 C9 13 13 9 14 0Z"/>';
+  const star5='<path d="M14 2 l3.4 7.6 8.2.8-6.1 5.5 1.8 8-7.3-4.2-7.3 4.2 1.8-8-6.1-5.5 8.2-.8Z"/>';
+  const moon='<path d="M20 3 a12 12 0 1 0 0 22 a9.5 9.5 0 1 1 0-22Z"/>';
+  const shapes=[sparkle4,star5,moon,sparkle4,star5];
+  const cols=['#f5d77a','#e9b949','#fff4d6','#c4b5fd','#7dd3fc'];
+  for(let i=0;i<15;i++){const f=document.createElement('div');f.className='fly';const sz=15+Math.random()*22;
+    f.style.cssText='left:'+(Math.random()*96)+'%;top:'+(Math.random()*100)+'%;color:'+cols[i%cols.length]+';animation-duration:'+(8+Math.random()*8)+'s,'+(2+Math.random()*2.5)+'s;animation-delay:'+(Math.random()*-8)+'s,'+(Math.random()*-2)+'s';
+    f.innerHTML='<svg width="'+sz+'" height="'+sz+'" viewBox="0 0 28 28" style="fill:currentColor;filter:drop-shadow(0 0 5px rgba(233,185,73,.8))" xmlns="http://www.w3.org/2000/svg">'+shapes[i%shapes.length]+'</svg>';
+    p.appendChild(f);}
+  const critters=['🦋','🦋','🦋','🐦','🐦','🕊️','🦋','🐦','🦋','🕊️','🦋','🐦'];
+  critters.forEach((em,i)=>{const f=document.createElement('div');f.className='fly';const sz=18+Math.random()*16;
+    f.style.cssText='left:'+(Math.random()*94)+'%;top:'+(Math.random()*100)+'%;font-size:'+sz+'px;filter:drop-shadow(0 0 5px rgba(233,185,73,.5));animation-duration:'+(9+Math.random()*9)+'s,'+(2+Math.random()*2.5)+'s;animation-delay:'+(Math.random()*-9)+'s,'+(Math.random()*-2)+'s';
+    f.textContent=em;p.appendChild(f);});
+})();
+</script>
+
+<script>
+/* ================= DATA ================= */
+const SECMETA={
+ E3:["🧩","Exercise 3","Choose the sentence that best combines the original ones. (6 câu)"],
+ E4:["📜","Exercise 4","Mark the letter A, B, C, or D to indicate the correct arrangement of the sentences to make a meaningful paragraph / letter. (4 câu)"]
+};
+const NUMSTART={E3:1,E4:1};
+const MCQ=[]; const FILL=[];
+function add(sec,q,correct,opts,ex,col){MCQ.push({sec,q,correct,opts,ex,col:!!col});}
+
+function OPT(en,vi,ok){return "<li><span class='"+(ok?"hl-green":"p-word")+"'>"+en+"</span> ➔ <span class='p-mean'>"+vi+"</span></li>";}
+function W3(orig,dichGoc,ops,why,wrong){
+ return "<div class='vnt'>💬 Dịch đề: "+dichGoc+"</div><div class='optlist'><b>Dịch 4 đáp án:</b><ul>"+ops.join("")+"</ul></div>"+
+  "<ol><li><span class='hl-green'>✅ Tại sao đúng:</span> "+why+"</li>"+
+  "<li><span class='hl-red'>❌ Tại sao sai:</span> "+wrong+"</li></ol>";
+}
+
+/* ═════ EXERCISE 3 — Choose the sentence that best combines (6 câu) ═════ */
+add("E3","<div class='orig'>1. Mars is a rocky planet. It has two moons.</div>Chọn câu kết hợp ĐÚNG nhất:",
+ "Mars, which has two moons, is a rocky planet.",
+ ["Mars, which has two moons, is a rocky planet.","A rocky planet with two moons, Mars is a giant planet.","As Mars is a rocky planet, it has two moons.","Two moons which orbit Mars is a rocky planet."],
+ W3(null,"Sao Hỏa là một hành tinh đá. Nó có hai mặt trăng.",
+  [OPT("Mars, which has two moons, is a rocky planet.","Sao Hỏa, hành tinh có hai mặt trăng, là một hành tinh đá.",1),
+   OPT("A rocky planet with two moons, Mars is a giant planet.","Là một hành tinh đá có hai mặt trăng, Sao Hỏa là một hành tinh khổng lồ.",0),
+   OPT("As Mars is a rocky planet, it has two moons.","Vì Sao Hỏa là hành tinh đá nên nó có hai mặt trăng.",0),
+   OPT("Two moons which orbit Mars is a rocky planet.","Hai mặt trăng quay quanh Sao Hỏa là một hành tinh đá.",0)],
+  "Mệnh đề quan hệ <span class='p-grammar'>which has two moons</span> chen giữa để bổ sung thông tin cho 'Mars', câu chính vẫn là 'Mars is a rocky planet' — đúng ý câu gốc, không bịa thêm.",
+  "Đáp án 2 bịa thêm 'giant planet' (Sao Hỏa không phải hành tinh khổng lồ); đáp án 3 tạo quan hệ nhân-quả vô lý (đá không phải nguyên nhân có 2 mặt trăng); đáp án 4 sai chủ ngữ — biến 'hai mặt trăng' thành 'một hành tinh đá' (vô lý)."),true);
+add("E3","<div class='orig'>2. The Sun is a giant star. It is the centre of our solar system.</div>Chọn câu kết hợp ĐÚNG nhất:",
+ "The Sun, which is the centre of our solar system, is a giant star.",
+ ["A giant star is the Sun that is at the centre of our solar system.","A giant star, the Sun is centred by our solar system.","Because the Sun is the centre of our solar system, it is a giant star.","The Sun, which is the centre of our solar system, is a giant star."],
+ W3(null,"Mặt Trời là một ngôi sao khổng lồ. Nó là trung tâm của hệ mặt trời của chúng ta.",
+  [OPT("A giant star is the Sun that is at the centre of our solar system.","Một ngôi sao khổng lồ là Mặt Trời, thứ nằm ở trung tâm hệ mặt trời.",0),
+   OPT("A giant star, the Sun is centred by our solar system.","Là ngôi sao khổng lồ, Mặt Trời được lấy làm trung tâm bởi hệ mặt trời.",0),
+   OPT("Because the Sun is the centre of our solar system, it is a giant star.","Vì Mặt Trời là trung tâm hệ mặt trời nên nó là ngôi sao khổng lồ.",0),
+   OPT("The Sun, which is the centre of our solar system, is a giant star.","Mặt Trời, thứ là trung tâm của hệ mặt trời chúng ta, là một ngôi sao khổng lồ.",1)],
+  "Mệnh đề quan hệ <span class='p-grammar'>which is the centre of our solar system</span> chen giữa bổ sung cho 'The Sun', câu chính 'The Sun is a giant star' giữ nguyên trọng tâm như câu gốc.",
+  "Đáp án 1 đảo trật tự nhấn mạnh khiến câu nghe ngược, không tự nhiên; đáp án 2 dùng bị động sai nghĩa ('centred by' vô lý); đáp án 3 tạo quan hệ nhân-quả vô lý (là trung tâm không phải lý do để là ngôi sao khổng lồ)."),true);
+add("E3","<div class='orig'>3. Many famous artists have lived in Paris. Their works of art inspire people worldwide.</div>Chọn câu kết hợp ĐÚNG nhất:",
+ "Many famous artists, whose works of art inspire people worldwide, have lived in Paris.",
+ ["Many famous artists, whose works of art inspire people worldwide, have lived in Paris.","Paris, a city whose history is rich with culture, has been home to many famous artists.","We visited the Louvre museum in Paris, which houses masterpieces by famous artists.","Paris, where works of art inspire people worldwide, is home to many famous artists."],
+ W3(null,"Nhiều nghệ sĩ nổi tiếng đã sống ở Paris. Tác phẩm của họ truyền cảm hứng cho mọi người trên khắp thế giới.",
+  [OPT("Many famous artists, whose works of art inspire people worldwide, have lived in Paris.","Nhiều nghệ sĩ nổi tiếng, người có tác phẩm truyền cảm hứng khắp thế giới, đã từng sống ở Paris.",1),
+   OPT("Paris, a city whose history is rich with culture, has been home to many famous artists.","Paris, thành phố có lịch sử giàu văn hóa, là nơi ở của nhiều nghệ sĩ nổi tiếng.",0),
+   OPT("We visited the Louvre museum in Paris, which houses masterpieces by famous artists.","Chúng tôi đã thăm bảo tàng Louvre ở Paris, nơi trưng bày kiệt tác của các nghệ sĩ nổi tiếng.",0),
+   OPT("Paris, where works of art inspire people worldwide, is home to many famous artists.","Paris, nơi tác phẩm nghệ thuật truyền cảm hứng khắp thế giới, là nơi ở của nhiều nghệ sĩ.",0)],
+  "Mệnh đề sở hữu <span class='p-grammar'>whose works of art inspire...</span> thay cho 'Their works...' để nối 2 câu, giữ đúng chủ ngữ 'many famous artists' như câu gốc.",
+  "Đáp án 2 bịa thêm 'lịch sử giàu văn hóa' không có trong câu gốc; đáp án 3 bịa hẳn chi tiết 'thăm bảo tàng Louvre' không hề có; đáp án 4 dùng 'where' khiến chủ thể truyền cảm hứng bị đổi thành 'Paris' thay vì 'tác phẩm', sai nghĩa gốc."),true);
+add("E3","<div class='orig'>4. Isaac Newton observed the falling apple. He developed the theory of gravity.</div>Chọn câu kết hợp ĐÚNG nhất:",
+ "Isaac Newton observed a falling apple, which helped him develop the theory of gravity.",
+ ["An apple, which was observed by Isaac Newton, helped he to form his theory of gravity.","The falling apple, which Isaac Newton observed it, led to his theory of gravity.","Isaac Newton, that developed the theory of gravity, observed the falling apple.","Isaac Newton observed a falling apple, which helped him develop the theory of gravity."],
+ W3(null,"Isaac Newton quan sát quả táo rơi. Ông đã phát triển thuyết vạn vật hấp dẫn.",
+  [OPT("An apple, which was observed by Isaac Newton, helped he to form his theory of gravity.","Một quả táo, được Newton quan sát, đã giúp ông... (sai ngữ pháp 'helped he').",0),
+   OPT("The falling apple, which Isaac Newton observed it, led to his theory of gravity.","Quả táo rơi, mà Newton quan sát nó, đã dẫn đến thuyết của ông (thừa đại từ 'it').",0),
+   OPT("Isaac Newton, that developed the theory of gravity, observed the falling apple.","Isaac Newton, người phát triển thuyết hấp dẫn (sai dùng 'that' cho người), quan sát quả táo rơi.",0),
+   OPT("Isaac Newton observed a falling apple, which helped him develop the theory of gravity.","Isaac Newton quan sát một quả táo rơi, điều đã giúp ông phát triển thuyết vạn vật hấp dẫn.",1)],
+  "Mệnh đề quan hệ nối tiếp <span class='p-grammar'>which helped him develop...</span> dùng 'which' để giải thích cho CẢ MỆNH ĐỀ TRƯỚC (việc quan sát quả táo), đúng thứ tự nhân quả: quan sát táo → phát triển thuyết.",
+  "Đáp án 1 sai ngữ pháp 'helped he' (phải là 'helped him'); đáp án 2 thừa đại từ 'it' sau mệnh đề quan hệ; đáp án 3 dùng 'that' cho người (phải dùng 'who') và đảo ngược thứ tự nhân-quả vô lý."),true);
+add("E3","<div class='orig'>5. Louis Pasteur developed a vaccine for rabies. It saved countless lives.</div>Chọn câu kết hợp ĐÚNG nhất:",
+ "Louis Pasteur developed a vaccine for rabies, which saved countless lives.",
+ ["The vaccine for rabies was developed by Louis Pasteur who saved countless lives.","Louis Pasteur's work on rabies resulted in a vaccine what saved countless lives.","Louis Pasteur, who developed a vaccine for rabies, saved countless lives.","Louis Pasteur developed a vaccine for rabies, which saved countless lives."],
+ W3(null,"Louis Pasteur đã phát triển một loại vắc-xin phòng bệnh dại. Nó đã cứu sống vô số người.",
+  [OPT("The vaccine for rabies was developed by Louis Pasteur who saved countless lives.","Vắc-xin phòng dại được Pasteur phát triển, người đã cứu vô số người (sai chủ thể cứu người).",0),
+   OPT("Louis Pasteur's work on rabies resulted in a vaccine what saved countless lives.","Công trình của Pasteur về bệnh dại dẫn đến vắc-xin (sai ngữ pháp dùng 'what').",0),
+   OPT("Louis Pasteur, who developed a vaccine for rabies, saved countless lives.","Louis Pasteur, người phát triển vắc-xin phòng dại, đã cứu vô số người (sai chủ thể cứu người).",0),
+   OPT("Louis Pasteur developed a vaccine for rabies, which saved countless lives.","Louis Pasteur đã phát triển vắc-xin phòng bệnh dại, thứ đã cứu sống vô số người.",1)],
+  "Mệnh đề quan hệ nối tiếp <span class='p-grammar'>which saved countless lives</span> dùng 'which' để nói CHÍNH VẮC-XIN mới là thứ cứu người — đúng ý câu gốc ('It' = the vaccine).",
+  "Đáp án 1 và 3 đều khiến 'Pasteur' (chứ không phải vắc-xin) là chủ thể cứu người — sai nghĩa gốc; đáp án 2 sai ngữ pháp dùng 'what' làm đại từ quan hệ (phải là 'which/that')."),true);
+add("E3","<div class='orig'>6. The Amazon rainforest is a vast jungle. Humans have lived there for thousands of years.</div>Chọn câu kết hợp ĐÚNG nhất:",
+ "The Amazon rainforest, where humans have lived for thousands of years, is a vast jungle.",
+ ["Humans have lived in the Amazon rainforest for thousands of years, which is a vast jungle.","The Amazon rainforest, where humans have lived for thousands of years, is a vast jungle.","Humans have lived in a vast jungle, which is the Amazon rainforest, since thousands of years.","Humans have lived in a vast jungle for thousands of years when there was the Amazon rainforest."],
+ W3(null,"Rừng mưa Amazon là một khu rừng rậm rộng lớn. Con người đã sống ở đó hàng ngàn năm.",
+  [OPT("Humans have lived in the Amazon rainforest for thousands of years, which is a vast jungle.","Con người sống ở rừng Amazon hàng ngàn năm, thứ là khu rừng rậm rộng lớn (mệnh đề đặt sai vị trí, gây hiểu nhầm).",0),
+   OPT("The Amazon rainforest, where humans have lived for thousands of years, is a vast jungle.","Rừng mưa Amazon, nơi con người đã sống hàng ngàn năm, là một khu rừng rậm rộng lớn.",1),
+   OPT("Humans have lived in a vast jungle, which is the Amazon rainforest, since thousands of years.","Con người sống trong khu rừng rậm (sai giới từ 'since thousands of years', phải là 'for').",0),
+   OPT("Humans have lived in a vast jungle for thousands of years when there was the Amazon rainforest.","Con người sống trong rừng rậm... khi có rừng Amazon (vô nghĩa, sai ngữ pháp).",0)],
+  "Mệnh đề quan hệ chỉ nơi chốn <span class='p-grammar'>where humans have lived...</span> chen giữa bổ sung cho 'The Amazon rainforest', câu chính 'The Amazon rainforest is a vast jungle' giữ đúng trọng tâm câu gốc.",
+  "Đáp án 1 đặt mệnh đề 'which is a vast jungle' ở cuối câu gây hiểu nhầm bổ nghĩa cho 'years' thay vì cho khu rừng; đáp án 3 sai giới từ ('since' phải là 'for' với khoảng thời gian); đáp án 4 dùng 'when' vô nghĩa và sai ngữ pháp hoàn toàn."),true);
+
+/* ═════ EXERCISE 4 — Sắp xếp câu thành đoạn văn/lá thư có nghĩa (4 câu) ═════ */
+function SEN(letter,en,vi){return "<div style='margin:6px 0;padding-bottom:5px;border-bottom:1px dashed #e2cfa0'><b>"+letter+".</b> "+en+"<br><span class='p-mean' style='display:block;margin-left:18px'>➔ "+vi+"</span></div>";}
+function W5(title,sentences,order,why){
+ return "<div class='vnt'>💬 Thứ tự đúng: <b>"+order+"</b></div>"+
+  "<div class='optlist'><b>"+title+"</b>"+sentences+"</div>"+
+  "<ol><li><span class='hl-green'>✅ Mạch logic:</span> "+why+"</li></ol>";
+}
+add("E4","<div class='orig'>The local park is a great place to relax and play, but there's a big problem with litter.</div>"+
+ "<div class='scramble'>a. First, candy wrappers, plastic bottles, and food scraps get blown around by the wind, making the park look messy.<br>"+
+ "b. However, there are ways to fix this!<br>"+
+ "c. Everyone can do their part by throwing away their trash in the bins provided. If we all work together, we can keep our park clean and safe for everyone.<br>"+
+ "d. Second, this litter can harm wildlife if animals eat it or get tangled in it.<br>"+
+ "e. The local park is a great place to relax and play, but there's a big problem with litter.</div>Chọn thứ tự sắp xếp ĐÚNG:",
+ "e-a-d-b-c",["e-d-a-b-c","a-c-e-b-d","a-d-b-e-c","e-a-d-b-c"],
+ W5("Đọc theo đúng thứ tự e-a-d-b-c:",
+  SEN("e","The local park is a great place to relax and play, but there's a big problem with litter.","Công viên địa phương là nơi tuyệt vời để thư giãn và vui chơi, nhưng lại có vấn đề lớn về rác thải.")+
+  SEN("a","First, candy wrappers, plastic bottles, and food scraps get blown around by the wind, making the park look messy.","Đầu tiên, giấy kẹo, chai nhựa và thức ăn thừa bị gió thổi bay khắp nơi, khiến công viên trông bừa bộn.")+
+  SEN("d","Second, this litter can harm wildlife if animals eat it or get tangled in it.","Thứ hai, rác này có thể gây hại cho động vật nếu chúng ăn phải hoặc bị vướng vào.")+
+  SEN("b","However, there are ways to fix this!","Tuy nhiên, vẫn có cách để khắc phục điều này!")+
+  SEN("c","Everyone can do their part by throwing away their trash in the bins provided. If we all work together, we can keep our park clean and safe for everyone.","Mọi người có thể góp phần bằng cách vứt rác vào thùng có sẵn. Nếu cùng chung tay, ta có thể giữ công viên sạch đẹp, an toàn cho mọi người."),
+  "e = câu giới thiệu nêu VẤN ĐỀ (litter); a = <b>First</b> (lý do 1: làm bẩn công viên); d = <b>Second</b> (lý do 2: hại động vật); b = <b>However</b> (chuyển ý sang GIẢI PHÁP); c = giải pháp cụ thể + lời kêu gọi kết đoạn."),true);
+add("E4","<div class='orig'>Do you love being outside and taking care of our planet?</div>"+
+ "<div class='scramble'>a. The Green Club would be a great way to meet new friends who share your passion for the environment.<br>"+
+ "b. If so, then a Green Club might be just for you! In this club, we'd get together to brainstorm ideas for making our school and community more eco-friendly.<br>"+
+ "c. Together, we can make a real difference and help keep our world green and healthy!<br>"+
+ "d. Do you love being outside and taking care of our planet?<br>"+
+ "e. We could have fun activities like planting trees, organising clean-up days, or even learning how to make our own recycled crafts.</div>Chọn thứ tự sắp xếp ĐÚNG:",
+ "d-b-e-a-c",["b-a-c-d-e","d-a-b-e-c","d-b-e-a-c","b-d-c-a-e"],
+ W5("Đọc theo đúng thứ tự d-b-e-a-c:",
+  SEN("d","Do you love being outside and taking care of our planet?","Bạn có yêu thích ở ngoài trời và chăm sóc hành tinh của chúng ta không?")+
+  SEN("b","If so, then a Green Club might be just for you! In this club, we'd get together to brainstorm ideas for making our school and community more eco-friendly.","Nếu vậy, Câu lạc bộ Xanh chính là dành cho bạn! Ở đó, ta sẽ cùng lên ý tưởng giúp trường và cộng đồng thân thiện với môi trường hơn.")+
+  SEN("e","We could have fun activities like planting trees, organising clean-up days, or even learning how to make our own recycled crafts.","Ta có thể có các hoạt động thú vị như trồng cây, tổ chức ngày dọn dẹp, hay học làm đồ tái chế.")+
+  SEN("a","The Green Club would be a great way to meet new friends who share your passion for the environment.","Câu lạc bộ Xanh là cách tuyệt vời để kết bạn mới cùng chung đam mê về môi trường.")+
+  SEN("c","Together, we can make a real difference and help keep our world green and healthy!","Cùng nhau, ta có thể tạo ra sự khác biệt thực sự và giúp thế giới xanh, khỏe mạnh hơn!"),
+  "d = câu hỏi mở đầu gợi sự chú ý; b = <b>If so</b> trả lời trực tiếp câu hỏi ở d, giới thiệu câu lạc bộ; e = liệt kê hoạt động cụ thể của câu lạc bộ vừa nêu; a = nêu thêm lợi ích (kết bạn); c = lời kêu gọi kết đoạn."),true);
+add("E4","<div class='orig'>Many human activities, like cutting down forests, farming, and building roads, can destroy animal homes.</div>"+
+ "<div class='scramble'>a. We can plant new trees, build special crossings for animals on roads, and protect areas where animals naturally live.<br>"+
+ "b. This disrupts the environment and makes it hard for animals to find food and shelter.<br>"+
+ "c. By working together, we can create a healthier world for both people and wildlife.<br>"+
+ "d. However, there are several solutions to reverse these problems!<br>"+
+ "e. Many human activities, like cutting down forests, farming, and building roads, can destroy animal homes.</div>Chọn thứ tự sắp xếp ĐÚNG:",
+ "e-b-d-a-c",["e-b-d-a-c","e-b-a-d-c","e-d-c-b-a","e-c-d-b-a"],
+ W5("Đọc theo đúng thứ tự e-b-d-a-c:",
+  SEN("e","Many human activities, like cutting down forests, farming, and building roads, can destroy animal homes.","Nhiều hoạt động của con người, như chặt rừng, canh tác và xây đường, có thể phá hủy nơi ở của động vật.")+
+  SEN("b","This disrupts the environment and makes it hard for animals to find food and shelter.","Điều này phá vỡ môi trường và khiến động vật khó tìm thức ăn, nơi trú ẩn.")+
+  SEN("d","However, there are several solutions to reverse these problems!","Tuy nhiên, có một số giải pháp để đảo ngược những vấn đề này!")+
+  SEN("a","We can plant new trees, build special crossings for animals on roads, and protect areas where animals naturally live.","Ta có thể trồng cây mới, xây lối đi riêng cho động vật qua đường, và bảo vệ khu vực chúng sinh sống tự nhiên.")+
+  SEN("c","By working together, we can create a healthier world for both people and wildlife.","Bằng cách hợp tác, ta có thể tạo ra một thế giới lành mạnh hơn cho cả con người và động vật hoang dã."),
+  "e = nêu VẤN ĐỀ (hoạt động con người phá hủy nơi ở động vật); b = HẬU QUẢ trực tiếp của vấn đề ở e; d = <b>However</b> chuyển ý sang GIẢI PHÁP; a = liệt kê giải pháp cụ thể; c = lời kết kêu gọi hợp tác."),true);
+add("E4","<div class='orig'>Dear Sue, ...</div>"+
+ "<div class='scramble'><i>Dear Sue,</i><br>"+
+ "a. We should protect these places to ensure a good life for future generations. Together, we can make a difference!<br>"+
+ "b. I hope you are having a wonderful day!<br>"+
+ "c. Furthermore, forests help keep the climate stable and provide homes for many animals.<br>"+
+ "d. Firstly, we need to remember that nature provides us with clean air and fresh water.<br>"+
+ "e. Looking forward to hearing your thoughts!</div>Chọn thứ tự sắp xếp ĐÚNG:",
+ "b-d-c-a-e",["b-a-c-d-e","d-a-b-e-c","d-b-e-a-c","b-d-c-a-e"],
+ W5("Đọc theo đúng thứ tự b-d-c-a-e:",
+  SEN("b","I hope you are having a wonderful day!","Mình hy vọng cậu đang có một ngày tuyệt vời!")+
+  SEN("d","Firstly, we need to remember that nature provides us with clean air and fresh water.","Đầu tiên, ta cần nhớ rằng thiên nhiên cho ta không khí trong lành và nước sạch.")+
+  SEN("c","Furthermore, forests help keep the climate stable and provide homes for many animals.","Hơn nữa, rừng giúp giữ khí hậu ổn định và là nơi ở của nhiều loài động vật.")+
+  SEN("a","We should protect these places to ensure a good life for future generations. Together, we can make a difference!","Ta nên bảo vệ những nơi này để đảm bảo cuộc sống tốt cho thế hệ tương lai. Cùng nhau, ta có thể tạo nên khác biệt!")+
+  SEN("e","Looking forward to hearing your thoughts!","Mong sớm được nghe suy nghĩ của cậu!"),
+  "b = lời chào mở đầu thư (bắt buộc câu đầu tiên trong thư); d = <b>Firstly</b> lý do 1; c = <b>Furthermore</b> lý do 2 (bổ sung); a = kết luận + lời kêu gọi; e = lời chào kết thư — đúng cấu trúc MỞ THƯ → THÂN THƯ → KẾT THƯ."),true);
+
+/* ================= ENGINE ================= */
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+let TOTAL=MCQ.length+FILL.length, answered=0, score=0;
+const state={};
+function chime(){try{const c=new (window.AudioContext||window.webkitAudioContext)();const now=c.currentTime;[880,1318.5].forEach((f,i)=>{const o=c.createOscillator(),g=c.createGain();o.type="sine";o.frequency.value=f;o.connect(g);g.connect(c.destination);const t=now+i*0.12;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(0.25,t+0.03);g.gain.exponentialRampToValueAtTime(0.001,t+0.5);o.start(t);o.stop(t+0.5);});}catch(e){}}
+function buzz(){const a=document.getElementById('aWrong');if(a){try{a.currentTime=0;a.play().catch(()=>{});}catch(e){}}}
+function confetti(){const cs=["#f5d77a","#e9b949","#7c3aed","#0ea5a4","#a855f7","#fff4d6"];for(let i=0;i<70;i++){const d=document.createElement('div');d.className='confetti';d.style.left=Math.random()*100+'vw';d.style.background=cs[i%cs.length];d.style.transform='rotate('+(Math.random()*360)+'deg)';document.body.appendChild(d);const fall=900+Math.random()*900,drift=(Math.random()-0.5)*260;d.animate([{transform:'translate(0,0) rotate(0)',opacity:1},{transform:'translate('+drift+'px,'+(window.innerHeight+40)+'px) rotate('+(Math.random()*720)+'deg)',opacity:.9}],{duration:fall,easing:'cubic-bezier(.3,.7,.5,1)'});setTimeout(()=>d.remove(),fall);}}
+function bump(){document.getElementById('liveCount').textContent=answered;document.getElementById('topScore').textContent=score;}
+
+const quizEl=document.getElementById('quiz');
+const order=["E3","E4"];
+order.forEach(sec=>{
+  const cls=sec==="E4"?" e20":"";
+  const head=document.createElement('div');head.className='sec-head'+cls;
+  head.innerHTML='<div class="chip">'+SECMETA[sec][0]+'</div><div class="t"><div class="e">'+SECMETA[sec][1]+'</div><div class="d">'+SECMETA[sec][2]+'</div></div>';
+  quizEl.appendChild(head);
+  const start=NUMSTART[sec];
+  MCQ.filter(m=>m.sec===sec).forEach((m,i)=>quizEl.appendChild(renderMCQ(m,start+i)));
+});
+document.getElementById('liveTotal').textContent=TOTAL;
+document.getElementById('topTotal').textContent=TOTAL;
+document.getElementById('rTotal').textContent=TOTAL;
+
+function renderMCQ(m,num){
+  const id=m.sec+"_"+num; state[id]=false;
+  const card=document.createElement('div');card.className='card';
+  const opts=shuffle(m.opts);
+  let optHtml=opts.map(o=>'<button class="opt" data-id="'+id+'" data-val="'+encodeURIComponent(o)+'">'+o+'</button>').join("");
+  card.innerHTML='<div class="qhead"><div class="qnum">'+num+'</div><div class="qtext">'+(m.q||"")+'</div></div>'+
+    '<div class="opts'+(m.col?' col':'')+'">'+optHtml+'</div>'+
+    '<div class="explain" id="ex_'+id+'">'+m.ex+'</div>';
+  card.querySelectorAll('.opt').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      if(state[id])return; state[id]=true; answered++;
+      const val=decodeURIComponent(btn.dataset.val);
+      const ok=(val===m.correct);
+      card.querySelectorAll('.opt').forEach(b=>{b.classList.add('done');const bv=decodeURIComponent(b.dataset.val);if(bv===m.correct)b.classList.add('correct');else if(b===btn)b.classList.add('wrong');else b.classList.add('dim');});
+      if(ok){score++;chime();confetti();}else{btn.classList.add('shake');buzz();}
+      document.getElementById('ex_'+id).classList.add('open');
+      bump();
+    });
+  });
+  return card;
+}
+function norm(s){return (s||"").toLowerCase().replace(/[“”"'?.,!;:]/g,'').replace(/\s+/g,' ').trim();}
+function renderFill(m,num){
+  const id=m.sec+"_"+num; state[id]=false;
+  const card=document.createElement('div');card.className='card';
+  card.innerHTML='<div class="qhead"><div class="qnum">'+num+'</div><div class="qtext">'+m.q+'</div></div>'+
+    '<div class="fillrow"><input class="fillinput" id="fi_'+id+'" type="text" placeholder="Gõ câu hoàn chỉnh..." autocomplete="off" spellcheck="false"><button class="checkbtn" id="cb_'+id+'">Kiểm tra ✓</button></div>'+
+    '<div class="explain" id="ex_'+id+'">'+m.ex+'</div>';
+  const inp=card.querySelector('.fillinput'), btn=card.querySelector('.checkbtn');
+  function check(){
+    if(state[id])return;
+    const val=norm(inp.value);
+    if(!val){inp.classList.add('shakex');setTimeout(()=>inp.classList.remove('shakex'),420);return;}
+    state[id]=true; answered++;
+    const ok=m.accept.map(norm).includes(val);
+    inp.disabled=true; btn.disabled=true;
+    if(ok){inp.classList.add('okfill');score++;chime();confetti();btn.textContent='Đúng! 🎉';}
+    else{inp.classList.add('badfill');buzz();btn.textContent='Xem đáp án';}
+    document.getElementById('ex_'+id).classList.add('open');
+    bump();
+  }
+  btn.addEventListener('click',check);
+  inp.addEventListener('keydown',e=>{if(e.key==='Enter')check();});
+  return card;
+}
+
+/* intro audio once */
+let introPlayed=false;
+function playIntro(){if(introPlayed)return;introPlayed=true;const a=document.getElementById('aIntro');if(a){a.play().catch(()=>{});}}
+window.addEventListener('pointerdown',function(){playIntro();},{once:true});
+window.addEventListener('keydown',function(){playIntro();},{once:true});
+window.addEventListener('touchstart',function(){playIntro();},{once:true});
+
+/* submit / result */
+function openName(){document.getElementById('nameModal').classList.add('show');setTimeout(()=>document.getElementById('nameInput').focus(),200);}
+document.getElementById('nameInput').addEventListener('keydown',e=>{if(e.key==='Enter')showResult();});
+function showResult(){
+  const inp=document.getElementById('nameInput'),warn=document.getElementById('nameWarn');
+  const name=inp.value.trim();
+  if(!name){inp.classList.add('err');warn.classList.add('show');setTimeout(()=>inp.classList.remove('err'),450);return;}
+  inp.classList.remove('err');warn.classList.remove('show');
+  document.getElementById('nameModal').classList.remove('show');
+  const pct=score/TOTAL, ten=(pct*10).toFixed(2);
+  document.getElementById('rCorrect').textContent=score;
+  document.getElementById('r10').textContent=ten;
+  let emoji,greet,msg;
+  if(score===TOTAL){emoji="🏆";greet="🌟 THIÊN TÀI! "+name+" xuất sắc tuyệt đối!";msg="Con đã đúng TOÀN BỘ! Quá đỉnh luôn! 🎉🎊";}
+  else if(pct>=0.6){emoji="🙌";greet="👏 GIỎI LẮM, "+name+"!";msg="Con làm rất tốt rồi. Đọc kỹ phần giải thích những câu sai để tiến bộ thêm nhé! 💪";}
+  else{emoji="😢";greet="🤗 Cố lên nào, "+name+"!";msg="Đừng buồn nhé! Hãy đọc kỹ giải thích, ghi từ/cấu trúc vào vở rồi làm lại — con sẽ giỏi lên nhanh thôi! 📚";}
+  document.getElementById('reaction').textContent=emoji;
+  document.getElementById('greeting').textContent=greet;
+  document.getElementById('rmsg').textContent=msg;
+  document.getElementById('resultModal').classList.add('show');
+  if(pct>=0.6){confetti();setTimeout(confetti,400);chime();}
+}
+</script>
+<script>/*devclean*/(function(){
+var ZW=/[\u00AD\u034F\u061C\u115F\u1160\u17B4\u17B5\u180E\u200B-\u200F\u202A-\u202E\u2060-\u206F\uFEFF]/g,
+    SP=/[\u00A0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\t]/g,
+    AP=/[\u2018\u2019\u201A\u201B\u2032\u2035\u02B9\u02BB\u02BC\u02BD\u02C8\u0060\u00B4\uFF07]/g,
+    DQ=/[\u201C\u201D\u201E\u201F\u2033\u2036\u00AB\u00BB\uFF02]/g,
+    DS=/[\u2010\u2011\u2012\u2212\uFE63\uFF0D]/g;
+function clean(v){if(!v)return v;var s=String(v);try{s=s.normalize('NFKC')}catch(e){}
+  return s.replace(ZW,'').replace(SP,' ').replace(AP,"'").replace(DQ,'"').replace(DS,'-').replace(/[\u0300-\u036f]/g,'').replace(/ {2,}/g,' ');}
+window.__devclean=clean;
+function fix(skip){var L=document.querySelectorAll('input:not([type]),input[type=text],input[type=search],textarea');
+  for(var i=0;i<L.length;i++){var el=L[i];if(el===skip||el.readOnly||el.disabled)continue;var v=el.value,c=clean(v);if(c!==v)el.value=c;}}
+['pointerdown','mousedown','touchstart','click','change','focusout'].forEach(function(t){document.addEventListener(t,function(e){fix(t==='focusout'||t==='change'?null:e.target)},true)});
+document.addEventListener('keydown',function(e){if(e.key==='Enter'||e.keyCode===13)fix(null)},true);
+})();</script>
+<style id="ms-chi-nen-unlock-style">
+#passwordModal, #password-modal, #pwModal, #pw-modal, #pw-overlay,
+#lockModal, #passModal, #authModal, #auth-modal, #lockOverlay,
+#start-overlay, #intro-overlay, #start-screen,
+.password-modal, .lock-modal, .lock-overlay {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    z-index: -9999 !important;
+}
+</style>
+<script>
+// Remove password lock completely - direct quiz access
+(function() {
+    var initDone = false;
+    var renderCheckDone = false;
+
+    function hideEl(el, hard) {
+        if (!el) return;
+        if (hard) {
+            el.style.setProperty('display', 'none', 'important');
+            el.style.setProperty('visibility', 'hidden', 'important');
+            el.style.setProperty('opacity', '0', 'important');
+            el.style.setProperty('pointer-events', 'none', 'important');
+            el.style.setProperty('z-index', '-9999', 'important');
+        } else {
+            el.style.display = 'none';
+        }
+        el.classList.remove('active', 'show', 'open', 'visible', 'flex');
+    }
+
+    function hasRenderedQuiz() {
+        var containers = document.querySelectorAll(
+            '#quiz-container, #quizContainer, #questions-container, #questionPane, #quiz, #questions, #quiz-body, #questions-wrapper, #quiz-list, #quizList, #exercise-container, #app-container .split-container'
+        );
+        for (var i = 0; i < containers.length; i++) {
+            if (containers[i].querySelectorAll('button, input, select, textarea, .question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .question, .option-btn, .opt-btn, .ans-btn').length > 0) {
+                return true;
+            }
+        }
+        if (document.querySelectorAll('.question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .option-btn, .opt-btn, .ans-btn, .choice-btn').length > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    function ensureQuizRendered() {
+        if (renderCheckDone) return;
+        renderCheckDone = true;
+        if (hasRenderedQuiz()) return;
+
+        if (!hasRenderedQuiz() && typeof buildQuiz === 'function') { try { buildQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof initQuiz === 'function') { try { initQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderApp === 'function') { try { renderApp(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuiz === 'function') { try { renderQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuestions === 'function') { try { renderQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAllQuestions === 'function') { try { renderAllQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAll === 'function') { try { renderAll(); } catch(e){} }
+    }
+
+    function unlockNow() {
+        var pwIds = [
+            'passwordModal', 'password-modal', 'pwModal', 'pw-modal', 'pw-overlay',
+            'lockModal', 'passModal', 'authModal', 'auth-modal', 'lockOverlay',
+            'start-overlay', 'intro-overlay', 'start-screen'
+        ];
+        pwIds.forEach(function(id) {
+            hideEl(document.getElementById(id), true);
+        });
+
+        var modalEls = document.querySelectorAll('.password-modal, .lock-modal, .lock-overlay, #lockOverlay, #auth-modal');
+        modalEls.forEach(function(el) {
+            if (el.id !== 'resultModal' && el.id !== 'result-modal' && el.id !== 'scoreModal') {
+                hideEl(el, true);
+            }
+        });
+
+        ['nameModal', 'name-modal', 'nameInputModal'].forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) hideEl(el, false);
+        });
+
+        var qo = document.getElementById('quiz-overlay');
+        if (qo && (typeof isStarted === 'undefined' || !isStarted)) {
+            qo.style.display = 'none';
+        }
+
+        var mainIds = [
+            'mainContent', 'main-content', 'mainHeader', 'main-header',
+            'app-container', 'app', 'quizApp', 'quiz-wrapper', 'quizContainer', 'quiz-container', 'reading-content'
+        ];
+        mainIds.forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) {
+                el.classList.remove('hidden', 'blur', 'blurred', 'locked');
+                if (el.style.display === 'none') {
+                    el.style.removeProperty('display');
+                }
+                if (window.getComputedStyle(el).display === 'none') {
+                    var hasPane = el.querySelector('.pane, .left-pane, .right-pane, .split-container, .left-panel, .right-panel');
+                    if (id === 'main-content' || id.toLowerCase().includes('header') || el.classList.contains('main-container') || hasPane) {
+                        el.style.setProperty('display', 'flex', 'important');
+                    } else {
+                        el.style.setProperty('display', 'block', 'important');
+                    }
+                }
+            }
+        });
+
+        var qs = document.getElementById('quiz-screen');
+        if (qs) {
+            qs.classList.remove('hidden');
+            if (qs.classList.contains('flex-col')) {
+                qs.classList.add('flex');
+                qs.style.display = 'flex';
+            } else {
+                qs.style.display = 'block';
+            }
+        }
+
+        if (!initDone) {
+            initDone = true;
+
+            if (document.getElementById('start-overlay') && typeof startGame === 'function') {
+                var sn = document.getElementById('student-name') || document.getElementById('studentName');
+                if (sn && !sn.value.trim()) sn.value = 'Học sinh';
+            }
+            if (document.getElementById('name-modal') && typeof startQuiz === 'function') {
+                var sn2 = document.getElementById('student-name');
+                if (sn2 && !sn2.value.trim()) sn2.value = 'Học sinh';
+            }
+
+            if (typeof startQuiz === 'function' && (typeof isStarted === 'undefined' || !isStarted)) { try { startQuiz(); } catch(e){} }
+            if (typeof startGame === 'function') { try { startGame(); } catch(e){} }
+            if (typeof startTest === 'function') { try { startTest(); } catch(e){} }
+            if (typeof startApp === 'function') { try { startApp(); } catch(e){} }
+            if (typeof buildStarfield === 'function') { try { buildStarfield(); } catch(e){} }
+            if (typeof spawnFloats === 'function') { try { spawnFloats(); } catch(e){} }
+            if (typeof spawnFloaters === 'function') { try { spawnFloaters(); } catch(e){} }
+            if (typeof createFloatingBubbles === 'function') { try { createFloatingBubbles(); } catch(e){} }
+            if (typeof initAudio === 'function') { try { initAudio(); } catch(e){} }
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', unlockNow);
+    } else {
+        unlockNow();
+    }
+    if (document.readyState === 'complete') {
+        setTimeout(ensureQuizRendered, 150);
+    } else {
+        window.addEventListener('load', function() {
+            setTimeout(unlockNow, 20);
+            setTimeout(ensureQuizRendered, 150);
+            setTimeout(unlockNow, 300);
+            setTimeout(unlockNow, 700);
+        });
+    }
+    setTimeout(unlockNow, 50);
+    setTimeout(unlockNow, 200);
+    setTimeout(unlockNow, 600);
+    setTimeout(unlockNow, 1100);
+})();
+</script>
+</body>
+</html>

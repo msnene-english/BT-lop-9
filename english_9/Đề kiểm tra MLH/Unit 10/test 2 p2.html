@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UNIT 10 · TEST 2 · READING — Species Extinction &amp; ChatGPT's Carbon Footprint | MS Chí Nên</title>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* THEME: TERRA VISTA (trái đất xanh - đại dương & băng hà) */
+:root{
+  --bg1:#eaf6ff;--bg2:#e3fff2;--e1:#2a9d8f;--e2:#4cc9f0;--e3:#52b788;--e4:#e07a00;
+  --glass:rgba(255,255,255,.62);--edge:rgba(20,90,80,.14);
+  --text:#0f3a30;--text-dim:#5f8a76;--gold:#e07a00;
+  --ok:#2e7d32;--ok-bg:rgba(46,125,50,.14);--no:#d32f2f;--no-bg:rgba(211,47,47,.14);
+  --disp:'Quicksand',sans-serif;--body:'Nunito',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:19px}
+body{font-family:var(--body);color:var(--text);min-height:100vh;overflow-x:hidden;position:relative;background:linear-gradient(150deg,var(--bg1),var(--bg2))}
+.mist{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;filter:blur(60px);opacity:.5}
+.mist span{position:absolute;width:46vw;height:46vw;border-radius:50%;mix-blend-mode:multiply;animation:drift 26s ease-in-out infinite}
+.mist span:nth-child(1){background:var(--e2);top:-14%;left:-8%}
+.mist span:nth-child(2){background:var(--e3);top:10%;right:-12%;animation-delay:-9s}
+.mist span:nth-child(3){background:var(--e4);bottom:-18%;left:22%;animation-delay:-17s}
+.mist span:nth-child(4){background:var(--e1);bottom:-6%;right:8%;width:32vw;height:32vw;animation-delay:-4s}
+@keyframes drift{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(5%,-6%) scale(1.12)}}
+.fl{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.f{position:absolute;font-size:1.4rem;opacity:.28;animation:rise linear infinite}
+@keyframes rise{0%{transform:translateY(106vh) rotate(-6deg)}100%{transform:translateY(-12vh) rotate(280deg)}}
+header{position:relative;z-index:10;max-width:1360px;margin:16px auto 10px;background:var(--glass);backdrop-filter:blur(16px);
+  border:1.5px solid var(--edge);border-radius:16px;box-shadow:0 6px 24px rgba(42,157,143,.16);
+  padding:16px 26px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.tag{font-family:var(--disp);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--e1);font-weight:700;margin-bottom:4px}
+header h1{font-family:var(--disp);font-size:1.06rem;font-weight:700;color:var(--text);line-height:1.35}
+.sub{font-size:.76rem;color:var(--text-dim);margin-top:6px}
+.gauge{position:relative;background:#fff;border:2px solid var(--e2);border-radius:50%;width:82px;height:82px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 0 14px rgba(76,201,240,.25)}
+.gauge .num{font-family:var(--disp);font-size:1.05rem;font-weight:700;color:var(--e1)}
+.gauge .lbl{font-size:.42rem;font-weight:800;color:var(--gold);letter-spacing:.06em;text-transform:uppercase}
+.main{position:relative;z-index:5;max-width:1360px;margin:0 auto;display:flex;gap:20px;padding:6px 16px 42px;align-items:flex-start}
+.lp,.rp{max-height:86vh;overflow-y:auto}
+.lp{flex:0 0 47%}
+.rp{flex:1;min-width:0}
+.lp::-webkit-scrollbar,.rp::-webkit-scrollbar{width:8px}
+.lp::-webkit-scrollbar-thumb,.rp::-webkit-scrollbar-thumb{background:var(--edge);border-radius:8px}
+.slbl{font-family:var(--disp);font-size:1rem;font-weight:700;color:var(--e1);margin-bottom:13px;display:flex;align-items:center;gap:10px}
+.slbl::after{content:'';flex:1;border-top:2px dashed var(--edge)}
+.pc{position:relative;background:var(--glass);backdrop-filter:blur(14px);border:1.5px solid var(--edge);
+  border-left:5px solid var(--e2);border-radius:14px;padding:17px 19px;margin-bottom:18px;box-shadow:0 5px 18px rgba(0,0,0,.06)}
+.plbl{font-family:var(--disp);font-size:.84rem;font-weight:700;color:var(--e1);margin-bottom:9px}
+.pt{font-size:.92rem;line-height:2;color:var(--text)}
+.pt b{color:var(--gold);font-weight:800}
+.blk{display:inline-block;min-width:44px;text-align:center;font-weight:800;color:#fff;background:linear-gradient(120deg,var(--e2),var(--e1));border-radius:5px;padding:0 8px}
+.btr{margin-top:10px;background:transparent;border:1.5px solid var(--e1);color:var(--e1);padding:5px 15px;font-size:.78rem;font-weight:700;border-radius:16px;cursor:pointer;transition:.15s}
+.btr:hover{background:var(--e1);color:#fff}
+.tv{display:none;margin-top:10px;font-size:.92rem;line-height:1.75;color:#0d3d2f;background:rgba(42,157,143,.08);border-left:3px solid var(--e1);border-radius:0 8px 8px 0;padding:11px 14px}
+.tv.open{display:block;animation:fd .25s ease}
+@keyframes fd{from{opacity:0}to{opacity:1}}
+.gw{background:var(--glass);backdrop-filter:blur(14px);border:1.5px solid var(--edge);border-left:5px solid var(--e3);border-radius:14px;padding:17px 19px;margin-top:6px;box-shadow:0 5px 18px rgba(0,0,0,.06)}
+.gt2{font-family:var(--disp);font-size:.9rem;font-weight:700;color:var(--gold);margin-bottom:10px}
+table.gtb{width:100%;border-collapse:collapse;font-size:.79rem}
+table.gtb th{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;text-align:left;padding:6px 9px;color:#fff;background:var(--e1);font-weight:700}
+table.gtb td{padding:6px 9px;border-bottom:1px dotted var(--edge);vertical-align:top;color:var(--text)}
+.w{font-weight:800;color:var(--e2)}
+.pos{font-style:italic;font-size:.8rem;color:var(--gold)}
+.qc{position:relative;background:var(--glass);backdrop-filter:blur(14px);border:1.5px solid var(--edge);border-radius:14px;padding:16px 18px;margin-bottom:16px;box-shadow:0 5px 14px rgba(0,0,0,.05);transition:.2s}
+.qc:hover{border-color:var(--e1)}
+.qn{font-family:var(--disp);font-size:.64rem;letter-spacing:.06em;color:var(--e1);font-weight:700;margin-bottom:7px;text-transform:uppercase}
+.qt{font-size:.92rem;line-height:1.75;margin-bottom:12px;color:var(--text)}
+.qt b{color:var(--gold)}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{font-family:var(--body);text-align:left;font-size:.86rem;line-height:1.5;color:var(--text);font-weight:700;
+  background:rgba(42,157,143,.05);border:1.5px solid var(--edge);border-radius:16px;padding:10px 18px;cursor:pointer;transition:.15s}
+.opt:hover:not(:disabled){border-color:var(--e1);transform:translateX(4px);box-shadow:0 0 10px rgba(42,157,143,.18)}
+.opt.correct{background:var(--ok-bg)!important;border-color:var(--ok)!important;color:#14532d!important}
+.opt.wrong{background:var(--no-bg)!important;border-color:var(--no)!important;color:#7f1d1d!important;animation:shk .34s}
+@keyframes shk{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.opt:disabled{cursor:default}
+.expl{display:none;margin-top:13px;background:rgba(42,157,143,.05);border:1.5px dashed var(--edge);border-radius:10px;padding:14px 15px;font-size:.85rem;line-height:1.9}
+.expl.open{display:block;animation:fd .25s}
+.expl h4{font-family:var(--disp);font-size:.88rem;font-weight:700;color:var(--gold);margin-bottom:11px;padding-bottom:7px;border-bottom:1.5px dotted var(--edge)}
+.estep{background:rgba(255,255,255,.6);border-left:4px solid var(--edge);border-radius:0 6px 6px 0;padding:10px 13px;margin-bottom:10px}
+.elbl{display:block;font-family:var(--disp);font-size:.62rem;letter-spacing:.04em;text-transform:uppercase;font-weight:700;margin-bottom:5px;color:var(--text-dim)}
+.estep.s1{border-left-color:var(--e2)} .estep.s1 .elbl{color:#0288a3}
+.estep.s2{border-left-color:var(--e4)} .estep.s2 .elbl{color:#b8590a}
+.estep.s3{border-left-color:var(--ok);background:rgba(46,125,50,.08)} .estep.s3 .elbl{color:var(--ok)}
+.estep.s4{border-left-color:var(--no);background:rgba(211,47,47,.08)} .estep.s4 .elbl{color:var(--no)}
+.estep.ev{border-left-color:var(--e1);background:rgba(42,157,143,.08)} .estep.ev .elbl{color:var(--e1)}
+.expl ul{list-style:none;margin:5px 0 0}
+.expl li{padding:6px 9px;margin:5px 0;background:rgba(255,255,255,.6);border-left:2px solid var(--edge);border-radius:0 4px 4px 0}
+.p-word{color:var(--e1);font-weight:800}
+.p-mean{color:var(--gold);font-weight:700}
+.p-grammar{background:rgba(76,201,240,.18);border:1px solid var(--e2);border-radius:4px;padding:0 6px;font-weight:700;color:#075a70;font-size:.79rem}
+.hl-green{background:var(--ok-bg);color:#14532d;font-weight:800;border-radius:3px;padding:0 5px}
+.hl-red{background:var(--no-bg);color:#7f1d1d;font-weight:800;border-radius:3px;padding:0 5px}
+.sw{text-align:center;padding:20px 0 8px}
+.bsub{font-family:var(--disp);font-size:.96rem;font-weight:700;color:#fff;background:linear-gradient(120deg,var(--e2),var(--e1),var(--e3));border:none;
+  padding:14px 36px;border-radius:26px;cursor:pointer;transition:.2s;box-shadow:0 5px 18px rgba(42,157,143,.3)}
+.bsub:hover{transform:translateY(-2px);box-shadow:0 7px 24px rgba(76,201,240,.35)}
+.ov{display:none;position:fixed;inset:0;z-index:100;background:rgba(15,58,48,.35);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:16px}
+.ov.open{display:flex}
+.mb{position:relative;background:#fff;border:1.5px solid var(--e2);border-radius:16px;padding:26px 28px;max-width:455px;width:100%;
+  text-align:center;animation:pop .3s ease;box-shadow:0 14px 44px rgba(0,0,0,.16)}
+@keyframes pop{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
+.mb h2{font-family:var(--disp);font-size:1rem;font-weight:700;color:var(--text);margin-bottom:14px}
+.mb input{width:100%;font-family:var(--body);font-size:.92rem;font-weight:700;padding:11px 14px;background:#f2fbff;
+  border:1.5px solid var(--edge);border-radius:16px;color:var(--text);text-align:center;outline:none;margin-bottom:9px}
+.mb input:focus{border-color:var(--e2)}
+.err{color:var(--no);font-size:.7rem;font-weight:800;margin-bottom:8px;display:none}
+.err.show{display:block}
+.bok{font-family:var(--body);font-size:.78rem;font-weight:800;background:var(--e1);color:#fff;border:none;padding:11px 28px;border-radius:16px;cursor:pointer}
+.rname{font-size:1rem;font-weight:700;color:var(--e1);margin-bottom:5px}
+.rscore{font-family:var(--disp);font-size:2.1rem;font-weight:700;color:var(--gold);line-height:1;margin:6px 0}
+.rs10{font-size:.92rem;font-weight:800;color:var(--e1);margin-bottom:8px}
+.rgif{width:170px;margin:10px auto;display:block;border:4px solid rgba(42,157,143,.15);box-shadow:0 4px 14px rgba(0,0,0,.12);border-radius:8px}
+.rcmt{font-size:.85rem;line-height:1.7;background:rgba(42,157,143,.06);border:1.5px dashed var(--edge);border-radius:10px;padding:11px 14px;margin:12px 0}
+.bcl{font-family:var(--body);font-size:.74rem;font-weight:800;background:transparent;border:1.5px solid var(--edge);color:var(--text);padding:9px 24px;border-radius:16px;cursor:pointer}
+.cn{position:fixed;top:-16px;z-index:200;pointer-events:none;animation:cf 2.4s forwards}
+@keyframes cf{0%{transform:translateY(0) rotate(0);opacity:1}100%{transform:translateY(108vh) rotate(700deg);opacity:0}}
+@media(max-width:900px){.main{flex-direction:column}.lp{flex:1 1 auto;width:100%}.lp,.rp{max-height:none}}
+</style>
+</head>
+<body>
+<style>
+:root{--nbh:50px}
+body{padding-top:var(--nbh)}
+.nbar{position:fixed;top:0;left:0;right:0;z-index:150;min-height:var(--nbh);
+  display:flex;align-items:center;gap:11px;padding:6px 16px;
+  background:#ffb703;border-bottom:2px solid #c98a00;box-shadow:0 2px 12px rgba(0,0,0,.14)}
+.nbar .pin{font-size:1.15rem;flex:0 0 auto;animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.22);opacity:.75}}
+.nbtxt{flex:1 1 auto;min-width:0;font-family:'Nunito',sans-serif;font-size:.82rem;font-weight:800;line-height:1.35;color:#1a1033;transition:opacity .4s ease}
+.nbtg{flex:0 0 auto;font-family:'Nunito',sans-serif;font-size:.68rem;font-weight:800;background:#1a1033;color:#ffd76e;border:none;border-radius:16px;padding:6px 13px;cursor:pointer;white-space:nowrap}
+.nbtg:hover{background:#2b1b52}
+.nfull{display:none;position:fixed;top:var(--nbh);left:0;right:0;z-index:149;max-height:52vh;overflow-y:auto;padding:13px 18px;background:#fff8e6;border-bottom:2px solid #c98a00;box-shadow:0 8px 22px rgba(0,0,0,.14)}
+.nfull.open{display:block}
+.nfull ul{list-style:none;display:grid;gap:8px;max-width:1100px;margin:0 auto}
+.nfull li{font-family:'Nunito',sans-serif;font-size:.86rem;font-weight:600;line-height:1.7;color:#42305a;background:rgba(255,183,3,.14);border-left:4px solid #ffb703;border-radius:0 8px 8px 0;padding:9px 13px}
+.nfull li b{color:#a35b00}
+.lp,.rp{max-height:calc(100vh - 128px - var(--nbh))}
+@media(max-width:900px){:root{--nbh:64px}.nbtxt{font-size:.75rem}.lp,.rp{max-height:none}}
+</style>
+<script>
+function nbToggle(){var p=document.getElementById('nfull'),b=document.getElementById('nbtg');p.classList.toggle('open');b.textContent=p.classList.contains('open')?'▲ Thu gọn':'▼ Xem đủ';}
+document.addEventListener('DOMContentLoaded',function(){var src=document.querySelectorAll('#nfull li');var box=document.getElementById('nbtxt');if(!src.length||!box)return;var i=0;
+function show(){box.style.opacity=0;setTimeout(()=>{box.innerHTML=src[i].innerHTML;box.style.opacity=1;i=(i+1)%src.length;},400);}
+show();setInterval(show,7000);});
+</script>
+<div class="nbar"><span class="pin">💡</span><div class="nbtxt" id="nbtxt"></div><button class="nbtg" id="nbtg" onclick="nbToggle()">▼ Xem đủ</button></div>
+<div class="nfull" id="nfull"><ul>
+  <li>🤝 <b>Ms không chấm em bằng số câu đúng, mà bằng số điều em thật sự hiểu.</b> Gặp chữ lạ thì mở Google Dịch, ChatGPT hay Gemini tra cho rõ đã, đừng vội bấm rồi tự nhủ "chắc là câu này".</li>
+  <li>👂 <b>Một từ chỉ thuộc về em khi em nói được nó.</b> Tra ở từ điển Cambridge để biết phiên âm, trọng âm rơi vào đâu, nghe máy đọc rồi lặp lại vài lần.</li>
+  <li>🔍 <b>Đừng đóng bài khi chưa đọc lời giải.</b> Cả bốn bước đều được viết ra để em thấy cái bẫy nằm ở đâu — nhận ra hôm nay thì mai vào phòng thi em sẽ bình tĩnh hơn nhiều.</li>
+  <li>✏️ <b>Trang vở của em quan trọng hơn màn hình này.</b> Ghi lại từ mới, giới từ đi kèm, cấu trúc câu, thêm một ví dụ do chính em đặt.</li>
+  <li>🌱 <b>Bài đọc hôm nay nói về tuyệt chủng loài và dấu chân carbon của AI.</b> Ngay cả những công cụ hiện đại nhất cũng để lại dấu vết trên hành tinh — dùng chúng một cách có ý thức là điều đáng học đấy!</li>
+</ul></div>
+<div class="mist"><span></span><span></span><span></span><span></span></div>
+<div class="fl" id="fl"></div>
+
+<header>
+  <div>
+    <div class="tag">🌏 Unit 10 · Planet Earth · Test 2</div>
+    <h1>B. READING — Species Extinction &amp; ChatGPT's Carbon Footprint</h1>
+    <div class="sub">Giáo viên tạo: MS Chí Nên · 12 câu (30 → 41)</div>
+  </div>
+  <div class="gauge"><div class="num" id="lv">0/12</div><div class="lbl">SCORE</div></div>
+</header>
+
+<div class="main">
+<div class="lp">
+  <div class="slbl">🐝 Bài đọc</div>
+
+  <div class="pc">
+    <div class="plbl">I — Species Extinction's Domino Effect (đoạn 1)</div>
+    <div class="pt">The extinction of an animal species is not a single event; it triggers a series of consequences <span class="blk">30</span> damage ecosystems. For example, bees and other pollinators are crucial for the reproduction of many plants, including crops that humans <span class="blk">31</span> for food. The extinction of such pollinators can have severe consequences for food security and agricultural economies.</div>
+    <button class="btr" onclick="tv('v1')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v1">Sự tuyệt chủng của một loài động vật không phải là một sự kiện đơn lẻ; nó gây ra một loạt hậu quả có thể gây tổn hại đáng kể đến hệ sinh thái. Ví dụ, ong và các loài thụ phấn khác đóng vai trò thiết yếu trong việc sinh sản của nhiều loài thực vật, bao gồm cả những loại cây trồng mà con người phụ thuộc vào để làm thực phẩm. Sự tuyệt chủng của các loài thụ phấn này có thể gây ra hậu quả nghiêm trọng đối với an ninh lương thực và nền kinh tế nông nghiệp.</div>
+  </div>
+
+  <div class="pc">
+    <div class="plbl">I (tiếp) — đoạn 2 → 3</div>
+    <div class="pt"><span class="blk">32</span>, the loss of wetland species like amphibians can damage water cleaning processes, leading to poorer water quality and increased risk of flooding. Moreover, the extinction of one species can trigger a domino effect, leading to the decline or extinction of <span class="blk">33</span> species.</div>
+    <button class="btr" onclick="tv('v2')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v2">Tương tự, sự mất đi các loài sinh vật vùng đất ngập nước như lưỡng cư có thể làm hỏng các quá trình làm sạch nước, dẫn đến chất lượng nước kém hơn và tăng nguy cơ lũ lụt. Hơn nữa, sự tuyệt chủng của một loài có thể gây ra hiệu ứng domino, dẫn đến sự suy giảm hoặc tuyệt chủng của các loài khác.</div>
+
+    <div class="pt" style="margin-top:10px">By understanding and addressing the causes and consequences of species extinction, we can work towards a more sustainable and harmonious coexistence <span class="blk">34</span> the natural world. This requires a collective effort from individuals, <span class="blk">35</span>, governments, and international organizations.</div>
+    <button class="btr" onclick="tv('v3')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v3">Bằng cách hiểu rõ và giải quyết nguyên nhân cũng như hậu quả của sự tuyệt chủng loài, chúng ta có thể hướng tới một sự chung sống bền vững và hài hòa hơn với thế giới tự nhiên. Điều này đòi hỏi nỗ lực chung từ các cá nhân, cộng đồng, chính phủ, và các tổ chức quốc tế.</div>
+  </div>
+
+  <div class="pc">
+    <div class="plbl">II — ChatGPT's Carbon Footprint (đoạn 1)</div>
+    <div class="pt">Throughout these past years, the use of the AI tool ChatGPT has grown rapidly. Millions of people have used it to ask questions, write emails and even generate images. Despite its usefulness, ChatGPT causes serious environmental issues. According to earth.org, ChatGPT emits 8.4 tonnes of carbon dioxide per year, more than twice the amount that is emitted by an individual, which is 4 tonnes per year.</div>
+    <button class="btr" onclick="tv('v4')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v4">Trong những năm qua, việc sử dụng công cụ AI ChatGPT đã tăng trưởng nhanh chóng. Hàng triệu người đã dùng nó để đặt câu hỏi, viết email và thậm chí tạo ra hình ảnh. Mặc dù hữu ích, ChatGPT gây ra những vấn đề môi trường nghiêm trọng. Theo earth.org, ChatGPT thải ra 8,4 tấn khí carbon dioxide mỗi năm, nhiều hơn gấp đôi lượng khí thải của một cá nhân, vốn chỉ khoảng 4 tấn mỗi năm.</div>
+  </div>
+
+  <div class="pc">
+    <div class="plbl">II (tiếp) — đoạn 2 → 3</div>
+    <div class="pt">Carbon dioxide is classified as a greenhouse gas, which means it creates a greenhouse effect. It traps heat in the atmosphere, which causes the earth to warm up. Too many greenhouse gases can upset the earth's balance and create issues such as rising sea levels and habitat loss.</div>
+    <button class="btr" onclick="tv('v5')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v5">Khí carbon dioxide được xếp vào loại khí nhà kính, nghĩa là nó tạo ra hiệu ứng nhà kính. Nó giữ nhiệt trong bầu khí quyển, khiến Trái Đất nóng lên. Quá nhiều khí nhà kính có thể làm mất cân bằng của Trái Đất và gây ra các vấn đề như mực nước biển dâng cao và mất môi trường sống.</div>
+
+    <div class="pt" style="margin-top:10px">OpenAI and other AI models have made <u>empty promises</u> about being more eco-friendly, and the amount of carbon dioxide ChatGPT emits only increases with its popularity. As individuals, we can help by promoting lesser usage. Not many people are informed about the environmental impacts of the AI tools they use, but if they were, maybe they would take a step back and think before using. If everyone used ChatGPT less, then far less energy would be used, resulting in a greener planet for us all.</div>
+    <button class="btr" onclick="tv('v6')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v6">OpenAI và các mô hình AI khác đã đưa ra những lời hứa suông về việc trở nên thân thiện với môi trường hơn, và lượng khí carbon dioxide mà ChatGPT thải ra chỉ tăng lên cùng với độ phổ biến của nó. Là những cá nhân, chúng ta có thể giúp đỡ bằng cách khuyến khích sử dụng ít hơn. Không nhiều người biết về tác động môi trường của các công cụ AI mà họ sử dụng, nhưng nếu biết, có lẽ họ sẽ dừng lại và suy nghĩ trước khi dùng. Nếu mọi người đều dùng ChatGPT ít hơn, thì sẽ tiêu tốn ít năng lượng hơn rất nhiều, dẫn đến một hành tinh xanh hơn cho tất cả chúng ta.</div>
+  </div>
+
+  <div class="gw">
+    <div class="gt2">📚 Glossary — Test 2</div>
+    <table class="gtb">
+      <tr><th>Word / Phrase</th><th>Loại</th><th>Nghĩa tiếng Việt</th></tr>
+      <tr><td class="w">extinction</td><td class="pos">n</td><td>sự tuyệt chủng</td></tr>
+      <tr><td class="w">pollinator</td><td class="pos">n</td><td>loài thụ phấn</td></tr>
+      <tr><td class="w">food security</td><td class="pos">n phr</td><td>an ninh lương thực</td></tr>
+      <tr><td class="w">wetland species</td><td class="pos">n phr</td><td>loài sinh vật đất ngập nước</td></tr>
+      <tr><td class="w">domino effect</td><td class="pos">n phr</td><td>hiệu ứng domino</td></tr>
+      <tr><td class="w">coexistence</td><td class="pos">n</td><td>sự chung sống</td></tr>
+      <tr><td class="w">collective effort</td><td class="pos">n phr</td><td>nỗ lực chung</td></tr>
+      <tr><td class="w">greenhouse effect</td><td class="pos">n phr</td><td>hiệu ứng nhà kính</td></tr>
+      <tr><td class="w">trap heat</td><td class="pos">v phr</td><td>giữ nhiệt</td></tr>
+      <tr><td class="w">eco-friendly</td><td class="pos">adj</td><td>thân thiện môi trường</td></tr>
+      <tr><td class="w">empty promise</td><td class="pos">n phr</td><td>lời hứa suông</td></tr>
+      <tr><td class="w">carbon footprint</td><td class="pos">n phr</td><td>dấu chân carbon</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="rp">
+  <div class="slbl">✍️ Bài tập — 12 câu</div>
+  <div id="quiz"></div>
+  <div class="sw"><button class="bsub" onclick="openModal()">🎯 Nộp bài tính điểm &amp; xem kết quả</button></div>
+</div>
+</div>
+
+<div class="ov" id="nm"><div class="mb">
+  <h2>✍️ Nhập tên để nộp bài</h2>
+  <input type="text" id="sn" placeholder="Họ và tên học sinh...">
+  <div class="err" id="er">Vui lòng nhập tên trước khi nộp bài!</div>
+  <button class="bok" onclick="sub()">✅ Xem kết quả</button>
+</div></div>
+
+<div class="ov" id="rm"><div class="mb" style="max-width:470px">
+  <div class="rname" id="rn"></div><div class="rscore" id="rs"></div><div class="rs10" id="rs10"></div>
+  <img class="rgif" id="rg" src="" alt=""><div class="rcmt" id="rc"></div>
+  <button class="bcl" onclick="closeR()">Đóng &amp; xem lại bài</button>
+</div></div>
+
+<script>
+const QS=[];
+
+QS.push({n:30,sec:"I · Species Extinction",qt:"...it triggers a series of consequences <b>(30)_____</b> damage ecosystems.",
+opts:[{t:", that significantly can",pos:"cấu trúc sai",m:"sai — thừa dấu phẩy trước mệnh đề xác định"},{t:"that can significantly",pos:"mệnh đề quan hệ xác định",m:"có thể gây tổn hại đáng kể",c:1},{t:"significantly which can",pos:"cấu trúc sai",m:"sai trật tự từ"},{t:", significantly which can",pos:"cấu trúc sai",m:"sai trật tự + thừa dấu phẩy"}],
+tr:'"...it triggers a series of consequences ______ damage ecosystems." 👉 <span class="p-mean">"...nó gây ra một loạt hậu quả có thể gây tổn hại đáng kể đến hệ sinh thái."</span>',
+ok:'Chọn <span class="hl-green">that can significantly</span>. Đây là <span class="p-grammar">mệnh đề quan hệ xác định</span> (không dùng dấu phẩy) bổ nghĩa cho "consequences", với trật tự chuẩn: đại từ quan hệ "that" + động từ khuyết thiếu "can" + trạng từ "significantly" + động từ chính "damage".',
+no:'<span class="hl-red">, that significantly can</span> sai vì dùng dấu phẩy trước mệnh đề XÁC ĐỊNH (cần thiết để xác định "consequences" nào); <span class="hl-red">significantly which can</span> và <span class="hl-red">, significantly which can</span> đều sai trật tự từ — trạng từ không thể đứng trước đại từ quan hệ "which".',
+ev:'"...it triggers a series of consequences <b>that can significantly</b> damage ecosystems." 👉 <span class="p-mean">"...nó gây ra một loạt hậu quả có thể gây tổn hại đáng kể đến hệ sinh thái."</span>'});
+
+QS.push({n:31,sec:"I · Species Extinction",qt:"...including crops that humans <b>(31)_____</b> for food.",
+opts:[{t:"provide with",pos:"cụm động từ",m:"cung cấp cho"},{t:"feed on",pos:"cụm động từ",m:"ăn, sống bằng (thường cho động vật)"},{t:"make up",pos:"cụm động từ",m:"tạo thành, cấu thành"},{t:"rely on",pos:"cụm động từ",m:"phụ thuộc vào",c:1}],
+tr:'"...bees and other pollinators are crucial for the reproduction of many plants, including crops that humans ______ for food." 👉 <span class="p-mean">"...ong và các loài thụ phấn khác đóng vai trò thiết yếu cho sự sinh sản của nhiều loài thực vật, bao gồm cả cây trồng mà con người phụ thuộc vào để làm thực phẩm."</span>',
+ok:'Chọn <span class="hl-green">rely on</span> <span class="p-mean">(phụ thuộc vào)</span>. Con người PHỤ THUỘC VÀO các loại cây trồng này để có thực phẩm — đúng với vai trò thiết yếu của các loài thụ phấn được nhấn mạnh trong bài.',
+no:'<span class="hl-red">provide with</span> đảo ngược chủ thể (cây trồng cung cấp cho con người, không phải ngược lại theo cấu trúc này); <span class="hl-red">feed on</span> thường dùng cho ĐỘNG VẬT ăn thứ gì đó, ít dùng cho con người với cây trồng theo cách này; <span class="hl-red">make up</span> (tạo thành) sai nghĩa hoàn toàn.',
+ev:'"...including crops that humans <b>rely on</b> for food." 👉 <span class="p-mean">"...bao gồm cả cây trồng mà con người phụ thuộc vào để làm thực phẩm."</span>'});
+
+QS.push({n:32,sec:"I · Species Extinction",qt:"<b>(32)_____</b>, the loss of wetland species like amphibians can damage water cleaning processes.",
+opts:[{t:"Similar",pos:"tính từ",m:"tương tự (tính từ, sai vị trí)"},{t:"Similarly",pos:"trạng từ",m:"tương tự",c:1},{t:"Dissimilar",pos:"tính từ",m:"không giống nhau"},{t:"Similarity",pos:"danh từ",m:"sự tương đồng"}],
+tr:'"______, the loss of wetland species like amphibians can damage water cleaning processes, leading to poorer water quality and increased risk of flooding." 👉 <span class="p-mean">"Tương tự, sự mất đi các loài sinh vật vùng đất ngập nước như lưỡng cư có thể làm hỏng quá trình làm sạch nước..."</span>',
+ok:'Chọn <span class="hl-green">Similarly</span>. Trạng từ liên kết mở đầu câu, nối tiếp ý về hậu quả của tuyệt chủng loài đã nêu ở đoạn trước (mất loài thụ phấn) với một ví dụ TƯƠNG TỰ khác (mất loài lưỡng cư).',
+no:'<span class="hl-red">Similar</span> là tính từ, không đứng riêng đầu câu làm trạng từ liên kết; <span class="hl-red">Dissimilar</span> (không giống) sai nghĩa vì đoạn văn đang nêu thêm một VÍ DỤ TƯƠNG TỰ, không phải trái ngược; <span class="hl-red">Similarity</span> là danh từ, không dùng làm trạng từ liên kết đầu câu.',
+ev:'"<b>Similarly</b>, the loss of wetland species like amphibians can damage water cleaning processes..." 👉 <span class="p-mean">"Tương tự, sự mất đi các loài sinh vật vùng đất ngập nước như lưỡng cư có thể làm hỏng quá trình làm sạch nước..."</span>'});
+
+QS.push({n:33,sec:"I · Species Extinction",qt:"...leading to the decline or extinction of <b>(33)_____</b> species.",
+opts:[{t:"other",pos:"tính từ",m:"khác (bổ nghĩa danh từ số nhiều)",c:1},{t:"others",pos:"đại từ",m:"những cái khác (đứng độc lập)"},{t:"each other",pos:"đại từ tương hỗ",m:"lẫn nhau (giữa 2 đối tượng)"},{t:"one another",pos:"đại từ tương hỗ",m:"lẫn nhau (giữa nhiều đối tượng)"}],
+tr:'"...the extinction of one species can trigger a domino effect, leading to the decline or extinction of ______ species." 👉 <span class="p-mean">"...sự tuyệt chủng của một loài có thể gây ra hiệu ứng domino, dẫn đến sự suy giảm hoặc tuyệt chủng của các loài KHÁC."</span>',
+ok:'Chọn <span class="hl-green">other</span>. Đây là <span class="p-grammar">tính từ</span> đứng trước danh từ số nhiều "species" để bổ nghĩa — "other species" (những loài khác).',
+no:'<span class="hl-red">others</span> là đại từ ĐỘC LẬP, không đứng trực tiếp trước danh từ "species"; <span class="hl-red">each other</span> và <span class="hl-red">one another</span> là đại từ tương hỗ (diễn tả hành động qua lại giữa các đối tượng), không phù hợp ngữ pháp ở vị trí bổ nghĩa cho danh từ này.',
+ev:'"...the extinction of one species can trigger a domino effect, leading to the decline or extinction of <b>other</b> species." 👉 <span class="p-mean">"...sự tuyệt chủng của một loài có thể gây hiệu ứng domino, dẫn đến suy giảm hoặc tuyệt chủng của các loài khác."</span>'});
+
+QS.push({n:34,sec:"I · Species Extinction",qt:"...a more sustainable and harmonious coexistence <b>(34)_____</b> the natural world.",
+opts:[{t:"for",pos:"giới từ",m:"cho"},{t:"into",pos:"giới từ",m:"vào trong"},{t:"with",pos:"giới từ",m:"với",c:1},{t:"along",pos:"giới từ",m:"dọc theo"}],
+tr:'"...we can work towards a more sustainable and harmonious coexistence ______ the natural world." 👉 <span class="p-mean">"...chúng ta có thể hướng tới một sự chung sống bền vững và hài hòa hơn với thế giới tự nhiên."</span>',
+ok:'Chọn <span class="hl-green">with</span>. Cụm cố định <span class="p-grammar">coexistence with sth</span> <span class="p-mean">(sự chung sống với điều gì)</span> là collocation chuẩn.',
+no:'<span class="hl-red">for</span>, <span class="hl-red">into</span>, <span class="hl-red">along</span> đều không tạo thành collocation chuẩn với danh từ "coexistence".',
+ev:'"...we can work towards a more sustainable and harmonious coexistence <b>with</b> the natural world." 👉 <span class="p-mean">"...chúng ta có thể hướng tới một sự chung sống bền vững, hài hòa hơn với thế giới tự nhiên."</span>'});
+
+QS.push({n:35,sec:"I · Species Extinction",qt:"This requires a collective effort from individuals, <b>(35)_____</b>, governments, and international organizations.",
+opts:[{t:"conditions",pos:"danh từ",m:"điều kiện"},{t:"communities",pos:"danh từ",m:"cộng đồng",c:1},{t:"habitats",pos:"danh từ",m:"môi trường sống"},{t:"ecosystems",pos:"danh từ",m:"hệ sinh thái"}],
+tr:'"This requires a collective effort from individuals, ______, governments, and international organizations." 👉 <span class="p-mean">"Điều này đòi hỏi nỗ lực chung từ các cá nhân, cộng đồng, chính phủ, và các tổ chức quốc tế."</span>',
+ok:'Chọn <span class="hl-green">communities</span> <span class="p-mean">(cộng đồng)</span>. Đây là danh sách liệt kê các NHÓM/TỔ CHỨC CỦA CON NGƯỜI cùng chung tay hành động: cá nhân → cộng đồng → chính phủ → tổ chức quốc tế — một trật tự từ nhỏ đến lớn hợp lý.',
+no:'<span class="hl-red">conditions</span> (điều kiện), <span class="hl-red">habitats</span> (môi trường sống), <span class="hl-red">ecosystems</span> (hệ sinh thái) đều không phải là CHỦ THỂ CON NGƯỜI có thể "nỗ lực" (effort), không phù hợp trong danh sách liệt kê này.',
+ev:'"This requires a collective effort from individuals, <b>communities</b>, governments, and international organizations." 👉 <span class="p-mean">"Điều này đòi hỏi nỗ lực chung từ cá nhân, cộng đồng, chính phủ, và tổ chức quốc tế."</span>'});
+
+QS.push({n:36,sec:"II · ChatGPT's Footprint",qt:"ChatGPT is capable of answering questions and creating visual content.",
+opts:[{t:"True",m:"Đúng",c:1},{t:"False",m:"Sai"},{t:"Not mentioned",m:"Không được nhắc đến"},{t:"Only in text form",m:"Chỉ ở dạng văn bản"}],
+tr:'"ChatGPT is capable of answering questions and creating visual content." 👉 <span class="p-mean">"ChatGPT có khả năng trả lời câu hỏi và tạo nội dung hình ảnh."</span>',
+ok:'Chọn <span class="hl-green">True</span>. Bài xác nhận: "Millions of people have used it to ask questions, write emails and even generate images."',
+no:'<span class="hl-red">False</span> sai vì khớp với bài; <span class="hl-red">Not mentioned</span> sai vì có nhắc trực tiếp; <span class="hl-red">Only in text form</span> sai vì bài nói ChatGPT còn "generate images" (tạo hình ảnh), không chỉ giới hạn ở văn bản.',
+ev:'"Millions of people have used it to ask questions, write emails and even <b>generate images</b>." 👉 <span class="p-mean">"Hàng triệu người đã dùng nó để đặt câu hỏi, viết email và thậm chí tạo ra hình ảnh."</span>'});
+
+QS.push({n:37,sec:"II · ChatGPT's Footprint",qt:"The amount of carbon dioxide released by ChatGPT is less than that by a human.",
+opts:[{t:"True",m:"Đúng"},{t:"False",m:"Sai",c:1},{t:"Not mentioned",m:"Không được nhắc đến"},{t:"Only in winter",m:"Chỉ đúng vào mùa đông"}],
+tr:'"The amount of carbon dioxide released by ChatGPT is less than that by a human." 👉 <span class="p-mean">"Lượng khí carbon dioxide do ChatGPT thải ra ÍT HƠN so với con người."</span>',
+ok:'Chọn <span class="hl-green">False</span>. Bài nói NGƯỢC LẠI: ChatGPT thải ra 8,4 tấn/năm, "more than twice the amount that is emitted by an individual" (nhiều hơn GẤP ĐÔI lượng khí thải của một cá nhân, 4 tấn/năm).',
+no:'<span class="hl-red">True</span> sai vì đảo ngược hoàn toàn số liệu trong bài; <span class="hl-red">Not mentioned</span> sai vì có số liệu cụ thể; <span class="hl-red">Only in winter</span> không hợp lý vì bài không đề cập đến yếu tố mùa.',
+ev:'"ChatGPT emits 8.4 tonnes of carbon dioxide per year, <b>more than twice</b> the amount that is emitted by an individual, which is 4 tonnes per year." 👉 <span class="p-mean">"ChatGPT thải 8,4 tấn CO2/năm, NHIỀU HƠN GẤP ĐÔI lượng khí thải của một cá nhân (4 tấn/năm)."</span>'});
+
+QS.push({n:38,sec:"II · ChatGPT's Footprint",qt:"Greenhouse gases make the earth warmer by preventing heat from leaving.",
+opts:[{t:"True",m:"Đúng",c:1},{t:"False",m:"Sai"},{t:"Not mentioned",m:"Không được nhắc đến"},{t:"Only carbon dioxide does this",m:"Chỉ CO2 mới làm được điều này"}],
+tr:'"Greenhouse gases make the earth warmer by preventing heat from leaving." 👉 <span class="p-mean">"Khí nhà kính khiến Trái Đất nóng lên bằng cách ngăn nhiệt thoát ra ngoài."</span>',
+ok:'Chọn <span class="hl-green">True</span>. Bài xác nhận: "It traps heat in the atmosphere, which causes the earth to warm up" — "traps heat" (giữ nhiệt lại) đồng nghĩa với "preventing heat from leaving" (ngăn nhiệt thoát ra).',
+no:'<span class="hl-red">False</span> sai vì khớp với cơ chế được mô tả trong bài; <span class="hl-red">Not mentioned</span> sai vì có giải thích rõ ràng; <span class="hl-red">Only carbon dioxide does this</span> sai vì bài nói chung về "greenhouse gases" (khí nhà kính nói chung), CO2 chỉ là MỘT ví dụ được phân loại vào nhóm này.',
+ev:'"Carbon dioxide is classified as a greenhouse gas... It <b>traps heat</b> in the atmosphere, which causes the earth to warm up." 👉 <span class="p-mean">"CO2 được xếp vào khí nhà kính... Nó GIỮ NHIỆT trong khí quyển, khiến Trái Đất nóng lên."</span>'});
+
+QS.push({n:39,sec:"II · ChatGPT's Footprint",qt:"The less popular ChatGPT is, the more carbon dioxide it emits into the environment.",
+opts:[{t:"True",m:"Đúng"},{t:"False",m:"Sai",c:1},{t:"Not mentioned",m:"Không được nhắc đến"},{t:"Only true for images",m:"Chỉ đúng với tạo hình ảnh"}],
+tr:'"The less popular ChatGPT is, the more carbon dioxide it emits into the environment." 👉 <span class="p-mean">"ChatGPT CÀNG ÍT PHỔ BIẾN, nó CÀNG THẢI NHIỀU khí carbon dioxide vào môi trường."</span>',
+ok:'Chọn <span class="hl-green">False</span>. Bài nói NGƯỢC LẠI: "the amount of carbon dioxide ChatGPT emits only increases WITH its popularity" — nghĩa là CÀNG PHỔ BIẾN thì CÀNG THẢI NHIỀU khí thải, không phải càng ít phổ biến.',
+no:'<span class="hl-red">True</span> sai vì đảo ngược hoàn toàn mối quan hệ nhân quả trong bài; <span class="hl-red">Not mentioned</span> sai vì có nêu rõ mối liên hệ giữa độ phổ biến và khí thải; <span class="hl-red">Only true for images</span> không có căn cứ, bài không phân biệt theo loại nội dung tạo ra.',
+ev:'"...the amount of carbon dioxide ChatGPT emits only increases <b>with</b> its popularity." 👉 <span class="p-mean">"...lượng khí CO2 ChatGPT thải ra chỉ TĂNG LÊN CÙNG VỚI độ phổ biến của nó."</span> — càng phổ biến càng thải nhiều, không phải càng ít phổ biến càng thải nhiều.'});
+
+QS.push({n:40,sec:"II · ChatGPT's Footprint",qt:'The phrase "empty promises" in paragraph 3 means ___.',
+opts:[{t:"keeping your word",m:"giữ lời hứa"},{t:"taking responsibility for your action",m:"chịu trách nhiệm cho hành động"},{t:"forgetting to do something",m:"quên làm điều gì đó"},{t:"saying something but not doing it",m:"nói mà không làm",c:1}],
+tr:'"OpenAI and other AI models have made empty promises about being more eco-friendly..." 👉 <span class="p-mean">"OpenAI và các mô hình AI khác đã đưa ra những lời hứa suông về việc trở nên thân thiện với môi trường hơn..."</span>',
+ok:'Chọn <span class="hl-green">saying something but not doing it</span>. <span class="p-word">empty promises</span> <span class="p-mean">(lời hứa suông)</span> nghĩa là hứa nhưng không thực hiện — khớp với ý bài: hứa "eco-friendly" nhưng khí thải "only increases with its popularity" (thực tế vẫn tăng).',
+no:'<span class="hl-red">keeping your word</span> (giữ lời hứa) là TRÁI NGHĨA hoàn toàn; <span class="hl-red">taking responsibility</span> (chịu trách nhiệm) không đúng nghĩa; <span class="hl-red">forgetting to do something</span> (quên làm) khác với việc CHỦ ĐỘNG hứa suông.',
+ev:'"OpenAI and other AI models have made <b>empty promises</b> about being more eco-friendly, and the amount of carbon dioxide ChatGPT emits only increases with its popularity." 👉 <span class="p-mean">"...đưa ra lời hứa suông về việc thân thiện môi trường hơn, trong khi khí thải thực tế vẫn tăng."</span>'});
+
+QS.push({n:41,sec:"II · ChatGPT's Footprint",qt:"What is the purpose of this passage?",
+opts:[{t:"To compare ChatGPT with other AI tools",m:"So sánh ChatGPT với các công cụ AI khác"},{t:"To explain how ChatGPT creates its carbon footprint",m:"Giải thích cách ChatGPT tạo ra dấu chân carbon"},{t:"To describe the use of ChatGPT in protecting nature",m:"Mô tả việc dùng ChatGPT để bảo vệ thiên nhiên"},{t:"To raise awareness about the environmental impact of AI",m:"Nâng cao nhận thức về tác động môi trường của AI",c:1}],
+tr:'"What is the purpose of this passage?" 👉 <span class="p-mean">"Mục đích của đoạn văn này là gì?"</span>',
+ok:'Chọn <span class="hl-green">To raise awareness about the environmental impact of AI</span>. Cả bài trình bày số liệu, cơ chế gây hại, và lời kêu gọi hành động ("Not many people are informed... if they were, maybe they would take a step back") — đúng mục đích NÂNG CAO NHẬN THỨC.',
+no:'<span class="hl-red">compare ChatGPT with other AI tools</span> ❌ bài chỉ nhắc "OpenAI and other AI models" thoáng qua, không hề SO SÁNH chi tiết; <span class="hl-red">describe use in protecting nature</span> ❌ hoàn toàn trái ngược — bài nói ChatGPT GÂY HẠI môi trường, không phải bảo vệ; <span class="hl-red">explain how it creates footprint</span> ❌ chỉ là MỘT PHẦN nội dung (đoạn 1-2), chưa bao quát được lời kêu gọi hành động ở đoạn cuối.',
+ev:'"Not many people are informed about the environmental impacts of the AI tools they use, but if they were, maybe they would take a step back and think before using." 👉 <span class="p-mean">"Không nhiều người biết về tác động môi trường của công cụ AI họ dùng, nhưng nếu biết, có lẽ họ sẽ dừng lại suy nghĩ trước khi dùng."</span> — mục đích rõ ràng là nâng cao nhận thức.'});
+
+const done={};let cc=0;
+function shuffle(a){return a.sort(()=>Math.random()-0.5)}
+function build(){
+  const box=document.getElementById('quiz');
+  QS.forEach(q=>{
+    let ol='<ul style="margin:4px 0 0 4px;list-style:none">';
+    q.opts.forEach(o=>{ol+='<li style="margin:5px 0">'+(o.c?'✅ ':'❌ ')+'<span class="p-word">'+o.t+'</span>'+(o.pos?' <span class="p-grammar">'+o.pos+'</span>':'')+' ➔ <span class="p-mean">'+o.m+'</span></li>';});
+    ol+='</ul>';
+    const card=document.createElement('div');card.className='qc';card.id='q'+q.n;
+    card.innerHTML='<div class="qn">Câu '+q.n+' · '+q.sec+'</div><div class="qt">'+q.qt+'</div><div class="opts" id="o'+q.n+'"></div>'+
+      '<div class="expl" id="e'+q.n+'"><h4>📘 Giải thích chi tiết – Câu '+q.n+'</h4>'+
+      '<div class="estep s1"><div class="elbl">Bước 1 · Dịch</div>'+q.tr+'</div>'+
+      '<div class="estep s2"><div class="elbl">Bước 2 · Đáp án &amp; nghĩa</div>'+ol+'</div>'+
+      '<div class="estep s3"><div class="elbl">Bước 3 · Vì sao <span class="hl-green">đúng</span></div>'+q.ok+'</div>'+
+      '<div class="estep s4"><div class="elbl">Bước 4 · Vì sao các phương án kia <span class="hl-red">sai</span></div>'+q.no+'</div>'+
+      '<div class="estep ev"><div class="elbl">🔍 Dẫn chứng</div>'+q.ev+'</div></div>';
+    box.appendChild(card);
+    const cont=card.querySelector('.opts');const correct=q.opts.filter(o=>o.c)[0].t;
+    shuffle([...q.opts]).forEach(o=>{const b=document.createElement('button');b.className='opt';b.textContent=o.t;b.onclick=()=>chk(q.n,o.t,correct,b,cont);cont.appendChild(b);});
+  });
+  document.getElementById('lv').textContent='0/'+QS.length;
+}
+function chk(qid,chosen,correct,btn,container){
+  if(qid in done)return;done[qid]=chosen===correct;
+  container.querySelectorAll('.opt').forEach(b=>{b.disabled=true;if(b.textContent===correct)b.classList.add('correct');});
+  if(chosen===correct){btn.classList.add('correct');cc++;ding();conf();}else{btn.classList.add('wrong');buzz();}
+  document.getElementById('e'+qid).classList.add('open');
+  document.getElementById('lv').textContent=cc+'/'+QS.length;
+}
+const A=new(window.AudioContext||window.webkitAudioContext)();
+function ding(){const o=A.createOscillator(),g=A.createGain();o.connect(g);g.connect(A.destination);o.frequency.setValueAtTime(523,A.currentTime);o.frequency.exponentialRampToValueAtTime(784,A.currentTime+0.15);g.gain.setValueAtTime(0.28,A.currentTime);g.gain.exponentialRampToValueAtTime(0.001,A.currentTime+0.5);o.start();o.stop(A.currentTime+0.5);}
+function buzz(){const o=A.createOscillator(),g=A.createGain();o.type='triangle';o.connect(g);g.connect(A.destination);o.frequency.setValueAtTime(200,A.currentTime);o.frequency.exponentialRampToValueAtTime(100,A.currentTime+0.2);g.gain.setValueAtTime(0.18,A.currentTime);g.gain.exponentialRampToValueAtTime(0.001,A.currentTime+0.28);o.start();o.stop(A.currentTime+0.28);}
+function conf(){const cols=['#2a9d8f','#4cc9f0','#52b788','#e07a00','#2e7d32'];for(let i=0;i<32;i++){const d=document.createElement('div');d.className='cn';d.style.left=Math.random()*100+'vw';d.style.background=cols[Math.floor(Math.random()*cols.length)];d.style.animationDelay=Math.random()*0.7+'s';d.style.animationDuration=(1.8+Math.random()*1.0)+'s';d.style.width=d.style.height=(6+Math.random()*8)+'px';d.style.borderRadius=Math.random()>0.5?'50%':'1px';document.body.appendChild(d);setTimeout(()=>d.remove(),3100);}}
+function tv(id){const el=document.getElementById(id);el.classList.toggle('open');const btn=el.previousElementSibling;btn.textContent=el.classList.contains('open')?'Ẩn dịch 🌟':'Mở dịch đoạn này 🌟';}
+function openModal(){document.getElementById('nm').classList.add('open')}
+function sub(){const n=document.getElementById('sn').value.trim();const er=document.getElementById('er');if(!n){er.classList.add('show');return;}er.classList.remove('show');document.getElementById('nm').classList.remove('open');showRes(n);}
+function showRes(n){
+  const tot=QS.length;let c=0;QS.forEach(q=>{if(done[q.n]===true)c++;});
+  const p=c/tot,s10=(c/tot*10).toFixed(2);
+  document.getElementById('rn').textContent='Học sinh: '+n;
+  document.getElementById('rs').textContent=c+' / '+tot;
+  document.getElementById('rs10').textContent='Điểm quy đổi: '+s10+' / 10';
+  let gif='',cmt='';
+  if(p>=1){gif='https://media.giphy.com/media/l0MYGb1LuZ3n7dRnO/giphy.gif';cmt='🏆 Trọn vẹn hành tinh xanh! Đúng 100% — em nắm chắc cả hiệu ứng domino tuyệt chủng lẫn dấu chân carbon của AI. MS Chí Nên rất tự hào về em!';}
+  else if(p>=0.6){gif='https://media.giphy.com/media/26u4lOMA8JKSnL9Uk/giphy.gif';cmt='🌏 Khá tốt đó! Em đạt '+c+'/'+tot+' câu. Đọc lại phần giải thích 4 bước để hiểu Trái Đất trọn vẹn hơn nhé!';}
+  else{gif='https://media.giphy.com/media/d2lcHJTG5Tscg/giphy.gif';cmt='🌱 Cố lên nào! Em đạt '+c+'/'+tot+' câu. Bấm nút dịch từng đoạn, đọc kỹ giải thích rồi thử lại — Ms tin em làm được!';}
+  document.getElementById('rg').src=gif;document.getElementById('rc').textContent=cmt;document.getElementById('rm').classList.add('open');
+}
+function closeR(){document.getElementById('rm').classList.remove('open')}
+
+const ems=['🌍','🐝','🤖','♻️','🌱'];const flc=document.getElementById('fl');
+for(let i=0;i<20;i++){const s=document.createElement('span');s.className='f';s.textContent=ems[i%ems.length];s.style.left=Math.random()*100+'%';s.style.animationDuration=(14+Math.random()*14)+'s';s.style.animationDelay=(-Math.random()*20)+'s';s.style.fontSize=(1.0+Math.random()*1.1)+'rem';flc.appendChild(s);}
+
+build();
+</script>
+<script>/*devclean*/(function(){
+var ZW=/[\u00AD\u034F\u061C\u115F\u1160\u17B4\u17B5\u180E\u200B-\u200F\u202A-\u202E\u2060-\u206F\uFEFF]/g,
+    SP=/[\u00A0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\t]/g,
+    AP=/[\u2018\u2019\u201A\u201B\u2032\u2035\u02B9\u02BB\u02BC\u02BD\u02C8\u0060\u00B4\uFF07]/g,
+    DQ=/[\u201C\u201D\u201E\u201F\u2033\u2036\u00AB\u00BB\uFF02]/g,
+    DS=/[\u2010\u2011\u2012\u2212\uFE63\uFF0D]/g;
+function clean(v){if(!v)return v;var s=String(v);try{s=s.normalize('NFKC')}catch(e){}
+  return s.replace(ZW,'').replace(SP,' ').replace(AP,"'").replace(DQ,'"').replace(DS,'-').replace(/[\u0300-\u036f]/g,'').replace(/ {2,}/g,' ');}
+window.__devclean=clean;
+function fix(skip){var L=document.querySelectorAll('input:not([type]),input[type=text],input[type=search],textarea');
+  for(var i=0;i<L.length;i++){var el=L[i];if(el===skip||el.readOnly||el.disabled)continue;var v=el.value,c=clean(v);if(c!==v)el.value=c;}}
+['pointerdown','mousedown','touchstart','click','change','focusout'].forEach(function(t){document.addEventListener(t,function(e){fix(t==='focusout'||t==='change'?null:e.target)},true)});
+document.addEventListener('keydown',function(e){if(e.key==='Enter'||e.keyCode===13)fix(null)},true);
+})();</script>
+<style id="ms-chi-nen-unlock-style">
+#passwordModal, #password-modal, #pwModal, #pw-modal, #pw-overlay,
+#lockModal, #passModal, #authModal, #auth-modal, #lockOverlay,
+#start-overlay, #intro-overlay, #start-screen,
+.password-modal, .lock-modal, .lock-overlay {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    z-index: -9999 !important;
+}
+</style>
+<script>
+// Remove password lock completely - direct quiz access
+(function() {
+    var initDone = false;
+    var renderCheckDone = false;
+
+    function hideEl(el, hard) {
+        if (!el) return;
+        if (hard) {
+            el.style.setProperty('display', 'none', 'important');
+            el.style.setProperty('visibility', 'hidden', 'important');
+            el.style.setProperty('opacity', '0', 'important');
+            el.style.setProperty('pointer-events', 'none', 'important');
+            el.style.setProperty('z-index', '-9999', 'important');
+        } else {
+            el.style.display = 'none';
+        }
+        el.classList.remove('active', 'show', 'open', 'visible', 'flex');
+    }
+
+    function hasRenderedQuiz() {
+        var containers = document.querySelectorAll(
+            '#quiz-container, #quizContainer, #questions-container, #questionPane, #quiz, #questions, #quiz-body, #questions-wrapper, #quiz-list, #quizList, #exercise-container, #app-container .split-container'
+        );
+        for (var i = 0; i < containers.length; i++) {
+            if (containers[i].querySelectorAll('button, input, select, textarea, .question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .question, .option-btn, .opt-btn, .ans-btn').length > 0) {
+                return true;
+            }
+        }
+        if (document.querySelectorAll('.question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .option-btn, .opt-btn, .ans-btn, .choice-btn').length > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    function ensureQuizRendered() {
+        if (renderCheckDone) return;
+        renderCheckDone = true;
+        if (hasRenderedQuiz()) return;
+
+        if (!hasRenderedQuiz() && typeof buildQuiz === 'function') { try { buildQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof initQuiz === 'function') { try { initQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderApp === 'function') { try { renderApp(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuiz === 'function') { try { renderQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuestions === 'function') { try { renderQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAllQuestions === 'function') { try { renderAllQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAll === 'function') { try { renderAll(); } catch(e){} }
+    }
+
+    function unlockNow() {
+        var pwIds = [
+            'passwordModal', 'password-modal', 'pwModal', 'pw-modal', 'pw-overlay',
+            'lockModal', 'passModal', 'authModal', 'auth-modal', 'lockOverlay',
+            'start-overlay', 'intro-overlay', 'start-screen'
+        ];
+        pwIds.forEach(function(id) {
+            hideEl(document.getElementById(id), true);
+        });
+
+        var modalEls = document.querySelectorAll('.password-modal, .lock-modal, .lock-overlay, #lockOverlay, #auth-modal');
+        modalEls.forEach(function(el) {
+            if (el.id !== 'resultModal' && el.id !== 'result-modal' && el.id !== 'scoreModal') {
+                hideEl(el, true);
+            }
+        });
+
+        ['nameModal', 'name-modal', 'nameInputModal'].forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) hideEl(el, false);
+        });
+
+        var qo = document.getElementById('quiz-overlay');
+        if (qo && (typeof isStarted === 'undefined' || !isStarted)) {
+            qo.style.display = 'none';
+        }
+
+        var mainIds = [
+            'mainContent', 'main-content', 'mainHeader', 'main-header',
+            'app-container', 'app', 'quizApp', 'quiz-wrapper', 'quizContainer', 'quiz-container', 'reading-content'
+        ];
+        mainIds.forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) {
+                el.classList.remove('hidden', 'blur', 'blurred', 'locked');
+                if (el.style.display === 'none') {
+                    el.style.removeProperty('display');
+                }
+                if (window.getComputedStyle(el).display === 'none') {
+                    var hasPane = el.querySelector('.pane, .left-pane, .right-pane, .split-container, .left-panel, .right-panel');
+                    if (id === 'main-content' || id.toLowerCase().includes('header') || el.classList.contains('main-container') || hasPane) {
+                        el.style.setProperty('display', 'flex', 'important');
+                    } else {
+                        el.style.setProperty('display', 'block', 'important');
+                    }
+                }
+            }
+        });
+
+        var qs = document.getElementById('quiz-screen');
+        if (qs) {
+            qs.classList.remove('hidden');
+            if (qs.classList.contains('flex-col')) {
+                qs.classList.add('flex');
+                qs.style.display = 'flex';
+            } else {
+                qs.style.display = 'block';
+            }
+        }
+
+        if (!initDone) {
+            initDone = true;
+
+            if (document.getElementById('start-overlay') && typeof startGame === 'function') {
+                var sn = document.getElementById('student-name') || document.getElementById('studentName');
+                if (sn && !sn.value.trim()) sn.value = 'Học sinh';
+            }
+            if (document.getElementById('name-modal') && typeof startQuiz === 'function') {
+                var sn2 = document.getElementById('student-name');
+                if (sn2 && !sn2.value.trim()) sn2.value = 'Học sinh';
+            }
+
+            if (typeof startQuiz === 'function' && (typeof isStarted === 'undefined' || !isStarted)) { try { startQuiz(); } catch(e){} }
+            if (typeof startGame === 'function') { try { startGame(); } catch(e){} }
+            if (typeof startTest === 'function') { try { startTest(); } catch(e){} }
+            if (typeof startApp === 'function') { try { startApp(); } catch(e){} }
+            if (typeof buildStarfield === 'function') { try { buildStarfield(); } catch(e){} }
+            if (typeof spawnFloats === 'function') { try { spawnFloats(); } catch(e){} }
+            if (typeof spawnFloaters === 'function') { try { spawnFloaters(); } catch(e){} }
+            if (typeof createFloatingBubbles === 'function') { try { createFloatingBubbles(); } catch(e){} }
+            if (typeof initAudio === 'function') { try { initAudio(); } catch(e){} }
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', unlockNow);
+    } else {
+        unlockNow();
+    }
+    if (document.readyState === 'complete') {
+        setTimeout(ensureQuizRendered, 150);
+    } else {
+        window.addEventListener('load', function() {
+            setTimeout(unlockNow, 20);
+            setTimeout(ensureQuizRendered, 150);
+            setTimeout(unlockNow, 300);
+            setTimeout(unlockNow, 700);
+        });
+    }
+    setTimeout(unlockNow, 50);
+    setTimeout(unlockNow, 200);
+    setTimeout(unlockNow, 600);
+    setTimeout(unlockNow, 1100);
+})();
+</script>
+</body>
+</html>

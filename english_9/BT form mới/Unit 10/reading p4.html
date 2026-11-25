@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌅 U10 E9 · EARTH HOUR · OCEAN · FORESTS | MS Chí Nên</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#7c2d12;--dim:#c2410c;--clay:#ea580c;--sun:#fed7aa;--sky:#fecdd3;
+ --good:#15803d;--bad:#be123c;--card:#fffaf5;--pan:#fffaf5;
+ --pw:#9d174d;--pm:#7c2d12;--pg:#6d28d9}
+*{box-sizing:border-box;margin:0;padding:0}
+html{overflow-x:hidden}
+body{font-family:'Baloo 2','Segoe UI',sans-serif;font-weight:700;color:var(--ink);min-height:100vh;
+ background:linear-gradient(-45deg,#ef4444,#f97316,#fbbf24,#f472b6,#a855f7,#ef4444);background-size:400% 400%;animation:bg 4s ease infinite}
+@keyframes bg{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+ background:repeating-radial-gradient(circle at 50% 130%,rgba(255,255,255,.28) 0 4px,transparent 4px 34px),
+  radial-gradient(rgba(255,255,255,.4) 3px,transparent 3.2px);
+ background-size:200px 100px,50px 50px}
+/* ── blob trang tri loang mau am, bay lo lung phia sau noi dung ── */
+.blob{position:fixed;border-radius:50%;filter:blur(38px);opacity:.55;z-index:0;pointer-events:none;
+ animation:blobf 8.5s ease-in-out infinite}
+.blob.b1{width:260px;height:260px;background:#fb923c;top:-60px;right:-60px;animation-delay:0s}
+.blob.b2{width:320px;height:320px;background:#f43f5e;top:22%;left:-100px;animation-delay:1.5s}
+.blob.b3{width:220px;height:220px;background:#facc15;bottom:12%;right:-70px;animation-delay:3s}
+.blob.b4{width:280px;height:280px;background:#c084fc;bottom:-80px;left:8%;animation-delay:4.5s}
+.blob.b5{width:200px;height:200px;background:#fb7185;top:48%;right:35%;animation-delay:2s}
+@keyframes blobf{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-22px,-28px) scale(1.12)}}
+.sky{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.sky i{position:absolute;font-size:31px;opacity:.6;animation:fly linear infinite;font-style:normal;
+ filter:drop-shadow(0 4px 6px rgba(0,0,0,.18))}
+@keyframes fly{0%,100%{transform:translate(0,0) rotate(-6deg)}50%{transform:translate(16px,-30px) rotate(9deg)}}
+.sky b{display:none}
+.wrap{position:relative;z-index:2;max-width:1500px;margin:0 auto;padding:8px 14px 70px}
+/* ── thanh nhac nho ── */
+.note{position:sticky;top:0;z-index:40;margin:0 -14px 12px;padding:10px 14px;
+ background:linear-gradient(90deg,var(--clay),var(--pw),var(--pg));background-size:200% 200%;animation:bg 5s ease infinite;
+ box-shadow:0 5px 20px rgba(124,45,18,.35);border-bottom:3px solid var(--ink)}
+.note .in{display:flex;align-items:center;gap:10px;max-width:1470px;margin:0 auto}
+.note .tg{flex:none;background:#fff;color:var(--clay);font-weight:900;font-size:.86rem;padding:4px 14px;
+ border-radius:20px;white-space:nowrap;border:2px solid var(--ink)}
+.note .tx{flex:1;min-width:0;color:#fff;font-weight:800;font-size:1.08rem;line-height:1.55;transition:opacity .25s;
+ text-shadow:1px 1px 0 rgba(0,0,0,.25)}
+/* ── header ── */
+.hd{background:var(--pan);border:4px solid var(--ink);border-radius:22px;padding:22px 18px;text-align:center;
+ margin-bottom:14px;box-shadow:7px 7px 0 rgba(124,45,18,.3)}
+.hd h1{font-family:'Baloo 2';font-weight:800;font-size:clamp(24px,5vw,38px);line-height:1.3;
+ background:linear-gradient(90deg,var(--clay),var(--pw),var(--pg),var(--good));background-size:300% 300%;
+ animation:bg 5s ease infinite;-webkit-background-clip:text;background-clip:text;color:transparent;
+ -webkit-text-stroke:1.3px var(--ink)}
+.hd .by{display:inline-block;margin-top:12px;background:linear-gradient(135deg,var(--pw),var(--clay));color:#fff;
+ font-weight:900;font-size:1.05rem;padding:8px 20px;border-radius:20px;border:2.5px solid var(--ink)}
+.hd p{margin-top:11px;font-size:1.08rem;font-weight:800;color:var(--dim);line-height:1.8}
+.bar{display:flex;align-items:center;gap:10px;background:var(--pan);border:4px solid var(--ink);
+ border-radius:20px;padding:11px 16px;margin-bottom:14px;font-weight:900;font-size:1.12rem;color:var(--ink);
+ box-shadow:5px 5px 0 rgba(124,45,18,.25)}
+.bar .tr{flex:1;height:15px;background:#fff;border:2px solid var(--ink);border-radius:20px;overflow:hidden}
+.bar .fb{height:100%;width:0;background:linear-gradient(90deg,var(--pw),var(--sun),var(--clay));transition:width .4s}
+/* ── split: ca hai ben cuon doc lap ── */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start;position:relative;z-index:2}
+@media(max-width:940px){.split{grid-template-columns:1fr}}
+.pane{position:sticky;top:64px;max-height:calc(100vh - 82px);overflow-y:auto}
+@media(max-width:940px){.pane{position:static;max-height:none}.sec{position:static!important;max-height:none!important}}
+.letter{background:var(--card);color:var(--ink);border:4px solid var(--ink);border-radius:22px;overflow:hidden;
+ box-shadow:7px 7px 0 rgba(124,45,18,.28)}
+.letter .edge{height:11px;background:repeating-linear-gradient(90deg,var(--clay) 0 18px,var(--pw) 18px 36px,var(--pg) 36px 54px)}
+.letter .bd{padding:17px 19px 22px}
+.stamp{float:right;width:82px;height:82px;margin:0 0 8px 12px;border-radius:20px;
+ background:linear-gradient(135deg,#fff3e0,var(--sky));border:3px solid var(--ink);display:grid;place-items:center;
+ text-align:center;font-size:28px;line-height:1.1;color:var(--dim);box-shadow:4px 4px 0 rgba(0,0,0,.15)}
+.stamp b{display:block;font-weight:800;font-size:.62rem;letter-spacing:.8px;color:var(--dim)}
+.bank{background:#fff3e0;border:3px dashed var(--clay);border-radius:16px;padding:11px 13px;margin-bottom:12px;
+ font-weight:900;font-size:1.05rem;line-height:1.85;text-align:left;color:var(--ink)}
+.bank b{color:var(--pw);letter-spacing:1px;display:block;margin-bottom:4px;text-align:center}
+.letter h2{font-family:'Baloo 2';font-weight:800;font-size:1.4rem;color:var(--dim);line-height:1.32;margin-bottom:5px}
+.letter .sub{font-size:.98rem;font-weight:900;color:var(--pw);font-style:italic;margin-bottom:13px}
+.letter p{font-size:1.18rem;font-weight:700;line-height:2.05;margin-bottom:9px}
+.letter b{color:var(--dim);font-weight:900}
+.bl{display:inline;background:var(--sky);border-bottom:4px solid var(--clay);border-radius:8px;padding:2px 11px;
+ font-weight:900;color:#7c2d12}
+.bl.ok{background:#c9f7d8;border-color:var(--good);color:#0a6e45}
+.tbtn{display:inline-block;margin:3px 0 11px;background:linear-gradient(135deg,var(--pw),var(--clay));color:#fff;
+ border:2.5px solid var(--ink);border-radius:20px;padding:8px 20px;font-family:'Baloo 2';font-weight:800;font-size:.94rem;
+ cursor:pointer;box-shadow:3px 3px 0 var(--ink);transition:.14s}
+.tbtn:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--ink)}
+.tvi{display:none;background:#fff3e0;border-left:6px solid var(--pw);border-radius:0 14px 14px 0;padding:11px 14px;
+ margin-bottom:11px;font-size:1.1rem;font-weight:700;line-height:1.9;color:#7c2d12}
+.tvi.on{display:block;animation:pop .3s}
+/* ── BANG TU VUNG: KE O CHUAN, KHONG LECH COT ── */
+.gl{margin-top:15px;background:var(--card);border:4px solid var(--ink);border-radius:20px;overflow:hidden;
+ box-shadow:5px 5px 0 rgba(124,45,18,.22)}
+.gl h3{font-family:'Baloo 2';font-weight:800;font-size:1.14rem;color:#fff;background:linear-gradient(90deg,var(--clay),var(--pw));
+ margin:0;padding:10px 15px}
+.gtb{width:100%;table-layout:fixed;border-collapse:collapse;font-size:1.02rem}
+.gtb col.c1{width:24%}.gtb col.c2{width:20%}.gtb col.c3{width:12%}.gtb col.c4{width:44%}
+.gtb tr{border-top:2px solid #fde4d0}
+.gtb tr:nth-child(even){background:#fff6ec}
+.gtb td{padding:9px 11px;vertical-align:top;line-height:1.6;word-wrap:break-word;overflow-wrap:break-word}
+.gtb .gw{color:var(--pw);font-weight:900}
+.gtb .gp{color:var(--dim);font-style:italic;font-weight:600;font-size:.92rem}
+.gtb .gt{color:var(--pg);font-weight:900;text-align:center;font-size:.9rem}
+.gtb .gm{color:#0a6e45;font-weight:800}
+.p-word{color:var(--pw);font-weight:900}
+.p-phonetic{color:var(--dim);font-style:italic}
+.p-mean{color:var(--pm);font-weight:900}
+.p-grammar{color:var(--pg);font-weight:900}
+.hl-green{background:#c9f7d8;color:#0a6e45;padding:2px 9px;border-radius:6px;font-weight:900}
+.hl-red{background:#ffdde1;color:#a31832;padding:2px 9px;border-radius:6px;font-weight:900}
+/* ── cau hoi ── */
+.sec{position:sticky;top:64px;max-height:calc(100vh - 82px);overflow-y:auto;
+ background:var(--pan);border:4px solid var(--ink);border-radius:22px;padding:16px;margin-bottom:14px;
+ box-shadow:7px 7px 0 rgba(124,45,18,.25)}
+.sec>h3{font-family:'Baloo 2';font-weight:800;color:var(--dim);font-size:1.15rem;margin-bottom:11px;line-height:1.4}
+.q{background:#fff;border:3px solid var(--ink);border-left:8px solid var(--clay);
+ border-radius:16px;padding:14px 15px;margin-bottom:13px;box-shadow:4px 4px 0 rgba(124,45,18,.18)}
+.q .qt{font-weight:900;font-size:1.12rem;color:var(--ink);line-height:1.82}
+.qn{display:inline-block;background:linear-gradient(135deg,var(--clay),var(--pw));color:#fff;min-width:36px;
+ text-align:center;border-radius:8px;padding:3px 9px;margin-right:9px;font-weight:900;font-size:.96rem;
+ border:2px solid var(--ink)}
+.og{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:11px}
+@media(max-width:560px){.og{grid-template-columns:1fr}}
+.ob{background:#fff;color:var(--ink);border:2.5px solid var(--ink);border-radius:14px;padding:12px 14px;
+ font-family:'Baloo 2';font-weight:800;font-size:1rem;cursor:pointer;text-align:left;line-height:1.48;
+ transition:.14s;box-shadow:3px 3px 0 var(--ink)}
+.ob:hover:not(.dn){transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--ink);background:#fff6ec}
+.ob.dn{cursor:default}
+.ob.ok{background:#c9f7d8;border-color:var(--good);color:#0a6e45;box-shadow:3px 3px 0 var(--good)}
+.ob.no{background:#ffdde1;border-color:var(--bad);color:#a31832;box-shadow:3px 3px 0 var(--bad)}
+.ex{display:none;margin-top:11px;background:#fffdf0;border:3px dashed var(--ink);border-radius:16px;padding:14px;
+ font-size:1.05rem;font-weight:700;line-height:1.9}
+.ex.on{display:block;animation:pop .3s}
+@keyframes pop{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+.kb{background:#c9f7d8;border:3px solid var(--good);border-radius:14px;padding:9px 14px;font-weight:900;color:#0a6e45;margin-bottom:9px}
+.stp{background:#fff3e0;border:2.5px solid #fde4d0;border-radius:14px;padding:11px 14px;margin-bottom:9px}
+.stp .l{display:inline-block;background:var(--ink);color:#fff;padding:3px 13px;border-radius:8px;
+ font-size:.78rem;font-weight:900;letter-spacing:.4px;margin-bottom:6px}
+.op4{background:#fff;border:2px solid #fde4d0;border-radius:10px;padding:8px 12px;margin-bottom:6px;font-size:1rem;font-weight:700}
+.op4.rt{background:#c9f7d8;border-color:var(--good)}
+.op4 b{color:var(--dim)}.op4.rt b{color:#0a6e45}
+.wr{background:#fff0f2;border:2px solid #f0c0cb;border-radius:10px;padding:8px 12px;margin-bottom:6px;font-size:1rem;font-weight:700}
+.wr b{color:#a31832}
+.shk{animation:shk .42s}
+@keyframes shk{0%,100%{transform:translateX(0)}25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+.sbtn{display:block;width:100%;max-width:560px;margin:24px auto 0;
+ background:linear-gradient(135deg,var(--clay),var(--pw),var(--pg),var(--good));background-size:300% 300%;animation:bg 4s ease infinite;
+ color:#fff;border:4px solid var(--ink);border-radius:20px;padding:18px;font-family:'Baloo 2';font-weight:800;font-size:1.24rem;
+ cursor:pointer;box-shadow:6px 6px 0 rgba(124,45,18,.35)}
+.ov{position:fixed;inset:0;background:rgba(124,45,18,.55);backdrop-filter:blur(4px);display:none;place-items:center;z-index:99;padding:16px}
+.ov.on{display:grid}
+.mb{background:var(--card);color:var(--ink);border-radius:22px;padding:24px;max-width:440px;width:100%;text-align:center;
+ border:4px solid var(--ink);box-shadow:8px 8px 0 rgba(124,45,18,.35)}
+.mb h2{font-family:'Baloo 2';font-weight:800;color:var(--dim);font-size:1.3rem;margin-bottom:11px}
+.mb input{width:100%;padding:13px;border-radius:14px;border:2.5px solid var(--ink);font-family:'Baloo 2';
+ font-weight:800;font-size:1.08rem;text-align:center;outline:none;color:var(--ink)}
+.mb .em{display:none;color:var(--bad);font-weight:900;font-size:.94rem;margin-top:8px}
+.mb .em.on{display:block}
+.mb img{width:100%;border-radius:14px;margin:11px 0}
+.mb .rs{font-family:'Baloo 2';font-weight:800;font-size:2.5rem;color:var(--clay)}
+.mb .t10{display:inline-block;margin-top:9px;background:var(--ink);color:#fff;font-weight:900;
+ padding:8px 20px;border-radius:14px;font-size:1.12rem}
+.mb .rm{font-size:1.06rem;font-weight:700;line-height:1.82;margin-top:11px;color:var(--dim)}
+.foot{text-align:center;margin-top:24px;font-size:1rem;color:#6b2410;font-weight:900;line-height:1.8}
+</style>
+</head>
+<body>
+<div class="sky" id="sky"></div>
+<div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="blob b4"></div><div class="blob b5"></div>
+<div class="wrap">
+
+<div class="note"><div class="in">
+  <span class="tg">📮 MS NHẮN</span>
+  <span class="tx" id="msTx">🌅 Chào các con lớp 9! Hôm nay có cả đọc hiểu lẫn chọn câu điền, cùng cố gắng nhé!</span>
+</div></div>
+
+<div class="hd">
+  <h1>🌅 ADVANCED ENGLISH CHALLENGE<br>EARTH HOUR · THE OCEAN · THE IMPORTANCE OF FORESTS (13 CÂU)</h1>
+  <div class="by">🔥 Giáo viên tạo: MS Chí Nên &nbsp;·&nbsp; ☎️ 0852639652 để đăng ký khoá học tiếng Anh <b>từ lớp 1 đến lớp 12</b></div>
+  <p><b>13 câu</b> · A: Earth Hour (5 câu đọc hiểu) &nbsp;·&nbsp; B: The Ocean (4 câu chọn câu điền) &nbsp;·&nbsp; C: The Importance of Forests (4 câu chọn câu điền)<br>
+  <i>Bên trái là bài đọc chia thành từng đoạn nhỏ, mỗi đoạn có nút mở bản dịch riêng.</i></p>
+</div>
+
+<div class="bar">🎟️ <span id="sc">0</span>/<span id="tt">0</span>
+  <div class="tr"><div class="fb" id="fb"></div></div><span id="md" style="font-size:1.3rem">💪</span></div>
+
+<div id="app"></div>
+
+<button class="sbtn" onclick="openName()">🎯 NỘP BÀI TÍNH ĐIỂM &amp; XEM KẾT QUẢ</button>
+<div class="foot">🌋 Made with love for World Englishes — MS Chí Nên · ☎️ 0852639652 để đăng ký khoá học từ lớp 1 đến lớp 12</div>
+</div>
+
+<div class="ov" id="ovN"><div class="mb">
+  <h2>📮 Con ghi tên lên phong bì nhé!</h2>
+  <input id="nIn" placeholder="Ví dụ: Nguyễn Văn A" autocomplete="off" maxlength="50">
+  <div class="em" id="nEm">⚠️ Con chưa nhập tên kìa! Nhập tên rồi mới xem điểm được nha.</div>
+  <button class="sbtn" style="margin-top:14px;font-size:1rem;padding:12px" onclick="showResult()">🚀 Xem kết quả</button>
+</div></div>
+
+<div class="ov" id="ovR"><div class="mb">
+  <div style="font-size:2.6rem" id="rEmo">🎉</div>
+  <h2 id="rGr"></h2>
+  <img id="rGif" alt="ket qua">
+  <div class="rs"><span id="rSc">0</span>/<span id="rTt">0</span></div>
+  <div class="t10">🎓 Quy đổi: <span id="r10">0</span>/10 điểm</div>
+  <div class="rm" id="rMs"></div>
+  <button class="sbtn" style="margin-top:14px;font-size:1rem;padding:12px" onclick="location.reload()">🔄 Làm lại</button>
+</div></div>
+
+<script>
+/* ══ nen bay ══ */
+(function(){var e=['🌅','💡','🌊','🐠','🌲','🍁','⭐','🎓','📖','🔥'],s=document.getElementById('sky'),h='';
+ h+='<b style="left:-6%;top:6%;width:46vw;height:46vw;background:#FFB627"></b>'+'<b style="right:-8%;top:32%;width:42vw;height:42vw;background:#FF3D6E;animation-duration:23s"></b>'+'<b style="left:22%;bottom:-12%;width:48vw;height:48vw;background:#FF6B2C;animation-duration:27s"></b>';for(var i=0;i<18;i++)h+='<i style="left:'+(Math.random()*98)+'%;top:'+(Math.random()*96)+'%;animation-duration:'+(9+Math.random()*10)+'s;animation-delay:'+(Math.random()*6)+'s">'+e[i%e.length]+'</i>';
+ s.innerHTML=h})();
+
+/* ══ am thanh ══ */
+var AC=null;
+function ac(){if(!AC){try{AC=new (window.AudioContext||window.webkitAudioContext)()}catch(e){}}if(AC&&AC.state==='suspended')AC.resume();return AC}
+function ding(){var c=ac();if(!c)return;var t=c.currentTime;[880,1174.7,1567.9].forEach(function(f,i){var o=c.createOscillator(),g=c.createGain();o.type='sine';o.frequency.value=f;o.connect(g);g.connect(c.destination);var s=t+i*0.09;g.gain.setValueAtTime(0.0001,s);g.gain.exponentialRampToValueAtTime(.22,s+.02);g.gain.exponentialRampToValueAtTime(.0001,s+.34);o.start(s);o.stop(s+.36)})}
+function buzz(){var c=ac();if(!c)return;var t=c.currentTime;[[300,0],[250,.15],[200,.3]].forEach(function(p){var o=c.createOscillator(),g=c.createGain();o.type='square';o.frequency.value=p[0];o.connect(g);g.connect(c.destination);var s=t+p[1];g.gain.setValueAtTime(0.0001,s);g.gain.exponentialRampToValueAtTime(.15,s+.02);g.gain.exponentialRampToValueAtTime(.0001,s+.15);o.start(s);o.stop(s+.16)})}
+function conf(){var cs=['#F2B03C','#D63A2F','#1F5FA8','#7BE0A8','#FFE9B8'];
+ for(var i=0;i<60;i++){var d=document.createElement('div');
+  d.style.cssText='position:fixed;top:-14px;width:9px;height:14px;z-index:98;pointer-events:none;left:'+(Math.random()*100)+'vw;background:'+cs[i%5]+';opacity:.9;transition:transform 2.2s linear,opacity 2.2s';
+  document.body.appendChild(d);(function(d){requestAnimationFrame(function(){d.style.transform='translateY(102vh) rotate('+(Math.random()*720)+'deg)';d.style.opacity=0});setTimeout(function(){d.remove()},2400)})(d)}}
+function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}
+
+/* ══ helper du lieu ══ */
+var P=[];
+function pas(id,ic,ttl,sub,body,gloss,qs){P.push({id:id,ic:ic,ttl:ttl,sub:sub,body:body,gloss:gloss,qs:qs})}
+function W(w,ph,ty,vi){return '<div><span class="p-word">'+w+'</span> <span class="p-phonetic">'+ph+'</span> <span class="p-grammar">('+ty+')</span> = <span class="p-mean">'+vi+'</span></div>'}
+function OP(en,ty,vi,ok){return '<div class="op4'+(ok?' rt':'')+'"><b>'+(ok?'✔ ':'')+en+'</b> <span class="p-grammar">('+ty+')</span> ➔ <span class="p-mean">'+vi+'</span></div>'}
+function WR(o,why){return '<div class="wr"><b>✗ '+o+'</b> — '+why+'</div>'}
+function E5(key,de,ops,why,wrong,ev,evvi){
+ return '<div class="kb">✅ Đáp án: '+key+'</div>'+
+ '<div class="stp"><span class="l">BƯỚC 1 · DỊCH CẢ CÂU CHỨA CHỖ TRỐNG</span><br>'+de+'</div>'+
+ '<div class="stp"><span class="l">BƯỚC 2 · NGUYÊN VĂN, TỪ LOẠI &amp; NGHĨA CỦA TỪNG LỰA CHỌN</span>'+ops+'</div>'+
+ '<div class="stp"><span class="l">BƯỚC 3 · TẠI SAO ĐÁP ÁN NÀY ĐÚNG</span><br>'+why+'</div>'+
+ '<div class="stp"><span class="l">BƯỚC 4 · TẠI SAO CÁC PHƯƠNG ÁN KIA SAI</span>'+wrong+'</div>'+
+ '<div class="stp"><span class="l">BƯỚC 5 · BẰNG CHỨNG TRONG BÀI</span><br>🔍 <i>'+ev+'</i><br>👉 '+evvi+'</div>'}
+function Q(n,ans,opts,ex,st){return {n:n,ans:ans,opts:opts,ex:ex,st:st}}
+function T(en,vi){return en+'<button class="tbtn" onclick="tg(this)">Mở dịch đoạn này 🌟</button><div class="tvi">'+vi+'</div>'}
+function tg(b){var d=b.nextElementSibling;d.classList.toggle('on');b.textContent=d.classList.contains('on')?'Ẩn bản dịch 🙈':'Mở dịch đoạn này 🌟'}
+function B(id,n){return '<span class="bl" id="bl_'+id+'_'+n+'">('+n+') _____</span>'}
+function W(w,ph,ty,vi){return '<tr><td class="gw">'+w+'</td><td class="gp">'+ph+'</td><td class="gt">'+ty+'</td><td class="gm">'+vi+'</td></tr>'}
+
+/* ═════════ PASSAGE A — EARTH HOUR (5 câu đọc hiểu) ═════════ */
+pas('A','💡','EARTH HOUR','Đọc đoạn văn và trả lời câu hỏi (5 câu)',
+ '<div class="stamp">💡<b>HOUR</b></div>'+
+ T('<p>Earth Hour is an annual global campaign encouraging people and businesses worldwide to switch off their electricity for one hour simultaneously.</p>',
+   'Giờ Trái Đất là một chiến dịch toàn cầu thường niên khuyến khích mọi người và các doanh nghiệp trên toàn thế giới tắt điện trong vòng một giờ đồng thời cùng lúc.')+
+ T('<p>It originated in Australia in 2007 when 2.2 million people in Sydney turned off unnecessary lights for an hour. Since then, it has grown into a massive global event.</p>',
+   'Nó bắt nguồn ở Úc vào năm 2007 khi 2,2 triệu người ở Sydney tắt những ánh đèn không cần thiết trong một giờ. Kể từ đó, nó đã phát triển thành một sự kiện toàn cầu to lớn.')+
+ T('<p>In 2013, millions of people in 7,000 cities and towns across the globe participated by switching off their lights for 60 minutes at the end of March.</p>',
+   'Năm 2013, hàng triệu người ở 7.000 thành phố và thị trấn trên khắp thế giới đã tham gia bằng cách tắt đèn trong 60 phút vào cuối tháng Ba.')+
+ T('<p>Each year, famous landmarks and buildings such as the Sydney Opera House, UK Parliament, Buckingham Palace, and the Empire State Building join in by going dark for Earth Hour.</p>',
+   'Mỗi năm, các địa danh và công trình nổi tiếng như Nhà hát Opera Sydney, Quốc hội Anh, Cung điện Buckingham và tòa nhà Empire State đều tham gia bằng cách tắt đèn tối om cho Giờ Trái Đất.')+
+ T('<p>In 2011, the campaign even went into space, with astronauts reducing power on the International Space Station.</p>',
+   'Năm 2011, chiến dịch này thậm chí còn vươn tới cả ngoài vũ trụ, khi các phi hành gia giảm điện năng tiêu thụ trên Trạm Vũ trụ Quốc tế.')+
+ T('<p>The World Wide Fund for Nature (WWF) organises Earth Hour. Andy Ridley, the executive director of Earth Hour Global at WWF and originally from Britain, initiated the idea of Earth Hour.</p>',
+   'Quỹ Quốc tế Bảo vệ Thiên nhiên (WWF) tổ chức Giờ Trái Đất. Andy Ridley, giám đốc điều hành của Earth Hour Global tại WWF và vốn xuất thân từ Anh, là người khởi xướng ý tưởng Giờ Trái Đất.')+
+ T('<p>His aim was to raise awareness about environmental issues by encouraging people to take positive actions to help the planet.</p>',
+   'Mục tiêu của ông ấy là nâng cao nhận thức về các vấn đề môi trường bằng cách khuyến khích mọi người thực hiện những hành động tích cực để giúp đỡ hành tinh.')+
+ T('<p>While switching off lights for an hour may have a small impact on energy consumption, Earth Hour is primarily a symbolic event to make people think about the problems of climate change.</p>',
+   'Mặc dù việc tắt đèn trong một giờ có thể chỉ tác động nhỏ đến mức tiêu thụ năng lượng, Giờ Trái Đất chủ yếu là một sự kiện mang tính biểu tượng nhằm khiến mọi người suy nghĩ về các vấn đề biến đổi khí hậu.'),
+ W('campaign','/kæmˈpeɪn/','n','chiến dịch')+
+ W('simultaneously','/ˌsɪmlˈteɪniəsli/','adv','đồng thời, cùng lúc')+
+ W('originate','/əˈrɪdʒɪneɪt/','v','bắt nguồn, khởi nguồn')+
+ W('landmark','/ˈlændmɑːk/','n','địa danh, công trình nổi tiếng')+
+ W('raise awareness','/reɪz əˈweənəs/','v.phr','nâng cao nhận thức')+
+ W('consumption','/kənˈsʌmpʃn/','n','sự tiêu thụ')+
+ W('symbolic','/sɪmˈbɒlɪk/','adj','mang tính biểu tượng'),
+[
+Q(1,'A global campaign to raise awareness about environmental issues',
+ ['The history of the Sydney Opera House','The importance of saving energy','The impact of Earth Hour on climate change','A global campaign to raise awareness about environmental issues'],
+ E5('A global campaign to raise awareness about environmental issues','Bài viết mở đầu bằng việc giới thiệu Earth Hour là một chiến dịch toàn cầu thường niên, và kết thúc bằng việc nêu rõ mục đích là nâng cao nhận thức về môi trường.',
+  OP('The history of the Sydney Opera House','chỉ là một chi tiết nhỏ','Lịch sử của Nhà hát Opera Sydney',0)+
+  OP('The importance of saving energy','chỉ là tác động phụ, không phải trọng tâm','Tầm quan trọng của việc tiết kiệm năng lượng',0)+
+  OP('The impact of Earth Hour on climate change','bài nói đây là sự kiện biểu tượng hơn là tác động thực tế','Tác động của Giờ Trái Đất đối với biến đổi khí hậu',0)+
+  OP('A global campaign to raise awareness about environmental issues','đúng, bao trùm toàn bài','Một chiến dịch toàn cầu nhằm nâng cao nhận thức về các vấn đề môi trường',1),
+  'Đoạn văn mở đầu bằng <b>"Earth Hour is an annual global campaign encouraging people and businesses worldwide to switch off their electricity for one hour simultaneously"</b> và kết thúc bằng mục đích rõ ràng: <b>"raise awareness about environmental issues"</b> (nâng cao nhận thức về các vấn đề môi trường). Đáp án này bao quát toàn bộ nội dung: nguồn gốc, quy mô và mục đích của cả chiến dịch.',
+  WR('The history of the Sydney Opera House','Nhà hát Opera Sydney chỉ được nhắc đến như một ví dụ về địa danh tham gia tắt đèn, không phải trọng tâm của cả bài.')+
+  WR('The importance of saving energy','Bài đọc nói rõ việc tắt đèn "may have a small impact on energy consumption" (chỉ có tác động nhỏ đến việc tiêu thụ năng lượng), nên đây không phải trọng tâm chính.')+
+  WR('The impact of Earth Hour on climate change','Bài đọc khẳng định Earth Hour "is primarily a symbolic event" (chủ yếu là một sự kiện mang tính biểu tượng) chứ không tập trung vào tác động thực tế lên biến đổi khí hậu.'),
+  'Earth Hour is an annual global campaign encouraging people and businesses worldwide to switch off their electricity for one hour simultaneously.',
+  'Câu mở đầu giới thiệu Earth Hour là một chiến dịch toàn cầu thường niên khuyến khích mọi người tắt điện, đặt nền cho thông điệp nâng cao nhận thức xuyên suốt cả bài.'),
+ '1. What is the main idea of the passage?'),
+
+Q(2,'ended',['began','started','ended','derived'],
+ E5('ended','Nó bắt nguồn ở Úc vào năm 2007.',
+  OP('began','động từ','bắt đầu (đồng nghĩa với originated)',0)+
+  OP('started','động từ','bắt đầu (đồng nghĩa với originated)',0)+
+  OP('ended','động từ','kết thúc (trái nghĩa với originated)',1)+
+  OP('derived','động từ','bắt nguồn từ (gần nghĩa với originated)',0),
+  '<b>"Originated"</b> nghĩa là "bắt nguồn, khởi nguồn" (tương đương begin/start). Từ trái nghĩa với "bắt đầu" chính là "kết thúc" (<b>ended</b>).',
+  WR('began','"Began" (bắt đầu) là từ đồng nghĩa với "originated", không phải trái nghĩa.')+
+  WR('started','"Started" (bắt đầu) cũng là từ đồng nghĩa với "originated", không phải trái nghĩa.')+
+  WR('derived','"Derived" (bắt nguồn từ, có nguồn gốc từ) mang nghĩa gần giống "originated", không phải trái nghĩa.'),
+  'It originated in Australia in 2007 when 2.2 million people in Sydney turned off unnecessary lights for an hour.',
+  'Câu này dùng "originated" để nói Earth Hour bắt nguồn từ Úc năm 2007 — nghĩa là bắt đầu, nên từ trái nghĩa phải là "ended" (kết thúc).'),
+ '2. The word "originated" in paragraph 1 is OPPOSITE in meaning to ______.'),
+
+Q(3,'huge',['small','huge','local','brief'],
+ E5('huge','Kể từ đó, nó đã phát triển thành một sự kiện toàn cầu to lớn.',
+  OP('small','tính từ','nhỏ (trái nghĩa với massive)',0)+
+  OP('huge','tính từ','to lớn, khổng lồ (đồng nghĩa với massive)',1)+
+  OP('local','tính từ','mang tính địa phương',0)+
+  OP('brief','tính từ','ngắn gọn (nói về thời gian)',0),
+  '<b>"Massive"</b> nghĩa là "to lớn, khổng lồ", đồng nghĩa gần nhất là <b>"huge"</b>.',
+  WR('small','Nghĩa "nhỏ" trái ngược hoàn toàn với "massive".')+
+  WR('local','Nghĩa "mang tính địa phương" mâu thuẫn với từ "global" (toàn cầu) ngay trước đó trong câu.')+
+  WR('brief','Nghĩa "ngắn gọn" nói về thời gian, không liên quan đến quy mô lớn nhỏ mà "massive" đang diễn tả.'),
+  'Since then, it has grown into a massive global event.',
+  'Câu này dùng "massive" để mô tả quy mô to lớn của sự kiện toàn cầu này, đồng nghĩa với "huge".'),
+ '3. The word "massive" in paragraph 1 could be best replaced by ______.'),
+
+Q(4,'Earth Hour is organized by the World Wide Fund for Nature.',
+ ['Earth Hour lasts for two hours.','Earth Hour started in the UK.','Earth Hour is organized by the World Wide Fund for Nature.','Only a few people participate in Earth Hour.'],
+ E5('Earth Hour is organized by the World Wide Fund for Nature.','Quỹ Quốc tế Bảo vệ Thiên nhiên (WWF) tổ chức Giờ Trái Đất.',
+  OP('Earth Hour lasts for two hours.','sai, thực tế chỉ một giờ','Giờ Trái Đất kéo dài hai giờ',0)+
+  OP('Earth Hour started in the UK.','sai, thực tế bắt nguồn ở Úc','Giờ Trái Đất bắt đầu ở Anh',0)+
+  OP('Earth Hour is organized by the World Wide Fund for Nature.','đúng theo bài','Giờ Trái Đất được tổ chức bởi Quỹ Quốc tế Bảo vệ Thiên nhiên',1)+
+  OP('Only a few people participate in Earth Hour.','sai, thực tế có hàng triệu người tham gia','Chỉ có một số ít người tham gia Giờ Trái Đất',0),
+  'Đoạn 2 nêu rõ: <b>"The World Wide Fund for Nature (WWF) organises Earth Hour."</b>',
+  WR('Earth Hour lasts for two hours.','Bài đọc nói rõ mọi người tắt đèn "for 60 minutes" (trong 60 phút), tức một giờ, không phải hai giờ.')+
+  WR('Earth Hour started in the UK.','Bài đọc nói Earth Hour "originated in Australia" (bắt nguồn ở Úc), không phải ở Anh.')+
+  WR('Only a few people participate in Earth Hour.','Bài đọc nói có "millions of people" (hàng triệu người) tham gia, không phải chỉ một số ít.'),
+  'The World Wide Fund for Nature (WWF) organises Earth Hour.',
+  'Câu này khẳng định trực tiếp WWF là tổ chức đứng ra tổ chức Giờ Trái Đất.'),
+ '4. Which of the following is TRUE according to the passage?'),
+
+Q(5,'Andy Ridley',['an astronaut','Andy Ridley','the executive director','a participant'],
+ E5('Andy Ridley','Mục tiêu của ông ấy là nâng cao nhận thức về các vấn đề môi trường.',
+  OP('an astronaut','danh từ','một phi hành gia',0)+
+  OP('Andy Ridley','danh từ riêng','Andy Ridley',1)+
+  OP('the executive director','danh từ','giám đốc điều hành',0)+
+  OP('a participant','danh từ','một người tham gia',0),
+  'Câu trước nhắc đến <b>"Andy Ridley, the executive director of Earth Hour Global at WWF and originally from Britain, initiated the idea of Earth Hour"</b>. Câu sau <b>"His aim was to raise awareness about environmental issues"</b> — "His" thay thế trực tiếp cho tên riêng Andy Ridley vừa được nêu.',
+  WR('an astronaut','Phi hành gia được nhắc ở đoạn 1 (nói về năm 2011), không phải trong đoạn 2 đang xét, và không liên quan đến "His aim".')+
+  WR('the executive director','Đây chỉ là chức danh của Andy Ridley; phần chính mà đại từ "His" thay thế vẫn là tên riêng của ông ấy.')+
+  WR('a participant','Không có "người tham gia" cụ thể nào được nhắc đến ngay trước câu này.'),
+  'Andy Ridley, the executive director of Earth Hour Global at WWF and originally from Britain, initiated the idea of Earth Hour. His aim was to raise awareness about environmental issues.',
+  'Andy Ridley được giới thiệu ở câu trước, và "His" ở câu sau thay thế chính xác cho tên riêng này.'),
+ '5. The word "His" in paragraph 2 refers to ______.')
+]);
+
+/* ═════════ PASSAGE B — THE OCEAN (4 câu chọn câu điền vào) ═════════ */
+pas('B','🌊','THE OCEAN','Chọn câu đúng (A-D) điền vào mỗi chỗ trống (4 câu)',
+ '<div class="stamp">🌊<b>OCEAN</b></div>'+
+ '<div class="bank"><b>HỘP CÂU LỰA CHỌN</b><br>A. Fishers catch more than 90 million tons of seafood each year<br>B. where water and land transportation meet<br>C. The ocean makes all life on Earth possible<br>D. are the Port of Shanghai in China and the Port of Rotterdam in the Netherlands</div>'+
+ T('<p>The ocean covers 70 percent of Earth\'s surface and contains about 97 percent of all the water on Earth. '+B('B',1)+', and makes the planet appear blue when viewed from space.</p>',
+   'Đại dương chiếm 70% bề mặt Trái Đất và chứa khoảng 97% lượng nước trên Trái Đất. Đại dương làm cho mọi sự sống trên Trái Đất trở nên khả thi, và khiến hành tinh này trông có màu xanh khi nhìn từ ngoài vũ trụ.')+
+ T('<p>For thousands of years, people have depended on the ocean as a source of food. It offers human beings a wide range of seafood. '+B('B',2)+'.</p>',
+   'Trong hàng ngàn năm, con người đã phụ thuộc vào đại dương như một nguồn thực phẩm. Nó cung cấp cho con người rất nhiều loại hải sản. Ngư dân đánh bắt hơn 90 triệu tấn hải sản mỗi năm.')+
+ T('<p>Millions of people, from professional fishers to business owners like restaurant owners and boat builders, depend on fisheries for their life.</p>',
+   'Hàng triệu người, từ ngư dân chuyên nghiệp đến các chủ doanh nghiệp như chủ nhà hàng và thợ đóng thuyền, đều phụ thuộc vào ngành ngư nghiệp để mưu sinh.')+
+ T('<p>People also use the ocean as a route for trade. Ships carry loads of goods from continent to continent, country to country. Ocean ports are areas '+B('B',3)+'.</p>',
+   'Con người cũng sử dụng đại dương như một tuyến đường thương mại. Tàu bè chở hàng hóa từ châu lục này sang châu lục khác, quốc gia này sang quốc gia khác. Cảng biển là những khu vực nơi giao thông đường thủy và đường bộ gặp nhau.')+
+ T('<p>It is also the meeting point of people of different professions: businesspeople, who import and export goods and services; dockworkers, who load and unload cargo; and ships\' crews.</p>',
+   'Đây cũng là điểm gặp gỡ của những người thuộc các ngành nghề khác nhau: doanh nhân, những người xuất nhập khẩu hàng hóa và dịch vụ; công nhân bến cảng, những người bốc dỡ hàng hóa; và thủy thủ đoàn của các con tàu.')+
+ T('<p>Ports also have a high concentration of migrants and immigrants with a wide variety of nationalities, languages, and religions. The busiest ports in the world '+B('B',4)+'.</p>',
+   'Các cảng biển cũng có mật độ người di cư và nhập cư cao với đủ loại quốc tịch, ngôn ngữ và tôn giáo khác nhau. Những cảng biển nhộn nhịp nhất thế giới là Cảng Thượng Hải ở Trung Quốc và Cảng Rotterdam ở Hà Lan.'),
+ W('continent','/ˈkɒntɪnənt/','n','lục địa')+
+ W('profession','/prəˈfeʃn/','n','nghề nghiệp')+
+ W('import/export','/ˈɪmpɔːt/ /ɪkˈspɔːt/','v','nhập khẩu / xuất khẩu')+
+ W('cargo','/ˈkɑːɡəʊ/','n','hàng hóa (trên tàu, máy bay)')+
+ W('migrant','/ˈmaɪɡrənt/','n','người di cư'),
+[
+Q(1,'The ocean makes all life on Earth possible',
+ ['Fishers catch more than 90 million tons of seafood each year','where water and land transportation meet','The ocean makes all life on Earth possible','are the Port of Shanghai in China and the Port of Rotterdam in the Netherlands'],
+ E5('The ocean makes all life on Earth possible','Đại dương làm cho mọi sự sống trên Trái Đất trở nên khả thi.',
+  OP('Fishers catch more than 90 million tons of seafood each year','sai vị trí, đây là câu điền cho chỗ trống (2)','Ngư dân đánh bắt hơn 90 triệu tấn hải sản mỗi năm',0)+
+  OP('where water and land transportation meet','sai vị trí, đây là câu điền cho chỗ trống (3)','nơi giao thông đường thủy và đường bộ gặp nhau',0)+
+  OP('The ocean makes all life on Earth possible','đúng vị trí','Đại dương làm cho mọi sự sống trên Trái Đất trở nên khả thi',1)+
+  OP('are the Port of Shanghai in China and the Port of Rotterdam in the Netherlands','sai vị trí, đây là câu điền cho chỗ trống (4)','là Cảng Thượng Hải ở Trung Quốc và Cảng Rotterdam ở Hà Lan',0),
+  'Câu chứa chỗ trống nói về vai trò tổng quát của đại dương, nối tiếp ngay sau câu giới thiệu diện tích và lượng nước, rồi dẫn tới ý "makes the planet appear blue" (khiến hành tinh có màu xanh). Chỉ có câu <b>"The ocean makes all life on Earth possible"</b> mang tính khái quát, giới thiệu vai trò nền tảng của đại dương, phù hợp để mở đầu cho cả đoạn.',
+  WR('Fishers catch more than 90 million tons of seafood each year','Câu này nói về việc đánh bắt hải sản, phù hợp với ngữ cảnh chỗ trống (2) nói về "seafood", không phải chỗ trống (1).')+
+  WR('where water and land transportation meet','Câu này là định nghĩa về cảng biển, phù hợp với chỗ trống (3), không liên quan đến câu mở đầu về vai trò tổng quát của đại dương.')+
+  WR('are the Port of Shanghai in China and the Port of Rotterdam in the Netherlands','Câu này nêu tên các cảng cụ thể, phù hợp làm vị ngữ cho "The busiest ports in the world" ở chỗ trống (4).'),
+  'The ocean covers 70 percent of Earth\'s surface and contains about 97 percent of all the water on Earth. The ocean makes all life on Earth possible, and makes the planet appear blue when viewed from space.',
+  'Câu điền vào mang ý khái quát về vai trò nền tảng của đại dương đối với sự sống, đúng vị trí mở đầu đoạn văn.')),
+
+Q(2,'Fishers catch more than 90 million tons of seafood each year',
+ ['Fishers catch more than 90 million tons of seafood each year','where water and land transportation meet','The ocean makes all life on Earth possible','are the Port of Shanghai in China and the Port of Rotterdam in the Netherlands'],
+ E5('Fishers catch more than 90 million tons of seafood each year','Ngư dân đánh bắt hơn 90 triệu tấn hải sản mỗi năm.',
+  OP('Fishers catch more than 90 million tons of seafood each year','đúng vị trí','Ngư dân đánh bắt hơn 90 triệu tấn hải sản mỗi năm',1)+
+  OP('where water and land transportation meet','sai vị trí, thuộc chỗ trống (3)','nơi giao thông đường thủy và đường bộ gặp nhau',0)+
+  OP('The ocean makes all life on Earth possible','sai vị trí, thuộc chỗ trống (1)','Đại dương làm cho mọi sự sống trên Trái Đất trở nên khả thi',0)+
+  OP('are the Port of Shanghai in China and the Port of Rotterdam in the Netherlands','sai vị trí, thuộc chỗ trống (4)','là Cảng Thượng Hải ở Trung Quốc và Cảng Rotterdam ở Hà Lan',0),
+  'Câu trước chỗ trống nói về <b>"seafood"</b> (hải sản mà đại dương cung cấp cho con người), và câu ngay sau chỗ trống nhắc đến <b>"fishers"</b> (ngư dân) — vậy câu điền vào cần cung cấp số liệu cụ thể về việc đánh bắt hải sản, làm cầu nối hợp lý giữa hai ý này.',
+  WR('where water and land transportation meet','Câu này định nghĩa cảng biển, không liên quan đến chủ đề hải sản đang được nói tới ở đây.')+
+  WR('The ocean makes all life on Earth possible','Câu này mang ý khái quát, phù hợp làm câu MỞ ĐẦU cả bài (chỗ trống 1), không phù hợp ở giữa đoạn nói về hải sản.')+
+  WR('are the Port of Shanghai in China and the Port of Rotterdam in the Netherlands','Câu này nêu tên cảng biển, hoàn toàn không liên quan đến chủ đề hải sản.'),
+  'It offers human beings a wide range of seafood. Fishers catch more than 90 million tons of seafood each year. Millions of people, from professional fishers to business owners like restaurant owners and boat builders, depend on fisheries for their life.',
+  'Câu điền vào nối liền ý "hải sản" ở câu trước với từ "fishers" (ngư dân) ở câu sau bằng một số liệu cụ thể.')),
+
+Q(3,'where water and land transportation meet',
+ ['Fishers catch more than 90 million tons of seafood each year','where water and land transportation meet','The ocean makes all life on Earth possible','are the Port of Shanghai in China and the Port of Rotterdam in the Netherlands'],
+ E5('where water and land transportation meet','Cảng biển là những khu vực nơi giao thông đường thủy và đường bộ gặp nhau.',
+  OP('Fishers catch more than 90 million tons of seafood each year','sai vị trí, thuộc chỗ trống (2)','Ngư dân đánh bắt hơn 90 triệu tấn hải sản mỗi năm',0)+
+  OP('where water and land transportation meet','đúng vị trí','nơi giao thông đường thủy và đường bộ gặp nhau',1)+
+  OP('The ocean makes all life on Earth possible','sai vị trí, thuộc chỗ trống (1)','Đại dương làm cho mọi sự sống trên Trái Đất trở nên khả thi',0)+
+  OP('are the Port of Shanghai in China and the Port of Rotterdam in the Netherlands','sai vị trí, thuộc chỗ trống (4)','là Cảng Thượng Hải ở Trung Quốc và Cảng Rotterdam ở Hà Lan',0),
+  'Đây là câu định nghĩa cho <b>"Ocean ports"</b> (cảng biển) vừa được nhắc đến ngay trước chỗ trống. Câu tiếp theo nói về việc bốc dỡ hàng hóa ("dockworkers load and unload cargo") — tức có sự chuyển giao giữa tàu (đường thủy) và người trên bờ (đường bộ), khớp với nghĩa "nơi giao thông thủy và bộ gặp nhau".',
+  WR('Fishers catch more than 90 million tons of seafood each year','Câu này nói về đánh bắt hải sản, không liên quan đến chủ đề cảng biển và thương mại đang được nói tới ở đây.')+
+  WR('The ocean makes all life on Earth possible','Câu này mang ý khái quát về sự sống, phù hợp làm câu mở đầu cả bài, không phải câu định nghĩa cảng biển.')+
+  WR('are the Port of Shanghai in China and the Port of Rotterdam in the Netherlands','Câu này nêu tên cảng cụ thể, phù hợp làm vị ngữ cho "The busiest ports" ở chỗ trống (4), không phải câu định nghĩa chung về cảng biển.'),
+  'Ocean ports are areas where water and land transportation meet. It is also the meeting point of people of different professions: businesspeople, dockworkers, and ships\' crews.',
+  'Câu điền vào định nghĩa cảng biển là nơi giao thông thủy và bộ gặp nhau, khớp với ngữ cảnh nói về việc bốc dỡ hàng hóa ngay sau đó.')),
+
+Q(4,'are the Port of Shanghai in China and the Port of Rotterdam in the Netherlands',
+ ['Fishers catch more than 90 million tons of seafood each year','where water and land transportation meet','The ocean makes all life on Earth possible','are the Port of Shanghai in China and the Port of Rotterdam in the Netherlands'],
+ E5('are the Port of Shanghai in China and the Port of Rotterdam in the Netherlands','Những cảng biển nhộn nhịp nhất thế giới là Cảng Thượng Hải ở Trung Quốc và Cảng Rotterdam ở Hà Lan.',
+  OP('Fishers catch more than 90 million tons of seafood each year','sai vị trí, thuộc chỗ trống (2)','Ngư dân đánh bắt hơn 90 triệu tấn hải sản mỗi năm',0)+
+  OP('where water and land transportation meet','sai vị trí, thuộc chỗ trống (3)','nơi giao thông đường thủy và đường bộ gặp nhau',0)+
+  OP('The ocean makes all life on Earth possible','sai vị trí, thuộc chỗ trống (1)','Đại dương làm cho mọi sự sống trên Trái Đất trở nên khả thi',0)+
+  OP('are the Port of Shanghai in China and the Port of Rotterdam in the Netherlands','đúng vị trí','là Cảng Thượng Hải ở Trung Quốc và Cảng Rotterdam ở Hà Lan',1),
+  'Câu trước chỗ trống là <b>"The busiest ports in the world"</b> (những cảng biển nhộn nhịp nhất thế giới) — một chủ ngữ số nhiều cần một vị ngữ nêu tên cụ thể các cảng đó, và chỉ có đáp án này cung cấp tên riêng của hai cảng biển thực tế.',
+  WR('Fishers catch more than 90 million tons of seafood each year','Câu này nói về hải sản, không liên quan đến việc nêu tên các cảng biển.')+
+  WR('where water and land transportation meet','Câu này là định nghĩa chung về cảng biển, không phải câu nêu tên riêng của các cảng cụ thể.')+
+  WR('The ocean makes all life on Earth possible','Câu này mang ý khái quát về sự sống, không liên quan đến việc liệt kê tên các cảng biển nhộn nhịp nhất.'),
+  'The busiest ports in the world are the Port of Shanghai in China and the Port of Rotterdam in the Netherlands.',
+  'Câu điền vào hoàn thành trọn vẹn câu chủ ngữ "The busiest ports in the world" bằng tên hai cảng biển cụ thể.'))
+]);
+
+/* ═════════ PASSAGE C — THE IMPORTANCE OF FORESTS (4 câu chọn câu điền vào) ═════════ */
+pas('C','🌲','THE IMPORTANCE OF FORESTS','Chọn câu đúng (A-D) điền vào mỗi chỗ trống (4 câu)',
+ '<div class="stamp">🌲<b>FOREST</b></div>'+
+ '<div class="bank"><b>HỘP CÂU LỰA CHỌN</b><br>A. have another way to beat the heat<br>B. Forests absorb much of rainwater and slow down its fast flow<br>C. About 300 million people live in forests worldwide<br>D. Forests cover nearly a third of all land on Earth</div>'+
+ T('<p>'+B('C',1)+'. Here are three main reasons why forests are so important.</p>',
+   'Rừng bao phủ gần một phần ba diện tích đất của Trái Đất. Dưới đây là ba lý do chính vì sao rừng lại quan trọng đến vậy.')+
+ T('<p><b>1. They are home to various species, including millions of humans.</b></p>',
+   '1. Rừng là nhà của rất nhiều loài, bao gồm cả hàng triệu con người.')+
+ T('<p>Forests, especially tropical rainforests, provide organic living habitats for nearly half of the world\'s land-based species of animals, plants, and insects. '+B('C',2)+', of whom about 60 million depend almost entirely on native woodlands.</p>',
+   'Rừng, đặc biệt là rừng nhiệt đới, cung cấp môi trường sống tự nhiên cho gần một nửa số loài động vật, thực vật và côn trùng sống trên cạn của thế giới. Khoảng 300 triệu người sống trong các khu rừng trên toàn thế giới, trong số đó khoảng 60 triệu người phụ thuộc gần như hoàn toàn vào rừng bản địa.')+
+ T('<p>Many millions more live along or near forest fringes.</p>',
+   'Hàng triệu người khác nữa sống dọc theo hoặc gần rìa rừng.')+
+ T('<p><b>2. They keep us cool</b></p>',
+   '2. Rừng giúp chúng ta mát mẻ')+
+ T('<p>Trees create vital oases of shade on the ground and help buildings stay cool. This reduces the need for electric fans or air conditioners.</p>',
+   'Cây cối tạo ra những ốc đảo bóng mát thiết yếu trên mặt đất và giúp các tòa nhà luôn mát mẻ. Điều này làm giảm nhu cầu sử dụng quạt điện hay máy điều hòa.')+
+ T('<p>Large forests can regulate temperatures in regions, including cities. Trees and forests also '+B('C',3)+': they remove much of the carbon dioxide from the atmosphere. This helps fight climate change.</p>',
+   'Những khu rừng lớn có thể điều hòa nhiệt độ của cả một vùng, kể cả các thành phố. Cây cối và rừng còn có thêm một cách khác để chống lại cái nóng: chúng loại bỏ phần lớn khí CO2 khỏi bầu khí quyển. Điều này giúp chống lại biến đổi khí hậu.')+
+ T('<p><b>3. They prevent flooding and soil erosion</b></p>',
+   '3. Rừng ngăn ngừa lũ lụt và xói mòn đất')+
+ T('<p>'+B('C',4)+'. This helps prevent soil erosion as well as protect surrounding communities from landslides and floods.</p>',
+   'Rừng hấp thụ phần lớn lượng nước mưa và làm chậm dòng chảy nhanh của nó. Điều này giúp ngăn ngừa xói mòn đất cũng như bảo vệ các cộng đồng dân cư xung quanh khỏi sạt lở đất và lũ lụt.'),
+ W('fringes','/ˈfrɪndʒɪz/','n','rìa, mép (rừng)')+
+ W('oasis (oases)','/əʊˈeɪsɪs/','n','ốc đảo')+
+ W('regulate','/ˈreɡjuleɪt/','v','điều hòa, kiểm soát')+
+ W('erosion','/ɪˈrəʊʒn/','n','sự xói mòn')+
+ W('landslide','/ˈlændslaɪd/','n','sạt lở đất'),
+[
+Q(1,'Forests cover nearly a third of all land on Earth',
+ ['have another way to beat the heat','Forests absorb much of rainwater and slow down its fast flow','About 300 million people live in forests worldwide','Forests cover nearly a third of all land on Earth'],
+ E5('Forests cover nearly a third of all land on Earth','Rừng bao phủ gần một phần ba diện tích đất của Trái Đất.',
+  OP('have another way to beat the heat','sai vị trí, thuộc chỗ trống (3)','có thêm một cách khác để chống lại cái nóng',0)+
+  OP('Forests absorb much of rainwater and slow down its fast flow','sai vị trí, thuộc chỗ trống (4)','Rừng hấp thụ phần lớn lượng nước mưa và làm chậm dòng chảy nhanh của nó',0)+
+  OP('About 300 million people live in forests worldwide','sai vị trí, thuộc chỗ trống (2)','Khoảng 300 triệu người sống trong các khu rừng trên toàn thế giới',0)+
+  OP('Forests cover nearly a third of all land on Earth','đúng vị trí','Rừng bao phủ gần một phần ba diện tích đất của Trái Đất',1),
+  'Đây là câu mở đầu của cả bài, đứng trước <b>"Here are three main reasons why forests are so important"</b> (Dưới đây là ba lý do chính vì sao rừng lại quan trọng đến vậy). Một câu mở bài thường cung cấp thông tin tổng quan, và số liệu về diện tích rừng bao phủ là cách giới thiệu phù hợp trước khi đi vào chi tiết các lý do.',
+  WR('have another way to beat the heat','Câu này thuộc phần nói về việc "giữ mát" (mục 2), không phù hợp làm câu mở đầu chung cho cả bài.')+
+  WR('Forests absorb much of rainwater and slow down its fast flow','Câu này thuộc phần nói về "chống lũ lụt" (mục 3), không phù hợp làm câu mở đầu chung cho cả bài.')+
+  WR('About 300 million people live in forests worldwide','Câu này thuộc phần nói về con người sống trong rừng (mục 1, chỗ trống 2), không phải câu mở đầu tổng quan.'),
+  'Forests cover nearly a third of all land on Earth. Here are three main reasons why forests are so important.',
+  'Câu mở đầu cung cấp số liệu tổng quan về diện tích rừng, dẫn dắt vào phần liệt kê ba lý do tiếp theo.')),
+
+Q(2,'About 300 million people live in forests worldwide',
+ ['have another way to beat the heat','Forests absorb much of rainwater and slow down its fast flow','About 300 million people live in forests worldwide','Forests cover nearly a third of all land on Earth'],
+ E5('About 300 million people live in forests worldwide','Khoảng 300 triệu người sống trong các khu rừng trên toàn thế giới.',
+  OP('have another way to beat the heat','sai vị trí, thuộc chỗ trống (3)','có thêm một cách khác để chống lại cái nóng',0)+
+  OP('Forests absorb much of rainwater and slow down its fast flow','sai vị trí, thuộc chỗ trống (4)','Rừng hấp thụ phần lớn lượng nước mưa và làm chậm dòng chảy nhanh của nó',0)+
+  OP('About 300 million people live in forests worldwide','đúng vị trí','Khoảng 300 triệu người sống trong các khu rừng trên toàn thế giới',1)+
+  OP('Forests cover nearly a third of all land on Earth','sai vị trí, thuộc chỗ trống (1)','Rừng bao phủ gần một phần ba diện tích đất của Trái Đất',0),
+  'Câu ngay sau chỗ trống có mệnh đề quan hệ <b>"of whom about 60 million depend almost entirely on native woodlands"</b> (trong số họ, khoảng 60 triệu người phụ thuộc hoàn toàn vào rừng bản địa) — cụm "of whom" (trong số họ) đòi hỏi phải có một danh từ chỉ người ở câu trước để tham chiếu tới. Chỉ có đáp án nhắc đến "300 million people" (300 triệu người) đáp ứng được yêu cầu này.',
+  WR('have another way to beat the heat','Câu này không có danh từ chỉ NGƯỜI, không thể để "of whom" ở câu sau tham chiếu tới.')+
+  WR('Forests absorb much of rainwater and slow down its fast flow','Câu này nói về rừng hấp thụ nước mưa, không có danh từ chỉ người để "of whom" tham chiếu.')+
+  WR('Forests cover nearly a third of all land on Earth','Câu này nói về diện tích đất, không có danh từ chỉ người để "of whom" tham chiếu.'),
+  'About 300 million people live in forests worldwide, of whom about 60 million depend almost entirely on native woodlands.',
+  'Cụm "of whom" ở câu sau bắt buộc phải tham chiếu tới một danh từ chỉ người, và "300 million people" đáp ứng đúng yêu cầu ngữ pháp này.')),
+
+Q(3,'have another way to beat the heat',
+ ['have another way to beat the heat','Forests absorb much of rainwater and slow down its fast flow','About 300 million people live in forests worldwide','Forests cover nearly a third of all land on Earth'],
+ E5('have another way to beat the heat','Cây cối và rừng còn có thêm một cách khác để chống lại cái nóng.',
+  OP('have another way to beat the heat','đúng vị trí','có thêm một cách khác để chống lại cái nóng',1)+
+  OP('Forests absorb much of rainwater and slow down its fast flow','sai vị trí, thuộc chỗ trống (4)','Rừng hấp thụ phần lớn lượng nước mưa và làm chậm dòng chảy nhanh của nó',0)+
+  OP('About 300 million people live in forests worldwide','sai vị trí, thuộc chỗ trống (2)','Khoảng 300 triệu người sống trong các khu rừng trên toàn thế giới',0)+
+  OP('Forests cover nearly a third of all land on Earth','sai vị trí, thuộc chỗ trống (1)','Rừng bao phủ gần một phần ba diện tích đất của Trái Đất',0),
+  'Đoạn văn này đang bàn về chủ đề <b>"They keep us cool"</b> (Rừng giúp chúng ta mát mẻ). Câu chứa chỗ trống được nối tiếp bằng dấu hai chấm và giải thích: "they remove much of the carbon dioxide from the atmosphere. This helps fight climate change" (rừng loại bỏ CO2, giúp chống biến đổi khí hậu) — đây chính là một cách khác để "chống nóng" bên cạnh việc tạo bóng mát đã nêu trước đó.',
+  WR('Forests absorb much of rainwater and slow down its fast flow','Câu này nói về việc hấp thụ nước mưa, thuộc chủ đề chống lũ lụt (mục 3), không liên quan đến chủ đề "làm mát" đang bàn ở đây.')+
+  WR('About 300 million people live in forests worldwide','Câu này nói về số người sống trong rừng, không liên quan đến chủ đề làm mát.')+
+  WR('Forests cover nearly a third of all land on Earth','Câu này nói về diện tích rừng, không liên quan đến chủ đề làm mát.'),
+  'Trees and forests also have another way to beat the heat: they remove much of the carbon dioxide from the atmosphere.',
+  'Câu điền vào giới thiệu thêm một cách khác (another way) để chống nóng, được giải thích ngay sau dấu hai chấm là việc loại bỏ CO2.')),
+
+Q(4,'Forests absorb much of rainwater and slow down its fast flow',
+ ['have another way to beat the heat','Forests absorb much of rainwater and slow down its fast flow','About 300 million people live in forests worldwide','Forests cover nearly a third of all land on Earth'],
+ E5('Forests absorb much of rainwater and slow down its fast flow','Rừng hấp thụ phần lớn lượng nước mưa và làm chậm dòng chảy nhanh của nó.',
+  OP('have another way to beat the heat','sai vị trí, thuộc chỗ trống (3)','có thêm một cách khác để chống lại cái nóng',0)+
+  OP('Forests absorb much of rainwater and slow down its fast flow','đúng vị trí','Rừng hấp thụ phần lớn lượng nước mưa và làm chậm dòng chảy nhanh của nó',1)+
+  OP('About 300 million people live in forests worldwide','sai vị trí, thuộc chỗ trống (2)','Khoảng 300 triệu người sống trong các khu rừng trên toàn thế giới',0)+
+  OP('Forests cover nearly a third of all land on Earth','sai vị trí, thuộc chỗ trống (1)','Rừng bao phủ gần một phần ba diện tích đất của Trái Đất',0),
+  'Đây là mục số 3 <b>"They prevent flooding and soil erosion"</b> (Rừng ngăn ngừa lũ lụt và xói mòn đất). Câu ngay sau chỗ trống nói <b>"This helps prevent soil erosion as well as protect surrounding communities from landslides and floods"</b> ("This" thay thế cho hành động được nêu trong câu điền vào) — chỉ có đáp án nói về việc hấp thụ nước mưa mới giải thích được lý do vì sao có thể ngăn xói mòn đất.',
+  WR('have another way to beat the heat','Câu này thuộc chủ đề "làm mát" (mục 2), không liên quan đến chủ đề chống lũ lụt và xói mòn đất ở mục 3.')+
+  WR('About 300 million people live in forests worldwide','Câu này nói về số người sống trong rừng, không liên quan đến cơ chế chống xói mòn đất.')+
+  WR('Forests cover nearly a third of all land on Earth','Câu này nói về diện tích rừng, không giải thích được cơ chế chống xói mòn đất mà "This" ở câu sau đang nhắc tới.'),
+  'Forests absorb much of rainwater and slow down its fast flow. This helps prevent soil erosion as well as protect surrounding communities from landslides and floods.',
+  'Câu điền vào giải thích cơ chế rừng hấp thụ nước mưa, làm tiền đề cho câu sau nói về việc ngăn xói mòn đất và sạt lở.'))
+]);
+
+/* ══ DUNG TRANG ══ */
+/* ══ DUNG TRANG ══ */
+/* ══ DUNG TRANG ══ */
+/* ══ DUNG TRANG ══ */
+/* ══ DUNG TRANG ══ */
+var TOTAL=0;P.forEach(function(p){TOTAL+=p.qs.length});
+var answered=0,score=0,done={},MAP={};
+var app=document.getElementById('app');
+P.forEach(function(p,pi){
+ var d=document.createElement('div');d.className='split';
+ var qh='';
+ p.qs.forEach(function(q,qi){
+  var gid=p.id+'_'+q.n;
+  var so=shuffle(q.opts);
+  qh+='<div class="q" id="c_'+gid+'"><div class="qt"><span class="qn">'+q.n+'</span>'+(q.st||'Chọn từ đúng cho chỗ trống ('+q.n+')')+'</div>'+
+   '<div class="og" id="o_'+gid+'">'+so.map(function(o,i){
+     return '<button class="ob" onclick="pick(\''+gid+'\','+pi+','+qi+','+i+')">'+o+'</button>'}).join('')+'</div>'+
+   '<div class="ex" id="e_'+gid+'">'+q.ex+'</div></div>';
+  MAP[gid]=so;
+ });
+ d.innerHTML='<div class="pane"><div class="letter"><div class="edge"></div><div class="bd">'+
+   '<h2>'+p.ic+' '+p.ttl+'</h2><div class="sub">'+p.sub+'</div>'+p.body+
+   '<div class="gl"><h3>📖 BẢNG TỪ VỰNG CẦN NHỚ</h3><table class="gtb"><colgroup><col class="c1"><col class="c2"><col class="c3"><col class="c4"></colgroup>'+p.gloss+'</table></div></div></div></div>'+
+   '<div><div class="sec"><h3>'+p.ic+' '+p.sub+'</h3>'+qh+'</div></div>';
+ app.appendChild(d);
+});
+document.getElementById('tt').textContent=TOTAL;
+
+function pick(gid,pi,qi,i){
+ if(done[gid])return;done[gid]=true;answered++;
+ var q=P[pi].qs[qi],so=MAP[gid],bs=document.getElementById('o_'+gid).children;
+ var ok=so[i]===q.ans;
+ for(var k=0;k<bs.length;k++){bs[k].classList.add('dn');
+  if(so[k]===q.ans)bs[k].classList.add('ok');else if(k===i)bs[k].classList.add('no')}
+ var bl=document.getElementById('bl_'+gid);
+ if(bl){bl.textContent=q.ans==='no article'?'( '+q.n+' ) ∅':'('+q.n+') '+q.ans;bl.classList.add('ok')}
+ document.getElementById('e_'+gid).classList.add('on');
+ if(ok){score++;ding();conf()}
+ else{buzz();var c=document.getElementById('c_'+gid);c.classList.add('shk');setTimeout(function(){c.classList.remove('shk')},430)}
+ bump();
+}
+function bump(){document.getElementById('sc').textContent=score;
+ document.getElementById('fb').style.width=(answered/TOTAL*100)+'%';
+ var p=answered?score/answered:1;
+ document.getElementById('md').textContent=p>=.9?'🤩':p>=.7?'😃':p>=.5?'🙂':'💪'}
+
+/* ══ nop bai ══ */
+function openName(){document.getElementById('ovN').classList.add('on');setTimeout(function(){document.getElementById('nIn').focus()},150)}
+document.getElementById('nIn').addEventListener('keydown',function(e){if(e.key==='Enter')showResult()});
+function showResult(){
+ var i=document.getElementById('nIn'),n=i.value.trim();
+ if(!n){document.getElementById('nEm').classList.add('on');i.focus();return}
+ document.getElementById('nEm').classList.remove('on');
+ document.getElementById('ovN').classList.remove('on');
+ var pct=score/TOTAL,ten=(pct*10).toFixed(2),e,g,m,gif;
+ if(score===TOTAL){e='🏆';g='🌟 XUẤT SẮC TUYỆT ĐỐI, '+n+'!';m='Con đúng trọn vẹn cả '+TOTAL+' câu. Ms rất tự hào về con!';gif='https://media.giphy.com/media/g9582DNuQppxC/giphy.gif'}
+ else if(pct>=.8){e='🎉';g='👏 GIỎI LẮM, '+n+'!';m='Con nắm bài rất chắc. Đọc lại vài câu sai để lần sau trọn điểm nhé!';gif='https://media.giphy.com/media/11sBLVxNs7v6WA/giphy.gif'}
+ else if(pct>=.6){e='🙌';g='💪 KHÁ RỒI ĐẤY, '+n+'!';m='Con đã qua ngưỡng an toàn. Mở phần giải thích từng bước ra đọc, con sẽ lên nhanh lắm.';gif='https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif'}
+ else{e='🤗';g='🌱 CỐ LÊN NHÉ, '+n+'!';m='Đừng buồn con. Con hãy đọc kỹ lời giải, chép cấu trúc vào vở rồi làm lại — Ms tin con sẽ khác hẳn.';gif='https://media.giphy.com/media/l4pTsNgkyKQPzsxRm/giphy.gif'}
+ document.getElementById('rEmo').textContent=e;
+ document.getElementById('rGr').textContent=g;
+ document.getElementById('rMs').textContent=m+' ☎️ Đăng ký khoá học cùng MS Chí Nên: 0852639652.';
+ document.getElementById('rGif').src=gif;
+ document.getElementById('rSc').textContent=score;
+ document.getElementById('rTt').textContent=TOTAL;
+ document.getElementById('r10').textContent=ten;
+ document.getElementById('ovR').classList.add('on');
+ if(pct>=.6){conf();ding()}
+}
+
+/* ══ loi nhac cua Ms — tu doi 4.2 giay ══ */
+var MSNH=[
+ '🌅 Bài hôm nay có hai dạng khác nhau: đọc hiểu trọn bài (Earth Hour) và chọn câu điền vào chỗ trống (Ocean, Forests) — mỗi dạng cần một chiến lược đọc khác nhau.',
+ '💡 Với dạng "chọn câu điền vào chỗ trống", con hãy đọc kỹ câu NGAY TRƯỚC và NGAY SAU chỗ trống — đáp án đúng luôn phải nối liền mạch ý với cả hai câu đó.',
+ '🌊 Hộp câu lựa chọn (A-D) chỉ dùng được MỘT LẦN cho MỖI câu — nếu con đã chọn một câu cho chỗ trống này, các chỗ trống khác sẽ cần câu khác.',
+ '🌲 Mỗi đoạn văn đều có nút mở bản dịch riêng. Con hãy thử đọc và đoán nghĩa trước, rồi mới mở bản dịch ra đối chiếu.',
+ '🍁 Phần giải thích 5 bước của cô luôn nói rõ vì sao một câu KHÔNG phù hợp ở vị trí này — con hãy đọc kỹ để tránh nhầm giữa các câu lựa chọn với nhau.',
+ '⭐ Bảng từ vựng học thuật cuối mỗi bài rất hữu ích. Con hãy dành ít phút đọc to và ghi vào vở của mình.',
+ '🔥 Với câu hỏi từ vựng (từ đồng nghĩa, trái nghĩa), con hãy tìm đúng câu chứa từ đó trong bài rồi suy luận từ ngữ cảnh, đừng chỉ dựa vào cảm tính.',
+ '💌 Nếu phân vân, hãy đọc lại toàn bộ đoạn văn chứa chỗ trống một lần nữa — câu trả lời luôn có manh mối rõ ràng trong bài.',
+ '🌍 Ba bài đọc hôm nay đều nói về những nỗ lực bảo vệ hành tinh của con người. Cô mong con vừa giỏi tiếng Anh, vừa có ý thức bảo vệ môi trường.',
+ '🎓 Con đang làm rất tốt. Cứ bình tĩnh đọc từng câu một, cô tin con sẽ hoàn thành bài thật xuất sắc.'
+];
+(function(){var e=document.getElementById('msTx'),k=0;e.innerHTML=MSNH[0];
+ setInterval(function(){k=(k+1)%MSNH.length;e.style.opacity=0;
+  setTimeout(function(){e.innerHTML=MSNH[k];e.style.opacity=1},250)},4200)})();
+</script>
+<script>/*devclean*/(function(){
+var ZW=/[\u00AD\u034F\u061C\u115F\u1160\u17B4\u17B5\u180E\u200B-\u200F\u202A-\u202E\u2060-\u206F\uFEFF]/g,
+    SP=/[\u00A0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\t]/g,
+    AP=/[\u2018\u2019\u201A\u201B\u2032\u2035\u02B9\u02BB\u02BC\u02BD\u02C8\u0060\u00B4\uFF07]/g,
+    DQ=/[\u201C\u201D\u201E\u201F\u2033\u2036\u00AB\u00BB\uFF02]/g,
+    DS=/[\u2010\u2011\u2012\u2212\uFE63\uFF0D]/g;
+function clean(v){if(!v)return v;var s=String(v);try{s=s.normalize('NFKC')}catch(e){}
+  return s.replace(ZW,'').replace(SP,' ').replace(AP,"'").replace(DQ,'"').replace(DS,'-').replace(/[\u0300-\u036f]/g,'').replace(/ {2,}/g,' ');}
+window.__devclean=clean;
+function fix(skip){var L=document.querySelectorAll('input:not([type]),input[type=text],input[type=search],textarea');
+  for(var i=0;i<L.length;i++){var el=L[i];if(el===skip||el.readOnly||el.disabled)continue;var v=el.value,c=clean(v);if(c!==v)el.value=c;}}
+['pointerdown','mousedown','touchstart','click','change','focusout'].forEach(function(t){document.addEventListener(t,function(e){fix(t==='focusout'||t==='change'?null:e.target)},true)});
+document.addEventListener('keydown',function(e){if(e.key==='Enter'||e.keyCode===13)fix(null)},true);
+})();</script>
+<style id="ms-chi-nen-unlock-style">
+#passwordModal, #password-modal, #pwModal, #pw-modal, #pw-overlay,
+#lockModal, #passModal, #authModal, #auth-modal, #lockOverlay,
+#start-overlay, #intro-overlay, #start-screen,
+.password-modal, .lock-modal, .lock-overlay {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    z-index: -9999 !important;
+}
+</style>
+<script>
+// Remove password lock completely - direct quiz access
+(function() {
+    var initDone = false;
+    var renderCheckDone = false;
+
+    function hideEl(el, hard) {
+        if (!el) return;
+        if (hard) {
+            el.style.setProperty('display', 'none', 'important');
+            el.style.setProperty('visibility', 'hidden', 'important');
+            el.style.setProperty('opacity', '0', 'important');
+            el.style.setProperty('pointer-events', 'none', 'important');
+            el.style.setProperty('z-index', '-9999', 'important');
+        } else {
+            el.style.display = 'none';
+        }
+        el.classList.remove('active', 'show', 'open', 'visible', 'flex');
+    }
+
+    function hasRenderedQuiz() {
+        var containers = document.querySelectorAll(
+            '#quiz-container, #quizContainer, #questions-container, #questionPane, #quiz, #questions, #quiz-body, #questions-wrapper, #quiz-list, #quizList, #exercise-container, #app-container .split-container'
+        );
+        for (var i = 0; i < containers.length; i++) {
+            if (containers[i].querySelectorAll('button, input, select, textarea, .question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .question, .option-btn, .opt-btn, .ans-btn').length > 0) {
+                return true;
+            }
+        }
+        if (document.querySelectorAll('.question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .option-btn, .opt-btn, .ans-btn, .choice-btn').length > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    function ensureQuizRendered() {
+        if (renderCheckDone) return;
+        renderCheckDone = true;
+        if (hasRenderedQuiz()) return;
+
+        if (!hasRenderedQuiz() && typeof buildQuiz === 'function') { try { buildQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof initQuiz === 'function') { try { initQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderApp === 'function') { try { renderApp(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuiz === 'function') { try { renderQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuestions === 'function') { try { renderQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAllQuestions === 'function') { try { renderAllQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAll === 'function') { try { renderAll(); } catch(e){} }
+    }
+
+    function unlockNow() {
+        var pwIds = [
+            'passwordModal', 'password-modal', 'pwModal', 'pw-modal', 'pw-overlay',
+            'lockModal', 'passModal', 'authModal', 'auth-modal', 'lockOverlay',
+            'start-overlay', 'intro-overlay', 'start-screen'
+        ];
+        pwIds.forEach(function(id) {
+            hideEl(document.getElementById(id), true);
+        });
+
+        var modalEls = document.querySelectorAll('.password-modal, .lock-modal, .lock-overlay, #lockOverlay, #auth-modal');
+        modalEls.forEach(function(el) {
+            if (el.id !== 'resultModal' && el.id !== 'result-modal' && el.id !== 'scoreModal') {
+                hideEl(el, true);
+            }
+        });
+
+        ['nameModal', 'name-modal', 'nameInputModal'].forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) hideEl(el, false);
+        });
+
+        var qo = document.getElementById('quiz-overlay');
+        if (qo && (typeof isStarted === 'undefined' || !isStarted)) {
+            qo.style.display = 'none';
+        }
+
+        var mainIds = [
+            'mainContent', 'main-content', 'mainHeader', 'main-header',
+            'app-container', 'app', 'quizApp', 'quiz-wrapper', 'quizContainer', 'quiz-container', 'reading-content'
+        ];
+        mainIds.forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) {
+                el.classList.remove('hidden', 'blur', 'blurred', 'locked');
+                if (el.style.display === 'none') {
+                    el.style.removeProperty('display');
+                }
+                if (window.getComputedStyle(el).display === 'none') {
+                    var hasPane = el.querySelector('.pane, .left-pane, .right-pane, .split-container, .left-panel, .right-panel');
+                    if (id === 'main-content' || id.toLowerCase().includes('header') || el.classList.contains('main-container') || hasPane) {
+                        el.style.setProperty('display', 'flex', 'important');
+                    } else {
+                        el.style.setProperty('display', 'block', 'important');
+                    }
+                }
+            }
+        });
+
+        var qs = document.getElementById('quiz-screen');
+        if (qs) {
+            qs.classList.remove('hidden');
+            if (qs.classList.contains('flex-col')) {
+                qs.classList.add('flex');
+                qs.style.display = 'flex';
+            } else {
+                qs.style.display = 'block';
+            }
+        }
+
+        if (!initDone) {
+            initDone = true;
+
+            if (document.getElementById('start-overlay') && typeof startGame === 'function') {
+                var sn = document.getElementById('student-name') || document.getElementById('studentName');
+                if (sn && !sn.value.trim()) sn.value = 'Học sinh';
+            }
+            if (document.getElementById('name-modal') && typeof startQuiz === 'function') {
+                var sn2 = document.getElementById('student-name');
+                if (sn2 && !sn2.value.trim()) sn2.value = 'Học sinh';
+            }
+
+            if (typeof startQuiz === 'function' && (typeof isStarted === 'undefined' || !isStarted)) { try { startQuiz(); } catch(e){} }
+            if (typeof startGame === 'function') { try { startGame(); } catch(e){} }
+            if (typeof startTest === 'function') { try { startTest(); } catch(e){} }
+            if (typeof startApp === 'function') { try { startApp(); } catch(e){} }
+            if (typeof buildStarfield === 'function') { try { buildStarfield(); } catch(e){} }
+            if (typeof spawnFloats === 'function') { try { spawnFloats(); } catch(e){} }
+            if (typeof spawnFloaters === 'function') { try { spawnFloaters(); } catch(e){} }
+            if (typeof createFloatingBubbles === 'function') { try { createFloatingBubbles(); } catch(e){} }
+            if (typeof initAudio === 'function') { try { initAudio(); } catch(e){} }
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', unlockNow);
+    } else {
+        unlockNow();
+    }
+    if (document.readyState === 'complete') {
+        setTimeout(ensureQuizRendered, 150);
+    } else {
+        window.addEventListener('load', function() {
+            setTimeout(unlockNow, 20);
+            setTimeout(ensureQuizRendered, 150);
+            setTimeout(unlockNow, 300);
+            setTimeout(unlockNow, 700);
+        });
+    }
+    setTimeout(unlockNow, 50);
+    setTimeout(unlockNow, 200);
+    setTimeout(unlockNow, 600);
+    setTimeout(unlockNow, 1100);
+})();
+</script>
+</body>
+</html>

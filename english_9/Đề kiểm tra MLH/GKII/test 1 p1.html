@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌏 GIỮA KỲ II · TEST 1 — THE SECOND MIDTERM TESTS | MS Chí Nên</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Comfortaa:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--bg1:#0D0722;--bg2:#1A0D38;--bg3:#0D1A2E;--blossom:#FFB7C5;--blossom2:#FF8FAD;--moon:#FFF5D6;
+  --teal:#1AFFD5;--purple:#C77DFF;--gold:#FFD700;--rose:#FF6B9D;
+  --correct:#4ADE80;--wrong:#F87171;--text:#E8D5F5;--soft:#9B7BC4;--card:rgba(30,10,60,.72)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Nunito',sans-serif;min-height:100vh;color:var(--text);overflow-x:hidden;background:var(--bg1)}
+.sky{position:fixed;inset:0;z-index:0;background:radial-gradient(ellipse 80% 60% at 20% 0%,rgba(80,30,120,.55) 0%,transparent 60%),
+  radial-gradient(ellipse 60% 50% at 80% 10%,rgba(20,40,100,.5) 0%,transparent 60%),
+  radial-gradient(ellipse 100% 60% at 50% 100%,rgba(40,10,80,.4) 0%,transparent 60%),
+  linear-gradient(170deg,#0D0722 0%,#1A0D38 35%,#0F1628 65%,#0D0722 100%);animation:skyBreath 16s ease-in-out infinite alternate}
+@keyframes skyBreath{0%{filter:brightness(1) hue-rotate(0deg)}100%{filter:brightness(1.07) hue-rotate(8deg)}}
+.moon{position:fixed;top:6%;right:8%;width:80px;height:80px;border-radius:50%;z-index:1;pointer-events:none;
+  background:radial-gradient(circle at 35% 35%,#FFFACD,#FFE87C,#FFD700);
+  box-shadow:0 0 40px rgba(255,215,0,.35),0 0 80px rgba(255,215,0,.12);animation:moonGlow 5s ease-in-out infinite alternate}
+@keyframes moonGlow{0%{box-shadow:0 0 40px rgba(255,215,0,.35),0 0 80px rgba(255,215,0,.12)}100%{box-shadow:0 0 60px rgba(255,215,0,.5),0 0 120px rgba(255,215,0,.2)}}
+#star-canvas{position:fixed;inset:0;z-index:1;pointer-events:none}
+#petal-canvas{position:fixed;inset:0;z-index:2;pointer-events:none}
+.lantern{position:fixed;z-index:2;pointer-events:none;width:22px;height:30px;border-radius:40% 40% 35% 35%;
+  box-shadow:0 0 20px currentColor;animation:lanternSway ease-in-out infinite alternate}
+@keyframes lanternSway{0%{transform:rotate(-6deg) translateY(0)}100%{transform:rotate(6deg) translateY(-4px)}}
+.wrapper{position:relative;z-index:10;max-width:920px;margin:0 auto;padding:20px 16px 120px}
+.hdr{text-align:center;padding:22px 24px 18px;margin-bottom:22px;background:rgba(20,5,45,.82);backdrop-filter:blur(20px);
+  border:1px solid rgba(255,183,197,.2);border-radius:26px;position:relative;overflow:hidden;
+  box-shadow:0 0 60px rgba(199,125,255,.07),0 8px 40px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,183,197,.1)}
+.hdr::before{content:'';position:absolute;top:0;left:0;right:0;height:2.5px;background:linear-gradient(90deg,transparent,#FFB7C5,#C77DFF,#1AFFD5,#FFD700,transparent)}
+.hdr-title{font-family:'Comfortaa',sans-serif;font-size:1.3rem;font-weight:700;line-height:1.55;
+  background:linear-gradient(135deg,#FFB7C5,#C77DFF,#1AFFD5,#FFD700,#FFB7C5);background-size:300%;
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 6s linear infinite;letter-spacing:1px;margin-bottom:5px}
+@keyframes shimmer{0%{background-position:0%}100%{background-position:300%}}
+.hdr-sub{font-size:.8rem;color:var(--soft);font-weight:700;letter-spacing:1.2px}
+.teacher-tag{display:inline-block;margin-top:8px;background:rgba(255,183,197,.08);border:1px solid rgba(255,183,197,.25);
+  border-radius:20px;padding:3px 16px;font-size:.73rem;color:#FFCCD8;font-weight:800}
+.score-bar{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap;justify-content:center}
+.sc-chip{background:rgba(20,5,45,.75);border:1px solid rgba(199,125,255,.2);border-radius:14px;padding:8px 20px;text-align:center;font-weight:800;backdrop-filter:blur(10px)}
+.sc-chip .lbl{font-size:.65rem;color:var(--soft);letter-spacing:1px;display:block}
+.sc-chip .val{font-size:1.25rem}
+.sec-hdr{display:flex;align-items:flex-start;gap:14px;margin:30px 0 14px;padding:14px 20px;background:rgba(20,5,45,.78);
+  border-radius:18px;backdrop-filter:blur(12px);position:relative;overflow:hidden}
+.sec-hdr::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;border-radius:3px 0 0 3px;background:var(--purple)}
+.sec-icon{font-size:1.5rem;flex-shrink:0}
+.sec-title{font-family:'Comfortaa',sans-serif;font-size:.98rem;font-weight:700;margin-bottom:3px;color:var(--gold);line-height:1.5}
+.sec-desc{font-size:.82rem;color:var(--soft);font-weight:600;line-height:1.7}
+.theory{background:rgba(20,5,45,.72);border:1px dashed rgba(255,215,0,.4);border-radius:18px;padding:16px 18px;margin-bottom:16px;backdrop-filter:blur(12px)}
+.theory h3{font-family:'Comfortaa',sans-serif;font-size:.98rem;font-weight:700;color:var(--gold);margin-bottom:10px;line-height:1.5}
+.trow{background:rgba(255,255,255,.035);border-left:3px solid var(--blossom);border-radius:0 11px 11px 0;padding:8px 13px;margin-bottom:8px;font-size:.94rem;line-height:1.85;font-weight:600}
+.trow b{color:var(--blossom)}
+.trow .eg{display:inline-block;background:rgba(26,255,213,.09);border:1px solid rgba(26,255,213,.3);border-radius:9px;padding:1px 10px;font-weight:800;color:#8FF5E4;margin:2px 2px 0 0}
+.ttab{width:100%;border-collapse:collapse;margin:8px 0;font-size:.9rem}
+.ttab th{background:rgba(199,125,255,.25);color:#EBD9FF;padding:6px 8px;border:1px solid rgba(199,125,255,.3);font-weight:800;font-size:.82rem}
+.ttab td{background:rgba(0,0,0,.3);padding:6px 8px;border:1px solid rgba(199,125,255,.18);font-weight:700;line-height:1.65}
+.ttab td b{color:var(--teal)}
+.ttab td s{color:#FCA5A5}
+.ttip{background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.35);border-radius:12px;padding:9px 13px;font-size:.92rem;font-weight:700;line-height:1.85;color:#A7F3D0}
+.twarn{background:rgba(248,113,113,.07);border:1px solid rgba(248,113,113,.35);border-radius:12px;padding:9px 13px;font-size:.92rem;font-weight:700;line-height:1.85;color:#FCA5A5;margin-top:8px}
+.twarn s{color:#FCA5A5}
+.textbox{background:rgba(0,0,0,.34);border:1px solid rgba(255,183,197,.25);border-left:4px solid var(--blossom);
+  border-radius:0 16px 16px 0;padding:14px 18px;margin-bottom:16px;font-size:1rem;line-height:2.1;font-weight:600;color:#DCC9F0}
+.textbox .ttl{display:block;font-family:'Comfortaa',sans-serif;font-size:1.06rem;color:var(--gold);margin-bottom:8px;letter-spacing:1px}
+.textbox .bk{display:inline-block;background:rgba(255,215,0,.13);border:1.5px dashed rgba(255,215,0,.5);border-radius:8px;padding:0 10px;font-weight:900;color:var(--gold)}
+.textbox .ex0{display:inline-block;background:rgba(74,222,128,.14);border:1.5px solid rgba(74,222,128,.5);border-radius:8px;padding:0 10px;font-weight:900;color:#A7F3D0}
+.mtns{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+@media(max-width:520px){.mtns{grid-template-columns:1fr}}
+.mtn{background:rgba(0,0,0,.32);border:1px solid rgba(26,255,213,.28);border-radius:14px;padding:12px;text-align:center}
+.mtn .pic{font-size:2.6rem;line-height:1.2}
+.mtn .nm{font-family:'Comfortaa',sans-serif;color:var(--teal);font-weight:700;margin-top:4px}
+.mtn .ft{font-size:.85rem;color:var(--soft);font-weight:700;line-height:1.6;margin-top:4px}
+.wbox{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;background:rgba(0,0,0,.32);border:2px dashed rgba(255,183,197,.42);
+  border-radius:16px;padding:13px;margin-bottom:14px}
+.wbox span{background:rgba(255,183,197,.08);border:1.5px solid rgba(255,183,197,.4);border-radius:11px;padding:5px 14px;font-weight:800;color:#FFCCD8;font-size:.97rem}
+.wbox span.used{opacity:.28;text-decoration:line-through;border-color:rgba(255,255,255,.14);color:#8878a0}
+.wblbl{text-align:center;font-size:.83rem;color:var(--soft);font-weight:800;margin-bottom:7px}
+.q-card{background:var(--card);backdrop-filter:blur(16px);border:1px solid rgba(255,183,197,.1);border-radius:20px;
+  padding:19px 19px 15px;margin-bottom:14px;box-shadow:0 4px 24px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.04)}
+.q-num{font-size:.64rem;font-weight:900;letter-spacing:2px;margin-bottom:9px;color:var(--purple)}
+.q-text{font-size:1.04rem;font-weight:700;line-height:1.85;color:var(--text);margin-bottom:12px}
+.q-text b{color:var(--gold)}
+.q-text i{color:var(--soft)}
+.q-text .gap{display:inline-block;min-width:98px;border-bottom:2px dashed var(--teal)}
+.q-text .cue{display:inline-block;background:rgba(199,125,255,.2);border:1px solid rgba(199,125,255,.45);border-radius:9px;
+  padding:0 11px;font-weight:900;color:#E4CCFF;font-size:.93rem}
+.pair{background:rgba(0,0,0,.3);border-left:4px solid var(--teal);border-radius:0 12px 12px 0;padding:9px 14px;margin-bottom:9px;
+  font-size:1.02rem;font-weight:800;line-height:1.7;color:#8FF5E4}
+.mcq-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:6px}
+.mcq-grid.c1{grid-template-columns:1fr}
+.mcq-grid.c2{grid-template-columns:1fr 1fr}
+@media(max-width:620px){.mcq-grid,.mcq-grid.c2{grid-template-columns:1fr}}
+.mcq-btn{background:rgba(40,10,80,.7);border:1.5px solid rgba(199,125,255,.18);border-radius:14px;padding:11px 14px;
+  font-family:'Nunito',sans-serif;font-size:.95rem;font-weight:700;color:var(--text);cursor:pointer;text-align:center;transition:all .22s;line-height:1.6}
+.mcq-btn:hover:not(:disabled){border-color:rgba(199,125,255,.5);background:rgba(60,15,110,.8);transform:translateY(-2px);box-shadow:0 5px 20px rgba(199,125,255,.15)}
+.mcq-btn.ok{border-color:var(--correct);background:rgba(5,40,20,.8);color:#A7F3D0}
+.mcq-btn.no{border-color:var(--wrong);background:rgba(40,5,10,.8);color:#FCA5A5;animation:shk .4s}
+.mcq-btn.dim{opacity:.28;cursor:default}
+.mcq-btn:disabled{cursor:default}
+@keyframes shk{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.action-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:10px}
+.tinp{flex:1;min-width:180px;background:rgba(30,10,60,.6);border:1.5px dashed rgba(26,255,213,.5);border-radius:11px;
+  color:var(--teal);font-family:'Nunito',sans-serif;font-size:1.02rem;font-weight:800;padding:10px 14px;outline:none;transition:all .2s}
+.tinp::placeholder{color:rgba(26,255,213,.3);font-size:.9rem;font-weight:600}
+.tinp:focus{border-style:solid;border-color:var(--teal);box-shadow:0 0 12px rgba(26,255,213,.25)}
+.tinp.ok{border-style:solid;border-color:var(--correct);color:#A7F3D0;background:rgba(5,40,20,.8)}
+.tinp.no{border-style:solid;border-color:var(--wrong);color:#FCA5A5;background:rgba(40,5,10,.8)}
+.tinp:disabled{opacity:.9;cursor:default}
+.btn-check{background:rgba(255,183,197,.1);border:1.5px solid rgba(255,183,197,.3);border-radius:50px;padding:10px 22px;color:#FFCCD8;
+  font-family:'Nunito',sans-serif;font-size:.9rem;font-weight:800;cursor:pointer;transition:all .2s;white-space:nowrap}
+.btn-check:hover:not(:disabled){background:rgba(255,183,197,.18);transform:translateY(-2px)}
+.btn-check:disabled{opacity:.35;cursor:default;transform:none}
+.hintb{font-size:.85rem;color:#FDE68A;font-weight:700;background:rgba(255,215,0,.06);border:1px dashed rgba(255,215,0,.35);
+  border-radius:11px;padding:7px 12px;margin-top:9px;line-height:1.7}
+.exp-wrap{max-height:0;overflow:hidden;opacity:0;transition:max-height .55s ease,opacity .4s}
+.exp-wrap.open{max-height:2000px;opacity:1}
+.exp-box{margin-top:12px;background:rgba(8,3,25,.9);border:1px solid rgba(255,183,197,.12);border-radius:16px;padding:16px 18px;
+  font-size:.95rem;line-height:1.85;color:#C8B8E8;box-shadow:0 4px 24px rgba(0,0,0,.45)}
+.key-box{background:rgba(74,222,128,.07);border:1px solid rgba(74,222,128,.25);border-radius:12px;padding:10px 14px;margin-bottom:10px;font-weight:800;color:#A7F3D0;line-height:1.7}
+.vn-box{background:rgba(255,215,0,.06);border-left:3px solid rgba(255,215,0,.5);border-radius:0 10px 10px 0;padding:8px 13px;margin:8px 0;font-weight:700;color:#FDE68A;font-size:.94rem;line-height:1.75}
+.stepb{background:rgba(26,255,213,.04);border:1px solid rgba(26,255,213,.12);border-radius:11px;padding:8px 13px;margin-bottom:8px;line-height:1.85}
+.stepb b{color:var(--teal)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:7px 0}
+@media(max-width:600px){.grid2{grid-template-columns:1fr}}
+.grid2>div{background:rgba(0,0,0,.32);border:1px solid rgba(199,125,255,.14);border-radius:9px;padding:7px 10px;font-size:.92rem;line-height:1.7;font-weight:700}
+.pw{color:#7DD3FC;font-weight:800}
+.pm{color:#FCD34D;font-weight:700}
+.hg{color:#4ADE80;font-weight:900}
+.hr{color:#F87171;font-weight:700}
+.pt{background:rgba(26,255,213,.1);border:1px solid rgba(26,255,213,.18);border-radius:4px;padding:1px 5px;font-size:.74rem;color:#5EEAD4;font-style:italic;margin-right:3px}
+/* KHÔNG dùng gạch chân đỏ */
+.pg{background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.28);border-radius:8px;padding:2px 8px;font-weight:700;color:#FDE68A;line-height:2.1;display:inline-block}
+.submit-wrap{text-align:center;padding:34px 0 12px}
+.submit-btn{background:linear-gradient(135deg,#FF6B9D,#C77DFF,#1AFFD5);border:none;border-radius:50px;padding:16px 46px;
+  font-family:'Comfortaa',sans-serif;font-size:1.02rem;font-weight:700;color:#fff;cursor:pointer;letter-spacing:1px;
+  box-shadow:0 8px 32px rgba(199,125,255,.3),0 4px 0 rgba(50,0,80,.3);transition:all .25s}
+.submit-btn:hover{transform:translateY(-4px) scale(1.03)}
+.modal-ov{position:fixed;inset:0;background:rgba(10,0,30,.85);backdrop-filter:blur(10px);z-index:1000;display:none;align-items:center;justify-content:center;padding:18px;overflow-y:auto}
+.modal-ov.active{display:flex}
+.modal-box{background:linear-gradient(135deg,rgba(20,5,50,.98),rgba(10,3,30,.98));border:1px solid rgba(255,183,197,.2);
+  border-radius:28px;padding:34px 28px;max-width:470px;width:100%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.7),0 0 80px rgba(199,125,255,.08)}
+.modal-title{font-family:'Comfortaa',sans-serif;font-size:1.2rem;color:#FFB7C5;margin-bottom:14px;line-height:1.5}
+.modal-inp{width:100%;background:rgba(30,10,60,.8);border:2px solid rgba(255,183,197,.25);border-radius:14px;padding:12px 16px;
+  color:var(--text);font-family:'Nunito',sans-serif;font-size:1rem;font-weight:700;outline:none;margin-bottom:8px;text-align:center}
+.modal-inp.err{border-color:var(--wrong)}
+.modal-err{color:var(--wrong);font-size:.84rem;margin-bottom:12px;min-height:20px;font-weight:700}
+.modal-btn{background:linear-gradient(135deg,#FF6B9D,#C77DFF);border:none;border-radius:50px;padding:12px 34px;
+  font-family:'Nunito',sans-serif;font-size:1rem;font-weight:800;color:#fff;cursor:pointer;box-shadow:0 6px 22px rgba(199,125,255,.35);transition:all .2s;margin-top:8px}
+.modal-btn:hover{transform:scale(1.04)}
+.r-name{font-family:'Comfortaa',sans-serif;font-size:1.15rem;color:#FFB7C5;margin-bottom:8px;line-height:1.5}
+.r-score{font-size:2.8rem;font-weight:900;color:var(--purple);margin:10px 0 4px;font-family:'Comfortaa',sans-serif}
+.r-pts{font-size:1.2rem;color:var(--teal);font-weight:800;margin-bottom:10px}
+.r-note{font-size:.87rem;color:var(--soft);margin-bottom:14px;line-height:1.6}
+.r-img{width:190px;border-radius:16px;margin:10px auto;display:block;box-shadow:0 8px 32px rgba(0,0,0,.5)}
+.retry-btn{background:linear-gradient(135deg,#1AFFD5,#C77DFF);border:none;border-radius:50px;padding:11px 28px;
+  font-family:'Nunito',sans-serif;font-size:.94rem;font-weight:800;color:#fff;cursor:pointer;margin-top:12px}
+#cnf{position:fixed;inset:0;pointer-events:none;z-index:9999}
+/* ══ khối giải thích 4 bước + khung gợi ý ══ */
+.ops5{display:grid;gap:7px;margin:6px 0 2px}
+.o5{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:9px;
+  padding:7px 11px;line-height:1.7;font-weight:700}
+.o5.rt{background:rgba(74,222,128,.16);border-color:#4ADE80}
+.cuebox{background:rgba(255,255,255,.06);border-left:5px solid #C77DFF;border-radius:0 10px 10px 0;
+  padding:9px 13px;margin-top:9px;font-weight:700;line-height:1.9}
+.cuebox b{color:#FFD700}
+</style>
+</head>
+<body>
+<div class="sky"></div><div class="moon"></div>
+<canvas id="star-canvas"></canvas>
+<canvas id="petal-canvas"></canvas>
+<canvas id="cnf"></canvas>
+
+<div class="wrapper">
+  <div class="hdr">
+    <div class="hdr-title">🌏 THE SECOND MIDTERM TESTS<br>TEST 1 — Tiếng Anh 9 · Giữa kỳ II</div>
+    <div class="hdr-sub">24 CÂU · PHẦN I → III + VI + VIII → IX &nbsp;·&nbsp; (đã bỏ phần IV, V, VII đọc hiểu &amp; điền từ vào đoạn văn)</div>
+    <div class="teacher-tag">🌸 Giáo viên tạo: MS Chí Nên</div>
+  </div>
+  <div class="score-bar">
+    <div class="sc-chip"><span class="lbl">ĐÚNG</span><span class="val" id="scN">0</span></div>
+    <div class="sc-chip"><span class="lbl">ĐÃ LÀM</span><span class="val" id="anN">0</span></div>
+    <div class="sc-chip"><span class="lbl">TỔNG</span><span class="val" id="tlN">0</span></div>
+  </div>
+  <div id="quiz"></div>
+  <div class="submit-wrap"><button class="submit-btn" onclick="openName()">🎯 NỘP BÀI &amp; XEM KẾT QUẢ</button></div>
+</div>
+
+<div class="modal-ov" id="nameOv"><div class="modal-box">
+  <div class="modal-title">✍️ Con tên là gì nhỉ?</div>
+  <input class="modal-inp" id="nameIn" placeholder="Ví dụ: Nguyễn Văn A..." maxlength="50" onkeydown="if(event.key==='Enter')showResult()">
+  <div class="modal-err" id="nameErr"></div>
+  <button class="modal-btn" onclick="showResult()">🚀 Xem kết quả!</button>
+</div></div>
+<div class="modal-ov" id="resOv"><div class="modal-box">
+  <div class="r-name" id="rGreet"></div>
+  <div class="r-score" id="rScore"></div>
+  <div class="r-pts" id="rTen"></div>
+  <img class="r-img" id="rImg" alt="">
+  <div class="r-note" id="rMsg"></div>
+  <button class="retry-btn" onclick="location.reload()">🔄 Làm lại từ đầu</button>
+</div></div>
+
+<script>
+/* ══ ĐÈN LỒNG ══ */
+[{top:'12%',left:'3%',color:'#FF6B9D',dur:3.2},{top:'22%',right:'4%',color:'#FFD700',dur:4.1},
+ {top:'35%',left:'1.5%',color:'#C77DFF',dur:3.7},{top:'55%',right:'2%',color:'#1AFFD5',dur:5},
+ {top:'70%',left:'2.5%',color:'#FF8FAD',dur:4.5}].forEach(d=>{
+  const el=document.createElement('div');el.className='lantern';
+  el.style.cssText='top:'+d.top+';'+(d.left?'left:'+d.left:'')+';'+(d.right?'right:'+d.right:'')+
+    ';color:'+d.color+';background:'+d.color+'22;animation-duration:'+d.dur+'s;';
+  document.body.appendChild(el)});
+/* ══ SAO & CÁNH HOA ══ */
+(function(){
+  const sc=document.getElementById('star-canvas'),sx=sc.getContext('2d');
+  const pc=document.getElementById('petal-canvas'),px=pc.getContext('2d');
+  let W,H;function rs(){W=sc.width=pc.width=innerWidth;H=sc.height=pc.height=innerHeight}
+  addEventListener('resize',rs);rs();
+  const stars=Array.from({length:130},()=>({x:Math.random(),y:Math.random(),r:Math.random()*1.5+.4,ph:Math.random()*6.3,sp:Math.random()*.024+.006}));
+  const pet=Array.from({length:22},()=>({x:Math.random()*innerWidth,y:Math.random()*-innerHeight,
+    s:Math.random()*7+5,sp:Math.random()*.9+.35,dx:Math.random()*.7-.35,r:Math.random()*6.3,dr:(Math.random()-.5)*.04}));
+  (function loop(){
+    sx.clearRect(0,0,W,H);
+    stars.forEach(s=>{s.ph+=s.sp;sx.fillStyle='rgba(255,245,214,'+(.25+.75*Math.abs(Math.sin(s.ph)))+')';
+      sx.beginPath();sx.arc(s.x*W,s.y*H,s.r,0,6.3);sx.fill()});
+    px.clearRect(0,0,W,H);
+    pet.forEach(p=>{p.y+=p.sp;p.x+=p.dx;p.r+=p.dr;
+      if(p.y>H+20){p.y=-20;p.x=Math.random()*W}
+      px.save();px.translate(p.x,p.y);px.rotate(p.r);px.fillStyle='rgba(255,183,197,.55)';
+      px.beginPath();px.ellipse(0,0,p.s,p.s*.6,0,0,6.3);px.fill();px.restore()});
+    requestAnimationFrame(loop)})();
+})();
+/* ══ ÂM THANH — Web Audio API tự sinh ══ */
+let AC;
+function ac(){if(!AC)AC=new (window.AudioContext||window.webkitAudioContext)();if(AC.state==='suspended')AC.resume();return AC}
+function ding(){try{const c=ac(),n=c.currentTime;[523,659,784,1047].forEach((f,i)=>{const o=c.createOscillator(),g=c.createGain();
+  o.type='sine';o.frequency.value=f;o.connect(g);g.connect(c.destination);const t=n+i*.09;
+  g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.19,t+.03);g.gain.exponentialRampToValueAtTime(.001,t+.42);
+  o.start(t);o.stop(t+.45)})}catch(e){}}
+function buzz(){try{const c=ac(),n=c.currentTime;[300,235,180].forEach((f,i)=>{const o=c.createOscillator(),g=c.createGain();
+  o.type='square';o.frequency.value=f;o.connect(g);g.connect(c.destination);const t=n+i*.12;
+  g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.11,t+.02);g.gain.exponentialRampToValueAtTime(.001,t+.17);
+  o.start(t);o.stop(t+.19)})}catch(e){}}
+document.addEventListener('click',()=>{try{ac()}catch(e){}},{once:true});
+function confetti(){const c=document.getElementById('cnf'),x=c.getContext('2d');
+  c.width=innerWidth;c.height=innerHeight;
+  const cols=['#FFB7C5','#C77DFF','#1AFFD5','#FFD700','#FF6B9D','#4ADE80'];
+  const ps=Array.from({length:56},()=>({x:Math.random()*c.width,y:-20,w:Math.random()*8+4,h:Math.random()*6+4,
+    col:cols[Math.floor(Math.random()*cols.length)],r:Math.random()*6.3,dr:(Math.random()-.5)*.2,
+    dx:(Math.random()-.5)*4,dy:Math.random()*4+2,a:1}));
+  let fr=0;(function loop(){x.clearRect(0,0,c.width,c.height);
+    ps.forEach(p=>{x.save();x.globalAlpha=Math.max(p.a,0);x.translate(p.x,p.y);x.rotate(p.r);x.fillStyle=p.col;
+      x.fillRect(-p.w/2,-p.h/2,p.w,p.h);x.restore();p.x+=p.dx;p.y+=p.dy;p.r+=p.dr;p.a-=.01});
+    if(fr++<120)requestAnimationFrame(loop);else x.clearRect(0,0,c.width,c.height)})()}
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function norm(s){return (s||'').toLowerCase().replace(/[’'`´]/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim()}
+/* ══ CHẤM LINH HOẠT: không phân biệt hoa/thường, dấu chấm, dấu phẩy;
+   nhận cả khi con chỉ gõ cụm đáp án LẪN khi con gõ trọn cả câu ══ */
+function esc(s){return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}
+function okAns(accept,v){
+  const A=(accept||[]).map(norm).filter(Boolean);
+  if(A.indexOf(v)>-1)return true;
+  if(/\b(more|most)\s+\w+(er|est)\b/.test(v))return false;   /* so sánh kép: more bigger ➔ vẫn sai */
+  return A.some(a=>new RegExp('(^|\\s)'+esc(a)+'(\\s|$)').test(v));
+}
+</script>
+
+<script>
+/* ══════════════════ DỮ LIỆU ══════════════════ */
+const Q=[];
+function mcq(sec,num,q,correct,opts,ex,cols){Q.push({t:'mcq',sec,num,q,correct,opts,ex,cols:cols||3})}
+function m2(sec,num,q,c,o,ex){mcq(sec,num,q,c,o,ex,2)}
+function fil(sec,num,q,correct,accept,ex,ph,hint,bw){Q.push({t:'fill',sec,num,q,correct,accept,ex,ph:ph||'Gõ đáp án...',hint:hint||'',bw:bw||''})}
+function C(w,ty,m){return "<div><span class='pw'>"+w+"</span> <span class='pt'>"+ty+"</span> = <span class='pm'>"+m+"</span></div>"}
+function G(w,ty,m){return "<div><span class='hg'>"+w+"</span> <span class='pt'>"+ty+"</span> = <span class='pm'>"+m+"</span></div>"}
+function EX(key,vn,cells,why,trap){
+ return '<div class="key-box">✅ '+key+'</div>'+
+  '<div class="vn-box">💬 <b>Dịch:</b> '+vn+'</div>'+
+  '<div class="stepb"><b>1️⃣ TỪ VỰNG / QUY TẮC</b><div class="grid2">'+cells+'</div></div>'+
+  '<div class="stepb"><b>2️⃣ TẠI SAO ĐÚNG?</b><br><span class="pg">'+why+'</span></div>'+
+  '<div class="stepb"><b>3️⃣ TẠI SAO SAI / BẪY</b><br><span class="pg">'+trap+'</span></div>'
+}
+const R_ER=G('tính từ NGẮN','rule','1 âm tiết ➔ thêm -er (so sánh hơn) / the …-est (so sánh nhất)');
+const R_MORE=G('tính từ DÀI','rule','từ 2–3 âm tiết ➔ more … than / the most …');
+const R_Y=G('tận cùng -y','rule','đổi y ➔ i rồi thêm -er / -est');
+const R_CVC=G('phụ âm–nguyên âm–phụ âm','rule','GẤP ĐÔI phụ âm cuối rồi thêm -er / -est');
+const R_IRR=G('BẤT QUY TẮC','rule','good–better–best · bad–worse–worst · far–farther/further · little–less–least');
+
+/* ══ GIẢI THÍCH 4 BƯỚC ══ */
+function O(en,vn,ok){return '<div class="o5'+(ok?' rt':'')+'"><span class="'+(ok?'hg':'pw')+'">'+en+'</span> ➔ Dịch: <span class="pm">'+vn+'</span></div>'}
+function EX5(key,de,dich,ops,why,trap){
+ return '<div class="key-box">✅ ĐÁP ÁN: '+key+'</div>'+
+  '<div class="stepb"><b>1️⃣ ĐỀ BÀI</b><br>'+de+'</div>'+
+  '<div class="vn-box">💬 <b>Dịch đề bài:</b> '+dich+'</div>'+
+  '<div class="stepb"><b>2️⃣ CÁC ĐÁP ÁN &amp; NGHĨA</b><div class="ops5">'+ops.join('')+'</div></div>'+
+  '<div class="stepb"><b>3️⃣ TẠI SAO ĐÚNG?</b><br><span class="pg">'+why+'</span></div>'+
+  '<div class="stepb"><b>4️⃣ TẠI SAO SAI / BẪY</b><br><span class="pg">'+trap+'</span></div>'}
+
+/* ═════════ I — NGỮ ÂM ═════════ */
+mcq('A',1,'Chọn từ có phần gạch chân phát âm KHÁC các từ còn lại:','t<u>ou</u>r',
+ ['tr<u>ou</u>ble','c<u>ou</u>ntryside','t<u>ou</u>r','en<u>ou</u>gh'],
+ EX5('tour','trouble – countryside – tour – enough',
+ 'Chọn từ có phần gạch chân được phát âm khác với những từ còn lại.',
+ [O('trouble /ˈtrʌbl/','rắc rối — “ou” đọc /ʌ/'),
+  O('countryside /ˈkʌntrisaɪd/','vùng nông thôn — “ou” đọc /ʌ/'),
+  O('tour /tʊə(r)/','chuyến du lịch — “ou” đọc /ʊə/',1),
+  O('enough /ɪˈnʌf/','đủ — “ou” đọc /ʌ/')],
+ 'Ba từ kia thuộc nhóm “ou” đọc <b>/ʌ/</b> (trouble, country, enough, young, couple). Riêng <b>tour</b> đọc <b>/tʊə(r)/</b> — nguyên âm đôi, giống <b>poor, sure</b>.',
+ 'Đây là nhóm ngoại lệ phải học thuộc: “ou” thường đọc /aʊ/ (house, out) nhưng trong trouble/country/enough lại đọc /ʌ/, còn tour thì /ʊə/. Đừng đoán theo mặt chữ.'));
+mcq('A',2,'Chọn từ có phần gạch chân phát âm KHÁC các từ còn lại:','reduc<u>ed</u>',
+ ['reduc<u>ed</u>','explor<u>ed</u>','encourag<u>ed</u>','detail<u>ed</u>'],
+ EX5('reduced','reduced – explored – encouraged – detailed',
+ 'Chọn từ có đuôi “-ed” được phát âm khác với những từ còn lại.',
+ [O('reduced /rɪˈdjuːst/','đã giảm — “-ed” đọc /t/',1),
+  O('explored /ɪkˈsplɔːd/','đã khám phá — “-ed” đọc /d/'),
+  O('encouraged /ɪnˈkʌrɪdʒd/','đã khuyến khích — “-ed” đọc /d/'),
+  O('detailed /ˈdiːteɪld/','chi tiết — “-ed” đọc /d/')],
+ 'Quy tắc: đuôi <b>-ed đọc /t/</b> khi động từ kết thúc bằng âm VÔ THANH. <b>reduce</b> kết thúc bằng /s/ vô thanh ➔ <b>/t/</b>.',
+ 'Ba từ kia kết thúc bằng âm hữu thanh (/ɔː/, /dʒ/, /l/) nên “-ed” đọc /d/. Nhớ: chỉ kết thúc bằng /t/ hoặc /d/ mới đọc /ɪd/ — ở đây không từ nào như vậy.'));
+
+/* ═════════ II — TRỌNG ÂM ═════════ */
+mcq('B',3,'Chọn từ có trọng âm rơi vào vị trí KHÁC các từ còn lại:','wander',
+ ['exchange','wander','translate','establish'],
+ EX5('wander','exchange – wander – translate – establish',
+ 'Chọn từ có trọng âm rơi vào âm tiết khác so với những từ còn lại.',
+ [O('exchange /ɪksˈtʃeɪndʒ/','trao đổi — nhấn âm tiết 2'),
+  O('wander /ˈwɒndə(r)/','đi lang thang — nhấn âm tiết 1',1),
+  O('translate /trænzˈleɪt/','dịch — nhấn âm tiết 2'),
+  O('establish /ɪˈstæblɪʃ/','thành lập — nhấn âm tiết 2')],
+ '<b>wander</b> nhấn âm tiết ĐẦU; ba từ còn lại đều có âm tiết đầu đọc yếu (/ɪks/, /trænz/, /ɪ/) nên trọng âm dồn về âm tiết thứ hai.',
+ 'Đừng nhầm <b>wander</b> /ˈwɒndə/ (đi lang thang) với <b>wonder</b> /ˈwʌndə/ (tự hỏi) — hai từ khác nghĩa. Cả hai đều nhấn âm tiết đầu.'));
+mcq('B',4,'Chọn từ có trọng âm rơi vào vị trí KHÁC các từ còn lại:','contribution',
+ ['possession','discovery','sustainable','contribution'],
+ EX5('contribution','possession – discovery – sustainable – contribution',
+ 'Chọn từ có trọng âm rơi vào âm tiết khác so với những từ còn lại.',
+ [O('possession /pəˈzeʃn/','sự sở hữu — nhấn âm tiết 2'),
+  O('discovery /dɪˈskʌvəri/','sự khám phá — nhấn âm tiết 2'),
+  O('sustainable /səˈsteɪnəbl/','bền vững — nhấn âm tiết 2'),
+  O('contribution /ˌkɒntrɪˈbjuːʃn/','sự đóng góp — nhấn âm tiết 3',1)],
+ 'Đuôi <b>-tion</b> kéo trọng âm về âm tiết NGAY TRƯỚC nó: con-tri-<b>BU</b>-tion ➔ âm tiết thứ 3.',
+ 'Bẫy ở chỗ <b>possession</b> cũng có đuôi -sion nhưng chỉ có 3 âm tiết (po-SSE-ssion) nên trọng âm rơi vào âm tiết 2. Phải đếm âm tiết trước khi áp quy tắc.'));
+
+/* ═════════ III — TỪ VỰNG & NGỮ PHÁP ═════════ */
+mcq('C',5,'Our travel agency took care <span class="gap"></span> all bookings, including flights and hotels in Japan.','of',
+ ['after','of','for','with'],
+ EX5('of','Our travel agency took care ______ all bookings, including flights and hotels in Japan.',
+ 'Công ty du lịch của chúng tôi lo liệu toàn bộ việc đặt chỗ, bao gồm cả vé máy bay và khách sạn ở Nhật Bản.',
+ [O('after','sau — đi trong cụm “look after” = chăm sóc'),
+  O('of','của — đi trong cụm “take care of” = lo liệu, chăm lo',1),
+  O('for','cho, vì'),
+  O('with','với')],
+ 'Cụm cố định <b>take care OF sth/sb</b> = lo liệu/chăm sóc điều gì, ai. Đây là collocation bắt buộc, không thay giới từ khác được.',
+ '“take care after/for/with” đều KHÔNG tồn tại. Đừng lẫn với <b>look after</b> (cũng nghĩa chăm sóc nhưng dùng “after”) — mỗi động từ đi với một giới từ riêng.'));
+mcq('C',6,'What a shame! I wish I <span class="gap"></span> a chance to attend a Taylor Swift concert.','had',
+ ['had','can have','used to have','have had'],
+ EX5('had','What a shame! I wish I ______ a chance to attend a Taylor Swift concert.',
+ 'Tiếc quá! Ước gì mình có cơ hội đi xem buổi hoà nhạc của Taylor Swift.',
+ [O('had','có — quá khứ đơn, dùng sau “I wish” cho điều KHÔNG có thật ở hiện tại',1),
+  O('can have','có thể có — không dùng sau “wish”'),
+  O('used to have','đã từng có — nói về quá khứ, sai ý'),
+  O('have had','đã có — hiện tại hoàn thành, không dùng sau “wish”')],
+ 'Câu ước KHÔNG CÓ THẬT ở hiện tại: <b>S + wish + S + V(quá khứ đơn)</b> ➔ I wish I <b>had</b> a chance. (Với động từ tobe thì dùng “were” cho mọi ngôi.)',
+ 'Sau “wish” tuyệt đối không dùng <b>can</b> hay thì hiện tại. “used to have” nói về thói quen trong quá khứ nên lệch nghĩa — ở đây người nói đang tiếc vì HIỆN TẠI không có cơ hội.'));
+mcq('C',7,'Tourists often rely on <span class="gap"></span> for directions to popular attractions and landmarks.','Google Maps',
+ ['guided tours','trip itineraries','entrance tickets','Google Maps'],
+ EX5('Google Maps','Tourists often rely on ______ for directions to popular attractions and landmarks.',
+ 'Du khách thường dựa vào Google Maps để tìm đường đến các điểm tham quan và địa danh nổi tiếng.',
+ [O('guided tours','các tour có hướng dẫn viên'),
+  O('trip itineraries','lịch trình chuyến đi'),
+  O('entrance tickets','vé vào cửa'),
+  O('Google Maps','ứng dụng bản đồ Google',1)],
+ 'Từ khoá <b>for directions</b> (để chỉ đường) ➔ thứ giúp tìm ĐƯỜNG ĐI chính là <b>Google Maps</b>. Cụm cố định: <b>rely on sth for sth</b> = dựa vào cái gì để có được gì.',
+ '“trip itineraries” chỉ liệt kê lịch trình theo ngày chứ không dẫn đường; “entrance tickets” là vé vào cửa; “guided tours” là đi theo đoàn — không cái nào cung cấp “directions”.'));
+mcq('C',8,'In my opinion, Da Nang is <span class="gap"></span> choice for a family vacation or a leisure holiday.','the best',
+ ['good','the well','the best','better'],
+ EX5('the best','In my opinion, Da Nang is ______ choice for a family vacation or a leisure holiday.',
+ 'Theo tôi, Đà Nẵng là lựa chọn tốt nhất cho một kỳ nghỉ gia đình hay một kỳ nghỉ dưỡng.',
+ [O('good','tốt — dạng nguyên thể, thiếu mạo từ và không nêu bật ý “nhất”'),
+  O('the well','sai: “well” là trạng từ, không đứng trước danh từ “choice”'),
+  O('the best','tốt nhất — so sánh NHẤT bất quy tắc của good',1),
+  O('better','tốt hơn — so sánh HƠN, cần có “than”')],
+ 'Đưa ra ý kiến chọn một nơi trong nhiều nơi ➔ SO SÁNH NHẤT. <b>good ➔ better ➔ the best</b> (bất quy tắc), luôn có <b>the</b> trước.',
+ '<b>better</b> là so sánh hơn nên bắt buộc phải có “than” theo sau; <b>the well</b> sai từ loại (well là trạng từ); “good choice” thì thiếu mạo từ “a” và mất hẳn ý “nhất”.'));
+mcq('C',9,'<span class="gap"></span> English is often required in formal situations like interviews or presentations.','Standard',
+ ['Bilingual','Borrowed','Standard','Foreign'],
+ EX5('Standard','______ English is often required in formal situations like interviews or presentations.',
+ 'Tiếng Anh chuẩn thường được yêu cầu trong những tình huống trang trọng như phỏng vấn hay thuyết trình.',
+ [O('Bilingual','song ngữ (dùng được hai thứ tiếng)'),
+  O('Borrowed','(từ) vay mượn'),
+  O('Standard','chuẩn mực, tiêu chuẩn',1),
+  O('Foreign','(thuộc) nước ngoài')],
+ '<b>Standard English</b> = tiếng Anh chuẩn (đúng ngữ pháp, không dùng tiếng lóng) — đúng thứ được yêu cầu trong hoàn cảnh TRANG TRỌNG như phỏng vấn, thuyết trình.',
+ '“Bilingual” mô tả NGƯỜI hoặc chương trình học; “Borrowed word” là từ vay mượn (một đơn vị từ vựng, không phải cả thứ tiếng); “Foreign English” không phải cách nói tự nhiên trong tiếng Anh.'));
+mcq('C',10,'Asia is a vast continent <span class="gap"></span> is home to diverse cultures, languages, and traditions.','which',
+ ['which','who','where','whose'],
+ EX5('which','Asia is a vast continent ______ is home to diverse cultures, languages, and traditions.',
+ 'Châu Á là một lục địa rộng lớn, nơi là mái nhà của rất nhiều nền văn hoá, ngôn ngữ và truyền thống khác nhau.',
+ [O('which','đại từ quan hệ thay cho VẬT/nơi chốn, làm CHỦ NGỮ của mệnh đề sau',1),
+  O('who','thay cho NGƯỜI'),
+  O('where','trạng từ quan hệ chỉ nơi chốn — sau nó phải là mệnh đề ĐỦ chủ ngữ'),
+  O('whose','chỉ sự sở hữu, sau nó là danh từ')],
+ 'Sau chỗ trống là động từ <b>is</b> — mệnh đề còn THIẾU CHỦ NGỮ ➔ phải dùng đại từ quan hệ làm chủ ngữ. Danh từ đứng trước là “continent” (vật) ➔ <b>which</b>.',
+ '<b>where</b> là bẫy nặng nhất: sau “where” phải có đủ chủ ngữ + động từ (…continent <b>where</b> people speak many languages). Ở đây “is home to” đã thiếu chủ ngữ nên chỉ “which” mới đúng.'));
+mcq('C',11,'The first European to <span class="gap"></span> Victoria Falls was a Scottish explorer, David Livingstone.','discover',
+ ['discover','develop','contribute','consider'],
+ EX5('discover','The first European to ______ Victoria Falls was a Scottish explorer, David Livingstone.',
+ 'Người châu Âu đầu tiên khám phá ra thác Victoria là nhà thám hiểm người Scotland, David Livingstone.',
+ [O('discover','khám phá ra, tìm ra (thứ đã tồn tại sẵn)',1),
+  O('develop','phát triển'),
+  O('contribute','đóng góp'),
+  O('consider','xem xét, cân nhắc')],
+ 'Thác Victoria là kỳ quan CÓ SẴN trong tự nhiên, con người chỉ tìm ra ➔ <b>discover</b>. Cấu trúc: <b>the first + N + to V</b> = người đầu tiên làm gì.',
+ '<b>develop</b> dùng cho thứ do con người tạo/phát triển; <b>contribute</b> cần “to” (contribute to sth); <b>consider</b> nghĩa cân nhắc — không hợp với một nhà thám hiểm tìm ra thác nước.'));
+mcq('C',12,'The heavy fog reduced visibility; <span class="gap"></span>, the flight was delayed for safety reasons.','therefore',
+ ['however','therefore','otherwise','moreover'],
+ EX5('therefore','The heavy fog reduced visibility; ______, the flight was delayed for safety reasons.',
+ 'Sương mù dày đặc làm giảm tầm nhìn; vì vậy, chuyến bay bị hoãn vì lý do an toàn.',
+ [O('however','tuy nhiên — chỉ sự tương phản'),
+  O('therefore','vì vậy, do đó — chỉ KẾT QUẢ',1),
+  O('otherwise','nếu không thì'),
+  O('moreover','hơn nữa — thêm thông tin cùng chiều')],
+ 'Vế đầu là NGUYÊN NHÂN (sương mù, tầm nhìn kém), vế sau là KẾT QUẢ (hoãn bay) ➔ dùng <b>therefore</b>. Chú ý dấu chấm phẩy trước và dấu phẩy sau — đúng cách chấm câu của trạng từ nối.',
+ '<b>however</b> tạo quan hệ trái ngược không có thật; <b>moreover</b> chỉ thêm thông tin; <b>otherwise</b> nghĩa “nếu không thì” — cả ba đều phá vỡ mạch nhân–quả của câu.'));
+mcq('C',13,'Maldives is considered a <span class="gap"></span> on Earth with crystal-clear water and sandy beaches.','paradise',
+ ['paradise','destination','site','safari'],
+ EX5('paradise','Maldives is considered a ______ on Earth with crystal-clear water and sandy beaches.',
+ 'Maldives được xem là thiên đường nơi hạ giới với làn nước trong vắt và những bãi cát trắng.',
+ [O('paradise','thiên đường',1),
+  O('destination','điểm đến'),
+  O('site','địa điểm, khu (di tích)'),
+  O('safari','chuyến đi ngắm thú hoang dã')],
+ 'Cụm cố định <b>a paradise on Earth</b> = thiên đường nơi hạ giới, dùng để ca ngợi vẻ đẹp tuyệt vời — hợp với “crystal-clear water and sandy beaches”.',
+ '“a destination on Earth” hay “a site on Earth” đều không phải cách nói tự nhiên; <b>safari</b> gắn với thảo nguyên châu Phi và động vật hoang dã, không liên quan tới biển đảo.'));
+mcq('C',14,'Connor: “There’s a Van Gogh exhibition at the art gallery next week. Do you fancy going with me?”<br>Hannah: “<span class="gap"></span>”','Sounds great! Let’s go together.',
+ ['Of course! I won’t be happy to go there.','Sure, maybe another time for that.',
+  'I’m not sure. It’d be fantastic.','Sounds great! Let’s go together.'],
+ EX5('Sounds great! Let’s go together.',
+ 'Connor: “There’s a Van Gogh exhibition at the art gallery next week. Do you fancy going with me?” — Hannah: “______”',
+ 'Connor: “Tuần sau có triển lãm tranh Van Gogh ở phòng trưng bày. Cậu có thích đi cùng tớ không?” — Hannah: “______”',
+ [O('Of course! I won’t be happy to go there.','Tất nhiên rồi! Tớ sẽ không vui khi đến đó. — TỰ MÂU THUẪN'),
+  O('Sure, maybe another time for that.','Chắc rồi, có lẽ để dịp khác vậy. — cũng tự mâu thuẫn: vừa đồng ý vừa từ chối'),
+  O('I’m not sure. It’d be fantastic.','Tớ không chắc. Nó sẽ tuyệt lắm. — hai câu ngược nhau'),
+  O('Sounds great! Let’s go together.','Nghe hay đấy! Chúng mình đi cùng nhau nhé.',1)],
+ '<b>Do you fancy V-ing?</b> = cậu có thích làm gì không (lời rủ). Lời đáp nhận lời tự nhiên nhất là <b>Sounds great! Let’s go together.</b>',
+ 'Ba phương án còn lại đều TỰ MÂU THUẪN trong chính nó: nửa đầu đồng ý nhưng nửa sau lại phủ nhận. Mẹo làm dạng này: đọc TRỌN cả hai vế của mỗi phương án rồi mới chọn.'),1);
+
+/* ═════════ VI — SẮP XẾP ═════════ */
+mcq('D',24,'Sắp xếp các câu (a–d) theo thứ tự đúng để tạo thành đoạn hội thoại có nghĩa:'+
+ '<div class="cuebox"><b>a.</b> Waiter: Of course. Would you like anything to drink with that?<br>'+
+ '<b>b.</b> Matt: Sure. I’d like a glass of iced tea, please. Thanks a lot.<br>'+
+ '<b>c.</b> Waiter: Good evening! May I take your order?<br>'+
+ '<b>d.</b> Matt: Yes, can I please have the grilled chicken with mashed potatoes?</div>',
+ 'c – d – a – b',['c – b – a – d','a – b – c – d','c – d – a – b','a – d – c – b'],
+ EX5('c – d – a – b','Put the sentences (a–d) in the correct order to make a meaningful conversation.',
+ 'Sắp xếp 4 lượt lời thành đoạn hội thoại giữa người phục vụ và khách Matt.',
+ [O('c. Waiter: Good evening! May I take your order?','Người phục vụ: Chào buổi tối! Tôi có thể ghi món cho quý khách không ạ? — MỞ ĐẦU: nhân viên chào và mời gọi món',1),
+  O('d. Matt: Yes, can I please have the grilled chicken with mashed potatoes?','Matt: Vâng, cho tôi món gà nướng ăn kèm khoai tây nghiền được không? — Matt gọi món chính',1),
+  O('a. Waiter: Of course. Would you like anything to drink with that?','Người phục vụ: Chắc chắn rồi. Quý khách có muốn dùng thêm đồ uống không ạ? — nhân viên hỏi thêm đồ uống',1),
+  O('b. Matt: Sure. I’d like a glass of iced tea, please. Thanks a lot.','Matt: Được chứ. Cho tôi một ly trà đá nhé. Cảm ơn nhiều. — Matt gọi đồ uống và kết thúc',1)],
+ 'Bám vào luật hội thoại: <b>chào hỏi ➔ gọi món chính ➔ mời thêm đồ uống ➔ chọn đồ uống</b>, và hai người phải nói LUÂN PHIÊN (Waiter – Matt – Waiter – Matt). Từ <b>that</b> trong câu a thay cho món gà ở câu d nên a phải đứng sau d.',
+ 'Các thứ tự bắt đầu bằng câu a đều sai vì nhân viên không thể hỏi “đồ uống kèm THEO ĐÓ” khi khách chưa gọi món nào; “c – b – a – d” thì Matt gọi trà đá trước cả món chính rồi mới gọi món — phi lý.'),1);
+mcq('D',25,'Sắp xếp các câu (a–e) theo thứ tự đúng để tạo thành đoạn văn có nghĩa:'+
+ '<div class="cuebox"><b>a.</b> Then, book your flights and accommodation early to get better prices.<br>'+
+ '<b>b.</b> Lastly, remember to stay safe by carrying personal documents and emergency contacts with you at all times.<br>'+
+ '<b>c.</b> There are several things you need to follow in order to have a perfect holiday abroad.<br>'+
+ '<b>d.</b> Once you finish booking, plan ahead a flexible itinerary to balance activities and rest.<br>'+
+ '<b>e.</b> Firstly, make sure your travel documents like passports and visas are up to date.</div>',
+ 'c – e – a – d – b',['c – e – a – d – b','e – a – d – b – c','e – c – d – a – b','c – a – d – b – e'],
+ EX5('c – e – a – d – b','Put the sentences (a–e) in the correct order to make a meaningful paragraph.',
+ 'Sắp xếp 5 câu thành đoạn văn hướng dẫn chuẩn bị cho một kỳ nghỉ ở nước ngoài.',
+ [O('c. There are several things you need to follow in order to have a perfect holiday abroad.','Có vài điều bạn cần tuân theo để có một kỳ nghỉ hoàn hảo ở nước ngoài. — CÂU CHỦ ĐỀ mở đoạn',1),
+  O('e. Firstly, make sure your travel documents like passports and visas are up to date.','Trước hết, hãy chắc chắn giấy tờ du lịch như hộ chiếu và thị thực còn hạn. — bước 1',1),
+  O('a. Then, book your flights and accommodation early to get better prices.','Sau đó, hãy đặt vé máy bay và chỗ ở sớm để có giá tốt hơn. — bước 2',1),
+  O('d. Once you finish booking, plan ahead a flexible itinerary to balance activities and rest.','Khi đặt xong, hãy lên trước một lịch trình linh hoạt để cân bằng giữa hoạt động và nghỉ ngơi. — bước 3',1),
+  O('b. Lastly, remember to stay safe by carrying personal documents and emergency contacts with you at all times.','Cuối cùng, hãy nhớ giữ an toàn bằng cách luôn mang theo giấy tờ cá nhân và số liên lạc khẩn cấp. — bước cuối',1)],
+ 'Câu c là CÂU CHỦ ĐỀ (giới thiệu “several things”) nên đứng đầu. Sau đó bám chuỗi từ chỉ trình tự: <b>Firstly (e) ➔ Then (a) ➔ Once you finish booking (d) ➔ Lastly (b)</b>.',
+ 'Ba phương án sai đều đặt câu chủ đề c ở giữa hoặc cuối, hoặc để “Lastly” (b) trước các bước khác. Mẹo: tìm câu KHÔNG có từ chỉ trình tự — đó thường là câu chủ đề mở đoạn.'),1);
+
+/* ═════════ VIII — VIẾT LẠI CÂU ═════════ */
+fil('E',32,'“Is this bird species native to New Zealand?” the tourist asked him.<div class="cuebox">➔ <b>The tourist asked him</b> ______________________</div>',
+ 'if/ whether that bird species was native to New Zealand',
+ ['if that bird species was native to New Zealand','whether that bird species was native to New Zealand'],
+ EX5('The tourist asked him <b>if/ whether that bird species was native to New Zealand.</b>',
+ '“Is this bird species native to New Zealand?” the tourist asked him.',
+ 'Vị khách du lịch hỏi anh ấy rằng loài chim này có phải là loài bản địa của New Zealand không.',
+ [O('Câu hỏi Yes/No ➔ dùng if hoặc whether','câu hỏi không có từ hỏi thì tường thuật bằng “if/whether”',1),
+  O('is ➔ was','động từ tường thuật “asked” ở quá khứ nên phải lùi thì',1),
+  O('this ➔ that','từ chỉ định cũng phải lùi khi tường thuật',1),
+  O('Trật tự S + V, không đảo, không có dấu hỏi','câu tường thuật là câu kể',1)],
+ 'Câu hỏi Yes/No khi tường thuật: <b>S + asked (+ O) + if/whether + S + V(lùi thì)</b> ➔ asked him <b>if/whether that bird species was</b> native to New Zealand.',
+ 'Ba lỗi kinh điển: giữ trật tự đảo “was that bird species…”, quên lùi “is ➔ was”, và giữ nguyên “this”. Câu tường thuật KHÔNG có dấu hỏi ở cuối.'),
+ 'VD: if that bird species was...',
+ '👉 Con gõ phần CÒN LẠI sau “The tourist asked him”, hoặc gõ trọn cả câu đều được. Hoa/thường, có dấu chấm hay không đều tính đúng.');
+fil('E',33,'They met a famous athlete. His mother tongue is German.<div class="cuebox">➔ <b>They</b> ______________________</div>',
+ 'met a famous athlete whose mother tongue is German',
+ ['met a famous athlete whose mother tongue is German'],
+ EX5('They <b>met a famous athlete whose mother tongue is German.</b>',
+ 'They met a famous athlete. His mother tongue is German.',
+ 'Họ đã gặp một vận động viên nổi tiếng mà tiếng mẹ đẻ của anh ấy là tiếng Đức.',
+ [O('whose','đại từ quan hệ chỉ SỞ HỮU, thay cho “his/her/their”',1),
+  O('His mother tongue ➔ whose mother tongue','bỏ “His”, thay bằng “whose” rồi nối ngay sau danh từ chỉ người',1),
+  O('a famous athlete','một vận động viên nổi tiếng — danh từ đứng trước “whose”'),
+  O('mother tongue','tiếng mẹ đẻ')],
+ 'Khi câu hai bắt đầu bằng tính từ sở hữu (<b>His</b>) chỉ về người ở câu một, ta nối bằng <b>whose</b>: … a famous athlete <b>whose</b> mother tongue is German.',
+ 'Đừng dùng <b>who</b> (thay cho người làm chủ ngữ) hay <b>which</b> (thay cho vật). Cũng KHÔNG được giữ lại “his” sau “whose” — viết “whose his mother tongue” là thừa.'),
+ 'VD: met a famous athlete whose...',
+ '👉 Con gõ phần CÒN LẠI sau “They”, hoặc gõ trọn cả câu đều được. Hoa/thường, có dấu chấm hay không đều tính đúng.');
+fil('E',34,'Everyone should take responsibility for keeping natural wonders clean.<div class="cuebox">➔ <b>Everyone is</b> ______________________</div>',
+ 'responsible for keeping natural wonders clean',
+ ['responsible for keeping natural wonders clean'],
+ EX5('Everyone is <b>responsible for keeping natural wonders clean.</b>',
+ 'Everyone should take responsibility for keeping natural wonders clean.',
+ 'Mọi người đều có trách nhiệm giữ cho các kỳ quan thiên nhiên luôn sạch sẽ.',
+ [O('take responsibility for + V-ing','nhận trách nhiệm làm gì — cách nói ở câu gốc'),
+  O('be responsible for + V-ing','có trách nhiệm làm gì — cách nói cần dùng',1),
+  O('responsible','(tính từ) có trách nhiệm — đi ngay sau “is”',1),
+  O('keeping natural wonders clean','giữ cho các kỳ quan thiên nhiên sạch sẽ — V-ing sau giới từ “for”',1)],
+ 'Chuyển từ danh từ sang tính từ: <b>take responsibility for</b> = <b>be responsible for</b>. Vì đề đã cho sẵn “Everyone <b>is</b>” nên chỗ trống phải là TÍNH TỪ <b>responsible</b> + for + V-ing.',
+ 'Đừng viết “is responsibility” (danh từ sau tobe làm câu sai nghĩa) hay “is responsible to keep” — sau giới từ <b>for</b> bắt buộc là <b>V-ing</b>.'),
+ 'VD: responsible for keeping...',
+ '👉 Con gõ phần CÒN LẠI sau “Everyone is”, hoặc gõ trọn cả câu đều được. Hoa/thường, có dấu chấm hay không đều tính đúng.');
+fil('E',35,'It’s compulsory for passengers to go through security screening at the airport.<div class="cuebox">➔ <b>Passengers</b> ______________________</div>',
+ 'must go through security screening at the airport',
+ ['must go through security screening at the airport','have to go through security screening at the airport'],
+ EX5('Passengers <b>must go through security screening at the airport.</b>',
+ 'It’s compulsory for passengers to go through security screening at the airport.',
+ 'Hành khách bắt buộc phải đi qua khu vực kiểm tra an ninh ở sân bay.',
+ [O('It’s compulsory for sb to V','ai đó bắt buộc phải làm gì — cách nói ở câu gốc'),
+  O('S + must + V','phải làm gì — diễn tả sự BẮT BUỘC, dạng cần dùng',1),
+  O('compulsory','(tính từ) bắt buộc'),
+  O('go through security screening','đi qua khâu kiểm tra an ninh')],
+ '<b>It’s compulsory for sb to V</b> = <b>S + must + V</b> (hoặc have to + V) — cùng diễn tả nghĩa vụ bắt buộc. Sau “must” là động từ nguyên mẫu KHÔNG “to”.',
+ 'Lỗi hay gặp: viết “must to go” (thừa “to”) hoặc “should go” — “should” chỉ là lời khuyên, nhẹ hơn hẳn so với “compulsory” (bắt buộc).'),
+ 'VD: must go through security...',
+ '👉 Con gõ phần CÒN LẠI sau “Passengers”, hoặc gõ trọn cả câu đều được. Hoa/thường, có dấu chấm hay không đều tính đúng.');
+
+/* ═════════ IX — CHỌN CÂU ĐÚNG TỪ TỪ GỢI Ý ═════════ */
+mcq('F',36,'<div class="cuebox">Andy/ met/ old friend/ while/ he/ sightsee/ Barcelona.</div>',
+ 'Andy met an old friend while he was sightseeing in Barcelona.',
+ ['Andy met the old friend while he went sightseeing in Barcelona.',
+  'Andy met the old friend while he has gone sightseeing Barcelona.',
+  'Andy met an old friend while he is sightseeing Barcelona.',
+  'Andy met an old friend while he was sightseeing in Barcelona.'],
+ EX5('Andy met an old friend while he was sightseeing in Barcelona.',
+ 'Andy/ met/ old friend/ while/ he/ sightsee/ Barcelona.',
+ 'Andy đã gặp một người bạn cũ trong khi anh ấy đang tham quan ở Barcelona.',
+ [O('Andy met the old friend while he went sightseeing in Barcelona.','sai mạo từ “the” (bạn cũ chưa xác định) và “went” làm mất ý ĐANG diễn ra'),
+  O('Andy met the old friend while he has gone sightseeing Barcelona.','sai thì (hiện tại hoàn thành) và thiếu giới từ “in”'),
+  O('Andy met an old friend while he is sightseeing Barcelona.','sai thì hiện tại và thiếu “in”'),
+  O('Andy met an old friend while he was sightseeing in Barcelona.','đúng: an + quá khứ tiếp diễn sau “while” + in Barcelona',1)],
+ 'Ba điểm phải khớp: mạo từ <b>an</b> (một người bạn cũ nào đó), <b>while + quá khứ tiếp diễn</b> (was sightseeing) làm nền cho hành động ngắn “met”, và cụm <b>go sightseeing IN + nơi chốn</b>.',
+ 'Nhớ luật: <b>while</b> luôn đi với hành động ĐANG kéo dài. Ngoài ra “sightseeing” phải có giới từ “in” trước tên thành phố — thiếu “in” là sai.'),1);
+mcq('F',37,'<div class="cuebox">you/ good/ English/ you/ find jobs/ international companies/ easily.</div>',
+ 'If you’re good at English, you can find jobs in international companies more easily.',
+ ['If you’re good at English, you can find jobs in international companies more easily.',
+  'If you’re good for English, you need to find jobs in international companies easily.',
+  'You will be good at English if you find jobs in international companies easily.',
+  'You’re good for English if you’ll find jobs in international companies more easily.'],
+ EX5('If you’re good at English, you can find jobs in international companies more easily.',
+ 'you/ good/ English/ you/ find jobs/ international companies/ easily.',
+ 'Nếu bạn giỏi tiếng Anh, bạn có thể tìm việc ở các công ty quốc tế một cách dễ dàng hơn.',
+ [O('If you’re good at English, you can find jobs in international companies more easily.','đúng: good AT + điều kiện loại 1 + can',1),
+  O('If you’re good for English, you need to find jobs in international companies easily.','sai giới từ “for” và “need to” làm lệch nghĩa'),
+  O('You will be good at English if you find jobs in international companies easily.','sai logic: đảo ngược nguyên nhân – kết quả'),
+  O('You’re good for English if you’ll find jobs in international companies more easily.','sai giới từ và dùng “will” trong mệnh đề if')],
+ 'Cụm cố định <b>be good AT sth</b> = giỏi về cái gì. Câu điều kiện loại 1: <b>If + S + V(hiện tại đơn), S + can/will + V</b>.',
+ 'Hai lỗi bị khai thác: dùng <b>good for</b> (sai giới từ) và đặt <b>will</b> trong mệnh đề if. Phương án C tuy đúng ngữ pháp nhưng ĐẢO NGƯỢC logic — giỏi tiếng Anh mới dễ xin việc, chứ không phải ngược lại.'),1);
+mcq('F',38,'<div class="cuebox">She/ join/ this rock climbing trip/ overcome/ her fear/ heights.</div>',
+ 'She joined this rock climbing trip to overcome her fear of heights.',
+ ['She joined this rock climbing trip, but she overcame her fear of heights.',
+  'She has joined this rock climbing trip so to overcome her fear in heights.',
+  'She joined this rock climbing trip to overcome her fear of heights.',
+  'She has joined this rock climbing trip because she overcame her fear in heights.'],
+ EX5('She joined this rock climbing trip to overcome her fear of heights.',
+ 'She/ join/ this rock climbing trip/ overcome/ her fear/ heights.',
+ 'Cô ấy đã tham gia chuyến leo núi đá này để vượt qua nỗi sợ độ cao của mình.',
+ [O('She joined this rock climbing trip, but she overcame her fear of heights.','sai liên từ “but” — hai vế không hề tương phản'),
+  O('She has joined this rock climbing trip so to overcome her fear in heights.','sai: “so to” không tồn tại và sai giới từ “in”'),
+  O('She joined this rock climbing trip to overcome her fear of heights.','đúng: to V chỉ mục đích + fear OF heights',1),
+  O('She has joined this rock climbing trip because she overcame her fear in heights.','sai logic (đã hết sợ thì tham gia làm gì) và sai giới từ')],
+ 'Mục đích của việc tham gia được diễn đạt bằng <b>to V</b> (to overcome). Cụm cố định: <b>fear OF sth</b> = nỗi sợ điều gì.',
+ 'Lỗi giới từ <b>fear in heights</b> xuất hiện tới hai lần trong các phương án nhiễu — luôn là <b>fear of</b>. Ngoài ra “so to overcome” là cách viết sai; muốn dùng “so” phải là “so as to overcome”.'),1);
+mcq('F',39,'<div class="cuebox">We/ want/ talk/ someone/ have/ lot of/ experience/ organise tours.</div>',
+ 'We want to talk to someone who has a lot of experience in organising tours.',
+ ['We want to talk to someone who has a lot of experience in organising tours.',
+  'We want to talk to someone who have lot of experience in organising tours.',
+  'We want talking to someone who has a lot of experience in organise tours.',
+  'We want talking to someone who have lot of experience in organise tours.'],
+ EX5('We want to talk to someone who has a lot of experience in organising tours.',
+ 'We/ want/ talk/ someone/ have/ lot of/ experience/ organise tours.',
+ 'Chúng tôi muốn nói chuyện với một người có nhiều kinh nghiệm trong việc tổ chức các tour du lịch.',
+ [O('We want to talk to someone who has a lot of experience in organising tours.','đúng cả bốn điểm: want to V, who has, a lot of, in + V-ing',1),
+  O('We want to talk to someone who have lot of experience in organising tours.','sai: “someone” là số ít nên phải dùng “has”, và thiếu “a” trong “a lot of”'),
+  O('We want talking to someone who has a lot of experience in organise tours.','sai: “want talking” và “in organise”'),
+  O('We want talking to someone who have lot of experience in organise tours.','sai cả ba lỗi cùng lúc')],
+ 'Bốn điểm phải đúng: <b>want TO talk</b> (want + to V), <b>someone</b> là SỐ ÍT ➔ <b>who has</b>, cụm <b>a lot of</b> (không bỏ “a”), và sau giới từ <b>in</b> phải là <b>V-ing</b> (organising).',
+ 'Đây là câu tổng hợp nhiều lỗi nhỏ. Mẹo: soát lần lượt bốn chỗ — dạng động từ sau “want”, sự hoà hợp của “someone”, mạo từ trong “a lot of”, và dạng V-ing sau giới từ.'),1);
+
+const TOTAL=Q.length;let answered=0,score=0;
+const done={},maps={};
+function bump(){document.getElementById('scN').textContent=score;document.getElementById('anN').textContent=answered}
+function strike(w){document.querySelectorAll('.wbox span').forEach(c=>{if(norm(c.dataset.w)===norm(w))c.classList.add('used')})}
+const QC=document.getElementById('quiz');
+function sec(icon,title,desc){QC.insertAdjacentHTML('beforeend',
+ '<div class="sec-hdr"><div class="sec-icon">'+icon+'</div><div><div class="sec-title">'+title+'</div><div class="sec-desc">'+desc+'</div></div></div>')}
+function put(h){QC.insertAdjacentHTML('beforeend',h)}
+function render(id){Q.forEach((m,i)=>{if(m.sec===id)QC.appendChild(build(m,'g'+i))})}
+function wbox(id,arr,lbl,ex){return '<div class="wblbl">'+lbl+'</div><div class="wbox" id="'+id+'">'+
+ arr.map(w=>'<span'+(w===ex?' class="used"':'')+' data-w="'+w+'">'+w+'</span>').join('')+'</div>'}
+
+sec('🔤','I. NGỮ ÂM — Choose the word whose underlined part is pronounced differently',
+ 'Chọn từ có phần gạch chân phát âm khác với các từ còn lại. (2 câu)');
+render('A');
+sec('🎵','II. TRỌNG ÂM — Choose the word whose stress pattern is different',
+ 'Chọn từ có trọng âm rơi vào vị trí khác với các từ còn lại. (2 câu)');
+render('B');
+sec('📚','III. TỪ VỰNG &amp; NGỮ PHÁP — Choose the word or phrase that best fits',
+ 'Chọn từ/cụm từ thích hợp nhất để hoàn thành mỗi câu. (10 câu)');
+render('C');
+sec('🧩','VI. SẮP XẾP CÂU — Put the sentences in the correct order',
+ 'Sắp xếp các câu để tạo thành đoạn hội thoại/đoạn văn có nghĩa. Phần giải thích có dịch đầy đủ từng câu. (2 câu)');
+render('D');
+sec('✍️','VIII. VIẾT LẠI CÂU — Rewrite the sentences without changing their meanings',
+ 'Viết lại câu sao cho nghĩa không đổi. Con gõ phần còn lại hoặc gõ cả câu đều được. (4 câu)');
+render('E');
+sec('🎯','IX. CHỌN CÂU ĐÚNG TỪ TỪ GỢI Ý — Choose the sentence that is best made from the given cues',
+ 'Chọn câu được viết đúng nhất từ các từ gợi ý đã cho. (4 câu)');
+render('F');
+document.getElementById('tlN').textContent=TOTAL;bump();
+
+/* ══════════════════ RENDER ══════════════════ */
+function build(m,gid){
+  const card=document.createElement('div');card.className='q-card';card.id='c_'+gid;
+  const head='<div class="q-num">✦ CÂU '+m.num+'</div>';
+  if(m.t==='mcq'){
+    const so=shuffle(m.opts);maps[gid]=so;
+    const mx=Math.max.apply(null,so.map(o=>o.length));
+    const cls=mx>22?' c1':(m.cols===2?' c2':'');
+    card.innerHTML=head+'<div class="q-text">'+m.q+'</div>'+
+      '<div class="mcq-grid'+cls+'" id="o_'+gid+'">'+
+      so.map((o,i)=>'<button class="mcq-btn" onclick="pick(\''+gid+'\','+i+')">'+o+'</button>').join('')+
+      '</div><div class="exp-wrap" id="e_'+gid+'"><div class="exp-box">'+m.ex+'</div></div>';
+  } else {
+    card.innerHTML=head+'<div class="q-text">'+m.q+'</div>'+
+      (m.hint?'<div class="hintb">'+m.hint+'</div>':'')+
+      '<div class="action-row"><input class="tinp" id="i_'+gid+'" placeholder="'+m.ph+'" autocomplete="off" spellcheck="false">'+
+      '<button class="btn-check" id="b_'+gid+'">✅ KIỂM TRA</button></div>'+
+      '<div class="exp-wrap" id="e_'+gid+'"><div class="exp-box">'+m.ex+'</div></div>';
+    const inp=card.querySelector('#i_'+gid),bt=card.querySelector('#b_'+gid);
+    const go=()=>{
+      if(done[gid])return;
+      const v=norm(inp.value);
+      if(!v){inp.classList.add('no');setTimeout(()=>inp.classList.remove('no'),480);return}
+      done[gid]=true;answered++;
+      const ok=okAns(m.accept,v);
+      inp.disabled=true;bt.disabled=true;inp.classList.add(ok?'ok':'no');
+      if(ok){score++;ding();confetti();if(m.bw)strike(m.bw)}else buzz();
+      document.getElementById('e_'+gid).classList.add('open');bump();
+    };
+    bt.onclick=go;inp.addEventListener('keydown',e=>{if(e.key==='Enter')go()});
+  }
+  return card;
+}
+function pick(gid,i){
+  if(done[gid])return;done[gid]=true;answered++;
+  const m=Q[+gid.slice(1)],box=document.getElementById('o_'+gid);
+  const ok=maps[gid][i]===m.correct;
+  [...box.children].forEach((el,j)=>{el.disabled=true;
+    if(maps[gid][j]===m.correct)el.classList.add('ok');
+    else if(j===i)el.classList.add('no');else el.classList.add('dim')});
+  if(ok){score++;ding();confetti()}else buzz();
+  document.getElementById('e_'+gid).classList.add('open');bump();
+}
+function openName(){document.getElementById('nameOv').classList.add('active');setTimeout(()=>document.getElementById('nameIn').focus(),200)}
+function showResult(){
+  const inp=document.getElementById('nameIn'),er=document.getElementById('nameErr');
+  const nm=inp.value.trim();
+  if(!nm){inp.classList.add('err');er.textContent='⚠️ Con chưa nhập tên kìa!';setTimeout(()=>inp.classList.remove('err'),450);return}
+  er.textContent='';document.getElementById('nameOv').classList.remove('active');
+  const pct=score/TOTAL,ten=(pct*10).toFixed(2);
+  let greet,msg,gif;
+  if(score===TOTAL){greet='🏆 TUYỆT VỜI, '+nm+' ơi!';msg='Con đúng TOÀN BỘ '+TOTAL+' câu — so sánh hơn/nhất đã nắm chắc rồi! 🎉';gif='https://media.giphy.com/media/g9582DNuQppxC/giphy.gif';}
+  else if(pct>=.6){greet='🌟 GIỎI LẮM, '+nm+'!';msg='Con làm rất tốt rồi. Xem lại bảng BẤT QUY TẮC và nhóm 2 âm tiết đặc biệt nhé!';gif='https://media.giphy.com/media/11sBLVxNs7v6WA/giphy.gif';}
+  else{greet='🌱 CỐ LÊN NÀO, '+nm+'!';msg='Đừng buồn! Học thuộc bảng good-better-best, bad-worse-worst rồi làm lại nhé! 📚';gif='https://media.giphy.com/media/d2lcHJTG5Tscg/giphy.gif';}
+  document.getElementById('rGreet').textContent=greet;
+  document.getElementById('rScore').textContent=score+' / '+TOTAL;
+  document.getElementById('rTen').textContent='🎓 Quy đổi: '+ten+' / 10 điểm';
+  document.getElementById('rImg').src=gif;
+  document.getElementById('rMsg').textContent=msg;
+  document.getElementById('resOv').classList.add('active');
+  if(pct>=.6){confetti();ding()}
+}
+</script>
+<script>/*devclean*/(function(){
+var ZW=/[\u00AD\u034F\u061C\u115F\u1160\u17B4\u17B5\u180E\u200B-\u200F\u202A-\u202E\u2060-\u206F\uFEFF]/g,
+    SP=/[\u00A0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\t]/g,
+    AP=/[\u2018\u2019\u201A\u201B\u2032\u2035\u02B9\u02BB\u02BC\u02BD\u02C8\u0060\u00B4\uFF07]/g,
+    DQ=/[\u201C\u201D\u201E\u201F\u2033\u2036\u00AB\u00BB\uFF02]/g,
+    DS=/[\u2010\u2011\u2012\u2212\uFE63\uFF0D]/g;
+function clean(v){if(!v)return v;var s=String(v);try{s=s.normalize('NFKC')}catch(e){}
+  return s.replace(ZW,'').replace(SP,' ').replace(AP,"'").replace(DQ,'"').replace(DS,'-').replace(/[\u0300-\u036f]/g,'').replace(/ {2,}/g,' ');}
+window.__devclean=clean;
+function fix(skip){var L=document.querySelectorAll('input:not([type]),input[type=text],input[type=search],textarea');
+  for(var i=0;i<L.length;i++){var el=L[i];if(el===skip||el.readOnly||el.disabled)continue;var v=el.value,c=clean(v);if(c!==v)el.value=c;}}
+['pointerdown','mousedown','touchstart','click','change','focusout'].forEach(function(t){document.addEventListener(t,function(e){fix(t==='focusout'||t==='change'?null:e.target)},true)});
+document.addEventListener('keydown',function(e){if(e.key==='Enter'||e.keyCode===13)fix(null)},true);
+})();</script>
+<style id="ms-chi-nen-unlock-style">
+#passwordModal, #password-modal, #pwModal, #pw-modal, #pw-overlay,
+#lockModal, #passModal, #authModal, #auth-modal, #lockOverlay,
+#start-overlay, #intro-overlay, #start-screen,
+.password-modal, .lock-modal, .lock-overlay {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    z-index: -9999 !important;
+}
+</style>
+<script>
+// Remove password lock completely - direct quiz access
+(function() {
+    var initDone = false;
+    var renderCheckDone = false;
+
+    function hideEl(el, hard) {
+        if (!el) return;
+        if (hard) {
+            el.style.setProperty('display', 'none', 'important');
+            el.style.setProperty('visibility', 'hidden', 'important');
+            el.style.setProperty('opacity', '0', 'important');
+            el.style.setProperty('pointer-events', 'none', 'important');
+            el.style.setProperty('z-index', '-9999', 'important');
+        } else {
+            el.style.display = 'none';
+        }
+        el.classList.remove('active', 'show', 'open', 'visible', 'flex');
+    }
+
+    function hasRenderedQuiz() {
+        var containers = document.querySelectorAll(
+            '#quiz-container, #quizContainer, #questions-container, #questionPane, #quiz, #questions, #quiz-body, #questions-wrapper, #quiz-list, #quizList, #exercise-container, #app-container .split-container'
+        );
+        for (var i = 0; i < containers.length; i++) {
+            if (containers[i].querySelectorAll('button, input, select, textarea, .question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .question, .option-btn, .opt-btn, .ans-btn').length > 0) {
+                return true;
+            }
+        }
+        if (document.querySelectorAll('.question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .option-btn, .opt-btn, .ans-btn, .choice-btn').length > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    function ensureQuizRendered() {
+        if (renderCheckDone) return;
+        renderCheckDone = true;
+        if (hasRenderedQuiz()) return;
+
+        if (!hasRenderedQuiz() && typeof buildQuiz === 'function') { try { buildQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof initQuiz === 'function') { try { initQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderApp === 'function') { try { renderApp(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuiz === 'function') { try { renderQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuestions === 'function') { try { renderQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAllQuestions === 'function') { try { renderAllQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAll === 'function') { try { renderAll(); } catch(e){} }
+    }
+
+    function unlockNow() {
+        var pwIds = [
+            'passwordModal', 'password-modal', 'pwModal', 'pw-modal', 'pw-overlay',
+            'lockModal', 'passModal', 'authModal', 'auth-modal', 'lockOverlay',
+            'start-overlay', 'intro-overlay', 'start-screen'
+        ];
+        pwIds.forEach(function(id) {
+            hideEl(document.getElementById(id), true);
+        });
+
+        var modalEls = document.querySelectorAll('.password-modal, .lock-modal, .lock-overlay, #lockOverlay, #auth-modal');
+        modalEls.forEach(function(el) {
+            if (el.id !== 'resultModal' && el.id !== 'result-modal' && el.id !== 'scoreModal') {
+                hideEl(el, true);
+            }
+        });
+
+        ['nameModal', 'name-modal', 'nameInputModal'].forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) hideEl(el, false);
+        });
+
+        var qo = document.getElementById('quiz-overlay');
+        if (qo && (typeof isStarted === 'undefined' || !isStarted)) {
+            qo.style.display = 'none';
+        }
+
+        var mainIds = [
+            'mainContent', 'main-content', 'mainHeader', 'main-header',
+            'app-container', 'app', 'quizApp', 'quiz-wrapper', 'quizContainer', 'quiz-container', 'reading-content'
+        ];
+        mainIds.forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) {
+                el.classList.remove('hidden', 'blur', 'blurred', 'locked');
+                if (el.style.display === 'none') {
+                    el.style.removeProperty('display');
+                }
+                if (window.getComputedStyle(el).display === 'none') {
+                    var hasPane = el.querySelector('.pane, .left-pane, .right-pane, .split-container, .left-panel, .right-panel');
+                    if (id === 'main-content' || id.toLowerCase().includes('header') || el.classList.contains('main-container') || hasPane) {
+                        el.style.setProperty('display', 'flex', 'important');
+                    } else {
+                        el.style.setProperty('display', 'block', 'important');
+                    }
+                }
+            }
+        });
+
+        var qs = document.getElementById('quiz-screen');
+        if (qs) {
+            qs.classList.remove('hidden');
+            if (qs.classList.contains('flex-col')) {
+                qs.classList.add('flex');
+                qs.style.display = 'flex';
+            } else {
+                qs.style.display = 'block';
+            }
+        }
+
+        if (!initDone) {
+            initDone = true;
+
+            if (document.getElementById('start-overlay') && typeof startGame === 'function') {
+                var sn = document.getElementById('student-name') || document.getElementById('studentName');
+                if (sn && !sn.value.trim()) sn.value = 'Học sinh';
+            }
+            if (document.getElementById('name-modal') && typeof startQuiz === 'function') {
+                var sn2 = document.getElementById('student-name');
+                if (sn2 && !sn2.value.trim()) sn2.value = 'Học sinh';
+            }
+
+            if (typeof startQuiz === 'function' && (typeof isStarted === 'undefined' || !isStarted)) { try { startQuiz(); } catch(e){} }
+            if (typeof startGame === 'function') { try { startGame(); } catch(e){} }
+            if (typeof startTest === 'function') { try { startTest(); } catch(e){} }
+            if (typeof startApp === 'function') { try { startApp(); } catch(e){} }
+            if (typeof buildStarfield === 'function') { try { buildStarfield(); } catch(e){} }
+            if (typeof spawnFloats === 'function') { try { spawnFloats(); } catch(e){} }
+            if (typeof spawnFloaters === 'function') { try { spawnFloaters(); } catch(e){} }
+            if (typeof createFloatingBubbles === 'function') { try { createFloatingBubbles(); } catch(e){} }
+            if (typeof initAudio === 'function') { try { initAudio(); } catch(e){} }
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', unlockNow);
+    } else {
+        unlockNow();
+    }
+    if (document.readyState === 'complete') {
+        setTimeout(ensureQuizRendered, 150);
+    } else {
+        window.addEventListener('load', function() {
+            setTimeout(unlockNow, 20);
+            setTimeout(ensureQuizRendered, 150);
+            setTimeout(unlockNow, 300);
+            setTimeout(unlockNow, 700);
+        });
+    }
+    setTimeout(unlockNow, 50);
+    setTimeout(unlockNow, 200);
+    setTimeout(unlockNow, 600);
+    setTimeout(unlockNow, 1100);
+})();
+</script>
+</body>
+</html>

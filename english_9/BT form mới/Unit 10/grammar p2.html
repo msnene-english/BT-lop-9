@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌍 E9 UNIT 10 · GRAMMAR — Relative Clauses (50 câu) | MS Chí Nên</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--board:#2B4A42;--board2:#1F3A33;--wood:#8B5A2B;--wood2:#6B4220;
+  --chalk:#F4F1E4;--cy:#FFE08A;--cp:#FFAFC5;--cb:#9CD3F0;--cg:#A8E6A1;--co:#FFC48A;
+  --paper:#FFFDF3;--ink:#33413C;--good:#1B7F4B;--bad:#C0392B}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito',sans-serif;color:var(--chalk);min-height:100vh;overflow-x:hidden;
+  background:
+   radial-gradient(ellipse 60% 40% at 22% 18%,rgba(255,255,255,.055),transparent 60%),
+   radial-gradient(ellipse 50% 35% at 78% 72%,rgba(255,255,255,.045),transparent 60%),
+   linear-gradient(160deg,var(--board) 0%,#27453D 40%,var(--board2) 100%);
+  background-attachment:fixed}
+/* vệt phấn mờ trên bảng */
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
+  background-image:
+   repeating-linear-gradient(102deg,rgba(255,255,255,.028) 0 2px,transparent 2px 9px),
+   repeating-linear-gradient(-8deg,rgba(255,255,255,.02) 0 1px,transparent 1px 14px)}
+/* khung gỗ quanh bảng */
+body::after{content:'';position:fixed;inset:0;z-index:3;pointer-events:none;
+  border:14px solid var(--wood);
+  box-shadow:inset 0 0 0 3px var(--wood2),inset 0 0 40px rgba(0,0,0,.35),
+   0 0 0 2px rgba(0,0,0,.25) inset}
+@media(max-width:640px){body::after{border-width:8px}}
+/* ── BỤI PHẤN & ĐỒ DÙNG BAY ── */
+.dust{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:1}
+.dt{position:absolute;bottom:-40px;border-radius:50%;background:rgba(244,241,228,.75);
+  animation:rise linear infinite}
+.dt.big{border-radius:2px;background:none;color:var(--cy);font-size:15px;line-height:1;
+  font-family:'Caveat',cursive;font-weight:700}
+@keyframes rise{0%{transform:translateY(0) translateX(0);opacity:0}
+  10%{opacity:.85}85%{opacity:.5}100%{transform:translateY(-112vh) translateX(var(--dx,20px));opacity:0}}
+.wrap{position:relative;z-index:2;max-width:880px;margin:0 auto;padding:26px 20px 80px}
+h1,h2,h3,.pill,.qn,.sbtn,.ck,.chk{font-family:'Caveat',cursive;font-weight:700}
+/* ── TIÊU ĐỀ VIẾT PHẤN ── */
+.hdr{text-align:center;margin:6px 0 22px}
+.hdr h1{font-size:clamp(26px,5.6vw,44px);line-height:1.1;color:var(--chalk);
+  text-shadow:0 0 12px rgba(244,241,228,.28),1px 1px 0 rgba(0,0,0,.25)}
+.hdr h1 span{color:var(--cy)}
+.hdr .sub{display:inline-block;margin-top:6px;font-family:'Caveat',cursive;font-size:1.32rem;
+  color:var(--cp);border-bottom:2.5px dashed rgba(255,175,197,.6);padding-bottom:2px}
+.hdr p{font-size:.84rem;font-weight:700;color:rgba(244,241,228,.72);margin-top:11px;line-height:1.75}
+.hdr p b{color:var(--cb)}
+.sb{position:sticky;top:10px;z-index:9;display:flex;align-items:center;gap:11px;padding:8px 16px;
+  margin-bottom:20px;border-radius:14px;background:rgba(18,32,28,.86);backdrop-filter:blur(8px);
+  border:2.5px dashed rgba(244,241,228,.4)}
+.sb b{font-family:'Caveat',cursive;font-size:1.5rem;color:var(--cg)}
+.tr{flex:1;height:10px;background:rgba(255,255,255,.1);border-radius:999px;overflow:hidden}
+.fl{height:100%;width:0;background:linear-gradient(90deg,var(--cg),var(--cb),var(--cy));transition:width .45s}
+/* ── PHẦN / BÀI ── */
+.sec{margin-bottom:30px;padding:16px 15px 15px;border:2.5px dashed rgba(244,241,228,.34);border-radius:16px;
+  background:rgba(255,255,255,.028)}
+.st{display:flex;flex-wrap:wrap;align-items:center;gap:11px;margin-bottom:5px}
+.pill{color:var(--board2);border-radius:11px;padding:1px 15px;font-size:1.3rem;box-shadow:2px 2px 0 rgba(0,0,0,.28)}
+.st h2{font-size:1.5rem;color:var(--chalk)}
+.si{font-size:.85rem;font-weight:700;color:rgba(244,241,228,.7);font-style:italic;margin:3px 0 14px;line-height:1.7}
+/* ── LÝ THUYẾT: VIẾT PHẤN TRÊN BẢNG ── */
+.th{border:2px dashed rgba(255,224,138,.55);border-radius:13px;padding:11px 13px 12px;margin-bottom:15px;
+  background:rgba(255,224,138,.06)}
+.th h3{font-size:1.22rem;color:var(--cy);margin-bottom:8px}
+.fm{text-align:center;font-family:'Caveat',cursive;font-size:1.34rem;color:var(--cb);line-height:1.6;
+  border-top:2px dotted rgba(156,211,240,.45);border-bottom:2px dotted rgba(156,211,240,.45);
+  padding:7px 6px;margin-bottom:8px}
+.fm b{color:var(--cy)}
+.ru{font-size:.92rem;font-weight:700;line-height:1.85;color:rgba(244,241,228,.9);
+  padding-left:16px;position:relative;margin-bottom:5px}
+.ru::before{content:'✦';position:absolute;left:0;color:var(--cp)}
+.ru b{color:var(--cy)}
+.warn{margin-top:8px;border:2px dashed rgba(255,175,197,.6);border-radius:11px;padding:8px 11px;
+  font-size:.9rem;font-weight:700;line-height:1.8;color:#FFD6E0;background:rgba(255,175,197,.07)}
+.warn s{color:#FF9AA8}.warn b{color:var(--cp)}
+/* ── CÂU HỎI: GIẤY NHỚ GHIM TRÊN BẢNG ── */
+.q{position:relative;background:var(--paper);color:var(--ink);border-radius:3px;padding:14px 13px 13px;
+  margin-bottom:16px;box-shadow:3px 5px 14px rgba(0,0,0,.35)}
+.q::after{content:'';position:absolute;right:0;bottom:0;width:22px;height:22px;
+  background:linear-gradient(135deg,transparent 50%,rgba(0,0,0,.13) 50%)}
+.q:nth-child(odd){transform:rotate(-.4deg)}.q:nth-child(even){transform:rotate(.35deg)}
+.q .pin{position:absolute;top:-8px;left:22px;width:16px;height:16px;border-radius:50%;
+  background:radial-gradient(circle at 34% 30%,#fff 10%,#E7564F 45%,#8E241F);box-shadow:0 2px 5px rgba(0,0,0,.4)}
+.q.shk{animation:shk .42s}
+@keyframes shk{0%,100%{transform:translateX(0)}25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
+.qn{display:inline-block;background:var(--board);color:var(--cy);border-radius:9px;min-width:34px;
+  text-align:center;padding:0 8px;margin-right:8px;font-size:1.22rem}
+.qt{font-weight:700;font-size:1rem;line-height:1.88;color:var(--ink)}
+.qt .bl{display:inline-block;min-width:104px;border-bottom:3px solid var(--board);text-align:center;
+  color:var(--board);font-weight:900}
+.src{background:#F2F7F4;border-left:4px solid var(--board);border-radius:0 10px 10px 0;padding:8px 12px;
+  margin-top:8px;font-weight:800;font-size:1rem;line-height:1.8}
+.cue{background:#FFF8E0;border:2px dashed #E0A800;border-radius:10px;padding:8px 12px;margin-top:8px;
+  font-weight:800;font-size:1rem;line-height:1.8;color:#7A5A00}
+.tg{display:inline-block;background:#EAF4EF;border:1.5px solid var(--board);color:var(--board);
+  border-radius:7px;padding:0 9px;font-size:.79rem;margin-left:6px;font-weight:800}
+u{background:#FFE9A8;border-radius:4px;padding:0 4px;text-decoration:none;font-weight:800}
+/* ── TÌM & SỬA LỖI ── */
+.segs{margin-top:11px;font-weight:700;font-size:1.02rem;line-height:2.5;
+  background:#F2F7F4;border-left:4px solid var(--board);border-radius:0 10px 10px 0;padding:10px 13px}
+.sg{display:inline-block;background:#fff;border:2px solid #4E7A6E;border-radius:9px;padding:2px 9px;
+  margin:0 2px;font-weight:800;font-size:1rem;cursor:pointer;transition:.14s;color:#26453C}
+.sg b{display:inline-block;background:var(--board);color:var(--cy);border-radius:5px;padding:0 6px;
+  margin-right:6px;font-size:.76rem;font-family:'Caveat',cursive}
+.sg:hover:not(.dn){transform:translateY(-2px);background:#E9F3EE}
+.sg.sel{border-color:#E0A800;background:#FFF8E0;box-shadow:0 0 0 3px rgba(224,168,0,.28)}
+.sg.dn{cursor:default;transform:none}
+.sg.sgok{background:#D9F2E2;border-color:var(--good);color:#0f5c34}.sg.sgok b{background:var(--good);color:#fff}
+.sg.sgno{background:#FDE1DD;border-color:var(--bad);color:#8f2018}.sg.sgno b{background:var(--bad);color:#fff}
+.sg.sgdim{opacity:.42}
+.fz{max-height:0;overflow:hidden;transition:max-height .32s ease;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.fz.open{max-height:220px;margin-top:11px}
+.fzl{font-weight:900;color:#7A5A00;font-size:.93rem;width:100%}
+.hint{margin-top:9px;background:#FFF8E0;border:2px dashed #E0A800;border-radius:10px;padding:7px 11px;
+  font-size:.89rem;font-weight:700;color:#7A5A00;line-height:1.7}
+/* ── PHƯƠNG ÁN ── */
+.og{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:11px}
+.og.c4{grid-template-columns:repeat(4,1fr)}.og.c1{grid-template-columns:1fr}
+@media(max-width:680px){.og.c4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:540px){.og{grid-template-columns:1fr}}
+.ob{background:#F7FAF8;border:2px solid #4E7A6E;border-radius:10px;padding:9px 13px;font-family:'Nunito';
+  font-size:.96rem;font-weight:800;cursor:pointer;transition:.15s;text-align:center;line-height:1.55;
+  color:var(--ink)}
+.ob:hover:not(.dn){transform:translateY(-2px);background:#E9F3EE}
+.ob.ok{background:#D9F2E2;border-color:var(--good);color:#0f5c34}
+.ob.no{background:#FDE1DD;border-color:var(--bad);color:#8f2018}
+.ob.dim{opacity:.42}
+.fr{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:10px}
+.ti{flex:1;min-width:200px;padding:9px 13px;border:2px solid #4E7A6E;border-radius:9px;font-family:'Nunito';
+  font-size:.98rem;font-weight:800;outline:none;background:#FDFEFD;color:var(--ink)}
+.ti::placeholder{color:#9FB3AA}
+.ti:focus{border-color:var(--board);background:#fff}
+.ti.ok{border-color:var(--good);background:#D9F2E2}.ti.no{border-color:var(--bad);background:#FDE1DD}
+.ck{background:var(--board);color:var(--cy);border:none;border-radius:9px;padding:7px 20px;font-size:1.16rem;
+  cursor:pointer;box-shadow:2px 3px 0 rgba(0,0,0,.28);white-space:nowrap}
+.ck:hover:not(:disabled){transform:translateY(-2px)}
+.ck:disabled{opacity:.45;cursor:default}
+/* ── GIẢI THÍCH ── */
+.ex{display:none;margin-top:11px;background:#FBFDFB;border:1.5px solid #CBDDD4;border-radius:10px;
+  padding:12px;font-size:.94rem;line-height:1.8;color:var(--ink)}
+.ex.show{display:block}
+.kb{background:#D9F2E2;border:1.5px solid var(--good);border-radius:8px;padding:7px 11px;margin-bottom:8px;
+  font-weight:900;color:#0f5c34;line-height:1.7}
+.vi{background:#FFF8E0;border-left:4px solid #E0A800;border-radius:0 8px 8px 0;padding:6px 11px;
+  margin-bottom:8px;font-weight:700;color:#7A5A00;line-height:1.7}
+.sp{background:#F4F9F6;border:1.5px solid #DBE9E2;border-radius:8px;padding:7px 11px;margin-bottom:7px;
+  line-height:1.8}
+.sp .l{display:inline-block;background:var(--board);color:var(--cy);border-radius:6px;padding:0 9px;
+  font-size:.98rem;font-weight:700;margin-bottom:3px;font-family:'Caveat',cursive}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:5px 0}
+@media(max-width:600px){.g2{grid-template-columns:1fr}}
+.g2>div{background:#fff;border:1.5px solid #DBE9E2;border-radius:7px;padding:5px 9px;line-height:1.68;font-weight:700}
+.w{color:#15559E;font-weight:800}.m{color:#B0511C;font-weight:700}.g{color:var(--good);font-weight:900}
+.t{background:#E3EFE9;color:#3A5D52;padding:1px 5px;border-radius:4px;font-size:.79em;font-weight:800;margin:0 3px}
+.pg{background:linear-gradient(transparent 55%,#FFE9A8 55%);font-weight:800}
+.fx{display:inline-block;background:#FDE1DD;color:#8f2018;border-radius:5px;padding:0 6px;font-weight:900;
+  text-decoration:line-through}
+.fy{display:inline-block;background:#D9F2E2;color:#0f5c34;border-radius:5px;padding:0 6px;font-weight:900}
+.sub{text-align:center;margin-top:24px}
+.sbtn{background:var(--cy);color:var(--board2);border:none;border-radius:13px;padding:11px 40px;
+  font-size:1.6rem;cursor:pointer;box-shadow:3px 4px 0 rgba(0,0,0,.32)}
+.sbtn:hover{transform:translateY(-3px)}
+.ov{position:fixed;inset:0;background:rgba(12,24,20,.82);z-index:99;display:none;align-items:center;
+  justify-content:center;padding:16px;overflow-y:auto;backdrop-filter:blur(4px)}
+.ov.on{display:flex}
+.mb{background:var(--paper);color:var(--ink);border-radius:4px;box-shadow:5px 8px 24px rgba(0,0,0,.5);
+  padding:26px 24px;width:420px;max-width:96%;text-align:center;max-height:90vh;overflow-y:auto;position:relative}
+.mb .pin{position:absolute;top:-9px;left:50%;transform:translateX(-50%);width:18px;height:18px;border-radius:50%;
+  background:radial-gradient(circle at 34% 30%,#fff 10%,#E7564F 45%,#8E241F);box-shadow:0 2px 6px rgba(0,0,0,.45)}
+.mb h2{font-family:'Caveat',cursive;font-size:1.9rem;color:var(--board);margin-bottom:10px}
+.mb input{width:100%;padding:11px;border:2px solid #4E7A6E;border-radius:9px;font-family:'Nunito';
+  font-weight:800;font-size:1rem;text-align:center;outline:none;margin-bottom:10px;background:#fff}
+.mb input.er{border-color:var(--bad);background:#FDE1DD;animation:shk .42s}
+.mb .em{color:var(--bad);font-weight:800;font-size:.86rem;display:none;margin-bottom:8px}
+.mb .gr{font-family:'Caveat',cursive;font-size:1.7rem;color:var(--board);line-height:1.2;margin-bottom:4px}
+.mb .rs{font-family:'Caveat',cursive;font-size:3rem;color:var(--bad)}
+.mb .rt{font-weight:900;color:var(--good);font-size:1.06rem;margin:4px 0 6px}
+.mb .rm{font-weight:700;font-size:.92rem;line-height:1.65;margin-bottom:10px;color:#4A5C55}
+.mb img{width:100%;max-width:250px;border-radius:8px;margin:10px auto;display:block;border:2px solid var(--board)}
+.cf{position:fixed;top:-12px;width:9px;height:14px;z-index:100;pointer-events:none;border-radius:2px}
+@keyframes fall{to{transform:translateY(105vh) rotate(700deg);opacity:.2}}
+.love{background:#FFF3D6;border:2px dashed #E0A800;border-radius:12px;padding:10px 14px;margin-top:10px;
+  color:#5B3A00;font-size:1rem;line-height:1.75;font-weight:700;text-align:left}
+.love b{color:#C0392B}
+.vnt{background:#EAF6F0;border-left:5px solid var(--good);border-radius:0 10px 10px 0;padding:9px 13px;
+  margin-bottom:9px;font-size:1rem;font-weight:800;color:#1B4D3A}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:6px 0}
+@media(max-width:600px){.grid2{grid-template-columns:1fr}}
+.grid2>div{background:#FFFDF7;border:1.5px solid #E6DFC8;border-radius:9px;padding:7px 11px;font-size:1rem;line-height:1.6}
+.p-word{color:#1565C0;font-weight:800;font-size:1rem}
+.hl-green{color:#1B7F4B;font-weight:900;font-size:1rem}
+.wt{background:#E3EFE9;color:#3A5D52;border-radius:6px;padding:1px 7px;font-size:1rem;font-weight:800;margin:0 4px}
+.p-mean{color:#B0511C;font-weight:800;font-size:1rem}
+.p-grammar{border-bottom:3px solid #C0392B;font-weight:700;color:#33413C;font-size:1rem}
+.expl ol,.ex ol{padding-left:18px;margin:0}
+.expl ol>li,.ex ol>li{margin:8px 0;font-size:1rem;line-height:1.7}
+
+</style>
+</head>
+<body>
+<div class="dust" id="dust"></div>
+<div class="wrap">
+  <div class="hdr">
+    <h1>UNIT 10 · <span>PLANET EARTH</span></h1>
+    <div class="sub">GRAMMAR — Mệnh đề quan hệ &amp; các cấu trúc liên quan (50 câu)</div>
+    <p>🎓 Giáo viên tạo: MS Chí Nên &nbsp;·&nbsp; <b>50 câu trắc nghiệm</b> &nbsp;·&nbsp;
+    Chọn đáp án đúng, giải thích chi tiết từng câu</p>
+  <div class="love">💌 Cô biết 50 câu này không hề dễ — toàn mệnh đề quan hệ với những cấu trúc dễ nhầm lẫn.
+  Nhưng con làm sai ở đây bao nhiêu lần cũng không sao, vì mỗi lần sai là một lần con nhớ lâu hơn.
+  Con cứ từ từ, đọc kỹ phần giải thích, cô luôn tin con làm được! ☎️ MS Chí Nên ·
+  <b>0852639652</b> — đăng ký khoá tiếng Anh cấp 1 → cấp 3.</div>
+  </div>
+  <div class="sb">🍎 <b><span id="sc">0</span>/<span id="tt">0</span></b>
+    <div class="tr"><div class="fl" id="fb"></div></div><span id="md">💪</span></div>
+  <div id="app"></div>
+  <div class="sub"><button class="sbtn" onclick="openName()">NỘP BÀI ✎</button></div>
+</div>
+<div class="ov" id="nOv"><div class="mb"><span class="pin"></span><h2>Nhập tên của con</h2>
+  <input id="nIn" placeholder="Ví dụ: Nguyễn Văn A..." maxlength="50" onkeydown="if(event.key==='Enter')showResult()">
+  <div class="em" id="nEr">⚠️ Con chưa nhập tên kìa!</div>
+  <button class="sbtn" style="width:100%;font-size:1.3rem;padding:9px" onclick="showResult()">Xem kết quả</button></div></div>
+<div class="ov" id="rOv"><div class="mb"><span class="pin"></span><div class="gr" id="rG"></div>
+  <div class="rs" id="rS"></div><div class="rt" id="rT"></div><img id="rI" alt=""><div class="rm" id="rM"></div>
+  <button class="sbtn" style="width:100%;font-size:1.3rem;padding:9px" onclick="location.reload()">Làm lại</button></div></div>
+
+<script>
+/* ══ BỤI PHẤN + ĐỒ DÙNG HỌC TẬP BAY ══ */
+(function(){
+ const L=document.getElementById('dust');
+ const ICON=['✎','✏','★','✦','✓','!','?','☺','🌍','🌱','⭐'];
+ for(let i=0;i<34;i++){
+  const d=document.createElement('div');
+  if(i%5===4){d.className='dt big';d.textContent=ICON[i%ICON.length];
+   d.style.fontSize=(13+Math.random()*13).toFixed(0)+'px';
+   d.style.color=['#FFE08A','#FFAFC5','#9CD3F0','#A8E6A1','#FFC48A'][i%5];}
+  else{d.className='dt';
+   const s=(1.6+Math.random()*3.2).toFixed(1);d.style.width=s+'px';d.style.height=s+'px';}
+  d.style.left=(Math.random()*96)+'%';
+  d.style.setProperty('--dx',(Math.random()*90-30).toFixed(0)+'px');
+  d.style.animationDuration=(13+Math.random()*17).toFixed(1)+'s';
+  d.style.animationDelay=(-Math.random()*28).toFixed(1)+'s';
+  L.appendChild(d);
+ }
+})();
+let AC;function ac(){if(!AC)AC=new (window.AudioContext||window.webkitAudioContext)();if(AC.state==='suspended')AC.resume();return AC}
+function ding(){try{const c=ac(),n=c.currentTime;[523,659,784,1047].forEach((f,i)=>{const o=c.createOscillator(),g=c.createGain();
+ o.type='sine';o.frequency.value=f;o.connect(g);g.connect(c.destination);const t=n+i*.09;
+ g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.19,t+.03);g.gain.exponentialRampToValueAtTime(.001,t+.42);
+ o.start(t);o.stop(t+.45)})}catch(e){}}
+function buzz(){try{const c=ac(),n=c.currentTime;[300,235,180].forEach((f,i)=>{const o=c.createOscillator(),g=c.createGain();
+ o.type='square';o.frequency.value=f;o.connect(g);g.connect(c.destination);const t=n+i*.12;
+ g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.11,t+.02);g.gain.exponentialRampToValueAtTime(.001,t+.17);
+ o.start(t);o.stop(t+.19)})}catch(e){}}
+document.addEventListener('click',()=>{try{ac()}catch(e){}},{once:true});
+function confetti(){const c=['#FFE08A','#FFAFC5','#9CD3F0','#A8E6A1','#FFC48A'];
+ for(let i=0;i<30;i++){const d=document.createElement('div');d.className='cf';d.style.background=c[i%c.length];
+  d.style.left=(Math.random()*100)+'vw';d.style.animation='fall '+(1.4+Math.random()*1.3)+'s linear forwards';
+  d.style.animationDelay=(Math.random()*.3)+'s';document.body.appendChild(d);setTimeout(()=>d.remove(),3200)}}
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function norm(s){return (s||'').toLowerCase().replace(/[’'`´]/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim()}
+</script>
+
+<script>
+const Q=[];
+function mcq(sec,num,q,correct,opts,ex,cls){Q.push({t:'mcq',sec,num,q,correct,opts,ex,cls:cls||''})}
+function fil(sec,num,q,correct,accept,ex,ph){Q.push({t:'fill',sec,num,q,correct,accept,ex,ph:ph||'Viết cả câu...'})}
+function fxq(sec,num,pre,parts,letter,corr,accept,ex){Q.push({t:'fix',sec,num,pre,parts,letter,corr,accept,ex})}
+function W(w,ty,m){return "<div><span class='w'>"+w+"</span><span class='t'>"+ty+"</span>= <span class='m'>"+m+"</span></div>"}
+function G(w,ty,m){return "<div><span class='g'>"+w+"</span><span class='t'>"+ty+"</span>= <span class='m'>"+m+"</span></div>"}
+function EX(k,vn,cells,why,trap){
+ return '<div class="kb">✅ '+k+'</div><div class="vi">💬 <b>Dịch:</b> '+vn+'</div>'+
+  '<div class="sp"><span class="l">① PHÂN TÍCH</span><div class="g2">'+cells+'</div></div>'+
+  '<div class="sp"><span class="l">② TẠI SAO ĐÚNG</span><br><span class="pg">'+why+'</span></div>'+
+  '<div class="sp"><span class="l">③ BẪY / MẸO</span><br><span class="pg">'+trap+'</span></div>'}
+
+function MK(n,q,opts,ci,means,why,wrong,vi){
+ var cells=opts.map((o,i)=>"<div><span class='"+(i===ci?"hl-green":"p-word")+"'>"+o+"</span> <span class='wt'>rel</span> = <span class='p-mean'>"+means[i]+"</span></div>").join("");
+ var ex='<div class="vnt">💬 Dịch: '+vi+'</div><ol><li>Phân tích 4 đáp án:<div class="grid2">'+cells+'</div></li>'+
+  '<li><span class="hl-green">✅ TẠI SAO ĐÚNG?</span> <span class=\'p-grammar\'>'+why+'</span></li>'+
+  '<li><span class="hl-red">❌ TẠI SAO SAI?</span> <span class=\'p-grammar\'>'+wrong+'</span></li></ol>';
+ var cls=opts.some(o=>o.length>18)?'c1':'';
+ mcq("S1",n,'<b>'+n+'.</b> '+q,opts[ci],opts,ex,cls);
+}
+MK(40,"Researchers, ________ are developing new technologies for renewable energy, are making a positive impact.",["who", "that", "when", "whom"],0,["đại từ quan hệ chỉ người, làm chủ ngữ", "đại từ quan hệ chỉ người/vật, KHÔNG dùng sau dấu phẩy", "trạng từ quan hệ chỉ thời gian", "đại từ quan hệ chỉ người, làm tân ngữ"],"Tiền ngữ 'Researchers' (nhà nghiên cứu) là danh từ chỉ người. Mệnh đề quan hệ nằm giữa hai dấu phẩy (non-defining). Chỗ trống cần một chủ ngữ cho động từ 'are developing'. Vì vậy, ta dùng 'who'.<br>","Loại 'that' vì có dấu phẩy. Loại 'whom' vì cần chủ ngữ. Loại 'when' vì sai nghĩa.","Các nhà nghiên cứu, những người đang phát triển công nghệ mới cho năng lượng tái tạo, đang tạo ra tác động tích cực.");
+MK(41,"My physics teacher, ________ I always admire, has a vast knowledge about outer space.",["whom", "whose", "which", "that"],0,["đại từ quan hệ chỉ người, làm tân ngữ", "đại từ quan hệ chỉ sự sở hữu", "đại từ quan hệ chỉ vật", "đại từ quan hệ không dùng sau dấu phẩy"],"Tiền ngữ là 'My physics teacher' (người). Phía sau có chủ ngữ 'I' và động từ 'admire' (ngưỡng mộ ai đó), nên vị trí này đóng vai trò tân ngữ. Trong mệnh đề có dấu phẩy, tân ngữ chỉ người dùng 'whom'.<br>","Chọn 'whom'.","Giáo viên vật lý của tôi, người mà tôi luôn ngưỡng mộ, có kiến thức rộng lớn về không gian vũ trụ.");
+MK(42,"The atmosphere, ________ protects us from harmful radiation, is essential for life on Earth.",["which", "where", "that", "whom"],0,["đại từ quan hệ chỉ vật", "trạng từ quan hệ chỉ nơi chốn (dùng khi thay thế cho 'at/in/on which')", "đại từ quan hệ không dùng sau dấu phẩy", "đại từ quan hệ chỉ người"],"Tiền ngữ 'The atmosphere' (bầu khí quyển) là danh từ chỉ vật. Mệnh đề có dấu phẩy (non-defining) và chỗ trống làm chủ ngữ cho động từ 'protects'. Dùng 'which' cho vật sau dấu phẩy.","Xem lại bảng phân tích 4 đáp án ở trên để phân biệt các lựa chọn còn lại.","Bầu khí quyển, cái mà bảo vệ chúng ta khỏi bức xạ có hại, là thiết yếu cho sự sống trên Trái Đất.");
+MK(43,"Will Smith, ________ recent movies have been serious, was once considered a comic actor.",["whose", "which", "who", "whom"],0,["chỉ sự sở hữu (người/vật)", "chỉ vật", "chỉ người (chủ ngữ)", "chỉ người, làm tân ngữ"],"Ta thấy mối quan hệ sở hữu: 'recent movies' (những bộ phim gần đây) là CỦA Will Smith. Khi cần chỉ sự sở hữu cho danh từ đứng trước, ta dùng 'whose'.<br>","Cấu trúc: [Người] + whose + [Danh từ].","Will Smith, người có những bộ phim gần đây rất nghiêm túc, từng được coi là một diễn viên hài.");
+MK(44,"She captured a photo of the bird ________ nested in the tree outside her window.",["that", "whom", "whose", "who"],0,["dùng cho người/vật/động vật trong mệnh đề xác định", "chỉ người (tân ngữ)", "chỉ sở hữu", "chỉ người"],"Tiền ngữ 'the bird' là động vật. Trong mệnh đề quan hệ xác định (không có dấu phẩy), ta dùng 'which' hoặc 'that'. Ở đây chỉ có 'that' là phù hợp.","Xem lại bảng phân tích 4 đáp án ở trên để phân biệt các lựa chọn còn lại.","Cô ấy chụp một bức ảnh con chim đang làm tổ trên cây bên ngoài cửa sổ.");
+MK(45,"Ms. Jane, ________ studies ocean currents, is presenting her findings today.",["who", "that", "whom", "whose"],0,["chỉ người (chủ ngữ)", "không dùng sau dấu phẩy", "chỉ người (tân ngữ)", "chỉ sở hữu"],"Tiền ngữ 'Ms. Jane' là người. Sau chỗ trống là động từ 'studies'","Cần một chủ ngữ. Vì có dấu phẩy (non-defining), ta dùng 'who'.","Cô Jane, người nghiên cứu các dòng hải lưu, hôm nay sẽ trình bày những phát hiện của mình.");
+MK(46,"The number of polar bears, _______ natural habitat is the Arctic, is decreasing.",["whose", "that", "which", "who"],0,["chỉ sở hữu", "không dùng sau dấu phẩy", "chỉ vật (nhưng không chỉ sở hữu)", "chỉ người"],"'Natural habitat' (môi trường sống) thuộc về 'polar bears' (gấu bắc cực). Đây là quan hệ sở hữu","Dùng 'whose'.<br>\n        Lưu ý: 'Whose' có thể dùng cho cả người và vật/động vật.","Số lượng gấu bắc cực, loài có môi trường sống tự nhiên là Bắc Cực, đang giảm dần.");
+MK(47,"The severe drought ________ occurred last summer ruined the corn crop.",["that", "which it", "it", "that it"],0,["đại từ quan hệ chỉ vật", "thừa đại từ 'it'", "đại từ nhân xưng, không có chức năng nối mệnh đề", "thừa đại từ 'it'"],"Tiền ngữ 'The severe drought' (trận hạn hán) là sự vật. Ta cần một đại từ quan hệ làm chủ ngữ cho động từ 'occurred'. 'That' hoặc 'which' đều được. Các đáp án khác sai vì lặp lại chủ ngữ 'it'.","Xem lại bảng phân tích 4 đáp án ở trên để phân biệt các lựa chọn còn lại.","Trận hạn hán nghiêm trọng xảy ra vào mùa hè năm ngoái đã phá hủy vụ ngô.");
+MK(48,"What is the name of the hotel ________ you recommended I stay at when visiting Seoul?",["that", "what", "whom", "whose"],0,["chỉ vật", "nghĩa là \"những gì\", không làm đại từ quan hệ thay thế cho danh từ đứng trước", "chỉ người", "chỉ sở hữu"],"Tiền ngữ 'the hotel' (khách sạn) chỉ vật. Trong mệnh đề quan hệ xác định, ta dùng 'that' hoặc 'which'.","Xem lại bảng phân tích 4 đáp án ở trên để phân biệt các lựa chọn còn lại.","Tên của khách sạn mà bạn đã giới thiệu tôi ở khi đến Seoul là gì?");
+MK(49,"The carnivores, ________ diet consists of meat, occupy the secondary level of the food chain.",["whose", "which", "who", "that"],0,["chỉ sở hữu", "chỉ vật", "chỉ người", "không dùng sau dấu phẩy"],"'Diet' (chế độ ăn) là thuộc tính CỦA 'carnivores' (động vật ăn thịt). Mối quan hệ sở hữu","Dùng 'whose'.","Động vật ăn thịt, loài có chế độ ăn bao gồm thịt, chiếm cấp độ thứ hai của chuỗi thức ăn.");
+MK(50,"The land and the people ________ I have met are nice.",["that", "whom", "who", "which"],0,["dùng cho cả người và vật", "chỉ người", "chỉ người", "chỉ vật"],"Tiền ngữ là cụm hỗn hợp 'The land and the people' (Vật và Người). Trong trường hợp này, bắt buộc phải dùng 'that' vì 'who/whom' chỉ dùng cho người, 'which' chỉ dùng cho vật.","Xem lại bảng phân tích 4 đáp án ở trên để phân biệt các lựa chọn còn lại.","Mảnh đất và con người mà tôi đã gặp đều rất tuyệt.");
+MK(51,"Elizabeth Cady Santon, ________, was one of the famous women's-rights activists.",["who was born in 1815", "whose year was 1815", "which she was born in 1815", "that was born in 1815"],0,["đúng ngữ pháp (who thay cho người, làm chủ ngữ)", "diễn đạt vụng về, không tự nhiên", "'which' không dùng cho người", "'that' không dùng sau dấu phẩy"],"Tiền ngữ là tên riêng chỉ người. Mệnh đề trong dấu phẩy bổ sung thông tin về năm sinh. Cấu trúc đúng: 'who' + động từ (was born).","Xem lại bảng phân tích 4 đáp án ở trên để phân biệt các lựa chọn còn lại.","Elizabeth Cady Stanton, người sinh năm 1815, là một trong những nhà hoạt động vì quyền phụ nữ nổi tiếng.");
+MK(52,"He’s the professor ________ classes always score well on standardized tests.",["whose", "who", "whom", "that"],0,["chỉ sở hữu", "chủ ngữ chỉ người", "tân ngữ chỉ người", "chỉ người/vật"],"'Classes' (các lớp học) là CỦA 'the professor' (giáo sư). Mối quan hệ sở hữu","Dùng 'whose'. Các từ còn lại không mang nghĩa sở hữu.","Ông ấy là vị giáo sư mà các lớp học của ông luôn đạt điểm cao trong các bài kiểm tra chuẩn hóa.");
+MK(53,"Forest habitats, _______ include tropical, temperate, and boreal forests, are considered the Earth's lung.",["which", "who", "where", "that"],0,["chỉ vật", "chỉ người", "chỉ nơi chốn (trạng từ)", "không dùng sau dấu phẩy"],"Tiền ngữ 'Forest habitats' (môi trường sống rừng) là vật. Mệnh đề có dấu phẩy. Chỗ trống cần chủ ngữ cho động từ 'include'.","'Which' là đáp án đúng. 'Where' sai vì 'where' = 'in which', không làm chủ ngữ cho động từ.","Các môi trường sống rừng, bao gồm rừng nhiệt đới, ôn đới và phương bắc, được coi là lá phổi của Trái Đất.");
+MK(54,"The coral reef ________ thrives in warm, shallow waters, supports a vast array of marine life.",["which", "who", "that", "whose"],0,["chỉ vật", "chỉ người", "thường dùng cho mệnh đề xác định (không dấu phẩy) hoặc không dùng trong non-defining", "chỉ sự sở hữu"],"'The coral reef' (rạn san hô) là vật. Câu này mang tính chất cung cấp thêm thông tin đặc điểm (non-defining, dù đề bài có thể thiếu dấu phẩy trước đó nhưng ngữ cảnh gợi ý). 'Which' là lựa chọn an toàn và chính xác nhất cho vật trong trường hợp này.","Xem lại bảng phân tích 4 đáp án ở trên để phân biệt các lựa chọn còn lại.","Rạn san hô, thứ phát triển mạnh ở vùng nước ấm và nông, nuôi dưỡng vô số sinh vật biển.");
+MK(55,"The committee, ________ by the Board of Directors next week, is going to be responsible for solving the discipline problems.",["which will be appointed", "who is appointed", "appointing", "be appointed"],0,["Đúng (which thay cho vật/tổ chức + bị động tương lai)", "Sai (dùng who cho tổ chức không hay bằng which, sai thì hiện tại với 'next week')", "Sai (dạng chủ động, trong khi ủy ban ĐƯỢC bổ nhiệm)", "Sai ngữ pháp (thiếu chủ ngữ/trợ động từ)"],"Tiền ngữ 'The committee' là danh từ chỉ tập hợp/vật. Có cụm 'next week'","thì tương lai. Có 'by...' -> thể bị động.\n        -> Đáp án A đầy đủ và chính xác nhất.","Ủy ban, cái mà sẽ được bổ nhiệm bởi Hội đồng quản trị vào tuần tới, sẽ chịu trách nhiệm giải quyết các vấn đề kỷ luật.");
+MK(56,"Is that the same film ________ we watched last year?",["which", "why", "when", "who"],0,["chỉ vật", "chỉ lý do", "chỉ thời gian", "chỉ người"],"Tiền ngữ là 'film' (vật). Bình thường sau 'the same' ta ưu tiên dùng 'that', nhưng nếu không có 'that' thì 'which' là lựa chọn thay thế duy nhất đúng về loại từ.","Xem lại bảng phân tích 4 đáp án ở trên để phân biệt các lựa chọn còn lại.","Đó có phải là cùng bộ phim mà chúng ta đã xem năm ngoái không?");
+MK(57,"Mr Johnson, ________ only son died in Vietnam War, is working in Vietnam now.",["whose", "whom", "which", "who"],0,["chỉ sở hữu", "chỉ tân ngữ", "chỉ vật", "chỉ chủ ngữ"],"'Only son' (con trai duy nhất) là con CỦA ông Johnson. Mối quan hệ huyết thống/sở hữu","Dùng 'whose'.","Ông Johnson, người có con trai duy nhất hy sinh trong chiến tranh Việt Nam, hiện đang làm việc tại Việt Nam.");
+MK(58,"Mount Everest, ________ peak is the tallest mountain in the world, is located in the Himalayas.",["whose", "which", "who", "that"],0,["chỉ sở hữu (dùng được cho cả vật)", "chỉ vật", "chỉ người", "không dùng sau dấu phẩy"],"'Peak' (đỉnh) là một phần CỦA 'Mount Everest'. Để chỉ sự sở hữu của vật, ta dùng 'whose' (hoặc of which the peak). Ở đây 'whose' là đáp án đúng.","Xem lại bảng phân tích 4 đáp án ở trên để phân biệt các lựa chọn còn lại.","Đỉnh Everest, nơi có đỉnh núi cao nhất thế giới, nằm ở dãy Himalayas.");
+MK(59,"I have always wanted to visit Paris, ________ of France.",["the capital", "is the capital", "which the capital is", "that is the capital"],0,["Cụm danh từ (Đồng vị ngữ)", "Thiếu đại từ quan hệ (sai ngữ pháp: Paris is... is...)", "Trật tự từ sai", "'that' không dùng sau dấu phẩy"],"Đây là dạng rút gọn mệnh đề quan hệ (Appositive - Đồng vị ngữ). Câu đầy đủ là: \"Paris, which is the capital of France\". Khi rút gọn, ta bỏ 'which is', chỉ còn lại cụm danh từ 'the capital'.","Xem lại bảng phân tích 4 đáp án ở trên để phân biệt các lựa chọn còn lại.","Tôi luôn muốn đến thăm Paris, thủ đô của Pháp.");
+MK(60,"I must find a time ________ I can tell her the truth.",["when", "how", "why", "where"],0,["trạng từ quan hệ chỉ thời gian", "chỉ cách thức", "chỉ lý do", "chỉ nơi chốn"],"Tiền ngữ là 'a time' (một thời điểm/thời gian). Từ dùng để thay thế cho thời gian là 'when' (hoặc 'at which').","Xem lại bảng phân tích 4 đáp án ở trên để phân biệt các lựa chọn còn lại.","Tôi phải tìm một thời điểm khi mà tôi có thể nói cho cô ấy sự thật.");
+MK(61,"Dr. Patel, ________ we owe a great deal for her work on climate change, is a leading researcher.",["whom", "whose", "who", "which"],0,["chỉ tân ngữ (người)", "chỉ sở hữu", "chỉ chủ ngữ (người)", "chỉ vật"],"Tiền ngữ 'Dr. Patel' là người. Cấu trúc câu sau: 'we owe (something) TO someone'","Dr. Patel đóng vai trò tân ngữ.\n        Trong văn phong trang trọng hoặc mệnh đề có dấu phẩy, tân ngữ chỉ người dùng 'whom' là chính xác nhất.","Tiến sĩ Patel, người mà chúng tôi mang ơn rất nhiều vì công việc của bà về biến đổi khí hậu, là một nhà nghiên cứu hàng đầu.");
+MK(62,"I enjoyed talking to the people ________ I had dinner last night.",["with whom", "with that", "to whom", "with whose"],0,["Chính xác (have dinner WITH someone)", "Sai (không dùng 'that' sau giới từ)", "Sai giới từ (không nói 'have dinner TO someone')", "Sai nghĩa/ngữ pháp"],"Cấu trúc: 'have dinner with someone' (ăn tối với ai).\n        Khi đảo giới từ lên trước đại từ quan hệ chỉ người, ta bắt buộc dùng 'whom'.","'with whom'.","Tôi thích nói chuyện với những người mà tôi đã ăn tối cùng tối qua.");
+MK(63,"I know a place ________ there are a lot of daffodils.",["where", "how", "when", "why"],0,["chỉ nơi chốn", "chỉ cách thức", "chỉ thời gian", "chỉ lý do"],"Tiền ngữ 'a place' (một nơi). Mệnh đề phía sau chỉ sự tồn tại của hoa TẠI nơi đó. Dùng trạng từ quan hệ 'where' (hoặc 'in which').","Xem lại bảng phân tích 4 đáp án ở trên để phân biệt các lựa chọn còn lại.","Tôi biết một nơi mà ở đó có rất nhiều hoa thủy tiên vàng.");
+MK(64,"An architect is someone ______________ designs buildings.",["who", "which", "whose", "whom"],0,["chỉ người (chủ ngữ)", "chỉ vật", "chỉ sở hữu", "chỉ người (tân ngữ)"],"Tiền ngữ 'someone' (ai đó) chỉ người. Động từ 'designs' phía sau cần một chủ ngữ.","Dùng 'who'.","Kiến trúc sư là người thiết kế các tòa nhà.");
+MK(65,"Da Lat, ______________ I'd like to visit most, is very romantic.",["which", "that", "when", "whose"],0,["đại từ quan hệ (làm tân ngữ ở đây)", "không dùng sau dấu phẩy", "chỉ thời gian", "chỉ sở hữu"],"Lưu ý bẫy: Nhiều bạn thấy địa danh thường chọn 'where'. Nhưng hãy nhìn động từ 'visit'. Ta nói 'visit Da Lat' (thăm Đà Lạt - tân ngữ trực tiếp), chứ không nói 'visit AT Da Lat'.","Do đó, Đà Lạt ở đây đóng vai trò tân ngữ -> Dùng 'which'.\n        (Nếu dùng 'where' thì câu phải là: Da Lat, where I lived... - sống TẠI Đà Lạt).","Đà Lạt, nơi mà tôi muốn đến thăm nhất, rất lãng mạn.");
+MK(66,"One of the world's most famous Earth scientists is James Hutton, _______ is a British geologist.",["who", "which", "whom", "that"],0,["chỉ người (chủ ngữ)", "chỉ vật", "chỉ người (tân ngữ)", "không dùng sau dấu phẩy"],"Tiền ngữ 'James Hutton' là tên người. Mệnh đề non-defining có động từ 'is' phía sau","Cần chủ ngữ chỉ người -> Chọn 'who'.","Một trong những nhà khoa học Trái đất nổi tiếng nhất thế giới là James Hutton, ông là một nhà địa chất học người Anh.");
+MK(67,"That's the reason ______________ I didn't come to the meeting last night.",["why", "which", "where", "when"],0,["trạng từ quan hệ chỉ lý do", "đại từ quan hệ (nếu dùng phải là 'for which')", "chỉ nơi chốn", "chỉ thời gian"],"Tiền ngữ là 'the reason' (lý do). Đi với 'reason' ta dùng 'why' (hoặc 'for which').","Xem lại bảng phân tích 4 đáp án ở trên để phân biệt các lựa chọn còn lại.","Đó là lý do tại sao tôi không đến cuộc họp tối qua.");
+MK(68,"The Earth’s core, ______________ temperature is extremely hot, is made up mostly of iron and nickel.",["whose", "why", "where", "which"],0,["chỉ sở hữu", "chỉ lý do", "chỉ nơi chốn", "chỉ vật"],"'Temperature' (nhiệt độ) là đặc tính CỦA 'Earth's core' (lõi Trái Đất). Mối quan hệ sở hữu","Dùng 'whose'.","Lõi Trái Đất, nơi có nhiệt độ cực nóng, được cấu tạo chủ yếu từ sắt và niken.");
+MK(69,"Please don’t waste a lot of time correcting details ________ completely inaccurate.",["that are", "that they aren’t", "that isn’t", "that it isn’t"],0,["'that' thay cho 'details', 'are' chia số nhiều -> Đúng", "thừa chủ ngữ 'they' (vì that đã là chủ ngữ)", "sai động từ 'is' (vì details là số nhiều)", "thừa 'it', sai 'is'"],"Tiền ngữ 'details' là danh từ số nhiều. Cần đại từ quan hệ 'that' (hoặc which) làm chủ ngữ, và động từ tobe phải chia số nhiều 'are'.","Xem lại bảng phân tích 4 đáp án ở trên để phân biệt các lựa chọn còn lại.","Làm ơn đừng tốn thời gian sửa những chi tiết hoàn toàn không chính xác.");
+MK(70,"______________ instructed me how to make a good preparation for a job interview.",["Mr. Brown, whom I spoke to by telephone,", "Mr. Brown I spoke to telephone", "Mr. Brown, that I spoke by telephone", "Mr. Brown to that I spoke by telephone"],0,["S + , + whom... + , + V", "Sai vì thiếu đại từ quan hệ và dấu phẩy", "Sai vì dùng 'that' sau dấu phẩy (mệnh đề không xác định không dùng that)", "Sai vì dùng 'to that' — cấu trúc không tồn tại trong tiếng Anh"],"Câu gốc thiếu chủ ngữ cho động từ 'instructed'. Đáp án A cung cấp chủ ngữ 'Mr. Brown' kèm theo một mệnh đề quan hệ bổ sung thông tin (non-defining) được ngăn cách bởi dấu phẩy là hoàn toàn chính xác.","Xem lại bảng phân tích 4 đáp án ở trên để phân biệt các lựa chọn còn lại.","Ông Brown, người mà tôi đã nói chuyện qua điện thoại, đã hướng dẫn tôi cách chuẩn bị tốt cho buổi phỏng vấn xin việc.");
+MK(71,"The Amazon rainforest, ______________ is considered the “lungs of the planet,” is crucial for our environment.",["which", "whom", "who", "that"],0,["chỉ vật", "chỉ người", "chỉ người", "không dùng sau dấu phẩy"],"Tiền ngữ 'The Amazon rainforest' là vật. Mệnh đề non-defining (có dấu phẩy).","Dùng 'which'.","Rừng mưa Amazon, nơi được coi là “lá phổi của hành tinh”, rất quan trọng đối với môi trường của chúng ta.");
+MK(72,"The Earth’s magnetic field, ______________ protection deflects charged particles from the sun, is crucial for life.",["whose", "where", "when", "which"],0,["chỉ sở hữu", "chỉ nơi chốn", "chỉ thời gian", "chỉ vật (không có nghĩa sở hữu)"],"'Protection' (sự bảo vệ) là chức năng/thuộc tính CỦA 'magnetic field' (từ trường). Mối quan hệ sở hữu","Dùng 'whose'.","Từ trường Trái đất, sự bảo vệ của nó làm lệch hướng các hạt tích điện từ mặt trời, rất quan trọng cho sự sống.");
+MK(73,"The boy to ______________ I lent my money is poor.",["whom", "which", "who", "that"],0,["dùng sau giới từ chỉ người", "chỉ vật", "không đứng ngay sau giới từ (thường who...to)", "không đứng sau giới từ"],"Cấu trúc: Lend money TO someone. Giới từ 'to' đã được đảo lên trước. Sau giới từ chỉ người, bắt buộc phải dùng 'whom'.","Xem lại bảng phân tích 4 đáp án ở trên để phân biệt các lựa chọn còn lại.","Cậu bé mà tôi đã cho mượn tiền rất nghèo.");
+MK(74,"The girl ______________ I borrowed the dictionary asked me to use it carefully.",["from whom", "from whose", "whom", "whose"],0,["Đúng (borrow from + whom)", "Sai nghĩa", "Thiếu giới từ 'from'", "Sai nghĩa"],"Cấu trúc: 'Borrow something FROM someone' (Mượn cái gì từ ai).\n        Khi đảo ngữ, 'from' đi với đại từ quan hệ chỉ người 'whom'","'from whom'.","Cô gái mà tôi mượn cuốn từ điển đã yêu cầu tôi sử dụng nó cẩn thận.");
+MK(75,"The oceans, ______________ cover most of the planet’s surface, are home to a vast variety of life.",["which", "whose", "where", "that"],0,["chỉ vật, làm chủ ngữ", "chỉ sở hữu", "chỉ nơi chốn (trạng từ)", "không dùng sau dấu phẩy"],"Tiền ngữ 'The oceans' là vật. Mệnh đề non-defining. Chỗ trống cần chủ ngữ cho động từ 'cover' (bao phủ).","Chọn 'which'. ('Where' sai vì 'where' không làm chủ ngữ).","Các đại dương, bao phủ phần lớn bề mặt hành tinh, là nhà của vô số sự sống.");
+MK(76,"\\\"Is April twenty-first the day ______________?\\\" - \\\"No, the twenty - second\\\".",["when you'll arrive", "when you'll arrive on", "on that you'll arrive", "you'll arrive then"],0,["Đúng (when = on which)", "Thừa giới từ 'on'", "Sai vì không dùng 'on that' trong mệnh đề quan hệ", "Sai cấu trúc nối câu"],"Tiền ngữ 'the day' chỉ thời gian. Ta dùng 'when' hoặc 'on which'. Đáp án A chính xác nhất.","Xem lại bảng phân tích 4 đáp án ở trên để phân biệt các lựa chọn còn lại.","\"Ngày 21 tháng 4 có phải là ngày bạn sẽ đến không?\" - \"Không, ngày 22\".");
+MK(77,"They encountered a pack of wolves ________ hunted together, preying on deer in the forest.",["that", "who", "whom", "which"],0,["dùng cho người/vật/thú", "thường dùng cho người", "chỉ người, làm tân ngữ", "dùng cho vật/thú"],"Tiền ngữ 'wolves' (chó sói) là động vật. Trong mệnh đề xác định, cả 'that' và 'which' đều dùng được. Tuy nhiên, trong các bài trắc nghiệm, 'that' thường được ưu tiên hoặc chấp nhận như một đáp án phổ biến cho động vật trong defining clause. (Nếu đề bắt chọn 1 giữa that và which thì hơi khó, nhưng 'that' là đáp án an toàn).","Xem lại bảng phân tích 4 đáp án ở trên để phân biệt các lựa chọn còn lại.","Họ gặp một bầy sói săn mồi cùng nhau, săn nai trong rừng.");
+MK(78,"The Moon, _______ is Earth's natural satellite, orbits around our planet.",["which", "where", "who", "that"],0,["chỉ vật", "chỉ nơi chốn", "chỉ người", "không dùng sau dấu phẩy"],"'The Moon' (vật). Mệnh đề có dấu phẩy","Bắt buộc dùng 'which'.","Mặt trăng, vệ tinh tự nhiên của Trái đất, quay quanh hành tinh của chúng ta.");
+MK(79,"The book was written by his wife, Joan, ________.",["whom he married in 1962", "he married in 1962", "who she married him in 1962", "that he married her in 1962"],0,["Đúng (whom thay cho Joan, làm tân ngữ của married)", "Sai vì thiếu đại từ quan hệ (không được lược bỏ trong mệnh đề có dấu phẩy)", "Thừa 'she' và 'him'", "'that' không dùng sau dấu phẩy, thừa 'her'"],"'Joan' là tên riêng (người). Cấu trúc 'marry someone' (cưới ai). Joan là tân ngữ. Mệnh đề non-defining dùng 'whom'.","Xem lại bảng phân tích 4 đáp án ở trên để phân biệt các lựa chọn còn lại.","Cuốn sách được viết bởi vợ ông, Joan, người mà ông cưới năm 1962.");
+MK(80,"I told my professor I’d turn in the essay at 9 o’clock, ________ means I’m going to be up all night.",["which", "that", "who", "when"],0,["thay thế cho cả mệnh đề phía trước", "không có chức năng này", "chỉ người", "chỉ thời gian"],"Khi muốn dùng một đại từ quan hệ để thay thế cho **toàn bộ sự việc** được nhắc đến trong mệnh đề phía trước, ta dùng 'which'. (Việc tôi hứa nộp bài lúc 9h","việc đó có nghĩa là...).","Tôi đã nói với giáo sư là sẽ nộp bài luận lúc 9 giờ, điều này có nghĩa là tôi sẽ phải thức trắng đêm.");
+MK(81,"Habitat loss, _______ is the destruction of a natural habitat, is the primary threat to the survival of wildlife in the United States.",["which", "who", "that", "whose"],0,["chỉ vật/sự việc", "chỉ người", "không dùng sau dấu phẩy", "chỉ sở hữu"],"Tiền ngữ 'Habitat loss' là danh từ chỉ sự việc/khái niệm. Mệnh đề non-defining","Dùng 'which'.","Mất môi trường sống, là sự phá hủy môi trường sống tự nhiên, là mối đe dọa chính đối với sự sống còn của động vật hoang dã ở Hoa Kỳ.");
+MK(82,"I don't want to sit on the chair of ______________ one leg is broken.",["which", "whom", "who", "whose"],0,["đi với giới từ 'of' -> 'of which' = 'whose'", "chỉ người, làm tân ngữ", "chỉ người, làm chủ ngữ", "nếu dùng whose thì không có 'of' (whose one leg)"],"Để chỉ sở hữu cho vật, ta có 2 cách:<br>\n        1. whose + Noun<br>\n        2. Noun + of which (hoặc of which + Noun)<br>\n        Ở đây đề bài đã cho sẵn 'of', nên đáp án phải là 'which'.","Xem lại bảng phân tích 4 đáp án ở trên để phân biệt các lựa chọn còn lại.","Tôi không muốn ngồi trên cái ghế mà một chân của nó bị gãy.");
+MK(83,"My favourite holiday was the one ________ in a cottage in the mountains.",["we spent", "that we spent it", "which spent", "where we spent"],0,["Đã lược bỏ đại từ quan hệ (that/which)", "Thừa tân ngữ 'it'", "Sai vì 'holiday' không tự 'spent' (thiếu chủ ngữ we)", "Sai vì 'spent' là ngoại động từ (spend time/holiday), cần tân ngữ trực tiếp (which/that), không dùng trạng từ 'where'"],"'The one' là tân ngữ của động từ 'spent'. Trong mệnh đề quan hệ xác định, khi đại từ quan hệ làm tân ngữ, ta có thể lược bỏ nó.","'we spent'.","Kỳ nghỉ yêu thích của tôi là kỳ nghỉ mà chúng tôi đã dành trong một ngôi nhà gỗ trên núi.");
+MK(84,"We should listen to the experts ______________ have dedicated their lives to studying our planet.",["who", "whose", "which", "whom"],0,["chỉ người (chủ ngữ)", "chỉ sở hữu", "chỉ vật", "chỉ người (tân ngữ)"],"Tiền ngữ 'experts' (chuyên gia) là người. Động từ 'have dedicated' cần một chủ ngữ.","Dùng 'who'.","Chúng ta nên lắng nghe những chuyên gia, những người đã cống hiến cuộc đời để nghiên cứu hành tinh của chúng ta.");
+MK(85,"The chemistry book ______________ was a little expensive.",["I bought", "I bought that", "what I bought", "that I bought it"],0,["Lược bỏ đại từ quan hệ (which/that)", "Sai vị trí từ 'that'", "Sai ('what' = the thing that)", "Thừa 'it'"],"Tương tự câu 83, 'book' là tân ngữ của 'bought'. Ta có thể lược bỏ đại từ quan hệ","'The chemistry book (which) I bought...'.","Cuốn sách hóa học tôi đã mua hơi đắt một chút.");
+MK(86,"The polar ice caps ________ are melting at an alarming rate contribute to the rise in sea levels.",["which", "that", "who", "whose"],0,["chỉ vật", "chỉ vật (thường dùng trong defining)", "chỉ người", "chỉ sở hữu"],"Tiền ngữ 'polar ice caps' là vật. Mặc dù mệnh đề này có thể hiểu là xác định (defining - dùng that/which đều được), nhưng trong nhiều tài liệu ngữ pháp truyền thống và đáp án trắc nghiệm, 'which' vẫn là đáp án đúng phổ biến cho vật.","Xem lại bảng phân tích 4 đáp án ở trên để phân biệt các lựa chọn còn lại.","Các chỏm băng cực, cái mà đang tan chảy ở mức đáng báo động, góp phần làm mực nước biển dâng cao.");
+MK(87,"Those were the days ______________ we played truant.",["when", "where", "which", "why"],0,["chỉ thời gian", "chỉ nơi chốn", "chỉ vật (thiếu giới từ 'on')", "chỉ lý do"],"Tiền ngữ 'days' (ngày tháng) chỉ thời gian.","Dùng trạng từ quan hệ 'when'.","Đó là những ngày mà chúng ta đã trốn học.");
+MK(88,"That was the time ______________ I was unhappy.",["when", "where", "why", "which"],0,["chỉ thời gian", "chỉ nơi chốn", "chỉ lý do", "chỉ vật (thiếu giới từ)"],"Tiền ngữ 'time' (thời gian)","Dùng 'when'.","Đó là khoảng thời gian mà tôi không hạnh phúc.");
+MK(89,"The bridge is the place ______________ the accident occurred.",["where", "that", "which", "on which"],0,["chỉ nơi chốn (= at which)", "không thay thế cho trạng ngữ nơi chốn (trừ khi có giới từ cuối câu)", "thiếu giới từ (at which)", "về ngữ pháp là đúng (trên cầu), nhưng với từ 'place' thì 'where' (hoặc at which) phổ biến và tự nhiên hơn"],"Tiền ngữ 'the place' chỉ nơi chốn. Tai nạn xảy ra TẠI nơi đó","Dùng 'where'.","Cây cầu là nơi vụ tai nạn đã xảy ra.");
+
+/* ══ DỰNG TRANG ══ */
+const TOTAL=Q.length;let answered=0,score=0;const done={},maps={},sel={};
+function bump(){document.getElementById('fb').style.width=(answered/TOTAL*100)+'%';
+ document.getElementById('sc').textContent=score;
+ const p=answered?score/answered:1;
+ document.getElementById('md').textContent=p>=.9?'🤩':p>=.7?'😃':p>=.5?'🙂':'💪'}
+const APP=document.getElementById('app');let CUR=null;
+function sec(col,pill,title,ins){
+ const d=document.createElement('div');d.className='sec';
+ d.innerHTML='<div class="st"><span class="pill" style="background:'+col+'">'+pill+
+  '</span><h2>'+title+'</h2></div><div class="si">'+ins+'</div>';
+ APP.appendChild(d);CUR=d}
+function put(h){CUR.insertAdjacentHTML('beforeend',h)}
+function render(id){Q.forEach((m,i)=>{if(m.sec===id)CUR.appendChild(build(m,'g'+i))})}
+
+sec('#9CD3F0','GRAMMAR','Chọn đáp án đúng nhất','Đọc kỹ câu và mệnh đề quan hệ để chọn đại từ/trạng từ quan hệ phù hợp. (50 câu)');
+render('S1');
+document.getElementById('tt').textContent=TOTAL;bump();
+
+function build(m,gid){
+ const c=document.createElement('div');c.className='q';c.id='c_'+gid;
+ const h='<span class="pin"></span><span class="qn">'+m.num+'</span>';
+ if(m.t==='mcq'){
+  const so=shuffle(m.opts);maps[gid]=so;
+  c.innerHTML='<div class="qt">'+h+m.q+'</div><div class="og '+(m.cls||'')+'" id="o_'+gid+'">'+
+   so.map((o,i)=>'<button class="ob" onclick="pick(\''+gid+'\','+i+')">'+o+'</button>').join('')+
+   '</div><div class="ex" id="e_'+gid+'">'+m.ex+'</div>';
+ } else if(m.t==='fix'){
+  c.innerHTML='<div class="qt">'+h+'Tìm ô chứa lỗi rồi sửa lại cho đúng:</div>'+
+   '<div class="segs" id="sg_'+gid+'">'+(m.pre||'')+
+   m.parts.map(p=>'<span class="sg" data-l="'+p[0]+'" onclick="selg(\''+gid+'\',\''+p[0]+'\')">'+
+     '<b>'+p[0]+'</b>'+p[1]+'</span>'+(p[2]||'')).join('')+'</div>'+
+   '<div class="hint" id="hn_'+gid+'">👆 <b>Bước 1:</b> bấm vào ô con cho là SAI.</div>'+
+   '<div class="fz" id="fz_'+gid+'"><span class="fzl" id="fl_'+gid+'"></span>'+
+   '<input class="ti" id="i_'+gid+'" placeholder="Gõ phần đã sửa..." autocomplete="off" spellcheck="false">'+
+   '<button class="ck" id="b_'+gid+'">Kiểm tra</button></div>'+
+   '<div class="ex" id="e_'+gid+'">'+m.ex+'</div>';
+  c.querySelector('#b_'+gid).onclick=()=>chkf(gid);
+  c.querySelector('#i_'+gid).addEventListener('keydown',e=>{if(e.key==='Enter')chkf(gid)});
+ } else {
+  c.innerHTML='<div class="qt">'+h+m.q+'</div>'+
+   '<div class="fr"><input class="ti" id="i_'+gid+'" placeholder="'+m.ph+'" autocomplete="off" spellcheck="false">'+
+   '<button class="ck" id="b_'+gid+'">Kiểm tra</button></div><div class="ex" id="e_'+gid+'">'+m.ex+'</div>';
+  const inp=c.querySelector('#i_'+gid),bt=c.querySelector('#b_'+gid);
+  const go=()=>{
+   if(done[gid])return;
+   const v=norm(inp.value);
+   if(!v){inp.classList.add('no');c.classList.add('shk');
+    setTimeout(()=>{inp.classList.remove('no');c.classList.remove('shk')},460);return}
+   done[gid]=true;answered++;
+   const ok=m.accept.map(norm).indexOf(v)>-1;
+   inp.disabled=true;bt.disabled=true;inp.classList.add(ok?'ok':'no');
+   document.getElementById('e_'+gid).classList.add('show');
+   if(ok){score++;ding();confetti()}else{buzz();c.classList.add('shk');setTimeout(()=>c.classList.remove('shk'),460)}
+   bump();
+  };
+  bt.onclick=go;inp.addEventListener('keydown',e=>{if(e.key==='Enter')go()});
+ }
+ return c;
+}
+function selg(gid,L){
+ if(done[gid])return;
+ sel[gid]=L;
+ document.querySelectorAll('#sg_'+gid+' .sg').forEach(s=>s.classList.toggle('sel',s.dataset.l===L));
+ document.getElementById('hn_'+gid).innerHTML='✅ Đã chọn ô <b>'+L+'</b>. <b>Bước 2:</b> gõ phần đã sửa rồi bấm '+
+  '<b>Kiểm tra</b>. (Bấm ô khác nếu muốn đổi.)';
+ document.getElementById('fz_'+gid).classList.add('open');
+ document.getElementById('fl_'+gid).innerHTML='✏️ Sửa ô <b>'+L+'</b> thành:';
+ document.getElementById('i_'+gid).focus();
+}
+function chkf(gid){
+ if(done[gid])return;
+ const m=Q[+gid.slice(1)],c=document.getElementById('c_'+gid),
+       inp=document.getElementById('i_'+gid),bt=document.getElementById('b_'+gid);
+ if(!sel[gid]){c.classList.add('shk');setTimeout(()=>c.classList.remove('shk'),460);return}
+ const v=norm(inp.value);
+ if(!v){inp.classList.add('no');setTimeout(()=>inp.classList.remove('no'),460);return}
+ done[gid]=true;answered++;
+ const okL=sel[gid]===m.letter,okW=m.accept.map(norm).indexOf(v)>-1,ok=okL&&okW;
+ inp.disabled=true;bt.disabled=true;inp.classList.add(okW?'ok':'no');
+ document.querySelectorAll('#sg_'+gid+' .sg').forEach(s=>{
+  s.classList.remove('sel');s.classList.add('dn');
+  if(s.dataset.l===m.letter)s.classList.add('sgok');
+  else if(s.dataset.l===sel[gid])s.classList.add('sgno');
+  else s.classList.add('sgdim');
+ });
+ document.getElementById('hn_'+gid).innerHTML= ok
+  ? '🎉 <b>Tuyệt vời!</b> Đúng ô <b>'+m.letter+'</b> và sửa đúng thành <b>'+m.corr+'</b>.'
+  : (okL?'⚠️ Đúng ô <b>'+m.letter+'</b> nhưng sửa chưa đúng. Đáp án: <b>'+m.corr+'</b>.'
+       :(okW?'⚠️ Sửa đúng từ nhưng chọn SAI ô. Lỗi ở ô <b>'+m.letter+'</b>.'
+            :'❌ Lỗi ở ô <b>'+m.letter+'</b>, phải sửa thành <b>'+m.corr+'</b>.'));
+ document.getElementById('e_'+gid).classList.add('show');
+ if(ok){score++;ding();confetti()}else{buzz();c.classList.add('shk');setTimeout(()=>c.classList.remove('shk'),460)}
+ bump();
+}
+function pick(gid,i){
+ if(done[gid])return;done[gid]=true;answered++;
+ const m=Q[+gid.slice(1)],b=document.getElementById('o_'+gid),c=document.getElementById('c_'+gid);
+ const ok=maps[gid][i]===m.correct;
+ [...b.children].forEach((el,j)=>{el.disabled=true;el.classList.add('dn');
+  if(maps[gid][j]===m.correct)el.classList.add('ok');
+  else if(j===i)el.classList.add('no');else el.classList.add('dim')});
+ document.getElementById('e_'+gid).classList.add('show');
+ if(ok){score++;ding();confetti()}else{buzz();c.classList.add('shk');setTimeout(()=>c.classList.remove('shk'),460)}
+ bump();
+}
+function openName(){document.getElementById('nOv').classList.add('on');setTimeout(()=>document.getElementById('nIn').focus(),180)}
+function showResult(){
+ const inp=document.getElementById('nIn'),er=document.getElementById('nEr'),nm=inp.value.trim();
+ if(!nm){inp.classList.add('er');er.style.display='block';setTimeout(()=>inp.classList.remove('er'),470);return}
+ er.style.display='none';document.getElementById('nOv').classList.remove('on');
+ const pct=score/TOTAL,ten=(pct*10).toFixed(2);
+ let g,msg,gif;
+ if(score===TOTAL){g='XUẤT SẮC, '+nm+'!';msg='Con đúng TOÀN BỘ '+TOTAL+' câu — should / ought to / had better quá vững! ✎';
+  gif='https://media.giphy.com/media/g9582DNuQppxC/giphy.gif';}
+ else if(pct>=.6){g='GIỎI LẮM, '+nm+'!';msg='Rất tốt rồi! Nhớ: chỉ “ought” mới có “to”, sau modal động từ luôn ở dạng gốc nhé!';
+  gif='https://media.giphy.com/media/11sBLVxNs7v6WA/giphy.gif';}
+ else{g='CỐ LÊN NÀO, '+nm+'!';msg='Đừng buồn! Đọc lại bảng công thức rồi làm lại nhé! 📚';
+  gif='https://media.giphy.com/media/d2lcHJTG5Tscg/giphy.gif';}
+ document.getElementById('rG').textContent=g;
+ document.getElementById('rS').textContent=score+' / '+TOTAL;
+ document.getElementById('rT').textContent='Quy đổi: '+ten+' / 10 điểm';
+ document.getElementById('rI').src=gif;
+ document.getElementById('rM').textContent=msg;
+ document.getElementById('rOv').classList.add('on');
+ if(pct>=.6){confetti();ding()}
+}
+</script>
+<script>/*devclean*/(function(){
+var ZW=/[\u00AD\u034F\u061C\u115F\u1160\u17B4\u17B5\u180E\u200B-\u200F\u202A-\u202E\u2060-\u206F\uFEFF]/g,
+    SP=/[\u00A0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\t]/g,
+    AP=/[\u2018\u2019\u201A\u201B\u2032\u2035\u02B9\u02BB\u02BC\u02BD\u02C8\u0060\u00B4\uFF07]/g,
+    DQ=/[\u201C\u201D\u201E\u201F\u2033\u2036\u00AB\u00BB\uFF02]/g,
+    DS=/[\u2010\u2011\u2012\u2212\uFE63\uFF0D]/g;
+function clean(v){if(!v)return v;var s=String(v);try{s=s.normalize('NFKC')}catch(e){}
+  return s.replace(ZW,'').replace(SP,' ').replace(AP,"'").replace(DQ,'"').replace(DS,'-').replace(/[\u0300-\u036f]/g,'').replace(/ {2,}/g,' ');}
+window.__devclean=clean;
+function fix(skip){var L=document.querySelectorAll('input:not([type]),input[type=text],input[type=search],textarea');
+  for(var i=0;i<L.length;i++){var el=L[i];if(el===skip||el.readOnly||el.disabled)continue;var v=el.value,c=clean(v);if(c!==v)el.value=c;}}
+['pointerdown','mousedown','touchstart','click','change','focusout'].forEach(function(t){document.addEventListener(t,function(e){fix(t==='focusout'||t==='change'?null:e.target)},true)});
+document.addEventListener('keydown',function(e){if(e.key==='Enter'||e.keyCode===13)fix(null)},true);
+})();</script>
+<style id="ms-chi-nen-unlock-style">
+#passwordModal, #password-modal, #pwModal, #pw-modal, #pw-overlay,
+#lockModal, #passModal, #authModal, #auth-modal, #lockOverlay,
+#start-overlay, #intro-overlay, #start-screen,
+.password-modal, .lock-modal, .lock-overlay {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    z-index: -9999 !important;
+}
+</style>
+<script>
+// Remove password lock completely - direct quiz access
+(function() {
+    var initDone = false;
+    var renderCheckDone = false;
+
+    function hideEl(el, hard) {
+        if (!el) return;
+        if (hard) {
+            el.style.setProperty('display', 'none', 'important');
+            el.style.setProperty('visibility', 'hidden', 'important');
+            el.style.setProperty('opacity', '0', 'important');
+            el.style.setProperty('pointer-events', 'none', 'important');
+            el.style.setProperty('z-index', '-9999', 'important');
+        } else {
+            el.style.display = 'none';
+        }
+        el.classList.remove('active', 'show', 'open', 'visible', 'flex');
+    }
+
+    function hasRenderedQuiz() {
+        var containers = document.querySelectorAll(
+            '#quiz-container, #quizContainer, #questions-container, #questionPane, #quiz, #questions, #quiz-body, #questions-wrapper, #quiz-list, #quizList, #exercise-container, #app-container .split-container'
+        );
+        for (var i = 0; i < containers.length; i++) {
+            if (containers[i].querySelectorAll('button, input, select, textarea, .question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .question, .option-btn, .opt-btn, .ans-btn').length > 0) {
+                return true;
+            }
+        }
+        if (document.querySelectorAll('.question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .option-btn, .opt-btn, .ans-btn, .choice-btn').length > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    function ensureQuizRendered() {
+        if (renderCheckDone) return;
+        renderCheckDone = true;
+        if (hasRenderedQuiz()) return;
+
+        if (!hasRenderedQuiz() && typeof buildQuiz === 'function') { try { buildQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof initQuiz === 'function') { try { initQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderApp === 'function') { try { renderApp(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuiz === 'function') { try { renderQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuestions === 'function') { try { renderQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAllQuestions === 'function') { try { renderAllQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAll === 'function') { try { renderAll(); } catch(e){} }
+    }
+
+    function unlockNow() {
+        var pwIds = [
+            'passwordModal', 'password-modal', 'pwModal', 'pw-modal', 'pw-overlay',
+            'lockModal', 'passModal', 'authModal', 'auth-modal', 'lockOverlay',
+            'start-overlay', 'intro-overlay', 'start-screen'
+        ];
+        pwIds.forEach(function(id) {
+            hideEl(document.getElementById(id), true);
+        });
+
+        var modalEls = document.querySelectorAll('.password-modal, .lock-modal, .lock-overlay, #lockOverlay, #auth-modal');
+        modalEls.forEach(function(el) {
+            if (el.id !== 'resultModal' && el.id !== 'result-modal' && el.id !== 'scoreModal') {
+                hideEl(el, true);
+            }
+        });
+
+        ['nameModal', 'name-modal', 'nameInputModal'].forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) hideEl(el, false);
+        });
+
+        var qo = document.getElementById('quiz-overlay');
+        if (qo && (typeof isStarted === 'undefined' || !isStarted)) {
+            qo.style.display = 'none';
+        }
+
+        var mainIds = [
+            'mainContent', 'main-content', 'mainHeader', 'main-header',
+            'app-container', 'app', 'quizApp', 'quiz-wrapper', 'quizContainer', 'quiz-container', 'reading-content'
+        ];
+        mainIds.forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) {
+                el.classList.remove('hidden', 'blur', 'blurred', 'locked');
+                if (el.style.display === 'none') {
+                    el.style.removeProperty('display');
+                }
+                if (window.getComputedStyle(el).display === 'none') {
+                    var hasPane = el.querySelector('.pane, .left-pane, .right-pane, .split-container, .left-panel, .right-panel');
+                    if (id === 'main-content' || id.toLowerCase().includes('header') || el.classList.contains('main-container') || hasPane) {
+                        el.style.setProperty('display', 'flex', 'important');
+                    } else {
+                        el.style.setProperty('display', 'block', 'important');
+                    }
+                }
+            }
+        });
+
+        var qs = document.getElementById('quiz-screen');
+        if (qs) {
+            qs.classList.remove('hidden');
+            if (qs.classList.contains('flex-col')) {
+                qs.classList.add('flex');
+                qs.style.display = 'flex';
+            } else {
+                qs.style.display = 'block';
+            }
+        }
+
+        if (!initDone) {
+            initDone = true;
+
+            if (document.getElementById('start-overlay') && typeof startGame === 'function') {
+                var sn = document.getElementById('student-name') || document.getElementById('studentName');
+                if (sn && !sn.value.trim()) sn.value = 'Học sinh';
+            }
+            if (document.getElementById('name-modal') && typeof startQuiz === 'function') {
+                var sn2 = document.getElementById('student-name');
+                if (sn2 && !sn2.value.trim()) sn2.value = 'Học sinh';
+            }
+
+            if (typeof startQuiz === 'function' && (typeof isStarted === 'undefined' || !isStarted)) { try { startQuiz(); } catch(e){} }
+            if (typeof startGame === 'function') { try { startGame(); } catch(e){} }
+            if (typeof startTest === 'function') { try { startTest(); } catch(e){} }
+            if (typeof startApp === 'function') { try { startApp(); } catch(e){} }
+            if (typeof buildStarfield === 'function') { try { buildStarfield(); } catch(e){} }
+            if (typeof spawnFloats === 'function') { try { spawnFloats(); } catch(e){} }
+            if (typeof spawnFloaters === 'function') { try { spawnFloaters(); } catch(e){} }
+            if (typeof createFloatingBubbles === 'function') { try { createFloatingBubbles(); } catch(e){} }
+            if (typeof initAudio === 'function') { try { initAudio(); } catch(e){} }
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', unlockNow);
+    } else {
+        unlockNow();
+    }
+    if (document.readyState === 'complete') {
+        setTimeout(ensureQuizRendered, 150);
+    } else {
+        window.addEventListener('load', function() {
+            setTimeout(unlockNow, 20);
+            setTimeout(ensureQuizRendered, 150);
+            setTimeout(unlockNow, 300);
+            setTimeout(unlockNow, 700);
+        });
+    }
+    setTimeout(unlockNow, 50);
+    setTimeout(unlockNow, 200);
+    setTimeout(unlockNow, 600);
+    setTimeout(unlockNow, 1100);
+})();
+</script>
+</body>
+</html>

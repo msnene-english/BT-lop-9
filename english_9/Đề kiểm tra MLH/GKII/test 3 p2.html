@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GKII · TEST 3 · READING — Learning a Foreign Language &amp; UK Traditions | MS Chí Nên</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* THEME: ROYAL HERITAGE (giấy da/nghi lễ hoàng gia Anh) */
+:root{
+  --bg1:#fdf8f0;--bg2:#f3e9d4;--royal:#8b1a3a;--navy:#1a2f5c;--gilt:#a9781f;--teal:#0f766e;
+  --glass:rgba(255,255,255,.68);--edge:rgba(139,26,58,.16);
+  --text:#2a2013;--text-dim:#7a6a52;--gold:#a9781f;
+  --ok:#166534;--ok-bg:rgba(22,101,52,.14);--no:#991b1b;--no-bg:rgba(153,27,27,.14);
+  --disp:'Playfair Display',serif;--body:'Nunito',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:19px}
+body{font-family:var(--body);color:var(--text);min-height:100vh;overflow-x:hidden;position:relative;background:linear-gradient(150deg,var(--bg1),var(--bg2))}
+.mist{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;filter:blur(60px);opacity:.42}
+.mist span{position:absolute;width:44vw;height:44vw;border-radius:50%;mix-blend-mode:multiply;animation:drift 27s ease-in-out infinite}
+.mist span:nth-child(1){background:var(--royal);top:-14%;left:-8%}
+.mist span:nth-child(2){background:var(--navy);top:10%;right:-12%;animation-delay:-9s}
+.mist span:nth-child(3){background:var(--gilt);bottom:-18%;left:22%;animation-delay:-17s}
+@keyframes drift{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(5%,-6%) scale(1.12)}}
+.fl{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.f{position:absolute;bottom:-10%;opacity:.16;animation:up linear infinite}
+@keyframes up{0%{transform:translateY(0) rotate(0);opacity:0}12%{opacity:.2}100%{transform:translateY(-118vh) rotate(340deg);opacity:0}}
+header{position:relative;z-index:2;padding:20px 34px;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;
+  background:linear-gradient(180deg,rgba(255,255,255,.92),rgba(243,233,212,.86));border-bottom:3px solid var(--royal);box-shadow:0 8px 22px rgba(42,32,19,.1)}
+.tag{font-family:var(--disp);font-size:.86rem;letter-spacing:.1em;color:var(--royal);margin-bottom:5px;font-weight:700}
+header h1{font-family:var(--disp);font-weight:700;font-size:1.36rem;line-height:1.3;color:var(--navy)}
+.sub{font-size:.74rem;color:var(--text-dim);margin-top:7px;font-weight:600}
+.gauge{display:flex;align-items:center;gap:12px;background:#fff;border:2px solid var(--royal);border-radius:12px;padding:9px 18px;box-shadow:0 4px 12px rgba(42,32,19,.1)}
+.gauge .num{font-family:var(--disp);font-size:1.7rem;color:var(--royal);line-height:1;font-weight:700}
+.gauge .lbl{font-family:var(--disp);font-size:.66rem;letter-spacing:.14em;color:var(--text-dim)}
+.main{position:relative;z-index:2;display:flex;gap:22px;padding:26px 30px 46px;align-items:flex-start}
+.lp,.rp{flex:1 1 50%;max-height:calc(100vh - 128px);overflow-y:auto;padding-right:8px}
+.lp::-webkit-scrollbar,.rp::-webkit-scrollbar{width:9px}
+.lp::-webkit-scrollbar-thumb,.rp::-webkit-scrollbar-thumb{background:var(--gilt);border-radius:6px}
+.slbl{font-family:var(--disp);font-size:1.02rem;color:var(--royal);margin-bottom:13px;padding-bottom:7px;border-bottom:2px dashed var(--gilt);font-weight:700}
+.pc{position:relative;background:var(--glass);backdrop-filter:blur(9px);border:1.5px solid var(--edge);border-left:6px solid var(--royal);border-radius:11px;
+  padding:16px 18px 15px 22px;margin-bottom:15px;box-shadow:0 6px 16px rgba(42,32,19,.08)}
+.plbl{font-family:var(--disp);font-size:.86rem;color:var(--navy);margin-bottom:9px;font-weight:700}
+.pt{font-size:1.01rem;line-height:1.95;color:var(--text)}
+.pt b{color:var(--gold);font-weight:800}
+.wbox{background:rgba(169,120,31,.1);border:1.5px dashed var(--gilt);border-radius:9px;padding:10px 12px;margin:10px 0;text-align:center}
+.wbox b{display:inline-block;background:#fff;border:1.5px solid var(--edge);border-radius:16px;padding:3px 13px;margin:3px;font-size:.79rem;font-weight:700;color:var(--royal)}
+.blk{display:inline-block;min-width:40px;text-align:center;font-weight:800;color:#fff;background:var(--royal);border-radius:5px;padding:1px 9px;margin:0 3px}
+.btr{margin-top:11px;font-family:var(--body);font-size:.78rem;font-weight:700;background:transparent;border:2px solid var(--navy);color:var(--navy);padding:7px 17px;border-radius:22px;cursor:pointer;transition:.2s}
+.btr:hover{background:var(--navy);color:#fff}
+.tv{display:none;margin-top:10px;font-size:.94rem;line-height:1.9;color:#33261a;background:rgba(139,26,58,.08);border-left:4px solid var(--royal);border-radius:0 9px 9px 0;padding:11px 14px}
+.tv.open{display:block;animation:fd .3s ease}
+@keyframes fd{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.gw{background:var(--glass);backdrop-filter:blur(9px);border:1.5px solid var(--edge);border-radius:11px;padding:16px 18px;margin-top:6px}
+.gt2{font-family:var(--disp);font-size:.94rem;color:var(--gold);margin-bottom:11px;font-weight:700}
+table.gtb{width:100%;border-collapse:collapse;font-size:.85rem}
+table.gtb th{background:var(--royal);color:#fff;font-weight:800;padding:8px 10px;text-align:left;font-size:.76rem}
+table.gtb td{border-bottom:1px solid var(--edge);padding:7px 10px;vertical-align:top}
+.w{color:var(--navy);font-weight:800}
+.pos{color:var(--gold);font-style:italic;font-size:.78rem;white-space:nowrap}
+.qc{background:var(--glass);backdrop-filter:blur(9px);border:1.5px solid var(--edge);border-radius:11px;padding:16px 18px;margin-bottom:15px;box-shadow:0 6px 16px rgba(42,32,19,.08)}
+.qn{font-family:var(--disp);font-size:.76rem;color:var(--royal);margin-bottom:8px;font-weight:700}
+.qt{font-size:1.01rem;line-height:1.8;font-weight:600;margin-bottom:13px}
+.qt b{color:var(--gold)}
+.opts{display:grid;grid-template-columns:1fr;gap:9px}
+.opt{font-family:var(--body);font-size:.92rem;font-weight:600;text-align:left;line-height:1.55;background:#fffaf0;border:2px solid var(--edge);color:var(--text);
+  padding:11px 16px;border-radius:9px;cursor:pointer;transition:.18s}
+.opt:hover:not(:disabled){border-color:var(--royal);background:#fdeef1;transform:translateX(4px)}
+.opt:disabled{cursor:default}
+.opt.correct{background:#dcf3e3;border-color:var(--ok);color:#0f4d28;font-weight:800}
+.opt.wrong{background:#f9dcdc;border-color:var(--no);color:#6f1414;font-weight:800;animation:shk .45s}
+@keyframes shk{10%,90%{transform:translateX(-2px)}20%,80%{transform:translateX(4px)}30%,50%,70%{transform:translateX(-7px)}40%,60%{transform:translateX(7px)}}
+.expl{display:none;margin-top:13px}
+.expl.open{display:block;animation:fd .35s ease}
+.expl h4{font-family:var(--disp);font-size:.94rem;color:var(--gold);margin-bottom:10px;font-weight:700}
+.estep{background:#fffaf0;border-left:5px solid var(--gilt);border-radius:0 9px 9px 0;padding:11px 14px;margin-bottom:9px;font-size:.92rem;line-height:1.85}
+.estep.s1{border-left-color:var(--teal)} .estep.s1 .elbl{color:var(--teal)}
+.estep.s2{border-left-color:var(--gilt)} .estep.s2 .elbl{color:var(--gilt)}
+.estep.s3{border-left-color:var(--ok);background:rgba(22,101,52,.06)} .estep.s3 .elbl{color:var(--ok)}
+.estep.s4{border-left-color:var(--no);background:rgba(153,27,27,.06)} .estep.s4 .elbl{color:var(--no)}
+.estep.ev{border-left-color:var(--royal);background:rgba(139,26,58,.06)} .estep.ev .elbl{color:var(--royal)}
+.elbl{display:block;font-family:var(--disp);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin-bottom:5px;color:var(--text-dim)}
+.expl ul{list-style:none;margin:5px 0 0}
+.expl li{padding:6px 9px;margin:5px 0;background:#fff;border-left:2px solid var(--edge);border-radius:0 5px 5px 0}
+.p-word{color:var(--navy);font-weight:800}
+.p-mean{color:var(--gold);font-weight:700}
+.p-grammar{color:var(--royal);font-weight:800;background:rgba(139,26,58,.1);border-radius:4px;padding:0 6px}
+.hl-green{color:var(--ok);font-weight:800}
+.hl-red{color:var(--no);font-weight:800}
+.sw{text-align:center;margin:22px 0 8px}
+.bsub{font-family:var(--disp);font-size:1.02rem;background:linear-gradient(135deg,var(--royal),var(--navy));color:#fff;border:none;
+  padding:15px 34px;border-radius:30px;cursor:pointer;box-shadow:0 8px 22px rgba(139,26,58,.32);transition:.2s;font-weight:700}
+.bsub:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(26,47,92,.36)}
+.ov{display:none;position:fixed;inset:0;z-index:100;background:rgba(42,32,19,.5);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:16px}
+.ov.open{display:flex}
+.mb{background:linear-gradient(160deg,#fff,#f8efe0);border:3px solid var(--royal);border-radius:16px;padding:26px 28px;max-width:455px;width:100%;
+  text-align:center;animation:pop .3s ease;box-shadow:0 20px 44px rgba(0,0,0,.22)}
+@keyframes pop{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
+.mb h2{font-family:var(--disp);font-size:1.12rem;color:var(--royal);margin-bottom:14px;font-weight:700}
+.mb input{width:100%;font-family:var(--body);font-size:.92rem;font-weight:600;padding:11px 14px;background:#fffaf0;border:2px solid var(--gilt);border-radius:22px;color:var(--text);text-align:center;outline:none;margin-bottom:9px}
+.mb input:focus{border-color:var(--royal)}
+.err{color:var(--no);font-size:.72rem;font-weight:800;margin-bottom:8px;display:none}
+.err.show{display:block}
+.bok{font-family:var(--disp);font-size:.92rem;background:var(--royal);color:#fff;border:none;padding:11px 28px;border-radius:22px;cursor:pointer;font-weight:700}
+.rname{font-size:.76rem;color:var(--text-dim);font-weight:600;margin-bottom:5px}
+.rscore{font-family:var(--disp);font-size:2.5rem;color:var(--royal);line-height:1;margin:6px 0;font-weight:700}
+.rs10{font-family:var(--disp);font-size:1.02rem;color:var(--ok);margin-bottom:8px;font-weight:700}
+.rgif{width:175px;margin:10px auto;display:block;border:3px solid var(--gilt);border-radius:9px}
+.rcmt{font-size:.85rem;line-height:1.75;background:#fdf3e5;border:2px dashed var(--gilt);border-radius:9px;padding:11px 14px;margin:12px 0}
+.bcl{font-family:var(--body);font-size:.72rem;font-weight:800;background:transparent;border:2px solid var(--gilt);color:var(--royal);padding:9px 24px;border-radius:22px;cursor:pointer}
+.cn{position:fixed;top:-16px;z-index:200;pointer-events:none;animation:cf 2.4s forwards}
+@keyframes cf{0%{transform:translateY(0) rotate(0);opacity:1}100%{transform:translateY(108vh) rotate(700deg);opacity:0}}
+@media(max-width:900px){.main{flex-direction:column;padding:0 18px 42px}.lp{flex:1 1 auto;width:100%}.lp,.rp{max-height:none}}
+</style>
+</head>
+<body>
+<style>
+:root{--nbh:50px}
+body{padding-top:var(--nbh)}
+.nbar{position:fixed;top:0;left:0;right:0;z-index:150;min-height:var(--nbh);display:flex;align-items:center;gap:11px;padding:6px 16px;
+  background:#ffb703;border-bottom:2px solid #c98a00;box-shadow:0 2px 12px rgba(0,0,0,.14)}
+.nbar .pin{font-size:1.15rem;flex:0 0 auto;animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.22);opacity:.75}}
+.nbtxt{flex:1 1 auto;min-width:0;font-family:'Nunito',sans-serif;font-size:.82rem;font-weight:800;line-height:1.35;color:#1a1033;transition:opacity .4s ease}
+.nbtg{flex:0 0 auto;font-family:'Nunito',sans-serif;font-size:.68rem;font-weight:800;background:#1a1033;color:#ffd76e;border:none;border-radius:16px;padding:6px 13px;cursor:pointer;white-space:nowrap}
+.nbtg:hover{background:#2b1b52}
+.nfull{display:none;position:fixed;top:var(--nbh);left:0;right:0;z-index:149;max-height:52vh;overflow-y:auto;padding:13px 18px;background:#fff8e6;border-bottom:2px solid #c98a00;box-shadow:0 8px 22px rgba(0,0,0,.14)}
+.nfull.open{display:block}
+.nfull ul{list-style:none;display:grid;gap:8px;max-width:1100px;margin:0 auto}
+.nfull li{font-family:'Nunito',sans-serif;font-size:.86rem;font-weight:600;line-height:1.7;color:#42305a;background:rgba(255,183,3,.14);border-left:4px solid #ffb703;border-radius:0 8px 8px 0;padding:9px 13px}
+.nfull li b{color:#a35b00}
+@media(max-width:900px){:root{--nbh:64px}.nbtxt{font-size:.75rem}}
+</style>
+<script>
+function nbToggle(){var p=document.getElementById('nfull'),b=document.getElementById('nbtg');p.classList.toggle('open');b.textContent=p.classList.contains('open')?'▲ Thu gọn':'▼ Xem đủ';}
+document.addEventListener('DOMContentLoaded',function(){var src=document.querySelectorAll('#nfull li');var box=document.getElementById('nbtxt');if(!src.length||!box)return;var i=0;
+function show(){box.style.opacity=0;setTimeout(()=>{box.innerHTML=src[i].innerHTML;box.style.opacity=1;i=(i+1)%src.length;},400);}
+show();setInterval(show,7000);});
+</script>
+<div class="nbar"><span class="pin">💡</span><div class="nbtxt" id="nbtxt"></div><button class="nbtg" id="nbtg" onclick="nbToggle()">▼ Xem đủ</button></div>
+<div class="nfull" id="nfull"><ul>
+  <li>🤝 <b>Ms không chấm em bằng số câu đúng, mà bằng số điều em thật sự hiểu.</b> Gặp chữ lạ thì mở Google Dịch, ChatGPT hay Gemini tra cho rõ đã, đừng vội bấm rồi tự nhủ "chắc là câu này".</li>
+  <li>👂 <b>Một từ chỉ thuộc về em khi em nói được nó.</b> Tra ở từ điển Cambridge để biết phiên âm, trọng âm rơi vào đâu, nghe máy đọc rồi lặp lại vài lần.</li>
+  <li>🔍 <b>Đừng đóng bài khi chưa đọc lời giải.</b> Cả bốn bước đều được viết ra để em thấy cái bẫy nằm ở đâu — nhận ra hôm nay thì mai vào phòng thi em sẽ bình tĩnh hơn nhiều.</li>
+  <li>✏️ <b>Trang vở của em quan trọng hơn màn hình này.</b> Ghi lại từ mới, giới từ đi kèm, cấu trúc câu, thêm một ví dụ do chính em đặt.</li>
+  <li>👑 <b>Bài đọc hôm nay đưa em ghé thăm nước Anh qua các lễ hội truyền thống.</b> Học một ngôn ngữ mới cũng như khám phá một nền văn hóa mới — càng tìm hiểu, càng thấy thú vị!</li>
+</ul></div>
+<div class="mist"><span></span><span></span><span></span></div>
+<div class="fl" id="fl"></div>
+
+<header>
+  <div>
+    <div class="tag">👑 GKII · Second Midterm · Test 3</div>
+    <h1>B. Reading — Learning a Foreign Language &amp; UK Traditions and Holidays</h1>
+    <div class="sub">Giáo viên tạo: MS Chí Nên · 12 câu (21 → 32)</div>
+  </div>
+  <div class="gauge"><div class="num" id="lv">0/12</div><div class="lbl">Điểm</div></div>
+</header>
+
+<div class="main">
+<div class="lp">
+  <div class="slbl">📜 Bài đọc</div>
+
+  <div class="pc">
+    <div class="plbl">VII — Learning a Foreign Language (đoạn 1)</div>
+    <div class="wbox"><b>vocabulary</b><b>familiar</b><b>which</b><b>on</b><b>expand</b><b>pronunciation</b></div>
+    <div class="pt">If you're a student who is keen <span class="blk">21</span> picking up a foreign language, you'll know that it can be very challenging. Learning new words and practising foreign <span class="blk">22</span> takes plenty of time and effort.</div>
+    <button class="btr" onclick="tv('v1')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v1">Nếu bạn là học sinh đam mê học một ngoại ngữ, bạn sẽ biết rằng điều đó có thể rất thử thách. Học từ mới và luyện phát âm ngoại ngữ đòi hỏi rất nhiều thời gian và công sức.</div>
+  </div>
+
+  <div class="pc">
+    <div class="plbl">VII (tiếp) — đoạn 2 → 3</div>
+    <div class="pt">One of the most useful ways to learn the basics of a language is to read children's books. After all, the content is shorter, and the <span class="blk">23</span> is basic. Their sentence structure is simpler to understand, making it useful for new learners. The pictures in the books can also help you guess words, <span class="blk">24</span> makes learning more fun.</div>
+    <button class="btr" onclick="tv('v2')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v2">Một trong những cách hữu ích nhất để học những điều cơ bản của một ngôn ngữ là đọc sách thiếu nhi. Xét cho cùng, nội dung ngắn hơn, và từ vựng cơ bản hơn. Cấu trúc câu của chúng cũng đơn giản hơn để hiểu, giúp ích cho người mới học. Những hình ảnh trong sách cũng có thể giúp bạn đoán từ, điều này khiến việc học trở nên thú vị hơn.</div>
+
+    <div class="pt" style="margin-top:10px">Once you've had a grasp of certain words, you can start reading harder materials to help you <span class="blk">25</span> your vocabulary. For starters, you can consider reading the translated version of your favourite book. This can help you guess the words and context more easily compared to reading other novels as you're already <span class="blk">26</span> with the plot and characters. Gradually, you can dive into other novels or even news articles.</div>
+    <button class="btr" onclick="tv('v3')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v3">Khi bạn đã nắm được một số từ nhất định, bạn có thể bắt đầu đọc những tài liệu khó hơn để giúp mở rộng vốn từ vựng. Để bắt đầu, bạn có thể cân nhắc đọc bản dịch của cuốn sách yêu thích của mình. Điều này có thể giúp bạn đoán từ và ngữ cảnh dễ dàng hơn so với việc đọc các tiểu thuyết khác vì bạn đã quen thuộc với cốt truyện và nhân vật. Dần dần, bạn có thể chuyển sang đọc các tiểu thuyết khác hoặc thậm chí các bài báo.</div>
+  </div>
+
+  <div class="pc" style="border-left-color:var(--navy)">
+    <div class="plbl">VIII — UK Traditions and Holidays (Christmas &amp; St. Patrick's Day)</div>
+    <div class="pt">The United Kingdom is a country with a very rich history and many fascinating traditions and holidays. Each has its own unique features and is a chance for people to celebrate together.<br><br><b>Christmas</b> – One of the most important holidays in the UK. Traditionally it's celebrated on December 25th. The main elements of the celebration are festive parties, communal meals (especially the traditional roast turkey with side dishes) and the exchange of gifts. Houses and Christmas trees are decorated with ornaments and lights.</div>
+    <button class="btr" onclick="tv('v4')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v4">Vương quốc Anh là một đất nước có lịch sử vô cùng phong phú cùng nhiều truyền thống và ngày lễ hấp dẫn. Mỗi ngày lễ đều có những nét đặc trưng riêng và là dịp để mọi người cùng nhau ăn mừng.<br><br><b>Giáng sinh</b> – Một trong những ngày lễ quan trọng nhất ở Anh. Theo truyền thống, lễ được tổ chức vào ngày 25 tháng 12. Các yếu tố chính của lễ hội gồm những bữa tiệc tưng bừng, bữa ăn chung (đặc biệt là món gà tây quay truyền thống cùng các món ăn kèm) và việc trao đổi quà tặng. Nhà cửa và cây thông Noel được trang trí bằng đồ trang trí và đèn.</div>
+
+    <div class="pt" style="margin-top:10px"><b>Saint Patrick's Day</b> – This holiday is celebrated in the UK, especially in Northern Ireland. On March 17 each year, people participate in parades wearing the symbol of St. Patrick – clovers. Cultural events, dancing, concerts and festivals take place in many cities, and pubs serve traditional Irish food and drink.</div>
+    <button class="btr" onclick="tv('v5')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v5"><b>Ngày Thánh Patrick</b> – Ngày lễ này được tổ chức ở Anh, đặc biệt là ở Bắc Ireland. Vào ngày 17 tháng 3 hàng năm, mọi người tham gia diễu hành và đeo biểu tượng của Thánh Patrick – cỏ ba lá. Các sự kiện văn hóa, khiêu vũ, hòa nhạc và lễ hội diễn ra ở nhiều thành phố, và các quán rượu phục vụ đồ ăn thức uống truyền thống của Ireland.</div>
+  </div>
+
+  <div class="pc" style="border-left-color:var(--navy)">
+    <div class="plbl">VIII (tiếp) — King's Birthday &amp; Guy Fawkes Night</div>
+    <div class="pt"><b>King's birthday – Trooping the Colour</b> – The UK celebrates the birthday of its monarch, currently King Charles the Third, in June every year. Even though the monarch's birthday is not always celebrated on its exact date, the British take part in parades, military displays and other festivities for the occasion. It is also the time when national flags are hoisted and streets are decorated in honor of the monarch.</div>
+    <button class="btr" onclick="tv('v6')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v6"><b>Sinh nhật Nhà vua – Lễ Duyệt binh Trooping the Colour</b> – Vương quốc Anh tổ chức sinh nhật của quân vương, hiện là Vua Charles Đệ Tam, vào tháng 6 hàng năm. Mặc dù sinh nhật của quân vương không phải lúc nào cũng được tổ chức đúng ngày, người Anh vẫn tham gia diễu hành, trình diễn quân sự và các hoạt động khác cho dịp này. Đây cũng là thời điểm quốc kỳ được kéo lên và đường phố được trang trí để tôn vinh quân vương.</div>
+
+    <div class="pt" style="margin-top:10px"><b>Guy Fawkes Night (Bonfire Night)</b> – This day is celebrated on November 5 in memory of the 1605 Gunpowder Plot, in which Guy Fawkes and his <u>associates</u> tried to blow up the British Parliament. Fireworks, bonfires and torch parades are organised on this day. The iconic Guy Fawkes figures are burned at the stake, and people prepare traditional dishes such as baked potatoes, sausages and campfire tea.</div>
+    <button class="btr" onclick="tv('v7')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v7"><b>Đêm Guy Fawkes (Đêm Đốt lửa trại)</b> – Ngày này được kỷ niệm vào ngày 5 tháng 11 để tưởng nhớ Âm mưu Thuốc súng năm 1605, trong đó Guy Fawkes và đồng bọn của ông đã cố gắng cho nổ tung Nghị viện Anh. Pháo hoa, lửa trại và diễu hành đuốc được tổ chức vào ngày này. Những hình nộm Guy Fawkes mang tính biểu tượng bị đốt trên cọc, và mọi người chuẩn bị các món ăn truyền thống như khoai tây nướng, xúc xích và trà lửa trại.</div>
+  </div>
+
+  <div class="gw">
+    <div class="gt2">📚 Glossary — Test 3</div>
+    <table class="gtb">
+      <tr><th>Word / Phrase</th><th>Loại</th><th>Nghĩa tiếng Việt</th></tr>
+      <tr><td class="w">keen on</td><td class="pos">adj phr</td><td>đam mê, thích thú</td></tr>
+      <tr><td class="w">grasp</td><td class="pos">n</td><td>sự nắm bắt, hiểu biết</td></tr>
+      <tr><td class="w">context</td><td class="pos">n</td><td>ngữ cảnh</td></tr>
+      <tr><td class="w">festive</td><td class="pos">adj</td><td>tưng bừng, mang tính lễ hội</td></tr>
+      <tr><td class="w">communal meal</td><td class="pos">n phr</td><td>bữa ăn chung</td></tr>
+      <tr><td class="w">ornament</td><td class="pos">n</td><td>đồ trang trí</td></tr>
+      <tr><td class="w">parade</td><td class="pos">n</td><td>cuộc diễu hành</td></tr>
+      <tr><td class="w">monarch</td><td class="pos">n</td><td>quân vương</td></tr>
+      <tr><td class="w">hoist</td><td class="pos">v</td><td>kéo lên (cờ)</td></tr>
+      <tr><td class="w">gunpowder plot</td><td class="pos">n phr</td><td>âm mưu thuốc súng</td></tr>
+      <tr><td class="w">associate</td><td class="pos">n</td><td>đồng bọn, cộng sự</td></tr>
+      <tr><td class="w">bonfire</td><td class="pos">n</td><td>lửa trại</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="rp">
+  <div class="slbl">✍️ Bài tập — 12 câu</div>
+  <div id="quiz"></div>
+  <div class="sw"><button class="bsub" onclick="openModal()">🎯 Nộp bài tính điểm &amp; xem kết quả</button></div>
+</div>
+</div>
+
+<div class="ov" id="nm"><div class="mb">
+  <h2>✍️ Nhập tên để nộp bài</h2>
+  <input type="text" id="sn" placeholder="Họ và tên học sinh...">
+  <div class="err" id="er">Vui lòng nhập tên trước khi nộp bài!</div>
+  <button class="bok" onclick="sub()">Xem kết quả</button>
+</div></div>
+
+<div class="ov" id="rm"><div class="mb" style="max-width:470px">
+  <div class="rname" id="rn"></div><div class="rscore" id="rs"></div><div class="rs10" id="rs10"></div>
+  <img class="rgif" id="rg" src="" alt=""><div class="rcmt" id="rc"></div>
+  <button class="bcl" onclick="closeR()">Đóng &amp; xem lại bài</button>
+</div></div>
+
+<script>
+const QS=[];
+const WBANK=[{t:"vocabulary",m:"từ vựng"},{t:"familiar",m:"quen thuộc"},{t:"which",m:"điều mà (đại từ quan hệ)"},{t:"on",m:"(keen) on: đam mê"},{t:"expand",m:"mở rộng"},{t:"pronunciation",m:"phát âm"}];
+function wopts(correct,pick){const others=WBANK.filter(w=>w.t!==correct);const chosen=[WBANK.find(w=>w.t===correct)];pick.forEach(t=>chosen.push(others.find(w=>w.t===t)));return chosen.map(w=>({t:w.t,m:w.m,c:w.t===correct?1:0}));}
+
+QS.push({n:21,sec:"VII · Foreign Language",qt:"...a student who is keen <b>(21)_____</b> picking up a foreign language.",
+opts:wopts("on",["expand","familiar","which"]),
+tr:'"...a student who is keen ______ picking up a foreign language..." 👉 <span class="p-mean">"...học sinh đam mê học một ngoại ngữ..."</span>',
+ok:'Chọn <span class="hl-green">on</span>. Cụm cố định <span class="p-grammar">be keen on + V-ing</span> <span class="p-mean">(đam mê, thích thú làm gì)</span> là collocation chuẩn.',
+no:'<span class="hl-red">expand</span>, <span class="hl-red">familiar</span>, <span class="hl-red">which</span> đều không tạo thành cụm cố định với "keen" theo cấu trúc này.',
+ev:'"...a student who is keen <b>on</b> picking up a foreign language..." 👉 <span class="p-mean">"...học sinh đam mê học một ngoại ngữ..."</span>'});
+
+QS.push({n:22,sec:"VII · Foreign Language",qt:"Learning new words and practising foreign <b>(22)_____</b> takes plenty of time and effort.",
+opts:wopts("pronunciation",["vocabulary","expand","on"]),
+tr:'"Learning new words and practising foreign ______ takes plenty of time and effort." 👉 <span class="p-mean">"Học từ mới và luyện phát âm ngoại ngữ đòi hỏi rất nhiều thời gian và công sức."</span>',
+ok:'Chọn <span class="hl-green">pronunciation</span> <span class="p-mean">(phát âm)</span>. Song song với "Learning new words" (học từ mới), vế thứ hai nói về việc luyện tập PHÁT ÂM ngoại ngữ.',
+no:'<span class="hl-red">vocabulary</span> đã được ngụ ý qua "new words" ở vế trước, lặp ý; <span class="hl-red">expand</span> là động từ, sai từ loại; <span class="hl-red">on</span> là giới từ, không phải danh từ để làm tân ngữ của "practising".',
+ev:'"Learning new words and practising foreign <b>pronunciation</b> takes plenty of time and effort." 👉 <span class="p-mean">"Học từ mới và luyện phát âm ngoại ngữ đòi hỏi rất nhiều thời gian và công sức."</span>'});
+
+QS.push({n:23,sec:"VII · Foreign Language",qt:"...the content is shorter, and the <b>(23)_____</b> is basic.",
+opts:wopts("vocabulary",["pronunciation","familiar","which"]),
+tr:'"...the content is shorter, and the ______ is basic." 👉 <span class="p-mean">"...nội dung ngắn hơn, và từ vựng cơ bản hơn."</span>',
+ok:'Chọn <span class="hl-green">vocabulary</span> <span class="p-mean">(từ vựng)</span>. Sách thiếu nhi phù hợp cho người mới học vì có nội dung ngắn VÀ từ vựng đơn giản, cơ bản.',
+no:'<span class="hl-red">pronunciation</span> (phát âm) không liên quan đến độ khó của NỘI DUNG SÁCH; <span class="hl-red">familiar</span> là tính từ, sai từ loại (cần danh từ làm chủ ngữ); <span class="hl-red">which</span> là đại từ quan hệ, không phải danh từ.',
+ev:'"...the content is shorter, and the <b>vocabulary</b> is basic." 👉 <span class="p-mean">"...nội dung ngắn hơn, và từ vựng cơ bản hơn."</span>'});
+
+QS.push({n:24,sec:"VII · Foreign Language",qt:"The pictures in the books can also help you guess words, <b>(24)_____</b> makes learning more fun.",
+opts:wopts("which",["vocabulary","expand","on"]),
+tr:'"The pictures in the books can also help you guess words, ______ makes learning more fun." 👉 <span class="p-mean">"Những hình ảnh trong sách cũng có thể giúp bạn đoán từ, điều này khiến việc học trở nên thú vị hơn."</span>',
+ok:'Chọn <span class="hl-green">which</span>. Đại từ quan hệ <span class="p-grammar">which</span> thay thế cho CẢ MỆNH ĐỀ TRƯỚC ("hình ảnh giúp đoán từ"), giới thiệu mệnh đề bổ sung nhận xét.',
+no:'<span class="hl-red">vocabulary</span>, <span class="hl-red">expand</span>, <span class="hl-red">on</span> đều không phải đại từ quan hệ, không thể nối hai mệnh đề theo cách này.',
+ev:'"The pictures in the books can also help you guess words, <b>which</b> makes learning more fun." 👉 <span class="p-mean">"Hình ảnh trong sách giúp đoán từ, điều này khiến việc học thú vị hơn."</span>'});
+
+QS.push({n:25,sec:"VII · Foreign Language",qt:"...reading harder materials to help you <b>(25)_____</b> your vocabulary.",
+opts:wopts("expand",["familiar","which","on"]),
+tr:'"...you can start reading harder materials to help you ______ your vocabulary." 👉 <span class="p-mean">"...bạn có thể bắt đầu đọc những tài liệu khó hơn để giúp mở rộng vốn từ vựng."</span>',
+ok:'Chọn <span class="hl-green">expand</span> <span class="p-mean">(mở rộng)</span>. Động từ làm vị ngữ trong cấu trúc "help sb + V nguyên mẫu", diễn tả việc LÀM GIÀU THÊM vốn từ vựng.',
+no:'<span class="hl-red">familiar</span> là tính từ, <span class="hl-red">which</span> là đại từ quan hệ, <span class="hl-red">on</span> là giới từ — không từ nào là động từ phù hợp ở vị trí này.',
+ev:'"...you can start reading harder materials to help you <b>expand</b> your vocabulary." 👉 <span class="p-mean">"...bạn có thể bắt đầu đọc tài liệu khó hơn để giúp mở rộng vốn từ vựng."</span>'});
+
+QS.push({n:26,sec:"VII · Foreign Language",qt:"...as you're already <b>(26)_____</b> with the plot and characters.",
+opts:wopts("familiar",["vocabulary","expand","which"]),
+tr:'"...compared to reading other novels as you\'re already ______ with the plot and characters." 👉 <span class="p-mean">"...so với việc đọc các tiểu thuyết khác vì bạn đã quen thuộc với cốt truyện và nhân vật."</span>',
+ok:'Chọn <span class="hl-green">familiar</span> <span class="p-mean">(quen thuộc)</span>. Cụm cố định <span class="p-grammar">be familiar with sth</span> <span class="p-mean">(quen thuộc với điều gì)</span> là collocation chuẩn.',
+no:'<span class="hl-red">vocabulary</span> là danh từ, <span class="hl-red">expand</span> là động từ, <span class="hl-red">which</span> là đại từ quan hệ — không từ nào bổ nghĩa được sau "be already ___" theo cấu trúc tính từ.',
+ev:'"...as you\'re already <b>familiar</b> with the plot and characters." 👉 <span class="p-mean">"...vì bạn đã quen thuộc với cốt truyện và nhân vật."</span>'});
+
+QS.push({n:27,sec:"VIII · UK Traditions",qt:"British people celebrate all holidays with roast turkey, gift exchange, and bonfires.",
+opts:[{t:"True",m:"Đúng"},{t:"False",m:"Sai",c:1},{t:"Not mentioned",m:"Không được nhắc đến"},{t:"Only during Christmas",m:"Chỉ đúng vào dịp Giáng sinh"}],
+tr:'"British people celebrate all holidays with roast turkey, gift exchange, and bonfires." 👉 <span class="p-mean">"Người Anh tổ chức TẤT CẢ các ngày lễ với gà tây quay, trao quà, và lửa trại."</span>',
+ok:'Chọn <span class="hl-green">False</span>. Mỗi ngày lễ có đặc trưng RIÊNG: gà tây quay/trao quà là của Giáng sinh, còn lửa trại là của Guy Fawkes Night — không phải TẤT CẢ các ngày lễ đều có chung các yếu tố này.',
+no:'<span class="hl-red">True</span> sai vì mỗi lễ có nét riêng biệt, không trùng lặp toàn bộ; <span class="hl-red">Not mentioned</span> sai vì bài có mô tả chi tiết từng lễ; <span class="hl-red">Only during Christmas</span> không chính xác vì câu hỏi nói về "ALL holidays" (tất cả), trong khi thực tế mỗi lễ khác nhau.',
+ev:'Giáng sinh có "roast turkey... exchange of gifts"; Guy Fawkes Night có "bonfires" — đây là các đặc trưng RIÊNG của từng lễ, không phải chung cho tất cả.'});
+
+QS.push({n:28,sec:"VIII · UK Traditions",qt:"People often follow a dress code when celebrating Saint Patrick's Day.",
+opts:[{t:"True",m:"Đúng",c:1},{t:"False",m:"Sai"},{t:"Not mentioned",m:"Không được nhắc đến"},{t:"Only in London",m:"Chỉ đúng ở London"}],
+tr:'"People often follow a dress code when celebrating Saint Patrick\'s Day." 👉 <span class="p-mean">"Mọi người thường tuân theo một quy định về trang phục khi ăn mừng Ngày Thánh Patrick."</span>',
+ok:'Chọn <span class="hl-green">True</span>. Bài: "people participate in parades wearing the symbol of St. Patrick – clovers" — việc đeo biểu tượng cỏ ba lá chính là một hình thức "dress code" (quy định trang phục/biểu tượng).',
+no:'<span class="hl-red">False</span> sai vì khớp với chi tiết trong bài; <span class="hl-red">Not mentioned</span> sai vì có mô tả rõ ràng; <span class="hl-red">Only in London</span> sai vì bài nói lễ này được tổ chức "especially in Northern Ireland", không nhắc riêng London.',
+ev:'"...people participate in parades wearing the symbol of St. Patrick – <b>clovers</b>." 👉 <span class="p-mean">"...mọi người tham gia diễu hành và đeo biểu tượng của Thánh Patrick – cỏ ba lá."</span>'});
+
+QS.push({n:29,sec:"VIII · UK Traditions",qt:"Trooping the Colour is in June every year, not always on the exact birthday of the king.",
+opts:[{t:"True",m:"Đúng",c:1},{t:"False",m:"Sai"},{t:"Not mentioned",m:"Không được nhắc đến"},{t:"Only for Queen Elizabeth",m:"Chỉ đúng với Nữ hoàng Elizabeth"}],
+tr:'"Trooping the Colour is in June every year, not always on the exact birthday of the king." 👉 <span class="p-mean">"Lễ Trooping the Colour diễn ra vào tháng 6 hàng năm, không phải lúc nào cũng đúng ngày sinh nhật của vua."</span>',
+ok:'Chọn <span class="hl-green">True</span>. Bài xác nhận trực tiếp: "in June every year... the monarch\'s birthday is not always celebrated on its exact date."',
+no:'<span class="hl-red">False</span> sai vì khớp hoàn toàn với bài; <span class="hl-red">Not mentioned</span> sai vì có nêu rõ; <span class="hl-red">Only for Queen Elizabeth</span> sai vì bài nói về vua HIỆN TẠI là "King Charles the Third", không nhắc đến Nữ hoàng Elizabeth.',
+ev:'"...currently King Charles the Third, in June every year. Even though the monarch\'s birthday is <b>not always celebrated on its exact date</b>..." 👉 <span class="p-mean">"...vào tháng 6 hàng năm. Mặc dù sinh nhật quân vương không phải lúc nào cũng đúng ngày..."</span>'});
+
+QS.push({n:30,sec:"VIII · UK Traditions",qt:"On Guy Fawkes Night, people raise the national flags and enjoy traditional dishes.",
+opts:[{t:"True",m:"Đúng"},{t:"False",m:"Sai",c:1},{t:"Not mentioned",m:"Không được nhắc đến"},{t:"Only the flag-raising part",m:"Chỉ đúng phần kéo cờ"}],
+tr:'"On Guy Fawkes Night, people raise the national flags and enjoy traditional dishes." 👉 <span class="p-mean">"Vào Đêm Guy Fawkes, mọi người kéo quốc kỳ và thưởng thức món ăn truyền thống."</span>',
+ok:'Chọn <span class="hl-green">False</span>. Việc "kéo quốc kỳ" (hoist national flags) chỉ được nhắc đến ở lễ SINH NHẬT NHÀ VUA, không phải Guy Fawkes Night — Guy Fawkes Night chỉ có pháo hoa, lửa trại, và món ăn truyền thống (không có kéo cờ).',
+no:'<span class="hl-red">True</span> sai vì trộn lẫn chi tiết của HAI lễ khác nhau; <span class="hl-red">Not mentioned</span> không chính xác vì phần "traditional dishes" CÓ được nhắc; <span class="hl-red">Only the flag-raising part</span> sai vì phần kéo cờ hoàn toàn KHÔNG thuộc về Guy Fawkes Night.',
+ev:'Kéo cờ ("national flags are hoisted") chỉ thuộc về đoạn "King\'s birthday", còn Guy Fawkes Night chỉ có "Fireworks, bonfires and torch parades... traditional dishes such as baked potatoes, sausages and campfire tea" — không có việc kéo cờ.'});
+
+QS.push({n:31,sec:"VIII · UK Traditions",qt:'The word "associates" in the last paragraph is opposite in meaning to ___.',
+opts:[{t:"opponents",m:"đối thủ",c:1},{t:"partners",m:"đối tác"},{t:"assistants",m:"trợ lý"},{t:"servants",m:"người phục vụ"}],
+tr:'"...in which Guy Fawkes and his associates tried to blow up the British Parliament." 👉 <span class="p-mean">"...trong đó Guy Fawkes và đồng bọn của ông đã cố gắng cho nổ tung Nghị viện Anh."</span>',
+ok:'Chọn <span class="hl-green">opponents</span> <span class="p-mean">(đối thủ)</span>. <span class="p-word">associates</span> <span class="p-mean">(đồng bọn, cộng sự — người CÙNG PHE)</span> trái nghĩa với "opponents" (người ĐỐI ĐẦU/khác phe).',
+no:'<span class="hl-red">partners</span> (đối tác) và <span class="hl-red">assistants</span> (trợ lý) đều là TỪ ĐỒNG NGHĨA gần với "associates", không phải trái nghĩa; <span class="hl-red">servants</span> (người phục vụ) không liên quan đến ý nghĩa "cùng phe/khác phe".',
+ev:'"Guy Fawkes and his <b>associates</b> tried to blow up the British Parliament." 👉 <span class="p-mean">"Guy Fawkes và đồng bọn của ông cố gắng cho nổ tung Nghị viện Anh."</span> — trái nghĩa với "associates" là "opponents".'});
+
+QS.push({n:32,sec:"VIII · UK Traditions",qt:"What is the most suitable title for the passage?",
+opts:[{t:"How Different Regions in the UK Celebrate Holidays",m:"Các vùng miền ở Anh ăn mừng lễ khác nhau ra sao"},{t:"The Most Important Holidays in the UK",m:"Những ngày lễ quan trọng nhất ở Anh",c:1},{t:"Traditional Holiday Dishes of the British",m:"Món ăn ngày lễ truyền thống của người Anh"},{t:"Popular Tourist Activities in the UK",m:"Hoạt động du lịch phổ biến ở Anh"}],
+tr:'"What is the most suitable title for the passage?" 👉 <span class="p-mean">"Tiêu đề nào phù hợp nhất cho đoạn văn?"</span>',
+ok:'Chọn <span class="hl-green">The Most Important Holidays in the UK</span>. Bài giới thiệu và mô tả LẦN LƯỢT bốn ngày lễ quan trọng của Anh (Giáng sinh, Thánh Patrick, sinh nhật vua, Guy Fawkes Night) — đúng trọng tâm bao quát nhất.',
+no:'<span class="hl-red">Different Regions Celebrate Holidays</span> sai vì bài không so sánh CÁCH CÁC VÙNG khác nhau ăn mừng; <span class="hl-red">Traditional Holiday Dishes</span> chỉ là MỘT chi tiết nhỏ trong mỗi lễ, không phải trọng tâm; <span class="hl-red">Tourist Activities</span> không được đề cập, bài không nói về du lịch.',
+ev:'Bài giới thiệu "many fascinating traditions and holidays" rồi lần lượt mô tả TỪNG NGÀY LỄ QUAN TRỌNG — đúng với tiêu đề "The Most Important Holidays in the UK".'});
+
+const done={};let cc=0;
+function shuffle(a){return a.sort(()=>Math.random()-0.5)}
+function build(){
+  const box=document.getElementById('quiz');
+  QS.forEach(q=>{
+    let ol='<ul style="margin:4px 0 0 4px;list-style:none">';
+    q.opts.forEach(o=>{ol+='<li style="margin:5px 0">'+(o.c?'✅ ':'❌ ')+'<span class="p-word">'+o.t+'</span>'+(o.pos?' <span class="p-grammar">'+o.pos+'</span>':'')+' ➔ <span class="p-mean">'+o.m+'</span></li>';});
+    ol+='</ul>';
+    const card=document.createElement('div');card.className='qc';card.id='q'+q.n;
+    card.innerHTML=
+      '<div class="qn">Câu '+q.n+' · '+q.sec+'</div>'+
+      '<div class="qt">'+q.qt+'</div>'+
+      '<div class="opts" id="o'+q.n+'"></div>'+
+      '<div class="expl" id="e'+q.n+'">'+
+        '<h4>📘 Giải thích chi tiết – Câu '+q.n+'</h4>'+
+        '<div class="estep s1"><div class="elbl">Bước 1 · Dịch</div>'+q.tr+'</div>'+
+        '<div class="estep s2"><div class="elbl">Bước 2 · Các phương án và nghĩa</div>'+ol+'</div>'+
+        '<div class="estep s3"><div class="elbl">Bước 3 · Vì sao đáp án này <span class="hl-green">đúng</span></div>'+q.ok+'</div>'+
+        '<div class="estep s4"><div class="elbl">Bước 4 · Vì sao các phương án kia <span class="hl-red">sai</span></div>'+q.no+'</div>'+
+        '<div class="estep ev"><div class="elbl">🔍 Dẫn chứng trong bài</div>'+q.ev+'</div>'+
+      '</div>';
+    box.appendChild(card);
+    const cont=card.querySelector('.opts');
+    const correct=q.opts.filter(o=>o.c)[0].t;
+    shuffle([...q.opts]).forEach(o=>{
+      const b=document.createElement('button');b.className='opt';b.textContent=o.t;
+      b.onclick=()=>chk(q.n,o.t,correct,b,cont);cont.appendChild(b);
+    });
+  });
+  document.getElementById('lv').textContent='0/'+QS.length;
+}
+function chk(qid,chosen,correct,btn,container){
+  if(qid in done)return;
+  done[qid]=chosen===correct;
+  container.querySelectorAll('.opt').forEach(b=>{b.disabled=true;if(b.textContent===correct)b.classList.add('correct');});
+  if(chosen===correct){btn.classList.add('correct');cc++;ding();conf();}
+  else{btn.classList.add('wrong');buzz();}
+  document.getElementById('e'+qid).classList.add('open');
+  document.getElementById('lv').textContent=cc+'/'+QS.length;
+}
+const A=new(window.AudioContext||window.webkitAudioContext)();
+function ding(){const o=A.createOscillator(),g=A.createGain();o.connect(g);g.connect(A.destination);o.frequency.setValueAtTime(523,A.currentTime);o.frequency.exponentialRampToValueAtTime(784,A.currentTime+0.15);g.gain.setValueAtTime(0.28,A.currentTime);g.gain.exponentialRampToValueAtTime(0.001,A.currentTime+0.5);o.start();o.stop(A.currentTime+0.5);}
+function buzz(){const o=A.createOscillator(),g=A.createGain();o.type='triangle';o.connect(g);g.connect(A.destination);o.frequency.setValueAtTime(200,A.currentTime);o.frequency.exponentialRampToValueAtTime(100,A.currentTime+0.2);g.gain.setValueAtTime(0.18,A.currentTime);g.gain.exponentialRampToValueAtTime(0.001,A.currentTime+0.28);o.start();o.stop(A.currentTime+0.28);}
+function conf(){
+  const cols=['#8b1a3a','#1a2f5c','#a9781f','#0f766e','#166534'];
+  for(let i=0;i<35;i++){
+    const d=document.createElement('div');d.className='cn';
+    d.style.left=Math.random()*100+'vw';d.style.background=cols[Math.floor(Math.random()*cols.length)];
+    d.style.animationDelay=Math.random()*0.7+'s';d.style.animationDuration=(1.8+Math.random()*1.0)+'s';
+    d.style.width=d.style.height=(6+Math.random()*8)+'px';d.style.borderRadius=Math.random()>0.5?'50%':'2px';
+    document.body.appendChild(d);setTimeout(()=>d.remove(),3100);
+  }
+}
+function tv(id){
+  const el=document.getElementById(id);el.classList.toggle('open');
+  const btn=el.previousElementSibling;
+  btn.textContent=el.classList.contains('open')?'Ẩn dịch 🌟':'Mở dịch đoạn này 🌟';
+}
+function openModal(){document.getElementById('nm').classList.add('open')}
+function sub(){
+  const n=document.getElementById('sn').value.trim();
+  const er=document.getElementById('er');
+  if(!n){er.classList.add('show');return;}
+  er.classList.remove('show');
+  document.getElementById('nm').classList.remove('open');
+  showRes(n);
+}
+function showRes(n){
+  const tot=QS.length;let c=0;QS.forEach(q=>{if(done[q.n]===true)c++;});
+  const p=c/tot,s10=(c/tot*10).toFixed(2);
+  document.getElementById('rn').textContent='Học sinh: '+n;
+  document.getElementById('rs').textContent=c+' / '+tot;
+  document.getElementById('rs10').textContent='Điểm quy đổi: '+s10+' / 10';
+  let gif='',cmt='';
+  if(p>=1){gif='https://media.giphy.com/media/l0MYGb1LuZ3n7dRnO/giphy.gif';cmt='🏆 Vinh danh hoàng gia! Đúng 100% — em nắm chắc cả cách học ngoại ngữ lẫn các lễ hội truyền thống Anh. MS Chí Nên rất tự hào về em!';}
+  else if(p>=0.6){gif='https://media.giphy.com/media/26u4lOMA8JKSnL9Uk/giphy.gif';cmt='👑 Khá xuất sắc! Em đạt '+c+'/'+tot+' câu. Đọc lại phần giải thích 4 bước để hoàn thiện hơn nhé!';}
+  else{gif='https://media.giphy.com/media/d2lcHJTG5Tscg/giphy.gif';cmt='📜 Cố lên nào! Em đạt '+c+'/'+tot+' câu. Bấm nút dịch từng đoạn, đọc kỹ giải thích rồi thử lại — Ms tin em làm được!';}
+  document.getElementById('rg').src=gif;
+  document.getElementById('rc').textContent=cmt;
+  document.getElementById('rm').classList.add('open');
+}
+function closeR(){document.getElementById('rm').classList.remove('open')}
+
+const ems=['👑','📜','🎄','🍀','🎆'];
+const flc=document.getElementById('fl');
+for(let i=0;i<26;i++){
+  const s=document.createElement('span');s.className='f';
+  s.textContent=ems[i%ems.length];s.style.left=Math.random()*100+'%';
+  s.style.animationDuration=(14+Math.random()*14)+'s';s.style.animationDelay=(-Math.random()*20)+'s';
+  s.style.fontSize=(1.0+Math.random()*1.2)+'rem';flc.appendChild(s);
+}
+
+build();
+</script>
+<script>/*devclean*/(function(){
+var ZW=/[\u00AD\u034F\u061C\u115F\u1160\u17B4\u17B5\u180E\u200B-\u200F\u202A-\u202E\u2060-\u206F\uFEFF]/g,
+    SP=/[\u00A0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\t]/g,
+    AP=/[\u2018\u2019\u201A\u201B\u2032\u2035\u02B9\u02BB\u02BC\u02BD\u02C8\u0060\u00B4\uFF07]/g,
+    DQ=/[\u201C\u201D\u201E\u201F\u2033\u2036\u00AB\u00BB\uFF02]/g,
+    DS=/[\u2010\u2011\u2012\u2212\uFE63\uFF0D]/g;
+function clean(v){if(!v)return v;var s=String(v);try{s=s.normalize('NFKC')}catch(e){}
+  return s.replace(ZW,'').replace(SP,' ').replace(AP,"'").replace(DQ,'"').replace(DS,'-').replace(/[\u0300-\u036f]/g,'').replace(/ {2,}/g,' ');}
+window.__devclean=clean;
+function fix(skip){var L=document.querySelectorAll('input:not([type]),input[type=text],input[type=search],textarea');
+  for(var i=0;i<L.length;i++){var el=L[i];if(el===skip||el.readOnly||el.disabled)continue;var v=el.value,c=clean(v);if(c!==v)el.value=c;}}
+['pointerdown','mousedown','touchstart','click','change','focusout'].forEach(function(t){document.addEventListener(t,function(e){fix(t==='focusout'||t==='change'?null:e.target)},true)});
+document.addEventListener('keydown',function(e){if(e.key==='Enter'||e.keyCode===13)fix(null)},true);
+})();</script>
+<style id="ms-chi-nen-unlock-style">
+#passwordModal, #password-modal, #pwModal, #pw-modal, #pw-overlay,
+#lockModal, #passModal, #authModal, #auth-modal, #lockOverlay,
+#start-overlay, #intro-overlay, #start-screen,
+.password-modal, .lock-modal, .lock-overlay {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    z-index: -9999 !important;
+}
+</style>
+<script>
+// Remove password lock completely - direct quiz access
+(function() {
+    var initDone = false;
+    var renderCheckDone = false;
+
+    function hideEl(el, hard) {
+        if (!el) return;
+        if (hard) {
+            el.style.setProperty('display', 'none', 'important');
+            el.style.setProperty('visibility', 'hidden', 'important');
+            el.style.setProperty('opacity', '0', 'important');
+            el.style.setProperty('pointer-events', 'none', 'important');
+            el.style.setProperty('z-index', '-9999', 'important');
+        } else {
+            el.style.display = 'none';
+        }
+        el.classList.remove('active', 'show', 'open', 'visible', 'flex');
+    }
+
+    function hasRenderedQuiz() {
+        var containers = document.querySelectorAll(
+            '#quiz-container, #quizContainer, #questions-container, #questionPane, #quiz, #questions, #quiz-body, #questions-wrapper, #quiz-list, #quizList, #exercise-container, #app-container .split-container'
+        );
+        for (var i = 0; i < containers.length; i++) {
+            if (containers[i].querySelectorAll('button, input, select, textarea, .question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .question, .option-btn, .opt-btn, .ans-btn').length > 0) {
+                return true;
+            }
+        }
+        if (document.querySelectorAll('.question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .option-btn, .opt-btn, .ans-btn, .choice-btn').length > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    function ensureQuizRendered() {
+        if (renderCheckDone) return;
+        renderCheckDone = true;
+        if (hasRenderedQuiz()) return;
+
+        if (!hasRenderedQuiz() && typeof buildQuiz === 'function') { try { buildQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof initQuiz === 'function') { try { initQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderApp === 'function') { try { renderApp(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuiz === 'function') { try { renderQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuestions === 'function') { try { renderQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAllQuestions === 'function') { try { renderAllQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAll === 'function') { try { renderAll(); } catch(e){} }
+    }
+
+    function unlockNow() {
+        var pwIds = [
+            'passwordModal', 'password-modal', 'pwModal', 'pw-modal', 'pw-overlay',
+            'lockModal', 'passModal', 'authModal', 'auth-modal', 'lockOverlay',
+            'start-overlay', 'intro-overlay', 'start-screen'
+        ];
+        pwIds.forEach(function(id) {
+            hideEl(document.getElementById(id), true);
+        });
+
+        var modalEls = document.querySelectorAll('.password-modal, .lock-modal, .lock-overlay, #lockOverlay, #auth-modal');
+        modalEls.forEach(function(el) {
+            if (el.id !== 'resultModal' && el.id !== 'result-modal' && el.id !== 'scoreModal') {
+                hideEl(el, true);
+            }
+        });
+
+        ['nameModal', 'name-modal', 'nameInputModal'].forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) hideEl(el, false);
+        });
+
+        var qo = document.getElementById('quiz-overlay');
+        if (qo && (typeof isStarted === 'undefined' || !isStarted)) {
+            qo.style.display = 'none';
+        }
+
+        var mainIds = [
+            'mainContent', 'main-content', 'mainHeader', 'main-header',
+            'app-container', 'app', 'quizApp', 'quiz-wrapper', 'quizContainer', 'quiz-container', 'reading-content'
+        ];
+        mainIds.forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) {
+                el.classList.remove('hidden', 'blur', 'blurred', 'locked');
+                if (el.style.display === 'none') {
+                    el.style.removeProperty('display');
+                }
+                if (window.getComputedStyle(el).display === 'none') {
+                    var hasPane = el.querySelector('.pane, .left-pane, .right-pane, .split-container, .left-panel, .right-panel');
+                    if (id === 'main-content' || id.toLowerCase().includes('header') || el.classList.contains('main-container') || hasPane) {
+                        el.style.setProperty('display', 'flex', 'important');
+                    } else {
+                        el.style.setProperty('display', 'block', 'important');
+                    }
+                }
+            }
+        });
+
+        var qs = document.getElementById('quiz-screen');
+        if (qs) {
+            qs.classList.remove('hidden');
+            if (qs.classList.contains('flex-col')) {
+                qs.classList.add('flex');
+                qs.style.display = 'flex';
+            } else {
+                qs.style.display = 'block';
+            }
+        }
+
+        if (!initDone) {
+            initDone = true;
+
+            if (document.getElementById('start-overlay') && typeof startGame === 'function') {
+                var sn = document.getElementById('student-name') || document.getElementById('studentName');
+                if (sn && !sn.value.trim()) sn.value = 'Học sinh';
+            }
+            if (document.getElementById('name-modal') && typeof startQuiz === 'function') {
+                var sn2 = document.getElementById('student-name');
+                if (sn2 && !sn2.value.trim()) sn2.value = 'Học sinh';
+            }
+
+            if (typeof startQuiz === 'function' && (typeof isStarted === 'undefined' || !isStarted)) { try { startQuiz(); } catch(e){} }
+            if (typeof startGame === 'function') { try { startGame(); } catch(e){} }
+            if (typeof startTest === 'function') { try { startTest(); } catch(e){} }
+            if (typeof startApp === 'function') { try { startApp(); } catch(e){} }
+            if (typeof buildStarfield === 'function') { try { buildStarfield(); } catch(e){} }
+            if (typeof spawnFloats === 'function') { try { spawnFloats(); } catch(e){} }
+            if (typeof spawnFloaters === 'function') { try { spawnFloaters(); } catch(e){} }
+            if (typeof createFloatingBubbles === 'function') { try { createFloatingBubbles(); } catch(e){} }
+            if (typeof initAudio === 'function') { try { initAudio(); } catch(e){} }
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', unlockNow);
+    } else {
+        unlockNow();
+    }
+    if (document.readyState === 'complete') {
+        setTimeout(ensureQuizRendered, 150);
+    } else {
+        window.addEventListener('load', function() {
+            setTimeout(unlockNow, 20);
+            setTimeout(ensureQuizRendered, 150);
+            setTimeout(unlockNow, 300);
+            setTimeout(unlockNow, 700);
+        });
+    }
+    setTimeout(unlockNow, 50);
+    setTimeout(unlockNow, 200);
+    setTimeout(unlockNow, 600);
+    setTimeout(unlockNow, 1100);
+})();
+</script>
+</body>
+</html>

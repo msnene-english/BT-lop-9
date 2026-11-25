@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UNIT 10 · TEST 1 · READING — Melting Glaciers &amp; The Great Pacific Garbage Patch | MS Chí Nên</title>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* THEME: TERRA VISTA (trái đất xanh - đại dương & băng hà) */
+:root{
+  --bg1:#eaf6ff;--bg2:#e3fff2;--e1:#2a9d8f;--e2:#4cc9f0;--e3:#52b788;--e4:#e07a00;
+  --glass:rgba(255,255,255,.62);--edge:rgba(20,90,80,.14);
+  --text:#0f3a30;--text-dim:#5f8a76;--gold:#e07a00;
+  --ok:#2e7d32;--ok-bg:rgba(46,125,50,.14);--no:#d32f2f;--no-bg:rgba(211,47,47,.14);
+  --disp:'Quicksand',sans-serif;--body:'Nunito',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:19px}
+body{font-family:var(--body);color:var(--text);min-height:100vh;overflow-x:hidden;position:relative;background:linear-gradient(150deg,var(--bg1),var(--bg2))}
+.mist{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;filter:blur(60px);opacity:.5}
+.mist span{position:absolute;width:46vw;height:46vw;border-radius:50%;mix-blend-mode:multiply;animation:drift 26s ease-in-out infinite}
+.mist span:nth-child(1){background:var(--e2);top:-14%;left:-8%}
+.mist span:nth-child(2){background:var(--e3);top:10%;right:-12%;animation-delay:-9s}
+.mist span:nth-child(3){background:var(--e4);bottom:-18%;left:22%;animation-delay:-17s}
+.mist span:nth-child(4){background:var(--e1);bottom:-6%;right:8%;width:32vw;height:32vw;animation-delay:-4s}
+@keyframes drift{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(5%,-6%) scale(1.12)}}
+.fl{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.f{position:absolute;font-size:1.4rem;opacity:.28;animation:rise linear infinite}
+@keyframes rise{0%{transform:translateY(106vh) rotate(-6deg)}100%{transform:translateY(-12vh) rotate(280deg)}}
+header{position:relative;z-index:10;max-width:1360px;margin:16px auto 10px;background:var(--glass);backdrop-filter:blur(16px);
+  border:1.5px solid var(--edge);border-radius:16px;box-shadow:0 6px 24px rgba(42,157,143,.16);
+  padding:16px 26px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.tag{font-family:var(--disp);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--e1);font-weight:700;margin-bottom:4px}
+header h1{font-family:var(--disp);font-size:1.06rem;font-weight:700;color:var(--text);line-height:1.35}
+.sub{font-size:.76rem;color:var(--text-dim);margin-top:6px}
+.gauge{position:relative;background:#fff;border:2px solid var(--e2);border-radius:50%;width:82px;height:82px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 0 14px rgba(76,201,240,.25)}
+.gauge .num{font-family:var(--disp);font-size:1.05rem;font-weight:700;color:var(--e1)}
+.gauge .lbl{font-size:.42rem;font-weight:800;color:var(--gold);letter-spacing:.06em;text-transform:uppercase}
+.main{position:relative;z-index:5;max-width:1360px;margin:0 auto;display:flex;gap:20px;padding:6px 16px 42px;align-items:flex-start}
+.lp,.rp{max-height:86vh;overflow-y:auto}
+.lp{flex:0 0 47%}
+.rp{flex:1;min-width:0}
+.lp::-webkit-scrollbar,.rp::-webkit-scrollbar{width:8px}
+.lp::-webkit-scrollbar-thumb,.rp::-webkit-scrollbar-thumb{background:var(--edge);border-radius:8px}
+.slbl{font-family:var(--disp);font-size:1rem;font-weight:700;color:var(--e1);margin-bottom:13px;display:flex;align-items:center;gap:10px}
+.slbl::after{content:'';flex:1;border-top:2px dashed var(--edge)}
+.pc{position:relative;background:var(--glass);backdrop-filter:blur(14px);border:1.5px solid var(--edge);
+  border-left:5px solid var(--e2);border-radius:14px;padding:17px 19px;margin-bottom:18px;box-shadow:0 5px 18px rgba(0,0,0,.06)}
+.plbl{font-family:var(--disp);font-size:.84rem;font-weight:700;color:var(--e1);margin-bottom:9px}
+.pt{font-size:.92rem;line-height:2;color:var(--text)}
+.pt b{color:var(--gold);font-weight:800}
+.blk{display:inline-block;min-width:44px;text-align:center;font-weight:800;color:#fff;background:linear-gradient(120deg,var(--e2),var(--e1));border-radius:5px;padding:0 8px}
+.btr{margin-top:10px;background:transparent;border:1.5px solid var(--e1);color:var(--e1);padding:5px 15px;font-size:.78rem;font-weight:700;border-radius:16px;cursor:pointer;transition:.15s}
+.btr:hover{background:var(--e1);color:#fff}
+.tv{display:none;margin-top:10px;font-size:.92rem;line-height:1.75;color:#0d3d2f;background:rgba(42,157,143,.08);border-left:3px solid var(--e1);border-radius:0 8px 8px 0;padding:11px 14px}
+.tv.open{display:block;animation:fd .25s ease}
+@keyframes fd{from{opacity:0}to{opacity:1}}
+.gw{background:var(--glass);backdrop-filter:blur(14px);border:1.5px solid var(--edge);border-left:5px solid var(--e3);border-radius:14px;padding:17px 19px;margin-top:6px;box-shadow:0 5px 18px rgba(0,0,0,.06)}
+.gt2{font-family:var(--disp);font-size:.9rem;font-weight:700;color:var(--gold);margin-bottom:10px}
+table.gtb{width:100%;border-collapse:collapse;font-size:.79rem}
+table.gtb th{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;text-align:left;padding:6px 9px;color:#fff;background:var(--e1);font-weight:700}
+table.gtb td{padding:6px 9px;border-bottom:1px dotted var(--edge);vertical-align:top;color:var(--text)}
+.w{font-weight:800;color:var(--e2)}
+.pos{font-style:italic;font-size:.8rem;color:var(--gold)}
+.qc{position:relative;background:var(--glass);backdrop-filter:blur(14px);border:1.5px solid var(--edge);border-radius:14px;padding:16px 18px;margin-bottom:16px;box-shadow:0 5px 14px rgba(0,0,0,.05);transition:.2s}
+.qc:hover{border-color:var(--e1)}
+.qn{font-family:var(--disp);font-size:.64rem;letter-spacing:.06em;color:var(--e1);font-weight:700;margin-bottom:7px;text-transform:uppercase}
+.qt{font-size:.92rem;line-height:1.75;margin-bottom:12px;color:var(--text)}
+.qt b{color:var(--gold)}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{font-family:var(--body);text-align:left;font-size:.86rem;line-height:1.5;color:var(--text);font-weight:700;
+  background:rgba(42,157,143,.05);border:1.5px solid var(--edge);border-radius:16px;padding:10px 18px;cursor:pointer;transition:.15s}
+.opt:hover:not(:disabled){border-color:var(--e1);transform:translateX(4px);box-shadow:0 0 10px rgba(42,157,143,.18)}
+.opt.correct{background:var(--ok-bg)!important;border-color:var(--ok)!important;color:#14532d!important}
+.opt.wrong{background:var(--no-bg)!important;border-color:var(--no)!important;color:#7f1d1d!important;animation:shk .34s}
+@keyframes shk{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.opt:disabled{cursor:default}
+.expl{display:none;margin-top:13px;background:rgba(42,157,143,.05);border:1.5px dashed var(--edge);border-radius:10px;padding:14px 15px;font-size:.85rem;line-height:1.9}
+.expl.open{display:block;animation:fd .25s}
+.expl h4{font-family:var(--disp);font-size:.88rem;font-weight:700;color:var(--gold);margin-bottom:11px;padding-bottom:7px;border-bottom:1.5px dotted var(--edge)}
+.estep{background:rgba(255,255,255,.6);border-left:4px solid var(--edge);border-radius:0 6px 6px 0;padding:10px 13px;margin-bottom:10px}
+.elbl{display:block;font-family:var(--disp);font-size:.62rem;letter-spacing:.04em;text-transform:uppercase;font-weight:700;margin-bottom:5px;color:var(--text-dim)}
+.estep.s1{border-left-color:var(--e2)} .estep.s1 .elbl{color:#0288a3}
+.estep.s2{border-left-color:var(--e4)} .estep.s2 .elbl{color:#b8590a}
+.estep.s3{border-left-color:var(--ok);background:rgba(46,125,50,.08)} .estep.s3 .elbl{color:var(--ok)}
+.estep.s4{border-left-color:var(--no);background:rgba(211,47,47,.08)} .estep.s4 .elbl{color:var(--no)}
+.estep.ev{border-left-color:var(--e1);background:rgba(42,157,143,.08)} .estep.ev .elbl{color:var(--e1)}
+.expl ul{list-style:none;margin:5px 0 0}
+.expl li{padding:6px 9px;margin:5px 0;background:rgba(255,255,255,.6);border-left:2px solid var(--edge);border-radius:0 4px 4px 0}
+.p-word{color:var(--e1);font-weight:800}
+.p-mean{color:var(--gold);font-weight:700}
+.p-grammar{background:rgba(76,201,240,.18);border:1px solid var(--e2);border-radius:4px;padding:0 6px;font-weight:700;color:#075a70;font-size:.79rem}
+.hl-green{background:var(--ok-bg);color:#14532d;font-weight:800;border-radius:3px;padding:0 5px}
+.hl-red{background:var(--no-bg);color:#7f1d1d;font-weight:800;border-radius:3px;padding:0 5px}
+.sw{text-align:center;padding:20px 0 8px}
+.bsub{font-family:var(--disp);font-size:.96rem;font-weight:700;color:#fff;background:linear-gradient(120deg,var(--e2),var(--e1),var(--e3));border:none;
+  padding:14px 36px;border-radius:26px;cursor:pointer;transition:.2s;box-shadow:0 5px 18px rgba(42,157,143,.3)}
+.bsub:hover{transform:translateY(-2px);box-shadow:0 7px 24px rgba(76,201,240,.35)}
+.ov{display:none;position:fixed;inset:0;z-index:100;background:rgba(15,58,48,.35);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:16px}
+.ov.open{display:flex}
+.mb{position:relative;background:#fff;border:1.5px solid var(--e2);border-radius:16px;padding:26px 28px;max-width:455px;width:100%;
+  text-align:center;animation:pop .3s ease;box-shadow:0 14px 44px rgba(0,0,0,.16)}
+@keyframes pop{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
+.mb h2{font-family:var(--disp);font-size:1rem;font-weight:700;color:var(--text);margin-bottom:14px}
+.mb input{width:100%;font-family:var(--body);font-size:.92rem;font-weight:700;padding:11px 14px;background:#f2fbff;
+  border:1.5px solid var(--edge);border-radius:16px;color:var(--text);text-align:center;outline:none;margin-bottom:9px}
+.mb input:focus{border-color:var(--e2)}
+.err{color:var(--no);font-size:.7rem;font-weight:800;margin-bottom:8px;display:none}
+.err.show{display:block}
+.bok{font-family:var(--body);font-size:.78rem;font-weight:800;background:var(--e1);color:#fff;border:none;padding:11px 28px;border-radius:16px;cursor:pointer}
+.rname{font-size:1rem;font-weight:700;color:var(--e1);margin-bottom:5px}
+.rscore{font-family:var(--disp);font-size:2.1rem;font-weight:700;color:var(--gold);line-height:1;margin:6px 0}
+.rs10{font-size:.92rem;font-weight:800;color:var(--e1);margin-bottom:8px}
+.rgif{width:170px;margin:10px auto;display:block;border:4px solid rgba(42,157,143,.15);box-shadow:0 4px 14px rgba(0,0,0,.12);border-radius:8px}
+.rcmt{font-size:.85rem;line-height:1.7;background:rgba(42,157,143,.06);border:1.5px dashed var(--edge);border-radius:10px;padding:11px 14px;margin:12px 0}
+.bcl{font-family:var(--body);font-size:.74rem;font-weight:800;background:transparent;border:1.5px solid var(--edge);color:var(--text);padding:9px 24px;border-radius:16px;cursor:pointer}
+.cn{position:fixed;top:-16px;z-index:200;pointer-events:none;animation:cf 2.4s forwards}
+@keyframes cf{0%{transform:translateY(0) rotate(0);opacity:1}100%{transform:translateY(108vh) rotate(700deg);opacity:0}}
+@media(max-width:900px){.main{flex-direction:column}.lp{flex:1 1 auto;width:100%}.lp,.rp{max-height:none}}
+</style>
+</head>
+<body>
+<style>
+:root{--nbh:50px}
+body{padding-top:var(--nbh)}
+.nbar{position:fixed;top:0;left:0;right:0;z-index:150;min-height:var(--nbh);
+  display:flex;align-items:center;gap:11px;padding:6px 16px;
+  background:#ffb703;border-bottom:2px solid #c98a00;box-shadow:0 2px 12px rgba(0,0,0,.14)}
+.nbar .pin{font-size:1.15rem;flex:0 0 auto;animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.22);opacity:.75}}
+.nbtxt{flex:1 1 auto;min-width:0;font-family:'Nunito',sans-serif;font-size:.82rem;font-weight:800;line-height:1.35;color:#1a1033;transition:opacity .4s ease}
+.nbtg{flex:0 0 auto;font-family:'Nunito',sans-serif;font-size:.68rem;font-weight:800;background:#1a1033;color:#ffd76e;border:none;border-radius:16px;padding:6px 13px;cursor:pointer;white-space:nowrap}
+.nbtg:hover{background:#2b1b52}
+.nfull{display:none;position:fixed;top:var(--nbh);left:0;right:0;z-index:149;max-height:52vh;overflow-y:auto;padding:13px 18px;background:#fff8e6;border-bottom:2px solid #c98a00;box-shadow:0 8px 22px rgba(0,0,0,.14)}
+.nfull.open{display:block}
+.nfull ul{list-style:none;display:grid;gap:8px;max-width:1100px;margin:0 auto}
+.nfull li{font-family:'Nunito',sans-serif;font-size:.86rem;font-weight:600;line-height:1.7;color:#42305a;background:rgba(255,183,3,.14);border-left:4px solid #ffb703;border-radius:0 8px 8px 0;padding:9px 13px}
+.nfull li b{color:#a35b00}
+.lp,.rp{max-height:calc(100vh - 128px - var(--nbh))}
+@media(max-width:900px){:root{--nbh:64px}.nbtxt{font-size:.75rem}.lp,.rp{max-height:none}}
+</style>
+<script>
+function nbToggle(){var p=document.getElementById('nfull'),b=document.getElementById('nbtg');p.classList.toggle('open');b.textContent=p.classList.contains('open')?'▲ Thu gọn':'▼ Xem đủ';}
+document.addEventListener('DOMContentLoaded',function(){var src=document.querySelectorAll('#nfull li');var box=document.getElementById('nbtxt');if(!src.length||!box)return;var i=0;
+function show(){box.style.opacity=0;setTimeout(()=>{box.innerHTML=src[i].innerHTML;box.style.opacity=1;i=(i+1)%src.length;},400);}
+show();setInterval(show,7000);});
+</script>
+<div class="nbar"><span class="pin">💡</span><div class="nbtxt" id="nbtxt"></div><button class="nbtg" id="nbtg" onclick="nbToggle()">▼ Xem đủ</button></div>
+<div class="nfull" id="nfull"><ul>
+  <li>🤝 <b>Ms không chấm em bằng số câu đúng, mà bằng số điều em thật sự hiểu.</b> Gặp chữ lạ thì mở Google Dịch, ChatGPT hay Gemini tra cho rõ đã, đừng vội bấm rồi tự nhủ "chắc là câu này".</li>
+  <li>👂 <b>Một từ chỉ thuộc về em khi em nói được nó.</b> Tra ở từ điển Cambridge để biết phiên âm, trọng âm rơi vào đâu, nghe máy đọc rồi lặp lại vài lần.</li>
+  <li>🔍 <b>Đừng đóng bài khi chưa đọc lời giải.</b> Cả bốn bước đều được viết ra để em thấy cái bẫy nằm ở đâu — nhận ra hôm nay thì mai vào phòng thi em sẽ bình tĩnh hơn nhiều.</li>
+  <li>✏️ <b>Trang vở của em quan trọng hơn màn hình này.</b> Ghi lại từ mới, giới từ đi kèm, cấu trúc câu, thêm một ví dụ do chính em đặt.</li>
+  <li>🌍 <b>Bài đọc hôm nay nói về băng tan và rác đại dương.</b> Hành tinh này là nhà chung duy nhất — hiểu về nó cũng là một cách để yêu thương nó nhiều hơn. Chúc em học vui!</li>
+</ul></div>
+<div class="mist"><span></span><span></span><span></span><span></span></div>
+<div class="fl" id="fl"></div>
+
+<header>
+  <div>
+    <div class="tag">🌏 Unit 10 · Planet Earth · Test 1</div>
+    <h1>B. READING — Melting Glaciers &amp; The Great Pacific Garbage Patch</h1>
+    <div class="sub">Giáo viên tạo: MS Chí Nên · 12 câu (32 → 43)</div>
+  </div>
+  <div class="gauge"><div class="num" id="lv">0/12</div><div class="lbl">SCORE</div></div>
+</header>
+
+<div class="main">
+<div class="lp">
+  <div class="slbl">🧊 Bài đọc</div>
+
+  <div class="pc">
+    <div class="plbl">I — Melting Glaciers (đoạn 1)</div>
+    <div class="pt">Since the early 1900s, many glaciers around the world have been rapidly melting. Human activities are <span class="blk">32</span> the root of this phenomenon. <span class="blk">33</span>, since the industrial revolution, carbon dioxide and other greenhouse gas emissions have raised temperatures, even <span class="blk">34</span> in the poles, and as a result, glaciers are rapidly melting, calving off into the sea and retreating on land.</div>
+    <button class="btr" onclick="tv('v1')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v1">Kể từ đầu những năm 1900, nhiều sông băng trên khắp thế giới đã tan chảy nhanh chóng. Các hoạt động của con người chính là gốc rễ của hiện tượng này. Cụ thể, kể từ cuộc cách mạng công nghiệp, khí carbon dioxide và các khí thải nhà kính khác đã làm nhiệt độ tăng lên, thậm chí còn tăng cao hơn ở hai cực, và kết quả là các sông băng đang tan chảy nhanh chóng, vỡ ra rơi xuống biển và co rút lại trên đất liền.</div>
+  </div>
+
+  <div class="pc">
+    <div class="plbl">I (tiếp) — đoạn 2 → 3</div>
+    <div class="pt">Even if we significantly <span class="blk">35</span> emissions in the coming decades, more than a third of the world's remaining glaciers will melt before the year 2100. When it comes to sea ice, 95% of the oldest and thickest ice in the Arctic is <span class="blk">36</span> gone.</div>
+    <button class="btr" onclick="tv('v2')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v2">Ngay cả khi chúng ta hạn chế đáng kể lượng khí thải trong những thập kỷ tới, hơn một phần ba số sông băng còn lại trên thế giới sẽ tan chảy trước năm 2100. Về băng biển, 95% lượng băng lâu đời nhất và dày nhất ở Bắc Cực đã biến mất.</div>
+
+    <div class="pt" style="margin-top:10px">Scientists project that if emissions continue to rise unchecked, the Arctic could be ice free in the summer as soon as the year 2040, as ocean and air <span class="blk">37</span> continue to rise rapidly.</div>
+    <button class="btr" onclick="tv('v3')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v3">Các nhà khoa học dự đoán rằng nếu lượng khí thải tiếp tục tăng không kiểm soát, Bắc Cực có thể không còn băng vào mùa hè sớm nhất là năm 2040, khi nhiệt độ đại dương và không khí tiếp tục tăng nhanh chóng.</div>
+  </div>
+
+  <div class="pc">
+    <div class="plbl">II — The Great Pacific Garbage Patch (đoạn 1 → 2)</div>
+    <div class="pt">The Great Pacific Garbage Patch is a collection of marine debris in the North Pacific Ocean. Marine debris is litter that ends up in oceans, seas, and other large bodies of water.</div>
+    <button class="btr" onclick="tv('v4')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v4">Đảo Rác Thái Bình Dương (Great Pacific Garbage Patch) là một tập hợp rác thải biển ở Bắc Thái Bình Dương. Rác thải biển là rác trôi dạt và tích tụ ở các đại dương, biển, và các vùng nước lớn khác.</div>
+
+    <div class="pt" style="margin-top:10px">The amount of debris accumulates because much of it is not biodegradable. Many plastics, for instance, do not wear down; they simply break into tinier and tinier pieces. No one knows how much debris makes up the Great Pacific Garbage Patch. In addition, not all of the trash floats on the surface. Denser debris can sink centimetres or even several metres beneath the surface, making <u>the area</u> nearly impossible to measure.</div>
+    <button class="btr" onclick="tv('v5')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v5">Lượng rác thải tích tụ ngày càng nhiều vì phần lớn trong số đó không thể phân hủy sinh học. Ví dụ, nhiều loại nhựa không bị mòn đi; chúng chỉ đơn giản là vỡ thành những mảnh ngày càng nhỏ hơn. Không ai biết chính xác có bao nhiêu rác tạo nên Đảo Rác Thái Bình Dương. Ngoài ra, không phải tất cả rác đều nổi trên mặt nước. Rác có mật độ dày đặc hơn có thể chìm sâu vài centimet hay thậm chí vài mét dưới bề mặt, khiến khu vực này gần như không thể đo lường được.</div>
+  </div>
+
+  <div class="pc">
+    <div class="plbl">II (tiếp) — đoạn 3</div>
+    <div class="pt">Marine debris can be very harmful to marine life. For example, loggerhead sea turtles often mistake plastic bags for jellyfish, their favourite food. Seals and other marine mammals are especially <u>at risk</u>. They can get entangled in abandoned plastic fishing nets, which are discarded largely due to unpleasant weather and illegal fishing. Seals and other mammals often drown in these forgotten nets – a phenomenon known as "ghost fishing".</div>
+    <button class="btr" onclick="tv('v6')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v6">Rác thải biển có thể gây hại rất lớn cho sinh vật biển. Ví dụ, rùa biển đầu to thường nhầm túi ni lông với sứa, món ăn yêu thích của chúng. Hải cẩu và các loài động vật có vú biển khác đặc biệt gặp nguy hiểm. Chúng có thể bị mắc kẹt trong những tấm lưới đánh cá nhựa bị bỏ lại, những tấm lưới này bị vứt bỏ phần lớn là do thời tiết xấu và đánh bắt trái phép. Hải cẩu và các loài động vật có vú khác thường chết đuối trong những tấm lưới bị bỏ quên này – một hiện tượng được gọi là "đánh bắt ma" (ghost fishing).</div>
+  </div>
+
+  <div class="gw">
+    <div class="gt2">📚 Glossary — Test 1</div>
+    <table class="gtb">
+      <tr><th>Word / Phrase</th><th>Loại</th><th>Nghĩa tiếng Việt</th></tr>
+      <tr><td class="w">glacier</td><td class="pos">n</td><td>sông băng</td></tr>
+      <tr><td class="w">greenhouse gas emission</td><td class="pos">n phr</td><td>khí thải nhà kính</td></tr>
+      <tr><td class="w">calve off</td><td class="pos">phr v</td><td>vỡ ra (băng rơi xuống biển)</td></tr>
+      <tr><td class="w">sea ice</td><td class="pos">n phr</td><td>băng biển</td></tr>
+      <tr><td class="w">the Arctic</td><td class="pos">n</td><td>Bắc Cực</td></tr>
+      <tr><td class="w">marine debris</td><td class="pos">n phr</td><td>rác thải biển</td></tr>
+      <tr><td class="w">biodegradable</td><td class="pos">adj</td><td>có thể phân hủy sinh học</td></tr>
+      <tr><td class="w">accumulate</td><td class="pos">v</td><td>tích tụ</td></tr>
+      <tr><td class="w">entangled</td><td class="pos">adj</td><td>bị mắc kẹt, vướng vào</td></tr>
+      <tr><td class="w">abandoned</td><td class="pos">adj</td><td>bị bỏ rơi, bị vứt bỏ</td></tr>
+      <tr><td class="w">loggerhead sea turtle</td><td class="pos">n phr</td><td>rùa biển đầu to</td></tr>
+      <tr><td class="w">ghost fishing</td><td class="pos">n phr</td><td>đánh bắt ma (lưới bỏ quên)</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="rp">
+  <div class="slbl">✍️ Bài tập — 12 câu</div>
+  <div id="quiz"></div>
+  <div class="sw"><button class="bsub" onclick="openModal()">🎯 Nộp bài tính điểm &amp; xem kết quả</button></div>
+</div>
+</div>
+
+<div class="ov" id="nm"><div class="mb">
+  <h2>✍️ Nhập tên để nộp bài</h2>
+  <input type="text" id="sn" placeholder="Họ và tên học sinh...">
+  <div class="err" id="er">Vui lòng nhập tên trước khi nộp bài!</div>
+  <button class="bok" onclick="sub()">✅ Xem kết quả</button>
+</div></div>
+
+<div class="ov" id="rm"><div class="mb" style="max-width:470px">
+  <div class="rname" id="rn"></div><div class="rscore" id="rs"></div><div class="rs10" id="rs10"></div>
+  <img class="rgif" id="rg" src="" alt=""><div class="rcmt" id="rc"></div>
+  <button class="bcl" onclick="closeR()">Đóng &amp; xem lại bài</button>
+</div></div>
+
+<script>
+const QS=[];
+
+QS.push({n:32,sec:"I · Melting Glaciers",qt:"Human activities are <b>(32)_____</b> the root of this phenomenon.",
+opts:[{t:"at",pos:"giới từ",m:"tại, ở",c:1},{t:"specifically",pos:"trạng từ",m:"cụ thể là"},{t:"higher",pos:"tính từ so sánh hơn",m:"cao hơn"},{t:"limit",pos:"động từ",m:"hạn chế"}],
+tr:'"Human activities are ______ the root of this phenomenon." 👉 <span class="p-mean">"Các hoạt động của con người chính là gốc rễ của hiện tượng này."</span>',
+ok:'Chọn <span class="hl-green">at</span>. Cụm cố định <span class="p-grammar">at the root of sth</span> <span class="p-mean">(là gốc rễ, căn nguyên của điều gì)</span> là collocation chuẩn trong tiếng Anh.',
+no:'<span class="hl-red">specifically</span> (trạng từ), <span class="hl-red">higher</span> (tính từ), <span class="hl-red">limit</span> (động từ) đều không tạo thành collocation với "the root of" theo cách này.',
+ev:'"Human activities are <b>at</b> the root of this phenomenon." 👉 <span class="p-mean">"Các hoạt động của con người chính là gốc rễ của hiện tượng này."</span>'});
+
+QS.push({n:33,sec:"I · Melting Glaciers",qt:"<b>(33)_____</b>, since the industrial revolution, carbon dioxide and other greenhouse gas emissions have raised temperatures.",
+opts:[{t:"Specifically",pos:"trạng từ",m:"cụ thể là",c:1},{t:"already",pos:"trạng từ",m:"đã rồi (chỉ thời điểm hoàn thành)"},{t:"at",pos:"giới từ",m:"tại"},{t:"temperatures",pos:"danh từ",m:"nhiệt độ"}],
+tr:'"______, since the industrial revolution, carbon dioxide and other greenhouse gas emissions have raised temperatures, even higher in the poles..." 👉 <span class="p-mean">"Cụ thể, kể từ cuộc cách mạng công nghiệp, khí carbon dioxide và các khí thải nhà kính khác đã làm nhiệt độ tăng lên, thậm chí còn tăng cao hơn ở hai cực..."</span>',
+ok:'Chọn <span class="hl-green">Specifically</span> <span class="p-mean">(cụ thể là)</span>. Trạng từ mở đầu câu giới thiệu THÔNG TIN CHI TIẾT HƠN cho ý vừa nêu ở câu trước ("Human activities are at the root...").',
+no:'<span class="hl-red">already</span> mang nghĩa "đã hoàn thành", không phù hợp để giới thiệu chi tiết bổ sung; <span class="hl-red">at</span> là giới từ, không đứng đầu câu độc lập; <span class="hl-red">temperatures</span> là danh từ, không thể làm trạng từ mở đầu câu.',
+ev:'"<b>Specifically</b>, since the industrial revolution, carbon dioxide and other greenhouse gas emissions have raised temperatures..." 👉 <span class="p-mean">"Cụ thể, kể từ cuộc cách mạng công nghiệp, khí carbon dioxide và khí thải nhà kính khác đã làm nhiệt độ tăng lên..."</span>'});
+
+QS.push({n:34,sec:"I · Melting Glaciers",qt:"...have raised temperatures, even <b>(34)_____</b> in the poles.",
+opts:[{t:"higher",pos:"tính từ so sánh hơn",m:"cao hơn",c:1},{t:"limit",pos:"động từ",m:"hạn chế"},{t:"temperatures",pos:"danh từ",m:"nhiệt độ"},{t:"at",pos:"giới từ",m:"tại"}],
+tr:'"...have raised temperatures, even ______ in the poles, and as a result, glaciers are rapidly melting..." 👉 <span class="p-mean">"...đã làm nhiệt độ tăng lên, thậm chí còn tăng CAO HƠN ở hai cực, và kết quả là các sông băng đang tan chảy nhanh chóng..."</span>',
+ok:'Chọn <span class="hl-green">higher</span> <span class="p-mean">(cao hơn)</span>. Bổ nghĩa cho "temperatures" đã nhắc ở vế trước, nhấn mạnh mức tăng nhiệt CÒN LỚN HƠN ở vùng cực so với các nơi khác.',
+no:'<span class="hl-red">limit</span> (động từ) và <span class="hl-red">temperatures</span> (danh từ) đều sai từ loại, không bổ nghĩa được ở vị trí tính từ này; <span class="hl-red">at</span> là giới từ, không mang nghĩa so sánh mức độ.',
+ev:'"...have raised temperatures, even <b>higher</b> in the poles, and as a result, glaciers are rapidly melting, calving off into the sea and retreating on land." 👉 <span class="p-mean">"...làm nhiệt độ tăng, thậm chí còn cao hơn ở hai cực, khiến sông băng tan nhanh, vỡ ra rơi xuống biển và co rút trên đất liền."</span>'});
+
+QS.push({n:35,sec:"I · Melting Glaciers",qt:"Even if we significantly <b>(35)_____</b> emissions in the coming decades...",
+opts:[{t:"limit",pos:"động từ",m:"hạn chế",c:1},{t:"higher",pos:"tính từ so sánh hơn",m:"cao hơn"},{t:"specifically",pos:"trạng từ",m:"cụ thể là"},{t:"already",pos:"trạng từ",m:"đã rồi"}],
+tr:'"Even if we significantly ______ emissions in the coming decades, more than a third of the world\'s remaining glaciers will melt before the year 2100." 👉 <span class="p-mean">"Ngay cả khi chúng ta hạn chế đáng kể lượng khí thải trong những thập kỷ tới, hơn một phần ba số sông băng còn lại trên thế giới sẽ tan chảy trước năm 2100."</span>',
+ok:'Chọn <span class="hl-green">limit</span> <span class="p-mean">(hạn chế)</span>. Động từ làm vị ngữ chính sau trạng từ "significantly", diễn tả hành động GIẢM BỚT lượng khí thải.',
+no:'<span class="hl-red">higher</span> (tính từ) và <span class="hl-red">specifically</span>, <span class="hl-red">already</span> (trạng từ) đều không phải động từ, không thể làm vị ngữ chính của mệnh đề "we significantly ___ emissions".',
+ev:'"Even if we significantly <b>limit</b> emissions in the coming decades, more than a third of the world\'s remaining glaciers will melt before the year 2100." 👉 <span class="p-mean">"Ngay cả khi hạn chế đáng kể khí thải trong thập kỷ tới, hơn 1/3 sông băng còn lại sẽ tan trước năm 2100."</span>'});
+
+QS.push({n:36,sec:"I · Melting Glaciers",qt:"95% of the oldest and thickest ice in the Arctic is <b>(36)_____</b> gone.",
+opts:[{t:"already",pos:"trạng từ",m:"đã rồi",c:1},{t:"specifically",pos:"trạng từ",m:"cụ thể là"},{t:"at",pos:"giới từ",m:"tại"},{t:"limit",pos:"động từ",m:"hạn chế"}],
+tr:'"When it comes to sea ice, 95% of the oldest and thickest ice in the Arctic is ______ gone." 👉 <span class="p-mean">"Về băng biển, 95% lượng băng lâu đời nhất và dày nhất ở Bắc Cực đã biến mất."</span>',
+ok:'Chọn <span class="hl-green">already</span> <span class="p-mean">(đã rồi)</span>. Trạng từ chỉ một việc ĐÃ XẢY RA, nhấn mạnh mức độ nghiêm trọng của tình trạng băng tan tính đến thời điểm hiện tại.',
+no:'<span class="hl-red">specifically</span> mang nghĩa "cụ thể là", không diễn tả yếu tố thời gian "đã hoàn thành"; <span class="hl-red">at</span> là giới từ, <span class="hl-red">limit</span> là động từ — cả hai đều sai vị trí ngữ pháp trước "gone" (tính từ).',
+ev:'"95% of the oldest and thickest ice in the Arctic is <b>already</b> gone." 👉 <span class="p-mean">"95% lượng băng lâu đời nhất và dày nhất ở Bắc Cực đã biến mất."</span>'});
+
+QS.push({n:37,sec:"I · Melting Glaciers",qt:"...as ocean and air <b>(37)_____</b> continue to rise rapidly.",
+opts:[{t:"temperatures",pos:"danh từ",m:"nhiệt độ",c:1},{t:"higher",pos:"tính từ so sánh hơn",m:"cao hơn"},{t:"at",pos:"giới từ",m:"tại"},{t:"already",pos:"trạng từ",m:"đã rồi"}],
+tr:'"...the Arctic could be ice free in the summer as soon as the year 2040, as ocean and air ______ continue to rise rapidly." 👉 <span class="p-mean">"...Bắc Cực có thể không còn băng vào mùa hè sớm nhất là năm 2040, khi nhiệt độ đại dương và không khí tiếp tục tăng nhanh chóng."</span>',
+ok:'Chọn <span class="hl-green">temperatures</span> <span class="p-mean">(nhiệt độ)</span>. Danh từ làm chủ ngữ của động từ "continue", cần một danh từ số nhiều phù hợp với "ocean and air" — "ocean and air temperatures" (nhiệt độ đại dương và không khí).',
+no:'<span class="hl-red">higher</span> (tính từ) không làm chủ ngữ được; <span class="hl-red">at</span> (giới từ) và <span class="hl-red">already</span> (trạng từ) đều sai vị trí ngữ pháp, không thể đứng làm chủ ngữ của "continue".',
+ev:'"...the Arctic could be ice free in the summer as soon as the year 2040, as ocean and air <b>temperatures</b> continue to rise rapidly." 👉 <span class="p-mean">"...Bắc Cực có thể hết băng vào mùa hè sớm nhất năm 2040, khi nhiệt độ đại dương và không khí tiếp tục tăng nhanh."</span>'});
+
+QS.push({n:38,sec:"II · Garbage Patch",qt:"What can be the best title for the passage?",
+opts:[{t:"Marine Debris and Their Solutions",m:"Rác thải biển và giải pháp"},{t:"The Great Pacific Garbage Patch",m:"Đảo Rác Thái Bình Dương",c:1},{t:"Plastics in the North Pacific Ocean",m:"Nhựa ở Bắc Thái Bình Dương"},{t:"Endangered Marine Species",m:"Các loài biển nguy cấp"}],
+tr:'"What can be the best title for the passage?" 👉 <span class="p-mean">"Tiêu đề nào phù hợp nhất cho đoạn văn?"</span>',
+ok:'Chọn <span class="hl-green">The Great Pacific Garbage Patch</span>. Cả bài xoay quanh việc mô tả và giải thích về đúng đối tượng cụ thể này — nguồn gốc, cách đo lường, và tác hại của nó.',
+no:'<span class="hl-red">Marine Debris and Their Solutions</span> ❌ bài không đề cập GIẢI PHÁP nào để xử lý; <span class="hl-red">Plastics in the North Pacific Ocean</span> ❌ quá hẹp, bài không chỉ nói về nhựa mà nói chung về "marine debris"; <span class="hl-red">Endangered Marine Species</span> ❌ chỉ là MỘT phần nhỏ (đoạn 3), không phải trọng tâm cả bài.',
+ev:'Toàn bài: từ định nghĩa "The Great Pacific Garbage Patch is a collection of marine debris..." đến tác hại của nó — tất cả đều xoay quanh đúng đối tượng "Great Pacific Garbage Patch".'});
+
+QS.push({n:39,sec:"II · Garbage Patch",qt:"According to the passage, debris in the Great Pacific Garbage Patch ___.",
+opts:[{t:"keeps increasing and doesn't disappear",m:"tiếp tục tăng và không biến mất",c:1},{t:"floats only on the surface of the ocean",m:"chỉ nổi trên mặt biển"},{t:"can be measured although it's tiny",m:"có thể đo được dù rất nhỏ"},{t:"is mostly biodegradable and harmless",m:"chủ yếu phân hủy được và vô hại"}],
+tr:'"According to the passage, debris in the Great Pacific Garbage Patch ___." 👉 <span class="p-mean">"Theo bài, rác trong Đảo Rác Thái Bình Dương ___."</span>',
+ok:'Chọn <span class="hl-green">keeps increasing and doesn\'t disappear</span>. Bài: "The amount of debris accumulates because much of it is not biodegradable... they simply break into tinier and tinier pieces" — rác không biến mất, chỉ vỡ nhỏ dần và TÍCH TỤ thêm.',
+no:'<span class="hl-red">floats only on the surface</span> ❌ SAI — bài nói "not all of the trash floats on the surface... Denser debris can sink..."; <span class="hl-red">can be measured although tiny</span> ❌ SAI — bài nói "nearly impossible to measure" (gần như KHÔNG THỂ đo lường); <span class="hl-red">mostly biodegradable and harmless</span> ❌ SAI hoàn toàn — bài nói rác "is not biodegradable" và "can be very harmful to marine life".',
+ev:'"The amount of debris accumulates because much of it is <b>not biodegradable</b>. Many plastics... simply break into tinier and tinier pieces." 👉 <span class="p-mean">"Lượng rác tích tụ ngày càng nhiều vì phần lớn không thể phân hủy sinh học. Nhựa chỉ vỡ thành mảnh nhỏ hơn."</span>'});
+
+QS.push({n:40,sec:"II · Garbage Patch",qt:'The phrase "the area" in paragraph 2 refers to ___.',
+opts:[{t:"the Great Pacific Garbage Patch",m:"Đảo Rác Thái Bình Dương",c:1},{t:"the North Pacific Ocean",m:"Bắc Thái Bình Dương"},{t:"the space deep in the ocean",m:"không gian sâu trong đại dương"},{t:"the space above ocean surface",m:"không gian phía trên mặt biển"}],
+tr:'"...Denser debris can sink centimetres or even several metres beneath the surface, making the area nearly impossible to measure." 👉 <span class="p-mean">"...Rác nặng hơn có thể chìm sâu vài centimet hay vài mét dưới mặt nước, khiến KHU VỰC NÀY gần như không thể đo lường được."</span>',
+ok:'Chọn <span class="hl-green">the Great Pacific Garbage Patch</span>. "The area" chỉ PHẠM VI/DIỆN TÍCH của chính Đảo Rác — vì rác chìm ở nhiều độ sâu khác nhau nên rất khó xác định RANH GIỚI/DIỆN TÍCH của toàn bộ bãi rác.',
+no:'<span class="hl-red">the North Pacific Ocean</span> quá rộng — cả đại dương không phải thứ khó "đo lường" trong ngữ cảnh này; <span class="hl-red">the space deep in the ocean</span> và <span class="hl-red">the space above ocean surface</span> đều chỉ MỘT PHẦN không gian, không phải toàn bộ khu vực của bãi rác đang được nói đến.',
+ev:'"No one knows how much debris makes up the <b>Great Pacific Garbage Patch</b>... making the area nearly impossible to measure." — "the area" chỉ chính bãi rác này.'});
+
+QS.push({n:41,sec:"II · Garbage Patch",qt:'The phrase "at risk" in paragraph 3 is closest in meaning to ___.',
+opts:[{t:"under control",m:"trong tầm kiểm soát"},{t:"in balance",m:"cân bằng"},{t:"in danger",m:"gặp nguy hiểm",c:1},{t:"on average",m:"trung bình"}],
+tr:'"Seals and other marine mammals are especially at risk." 👉 <span class="p-mean">"Hải cẩu và các loài động vật có vú biển khác đặc biệt gặp nguy hiểm."</span>',
+ok:'Chọn <span class="hl-green">in danger</span> <span class="p-mean">(gặp nguy hiểm)</span>. <span class="p-word">at risk</span> là thành ngữ nghĩa "có nguy cơ gặp nguy hiểm", gần nghĩa nhất với "in danger".',
+no:'<span class="hl-red">under control</span> (trong tầm kiểm soát) và <span class="hl-red">in balance</span> (cân bằng) đều mang nghĩa TÍCH CỰC, trái ngược với "at risk"; <span class="hl-red">on average</span> (trung bình) không liên quan đến ý nghĩa nguy hiểm.',
+ev:'"Seals and other marine mammals are especially <b>at risk</b>. They can get entangled in abandoned plastic fishing nets..." 👉 <span class="p-mean">"Hải cẩu... đặc biệt gặp nguy hiểm. Chúng có thể mắc kẹt trong lưới đánh cá bị bỏ lại..."</span>'});
+
+QS.push({n:42,sec:"II · Garbage Patch",qt:"How does marine debris threaten loggerhead sea turtles?",
+opts:[{t:"The turtles can get trapped in it.",m:"Rùa có thể bị mắc kẹt trong đó"},{t:"It destroys the turtles' favourite food.",m:"Nó phá hủy món ăn yêu thích của rùa"},{t:"It makes the turtles abandon their food.",m:"Khiến rùa từ bỏ thức ăn của mình"},{t:"The turtles can mistake it for food.",m:"Rùa có thể nhầm nó là thức ăn",c:1}],
+tr:'"How does marine debris threaten loggerhead sea turtles?" 👉 <span class="p-mean">"Rác thải biển đe dọa rùa biển đầu to như thế nào?"</span>',
+ok:'Chọn <span class="hl-green">The turtles can mistake it for food.</span> Bài: "loggerhead sea turtles often mistake plastic bags for jellyfish, their favourite food."',
+no:'<span class="hl-red">get trapped in it</span> ❌ chi tiết này được nói về HẢI CẨU ("get entangled in... fishing nets"), không phải rùa biển; <span class="hl-red">destroys their favourite food</span> ❌ bài không nói túi nhựa "phá hủy" sứa, mà nói rùa NHẦM túi nhựa LÀ sứa; <span class="hl-red">makes turtles abandon food</span> ❌ không được đề cập trong bài.',
+ev:'"...loggerhead sea turtles often <b>mistake plastic bags for jellyfish</b>, their favourite food." 👉 <span class="p-mean">"...rùa biển đầu to thường nhầm túi ni lông với sứa, món ăn yêu thích của chúng."</span>'});
+
+QS.push({n:43,sec:"II · Garbage Patch",qt:'Which of the following best describes "ghost fishing"?',
+opts:[{t:"Bad weather threatens the survival of marine animals.",m:"Thời tiết xấu đe dọa sự sống còn của sinh vật biển"},{t:"Abandoned fishing nets trap and kill marine animals.",m:"Lưới đánh cá bị bỏ lại mắc kẹt và giết chết sinh vật biển",c:1},{t:"Marine animals get caught by illegal fishermen.",m:"Sinh vật biển bị ngư dân đánh bắt trái phép bắt giữ"},{t:"Marine animals are abandoned due to human activities.",m:"Sinh vật biển bị bỏ rơi do hoạt động của con người"}],
+tr:'"Which of the following best describes \'ghost fishing\'?" 👉 <span class="p-mean">"Ý nào sau đây mô tả đúng nhất về \'đánh bắt ma\' (ghost fishing)?"</span>',
+ok:'Chọn <span class="hl-green">Abandoned fishing nets trap and kill marine animals.</span> Bài: "Seals and other mammals often drown in these forgotten nets – a phenomenon known as \'ghost fishing\'."',
+no:'<span class="hl-red">Bad weather threatens survival</span> ❌ đây chỉ là NGUYÊN NHÂN khiến lưới bị vứt bỏ, không phải ĐỊNH NGHĨA của ghost fishing; <span class="hl-red">caught by illegal fishermen</span> ❌ hiểu sai — động vật bị mắc kẹt trong LƯỚI BỊ BỎ LẠI, không phải bị NGƯ DÂN bắt trực tiếp; <span class="hl-red">abandoned due to human activities</span> ❌ diễn đạt mơ hồ, không nêu đúng cơ chế "mắc kẹt và chết đuối trong lưới" đặc trưng của ghost fishing.',
+ev:'"They can get entangled in abandoned plastic fishing nets... Seals and other mammals often drown in these forgotten nets – a phenomenon known as \'<b>ghost fishing</b>\'." 👉 <span class="p-mean">"Chúng có thể mắc kẹt trong lưới đánh cá bị bỏ lại... thường chết đuối trong những tấm lưới bị bỏ quên này – gọi là \'đánh bắt ma\'."</span>'});
+
+const done={};let cc=0;
+function shuffle(a){return a.sort(()=>Math.random()-0.5)}
+function build(){
+  const box=document.getElementById('quiz');
+  QS.forEach(q=>{
+    let ol='<ul style="margin:4px 0 0 4px;list-style:none">';
+    q.opts.forEach(o=>{ol+='<li style="margin:5px 0">'+(o.c?'✅ ':'❌ ')+'<span class="p-word">'+o.t+'</span>'+(o.pos?' <span class="p-grammar">'+o.pos+'</span>':'')+' ➔ <span class="p-mean">'+o.m+'</span></li>';});
+    ol+='</ul>';
+    const card=document.createElement('div');card.className='qc';card.id='q'+q.n;
+    card.innerHTML='<div class="qn">Câu '+q.n+' · '+q.sec+'</div><div class="qt">'+q.qt+'</div><div class="opts" id="o'+q.n+'"></div>'+
+      '<div class="expl" id="e'+q.n+'"><h4>📘 Giải thích chi tiết – Câu '+q.n+'</h4>'+
+      '<div class="estep s1"><div class="elbl">Bước 1 · Dịch</div>'+q.tr+'</div>'+
+      '<div class="estep s2"><div class="elbl">Bước 2 · Đáp án &amp; nghĩa</div>'+ol+'</div>'+
+      '<div class="estep s3"><div class="elbl">Bước 3 · Vì sao <span class="hl-green">đúng</span></div>'+q.ok+'</div>'+
+      '<div class="estep s4"><div class="elbl">Bước 4 · Vì sao các phương án kia <span class="hl-red">sai</span></div>'+q.no+'</div>'+
+      '<div class="estep ev"><div class="elbl">🔍 Dẫn chứng</div>'+q.ev+'</div></div>';
+    box.appendChild(card);
+    const cont=card.querySelector('.opts');const correct=q.opts.filter(o=>o.c)[0].t;
+    shuffle([...q.opts]).forEach(o=>{const b=document.createElement('button');b.className='opt';b.textContent=o.t;b.onclick=()=>chk(q.n,o.t,correct,b,cont);cont.appendChild(b);});
+  });
+  document.getElementById('lv').textContent='0/'+QS.length;
+}
+function chk(qid,chosen,correct,btn,container){
+  if(qid in done)return;done[qid]=chosen===correct;
+  container.querySelectorAll('.opt').forEach(b=>{b.disabled=true;if(b.textContent===correct)b.classList.add('correct');});
+  if(chosen===correct){btn.classList.add('correct');cc++;ding();conf();}else{btn.classList.add('wrong');buzz();}
+  document.getElementById('e'+qid).classList.add('open');
+  document.getElementById('lv').textContent=cc+'/'+QS.length;
+}
+const A=new(window.AudioContext||window.webkitAudioContext)();
+function ding(){const o=A.createOscillator(),g=A.createGain();o.connect(g);g.connect(A.destination);o.frequency.setValueAtTime(523,A.currentTime);o.frequency.exponentialRampToValueAtTime(784,A.currentTime+0.15);g.gain.setValueAtTime(0.28,A.currentTime);g.gain.exponentialRampToValueAtTime(0.001,A.currentTime+0.5);o.start();o.stop(A.currentTime+0.5);}
+function buzz(){const o=A.createOscillator(),g=A.createGain();o.type='triangle';o.connect(g);g.connect(A.destination);o.frequency.setValueAtTime(200,A.currentTime);o.frequency.exponentialRampToValueAtTime(100,A.currentTime+0.2);g.gain.setValueAtTime(0.18,A.currentTime);g.gain.exponentialRampToValueAtTime(0.001,A.currentTime+0.28);o.start();o.stop(A.currentTime+0.28);}
+function conf(){const cols=['#2a9d8f','#4cc9f0','#52b788','#e07a00','#2e7d32'];for(let i=0;i<32;i++){const d=document.createElement('div');d.className='cn';d.style.left=Math.random()*100+'vw';d.style.background=cols[Math.floor(Math.random()*cols.length)];d.style.animationDelay=Math.random()*0.7+'s';d.style.animationDuration=(1.8+Math.random()*1.0)+'s';d.style.width=d.style.height=(6+Math.random()*8)+'px';d.style.borderRadius=Math.random()>0.5?'50%':'1px';document.body.appendChild(d);setTimeout(()=>d.remove(),3100);}}
+function tv(id){const el=document.getElementById(id);el.classList.toggle('open');const btn=el.previousElementSibling;btn.textContent=el.classList.contains('open')?'Ẩn dịch 🌟':'Mở dịch đoạn này 🌟';}
+function openModal(){document.getElementById('nm').classList.add('open')}
+function sub(){const n=document.getElementById('sn').value.trim();const er=document.getElementById('er');if(!n){er.classList.add('show');return;}er.classList.remove('show');document.getElementById('nm').classList.remove('open');showRes(n);}
+function showRes(n){
+  const tot=QS.length;let c=0;QS.forEach(q=>{if(done[q.n]===true)c++;});
+  const p=c/tot,s10=(c/tot*10).toFixed(2);
+  document.getElementById('rn').textContent='Học sinh: '+n;
+  document.getElementById('rs').textContent=c+' / '+tot;
+  document.getElementById('rs10').textContent='Điểm quy đổi: '+s10+' / 10';
+  let gif='',cmt='';
+  if(p>=1){gif='https://media.giphy.com/media/l0MYGb1LuZ3n7dRnO/giphy.gif';cmt='🏆 Trọn vẹn hành tinh xanh! Đúng 100% — em nắm chắc cả băng tan lẫn rác đại dương. MS Chí Nên rất tự hào về em!';}
+  else if(p>=0.6){gif='https://media.giphy.com/media/26u4lOMA8JKSnL9Uk/giphy.gif';cmt='🌏 Khá tốt đó! Em đạt '+c+'/'+tot+' câu. Đọc lại phần giải thích 4 bước để hiểu Trái Đất trọn vẹn hơn nhé!';}
+  else{gif='https://media.giphy.com/media/d2lcHJTG5Tscg/giphy.gif';cmt='🌱 Cố lên nào! Em đạt '+c+'/'+tot+' câu. Bấm nút dịch từng đoạn, đọc kỹ giải thích rồi thử lại — Ms tin em làm được!';}
+  document.getElementById('rg').src=gif;document.getElementById('rc').textContent=cmt;document.getElementById('rm').classList.add('open');
+}
+function closeR(){document.getElementById('rm').classList.remove('open')}
+
+const ems=['🌍','🧊','🌊','🐢','♻️'];const flc=document.getElementById('fl');
+for(let i=0;i<20;i++){const s=document.createElement('span');s.className='f';s.textContent=ems[i%ems.length];s.style.left=Math.random()*100+'%';s.style.animationDuration=(14+Math.random()*14)+'s';s.style.animationDelay=(-Math.random()*20)+'s';s.style.fontSize=(1.0+Math.random()*1.1)+'rem';flc.appendChild(s);}
+
+build();
+</script>
+<script>/*devclean*/(function(){
+var ZW=/[\u00AD\u034F\u061C\u115F\u1160\u17B4\u17B5\u180E\u200B-\u200F\u202A-\u202E\u2060-\u206F\uFEFF]/g,
+    SP=/[\u00A0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\t]/g,
+    AP=/[\u2018\u2019\u201A\u201B\u2032\u2035\u02B9\u02BB\u02BC\u02BD\u02C8\u0060\u00B4\uFF07]/g,
+    DQ=/[\u201C\u201D\u201E\u201F\u2033\u2036\u00AB\u00BB\uFF02]/g,
+    DS=/[\u2010\u2011\u2012\u2212\uFE63\uFF0D]/g;
+function clean(v){if(!v)return v;var s=String(v);try{s=s.normalize('NFKC')}catch(e){}
+  return s.replace(ZW,'').replace(SP,' ').replace(AP,"'").replace(DQ,'"').replace(DS,'-').replace(/[\u0300-\u036f]/g,'').replace(/ {2,}/g,' ');}
+window.__devclean=clean;
+function fix(skip){var L=document.querySelectorAll('input:not([type]),input[type=text],input[type=search],textarea');
+  for(var i=0;i<L.length;i++){var el=L[i];if(el===skip||el.readOnly||el.disabled)continue;var v=el.value,c=clean(v);if(c!==v)el.value=c;}}
+['pointerdown','mousedown','touchstart','click','change','focusout'].forEach(function(t){document.addEventListener(t,function(e){fix(t==='focusout'||t==='change'?null:e.target)},true)});
+document.addEventListener('keydown',function(e){if(e.key==='Enter'||e.keyCode===13)fix(null)},true);
+})();</script>
+<style id="ms-chi-nen-unlock-style">
+#passwordModal, #password-modal, #pwModal, #pw-modal, #pw-overlay,
+#lockModal, #passModal, #authModal, #auth-modal, #lockOverlay,
+#start-overlay, #intro-overlay, #start-screen,
+.password-modal, .lock-modal, .lock-overlay {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    z-index: -9999 !important;
+}
+</style>
+<script>
+// Remove password lock completely - direct quiz access
+(function() {
+    var initDone = false;
+    var renderCheckDone = false;
+
+    function hideEl(el, hard) {
+        if (!el) return;
+        if (hard) {
+            el.style.setProperty('display', 'none', 'important');
+            el.style.setProperty('visibility', 'hidden', 'important');
+            el.style.setProperty('opacity', '0', 'important');
+            el.style.setProperty('pointer-events', 'none', 'important');
+            el.style.setProperty('z-index', '-9999', 'important');
+        } else {
+            el.style.display = 'none';
+        }
+        el.classList.remove('active', 'show', 'open', 'visible', 'flex');
+    }
+
+    function hasRenderedQuiz() {
+        var containers = document.querySelectorAll(
+            '#quiz-container, #quizContainer, #questions-container, #questionPane, #quiz, #questions, #quiz-body, #questions-wrapper, #quiz-list, #quizList, #exercise-container, #app-container .split-container'
+        );
+        for (var i = 0; i < containers.length; i++) {
+            if (containers[i].querySelectorAll('button, input, select, textarea, .question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .question, .option-btn, .opt-btn, .ans-btn').length > 0) {
+                return true;
+            }
+        }
+        if (document.querySelectorAll('.question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .option-btn, .opt-btn, .ans-btn, .choice-btn').length > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    function ensureQuizRendered() {
+        if (renderCheckDone) return;
+        renderCheckDone = true;
+        if (hasRenderedQuiz()) return;
+
+        if (!hasRenderedQuiz() && typeof buildQuiz === 'function') { try { buildQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof initQuiz === 'function') { try { initQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderApp === 'function') { try { renderApp(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuiz === 'function') { try { renderQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuestions === 'function') { try { renderQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAllQuestions === 'function') { try { renderAllQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAll === 'function') { try { renderAll(); } catch(e){} }
+    }
+
+    function unlockNow() {
+        var pwIds = [
+            'passwordModal', 'password-modal', 'pwModal', 'pw-modal', 'pw-overlay',
+            'lockModal', 'passModal', 'authModal', 'auth-modal', 'lockOverlay',
+            'start-overlay', 'intro-overlay', 'start-screen'
+        ];
+        pwIds.forEach(function(id) {
+            hideEl(document.getElementById(id), true);
+        });
+
+        var modalEls = document.querySelectorAll('.password-modal, .lock-modal, .lock-overlay, #lockOverlay, #auth-modal');
+        modalEls.forEach(function(el) {
+            if (el.id !== 'resultModal' && el.id !== 'result-modal' && el.id !== 'scoreModal') {
+                hideEl(el, true);
+            }
+        });
+
+        ['nameModal', 'name-modal', 'nameInputModal'].forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) hideEl(el, false);
+        });
+
+        var qo = document.getElementById('quiz-overlay');
+        if (qo && (typeof isStarted === 'undefined' || !isStarted)) {
+            qo.style.display = 'none';
+        }
+
+        var mainIds = [
+            'mainContent', 'main-content', 'mainHeader', 'main-header',
+            'app-container', 'app', 'quizApp', 'quiz-wrapper', 'quizContainer', 'quiz-container', 'reading-content'
+        ];
+        mainIds.forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) {
+                el.classList.remove('hidden', 'blur', 'blurred', 'locked');
+                if (el.style.display === 'none') {
+                    el.style.removeProperty('display');
+                }
+                if (window.getComputedStyle(el).display === 'none') {
+                    var hasPane = el.querySelector('.pane, .left-pane, .right-pane, .split-container, .left-panel, .right-panel');
+                    if (id === 'main-content' || id.toLowerCase().includes('header') || el.classList.contains('main-container') || hasPane) {
+                        el.style.setProperty('display', 'flex', 'important');
+                    } else {
+                        el.style.setProperty('display', 'block', 'important');
+                    }
+                }
+            }
+        });
+
+        var qs = document.getElementById('quiz-screen');
+        if (qs) {
+            qs.classList.remove('hidden');
+            if (qs.classList.contains('flex-col')) {
+                qs.classList.add('flex');
+                qs.style.display = 'flex';
+            } else {
+                qs.style.display = 'block';
+            }
+        }
+
+        if (!initDone) {
+            initDone = true;
+
+            if (document.getElementById('start-overlay') && typeof startGame === 'function') {
+                var sn = document.getElementById('student-name') || document.getElementById('studentName');
+                if (sn && !sn.value.trim()) sn.value = 'Học sinh';
+            }
+            if (document.getElementById('name-modal') && typeof startQuiz === 'function') {
+                var sn2 = document.getElementById('student-name');
+                if (sn2 && !sn2.value.trim()) sn2.value = 'Học sinh';
+            }
+
+            if (typeof startQuiz === 'function' && (typeof isStarted === 'undefined' || !isStarted)) { try { startQuiz(); } catch(e){} }
+            if (typeof startGame === 'function') { try { startGame(); } catch(e){} }
+            if (typeof startTest === 'function') { try { startTest(); } catch(e){} }
+            if (typeof startApp === 'function') { try { startApp(); } catch(e){} }
+            if (typeof buildStarfield === 'function') { try { buildStarfield(); } catch(e){} }
+            if (typeof spawnFloats === 'function') { try { spawnFloats(); } catch(e){} }
+            if (typeof spawnFloaters === 'function') { try { spawnFloaters(); } catch(e){} }
+            if (typeof createFloatingBubbles === 'function') { try { createFloatingBubbles(); } catch(e){} }
+            if (typeof initAudio === 'function') { try { initAudio(); } catch(e){} }
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', unlockNow);
+    } else {
+        unlockNow();
+    }
+    if (document.readyState === 'complete') {
+        setTimeout(ensureQuizRendered, 150);
+    } else {
+        window.addEventListener('load', function() {
+            setTimeout(unlockNow, 20);
+            setTimeout(ensureQuizRendered, 150);
+            setTimeout(unlockNow, 300);
+            setTimeout(unlockNow, 700);
+        });
+    }
+    setTimeout(unlockNow, 50);
+    setTimeout(unlockNow, 200);
+    setTimeout(unlockNow, 600);
+    setTimeout(unlockNow, 1100);
+})();
+</script>
+</body>
+</html>

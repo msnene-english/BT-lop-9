@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🗣️ E9 UNIT 10 · PLANET EARTH — SPEAKING &amp; READING · 15 câu | MS Chí Nên</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0E0B1A;--card:#171331;--ink:#F3EEFF;--gold:#FFC53D;--red:#FF4D5E;--cyan:#3EE0E0;
+  --violet:#A77BFF;--pink:#FF6FC8;--dim:#9E94C4;--good:#2BD98A;--bad:#FF5C72;--dark:#07050F}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito',sans-serif;color:var(--ink);min-height:100vh;overflow-x:hidden;background:var(--bg)}
+/* MÀU LOANG + LUỒNG ĐÈN CHIẾU */
+.lo,.lo2,.lo3{position:fixed;inset:-25%;z-index:0;pointer-events:none}
+.lo{filter:blur(58px);opacity:.55;
+  background:radial-gradient(30% 24% at 14% 16%,rgba(255,197,61,.45),transparent 66%),
+   radial-gradient(32% 25% at 86% 20%,rgba(167,123,255,.5),transparent 66%),
+   radial-gradient(30% 22% at 76% 78%,rgba(62,224,224,.4),transparent 66%),
+   radial-gradient(28% 22% at 18% 82%,rgba(255,111,200,.45),transparent 66%);
+  animation:l1 34s ease-in-out infinite alternate}
+.lo2{filter:blur(76px);opacity:.4;
+  background:radial-gradient(26% 20% at 50% 42%,rgba(255,77,94,.4),transparent 68%),
+   radial-gradient(24% 18% at 8% 56%,rgba(167,123,255,.4),transparent 68%);
+  animation:l2 42s ease-in-out infinite alternate}
+.lo3{filter:blur(90px);opacity:.3;
+  background:radial-gradient(40% 30% at 60% 8%,rgba(62,224,224,.4),transparent 70%),
+   radial-gradient(38% 28% at 34% 96%,rgba(255,197,61,.35),transparent 70%);
+  animation:l3 50s ease-in-out infinite alternate}
+@keyframes l1{from{transform:translate3d(-4%,-2%,0) scale(1)}to{transform:translate3d(4%,3%,0) scale(1.16)}}
+@keyframes l2{from{transform:translate3d(3%,2%,0) scale(1.1)}to{transform:translate3d(-3%,-3%,0) scale(1)}}
+@keyframes l3{from{transform:translate3d(0,3%,0) scale(1.05)}to{transform:translate3d(2%,-3%,0) scale(1.18)}}
+.beam{position:fixed;top:-10%;left:50%;width:70vw;height:130vh;z-index:0;pointer-events:none;
+  transform:translateX(-50%);opacity:.14;
+  background:conic-gradient(from 175deg at 50% 0%,transparent 0deg,#fff 6deg,transparent 12deg,
+   transparent 20deg,#fff 26deg,transparent 32deg);animation:sweep 9s ease-in-out infinite alternate}
+@keyframes sweep{from{transform:translateX(-50%) rotate(-4deg)}to{transform:translateX(-50%) rotate(4deg)}}
+/* ĐỒ RẠP PHIM BAY */
+.fly{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.fl1{position:absolute;bottom:-60px;animation:rise linear infinite}
+.fl1 i{display:block;animation:sway ease-in-out infinite alternate;font-style:normal;line-height:1}
+@keyframes rise{0%{transform:translateY(0);opacity:0}8%{opacity:.9}88%{opacity:.7}
+  100%{transform:translateY(-118vh);opacity:0}}
+@keyframes sway{from{transform:translateX(-16px) rotate(-14deg)}to{transform:translateX(16px) rotate(14deg)}}
+.mfilm{width:var(--w);height:calc(var(--w)*1.15);background:#14101F;border-radius:2px;position:relative;
+  box-shadow:0 0 0 1px rgba(255,255,255,.18),0 2px 8px rgba(0,0,0,.5)}
+.mfilm::before,.mfilm::after{content:'';position:absolute;top:8%;bottom:8%;width:16%;
+  background:repeating-linear-gradient(180deg,var(--c) 0 3px,transparent 3px 8px)}
+.mfilm::before{left:6%}.mfilm::after{right:6%}
+.wrap{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:18px 15px 80px}
+h1,h2,.pill,.qn,.sbtn,.ck{font-family:'Cinzel Decorative',cursive;font-weight:400;letter-spacing:.5px}
+/* BẢNG HIỆU MARQUEE */
+.mq{position:relative;padding:30px 26px 24px;margin:12px 0 20px;text-align:center;border-radius:10px;
+  background:linear-gradient(180deg,#241C4A,#140F2C);border:3px solid var(--gold);
+  box-shadow:0 0 0 6px rgba(255,197,61,.12),0 18px 44px rgba(0,0,0,.6),inset 0 0 60px rgba(255,197,61,.08)}
+.mq::before,.mq::after{content:'';position:absolute;left:14px;right:14px;height:10px;
+  background:radial-gradient(circle,var(--gold) 3.4px,transparent 3.8px) 0 0/22px 10px;
+  animation:blink 1.4s steps(2) infinite}
+.mq::before{top:7px}.mq::after{bottom:7px;animation-delay:.7s}
+@keyframes blink{0%{opacity:1}50%{opacity:.35}100%{opacity:1}}
+.mq h1{font-size:clamp(19px,4.5vw,31px);line-height:1.45;color:var(--gold);
+  text-shadow:0 0 18px rgba(255,197,61,.5)}
+.mq h1 span{color:var(--cyan)}
+.mq .by{display:inline-block;margin-top:11px;font-size:.92rem;font-weight:800;color:var(--dark);
+  background:var(--cyan);padding:3px 15px;border-radius:999px}
+.mq p{font-size:.85rem;font-weight:700;color:var(--dim);margin-top:11px;line-height:1.75}
+.mq p b{color:var(--pink)}
+.sb{position:sticky;top:8px;z-index:9;display:flex;align-items:center;gap:11px;padding:9px 16px;
+  margin-bottom:18px;border-radius:8px;background:rgba(23,19,49,.95);backdrop-filter:blur(10px);
+  border:2px solid rgba(255,197,61,.35);box-shadow:0 6px 18px rgba(0,0,0,.5)}
+.sb b{font-family:'Cinzel Decorative';font-size:1.05rem;color:var(--gold)}
+.tr{flex:1;height:12px;background:rgba(255,255,255,.1);border-radius:6px;overflow:hidden}
+.fb{height:100%;width:0;transition:width .45s;background:linear-gradient(90deg,var(--gold),var(--pink),var(--cyan))}
+/* PHẦN = DẢI PHIM */
+.sec{position:relative;padding:20px 22px 18px;margin-bottom:26px;border-radius:6px;background:var(--card);
+  border:1px solid rgba(255,255,255,.1);box-shadow:0 12px 30px rgba(0,0,0,.45)}
+.sec::before,.sec::after{content:'';position:absolute;top:0;bottom:0;width:14px;
+  background:repeating-linear-gradient(180deg,rgba(255,255,255,.82) 0 9px,transparent 9px 22px);opacity:.32}
+.sec::before{left:4px}.sec::after{right:4px}
+.st{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:5px}
+.pill{color:var(--dark);padding:4px 14px;font-size:.76rem;border-radius:4px}
+.st h2{font-size:.9rem;color:var(--ink)}
+.si{font-size:.87rem;font-weight:700;color:var(--dim);font-style:italic;margin:5px 0 13px;line-height:1.7}
+.q{position:relative;background:#1E1940;border:1px solid rgba(255,255,255,.12);border-radius:5px;
+  padding:14px 14px 13px;margin-bottom:14px;box-shadow:0 5px 16px rgba(0,0,0,.4)}
+.q.shk{animation:shk .42s}
+@keyframes shk{0%,100%{transform:translateX(0)}25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
+.qn{display:inline-block;color:var(--dark);min-width:31px;text-align:center;padding:1px 7px;margin-right:8px;
+  font-size:.72rem;background:var(--gold);border-radius:3px}
+.qt{font-weight:700;font-size:1rem;line-height:1.9}
+.qt u,.cue u{background:rgba(255,197,61,.28);color:var(--gold);text-decoration:underline;
+  text-decoration-thickness:3px;text-underline-offset:2px;text-decoration-color:var(--gold);
+  padding:0 2px;margin:0 -1px;font-weight:900;border-radius:2px}
+.qt i{color:var(--cyan);font-style:italic}
+.cue{background:rgba(255,255,255,.05);border-left:5px solid var(--pink);border-radius:0 5px 5px 0;
+  padding:9px 13px;margin-top:9px;font-weight:800;font-size:1.01rem;line-height:1.85}
+.hintt{display:inline-block;background:rgba(62,224,224,.15);border:2px solid var(--cyan);color:var(--cyan);
+  padding:0 10px;font-weight:900;font-size:.9rem;margin-left:6px;border-radius:3px}
+.segs{margin-top:11px;font-weight:700;font-size:1.02rem;line-height:2.5;padding:10px 13px;
+  background:rgba(0,0,0,.28);border:2px dashed rgba(255,197,61,.45);border-radius:5px}
+.sg{display:inline-block;border:2px solid rgba(255,255,255,.22);background:#241E4E;border-radius:4px;
+  padding:2px 9px;margin:0 2px;cursor:pointer;transition:.14s}
+.sg b{display:inline-block;background:var(--violet);color:var(--dark);font-size:.66rem;padding:0 5px;
+  margin-right:5px;vertical-align:1px;border-radius:2px}
+.sg:hover:not(.dn){background:#2E2660;border-color:var(--gold)}
+.sg.pick{background:#3A2F6E;border-color:var(--gold);box-shadow:0 0 0 3px rgba(255,197,61,.22)}
+.sg.ok{background:rgba(43,217,138,.2);border-color:var(--good)}
+.sg.no{background:rgba(255,92,114,.2);border-color:var(--bad)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.cp{background:#241E4E;border:2px solid var(--violet);border-radius:999px;padding:6px 13px;font-weight:800;
+  font-size:.96rem;cursor:pointer;color:#D6C6FF;transition:.14s}
+.cp:hover:not(.gone){transform:translateY(-2px);background:#2F2766}
+.cp.gone{opacity:.28;pointer-events:none;text-decoration:line-through}
+.built{margin-top:10px;min-height:46px;background:rgba(0,0,0,.28);border:2px dashed var(--gold);
+  border-radius:5px;padding:10px 13px;font-weight:800;font-size:1.02rem;line-height:1.7}
+.built.ok{border-style:solid;border-color:var(--good);background:rgba(43,217,138,.14)}
+.built.no{border-style:solid;border-color:var(--bad);background:rgba(255,92,114,.14)}
+.built .ph{color:#6E6499;font-weight:700;font-style:italic}
+.acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.fr{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:11px}
+.ti{flex:1 1 100%;background:#120E28;border:2px solid rgba(255,255,255,.2);border-radius:5px;
+  padding:10px 13px;font-family:'Nunito';font-size:1rem;font-weight:800;color:var(--ink);outline:none}
+.ti::placeholder{color:#6E6499;font-weight:700;font-style:italic}
+.ti:focus{border-color:var(--gold);box-shadow:0 0 0 4px rgba(255,197,61,.14)}
+.ti.ok{border-color:var(--good);background:rgba(43,217,138,.12)}
+.ti.no{border-color:var(--bad);background:rgba(255,92,114,.12)}
+.ti.sm{flex:1 1 auto;min-width:170px}
+.og{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:12px}
+.og.c1{grid-template-columns:1fr}
+.og.r4{grid-template-columns:repeat(4,1fr);gap:8px}
+.og.r4 .ob{padding:12px 4px;font-size:1.04rem;letter-spacing:.3px}
+@media(max-width:560px){.og{grid-template-columns:1fr}.og.r4{grid-template-columns:1fr 1fr}}
+.ob{background:#241E4E;border:2px solid rgba(255,255,255,.16);border-radius:5px;padding:10px 12px;
+  font-family:'Nunito';font-size:.96rem;font-weight:800;cursor:pointer;text-align:center;line-height:1.5;
+  color:var(--ink);transition:.15s}
+.ob:hover:not(.dn){transform:translateY(-2px);background:#2F2766;border-color:var(--gold)}
+.ob.ok{background:rgba(43,217,138,.2);border-color:var(--good);color:#9BFFD0}
+.ob.no{background:rgba(255,92,114,.2);border-color:var(--bad);color:#FFC0C9}
+.ob.dim{opacity:.38}
+.ob u,.op4 u,.wr u,.stp u{background:rgba(255,197,61,.3);color:var(--gold);text-decoration:underline;
+  text-decoration-thickness:3px;text-underline-offset:2px;text-decoration-color:var(--gold);
+  font-weight:900;padding:0 3px;margin:0 -1px;border-radius:2px}
+.ck{background:var(--red);color:#fff;border:none;border-radius:4px;padding:9px 18px;font-size:.8rem;
+  cursor:pointer;box-shadow:0 4px 12px rgba(255,77,94,.35)}
+.ck.gh{background:transparent;color:var(--red);border:2px solid var(--red);box-shadow:none}
+.ck:hover:not(:disabled){transform:translateY(-2px)}
+.ck:disabled{opacity:.4;cursor:default}
+.ex{display:none;margin-top:12px;background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.12);
+  border-radius:5px;padding:13px;font-size:.94rem;line-height:1.82}
+.ex.show{display:block}
+.kb{background:rgba(43,217,138,.16);border:2px solid var(--good);border-radius:4px;padding:8px 12px;
+  margin-bottom:9px;font-weight:900;color:#9BFFD0;line-height:1.72}
+.stp{background:rgba(255,255,255,.045);border:1px solid rgba(255,197,61,.25);border-radius:4px;
+  padding:8px 12px;margin-bottom:8px;line-height:1.82}
+.stp .l{display:inline-block;background:var(--violet);color:var(--dark);padding:1px 10px;font-size:.66rem;
+  margin-bottom:5px;font-family:'Cinzel Decorative';border-radius:3px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:6px 0}
+@media(max-width:600px){.g2{grid-template-columns:1fr}}
+.g2>div,.op4{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:4px;
+  padding:6px 10px;line-height:1.7;font-weight:700}
+.op4{margin-bottom:6px}
+.op4 b{color:var(--cyan)}
+.op4.rt{background:rgba(43,217,138,.16);border-color:var(--good)}
+.op4.rt b{color:#9BFFD0}
+.wr{background:rgba(255,92,114,.13);border:1px solid rgba(255,92,114,.4);border-radius:4px;padding:6px 10px;
+  margin-top:6px;line-height:1.75;font-weight:700}
+.wr b{color:#FFB3BE}
+.ipa{font-family:'Courier New',monospace;background:rgba(62,224,224,.14);color:var(--cyan);padding:0 6px;
+  border-radius:3px;font-weight:900}
+.w{color:#8FD0FF;font-weight:800}.m{color:#FFCE7A;font-weight:700}.g{color:#7BFFC0;font-weight:900}
+.t{background:rgba(167,123,255,.25);color:#DCCBFF;padding:1px 7px;border-radius:999px;font-size:.78em;
+  font-weight:800;margin:0 4px}
+.pg{background:linear-gradient(transparent 56%,rgba(255,197,61,.3) 56%);font-weight:800}
+.eg{display:inline-block;background:rgba(255,111,200,.14);border:2px solid var(--pink);border-radius:999px;
+  padding:1px 11px;font-weight:800;color:#FFB6E3;margin:3px 4px 0 0;font-size:.88rem}
+.sub{text-align:center;margin-top:22px}
+.sbtn{background:var(--gold);color:var(--dark);border:none;border-radius:6px;padding:15px 38px;
+  font-size:1rem;cursor:pointer;box-shadow:0 8px 22px rgba(255,197,61,.35)}
+.sbtn:hover{transform:translateY(-3px)}
+.ov{position:fixed;inset:0;background:rgba(5,3,12,.85);z-index:99;display:none;align-items:center;
+  justify-content:center;padding:16px;overflow-y:auto;backdrop-filter:blur(6px)}
+.ov.on{display:flex}
+.mb{background:linear-gradient(180deg,#241C4A,#140F2C);border:3px solid var(--gold);border-radius:10px;
+  box-shadow:0 16px 44px rgba(0,0,0,.7);padding:26px 22px;width:430px;max-width:96%;text-align:center;
+  max-height:92vh;overflow-y:auto}
+.mb h2{font-size:1.02rem;color:var(--gold);margin-bottom:11px}
+.mb input{width:100%;padding:12px;border:2px solid rgba(255,255,255,.2);border-radius:5px;
+  background:#120E28;color:var(--ink);font-family:'Nunito';font-weight:800;font-size:1rem;
+  text-align:center;outline:none;margin-bottom:11px}
+.mb input.er{border-color:var(--bad);animation:shk .42s}
+.mb .em{color:var(--bad);font-weight:800;font-size:.86rem;display:none;margin-bottom:9px}
+.mb .gr{font-family:'Cinzel Decorative';font-size:1rem;color:var(--pink);line-height:1.5;margin-bottom:6px}
+.mb .rs{font-family:'Cinzel Decorative';font-size:2.1rem;color:var(--gold)}
+.mb .rt2{font-weight:900;color:var(--cyan);font-size:1.04rem;margin:4px 0 7px}
+.mb .rm{font-weight:700;font-size:.92rem;line-height:1.72;margin-bottom:11px;color:var(--dim)}
+.mb img{width:100%;max-width:250px;border-radius:6px;margin:11px auto;display:block}
+.cf{position:fixed;top:-12px;width:9px;height:14px;z-index:110;pointer-events:none;border-radius:2px}
+@keyframes fall{to{transform:translateY(105vh) rotate(700deg);opacity:.2}}
+
+/* THEME STAINED GLASS - kinh van hoa / thuy tinh mau */
+:root{--bg:#140A22;--card:#22103A;--ink:#FFF6E9;--gold:#FFC94A;--red:#FF5B7F;--cyan:#48D8D8;
+  --violet:#A86BFF;--pink:#FF7AC6;--dim:#B9A6D4;--good:#37D89A;--bad:#FF6B85;--dark:#0B0514}
+body{background:#140A22}
+/* hoa van kinh van hoa - conic gradient nhieu mau */
+body::before{content:'';position:fixed;inset:-20%;z-index:0;pointer-events:none;opacity:.5;
+  background:
+   conic-gradient(from 0deg at 50% 50%,#FF5B7F 0 30deg,#FFC94A 30deg 60deg,#48D8D8 60deg 90deg,
+    #A86BFF 90deg 120deg,#FF7AC6 120deg 150deg,#37D89A 150deg 180deg,#FF5B7F 180deg 210deg,
+    #FFC94A 210deg 240deg,#48D8D8 240deg 270deg,#A86BFF 270deg 300deg,#FF7AC6 300deg 330deg,
+    #37D89A 330deg 360deg);
+  filter:blur(34px);animation:kal 40s linear infinite}
+@keyframes kal{to{transform:rotate(360deg)}}
+/* duong chi chia o kinh */
+body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
+  background:
+   repeating-linear-gradient(60deg,rgba(11,5,20,.85) 0 2px,transparent 2px 56px),
+   repeating-linear-gradient(-60deg,rgba(11,5,20,.85) 0 2px,transparent 2px 56px),
+   repeating-linear-gradient(0deg,rgba(11,5,20,.6) 0 2px,transparent 2px 56px)}
+.beam{display:none}
+/* vien kinh nho bay len */
+.mfilm{width:var(--w);height:var(--w);background:var(--c);opacity:.85;
+  clip-path:polygon(50% 0,100% 38%,82% 100%,18% 100%,0 38%);
+  box-shadow:0 0 14px var(--c)}
+.mfilm::before,.mfilm::after{display:none}
+/* header = cua so hoa hong (rose window) */
+.mq{background:radial-gradient(circle at 50% 42%,rgba(255,255,255,.16),rgba(11,5,20,.85) 72%),
+   conic-gradient(from 10deg at 50% 42%,rgba(255,91,127,.6) 0 45deg,rgba(255,201,74,.6) 45deg 90deg,
+    rgba(72,216,216,.6) 90deg 135deg,rgba(168,107,255,.6) 135deg 180deg,rgba(255,122,198,.6) 180deg 225deg,
+    rgba(55,216,154,.6) 225deg 270deg,rgba(255,201,74,.6) 270deg 315deg,rgba(255,91,127,.6) 315deg 360deg);
+  border:4px solid var(--gold);border-radius:50% 50% 22px 22px;
+  box-shadow:0 0 0 6px rgba(11,5,20,.7),0 18px 46px rgba(0,0,0,.6)}
+.mq::before,.mq::after{display:none}
+.mq h1{color:#FFF8EA;text-shadow:0 2px 0 #0B0514,0 0 20px rgba(255,201,74,.7)}
+.mq h1 span{color:var(--gold)}
+.mq .by{background:var(--gold);color:#2A1300}
+.mq p b{color:var(--pink)}
+/* moi phan = tam kinh mau vien chi */
+.sec{background:linear-gradient(160deg,rgba(255,255,255,.1),rgba(11,5,20,.5));
+  border:3px solid rgba(255,201,74,.55);border-radius:6px;
+  box-shadow:0 0 0 3px rgba(11,5,20,.8),0 14px 32px rgba(0,0,0,.5),inset 0 0 40px rgba(168,107,255,.16)}
+.sec::before,.sec::after{display:block;content:'';position:absolute;width:20px;height:20px;top:auto;
+  bottom:auto;opacity:.9;background:none;
+  border-top:3px solid rgba(255,201,74,.7);border-left:3px solid rgba(255,201,74,.7)}
+.sec::before{top:8px;left:8px}
+.sec::after{bottom:8px;right:8px;transform:rotate(180deg)}
+.q{background:rgba(255,255,255,.07);border:2px solid rgba(255,201,74,.3);border-radius:4px}
+.ob{background:rgba(255,255,255,.08);border-color:rgba(255,201,74,.32);border-radius:4px}
+.ob:hover:not(.dn){background:rgba(168,107,255,.22);border-color:var(--gold)}
+.sg,.cp{background:rgba(255,255,255,.09);border-color:rgba(255,201,74,.35)}
+.ti{background:rgba(11,5,20,.65);border-color:rgba(255,201,74,.4)}
+.segs,.built{background:rgba(11,5,20,.5);border-color:rgba(255,201,74,.5)}
+.ex{background:rgba(11,5,20,.6);border-color:rgba(255,201,74,.25)}
+.stp{background:rgba(255,255,255,.055);border-color:rgba(255,201,74,.22)}
+.g2>div,.op4{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.12)}
+.cue{background:rgba(255,122,198,.12);border-left-color:var(--pink)}
+.pill{border-radius:3px;color:#1A0A2A}
+.qn{background:var(--gold);color:#2A1300;border-radius:3px}
+.sb{background:rgba(20,10,34,.92);border-color:rgba(255,201,74,.45);border-radius:4px}
+.mb{background:linear-gradient(180deg,#2A1445,#140A22);border-color:var(--gold);border-radius:6px}
+.ti::placeholder,.built .ph{color:#8B77A8}
+.dlg{background:rgba(72,216,216,.08);border-color:rgba(72,216,216,.45)}
+.lns>div{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:4px;
+  padding:6px 10px;margin-bottom:6px;line-height:1.72;font-weight:700}
+.op4 code{font-family:'Nunito';font-weight:900;letter-spacing:.5px;color:var(--gold);
+  background:rgba(255,201,74,.16);border-radius:4px;padding:0 7px;margin-right:6px}
+.op4.rt code{color:#9BFFD0;background:rgba(55,216,154,.2)}
+
+
+/* ── NHAN BUOC 1/2/3/4: chu TRANG tren nen tim gradient cho noi ── */
+.stp .l{background:linear-gradient(135deg,#7C3AED,#C026D3)!important;color:#fff!important;
+  text-shadow:0 1px 2px rgba(0,0,0,.4);letter-spacing:.4px;padding:2px 12px;border-radius:999px;
+  box-shadow:0 2px 6px rgba(124,58,237,.35)}
+/* ══ BỔ SUNG CHO CÁC DẠNG CÂU CỦA ĐỀ — dùng đúng bảng màu kính màu của theme ══ */
+body{padding-top:48px}
+.sb{top:56px}
+.dv{border:none;border-top:1px dashed rgba(255,201,74,.35);margin:6px 0 12px}
+/* thanh nhắc ghim cố định */
+.tip{position:fixed;top:0;left:0;right:0;height:48px;z-index:900;display:flex;align-items:center;gap:9px;
+  padding:0 12px;cursor:pointer;border-bottom:3px solid var(--gold);
+  background:linear-gradient(90deg,rgba(20,10,34,.97),rgba(42,20,69,.97),rgba(20,10,34,.97));
+  backdrop-filter:blur(8px);box-shadow:0 6px 20px rgba(0,0,0,.55)}
+.tip .ic{font-size:1.15rem;animation:jump .9s ease-in-out infinite}
+@keyframes jump{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px) scale(1.15)}}
+.tip .lbl{font-family:'Cinzel Decorative';font-size:.72rem;color:#2A1300;background:var(--gold);
+  padding:3px 10px;border-radius:3px;white-space:nowrap}
+.tip .msg{flex:1;font-size:.84rem;font-weight:800;color:var(--ink);white-space:nowrap;overflow:hidden;
+  text-overflow:ellipsis;animation:fadein .5s ease}
+@keyframes fadein{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.tip .arr{width:22px;height:22px;display:flex;align-items:center;justify-content:center;border-radius:50%;
+  background:var(--gold);color:#2A1300;font-size:.9rem;transition:transform .25s}
+.tip.open .arr{transform:rotate(180deg)}
+.tipfull{position:fixed;top:48px;left:0;right:0;z-index:899;display:none;padding:12px 13px 14px;
+  background:linear-gradient(160deg,#2A1445,#140A22);border-bottom:3px solid var(--cyan);
+  box-shadow:0 14px 32px rgba(0,0,0,.6)}
+.tipfull.on{display:block;animation:fadein .3s ease}
+.tipfull ul{max-width:900px;margin:0 auto;list-style:none;display:grid;gap:8px}
+.tipfull li{font-size:.86rem;font-weight:800;color:var(--ink);line-height:1.65;padding:8px 12px;
+  border-radius:4px;background:rgba(255,255,255,.06);border-left:4px solid var(--gold)}
+.tipfull li:nth-child(2){border-left-color:var(--cyan)}
+.tipfull li:nth-child(3){border-left-color:var(--pink)}
+.tipfull li:nth-child(4){border-left-color:var(--violet)}
+.tipfull li b{color:var(--gold)}
+/* chỗ trống · gợi ý · phần cho trước */
+.bl{color:var(--gold);font-weight:900;letter-spacing:1px}
+.hint{display:block;margin-top:7px;background:rgba(72,216,216,.12);border-left:4px solid var(--cyan);
+  border-radius:0 4px 4px 0;color:var(--cyan);font-weight:800;font-style:italic;font-size:.87rem;
+  padding:5px 10px;line-height:1.6}
+.pre{font-weight:900;color:var(--gold);white-space:nowrap}
+/* thẻ chữ cái A B C D của câu tìm lỗi */
+.lt{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:12px}
+@media(max-width:560px){.lt{grid-template-columns:1fr 1fr}}
+.lb{background:rgba(255,255,255,.09);border:2px solid rgba(255,201,74,.35);border-radius:4px;padding:9px 7px;
+  font-family:'Cinzel Decorative';font-size:.95rem;color:var(--gold);cursor:pointer;transition:.15s}
+.lb small{display:block;font-family:'Nunito';font-size:.8rem;font-weight:800;color:var(--ink);margin-top:5px;
+  line-height:1.45;word-break:break-word}
+.lb:hover:not(:disabled){transform:translateY(-2px);background:rgba(168,107,255,.22);border-color:var(--gold)}
+.lb.sel{background:rgba(72,216,216,.18);border-color:var(--cyan)}
+.lb.ok{background:rgba(55,216,154,.2);border-color:var(--good);color:#9BFFD0}
+.lb.no{background:rgba(255,107,133,.2);border-color:var(--bad);color:#FFC0C9}
+.fx{display:none}.fx.on{display:flex}
+/* nội dung phần giải thích */
+.ex ol{margin:0 0 0 20px}
+.ex ol>li{margin-bottom:8px;font-weight:700;line-height:1.8}
+.ex u{background:rgba(255,201,74,.3);color:var(--gold);text-decoration:underline;
+  text-decoration-thickness:3px;text-underline-offset:2px;text-decoration-color:var(--gold);
+  font-weight:900;padding:0 3px;border-radius:2px}
+.vnt{background:rgba(255,201,74,.12);border:1px solid rgba(255,201,74,.4);border-left:5px solid var(--gold);
+  border-radius:0 4px 4px 0;padding:8px 12px;margin:0 0 9px;font-weight:800;color:#FFCE7A;line-height:1.78}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:6px 0}
+.grid2.wide{grid-template-columns:1fr}
+@media(max-width:600px){.grid2{grid-template-columns:1fr}}
+.grid2>div{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:4px;
+  padding:6px 10px;line-height:1.7;font-weight:700}
+.p-word{color:#8FD0FF;font-weight:800}
+.hl-green{color:#7BFFC0;font-weight:900}
+.hl-red{color:#FFB3BE;font-weight:900}
+.wt{background:rgba(168,107,255,.25);color:#DCCBFF;padding:1px 7px;border-radius:999px;font-size:.78em;
+  font-weight:800;margin:0 4px}
+.p-phonetic{font-family:'Courier New',monospace;background:rgba(72,216,216,.14);color:var(--cyan);
+  padding:0 6px;border-radius:3px;font-weight:900}
+.p-mean{color:#FFCE7A;font-weight:700}
+.p-grammar{background:linear-gradient(transparent 56%,rgba(255,201,74,.3) 56%);font-weight:800}
+/* ══ KHỐI LÝ THUYẾT + GIẢI THÍCH 5 BƯỚC (tông kính màu của theme) ══ */
+.th{background:linear-gradient(160deg,rgba(255,255,255,.1),rgba(11,5,20,.55));
+  border:3px solid rgba(255,201,74,.5);border-radius:8px;padding:18px 20px 20px;margin:0 0 22px;
+  box-shadow:0 0 0 3px rgba(11,5,20,.7),0 14px 32px rgba(0,0,0,.5)}
+.th h3{font-family:'Cinzel Decorative',cursive;font-size:1rem;color:var(--gold);margin:0 0 10px;line-height:1.6}
+.th h4{font-size:.95rem;color:var(--cyan);margin:16px 0 8px}
+.th p{font-size:.95rem;line-height:1.85;color:var(--ink);margin-bottom:8px}
+.thb{background:transparent;border:none;color:var(--gold);font-family:'Cinzel Decorative';font-size:.72rem;
+  padding:7px 16px;border:2px solid var(--gold);border-radius:999px;cursor:pointer;margin-bottom:14px}
+.thb:hover{background:rgba(255,201,74,.16)}
+.hide{display:none}
+.tb{width:100%;border-collapse:collapse;margin:6px 0 4px;font-size:.9rem}
+.tb th,.tb td{border:1.5px solid rgba(255,201,74,.35);padding:7px 9px;text-align:left;line-height:1.6}
+.tb th{background:rgba(255,201,74,.2);color:var(--gold);font-weight:900;font-size:.85rem}
+.tb td b{color:#8FD0FF}
+.tb td i{color:#FFCE7A;font-style:italic;font-size:.88rem}
+.tb .y{color:#7BFFC0;font-weight:900}
+.tb .n{color:#FF9AAC;font-weight:900}
+.wrp{overflow-x:auto}
+.rule{background:rgba(255,201,74,.1);border-left:6px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:10px 14px;margin:10px 0;font-size:.94rem;line-height:1.85}
+.rule b{color:var(--gold)}
+.ok2{color:#7BFFC0;font-weight:900}
+.bad2{color:#FF9AAC;font-weight:900}
+.tipbox{background:rgba(72,216,216,.1);border-left:6px solid var(--cyan);border-radius:0 8px 8px 0;
+  padding:10px 14px;margin:12px 0 0;font-size:.94rem;line-height:1.85}
+.tipbox b{color:var(--cyan)}
+/* giải thích 5 bước */
+.stp{background:rgba(255,255,255,.055);border:1.5px dashed rgba(255,201,74,.35);border-radius:6px;
+  padding:8px 12px;margin:0 0 10px;font-weight:700;line-height:1.75}
+.stp .l{display:inline-block;background:var(--violet);color:#1A0A2A;font-size:.66rem;font-weight:900;
+  padding:2px 9px;border-radius:999px;margin-right:8px;vertical-align:1px}
+.ops{display:grid;gap:7px;margin:4px 0 11px}
+.ops>div{background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.14);border-radius:6px;
+  padding:7px 11px;font-weight:700;line-height:1.7;font-size:.95rem}
+.ops>div.rt{background:rgba(55,216,154,.16);border-color:#37D89A}
+.wy,.wr2{border-radius:6px;padding:8px 12px;margin-bottom:8px;font-weight:700;line-height:1.8}
+.wy{background:rgba(55,216,154,.12);border-left:5px solid #37D89A}
+.wr2{background:rgba(255,107,133,.12);border-left:5px solid #FF6B85}
+
+.th2{background:rgba(255,255,255,.05);border:1.5px solid rgba(255,201,74,.4);border-radius:8px;
+  padding:13px 15px;margin-bottom:15px;font-size:1.02rem;line-height:1.95;font-weight:700}
+.th2 h3{font-size:1.06rem;color:var(--gold);margin-bottom:9px}
+.th2 b{color:#7BFFC0}.th2 i{color:#FFB3BE;font-style:normal;font-weight:800}
+.th2 .tb{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:8px 0}
+@media(max-width:680px){.th2 .tb{grid-template-columns:1fr}}
+.th2 .tb>div{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:7px;padding:9px 12px}
+.th2 .sg{display:inline-block;background:rgba(143,208,255,.16);border:1px solid rgba(143,208,255,.45);
+  border-radius:999px;padding:1px 11px;margin:3px 4px 0 0;font-weight:800;color:#CDE9FF}
+/* ══ THEME: HỒNG PHẤN LOANG XANH DƯƠNG ══ */
+body{background:
+  radial-gradient(1100px 700px at 8% 4%, #FF9BC8 0%, rgba(255,155,200,0) 62%),
+  radial-gradient(950px 640px at 96% 10%, #6FA8FF 0%, rgba(111,168,255,0) 60%),
+  radial-gradient(900px 620px at 12% 92%, #7ED0FF 0%, rgba(126,208,255,0) 62%),
+  radial-gradient(980px 660px at 92% 88%, #FF7FB8 0%, rgba(255,127,184,0) 62%),
+  radial-gradient(760px 520px at 50% 48%, #C9A7FF 0%, rgba(201,167,255,0) 66%),
+  linear-gradient(150deg,#FFD9EA 0%,#F0D7FF 34%,#CFE4FF 66%,#FFD1E8 100%)
+  !important;background-attachment:fixed!important;background-repeat:no-repeat!important;
+  color:#22193A!important;font-size:1.06rem!important}
+html{background:#FFD9EA}
+.gl{position:fixed;border-radius:50%;filter:blur(66px);opacity:.5;z-index:0;pointer-events:none;
+  animation:pul 11s ease-in-out infinite alternate}
+@keyframes pul{from{transform:scale(.94);opacity:.34}to{transform:scale(1.14);opacity:.6}}
+.turb{position:fixed;bottom:0;z-index:1;pointer-events:none;opacity:.95;
+  filter:drop-shadow(0 6px 14px rgba(90,40,110,.28))}
+.turb .pole{width:8px;background:linear-gradient(#FFFFFF,#8FB6E8 60%,#5D7FC0);margin:0 auto;
+  border-radius:5px;box-shadow:0 0 10px rgba(70,110,190,.55)}
+.turb .rot{width:104px;height:104px;margin:0 auto -12px;position:relative;animation:spin 14s linear infinite}
+.turb .hub{position:absolute;left:45px;top:45px;width:16px;height:16px;border-radius:50%;
+  background:radial-gradient(circle,#FFF,#FF4FA0);box-shadow:0 0 16px #FF4FA0}
+.turb .bl{position:absolute;left:50px;top:6px;width:7px;height:47px;border-radius:7px;
+  background:linear-gradient(#FFFFFF,#FF6FB0 45%,#4F8FE0);transform-origin:3.5px 47px;
+  box-shadow:0 0 8px rgba(255,111,176,.55)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.pet{position:fixed;z-index:1;pointer-events:none;font-size:1.35rem;opacity:.85;animation:fall linear infinite}
+@keyframes fall{0%{transform:translateY(-12vh) rotate(0);opacity:0}
+ 12%{opacity:.9}100%{transform:translateY(112vh) rotate(220deg);opacity:0}}
+.spark{position:fixed;z-index:0;pointer-events:none;width:5px;height:5px;border-radius:50%;
+  background:#FFFFFF;box-shadow:0 0 9px #FF9EC9;animation:tw var(--t,3s) ease-in-out infinite alternate}
+@keyframes tw{from{opacity:.2;transform:scale(.5)}to{opacity:.95;transform:scale(1.45)}}
+/* ══ HIỆU ỨNG ĐỘNG THÊM ══ */
+.ray{position:fixed;top:-25vh;width:16vw;height:150vh;z-index:0;pointer-events:none;opacity:.2;
+  transform-origin:top center;background:linear-gradient(#FFFFFF,rgba(255,255,255,0));
+  animation:sway 15s ease-in-out infinite alternate}
+@keyframes sway{from{transform:rotate(-13deg)}to{transform:rotate(13deg)}}
+.ring{position:fixed;z-index:0;pointer-events:none;border-radius:50%;border:3px solid rgba(255,79,160,.4);
+  animation:grow 7s ease-out infinite}
+@keyframes grow{0%{width:14px;height:14px;opacity:.85;border-width:4px}
+ 100%{width:340px;height:340px;opacity:0;border-width:1px;margin:-163px 0 0 -163px}}
+.cloud{position:fixed;z-index:0;pointer-events:none;font-size:2.4rem;opacity:.55;
+  animation:drift linear infinite}
+@keyframes drift{from{transform:translateX(-18vw)}to{transform:translateX(118vw)}}
+.bub{position:fixed;z-index:0;pointer-events:none;border-radius:50%;
+  border:2px solid rgba(111,168,255,.6);
+  background:radial-gradient(circle at 32% 30%,rgba(255,255,255,.75),rgba(255,159,205,.14));
+  animation:up linear infinite}
+@keyframes up{0%{transform:translateY(12vh) scale(.85);opacity:0}
+ 12%{opacity:.9}100%{transform:translateY(-118vh) scale(1.1);opacity:0}}
+.wave{position:fixed;left:-10vw;bottom:-30px;width:120vw;height:120px;z-index:0;pointer-events:none;
+  opacity:.4;background:radial-gradient(closest-side,rgba(255,127,184,.75),rgba(255,127,184,0));
+  animation:wv 12s ease-in-out infinite alternate}
+@keyframes wv{from{transform:translateY(0) scaleY(.7)}to{transform:translateY(-34px) scaleY(1.25)}}
+.dash{position:fixed;z-index:0;pointer-events:none;height:3px;border-radius:3px;
+  background:linear-gradient(90deg,rgba(255,79,160,0),#FF4FA0,rgba(111,168,255,0));
+  animation:zip linear infinite}
+@keyframes zip{0%{transform:translateX(-30vw);opacity:0}
+ 15%{opacity:.9}100%{transform:translateX(120vw);opacity:0}}
+.wrap,header,.sec,.q{position:relative;z-index:3}
+.mq,header,.hero,header.hero{background:linear-gradient(120deg,#FFD1E6,#EBDBFF 48%,#CFE6FF)!important;
+  border:3px solid #FFFFFF!important;box-shadow:0 14px 38px rgba(180,120,180,.28)!important}
+.mq h1,header.hero h1,h1{color:#5B2350!important;text-shadow:0 2px 10px rgba(255,255,255,.75)!important}
+.mq h1 span,header.hero h1 span,h1 span{color:#1D4E86!important}
+.mq::before,.mq::after{opacity:.35!important;background:linear-gradient(90deg,#FF9EC9,#7FB8FF)!important}
+.mq .by{background:#FFFFFF!important;color:#5B2350!important;border:2px solid #FF9EC9!important}
+.mq .sub,.mq p,.mq i{color:#3A2450!important;opacity:1!important}
+.mq .sub b,.mq p b{color:#C2185B!important}
+.q{background:#FFFFFF!important;border:2.5px solid #FFB3D6!important;
+  box-shadow:0 10px 26px rgba(160,120,190,.2)!important}
+.qt{color:#2A2340!important;font-weight:800!important;line-height:1.9!important}
+.qn{background:linear-gradient(120deg,#FF7FBF,#7FB8FF)!important;color:#FFFFFF!important;font-weight:900!important}
+.pp{background:#FFF6FB;border:2px dashed #FF9EC9;border-left:8px solid #7FB8FF;border-radius:0 14px 14px 0;
+  padding:11px 14px;margin:6px 0 8px;font-weight:800;line-height:1.95;color:#3A2450;font-size:1.05rem}
+.pp b{color:#C2185B}
+.wbx{margin:8px 0 2px;background:#FFFFFF;border:3px double #FF7FBF;border-radius:16px;
+  padding:10px 13px 12px;box-shadow:inset 0 0 0 3px #FFE6F2}
+.wbx>b{display:inline-block;background:linear-gradient(120deg,#FF7FBF,#7FB8FF);color:#FFFFFF;
+  border-radius:999px;padding:3px 15px;font-size:.92rem;font-weight:900;margin-bottom:9px}
+.wbx.b3{border-color:#7FB8FF;box-shadow:inset 0 0 0 3px #E4F1FF}
+.wbx.b3>b{background:linear-gradient(120deg,#4F8FE0,#B98CFF)}
+.wg{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px 11px}
+.wg div{background:#FFF6FB;border:2px solid #FF9EC9;border-radius:11px;padding:8px 10px;text-align:center;
+  font-size:1.04rem;font-weight:900;color:#B3145E;box-shadow:0 3px 0 #FFD9EA}
+.wg div:nth-child(2n){background:#F2F8FF;border-color:#7FB8FF;color:#12508F;box-shadow:0 3px 0 #D6E9FF}
+.wg div:nth-child(3n){background:#F8F2FF;border-color:#B98CFF;color:#5B2A9E;box-shadow:0 3px 0 #E7DAFF}
+.ob{background:#FFFFFF!important;color:#2A2340!important;border:2.5px solid #FF9EC9!important;
+  font-weight:900!important;font-size:1.04rem!important;box-shadow:0 5px 0 #FFDCEC!important}
+.ob:hover:not(.lk){background:#F4F9FF!important;border-color:#7FB8FF!important;transform:translateY(-3px)}
+.ob.ok{background:linear-gradient(135deg,#C9F7DC,#00BD64)!important;border-color:#0A7A45!important;
+  color:#05341D!important}
+.ob.no{background:linear-gradient(135deg,#FFD2D6,#E23A4A)!important;border-color:#8F1620!important;color:#FFF!important}
+.ti,input[type=text]{background:#FFFDFE!important;border:2.5px solid #FF9EC9!important;
+  color:#2A2340!important;font-weight:800!important;font-size:1.05rem!important}
+.ck,.checkbtn{background:linear-gradient(120deg,#FF7FBF,#7FB8FF)!important;color:#FFFFFF!important;font-weight:900!important}
+.ex{background:#FFFDFC!important;border:2.5px solid #FFB3D6!important;color:#26203A!important;
+  font-size:1.05rem!important;line-height:1.95!important}
+.ex .kb{background:linear-gradient(100deg,#C2185B,#7B4BC9 55%,#1D6FD0)!important;color:#FFFFFF!important;
+  font-weight:900!important;border-radius:12px!important}
+.ex .vnt,.ex .vi{background:#EAF4FF!important;color:#123A66!important;border-left:6px solid #7FB8FF!important;
+  border-radius:0 12px 12px 0!important;font-weight:800!important}
+.ex .grid2 div{background:#FFFFFF!important;border:1.5px solid #F2C9DE!important;color:#26203A!important;
+  font-weight:700!important;border-radius:11px!important}
+.ex .pw,.ex .p-word{color:#0A3E8F!important;font-weight:900!important}
+.ex .pm,.ex .p-mean{color:#A0356B!important;font-weight:800!important}
+.ex .ph,.ex .p-phonetic{color:#0B6E7E!important;font-weight:800!important;background:#E9FBF6;
+  border-radius:7px;padding:0 7px}
+.ex .wt,.ex .t{background:#FFE9F4!important;color:#A0356B!important;font-weight:900!important;
+  border-radius:7px!important;padding:0 8px!important}
+.ex .g{color:#0A7B45!important;font-weight:900!important}
+.ex .w{color:#B3300F!important;font-weight:800!important}
+.ex .hl-green{color:#0A7B45!important;font-weight:900!important}
+.ex .hl-red{color:#C0110B!important;font-weight:900!important}
+.ex .p-grammar,.ex .pg{color:#26203A!important;font-weight:700!important}
+.ex li::marker{color:#C2185B;font-weight:900}
+.sec{background:linear-gradient(100deg,#FFDDEC,#E6F1FF)!important;border:2.5px solid #FFFFFF!important}
+.sec .st h2,.sec h2{color:#5B2350!important;-webkit-text-fill-color:#5B2350!important;
+  background:none!important;text-shadow:none!important;opacity:1!important;font-size:1.16rem!important}
+.sec .si,.sec .si *{opacity:1!important}
+.bar,.pbar,.hud,.sc{background:linear-gradient(100deg,#FFE3F0,#E6F1FF)!important;
+  border:2px solid #FFB3D6!important;color:#5B2350!important}
+.sec .si,.sec .si *{color:#1D4E86!important;font-weight:700!important;font-style:normal!important;
+  font-size:1.02rem!important}
+.sec .si b{color:#C2185B!important}
+.sec .pill{color:#FFFFFF!important;background:linear-gradient(120deg,#C2185B,#1D6FD0)!important;
+  font-weight:900!important;font-size:.86rem!important}
+.sec .dv{border-color:#FFB3D6!important}
+.th2,.thb,.theory{display:none!important}
+.lo,.lo2,.lo3,.beam,.fly{display:none!important}
+body::before,body::after{display:none!important}
+header::before,header::after,.hero::before,.hero::after{opacity:.1!important;filter:saturate(.4)!important}
+.board{position:relative;background:#FFFDF3;border:3px dashed #B8860B;border-radius:10px;
+ padding:14px 16px;margin:2px 0 12px;text-align:center;box-shadow:0 6px 16px rgba(0,0,0,.12);
+ transform:rotate(-.6deg);font-family:inherit}
+.board.round{border-style:solid;border-color:#D62839;border-width:5px;border-radius:50%;
+ width:120px;height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+ margin:6px auto 4px;transform:none;background:#FFFDF3}
+.board::before{content:'📌';position:absolute;top:-14px;left:50%;transform:translateX(-50%) rotate(8deg);
+ font-size:1.3rem}
+.board .bicon{font-size:1.8rem;margin-bottom:2px}
+.board .bhead{font-weight:900;color:#B8860B;font-size:1.05rem;letter-spacing:.5px;
+ border-bottom:2px solid #B8860B;display:inline-block;padding-bottom:2px;margin-bottom:4px}
+.bsub{font-weight:700;color:#5B2350;font-size:.92rem;text-align:center;margin-bottom:10px;line-height:1.5}
+
+</style>
+</head>
+<body>
+<div class="lo"></div><div class="lo2"></div><div class="lo3"></div><div class="beam"></div>
+<div class="fly" id="fly"></div>
+
+<!-- ══ BẢNG NHẮC GHIM CỐ ĐỊNH ══ -->
+<div class="tip" id="tip" onclick="tipToggle()">
+  <span class="ic">💛</span><span class="lbl">MS NHẮN</span>
+  <div class="msg" id="tmsg"></div><span class="arr">▾</span>
+</div>
+<div class="tipfull" id="tipfull"><ul>
+ <li>📖 <b>Đọc thật kỹ phần lý thuyết ở đầu trang trước khi làm</b> — nhất là <b>bảng ghép từ</b> và <b>3 quy tắc vàng</b>. Hiểu rồi mới làm thì con sẽ thấy bài này dễ như chơi.</li>
+ <li>🧠 Trước khi chọn, con hãy tự hỏi <b>2 câu</b>: “Câu này nói về NGƯỜI, VẬT hay NƠI?” và “Câu này là khẳng định, phủ định hay câu hỏi?”. Trả lời được 2 câu đó là ra đáp án ngay.</li>
+ <li>🔎 Gặp từ tiếng Anh nào chưa hiểu, con <b>tra Google Dịch / ChatGPT / Gemini</b> cho rõ nghĩa rồi hãy bấm, đừng chọn bừa cho nhanh nhé.</li>
+ <li>🖋️ <b>Mở vở ra và chép lại</b> những câu con làm sai, kèm nghĩa tiếng Việt. Ms hứa với con: chép một lần bằng đọc mười lần.</li>
+ <li>🌱 Làm sai không sao cả, Ms chỉ cần con <b>đọc hết phần giải thích</b> của từng câu — kể cả câu đã đúng. Đó mới là lúc con thật sự giỏi lên.</li>
+</ul></div>
+
+<div class="wrap">
+  <div class="mq">
+  <h1>🌍 UNIT 10 · PLANET EARTH<br><span>SPEAKING — Hoàn thành hội thoại (10) · READING — Đọc biển báo/thông báo (5)</span></h1>
+    <div class="by">🏠 Giáo viên tạo: MS Chí Nên &nbsp;·&nbsp; ☎️ 0852639652 — đăng ký khoá tiếng Anh <b>lớp 1 ➜ 12</b>: web luyện tập giải chi tiết từng câu, ngân hàng đề thi xịn xò</div>
+    <p><b>15 câu</b> · Speaking Ex1: Chọn câu đáp phù hợp (10) · Reading Ex1: Đọc hiểu biển báo &amp; thông báo (5)</p>
+    <i>(Câu nào cũng có lời giải: dịch nghĩa · từ vựng · tại sao đúng · bẫy hay gấp)</i>
+  </div>
+  <div class="sb">🎟️ <b><span id="s0">0</span>/<span id="tt">0</span></b>
+    <div class="tr"><div class="fb" id="fb"></div></div><span id="md" style="font-size:1.3rem">💪</span></div>
+  <div id="app"></div>
+  <div class="sub"><button class="sbtn" onclick="openName()">🎯 NỘP BÀI &amp; XEM KẾT QUẢ</button></div>
+</div>
+<div class="ov" id="nOv"><div class="mb"><h2>✍️ Nhập tên của con</h2>
+  <input id="nIn" placeholder="Ví dụ: Nguyễn Văn A..." maxlength="50" onkeydown="if(event.key==='Enter')showResult()">
+  <div class="em" id="nEr">⚠️ Con chưa nhập tên kìa!</div>
+  <button class="sbtn" style="width:100%;font-size:.9rem;padding:12px" onclick="showResult()">🚀 Xem kết quả</button></div></div>
+<div class="ov" id="rOv"><div class="mb"><div class="gr" id="rG"></div>
+  <div class="rs" id="rS"></div><div class="rt2" id="rT"></div><img id="rI" alt=""><div class="rm" id="rM"></div>
+  <button class="sbtn" style="width:100%;font-size:.9rem;padding:12px" onclick="location.reload()">🔄 Làm lại</button></div></div>
+<script>
+/* thanh nhắc + ẩn/hiện lý thuyết */
+const TIPS=['📌 Ms để bảng này ở đây suốt bài, vì Ms sợ em quên mất mình đang học vì điều gì. Câu nào chưa hiểu, em hãy dừng lại tra Google Dịch, ChatGPT hoặc Gemini cho bằng được nghĩa rồi mới chọn. Đoán bừa thì con số điểm có đẹp cũng chẳng phải của em.',
+'🔉 Một từ chỉ thật sự là của em khi em đọc được nó thành tiếng. Tra ở từ điển Cambridge để xem phiên âm, nhìn kỹ trọng âm nằm ở âm tiết nào, bấm loa nghe rồi đọc theo dăm ba lượt.',
+'🕯️ Phần giải thích là chỗ Ms ngồi viết lâu nhất. Em đọc đủ các bước nhé, kể cả câu đã làm đúng — hiểu vì sao ba phương án kia sai mới là thứ theo em vào phòng thi.',
+'🖋️ Xin em hãy mở vở ra. Chép lại từ mới, cụm cố định, cấu trúc vừa gặp kèm nghĩa tiếng Việt. Ms dạy nhiều khoá rồi và thấy rất rõ: bạn nào chịu ghi, bạn ấy đi xa.',
+'🌾 Không ai giỏi lên vì bấm cho hết bài. Mười lăm phút em chịu khó đọc kỹ và ghi chép hôm nay sẽ quay lại thành điểm số của em ngày mai. Ms tin em, chỉ mong em đừng dễ dãi với chính mình.',
+'☎️ Muốn học cùng MS Chí Nên thì gọi 0852639652 — khoá tiếng Anh từ lớp 1 đến lớp 12, web luyện tập giải chi tiết từng câu và ngân hàng đề thi cực xịn.'];
+let ti=0;const TM=document.getElementById('tmsg');
+function rot(){TM.textContent=TIPS[ti%TIPS.length];TM.style.animation='none';void TM.offsetWidth;
+ TM.style.animation='fadein .5s ease';ti++}
+rot();setInterval(rot,4200);
+function tipToggle(){document.getElementById('tipfull').classList.toggle('on');
+ document.getElementById('tip').classList.toggle('open')}
+function thToggle(){const t=document.getElementById('th'),b=document.getElementById('thBtn');
+ t.classList.toggle('hide');
+ b.textContent=t.classList.contains('hide')?'📖 XEM LẠI LÝ THUYẾT':'📖 ẨN PHẦN LÝ THUYẾT'}
+(function(){
+ const L=document.getElementById('fly');
+ const E=['🌍','🌎','🌏','🌱','🌊','☁️','🌤️','🦋','⭐','🍃'];
+ const C=['#FFC94A','#FF5B7F','#48D8D8','#A86BFF','#FF7AC6'];
+ for(let i=0;i<24;i++){
+  const d=document.createElement('div');d.className='fl1';const inner=document.createElement('i');
+  if(i%3===2){const m=document.createElement('div');m.className='mfilm';
+   m.style.setProperty('--w',(16+Math.random()*12).toFixed(0)+'px');
+   m.style.setProperty('--c',C[i%C.length]);inner.appendChild(m);}
+  else{inner.textContent=E[i%E.length];inner.style.fontSize=(15+Math.random()*15).toFixed(0)+'px';}
+  d.style.left=(Math.random()*95)+'%';
+  d.style.animationDuration=(15+Math.random()*14).toFixed(1)+'s';
+  d.style.animationDelay=(-Math.random()*28).toFixed(1)+'s';
+  inner.style.animationDuration=(2.4+Math.random()*3).toFixed(1)+'s';
+  d.appendChild(inner);L.appendChild(d);
+ }
+})();
+let AC;function ac(){if(!AC)AC=new (window.AudioContext||window.webkitAudioContext)();if(AC.state==='suspended')AC.resume();return AC}
+function ding(){try{const c=ac(),n=c.currentTime;[523,659,784,1047].forEach((f,i)=>{const o=c.createOscillator(),g=c.createGain();
+ o.type='triangle';o.frequency.value=f;o.connect(g);g.connect(c.destination);const t=n+i*.09;
+ g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.2,t+.03);g.gain.exponentialRampToValueAtTime(.001,t+.44);
+ o.start(t);o.stop(t+.47)})}catch(e){}}
+function buzz(){try{const c=ac(),n=c.currentTime;[300,235,180].forEach((f,i)=>{const o=c.createOscillator(),g=c.createGain();
+ o.type='square';o.frequency.value=f;o.connect(g);g.connect(c.destination);const t=n+i*.12;
+ g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.11,t+.02);g.gain.exponentialRampToValueAtTime(.001,t+.17);
+ o.start(t);o.stop(t+.19)})}catch(e){}}
+document.addEventListener('click',()=>{try{ac()}catch(e){}},{once:true});
+function confetti(){const c=['#FFC53D','#FF4D5E','#3EE0E0','#A77BFF','#FF6FC8'];
+ for(let i=0;i<30;i++){const d=document.createElement('div');d.className='cf';d.style.background=c[i%c.length];
+  d.style.left=(Math.random()*100)+'vw';d.style.animation='fall '+(1.4+Math.random()*1.3)+'s linear forwards';
+  d.style.animationDelay=(Math.random()*.3)+'s';document.body.appendChild(d);setTimeout(()=>d.remove(),3200)}}
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function norm(s){return (s||'').toLowerCase().replace(/[’'`´]/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim()}
+function comb(p){let o=[''];p.forEach(x=>{const n=[];o.forEach(a=>x.forEach(b=>n.push((a+' '+b).trim())));o=n});
+ return o.map(s=>s.replace(/\s+/g,' ').trim())}
+</script>
+
+<script>
+/* ══ DỮ LIỆU ══ */
+const Q=[];
+function mcq(sec,num,q,correct,opts,ex,cls){Q.push({t:'mcq',sec,num,q,correct,opts,ex,cls:cls||''})}
+function err(sec,num,q,parts,ci,accept,ex){Q.push({t:'err',sec,num,q,parts,ci,accept,ex})}
+function A(w,t,m,p,ok){return '<span class="'+(ok?'hl-green':'p-word')+'">'+w+'</span>'+
+ (t?' <span class="wt">'+t+'</span>':'')+(p?' <span class="p-phonetic">'+p+'</span>':'')+
+ ' = <span class="p-mean">'+m+'</span>'}
+function EX(key,vn,arr,why,wrong,wide){return '<div class="kb">🔑 ĐÁP ÁN: '+key+'</div>'+
+ '<div class="vnt">💬 Dịch: '+vn+'</div><ol>'+
+ '<li>Phân tích các đáp án:<div class="grid2'+(wide?' wide':'')+'">'+arr.map(x=>'<div>'+x+'</div>').join('')+'</div></li>'+
+ '<li><span class="hl-green">✅ TẠI SAO ĐÚNG?</span> <span class="p-grammar">'+why+'</span></li>'+
+ '<li><span class="hl-red">❌ TẠI SAO SAI?</span> <span class="p-grammar">'+wrong+'</span></li></ol>'}
+
+function fil(sec,num,q,accept,ex,hint,pre,ph){Q.push({t:'fill',sec,num,q,accept,ex,hint,pre,ph})}
+
+/* ══ GIẢI THÍCH 5 BƯỚC ══ */
+function O(en,vn,ok){return '<div'+(ok?' class="rt"':'')+'><span class="'+(ok?'hl-green':'p-word')+'">'+en+'</span> ➔ Dịch: <span class="p-mean">'+vn+'</span></div>'}
+function EX5(key,de,dich,ops,why,wrong){return '<div class="kb">🔑 ĐÁP ÁN: '+key+'</div>'+
+ '<div class="stp"><span class="l">ĐỀ BÀI</span>'+de+'</div>'+
+ '<div class="vnt">💬 DỊCH ĐỀ BÀI: '+dich+'</div>'+
+ '<div class="ops">'+ops.join('')+'</div>'+
+ '<div class="wy"><span class="hl-green">✅ TẠI SAO ĐÚNG:</span> '+why+'</div>'+
+ '<div class="wr2"><span class="hl-red">❌ TẠI SAO SAI:</span> '+wrong+'</div>'}
+
+/* ═════ SPEAKING — Exercise 1: hoàn thành hội thoại (10 câu) ═════ */
+mcq("SP",1,'Mr. Alverez: “Did you see the documentary about whales yesterday evening?”<br>Mr. Luan: “______”',
+ "No, I was busy preparing the lecture. How was it?",
+ ["No, I was busy preparing the lecture. How was it?","Oh, I absolutely love animals! Especially dogs.","Actually, I wasn't paying attention at all. What did we miss?","No, I don't adore documentary about whales, but I like the zoo."],
+ EX5("No, I was busy preparing the lecture. How was it?","(Xem hội thoại phía trên)",
+  "Ông có xem phim tài liệu về cá voi tối qua không? — Không, tôi bận chuẩn bị bài giảng. Nó thế nào?",
+  [O("No, I was busy preparing the lecture. How was it?","Không, tôi bận chuẩn bị bài giảng. Nó thế nào?",1),
+   O("Oh, I absolutely love animals! Especially dogs.","Ồ, tôi rất yêu động vật! Đặc biệt là chó.",0),
+   O("Actually, I wasn't paying attention at all. What did we miss?","Thật ra tôi chẳng chú ý gì cả. Chúng ta đã bỏ lỡ gì vậy?",0),
+   O("No, I don't adore documentary about whales, but I like the zoo.","Không, tôi không mê phim tài liệu về cá voi, nhưng tôi thích sở thú.",0)],
+  "Câu hỏi Yes/No cần xác nhận trước — đáp án nêu lý do (bận việc) rồi hỏi lại để duy trì hội thoại tự nhiên.",
+  "Các đáp án khác không trả lời trực tiếp Yes/No hoặc lạc chủ đề (nói về chó/sở thú thay vì phim tài liệu vừa xem)."),"c1");
+mcq("SP",2,'Mr. Vincent: “I\'m worried about the increasing pollution in our oceans.”<br>Ms. Ruth: “______”',
+ "Agreed. We should definitely protect our marine life.",
+ ["Agreed. We should definitely protect our marine life.","That reminds me, did you take out the trash?","Let's open up the seas for unrestricted harvesting.","We should prioritise economic gain over environmental concerns."],
+ EX5("Agreed. We should definitely protect our marine life.","(Xem hội thoại phía trên)",
+  "Tôi lo lắng về ô nhiễm biển ngày càng tăng. — Đồng ý. Chúng ta chắc chắn nên bảo vệ sinh vật biển.",
+  [O("Agreed. We should definitely protect our marine life.","Đồng ý. Chúng ta chắc chắn nên bảo vệ sinh vật biển.",1),
+   O("That reminds me, did you take out the trash?","Điều đó làm tôi nhớ ra, bạn đã đổ rác chưa?",0),
+   O("Let's open up the seas for unrestricted harvesting.","Hãy mở biển ra để khai thác không giới hạn.",0),
+   O("We should prioritise economic gain over environmental concerns.","Chúng ta nên ưu tiên lợi ích kinh tế hơn vấn đề môi trường.",0)],
+  "Mr. Vincent bày tỏ lo lắng ➜ Ms. Ruth cần đồng cảm/đồng tình, đáp án 'Agreed' thể hiện đúng thái độ đó.",
+  "3 đáp án còn lại lạc đề (đổ rác) hoặc trái ngược hoàn toàn với tinh thần bảo vệ môi trường."),"c1");
+mcq("SP",3,'Mr. Alverez: “Wow, this sunflower is enormous!”<br>Mr. James: “______”',
+ "Sunflowers are a great source of energy.",
+ ["Sunflowers are a great source of energy.","No, I don't. I really care for sunflowers.","Yes, I do. I much prefer lilies over sunflowers.","Those droopy sunflowers are so last season."],
+ EX5("Sunflowers are a great source of energy.","(Xem hội thoại phía trên)",
+  "Ồ, bông hướng dương này to thật đấy! — Hoa hướng dương là một nguồn năng lượng tuyệt vời.",
+  [O("Sunflowers are a great source of energy.","Hoa hướng dương là một nguồn năng lượng tuyệt vời.",1),
+   O("No, I don't. I really care for sunflowers.","Không, tôi không. Tôi rất thích hoa hướng dương.",0),
+   O("Yes, I do. I much prefer lilies over sunflowers.","Có chứ. Tôi thích hoa loa kèn hơn hoa hướng dương.",0),
+   O("Those droopy sunflowers are so last season.","Những bông hướng dương rũ xuống kia lỗi mốt rồi.",0)],
+  "Câu cảm thán về kích thước hoa cần một phản hồi hợp lý, bổ sung thông tin tích cực — không phải trả lời Yes/No (vì câu gốc không phải câu hỏi Yes/No).",
+  "B, C trả lời Yes/No cho một câu KHÔNG phải câu hỏi Yes/No ➜ sai ngữ pháp phản hồi; D thô lỗ, lạc đề."),"c1");
+mcq("SP",4,'Lucas: “I\'m so excited about our camping trip this weekend!”<br>Brian: “______”',
+ "Me too! Camping is a great way to connect with nature.",
+ ["Me too! Camping is a great way to connect with nature.","Can't we just stay home this weekend?","Oh no, I forgot to buy groceries again!","Disagreed. I should postpone the camping trip."],
+ EX5("Me too! Camping is a great way to connect with nature.","(Xem hội thoại phía trên)",
+  "Tớ rất háo hức về chuyến cắm trại cuối tuần này! — Tớ cũng vậy! Cắm trại là cách tuyệt vời để hòa mình vào thiên nhiên.",
+  [O("Me too! Camping is a great way to connect with nature.","Tớ cũng vậy! Cắm trại là cách tuyệt vời để hòa mình vào thiên nhiên.",1),
+   O("Can't we just stay home this weekend?","Chúng ta không thể ở nhà cuối tuần này thôi à?",0),
+   O("Oh no, I forgot to buy groceries again!","Ôi không, tớ lại quên mua đồ tạp hóa rồi!",0),
+   O("Disagreed. I should postpone the camping trip.","Không đồng ý. Tớ nên hoãn chuyến cắm trại lại.",0)],
+  "Lucas đang hào hứng ➜ Brian cần đáp lại bằng thái độ tương tự, 'Me too!' là phản hồi tự nhiên nhất.",
+  "3 đáp án còn lại đều thể hiện thái độ tiêu cực/lạc đề, ngược hẳn với sự háo hức của Lucas."),"c1");
+mcq("SP",5,'Ms. Ella: “I\'m so hot! I wish it would rain soon.”<br>Mr. Fritz: “______”',
+ "The plants definitely need a drink.",
+ ["The plants definitely need a drink.","What a refreshing breeze!","Yes, this room is freezing!","The rain keeps pouring down."],
+ EX5("The plants definitely need a drink.","(Xem hội thoại phía trên)",
+  "Tôi nóng quá! Ước gì trời mưa sớm. — Cây cối chắc chắn cũng đang cần được tưới nước đấy.",
+  [O("The plants definitely need a drink.","Cây cối chắc chắn cũng đang cần được tưới nước đấy.",1),
+   O("What a refreshing breeze!","Làn gió mát lành làm sao!",0),
+   O("Yes, this room is freezing!","Vâng, phòng này lạnh cóng!",0),
+   O("The rain keeps pouring down.","Mưa cứ trút xuống mãi.",0)],
+  "Ms. Ella than nóng và mong mưa ➜ Mr. Fritz đồng tình bằng lý do bổ sung hợp lý (cây cối cũng cần nước/mưa).",
+  "B, C trái ngược logic (đang nóng mà nói mát/lạnh); D sai vì trời CHƯA mưa, chỉ đang ước có mưa."),"c1");
+mcq("SP",6,'A: “The local animal shelter is recruiting volunteers. ______”<br>B: “OK, I\'ll think about that.”',
+ "Why don't you give it a go?",
+ ["Why don't you give it a go?","What do you like doing there?","Do you have any free time?","How would you do that?"],
+ EX5("Why don't you give it a go?","(Xem hội thoại phía trên)",
+  "Trạm cứu hộ động vật địa phương đang tuyển tình nguyện viên. Sao bạn không thử xem sao? — OK, tôi sẽ suy nghĩ về việc đó.",
+  [O("Why don't you give it a go?","Sao bạn không thử xem sao nhỉ?",1),
+   O("What do you like doing there?","Bạn thích làm gì ở đó?",0),
+   O("Do you have any free time?","Bạn có thời gian rảnh không?",0),
+   O("How would you do that?","Bạn sẽ làm điều đó như thế nào?",0)],
+  "Câu trả lời của B ('I'll think about that') cho thấy câu trước phải là một LỜI GỢI Ý — 'Why don't you...?' là cấu trúc gợi ý phổ biến.",
+  "3 đáp án khác là câu hỏi thông tin, không tạo ra ngữ cảnh để B phải 'suy nghĩ về việc đó'."),"c1");
+mcq("SP",7,'A: “How would you feel about going on a hiking trip next month? It\'s going to be an amazing adventure!”<br>B: “______” I prefer more relaxed vacations.',
+ "Hiking isn't really my thing.",
+ ["Hiking isn't really my thing.","Alright. I'll go with you.","I feel so sorry for you.","How do I sign up for the trip?"],
+ EX5("Hiking isn't really my thing.","(Xem hội thoại phía trên)",
+  "Bạn thấy sao nếu đi leo núi tháng tới? Sẽ là một cuộc phiêu lưu tuyệt vời đấy! — Leo núi không phải sở thích của tôi. Tôi thích những kỳ nghỉ thư giãn hơn.",
+  [O("Hiking isn't really my thing.","Leo núi không phải sở thích của tôi lắm.",1),
+   O("Alright. I'll go with you.","Được rồi. Tôi sẽ đi cùng bạn.",0),
+   O("I feel so sorry for you.","Tôi thấy tiếc thay cho bạn quá.",0),
+   O("How do I sign up for the trip?","Làm sao để tôi đăng ký chuyến đi này?",0)],
+  "Vế sau 'I prefer more relaxed vacations' là lời từ chối khéo cho lời rủ đi leo núi — đáp án A là câu từ chối lịch sự khớp nhất.",
+  "B/D thể hiện đồng ý tham gia — mâu thuẫn với vế sau; C không tự nhiên trong ngữ cảnh này."),"c1");
+mcq("SP",8,'A: “Hey, I heard you have an exam coming up. ______”<br>B: “Thanks a lot.”',
+ "Good luck with your studies!",
+ ["Good luck with your studies!","Let's study together later.","Would you like to teach me?","I hope I can pass this."],
+ EX5("Good luck with your studies!","(Xem hội thoại phía trên)",
+  "Này, nghe nói cậu sắp có kỳ thi. Chúc cậu học tốt nhé! — Cảm ơn nhiều.",
+  [O("Good luck with your studies!","Chúc cậu học tốt nhé!",1),
+   O("Let's study together later.","Lát nữa học cùng nhau nhé.",0),
+   O("Would you like to teach me?","Cậu có muốn dạy tớ không?",0),
+   O("I hope I can pass this.","Tớ hy vọng mình sẽ đậu.",0)],
+  "Nghe tin ai sắp thi, phản xạ tự nhiên nhất là chúc may mắn — 'Thanks a lot' xác nhận người nói vừa nhận lời chúc.",
+  "3 đáp án khác không phải LỜI CHÚC nên không khớp với phản hồi 'Thanks a lot' của B."),"c1");
+mcq("SP",9,'A: “Can we enter this part of the forest?”<br>B: “______” This is a restricted area.',
+ "No, sorry, you can't.",
+ ["No, sorry, you can't.","Sure. You're always welcomed.","Yes. Thank you so much.","Of course. Be my guest."],
+ EX5("No, sorry, you can't.","(Xem hội thoại phía trên)",
+  "Chúng tôi có thể vào khu rừng này không? — Không, xin lỗi, bạn không thể. Đây là khu vực cấm.",
+  [O("No, sorry, you can't.","Không, xin lỗi, bạn không thể.",1),
+   O("Sure. You're always welcomed.","Được chứ. Bạn luôn được chào đón.",0),
+   O("Yes. Thank you so much.","Vâng. Cảm ơn bạn rất nhiều.",0),
+   O("Of course. Be my guest.","Tất nhiên rồi. Cứ tự nhiên.",0)],
+  "Vế sau 'This is a restricted area' (khu vực cấm) buộc câu trả lời phải là TỪ CHỐI (No).",
+  "B, C, D đều là lời đồng ý cho vào — mâu thuẫn trực tiếp với 'restricted area' ở vế sau."),"c1");
+mcq("SP",10,'A: “I think you should start a vegetable garden in our backyard. You can eat fresh and organic products.”<br>B: “______”',
+ "I'm not sure if I have the time to take care of it.",
+ ["I'm not sure if I have the time to take care of it.","That's very rich of you to do so.","Your contribution will help protect the planet.","Why don't you think about that?"],
+ EX5("I'm not sure if I have the time to take care of it.","(Xem hội thoại phía trên)",
+  "Tôi nghĩ bạn nên làm vườn rau ở sân sau. Bạn có thể ăn đồ tươi và hữu cơ. — Em không chắc mình có thời gian chăm sóc nó không.",
+  [O("I'm not sure if I have the time to take care of it.","Em không chắc mình có thời gian chăm sóc nó không.",1),
+   O("That's very rich of you to do so.","Bạn thật hào phóng khi làm vậy.",0),
+   O("Your contribution will help protect the planet.","Sự đóng góp của bạn sẽ giúp bảo vệ hành tinh.",0),
+   O("Why don't you think about that?","Sao bạn không suy nghĩ về điều đó đi?",0)],
+  "A đưa ra lời khuyên/gợi ý ➜ B phản hồi về TÍNH KHẢ THI (vấn đề thời gian) — cách phản hồi tự nhiên nhất trước một lời khuyên.",
+  "B/C không phù hợp ngữ cảnh (khen ngợi/nói về hành tinh); D là câu hỏi ngược lại, không phải phản hồi hợp lý cho lời khuyên."),"c1");
+
+/* ═════ READING — Exercise 1: Look at the sign or notice (5 câu) ═════ */
+var BOARD1='<div class="board yellow"><div class="bicon">🚧</div><div class="bhead">NOTICE</div>'
+ +'<div style="font-weight:900;color:#D62839;font-size:1.15rem;margin:4px 0">EMPLOYEES ONLY</div>'
+ +'<div class="bsub">ALL VISITORS MUST USE FRONT ENTRANCE &amp; SIGN IN</div></div>';
+mcq("RD",1,BOARD1+'What does this sign mean?',
+ "Only staff members can enter the building here.",
+ ["Only staff members can enter the building here.","Visitors can use this entrance, but they have to sign in first.","Customers are allowed to enter the building here.","Employees can only use the front entrance to enter the building."],
+ EX5("Only staff members can enter the building here.","NOTICE — EMPLOYEES ONLY. ALL VISITORS MUST USE FRONT ENTRANCE & SIGN IN.",
+  "THÔNG BÁO — CHỈ DÀNH CHO NHÂN VIÊN. TẤT CẢ KHÁCH THAM QUAN PHẢI DÙNG LỐI VÀO CHÍNH VÀ KÝ TÊN.",
+  [O("Only staff members can enter the building here.","Chỉ có nhân viên mới được vào tòa nhà ở lối này.",1),
+   O("Visitors can use this entrance, but they have to sign in first.","Khách tham quan có thể dùng lối này, nhưng phải ký tên trước.",0),
+   O("Customers are allowed to enter the building here.","Khách hàng được phép vào tòa nhà ở lối này.",0),
+   O("Employees can only use the front entrance to enter the building.","Nhân viên chỉ được dùng lối vào chính để vào tòa nhà.",0)],
+  "Biển ghi 'EMPLOYEES ONLY' (chỉ nhân viên) ➜ lối này CHỈ dành cho nhân viên.",
+  "B, C sai vì khách phải dùng LỐI KHÁC (front entrance), không phải lối này; D đảo ngược logic — chính KHÁCH mới phải dùng lối chính, không phải nhân viên bị giới hạn."),"c1");
+var BOARD2='<div class="board round"><div style="font-size:2.6rem;font-weight:900;line-height:1">30</div>'
+ +'<div style="font-weight:800;font-size:.85rem">km/h</div></div><div class="bsub" style="margin-top:-4px">8AM – 5PM &nbsp;·&nbsp; SCHOOL DAYS</div>';
+mcq("RD",2,BOARD2+'What does this sign mean?',
+ "You can drive more than 30 km/h on Sundays.",
+ ["You can drive more than 30 km/h on Sundays.","You can't drive more than 30 km/h at 12AM every day.","You must drive less than 30 km/h on public holidays.","You must drive less than 30 km/h before 8AM every day."],
+ EX5("You can drive more than 30 km/h on Sundays.","Biển báo: 30 km/h, áp dụng 8 giờ sáng – 5 giờ chiều, các NGÀY HỌC (school days).",
+  "Giới hạn tốc độ 30km/h chỉ áp dụng từ 8h sáng đến 5h chiều vào các ngày có học sinh đi học.",
+  [O("You can drive more than 30 km/h on Sundays.","Bạn có thể lái nhanh hơn 30km/h vào Chủ nhật.",1),
+   O("You can't drive more than 30 km/h at 12AM every day.","Bạn không được lái nhanh hơn 30km/h lúc nửa đêm mỗi ngày.",0),
+   O("You must drive less than 30 km/h on public holidays.","Bạn phải lái chậm hơn 30km/h vào ngày lễ.",0),
+   O("You must drive less than 30 km/h before 8AM every day.","Bạn phải lái chậm hơn 30km/h trước 8 giờ sáng mỗi ngày.",0)],
+  "Biển chỉ áp dụng 'SCHOOL DAYS' (ngày học) — Chủ nhật không phải ngày học nên KHÔNG bị giới hạn, được lái nhanh hơn 30km/h.",
+  "B/C/D đều nói đến các mốc thời gian NGOÀI phạm vi biển báo (nửa đêm, ngày lễ, trước 8AM) — biển không quy định gì cho các thời điểm đó."),"c1");
+var BOARD3='<div class="board"><div class="bicon">📌</div><div class="bhead">PLAYERS WANTED</div>'
+ +'<div class="bsub">for Friday\'s basketball match against Barton College — can YOU help the team?<br>'
+ +'Come to the gym at 3 p.m. today, whatever your level.</div></div>';
+mcq("RD",3,BOARD3+'What does this notice mean?',
+ "The Friday match against Barton College is now moved to 3 p.m. today.",
+ ["The Friday match against Barton College is now moved to 3 p.m. today.","The basketball team only wants to see experienced players.","There aren't enough team members available Friday.","The Barton College team will visit the gym later today."],
+ EX5("The Friday match against Barton College is now moved to 3 p.m. today.","PLAYERS WANTED — cần người chơi cho trận đấu bóng rổ thứ Sáu với Barton College — Đến phòng gym lúc 3 giờ chiều HÔM NAY, không phân biệt trình độ.",
+  "Cần tuyển người chơi cho trận bóng rổ thứ Sáu gặp Barton College — đến phòng tập lúc 3 giờ chiều hôm nay, mọi trình độ đều được.",
+  [O("The Friday match against Barton College is now moved to 3 p.m. today.","Trận đấu thứ Sáu với Barton College giờ được chuyển sang 3 giờ chiều hôm nay.",1),
+   O("The basketball team only wants to see experienced players.","Đội bóng rổ chỉ muốn gặp cầu thủ có kinh nghiệm.",0),
+   O("There aren't enough team members available Friday.","Không đủ thành viên đội có mặt vào thứ Sáu.",0),
+   O("The Barton College team will visit the gym later today.","Đội Barton College sẽ đến phòng gym muộn hôm nay.",0)],
+  "Thông báo mời tập trung 'today' (hôm nay) lúc 3pm để chuẩn bị cho trận đấu — đây là mốc thời gian chính thức liên quan tới trận đấu được nêu.",
+  "B sai vì ghi rõ 'whatever your level' (không phân biệt trình độ); C/D suy diễn không có căn cứ trong thông báo."),"c1");
+var BOARD4='<div class="board round" style="border-color:#D62839"><div class="bicon" style="font-size:2.2rem;margin:0">🐕</div>'
+ +'<div style="font-weight:900;color:#D62839;font-size:1.05rem">NO PETS</div></div>'
+ +'<div class="bsub" style="margin-top:-4px">EXCEPT SERVICE ANIMALS</div>';
+mcq("RD",4,BOARD4+'What does this sign mean?',
+ "Only service pets can enter the building.",
+ ["They allow no pets to enter the building.","They allow animals, but not pets, to enter the building.","Only service pets can't enter the building.","Only service pets can enter the building."],
+ EX5("Only service pets can enter the building.","NO PETS — EXCEPT SERVICE ANIMALS.",
+  "CẤM VẬT NUÔI — TRỪ CHÓ/ĐỘNG VẬT HỖ TRỢ (dẫn đường, hỗ trợ người khuyết tật...).",
+  [O("They allow no pets to enter the building.","Họ không cho phép bất kỳ thú cưng nào vào tòa nhà.",0),
+   O("They allow animals, but not pets, to enter the building.","Họ cho phép động vật, nhưng không phải thú cưng, vào tòa nhà.",0),
+   O("Only service pets can't enter the building.","Chỉ thú cưng hỗ trợ mới không được vào tòa nhà.",0),
+   O("Only service pets can enter the building.","Chỉ thú cưng hỗ trợ (chó dẫn đường…) mới được vào tòa nhà.",1)],
+  "'EXCEPT service animals' (trừ động vật hỗ trợ) ➜ đây là NGOẠI LỆ duy nhất được phép vào, các thú cưng khác đều bị cấm.",
+  "A bỏ sót ngoại lệ 'except'; B mơ hồ, không rõ 'service animals' có phải 'pets' không; C ngược nghĩa hoàn toàn."),"c1");
+var BOARD5='<div class="board"><div class="bicon">💊</div><div class="bhead">TAKE ONE TABLET</div>'
+ +'<div class="bsub">THREE TIMES A DAY AFTER MEALS.<br><b style="color:#D62839">FINISH THE PRESCRIPTION.</b></div></div>';
+mcq("RD",5,BOARD5+'What does this label mean?',
+ "Take the tablets regularly until the bottle is empty.",
+ ["Take the tablets regularly until the bottle is empty.","Take one tablet every day until they are finished.","Take three tablets after meals until you feel better.","Take one tablet a day until you feel better."],
+ EX5("Take the tablets regularly until the bottle is empty.","TAKE ONE TABLET THREE TIMES A DAY AFTER MEALS. FINISH THE PRESCRIPTION.",
+  "UỐNG MỘT VIÊN, BA LẦN MỘT NGÀY, SAU BỮA ĂN. UỐNG HẾT ĐƠN THUỐC.",
+  [O("Take the tablets regularly until the bottle is empty.","Uống thuốc đều đặn cho đến khi hết chai.",1),
+   O("Take one tablet every day until they are finished.","Uống một viên mỗi ngày cho đến khi hết.",0),
+   O("Take three tablets after meals until you feel better.","Uống ba viên sau bữa ăn cho đến khi thấy khỏe hơn.",0),
+   O("Take one tablet a day until you feel better.","Uống một viên mỗi ngày cho đến khi thấy khỏe hơn.",0)],
+  "'THREE TIMES A DAY' (3 lần/ngày, mỗi lần 1 viên) + 'FINISH THE PRESCRIPTION' (uống hết đơn, không tự ý dừng dù thấy khỏe) = uống đều đặn đến khi hết chai.",
+  "B sai số lần (1 lần thay vì 3); C sai số viên mỗi lần (3 viên thay vì 1); D sai cả số lần lẫn điều kiện dừng thuốc (phải hết đơn, không phải 'thấy khỏe hơn' là dừng)."),"c1");
+
+const TOTAL=Q.length;let answered=0,score=0;const done={},maps={};
+function bump(){document.getElementById('fb').style.width=(answered/TOTAL*100)+'%';
+ document.getElementById('s0').textContent=score;
+ const p=answered?score/answered:1;
+ document.getElementById('md').textContent=p>=.9?'🤩':p>=.7?'😃':p>=.5?'🙂':'💪'}
+const APP=document.getElementById('app');let CUR=null;
+function sec(col,pill,title,ins){const d=document.createElement('div');d.className='sec';
+ d.innerHTML='<div class="st"><span class="pill" style="background:'+col+'">'+pill+'</span><h2>'+title+'</h2></div>'+
+  '<div class="si">'+ins+'</div><hr class="dv">';APP.appendChild(d);CUR=d}
+function render(id){Q.forEach((m,i)=>{if(m.sec===id)CUR.appendChild(build(m,'g'+i))})}
+function put(h){CUR.insertAdjacentHTML('beforeend',h)}
+
+sec('#37D89A','SPEAKING','🗣️ EXERCISE 1 — CHỌN CÂU ĐÁP PHÙ HỢP (10 câu)','Đọc kỹ lời thoại đầu tiên, chọn câu trả lời tự nhiên & đúng ngữ cảnh nhất.');
+render('SP');
+sec('#FFB347','READING','📰 EXERCISE 1 — ĐỌC BIỂN BÁO &amp; THÔNG BÁO (5 câu)','Quan sát kỹ hình biển báo/thông báo rồi chọn ý nghĩa đúng nhất.');
+render('RD');
+
+function build(m,gid){
+ const c=document.createElement('div');c.className='q';c.id='c_'+gid;
+ const h='<span class="qn">'+m.num+'</span>';
+ const shake=()=>{c.classList.add('shk');setTimeout(()=>c.classList.remove('shk'),460)};
+ if(m.t==='mcq'){
+  const so=shuffle(m.opts);maps[gid]=so;
+  c.innerHTML='<div class="qt">'+h+m.q+'</div><div class="og '+(m.cls||'')+'" id="o_'+gid+'">'+
+   so.map((o,i)=>'<button class="ob" onclick="pick(\''+gid+'\','+i+')">'+o+'</button>').join('')+
+   '</div><div class="ex" id="e_'+gid+'">'+m.ex+'</div>';
+ } else if(m.t==='fill'){
+  c.innerHTML='<div class="qt">'+h+m.q+(m.hint?'<span class="hint">'+m.hint+'</span>':'')+'</div>'+
+   '<div class="fr">'+(m.pre?'<span class="pre">'+m.pre+'</span>':'')+
+   '<input class="ti" id="i_'+gid+'" placeholder="'+(m.ph||'...gõ đáp án của con...')+'" autocomplete="off" spellcheck="false">'+
+   '<button class="ck" id="b_'+gid+'">KIỂM TRA</button></div>'+
+   '<div class="ex" id="e_'+gid+'">'+m.ex+'</div>';
+  const inp=c.querySelector('#i_'+gid),bt=c.querySelector('#b_'+gid),ex=c.querySelector('#e_'+gid);
+  const go=()=>{
+   if(done[gid])return;
+   const v=norm(inp.value);
+   if(!v){inp.classList.add('no');shake();setTimeout(()=>inp.classList.remove('no'),460);return}
+   done[gid]=true;answered++;
+   const acc=m.accept.map(norm).concat(m.pre?m.accept.map(a=>norm(m.pre+' '+a)):[]);
+   const ok=acc.indexOf(v)>-1;
+   inp.disabled=true;bt.disabled=true;inp.classList.add(ok?'ok':'no');
+   if(ok){score++;ding();confetti();ex.classList.add('show')}
+   else{buzz();shake();setTimeout(()=>ex.classList.add('show'),700)}
+   bump();
+  };
+  bt.onclick=go;inp.addEventListener('keydown',e=>{if(e.key==='Enter')go()});
+ } else {
+  c.innerHTML='<div class="qt">'+h+m.q+'<span class="hint">👉 Bấm chọn chữ cái có lỗi, rồi gõ lại cho ĐÚNG phần đó.</span></div>'+
+   '<div class="lt" id="l_'+gid+'">'+m.parts.map((p,i)=>
+     '<button class="lb" data-i="'+i+'">'+'ABCD'[i]+'<small>'+p+'</small></button>').join('')+'</div>'+
+   '<div class="fr fx" id="f_'+gid+'"><span class="pre">✏️ Sửa thành:</span>'+
+   '<input class="ti" id="i_'+gid+'" placeholder="...gõ từ/cụm từ đúng..." autocomplete="off" spellcheck="false">'+
+   '<button class="ck" id="b_'+gid+'">KIỂM TRA</button></div>'+
+   '<div class="ex" id="e_'+gid+'">'+m.ex+'</div>';
+  const L=c.querySelector('#l_'+gid),F=c.querySelector('#f_'+gid),
+        inp=c.querySelector('#i_'+gid),bt=c.querySelector('#b_'+gid),ex=c.querySelector('#e_'+gid);
+  let sel=-1;
+  L.querySelectorAll('.lb').forEach(b=>{b.onclick=()=>{if(done[gid])return;sel=+b.dataset.i;
+   L.querySelectorAll('.lb').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');
+   F.classList.add('on');inp.focus()}});
+  const go=()=>{
+   if(done[gid])return;
+   const v=norm(inp.value);
+   if(sel<0||!v){inp.classList.add('no');shake();setTimeout(()=>inp.classList.remove('no'),460);return}
+   done[gid]=true;answered++;
+   const ok=(sel===m.ci)&&m.accept.map(norm).indexOf(v)>-1;
+   inp.disabled=true;bt.disabled=true;inp.classList.add(ok?'ok':'no');
+   const LB=[...L.querySelectorAll('.lb')];
+   LB.forEach((x,j)=>{x.disabled=true;x.classList.remove('sel');if(j===sel)x.classList.add(ok?'ok':'no')});
+   const reveal=()=>{LB[m.ci].classList.add('ok');ex.classList.add('show')};
+   if(ok){score++;ding();confetti();reveal()}else{buzz();shake();setTimeout(reveal,700)}
+   bump();
+  };
+  bt.onclick=go;inp.addEventListener('keydown',e=>{if(e.key==='Enter')go()});
+ }
+ return c;
+}
+function pick(gid,i){
+ if(done[gid])return;done[gid]=true;answered++;
+ const m=Q[+gid.slice(1)],b=document.getElementById('o_'+gid),c=document.getElementById('c_'+gid),
+       ex=document.getElementById('e_'+gid);
+ const ok=maps[gid][i]===m.correct;
+ [...b.children].forEach((el,j)=>{el.disabled=true;el.classList.add('dn');
+  if(j===i)el.classList.add(ok?'ok':'no');else el.classList.add('dim')});
+ const reveal=()=>{[...b.children].forEach((el,j)=>{if(maps[gid][j]===m.correct){
+   el.classList.remove('dim');el.classList.add('ok')}});ex.classList.add('show')};
+ if(ok){score++;ding();confetti();reveal()}
+ else{buzz();c.classList.add('shk');setTimeout(()=>c.classList.remove('shk'),460);setTimeout(reveal,700)}
+ bump();
+}
+function openName(){document.getElementById('nOv').classList.add('on');setTimeout(()=>document.getElementById('nIn').focus(),180)}
+function showResult(){
+ const inp=document.getElementById('nIn'),er=document.getElementById('nEr'),nm=inp.value.trim();
+ if(!nm){inp.classList.add('er');er.style.display='block';setTimeout(()=>inp.classList.remove('er'),470);return}
+ er.style.display='none';document.getElementById('nOv').classList.remove('on');
+ const pct=score/TOTAL,ten=(pct*10).toFixed(2);
+ let g,msg,gif;
+ if(score===TOTAL){g='🌟 THIÊN TÀI! '+nm+' XUẤT SẮC TUYỆT ĐỐI!';
+  msg='Đúng cả '+TOTAL+'/'+TOTAL+' câu — câu đồng nghĩa và mạch đoạn văn con nắm chắc như trong lòng bàn tay! 🌊🏆';
+  gif='https://media.giphy.com/media/g9582DNuQppxC/giphy.gif';}
+ else if(pct>=.6){g='🍿 GIỎI LẮM, '+nm+'!';msg='Rất tốt rồi! Con đọc lại 4 bước giải của những câu còn sai, ghi cặp từ nối vào vở rồi làm lại nhé!';
+  gif='https://media.giphy.com/media/11sBLVxNs7v6WA/giphy.gif';}
+ else{g='🌱 CỐ LÊN NÀO, '+nm+'!';msg='Chưa sao cả! Con đọc kỹ phần dịch cả 4 đáp án của từng câu, chép lại cặp từ nối rồi bấm LÀM LẠI nhé!';
+  gif='https://media.giphy.com/media/d2lcHJTG5Tscg/giphy.gif';}
+ document.getElementById('rG').textContent=g;
+ document.getElementById('rS').textContent=score+' / '+TOTAL+' câu đúng';
+ document.getElementById('rT').textContent='🎓 Quy đổi: '+ten+' / 10 điểm';
+ document.getElementById('rI').src=gif;
+ document.getElementById('rM').textContent=msg;
+ document.getElementById('rOv').classList.add('on');
+ if(pct>=.6){confetti();ding()}
+}
+</script>
+<script>window.addEventListener('error',function(e){var q=document.getElementById('app');if(q&&q.children.length<1){q.innerHTML='<div style="background:#fff;border:3px solid #C22B45;border-radius:12px;padding:15px;font-weight:800;color:#8a1038">⚠️ Lỗi: '+e.message+'</div>'}});</script>
+<script>
+(function(){
+ var P=[['5vw','8vh','#FF9EC9'],['82vw','16vh','#9EC5F5'],['16vw','66vh','#D8B4FF'],
+  ['74vw','74vh','#FFC9E4'],['44vw','40vh','#BFE3FF']];
+ P.forEach(function(p,i){var d=document.createElement('div');d.className='gl';
+  d.style.left=p[0];d.style.top=p[1];d.style.width=(210+i*45)+'px';d.style.height=(210+i*45)+'px';
+  d.style.background='radial-gradient(circle,'+p[2]+',rgba(255,255,255,0))';
+  d.style.animationDelay=(-i*2.1)+'s';document.body.appendChild(d);});
+ [[3,168],[14,124],[80,148],[92,108],[46,96]].forEach(function(t,i){
+  var w=document.createElement('div');w.className='turb';
+  w.style.left=t[0]+'vw';w.style.height=t[1]+'px';
+  w.innerHTML='<div class="rot" style="animation-duration:'+(13+i*3)+'s">'+
+   [0,120,240].map(function(a){return '<div class="bl" style="transform:rotate('+a+'deg)"></div>';}).join('')+
+   '<div class="hub"></div></div><div class="pole" style="height:'+(t[1]-80)+'px"></div>';
+  document.body.appendChild(w);});
+ var E=['🌍','🌿','💧','☀️','🦋','🌈'];
+ for(var j=0;j<6;j++){var b=document.createElement('div');b.className='pet';b.textContent=E[j];
+  b.style.left=(7+j*15)+'vw';b.style.animationDuration=(20+j*3.4)+'s';
+  b.style.animationDelay=(-j*4.2)+'s';document.body.appendChild(b);}
+  /* ── hiệu ứng động thêm ── */
+ for(var r=0;r<5;r++){var y=document.createElement('div');y.className='ray';
+  y.style.left=(8+r*20)+'vw';y.style.animationDelay=(-r*2.6)+'s';document.body.appendChild(y);}
+ [['12vw','26vh'],['86vw','34vh'],['30vw','78vh'],['70vw','18vh'],['52vw','62vh']]
+ .forEach(function(p,i){var g=document.createElement('div');g.className='ring';
+  g.style.left=p[0];g.style.top=p[1];g.style.animationDelay=(-i*1.4)+'s';document.body.appendChild(g);});
+ ['☁️','☁️','🌤️','🎐'].forEach(function(e,i){var c=document.createElement('div');c.className='cloud';
+  c.textContent=e;c.style.top=(6+i*13)+'vh';c.style.animationDuration=(38+i*11)+'s';
+  c.style.animationDelay=(-i*9)+'s';document.body.appendChild(c);});
+ for(var b=0;b<14;b++){var d=document.createElement('div');d.className='bub';
+  var s=10+Math.random()*26;d.style.width=s+'px';d.style.height=s+'px';
+  d.style.left=(Math.random()*100)+'vw';d.style.animationDuration=(15+Math.random()*13)+'s';
+  d.style.animationDelay=(-Math.random()*16)+'s';document.body.appendChild(d);}
+ for(var w=0;w<3;w++){var v=document.createElement('div');v.className='wave';
+  v.style.bottom=(-30+w*26)+'px';v.style.animationDelay=(-w*3.4)+'s';document.body.appendChild(v);}
+ for(var z=0;z<5;z++){var q=document.createElement('div');q.className='dash';
+  q.style.top=(14+z*17)+'vh';q.style.width=(120+Math.random()*160)+'px';
+  q.style.animationDuration=(7+Math.random()*6)+'s';q.style.animationDelay=(-z*2.3)+'s';
+  document.body.appendChild(q);}
+ for(var k=0;k<50;k++){var s=document.createElement('div');s.className='spark';
+  s.style.left=(Math.random()*100)+'vw';s.style.top=(Math.random()*100)+'vh';
+  s.style.setProperty('--t',(1.8+Math.random()*3)+'s');document.body.appendChild(s);}
+})();
+</script>
+<script>/*devclean*/(function(){
+var ZW=/[\u00AD\u034F\u061C\u115F\u1160\u17B4\u17B5\u180E\u200B-\u200F\u202A-\u202E\u2060-\u206F\uFEFF]/g,
+    SP=/[\u00A0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\t]/g,
+    AP=/[\u2018\u2019\u201A\u201B\u2032\u2035\u02B9\u02BB\u02BC\u02BD\u02C8\u0060\u00B4\uFF07]/g,
+    DQ=/[\u201C\u201D\u201E\u201F\u2033\u2036\u00AB\u00BB\uFF02]/g,
+    DS=/[\u2010\u2011\u2012\u2212\uFE63\uFF0D]/g;
+function clean(v){if(!v)return v;var s=String(v);try{s=s.normalize('NFKC')}catch(e){}
+  return s.replace(ZW,'').replace(SP,' ').replace(AP,"'").replace(DQ,'"').replace(DS,'-').replace(/[\u0300-\u036f]/g,'').replace(/ {2,}/g,' ');}
+window.__devclean=clean;
+function fix(skip){var L=document.querySelectorAll('input:not([type]),input[type=text],input[type=search],textarea');
+  for(var i=0;i<L.length;i++){var el=L[i];if(el===skip||el.readOnly||el.disabled)continue;var v=el.value,c=clean(v);if(c!==v)el.value=c;}}
+['pointerdown','mousedown','touchstart','click','change','focusout'].forEach(function(t){document.addEventListener(t,function(e){fix(t==='focusout'||t==='change'?null:e.target)},true)});
+document.addEventListener('keydown',function(e){if(e.key==='Enter'||e.keyCode===13)fix(null)},true);
+})();</script>
+<style id="ms-chi-nen-unlock-style">
+#passwordModal, #password-modal, #pwModal, #pw-modal, #pw-overlay,
+#lockModal, #passModal, #authModal, #auth-modal, #lockOverlay,
+#start-overlay, #intro-overlay, #start-screen,
+.password-modal, .lock-modal, .lock-overlay {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    z-index: -9999 !important;
+}
+</style>
+<script>
+// Remove password lock completely - direct quiz access
+(function() {
+    var initDone = false;
+    var renderCheckDone = false;
+
+    function hideEl(el, hard) {
+        if (!el) return;
+        if (hard) {
+            el.style.setProperty('display', 'none', 'important');
+            el.style.setProperty('visibility', 'hidden', 'important');
+            el.style.setProperty('opacity', '0', 'important');
+            el.style.setProperty('pointer-events', 'none', 'important');
+            el.style.setProperty('z-index', '-9999', 'important');
+        } else {
+            el.style.display = 'none';
+        }
+        el.classList.remove('active', 'show', 'open', 'visible', 'flex');
+    }
+
+    function hasRenderedQuiz() {
+        var containers = document.querySelectorAll(
+            '#quiz-container, #quizContainer, #questions-container, #questionPane, #quiz, #questions, #quiz-body, #questions-wrapper, #quiz-list, #quizList, #exercise-container, #app-container .split-container'
+        );
+        for (var i = 0; i < containers.length; i++) {
+            if (containers[i].querySelectorAll('button, input, select, textarea, .question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .question, .option-btn, .opt-btn, .ans-btn').length > 0) {
+                return true;
+            }
+        }
+        if (document.querySelectorAll('.question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .option-btn, .opt-btn, .ans-btn, .choice-btn').length > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    function ensureQuizRendered() {
+        if (renderCheckDone) return;
+        renderCheckDone = true;
+        if (hasRenderedQuiz()) return;
+
+        if (!hasRenderedQuiz() && typeof buildQuiz === 'function') { try { buildQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof initQuiz === 'function') { try { initQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderApp === 'function') { try { renderApp(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuiz === 'function') { try { renderQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuestions === 'function') { try { renderQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAllQuestions === 'function') { try { renderAllQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAll === 'function') { try { renderAll(); } catch(e){} }
+    }
+
+    function unlockNow() {
+        var pwIds = [
+            'passwordModal', 'password-modal', 'pwModal', 'pw-modal', 'pw-overlay',
+            'lockModal', 'passModal', 'authModal', 'auth-modal', 'lockOverlay',
+            'start-overlay', 'intro-overlay', 'start-screen'
+        ];
+        pwIds.forEach(function(id) {
+            hideEl(document.getElementById(id), true);
+        });
+
+        var modalEls = document.querySelectorAll('.password-modal, .lock-modal, .lock-overlay, #lockOverlay, #auth-modal');
+        modalEls.forEach(function(el) {
+            if (el.id !== 'resultModal' && el.id !== 'result-modal' && el.id !== 'scoreModal') {
+                hideEl(el, true);
+            }
+        });
+
+        ['nameModal', 'name-modal', 'nameInputModal'].forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) hideEl(el, false);
+        });
+
+        var qo = document.getElementById('quiz-overlay');
+        if (qo && (typeof isStarted === 'undefined' || !isStarted)) {
+            qo.style.display = 'none';
+        }
+
+        var mainIds = [
+            'mainContent', 'main-content', 'mainHeader', 'main-header',
+            'app-container', 'app', 'quizApp', 'quiz-wrapper', 'quizContainer', 'quiz-container', 'reading-content'
+        ];
+        mainIds.forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) {
+                el.classList.remove('hidden', 'blur', 'blurred', 'locked');
+                if (el.style.display === 'none') {
+                    el.style.removeProperty('display');
+                }
+                if (window.getComputedStyle(el).display === 'none') {
+                    var hasPane = el.querySelector('.pane, .left-pane, .right-pane, .split-container, .left-panel, .right-panel');
+                    if (id === 'main-content' || id.toLowerCase().includes('header') || el.classList.contains('main-container') || hasPane) {
+                        el.style.setProperty('display', 'flex', 'important');
+                    } else {
+                        el.style.setProperty('display', 'block', 'important');
+                    }
+                }
+            }
+        });
+
+        var qs = document.getElementById('quiz-screen');
+        if (qs) {
+            qs.classList.remove('hidden');
+            if (qs.classList.contains('flex-col')) {
+                qs.classList.add('flex');
+                qs.style.display = 'flex';
+            } else {
+                qs.style.display = 'block';
+            }
+        }
+
+        if (!initDone) {
+            initDone = true;
+
+            if (document.getElementById('start-overlay') && typeof startGame === 'function') {
+                var sn = document.getElementById('student-name') || document.getElementById('studentName');
+                if (sn && !sn.value.trim()) sn.value = 'Học sinh';
+            }
+            if (document.getElementById('name-modal') && typeof startQuiz === 'function') {
+                var sn2 = document.getElementById('student-name');
+                if (sn2 && !sn2.value.trim()) sn2.value = 'Học sinh';
+            }
+
+            if (typeof startQuiz === 'function' && (typeof isStarted === 'undefined' || !isStarted)) { try { startQuiz(); } catch(e){} }
+            if (typeof startGame === 'function') { try { startGame(); } catch(e){} }
+            if (typeof startTest === 'function') { try { startTest(); } catch(e){} }
+            if (typeof startApp === 'function') { try { startApp(); } catch(e){} }
+            if (typeof buildStarfield === 'function') { try { buildStarfield(); } catch(e){} }
+            if (typeof spawnFloats === 'function') { try { spawnFloats(); } catch(e){} }
+            if (typeof spawnFloaters === 'function') { try { spawnFloaters(); } catch(e){} }
+            if (typeof createFloatingBubbles === 'function') { try { createFloatingBubbles(); } catch(e){} }
+            if (typeof initAudio === 'function') { try { initAudio(); } catch(e){} }
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', unlockNow);
+    } else {
+        unlockNow();
+    }
+    if (document.readyState === 'complete') {
+        setTimeout(ensureQuizRendered, 150);
+    } else {
+        window.addEventListener('load', function() {
+            setTimeout(unlockNow, 20);
+            setTimeout(ensureQuizRendered, 150);
+            setTimeout(unlockNow, 300);
+            setTimeout(unlockNow, 700);
+        });
+    }
+    setTimeout(unlockNow, 50);
+    setTimeout(unlockNow, 200);
+    setTimeout(unlockNow, 600);
+    setTimeout(unlockNow, 1100);
+})();
+</script>
+</body>
+</html>

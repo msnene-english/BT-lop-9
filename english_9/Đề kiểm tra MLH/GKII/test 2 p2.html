@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GKII · TEST 2 · READING — Travelling as a Teen &amp; Simple Ways to Study English | MS Chí Nên</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* THEME: TROPICAL BLOOM (bản cách điệu nhiều màu của Bloom Pastel) */
+:root{
+  --b1:#ff9f7a;--b2:#ff6fb5;--b3:#ffe066;--b4:#5eead4;--b5:#a78bfa;
+  --gold:#d6336c;--gold2:#e8590c;--amber:#6d28d9;
+  --ink:#1e1030;--ink-dim:#6b5b80;
+  --ok:#0e9f5e;--no:#d84a5a;
+  --disp:'Fredoka',sans-serif;--body:'Be Vietnam Pro',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--body);color:var(--ink);min-height:100vh;overflow-x:hidden;position:relative;background:#fdf6f0}
+body::before{content:'';position:fixed;inset:-20%;z-index:0;pointer-events:none;opacity:.95;
+  background:radial-gradient(closest-side circle at 18% 20%,var(--b1) 0,rgba(255,159,122,0) 100%),
+             radial-gradient(closest-side circle at 78% 14%,var(--b2) 0,rgba(255,111,181,0) 100%),
+             radial-gradient(closest-side circle at 68% 74%,var(--b4) 0,rgba(94,234,212,0) 100%),
+             radial-gradient(closest-side circle at 22% 82%,var(--b3) 0,rgba(255,224,102,0) 100%),
+             radial-gradient(closest-side circle at 48% 48%,var(--b5) 0,rgba(167,139,250,0) 100%);
+  background-size:78% 78%,72% 72%,84% 84%,70% 70%,66% 66%;background-repeat:no-repeat;
+  filter:blur(56px);animation:bloom 26s ease-in-out infinite alternate}
+@keyframes bloom{0%{background-position:0% 0%,100% 0%,60% 100%,0% 100%,50% 50%}100%{background-position:16% 12%,74% 20%,44% 78%,20% 86%,42% 40%}}
+.fl{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.f{position:absolute;bottom:-10%;opacity:.18;animation:up linear infinite}
+@keyframes up{0%{transform:translateY(0) rotate(0);opacity:0}12%{opacity:.22}100%{transform:translateY(-118vh) rotate(340deg);opacity:0}}
+header{position:relative;z-index:2;padding:20px 34px;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;
+  background:linear-gradient(180deg,rgba(255,255,255,.92),rgba(253,246,240,.84));backdrop-filter:blur(8px);
+  border-bottom:3px solid var(--gold);box-shadow:0 8px 26px rgba(30,16,48,.1)}
+header::after{content:'';position:absolute;left:0;right:0;bottom:-7px;height:7px;
+  background:linear-gradient(90deg,var(--gold),var(--gold2),var(--b5),var(--b4),var(--gold));
+  background-size:220% 100%;animation:blink 9s linear infinite;box-shadow:0 3px 10px rgba(30,16,48,.16)}
+@keyframes blink{0%{background-position:0 0}100%{background-position:220% 0}}
+.tag{font-family:var(--disp);font-size:.82rem;letter-spacing:.16em;color:var(--gold);margin-bottom:5px}
+header h1{font-family:var(--disp);font-weight:700;font-size:1.34rem;line-height:1.3;color:var(--amber)}
+.sub{font-size:.74rem;color:var(--ink-dim);margin-top:7px;font-weight:500;letter-spacing:.02em}
+.gauge{display:flex;align-items:center;gap:12px;background:#fff;border:2px solid var(--gold);border-radius:12px;padding:9px 18px;box-shadow:0 4px 14px rgba(30,16,48,.1)}
+.gauge .num{font-family:var(--disp);font-size:1.8rem;letter-spacing:1px;color:var(--gold);line-height:1}
+.gauge .lbl{font-family:var(--disp);font-size:.68rem;letter-spacing:.16em;color:var(--ink-dim)}
+.main{position:relative;z-index:2;display:flex;gap:22px;padding:26px 30px 46px;align-items:flex-start}
+.lp,.rp{flex:1 1 50%;max-height:calc(100vh - 128px);overflow-y:auto;padding-right:8px}
+.lp::-webkit-scrollbar,.rp::-webkit-scrollbar{width:9px}
+.lp::-webkit-scrollbar-thumb,.rp::-webkit-scrollbar-thumb{background:var(--b5);border-radius:6px}
+.slbl{font-family:var(--disp);font-size:1rem;letter-spacing:.1em;color:var(--gold);margin-bottom:13px;padding-bottom:7px;border-bottom:2px dashed var(--b5)}
+.pc{position:relative;background:rgba(255,255,255,.88);backdrop-filter:blur(9px);
+  border:1.5px solid rgba(214,51,108,.18);border-left:6px solid var(--gold);border-radius:12px;
+  padding:16px 18px 15px 22px;margin-bottom:15px;box-shadow:0 6px 18px rgba(30,16,48,.08)}
+.plbl{font-family:var(--disp);font-size:.86rem;letter-spacing:.06em;color:var(--gold);margin-bottom:9px}
+.pt{font-size:1.02rem;line-height:1.95;color:var(--ink)}
+.pt b{color:var(--gold2);font-weight:700}
+.blk{display:inline-block;min-width:40px;text-align:center;font-weight:800;color:#fff;background:var(--gold);border-radius:5px;padding:1px 9px;margin:0 3px}
+.btr{margin-top:11px;font-family:var(--body);font-size:.78rem;font-weight:700;background:transparent;
+  border:2px solid var(--b5);color:var(--amber);padding:7px 17px;border-radius:22px;cursor:pointer;transition:.2s}
+.btr:hover{background:var(--b5);color:#fff}
+.tv{display:none;margin-top:10px;font-size:.94rem;line-height:1.9;color:#3d1e33;
+  background:rgba(255,111,181,.1);border-left:4px solid var(--gold);border-radius:0 9px 9px 0;padding:11px 14px}
+.tv.open{display:block;animation:fd .3s ease}
+@keyframes fd{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.gw{background:rgba(255,255,255,.92);backdrop-filter:blur(9px);border:1.5px solid rgba(167,139,250,.22);border-radius:12px;padding:16px 18px;margin-top:6px}
+.gt2{font-family:var(--disp);font-size:.94rem;letter-spacing:.08em;color:var(--gold2);margin-bottom:11px}
+table.gtb{width:100%;border-collapse:collapse;font-size:.86rem}
+table.gtb th{background:var(--gold);color:#fff;font-weight:800;padding:8px 10px;text-align:left;font-size:.78rem}
+table.gtb td{border-bottom:1px solid rgba(214,51,108,.14);padding:7px 10px;vertical-align:top}
+.w{color:var(--amber);font-weight:800}
+.pos{color:var(--gold2);font-style:italic;white-space:nowrap;font-size:.78rem}
+.qc{background:rgba(255,255,255,.94);backdrop-filter:blur(9px);border:1.5px solid rgba(214,51,108,.18);
+  border-radius:12px;padding:16px 18px;margin-bottom:15px;box-shadow:0 6px 18px rgba(30,16,48,.08)}
+.qn{font-family:var(--disp);font-size:.78rem;letter-spacing:.1em;color:var(--gold);margin-bottom:8px}
+.qt{font-size:1.02rem;line-height:1.8;font-weight:600;margin-bottom:13px}
+.qt b{color:var(--gold2)}
+.opts{display:grid;grid-template-columns:1fr;gap:9px}
+.opt{font-family:var(--body);font-size:.93rem;font-weight:600;text-align:left;line-height:1.55;
+  background:#fdf5fb;border:2px solid rgba(214,51,108,.24);color:var(--ink);
+  padding:11px 16px;border-radius:10px;cursor:pointer;transition:.18s}
+.opt:hover:not(:disabled){border-color:var(--gold);background:#fce9f3;transform:translateX(4px)}
+.opt:disabled{cursor:default}
+.opt.correct{background:#d7f7e6;border-color:var(--ok);color:#065f3a;font-weight:800}
+.opt.wrong{background:#ffe1e4;border-color:var(--no);color:#8f1d2a;font-weight:800;animation:shk .45s}
+@keyframes shk{10%,90%{transform:translateX(-2px)}20%,80%{transform:translateX(4px)}30%,50%,70%{transform:translateX(-7px)}40%,60%{transform:translateX(7px)}}
+.expl{display:none;margin-top:13px}
+.expl.open{display:block;animation:fd .35s ease}
+.expl h4{font-family:var(--disp);font-size:.94rem;letter-spacing:.06em;color:var(--gold2);margin-bottom:10px}
+.estep{background:#fff8f4;border-left:5px solid var(--b5);border-radius:0 9px 9px 0;padding:11px 14px;margin-bottom:9px;font-size:.92rem;line-height:1.85}
+.estep.s1{border-left-color:var(--b4)} .estep.s1 .elbl{color:#0d9488}
+.estep.s2{border-left-color:var(--b3)} .estep.s2 .elbl{color:#b8860b}
+.estep.s3{border-left-color:var(--ok);background:rgba(14,159,94,.06)} .estep.s3 .elbl{color:var(--ok)}
+.estep.s4{border-left-color:var(--no);background:rgba(216,74,90,.06)} .estep.s4 .elbl{color:var(--no)}
+.estep.ev{border-left-color:var(--gold);background:rgba(214,51,108,.06)} .estep.ev .elbl{color:var(--gold)}
+.elbl{display:block;font-family:var(--disp);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin-bottom:5px;color:var(--ink-dim)}
+.expl ul{list-style:none;margin:5px 0 0}
+.expl li{padding:6px 9px;margin:5px 0;background:#fff;border-left:2px solid rgba(214,51,108,.2);border-radius:0 5px 5px 0}
+.p-word{color:#1565b8;font-weight:800}
+.p-mean{color:var(--gold2);font-weight:700}
+.p-grammar{color:var(--gold);font-weight:800;background:rgba(214,51,108,.1);border-radius:4px;padding:0 6px}
+.hl-green{color:var(--ok);font-weight:800}
+.hl-red{color:var(--no);font-weight:800}
+.sw{text-align:center;margin:22px 0 8px}
+.bsub{font-family:var(--disp);font-size:1.02rem;letter-spacing:.02em;background:linear-gradient(135deg,var(--gold),var(--amber));color:#fff;border:none;
+  padding:15px 34px;border-radius:30px;cursor:pointer;box-shadow:0 8px 24px rgba(214,51,108,.32);transition:.2s}
+.bsub:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(109,40,217,.36)}
+.ov{display:none;position:fixed;inset:0;z-index:100;background:rgba(30,16,48,.5);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:16px}
+.ov.open{display:flex}
+.mb{background:linear-gradient(160deg,#fff,#fdf1f7);border:3px solid var(--gold);border-radius:16px;padding:26px 28px;max-width:455px;width:100%;
+  text-align:center;animation:pop .3s ease;box-shadow:0 20px 46px rgba(0,0,0,.25)}
+@keyframes pop{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
+.mb h2{font-family:var(--disp);font-size:1.14rem;color:var(--gold);margin-bottom:14px}
+.mb input{width:100%;font-family:var(--body);font-size:.92rem;font-weight:600;padding:11px 14px;
+  background:#fdf5fb;border:2px solid var(--b5);border-radius:22px;color:var(--ink);text-align:center;outline:none;margin-bottom:9px}
+.mb input:focus{border-color:var(--gold)}
+.err{color:var(--no);font-size:.72rem;font-weight:800;margin-bottom:8px;display:none}
+.err.show{display:block}
+.bok{font-family:var(--disp);font-size:.94rem;background:var(--gold);color:#fff;border:none;padding:11px 28px;border-radius:22px;cursor:pointer}
+.rname{font-size:.76rem;color:var(--ink-dim);font-weight:600;margin-bottom:5px}
+.rscore{font-family:var(--disp);font-size:2.6rem;color:var(--gold);line-height:1;margin:6px 0}
+.rs10{font-family:var(--disp);font-size:1.05rem;color:var(--ok);margin-bottom:8px}
+.rgif{width:175px;margin:10px auto;display:block;border:3px solid var(--b5);border-radius:9px}
+.rcmt{font-size:.85rem;line-height:1.75;background:#f4ecff;border:2px dashed var(--b5);border-radius:9px;padding:11px 14px;margin:12px 0}
+.bcl{font-family:var(--body);font-size:.72rem;font-weight:800;background:transparent;border:2px solid var(--b5);color:var(--gold);padding:9px 24px;border-radius:22px;cursor:pointer}
+.cn{position:fixed;top:-16px;z-index:200;pointer-events:none;animation:cf 2.4s forwards}
+@keyframes cf{0%{transform:translateY(0) rotate(0);opacity:1}100%{transform:translateY(108vh) rotate(700deg);opacity:0}}
+@media(max-width:900px){.main{flex-direction:column;padding:0 18px 42px}.lp{flex:1 1 auto;width:100%}.lp,.rp{max-height:none}}
+</style>
+</head>
+<body>
+<style>
+:root{--nbh:50px}
+body{padding-top:var(--nbh)}
+.nbar{position:fixed;top:0;left:0;right:0;z-index:150;min-height:var(--nbh);
+  display:flex;align-items:center;gap:11px;padding:6px 16px;
+  background:#ffb703;border-bottom:2px solid #c98a00;box-shadow:0 2px 12px rgba(0,0,0,.14)}
+.nbar .pin{font-size:1.15rem;flex:0 0 auto;animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.22);opacity:.75}}
+.nbtxt{flex:1 1 auto;min-width:0;font-family:'Be Vietnam Pro',sans-serif;font-size:.82rem;font-weight:800;line-height:1.35;color:#1a1033;transition:opacity .4s ease}
+.nbtg{flex:0 0 auto;font-family:'Be Vietnam Pro',sans-serif;font-size:.68rem;font-weight:800;background:#1a1033;color:#ffd76e;border:none;border-radius:16px;padding:6px 13px;cursor:pointer;white-space:nowrap}
+.nbtg:hover{background:#2b1b52}
+.nfull{display:none;position:fixed;top:var(--nbh);left:0;right:0;z-index:149;max-height:52vh;overflow-y:auto;padding:13px 18px;background:#fff8e6;border-bottom:2px solid #c98a00;box-shadow:0 8px 22px rgba(0,0,0,.14)}
+.nfull.open{display:block}
+.nfull ul{list-style:none;display:grid;gap:8px;max-width:1100px;margin:0 auto}
+.nfull li{font-family:'Be Vietnam Pro',sans-serif;font-size:.86rem;font-weight:600;line-height:1.7;color:#42305a;background:rgba(255,183,3,.14);border-left:4px solid #ffb703;border-radius:0 8px 8px 0;padding:9px 13px}
+.nfull li b{color:#a35b00}
+@media(max-width:900px){:root{--nbh:64px}.nbtxt{font-size:.75rem}}
+</style>
+<script>
+function nbToggle(){var p=document.getElementById('nfull'),b=document.getElementById('nbtg');p.classList.toggle('open');b.textContent=p.classList.contains('open')?'▲ Thu gọn':'▼ Xem đủ';}
+document.addEventListener('DOMContentLoaded',function(){var src=document.querySelectorAll('#nfull li');var box=document.getElementById('nbtxt');if(!src.length||!box)return;var i=0;
+function show(){box.style.opacity=0;setTimeout(()=>{box.innerHTML=src[i].innerHTML;box.style.opacity=1;i=(i+1)%src.length;},400);}
+show();setInterval(show,7000);});
+</script>
+<div class="nbar"><span class="pin">💡</span><div class="nbtxt" id="nbtxt"></div><button class="nbtg" id="nbtg" onclick="nbToggle()">▼ Xem đủ</button></div>
+<div class="nfull" id="nfull"><ul>
+  <li>🤝 <b>Ms không chấm em bằng số câu đúng, mà bằng số điều em thật sự hiểu.</b> Gặp chữ lạ thì mở Google Dịch, ChatGPT hay Gemini tra cho rõ đã, đừng vội bấm rồi tự nhủ "chắc là câu này".</li>
+  <li>👂 <b>Một từ chỉ thuộc về em khi em nói được nó.</b> Tra ở từ điển Cambridge để biết phiên âm, trọng âm rơi vào đâu, nghe máy đọc rồi lặp lại vài lần.</li>
+  <li>🔍 <b>Đừng đóng bài khi chưa đọc lời giải.</b> Cả bốn bước đều được viết ra để em thấy cái bẫy nằm ở đâu — nhận ra hôm nay thì mai vào phòng thi em sẽ bình tĩnh hơn nhiều.</li>
+  <li>✏️ <b>Trang vở của em quan trọng hơn màn hình này.</b> Ghi lại từ mới, giới từ đi kèm, cấu trúc câu, thêm một ví dụ do chính em đặt.</li>
+  <li>🎬 <b>Bài đọc hôm nay nói về cách tự học tiếng Anh tại nhà.</b> Bật phụ đề khi xem phim, đổi ngôn ngữ điện thoại, ghi chú bằng tiếng Anh — biết đâu em sẽ tìm ra cách học hợp với mình nhất!</li>
+</ul></div>
+<div class="fl" id="fl"></div>
+
+<header>
+  <div>
+    <div class="tag">🌴 GKII · Second Midterm · Test 2</div>
+    <h1>B. Reading — Travelling as a Teen &amp; Simple Ways to Study English by Yourself</h1>
+    <div class="sub">Giáo viên tạo: MS Chí Nên · 12 câu (21 → 32)</div>
+  </div>
+  <div class="gauge"><div class="num" id="lv">0/12</div><div class="lbl">Điểm</div></div>
+</header>
+
+<div class="main">
+<div class="lp">
+  <div class="slbl">🎒 Bài đọc</div>
+
+  <div class="pc">
+    <div class="plbl">VII — Travelling as a Teen (đoạn 1)</div>
+    <div class="pt">Often, travelling as a teen is the first time you don't have someone else telling you <span class="blk">21</span> it. It can be scary at moments, <span class="blk">22</span> it's liberating to know that you're responsible for everything – the plane tickets, transportation, meals, <span class="blk">23</span>, cleaning, shopping, and organising your finances.</div>
+    <button class="btr" onclick="tv('v1')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v1">Việc đi du lịch khi còn ở tuổi teen thường là lần đầu tiên bạn không có ai khác bảo bạn phải làm gì hay làm như thế nào. Điều đó có thể đáng sợ vào một số thời điểm, và cũng thật giải phóng khi biết rằng bạn chịu trách nhiệm cho mọi thứ – vé máy bay, phương tiện di chuyển, bữa ăn, lịch trình, dọn dẹp, mua sắm, và quản lý tài chính của mình.</div>
+  </div>
+
+  <div class="pc">
+    <div class="plbl">VII (tiếp) — đoạn 2</div>
+    <div class="pt">When you're away from constant parental supervision, you learn how to make your own decisions, <span class="blk">24</span> responsibility for your actions, and become self-reliant. The independence you gain is just <span class="blk">25</span> of the many benefits of travel for teenagers, and it will prepare you to navigate through life post-travel, whether that's through living <span class="blk">26</span> from home for the first time, studying during college, or starting a career.</div>
+    <button class="btr" onclick="tv('v2')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v2">Khi ở xa sự giám sát thường xuyên của cha mẹ, bạn học được cách tự đưa ra quyết định, chịu trách nhiệm cho hành động của mình, và trở nên tự lập. Sự độc lập mà bạn có được chỉ là một trong nhiều lợi ích của việc đi du lịch đối với thanh thiếu niên, và nó sẽ chuẩn bị cho bạn cách xoay sở trong cuộc sống sau chuyến đi, dù đó là sống xa nhà lần đầu tiên, học đại học, hay bắt đầu sự nghiệp.</div>
+  </div>
+
+  <div class="pc" style="border-left-color:var(--b5)">
+    <div class="plbl">VIII — Simple Ways to Study English by Yourself (đoạn 1 → 2)</div>
+    <div class="pt">There are lots of ways to learn English without signing up for expensive classes. Here's how you can do it on your own, from home!</div>
+    <button class="btr" onclick="tv('v3')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v3">Có rất nhiều cách để học tiếng Anh mà không cần đăng ký các lớp học đắt đỏ. Đây là cách bạn có thể tự học tại nhà!</div>
+
+    <div class="pt" style="margin-top:10px"><b>Turn your favourite TV and movies into English practice.</b> Put on subtitles when you watch a show or movie! You'll learn new words from context and get a lot of practice reading fast. Naturally, TV and movies are a fun way to get listening practice, too.</div>
+    <button class="btr" onclick="tv('v4')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v4"><b>Biến bộ phim và chương trình TV yêu thích thành bài luyện tiếng Anh.</b> Hãy bật phụ đề khi xem một chương trình hay bộ phim! Bạn sẽ học được từ mới qua ngữ cảnh và luyện đọc nhanh rất nhiều. Đương nhiên, xem TV và phim cũng là cách vui để luyện nghe.</div>
+  </div>
+
+  <div class="pc" style="border-left-color:var(--b5)">
+    <div class="plbl">VIII (tiếp) — đoạn 3 → 5</div>
+    <div class="pt"><b>Change your phone's language.</b> Intermediate and advanced learners will find that setting your phone to English makes vocabulary learning easy because you already know the apps, buttons, and menus so well! And as most people look at their phones many times a day, the repeated exposure will help ensure all those new words stick.</div>
+    <button class="btr" onclick="tv('v5')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v5"><b>Đổi ngôn ngữ điện thoại của bạn.</b> Người học ở trình độ trung cấp và nâng cao sẽ thấy rằng việc cài điện thoại sang tiếng Anh giúp việc học từ vựng trở nên dễ dàng vì bạn đã quá quen với các ứng dụng, nút bấm, và menu rồi! Và vì hầu hết mọi người nhìn vào điện thoại nhiều lần mỗi ngày, việc tiếp xúc lặp đi lặp lại này sẽ giúp những từ mới đó khắc sâu vào trí nhớ.</div>
+
+    <div class="pt" style="margin-top:10px"><b>Take notes in English.</b> Start writing your shopping list in English – it'll really help you remember the English words for your favourite foods! Anything can be written in English, whether it's personal reminders, to-do lists, or even your own personal reviews of restaurants.<br><br>All the tools you need to study English on your own are <u>at your fingertips</u>! Find ones that work best for your schedule and learning goals and start learning English today!</div>
+    <button class="btr" onclick="tv('v6')">Mở dịch đoạn này 🌟</button>
+    <div class="tv" id="v6"><b>Ghi chú bằng tiếng Anh.</b> Hãy bắt đầu viết danh sách mua sắm bằng tiếng Anh – điều này thực sự sẽ giúp bạn nhớ các từ tiếng Anh cho những món ăn yêu thích của mình! Bất cứ điều gì cũng có thể được viết bằng tiếng Anh, dù đó là lời nhắc cá nhân, danh sách việc cần làm, hay thậm chí là bài đánh giá nhà hàng của riêng bạn.<br><br>Tất cả công cụ bạn cần để tự học tiếng Anh đều nằm trong tầm tay! Hãy tìm những công cụ phù hợp nhất với lịch trình và mục tiêu học tập của bạn và bắt đầu học tiếng Anh ngay hôm nay!</div>
+  </div>
+
+  <div class="gw">
+    <div class="gt2">📚 Glossary — Test 2</div>
+    <table class="gtb">
+      <tr><th>Word / Phrase</th><th>Loại</th><th>Nghĩa tiếng Việt</th></tr>
+      <tr><td class="w">parental supervision</td><td class="pos">n phr</td><td>sự giám sát của cha mẹ</td></tr>
+      <tr><td class="w">self-reliant</td><td class="pos">adj</td><td>tự lập</td></tr>
+      <tr><td class="w">liberating</td><td class="pos">adj</td><td>mang tính giải phóng</td></tr>
+      <tr><td class="w">navigate</td><td class="pos">v</td><td>xoay sở, tìm đường đi</td></tr>
+      <tr><td class="w">subtitle</td><td class="pos">n</td><td>phụ đề</td></tr>
+      <tr><td class="w">context</td><td class="pos">n</td><td>ngữ cảnh</td></tr>
+      <tr><td class="w">intermediate/advanced learner</td><td class="pos">n phr</td><td>người học trình độ trung cấp/nâng cao</td></tr>
+      <tr><td class="w">repeated exposure</td><td class="pos">n phr</td><td>sự tiếp xúc lặp đi lặp lại</td></tr>
+      <tr><td class="w">stick</td><td class="pos">v</td><td>khắc sâu, nhớ lâu</td></tr>
+      <tr><td class="w">to-do list</td><td class="pos">n phr</td><td>danh sách việc cần làm</td></tr>
+      <tr><td class="w">personal reminder</td><td class="pos">n phr</td><td>lời nhắc cá nhân</td></tr>
+      <tr><td class="w">at your fingertips</td><td class="pos">idiom</td><td>trong tầm tay, dễ tiếp cận</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="rp">
+  <div class="slbl">✍️ Bài tập — 12 câu</div>
+  <div id="quiz"></div>
+  <div class="sw"><button class="bsub" onclick="openModal()">🎯 Nộp bài tính điểm &amp; xem kết quả</button></div>
+</div>
+</div>
+
+<div class="ov" id="nm"><div class="mb">
+  <h2>✍️ Nhập tên để nộp bài</h2>
+  <input type="text" id="sn" placeholder="Họ và tên học sinh...">
+  <div class="err" id="er">Vui lòng nhập tên trước khi nộp bài!</div>
+  <button class="bok" onclick="sub()">Xem kết quả</button>
+</div></div>
+
+<div class="ov" id="rm"><div class="mb" style="max-width:470px">
+  <div class="rname" id="rn"></div><div class="rscore" id="rs"></div><div class="rs10" id="rs10"></div>
+  <img class="rgif" id="rg" src="" alt=""><div class="rcmt" id="rc"></div>
+  <button class="bcl" onclick="closeR()">Đóng &amp; xem lại bài</button>
+</div></div>
+
+<script>
+const QS=[];
+
+QS.push({n:21,sec:"VII · Travelling as a Teen",qt:"...you don't have someone else telling you <b>(21)_____</b> it.",
+opts:[{t:"what and how doing",pos:"cụm từ để hỏi (sai)",m:"sai — 'doing' thừa, không đúng cấu trúc"},{t:"what or how you do",pos:"cụm từ để hỏi (rút gọn)",m:"cái gì hoặc làm thế nào (rút gọn tự nhiên)",c:1},{t:"what you do and how do",pos:"cụm từ để hỏi (sai)",m:"sai — 'how do' thiếu chủ ngữ lặp lại"},{t:"what to do or how to do",pos:"cụm từ để hỏi",m:"phải làm gì hoặc làm thế nào"}],
+tr:'"...travelling as a teen is the first time you don\'t have someone else telling you ______ it." 👉 <span class="p-mean">"...đi du lịch khi còn ở tuổi teen thường là lần đầu tiên bạn không có ai khác bảo bạn phải làm gì hay làm như thế nào."</span>',
+ok:'Chọn <span class="hl-green">what or how you do</span>. Đây là cấu trúc <span class="p-grammar">rút gọn song song (ellipsis)</span>: "what [you do] or how you do it" — lược bỏ phần lặp lại "you do" ở vế đầu, kết hợp với chữ "it" có sẵn cuối câu tạo thành "what or how you do it" hoàn chỉnh và tự nhiên.',
+no:'<span class="hl-red">what and how doing</span> sai vì "doing" không khớp cấu trúc câu hỏi gián tiếp; <span class="hl-red">what you do and how do</span> sai vì "how do" thiếu chủ ngữ lặp lại phía sau; <span class="hl-red">what to do or how to do</span> khi ghép với "it" sẽ tạo cụm động từ trùng lặp không tự nhiên bằng phương án đúng trong ngữ cảnh này.',
+ev:'"...you don\'t have someone else telling you <b>what or how you do</b> it." 👉 <span class="p-mean">"...bạn không có ai khác bảo bạn phải làm gì hay làm như thế nào."</span>'});
+
+QS.push({n:22,sec:"VII · Travelling as a Teen",qt:"It can be scary at moments, <b>(22)_____</b> it's liberating to know that you're responsible for everything.",
+opts:[{t:"so",pos:"liên từ",m:"vì vậy"},{t:"but",pos:"liên từ",m:"nhưng"},{t:"and",pos:"liên từ",m:"và",c:1},{t:"or",pos:"liên từ",m:"hoặc"}],
+tr:'"It can be scary at moments, ______ it\'s liberating to know that you\'re responsible for everything..." 👉 <span class="p-mean">"Điều đó có thể đáng sợ vào một số thời điểm, và cũng thật giải phóng khi biết rằng bạn chịu trách nhiệm cho mọi thứ..."</span>',
+ok:'Chọn <span class="hl-green">and</span>. Câu văn không nhấn mạnh sự TRÁI NGƯỢC mà đang LIỆT KÊ hai cảm xúc cùng tồn tại song song khi đi du lịch một mình: vừa đáng sợ, VÀ ĐỒNG THỜI cũng giải phóng.',
+no:'<span class="hl-red">so</span> (vì vậy) ngụ ý quan hệ nhân quả, không phù hợp; <span class="hl-red">but</span> (nhưng) nhấn quá mạnh sự đối lập trong khi ý câu là bổ sung thêm một cảm xúc khác cùng lúc; <span class="hl-red">or</span> (hoặc) mang nghĩa lựa chọn, không phù hợp khi cả hai cảm xúc đều đúng cùng lúc.',
+ev:'"It can be scary at moments, <b>and</b> it\'s liberating to know that you\'re responsible for everything." 👉 <span class="p-mean">"Điều đó có thể đáng sợ vào một số thời điểm, và cũng thật giải phóng khi biết bạn chịu trách nhiệm cho mọi thứ."</span>'});
+
+QS.push({n:23,sec:"VII · Travelling as a Teen",qt:"...the plane tickets, transportation, meals, <b>(23)_____</b>, cleaning, shopping, and organising your finances.",
+opts:[{t:"agencies",pos:"danh từ",m:"đại lý"},{t:"holidaymakers",pos:"danh từ",m:"người đi nghỉ"},{t:"itineraries",pos:"danh từ",m:"lịch trình",c:1},{t:"packages",pos:"danh từ",m:"gói dịch vụ"}],
+tr:'"...you\'re responsible for everything – the plane tickets, transportation, meals, ______, cleaning, shopping, and organising your finances." 👉 <span class="p-mean">"...bạn chịu trách nhiệm cho mọi thứ – vé máy bay, phương tiện di chuyển, bữa ăn, lịch trình, dọn dẹp, mua sắm, và quản lý tài chính."</span>',
+ok:'Chọn <span class="hl-green">itineraries</span> <span class="p-mean">(lịch trình)</span>. Đây là danh sách các CÔNG VIỆC/TRÁCH NHIỆM cụ thể mà một du khách teen phải tự quản lý — lên lịch trình là một việc điển hình trong số đó.',
+no:'<span class="hl-red">agencies</span> (đại lý), <span class="hl-red">holidaymakers</span> (người đi nghỉ), <span class="hl-red">packages</span> (gói dịch vụ) đều là những BÊN LIÊN QUAN hoặc SẢN PHẨM du lịch, không phải một CÔNG VIỆC/TRÁCH NHIỆM cá nhân như các từ còn lại trong danh sách.',
+ev:'"...the plane tickets, transportation, meals, <b>itineraries</b>, cleaning, shopping, and organising your finances." 👉 <span class="p-mean">"...vé máy bay, phương tiện, bữa ăn, lịch trình, dọn dẹp, mua sắm, và quản lý tài chính."</span>'});
+
+QS.push({n:24,sec:"VII · Travelling as a Teen",qt:"...you learn how to make your own decisions, <b>(24)_____</b> responsibility for your actions.",
+opts:[{t:"do",pos:"động từ",m:"làm"},{t:"get",pos:"động từ",m:"nhận được"},{t:"make",pos:"động từ",m:"tạo ra"},{t:"take",pos:"động từ",m:"chịu (trách nhiệm)",c:1}],
+tr:'"...you learn how to make your own decisions, ______ responsibility for your actions, and become self-reliant." 👉 <span class="p-mean">"...bạn học cách tự đưa ra quyết định, chịu trách nhiệm cho hành động của mình, và trở nên tự lập."</span>',
+ok:'Chọn <span class="hl-green">take</span>. Cụm cố định <span class="p-grammar">take responsibility for sth</span> <span class="p-mean">(chịu trách nhiệm cho điều gì)</span> là collocation chuẩn trong tiếng Anh.',
+no:'<span class="hl-red">do</span>, <span class="hl-red">get</span>, <span class="hl-red">make</span> đều không tạo thành collocation chuẩn với danh từ "responsibility".',
+ev:'"...you learn how to make your own decisions, <b>take</b> responsibility for your actions, and become self-reliant." 👉 <span class="p-mean">"...bạn học cách tự quyết định, chịu trách nhiệm cho hành động, và trở nên tự lập."</span>'});
+
+QS.push({n:25,sec:"VII · Travelling as a Teen",qt:"The independence you gain is just <b>(25)_____</b> of the many benefits of travel for teenagers.",
+opts:[{t:"another one",pos:"đại từ + lượng từ",m:"một cái khác nữa",c:1},{t:"the other one",pos:"đại từ (xác định)",m:"cái còn lại (trong 2 cái)"},{t:"each one",pos:"đại từ",m:"mỗi cái"},{t:"neither one",pos:"đại từ phủ định",m:"không cái nào (trong 2 cái)"}],
+tr:'"The independence you gain is just ______ of the many benefits of travel for teenagers." 👉 <span class="p-mean">"Sự độc lập mà bạn có được chỉ là một trong nhiều lợi ích của việc đi du lịch đối với thanh thiếu niên."</span>',
+ok:'Chọn <span class="hl-green">another one</span> <span class="p-mean">(một cái khác nữa)</span>. Phù hợp khi nói đến MỘT lợi ích cụ thể trong số NHIỀU lợi ích khác (không xác định số lượng cụ thể) — "just another one of the many benefits" là cách diễn đạt tự nhiên.',
+no:'<span class="hl-red">the other one</span> chỉ dùng khi có ĐÚNG HAI lựa chọn được biết trước, không phù hợp với "many benefits" (nhiều lợi ích); <span class="hl-red">each one</span> (mỗi cái) không phù hợp ngữ pháp ở vị trí này; <span class="hl-red">neither one</span> mang nghĩa phủ định "không cái nào", trái với ý khẳng định của câu.',
+ev:'"The independence you gain is just <b>another one</b> of the many benefits of travel for teenagers." 👉 <span class="p-mean">"Sự độc lập bạn có được chỉ là một trong nhiều lợi ích của việc du lịch đối với thanh thiếu niên."</span>'});
+
+QS.push({n:26,sec:"VII · Travelling as a Teen",qt:"...whether that's through living <b>(26)_____</b> from home for the first time, studying during college, or starting a career.",
+opts:[{t:"further",pos:"trạng từ",m:"xa hơn (mức độ trừu tượng)"},{t:"away",pos:"trạng từ",m:"xa (khỏi nhà)",c:1},{t:"together",pos:"trạng từ",m:"cùng nhau"},{t:"close",pos:"trạng từ/tính từ",m:"gần"}],
+tr:'"...whether that\'s through living ______ from home for the first time, studying during college, or starting a career." 👉 <span class="p-mean">"...dù đó là sống xa nhà lần đầu tiên, học đại học, hay bắt đầu sự nghiệp."</span>',
+ok:'Chọn <span class="hl-green">away</span>. Cụm cố định <span class="p-grammar">live away from home</span> <span class="p-mean">(sống xa nhà)</span> là collocation chuẩn diễn tả việc chuyển ra sống độc lập.',
+no:'<span class="hl-red">further</span> (xa hơn) mang tính so sánh trừu tượng, không phải collocation với "from home"; <span class="hl-red">together</span> (cùng nhau) và <span class="hl-red">close</span> (gần) đều trái nghĩa hoặc không phù hợp với ý "sống xa nhà, tự lập".',
+ev:'"...whether that\'s through living <b>away</b> from home for the first time, studying during college, or starting a career." 👉 <span class="p-mean">"...dù đó là sống xa nhà lần đầu tiên, học đại học, hay bắt đầu sự nghiệp."</span>'});
+
+QS.push({n:27,sec:"VIII · Study English by Yourself",qt:"What can be the best title for the passage?",
+opts:[{t:"Why You Should Learn English through Movies",m:"Vì sao nên học tiếng Anh qua phim"},{t:"Tips for Taking Notes in English",m:"Mẹo ghi chú bằng tiếng Anh"},{t:"Simple Ways to Study English by Yourself",m:"Cách đơn giản để tự học tiếng Anh",c:1},{t:"How to Change Your Phone's Language",m:"Cách đổi ngôn ngữ điện thoại"}],
+tr:'"What can be the best title for the passage?" 👉 <span class="p-mean">"Tiêu đề nào phù hợp nhất cho đoạn văn?"</span>',
+ok:'Chọn <span class="hl-green">Simple Ways to Study English by Yourself</span>. Bài liệt kê NHIỀU cách tự học khác nhau (phim, đổi ngôn ngữ điện thoại, ghi chú) — đều nằm dưới chủ đề bao quát "tự học tiếng Anh không cần lớp học đắt tiền".',
+no:'<span class="hl-red">Learn English through Movies</span>, <span class="hl-red">Taking Notes in English</span>, <span class="hl-red">Change Phone\'s Language</span> đều chỉ là MỘT trong bốn mẹo được liệt kê, không bao quát được toàn bộ bài.',
+ev:'"There are lots of ways to learn English without signing up for expensive classes. Here\'s how you can do it <b>on your own</b>, from home!" 👉 <span class="p-mean">"Có rất nhiều cách học tiếng Anh mà không cần lớp học đắt tiền. Đây là cách bạn có thể TỰ HỌC tại nhà!"</span>'});
+
+QS.push({n:28,sec:"VIII · Study English by Yourself",qt:"According to the passage, if you watch a movie with English subtitles, ___.",
+opts:[{t:"it'll help you understand fast speakers",m:"giúp hiểu người nói nhanh"},{t:"you won't need to learn new words",m:"không cần học từ mới nữa"},{t:"it'll help remember old words better",m:"giúp nhớ từ cũ tốt hơn"},{t:"you can increase your reading speed",m:"tăng tốc độ đọc",c:1}],
+tr:'"According to the passage, if you watch a movie with English subtitles, ___." 👉 <span class="p-mean">"Theo bài, nếu xem phim có phụ đề tiếng Anh, ___."</span>',
+ok:'Chọn <span class="hl-green">you can increase your reading speed</span>. Bài: "You\'ll learn new words from context and get a lot of practice reading fast."',
+no:'<span class="hl-red">understand fast speakers</span> ❌ bài nói về luyện ĐỌC nhanh (subtitles), không nói về nghe người nói nhanh; <span class="hl-red">won\'t need to learn new words</span> ❌ trái ngược — bài nói "learn NEW words from context"; <span class="hl-red">remember OLD words better</span> ❌ bài nói học từ MỚI, không phải ôn lại từ cũ.',
+ev:'"You\'ll learn new words from context and get a lot of practice <b>reading fast</b>." 👉 <span class="p-mean">"Bạn sẽ học từ mới qua ngữ cảnh và luyện đọc nhanh rất nhiều."</span>'});
+
+QS.push({n:29,sec:"VIII · Study English by Yourself",qt:"Who can benefit from switching their phone's language to English?",
+opts:[{t:"Learners who are at intermediate and advanced levels",m:"Người học trình độ trung cấp và nâng cao",c:1},{t:"People who are addicted to their phones",m:"Người nghiện điện thoại"},{t:"People who have just learned English",m:"Người mới học tiếng Anh"},{t:"Learners who are exposed to English a lot",m:"Người tiếp xúc nhiều với tiếng Anh"}],
+tr:'"Who can benefit from switching their phone\'s language to English?" 👉 <span class="p-mean">"Ai có thể hưởng lợi từ việc đổi ngôn ngữ điện thoại sang tiếng Anh?"</span>',
+ok:'Chọn <span class="hl-green">Learners who are at intermediate and advanced levels</span>. Bài nêu rõ: "Intermediate and advanced learners will find that setting your phone to English makes vocabulary learning easy..."',
+no:'<span class="hl-red">addicted to phones</span> ❌ không được nhắc, bài chỉ nói mọi người NHÌN điện thoại nhiều lần/ngày, không nói về "nghiện"; <span class="hl-red">just learned English</span> ❌ SAI — mẹo này dành cho người đã có nền tảng (trung cấp/nâng cao), người MỚI học sẽ KHÓ vì chưa quen ứng dụng/nút bấm; <span class="hl-red">exposed to English a lot</span> ❌ đây là KẾT QUẢ của mẹo này, không phải ĐIỀU KIỆN để áp dụng nó.',
+ev:'"<b>Intermediate and advanced learners</b> will find that setting your phone to English makes vocabulary learning easy because you already know the apps, buttons, and menus so well!" 👉 <span class="p-mean">"Người học trình độ trung cấp và nâng cao sẽ thấy việc cài điện thoại sang tiếng Anh giúp học từ vựng dễ dàng vì đã quen ứng dụng, nút bấm..."</span>'});
+
+QS.push({n:30,sec:"VIII · Study English by Yourself",qt:"Why should we take notes in English?",
+opts:[{t:"You can get better at making to-do lists.",m:"Giỏi lập danh sách việc cần làm hơn"},{t:"It's easier to remember what you want to do.",m:"Dễ nhớ điều mình muốn làm hơn"},{t:"It helps strengthen your vocabulary.",m:"Giúp củng cố vốn từ vựng",c:1},{t:"You can read the reviews of your favourite restaurants.",m:"Có thể đọc đánh giá nhà hàng yêu thích"}],
+tr:'"Why should we take notes in English?" 👉 <span class="p-mean">"Vì sao chúng ta nên ghi chú bằng tiếng Anh?"</span>',
+ok:'Chọn <span class="hl-green">It helps strengthen your vocabulary.</span> Bài: "Start writing your shopping list in English – it\'ll really help you remember the English words for your favourite foods!" — mục đích chính là GHI NHỚ/CỦNG CỐ từ vựng.',
+no:'<span class="hl-red">better at making to-do lists</span> ❌ "to-do lists" chỉ là MỘT VÍ DỤ về thứ có thể viết bằng tiếng Anh, không phải LÝ DO chính của việc ghi chú; <span class="hl-red">easier to remember what to do</span> ❌ nhầm lẫn giữa việc NHỚ VIỆC CẦN LÀM với việc NHỚ TỪ VỰNG mà bài thực sự nhấn mạnh; <span class="hl-red">read reviews of restaurants</span> ❌ đây cũng chỉ là VÍ DỤ về nội dung có thể viết, không phải lý do chính.',
+ev:'"Start writing your shopping list in English – it\'ll really help you <b>remember the English words</b> for your favourite foods!" 👉 <span class="p-mean">"Hãy viết danh sách mua sắm bằng tiếng Anh – điều này sẽ giúp bạn nhớ các từ tiếng Anh cho món ăn yêu thích!"</span>'});
+
+QS.push({n:31,sec:"VIII · Study English by Yourself",qt:'The phrase "at your fingertips" is opposite in meaning to ___.',
+opts:[{t:"easily accessible",m:"dễ tiếp cận"},{t:"always available",m:"luôn sẵn có"},{t:"rarely free",m:"hiếm khi rảnh"},{t:"hardly found",m:"khó tìm thấy",c:1}],
+tr:'"All the tools you need to study English on your own are at your fingertips!" 👉 <span class="p-mean">"Tất cả công cụ bạn cần để tự học tiếng Anh đều nằm trong tầm tay!"</span>',
+ok:'Chọn <span class="hl-green">hardly found</span> <span class="p-mean">(khó tìm thấy)</span>. <span class="p-word">at your fingertips</span> <span class="p-mean">(trong tầm tay, dễ tiếp cận)</span> trái nghĩa trực tiếp với việc "khó tìm thấy" — một bên là DỄ, một bên là KHÓ tiếp cận.',
+no:'<span class="hl-red">easily accessible</span> và <span class="hl-red">always available</span> đều là TỪ ĐỒNG NGHĨA với "at your fingertips", không phải trái nghĩa; <span class="hl-red">rarely free</span> (hiếm khi rảnh/miễn phí) không liên quan đến ý nghĩa "dễ/khó tiếp cận".',
+ev:'"All the tools you need to study English on your own are <b>at your fingertips</b>!" 👉 <span class="p-mean">"Tất cả công cụ bạn cần đều nằm trong tầm tay (rất dễ tiếp cận)!"</span> — trái nghĩa là "hardly found" (khó tìm thấy).'});
+
+QS.push({n:32,sec:"VIII · Study English by Yourself",qt:"Which of the following statements about learning English is NOT mentioned?",
+opts:[{t:"Watching TV and movies is fun and helps improve your listening skills.",m:"Xem TV/phim vui và giúp cải thiện kỹ năng nghe"},{t:"Attending formal classes is the fastest way to learn English.",m:"Học lớp chính quy là cách nhanh nhất để học tiếng Anh",c:1},{t:"You don't need to pay a lot of money on studying English.",m:"Không cần tốn nhiều tiền để học tiếng Anh"},{t:"Constant exposure to English words help you remember them better.",m:"Tiếp xúc thường xuyên với từ tiếng Anh giúp nhớ tốt hơn"}],
+tr:'"Which of the following statements about learning English is NOT mentioned?" 👉 <span class="p-mean">"Ý nào sau đây về việc học tiếng Anh KHÔNG được nhắc đến?"</span>',
+ok:'Chọn <span class="hl-green">Attending formal classes is the fastest way to learn English.</span> vì bài KHÔNG hề nói lớp học chính quy là cách NHANH NHẤT — ngược lại, bài mở đầu bằng việc học "WITHOUT signing up for expensive classes" (không cần đăng ký lớp học đắt tiền).',
+no:'Ba đáp án còn lại đều CÓ trong bài: "TV and movies are a fun way to get listening practice" ✔, "without signing up for expensive classes" ✔ (không tốn nhiều tiền), "the repeated exposure will help ensure all those new words stick" ✔ (tiếp xúc thường xuyên giúp nhớ tốt hơn).',
+ev:'"There are lots of ways to learn English <b>without signing up for expensive classes</b>." 👉 <span class="p-mean">"Có rất nhiều cách học tiếng Anh mà KHÔNG CẦN đăng ký lớp học đắt tiền."</span> — bài không hề nói lớp học chính quy là cách nhanh nhất.'});
+
+const done={};let cc=0;
+function shuffle(a){return a.sort(()=>Math.random()-0.5)}
+function build(){
+  const box=document.getElementById('quiz');
+  QS.forEach(q=>{
+    let ol='<ul style="margin:4px 0 0 4px;list-style:none">';
+    q.opts.forEach(o=>{ol+='<li style="margin:5px 0">'+(o.c?'✅ ':'❌ ')+'<span class="p-word">'+o.t+'</span>'+(o.pos?' <span class="p-grammar">'+o.pos+'</span>':'')+' ➔ <span class="p-mean">'+o.m+'</span></li>';});
+    ol+='</ul>';
+    const card=document.createElement('div');card.className='qc';card.id='q'+q.n;
+    card.innerHTML=
+      '<div class="qn">Câu '+q.n+' · '+q.sec+'</div>'+
+      '<div class="qt">'+q.qt+'</div>'+
+      '<div class="opts" id="o'+q.n+'"></div>'+
+      '<div class="expl" id="e'+q.n+'">'+
+        '<h4>📘 Giải thích chi tiết – Câu '+q.n+'</h4>'+
+        '<div class="estep s1"><div class="elbl">Bước 1 · Dịch</div>'+q.tr+'</div>'+
+        '<div class="estep s2"><div class="elbl">Bước 2 · Các phương án và nghĩa</div>'+ol+'</div>'+
+        '<div class="estep s3"><div class="elbl">Bước 3 · Vì sao <span class="hl-green">đúng</span></div>'+q.ok+'</div>'+
+        '<div class="estep s4"><div class="elbl">Bước 4 · Vì sao các phương án kia <span class="hl-red">sai</span></div>'+q.no+'</div>'+
+        '<div class="estep ev"><div class="elbl">🔍 Dẫn chứng</div>'+q.ev+'</div>'+
+      '</div>';
+    box.appendChild(card);
+    const cont=card.querySelector('.opts');
+    const correct=q.opts.filter(o=>o.c)[0].t;
+    shuffle([...q.opts]).forEach(o=>{
+      const b=document.createElement('button');b.className='opt';b.textContent=o.t;
+      b.onclick=()=>chk(q.n,o.t,correct,b,cont);cont.appendChild(b);
+    });
+  });
+  document.getElementById('lv').textContent='0/'+QS.length;
+}
+function chk(qid,chosen,correct,btn,container){
+  if(qid in done)return;
+  done[qid]=chosen===correct;
+  container.querySelectorAll('.opt').forEach(b=>{b.disabled=true;if(b.textContent===correct)b.classList.add('correct');});
+  if(chosen===correct){btn.classList.add('correct');cc++;ding();conf();}
+  else{btn.classList.add('wrong');buzz();}
+  document.getElementById('e'+qid).classList.add('open');
+  document.getElementById('lv').textContent=cc+'/'+QS.length;
+}
+const A=new(window.AudioContext||window.webkitAudioContext)();
+function ding(){const o=A.createOscillator(),g=A.createGain();o.connect(g);g.connect(A.destination);o.frequency.setValueAtTime(523,A.currentTime);o.frequency.exponentialRampToValueAtTime(784,A.currentTime+0.15);g.gain.setValueAtTime(0.28,A.currentTime);g.gain.exponentialRampToValueAtTime(0.001,A.currentTime+0.5);o.start();o.stop(A.currentTime+0.5);}
+function buzz(){const o=A.createOscillator(),g=A.createGain();o.type='triangle';o.connect(g);g.connect(A.destination);o.frequency.setValueAtTime(200,A.currentTime);o.frequency.exponentialRampToValueAtTime(100,A.currentTime+0.2);g.gain.setValueAtTime(0.18,A.currentTime);g.gain.exponentialRampToValueAtTime(0.001,A.currentTime+0.28);o.start();o.stop(A.currentTime+0.28);}
+function conf(){
+  const cols=['#ff9f7a','#ff6fb5','#ffe066','#5eead4','#a78bfa'];
+  for(let i=0;i<35;i++){
+    const d=document.createElement('div');d.className='cn';
+    d.style.left=Math.random()*100+'vw';d.style.background=cols[Math.floor(Math.random()*cols.length)];
+    d.style.animationDelay=Math.random()*0.7+'s';d.style.animationDuration=(1.8+Math.random()*1.0)+'s';
+    d.style.width=d.style.height=(6+Math.random()*8)+'px';d.style.borderRadius=Math.random()>0.5?'50%':'2px';
+    document.body.appendChild(d);setTimeout(()=>d.remove(),3100);
+  }
+}
+function tv(id){
+  const el=document.getElementById(id);el.classList.toggle('open');
+  const btn=el.previousElementSibling;
+  btn.textContent=el.classList.contains('open')?'Ẩn dịch 🌟':'Mở dịch đoạn này 🌟';
+}
+function openModal(){document.getElementById('nm').classList.add('open')}
+function sub(){
+  const n=document.getElementById('sn').value.trim();
+  const er=document.getElementById('er');
+  if(!n){er.classList.add('show');return;}
+  er.classList.remove('show');
+  document.getElementById('nm').classList.remove('open');
+  showRes(n);
+}
+function showRes(n){
+  const tot=QS.length;let c=0;QS.forEach(q=>{if(done[q.n]===true)c++;});
+  const p=c/tot,s10=(c/tot*10).toFixed(2);
+  document.getElementById('rn').textContent='Học sinh: '+n;
+  document.getElementById('rs').textContent=c+' / '+tot;
+  document.getElementById('rs10').textContent='Điểm quy đổi: '+s10+' / 10';
+  let gif='',cmt='';
+  if(p>=1){gif='https://media.giphy.com/media/l0MYGb1LuZ3n7dRnO/giphy.gif';cmt='🏆 Hành trình hoàn hảo! Đúng 100% — em nắm chắc cả việc trưởng thành khi du lịch lẫn các mẹo tự học tiếng Anh. MS Chí Nên rất tự hào về em!';}
+  else if(p>=0.6){gif='https://media.giphy.com/media/26u4lOMA8JKSnL9Uk/giphy.gif';cmt='🎒 Hành trình khá tốt! Em đạt '+c+'/'+tot+' câu. Đọc lại phần giải thích 4 bước để đi trọn hành trình nhé!';}
+  else{gif='https://media.giphy.com/media/d2lcHJTG5Tscg/giphy.gif';cmt='📚 Cố lên nào! Em đạt '+c+'/'+tot+' câu. Bấm nút dịch từng đoạn, đọc kỹ giải thích rồi thử lại — Ms tin em làm được!';}
+  document.getElementById('rg').src=gif;
+  document.getElementById('rc').textContent=cmt;
+  document.getElementById('rm').classList.add('open');
+}
+function closeR(){document.getElementById('rm').classList.remove('open')}
+
+const ems=['🎒','📚','🎬','📱','✏️'];
+const flc=document.getElementById('fl');
+for(let i=0;i<28;i++){
+  const s=document.createElement('span');s.className='f';
+  s.textContent=ems[i%ems.length];s.style.left=Math.random()*100+'%';
+  s.style.animationDuration=(14+Math.random()*14)+'s';s.style.animationDelay=(-Math.random()*20)+'s';
+  s.style.fontSize=(1.0+Math.random()*1.2)+'rem';flc.appendChild(s);
+}
+
+build();
+</script>
+<script>/*devclean*/(function(){
+var ZW=/[\u00AD\u034F\u061C\u115F\u1160\u17B4\u17B5\u180E\u200B-\u200F\u202A-\u202E\u2060-\u206F\uFEFF]/g,
+    SP=/[\u00A0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\t]/g,
+    AP=/[\u2018\u2019\u201A\u201B\u2032\u2035\u02B9\u02BB\u02BC\u02BD\u02C8\u0060\u00B4\uFF07]/g,
+    DQ=/[\u201C\u201D\u201E\u201F\u2033\u2036\u00AB\u00BB\uFF02]/g,
+    DS=/[\u2010\u2011\u2012\u2212\uFE63\uFF0D]/g;
+function clean(v){if(!v)return v;var s=String(v);try{s=s.normalize('NFKC')}catch(e){}
+  return s.replace(ZW,'').replace(SP,' ').replace(AP,"'").replace(DQ,'"').replace(DS,'-').replace(/[\u0300-\u036f]/g,'').replace(/ {2,}/g,' ');}
+window.__devclean=clean;
+function fix(skip){var L=document.querySelectorAll('input:not([type]),input[type=text],input[type=search],textarea');
+  for(var i=0;i<L.length;i++){var el=L[i];if(el===skip||el.readOnly||el.disabled)continue;var v=el.value,c=clean(v);if(c!==v)el.value=c;}}
+['pointerdown','mousedown','touchstart','click','change','focusout'].forEach(function(t){document.addEventListener(t,function(e){fix(t==='focusout'||t==='change'?null:e.target)},true)});
+document.addEventListener('keydown',function(e){if(e.key==='Enter'||e.keyCode===13)fix(null)},true);
+})();</script>
+<style id="ms-chi-nen-unlock-style">
+#passwordModal, #password-modal, #pwModal, #pw-modal, #pw-overlay,
+#lockModal, #passModal, #authModal, #auth-modal, #lockOverlay,
+#start-overlay, #intro-overlay, #start-screen,
+.password-modal, .lock-modal, .lock-overlay {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    z-index: -9999 !important;
+}
+</style>
+<script>
+// Remove password lock completely - direct quiz access
+(function() {
+    var initDone = false;
+    var renderCheckDone = false;
+
+    function hideEl(el, hard) {
+        if (!el) return;
+        if (hard) {
+            el.style.setProperty('display', 'none', 'important');
+            el.style.setProperty('visibility', 'hidden', 'important');
+            el.style.setProperty('opacity', '0', 'important');
+            el.style.setProperty('pointer-events', 'none', 'important');
+            el.style.setProperty('z-index', '-9999', 'important');
+        } else {
+            el.style.display = 'none';
+        }
+        el.classList.remove('active', 'show', 'open', 'visible', 'flex');
+    }
+
+    function hasRenderedQuiz() {
+        var containers = document.querySelectorAll(
+            '#quiz-container, #quizContainer, #questions-container, #questionPane, #quiz, #questions, #quiz-body, #questions-wrapper, #quiz-list, #quizList, #exercise-container, #app-container .split-container'
+        );
+        for (var i = 0; i < containers.length; i++) {
+            if (containers[i].querySelectorAll('button, input, select, textarea, .question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .question, .option-btn, .opt-btn, .ans-btn').length > 0) {
+                return true;
+            }
+        }
+        if (document.querySelectorAll('.question-card, .question-block, .q-card, .quiz-card, .question-item, .q-box, .option-btn, .opt-btn, .ans-btn, .choice-btn').length > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    function ensureQuizRendered() {
+        if (renderCheckDone) return;
+        renderCheckDone = true;
+        if (hasRenderedQuiz()) return;
+
+        if (!hasRenderedQuiz() && typeof buildQuiz === 'function') { try { buildQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof initQuiz === 'function') { try { initQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderApp === 'function') { try { renderApp(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuiz === 'function') { try { renderQuiz(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderQuestions === 'function') { try { renderQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAllQuestions === 'function') { try { renderAllQuestions(); } catch(e){} }
+        if (!hasRenderedQuiz() && typeof renderAll === 'function') { try { renderAll(); } catch(e){} }
+    }
+
+    function unlockNow() {
+        var pwIds = [
+            'passwordModal', 'password-modal', 'pwModal', 'pw-modal', 'pw-overlay',
+            'lockModal', 'passModal', 'authModal', 'auth-modal', 'lockOverlay',
+            'start-overlay', 'intro-overlay', 'start-screen'
+        ];
+        pwIds.forEach(function(id) {
+            hideEl(document.getElementById(id), true);
+        });
+
+        var modalEls = document.querySelectorAll('.password-modal, .lock-modal, .lock-overlay, #lockOverlay, #auth-modal');
+        modalEls.forEach(function(el) {
+            if (el.id !== 'resultModal' && el.id !== 'result-modal' && el.id !== 'scoreModal') {
+                hideEl(el, true);
+            }
+        });
+
+        ['nameModal', 'name-modal', 'nameInputModal'].forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) hideEl(el, false);
+        });
+
+        var qo = document.getElementById('quiz-overlay');
+        if (qo && (typeof isStarted === 'undefined' || !isStarted)) {
+            qo.style.display = 'none';
+        }
+
+        var mainIds = [
+            'mainContent', 'main-content', 'mainHeader', 'main-header',
+            'app-container', 'app', 'quizApp', 'quiz-wrapper', 'quizContainer', 'quiz-container', 'reading-content'
+        ];
+        mainIds.forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) {
+                el.classList.remove('hidden', 'blur', 'blurred', 'locked');
+                if (el.style.display === 'none') {
+                    el.style.removeProperty('display');
+                }
+                if (window.getComputedStyle(el).display === 'none') {
+                    var hasPane = el.querySelector('.pane, .left-pane, .right-pane, .split-container, .left-panel, .right-panel');
+                    if (id === 'main-content' || id.toLowerCase().includes('header') || el.classList.contains('main-container') || hasPane) {
+                        el.style.setProperty('display', 'flex', 'important');
+                    } else {
+                        el.style.setProperty('display', 'block', 'important');
+                    }
+                }
+            }
+        });
+
+        var qs = document.getElementById('quiz-screen');
+        if (qs) {
+            qs.classList.remove('hidden');
+            if (qs.classList.contains('flex-col')) {
+                qs.classList.add('flex');
+                qs.style.display = 'flex';
+            } else {
+                qs.style.display = 'block';
+            }
+        }
+
+        if (!initDone) {
+            initDone = true;
+
+            if (document.getElementById('start-overlay') && typeof startGame === 'function') {
+                var sn = document.getElementById('student-name') || document.getElementById('studentName');
+                if (sn && !sn.value.trim()) sn.value = 'Học sinh';
+            }
+            if (document.getElementById('name-modal') && typeof startQuiz === 'function') {
+                var sn2 = document.getElementById('student-name');
+                if (sn2 && !sn2.value.trim()) sn2.value = 'Học sinh';
+            }
+
+            if (typeof startQuiz === 'function' && (typeof isStarted === 'undefined' || !isStarted)) { try { startQuiz(); } catch(e){} }
+            if (typeof startGame === 'function') { try { startGame(); } catch(e){} }
+            if (typeof startTest === 'function') { try { startTest(); } catch(e){} }
+            if (typeof startApp === 'function') { try { startApp(); } catch(e){} }
+            if (typeof buildStarfield === 'function') { try { buildStarfield(); } catch(e){} }
+            if (typeof spawnFloats === 'function') { try { spawnFloats(); } catch(e){} }
+            if (typeof spawnFloaters === 'function') { try { spawnFloaters(); } catch(e){} }
+            if (typeof createFloatingBubbles === 'function') { try { createFloatingBubbles(); } catch(e){} }
+            if (typeof initAudio === 'function') { try { initAudio(); } catch(e){} }
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', unlockNow);
+    } else {
+        unlockNow();
+    }
+    if (document.readyState === 'complete') {
+        setTimeout(ensureQuizRendered, 150);
+    } else {
+        window.addEventListener('load', function() {
+            setTimeout(unlockNow, 20);
+            setTimeout(ensureQuizRendered, 150);
+            setTimeout(unlockNow, 300);
+            setTimeout(unlockNow, 700);
+        });
+    }
+    setTimeout(unlockNow, 50);
+    setTimeout(unlockNow, 200);
+    setTimeout(unlockNow, 600);
+    setTimeout(unlockNow, 1100);
+})();
+</script>
+</body>
+</html>
